@@ -1,9 +1,11 @@
 baseurl = "http://nroduit.github.io/"
-languageCode = "en-us"
+languageCode = "en-US"
 title = "Weasis Documentation"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"
+metaDataFormat = "yaml"
+defaultContentLanguageInSubdir= true
 
 # For search functionnality
 [outputs]
@@ -35,3 +37,39 @@ theme = "hugo-theme-learn"
   ordersectionsby = "weight"
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
   themeVariant = ""
+
+
+[Languages]
+[Languages.en]
+title = "Documentation for Hugo Learn Theme"
+weight = 1
+languageName = "English"
+
+[[Languages.en.menu.shortcuts]] 
+name = "<i class='fa fa-github'></i> Github repo"
+identifier = "ds"
+url = "https://github.com/nroduit/Weasis"
+weight = 10
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fa fa-camera'></i> Live Demo"
+url = "showcase"
+weight = 11
+
+
+[Languages.fr]
+title = "Documentation du thème Hugo Learn"
+weight = 2
+languageName = "Français"
+
+[[Languages.fr.menu.shortcuts]]
+name = "<i class='fa fa-github'></i> Repo Github"
+identifier = "ds"
+url = "https://github.com/nroduit/Weasis"
+weight = 10
+
+[[Languages.fr.menu.shortcuts]]
+name = "<i class='fa fa-camera'></i> Démo en ligne"
+url = "/showcase"
+weight = 11
+
