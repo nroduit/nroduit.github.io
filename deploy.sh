@@ -14,6 +14,9 @@ msg() {
     printf "\033[1;32m :: %s\n\033[0m" "$1"
 }
 
+# remove all files in public except .git
+find public -type f -not -name '.git' -delete
+
 if [[ $(git status -s) ]]; then
     msg "The working directory is dirty, please commit or stash any pending changes"
     exit 1;
