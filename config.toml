@@ -1,4 +1,4 @@
-baseurl = "http://nroduit.github.io/"
+baseurl = "https://nroduit.github.io/"
 languageCode = "en-US"
 title = "Weasis Documentation"
 
@@ -38,7 +38,7 @@ pygmentsUseClasses = true
   # Order sections in menu by "weight" or "title". Default to "weight"
   ordersectionsby = "weight"
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
-  themeVariant = "hugo-theme-learn"
+  themeVariant = ""
 
 
 [Languages]

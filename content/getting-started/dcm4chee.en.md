@@ -154,7 +154,7 @@ Weasis is launched from the dcm4chee administrative web interface, as shown in t
 
 ### Write weasis-portable to DICOM CDs with dcm4chee-cdw
 
-1. Install <a target="_blank" href="">weasis</a>[dcm4chee-cdw](http://sourceforge.net/projects/dcm4che/files/dcm4chee-cdw/) (see doc/INSTALL.txt in the archive)
+1. Install <a target="_blank" href="http://sourceforge.net/projects/dcm4che/files/dcm4chee-cdw/">dcm4chee-cdw</a> (see doc/INSTALL.txt in the archive)
 2. Extract <a target="_blank" href="http://sourceforge.net/projects/dcm4che/files/Weasis/">weasis-portable.zip</a> into the ../dcm4chee/server/default/data/mergedir directory
 3. Go to the dcm4che jmx console (dcm4chee.cdw):
     - Select the MediaCreationMgtSCP item and set to `true` the value of DefaultIncludeDisplayApplication
