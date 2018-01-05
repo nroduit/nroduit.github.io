@@ -1,0 +1,17 @@
+---
+title: Weasis Architecture
+weight: 10
+---
+
+
+Weasis has a modular architecture based on <a target="_blank" href="https://www.osgi.org">OSGi</a>: the dynamic module system for Java. It uses the <a target="_blank" href="http://felix.apache.org">Apache Felix OSGi framework</a> which is an open source implementation of the OSGi Release 4.2 specification (<a target="_blank" href="https://www.osgi.org/osgi-compliance/osgi-certification/osgi-certified-products/">OSGi Certified</a>).
+
+The following schemas show the main different plug-in types (bundle in OSGi language) and their relationships. Viewer, Viewer Tool Pane, Tool Bar, Data Explorer and Codec bundles are registered dynamically by the Declarative Services (a way to push or to consume services in OSGi environment).
+
+![bundles](/images/architecture-bundles.png?classes=border)
+
+![packages](/images/architecture-packages.png?classes=border)
+
+For each bundle, translation files are packaging in a separated bundle ending by “i18n” called a bundle fragment (OSGI concept) which is merged during runtime to the application. In this way, translation can be handled separately and they are automatically loaded by the application when they are available.
+
+Some Codec bundles also have bundle fragments. Those fragments contain native libraries (JNI wrapping). The Weasis launcher enables downloading and loading only the native binaries related to the running platform.

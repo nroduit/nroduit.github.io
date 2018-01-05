@@ -5,71 +5,72 @@ title = "Weasis Documentation"
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"
 metaDataFormat = "yaml"
-defaultContentLanguageInSubdir= true
+defaultContentLanguageInSubdir= false
+pygmentsCodeFences = true
+pygmentsUseClasses = true
 
 # For search functionnality
 [outputs]
   home = [ "HTML", "RSS", "JSON"]
 
 [params]
-  # Prefix URL to edit current page. Will display an "Edit this page" button on top right hand corner of every page. 
+  # Prefix URL to edit current page. Will display an "Edit this page" button on top right hand corner of every page.
   # Useful to give opportunity to people to create merge request for your doc.
   # See the config.toml file from this documentation site to have an example.
-  editURL = ""
+  editURL = "https://github.com/nroduit/nroduit.github.io/edit/hugo/content/"
   # Author of the site, will be used in meta information
-  author = ""
+  author = "Nicolas Roduit"
   # Description of the site, will be used in meta information
   description = ""
   # Shows a checkmark for visited pages on the menu
   showVisitedLinks = true
   # Disable search function. It will hide search bar
   disableSearch = false
-  # Javascript and CSS cache are automatically busted when new version of site is generated. 
+  # Javascript and CSS cache are automatically busted when new version of site is generated.
   # Set this to true to disable this behavior (some proxies don't handle well this optimization)
   disableAssetsBusting = false
   # Set this to true to disable copy-to-clipboard button for inline code.
   disableInlineCopyToClipBoard = false
-  # A title for shortcuts in menu is set by default. Set this to true to disable it. 
+  # A title for shortcuts in menu is set by default. Set this to true to disable it.
   disableShortcutsTitle = false
   # When using mulitlingual website, disable the switch language button.
   disableLanguageSwitchingButton = false
   # Order sections in menu by "weight" or "title". Default to "weight"
   ordersectionsby = "weight"
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
-  themeVariant = ""
+  themeVariant = "hugo-theme-learn"
 
 
 [Languages]
 [Languages.en]
-title = "Documentation for Hugo Learn Theme"
+title = "Documentation"
 weight = 1
 languageName = "English"
 
-[[Languages.en.menu.shortcuts]] 
-name = "<i class='fa fa-github'></i> Github repo"
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fa fa-play-circle'></i> Live Demo"
 identifier = "ds"
-url = "https://github.com/nroduit/Weasis"
+url = "demo"
 weight = 10
 
 [[Languages.en.menu.shortcuts]]
-name = "<i class='fa fa-camera'></i> Live Demo"
-url = "showcase"
-weight = 11
+name = "<i class='fa fa-question-circle'></i> FAQs"
+url = "faq"
+weight = 15
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fa fa-user-circle'></i> Get Involved!"
+url = "get-involved"
+weight = 20
 
 
 [Languages.fr]
-title = "Documentation du thème Hugo Learn"
+title = "Documentation"
 weight = 2
 languageName = "Français"
 
 [[Languages.fr.menu.shortcuts]]
-name = "<i class='fa fa-github'></i> Repo Github"
+name = "<i class='fa fa-play-circle'></i> Démon en ligne"
 identifier = "ds"
-url = "https://github.com/nroduit/Weasis"
+url = "demo"
 weight = 10
-
-[[Languages.fr.menu.shortcuts]]
-name = "<i class='fa fa-camera'></i> Démo en ligne"
-url = "/showcase"
-weight = 11
-
