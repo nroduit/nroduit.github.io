@@ -1,0 +1,13 @@
+# Sample configuration for launching weasis at patient and study level
+# Configuration when weasis-pacs-connector is installed in the same JBoss
+# Otherwise change the relative URL by an absolute value: http://myserver.com/weasis-pacs-connector
+
+dn: dicomDeviceName=dcm4chee-arc,cn=Devices,cn=DICOM Configuration,dc=dcm4che,dc=org
+changetype: modify
+add: dcmInvokeImageDisplayPatientURL
+dcmInvokeImageDisplayPatientURL: ../../weasis-pacs-connector/IHEInvokeImageDisplay?requestType=PATIENT&patientID={}
+
+dn: dicomDeviceName=dcm4chee-arc,cn=Devices,cn=DICOM Configuration,dc=dcm4che,dc=org
+changetype: modify
+add: dcmInvokeImageDisplayStudyURL
+dcmInvokeImageDisplayStudyURL: ../../weasis-pacs-connector/IHEInvokeImageDisplay?requestType=STUDY&studyUID={}
