@@ -5,7 +5,7 @@ title = "Weasis Documentation"
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"
 metaDataFormat = "yaml"
-defaultContentLanguageInSubdir= false
+defaultContentLanguageInSubdir= true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 
@@ -21,7 +21,7 @@ pygmentsUseClasses = true
   # Author of the site, will be used in meta information
   author = "Nicolas Roduit"
   # Description of the site, will be used in meta information
-  description = ""
+  description = "Weasis is open source DICOM viewer displaying a very large number of DICOM files. Weasis is modular, multiplatform, web-based, mulitlingual and can be easly integrated in many medical systems"
   # Shows a checkmark for visited pages on the menu
   showVisitedLinks = true
   # Disable search function. It will hide search bar
@@ -70,7 +70,7 @@ weight = 2
 languageName = "Français"
 
 [[Languages.fr.menu.shortcuts]]
-name = "<i class='fa fa-play-circle'></i> Démon en ligne"
+name = "<i class='fa fa-play-circle'></i> Démo en ligne"
 identifier = "ds"
 url = "demo"
 weight = 10

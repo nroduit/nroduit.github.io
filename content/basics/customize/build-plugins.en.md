@@ -65,9 +65,9 @@ Build a new war file containing the plug-ins and the ext-config.properties file.
     ```
     weasis-ext/
     ├── conf/
-    |   ├── ext-config.properties
+    │   ├── ext-config.properties
     ├── WEB-INF/
-    |   ├── web.xml
+    │   ├── web.xml
     ├── plugin1.jar
     └── plugin2.jar
     ```
@@ -110,9 +110,9 @@ It is aslo possible to add the code base for plugins (cdb-ext) directly in the U
     ```
     weasis-ext/
     ├── conf/
-    |   ├── ext-config.properties
+    │   ├── ext-config.properties
     ├── WEB-INF/
-    |   ├── web.xml
+    │   ├── web.xml
     └── weasis-isowriter-2.0.3.jar
     ```
 
