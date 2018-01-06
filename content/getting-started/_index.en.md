@@ -14,7 +14,7 @@ Join the <a target="_blank" href="http://groups.google.com/forum/#!forum/weasis"
 
 ### General Topics
 
-- [Installing Weasis in DCM4CHEE](installation/dcm4chee)
+- [Installing Weasis in DCM4CHEE](dcm4chee)
 - [Tutorials](../tutorials)
 - <a target="_blank" href="http://groups.google.com/group/dcm4che">New Forum</a> (Old <a target="_blank" href="http://forums.dcm4che.org/jiveforums/forum.jspa?forumID=29&start=0">Weasis Forum</a>)
 - [Frequently Asked Questions (FAQs)](../faq)
@@ -32,4 +32,4 @@ Join the <a target="_blank" href="http://groups.google.com/forum/#!forum/weasis"
 -   [How to build and install a plug-in](../basics/customize/build-plugins)
 -   [How to launch Weasis from any environments](../basics/customize/integration)
 -   <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#build-weasis-pacs-connector">Building weasis-pacs-connector</a>
--   [Rebuild dcm4chee-web](installation/rebuild-dcm4chee-web)
+-   [Rebuild dcm4chee-web](../basics/customize/rebuild-dcm4chee-web)

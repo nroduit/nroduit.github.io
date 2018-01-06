@@ -110,7 +110,7 @@ If you have Maven installed on your system or TM terminal Eclipse plugin, it is 
     - Select the *weasis-distributions* project
     - Right click, *Run as > Maven Install*
 {{% notice note %}}
-The distribution files are located in the *target/dist* folder of the project.<br> See [Building Weasis from source](Building_Weasis_from_source) for more advanced options.
+The distribution files are located in the *target/dist* folder of the project.<br> See [Building Weasis from source](../building-weasis) for more advanced options.
 {{% /notice %}}
 
 ### Debug or Run from Eclipse
