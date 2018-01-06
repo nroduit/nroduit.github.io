@@ -27,7 +27,7 @@ The executable (viewer-win32.exe) allows to embed a JRE in the relative director
 
 The viewer loads automatically images from DICOMDIR or from directories configured in "weasis/conf/config.properties (by default `weasis.portable.dicom.directory=dicom,DICOM,IMAGES,images`).
 
-For burning Weasis with dcm4chee-cdw, look at [Write weasis-portable to DICOM CDs with dcm4chee-cdw](../getting-started/installation/dcm4chee/#write-weasis-portable-to-dicom-cds-with-dcm4chee-cdw).
+For burning Weasis with dcm4chee-cdw, look at [Write weasis-portable to DICOM CDs with dcm4chee-cdw](../getting-started/dcm4chee/#write-weasis-portable-to-dicom-cds-with-dcm4chee-cdw).
 {{% /expand%}}
 
 {{%expand "How to enable Weasis logging?" %}}

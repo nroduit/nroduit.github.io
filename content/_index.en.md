@@ -1,10 +1,11 @@
 ---
 title: "Weasis Medical Viewer"
+Description: "Documentation of Weasis DICOM viewer"
 ---
 
 # <center>Weasis Medical Viewer</center>
 
-Weasis is a multipurpose standalone and web-based DICOM viewer with a highly [modular architecture](../basics/architecture).
+Weasis is a multipurpose standalone and web-based DICOM viewer with a highly [modular architecture](basics/architecture).
 
 It has been designed to meet several expectations of clinical information systems and their future evolution regarding medical imaging: providing a web-based access to radiological images, as well as offering multimedia capabilities.
 

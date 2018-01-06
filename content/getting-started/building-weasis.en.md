@@ -10,7 +10,7 @@ These instructions describe how to build Weasis directly from the Git repository
 1.  JDK 8 or higher
 2.  Maven 3 or higher<br>
     If your computer is behind a proxy server, <a target="_blank" href="http://maven.apache.org/guides/mini/guide-proxies.html">configure maven</a>.
-3.  Git or directly download source from <a target="_blank" href="https://github.com/nroduit/weasis-i18n">gitub</a>
+3.  Git or directly download source from <a target="_blank" href="https://github.com/nroduit/weasis-i18n">github</a>
 
 ### Getting the Source
 
