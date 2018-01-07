@@ -1,5 +1,7 @@
 ---
 title: Launch Weasis
+description: Various DICOM samples for testing the viewer capabilities
+keywords: [ "weasis demo", "dicom sammples", "dicom examples", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
 ---
 
 ## <center>Demo with multiple DICOM Samples</center>

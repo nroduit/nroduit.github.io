@@ -1,5 +1,7 @@
 ---
 title: Dicom Conformance
+description: DICOM Conformance Statements of Weasis
+keywords: [ "DICOM Conformance Statements", "IHE", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
 weight: 70
 ---
 

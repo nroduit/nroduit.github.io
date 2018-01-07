@@ -1,6 +1,8 @@
 ---
 title: Preferences
+description: Manage the Weasis preferences
 weight: 20
+keywords: [ "preferences", "weasis preferences", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
 ---
 
 The WEB distribution (weasis.war) allows to deliver preferences from the server side to the client side. Some preferences on the server side are used by Weasis only during the first launch, because they can be changed lately in the Weasis user interface. The other preferences at server side are used by Weasis at every launch.

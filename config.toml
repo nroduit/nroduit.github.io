@@ -21,7 +21,7 @@ pygmentsUseClasses = true
   # Author of the site, will be used in meta information
   author = "Nicolas Roduit"
   # Description of the site, will be used in meta information
-  description = "Weasis is open source DICOM viewer displaying a very large number of DICOM files. Weasis is modular, multiplatform, web-based, mulitlingual and can be easly integrated in many medical systems"
+  description = "Weasis: an open source DICOM viewer which is modular, multiplatform, web-based and mulitlingual. It can be easly integrated in any medical system"
   # Shows a checkmark for visited pages on the menu
   showVisitedLinks = true
   # Disable search function. It will hide search bar
@@ -43,7 +43,7 @@ pygmentsUseClasses = true
 
 [Languages]
 [Languages.en]
-title = "Documentation"
+title = "Weasis Documentation"
 weight = 1
 languageName = "English"
 
