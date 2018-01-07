@@ -1,5 +1,7 @@
 ---
 title: Weasis Architecture
+description: Modular architecture of Weasis
+keywords: [ "architecture", "weasis architecture", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
 weight: 10
 ---
 

@@ -1,5 +1,7 @@
 ---
 title: FAQs
+description: Weasis Frequently Asked Questions
+keywords: [ "weasis faqs", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
 disableToc: true
 ---
 

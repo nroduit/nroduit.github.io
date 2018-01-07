@@ -1,5 +1,7 @@
 ---
 title: Building Weasis
+description: How to build Weasis from sources
+keywords: [ "building", "sources", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
 weight: 30
 ---
 

@@ -1,5 +1,7 @@
 ---
 title: Shortcuts
+description: Keyboard and Mouse Shortcuts of Weasis
+keywords: [ "shortcuts", "weasis shortcuts", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
 weight: 20
 ---
 

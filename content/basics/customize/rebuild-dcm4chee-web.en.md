@@ -1,5 +1,7 @@
 ---
 title: Rebuild dcm4chee-web
+decription: How to rebuild dcm4chee-web 2.15-2.17 to incorporate Weasis
+keywords: [ "dcm4chee web", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
 weight: 70
 ---
 

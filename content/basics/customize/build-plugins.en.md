@@ -1,5 +1,7 @@
 ---
 title: Build Plug-ins
+keywords: [ "plugins", "weasis plugins", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
+description: How to build new Weasis plug-ins and how they can be incorporated to the distributions
 weight: 30
 ---
 
@@ -21,7 +23,7 @@ This page describes how to build new Weasis plug-ins and how they can be incorpo
 - UI aggregator. This is the application main user interface bundle. The maven artifact of this bundle must be defined in config.properties (ex. weasis.main.ui=weasis-base-ui)
 
 {{% notice tip %}}
-See the [Weasis Architecture](Weasis_Architecture) to understand the plug-in hierarchy.
+See the [Weasis Architecture](../../architecture) to understand the plug-in hierarchy.
 {{% /notice %}}
 
 

@@ -1,9 +1,11 @@
 ---
 title: Embedding in dcm4chee
+description: How installing Weasis to be the default web viewer of dcm4chee web interface
+keywords: [ "dcm4chee", "dcm4chee web" , "dcm4chee integration", "dcm4chee viewer", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
 weight: 10
 ---
 
-This page describes how to install Weasis to be the default web viewer of dcm4chee web interface.
+This page describes how installing Weasis to be the default web viewer of dcm4chee web interface.
 
 Weasis is launched from the dcm4chee administrative web interface, as shown in the pictures below. It may also be copied to a CD (or other removable devices) with images.
 

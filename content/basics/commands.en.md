@@ -1,5 +1,7 @@
 ---
 title: Weasis Commands
+description: List of commands at start-up and for driving Weasis
+keywords: [ "commands", "weasis commands", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
 weight: 50
 ---
 
