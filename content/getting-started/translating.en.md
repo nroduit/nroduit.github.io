@@ -1,5 +1,7 @@
 ---
 title: Internationalization
+description: How to contribute to the Weasis translation
+keywords: [ "internationalization", "weasis internationalization", "development", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
 weight: 80
 ---
 
