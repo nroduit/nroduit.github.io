@@ -8,6 +8,7 @@ metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= true
 pygmentsCodeFences = true
 pygmentsUseClasses = true
+paginate = 6
 
 # For search functionnality
 [outputs]

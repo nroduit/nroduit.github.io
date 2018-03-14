@@ -27,4 +27,4 @@ Your modification will be deployed automatically when merged.
 {{% /notice %}}
 
 ## Documentation website
-This current documentation has been statically generated with Hugo with a simple command : `hugo` -- source code is [available here at GitHub](https://github.com/nroduit/nroduit.github.io)
+This current documentation has been statically generated with Hugo with a simple command : `hugo` -- source code is <a target="_blank" href="https://github.com/nroduit/nroduit.github.io">available at GitHub</a>.
