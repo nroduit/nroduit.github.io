@@ -28,7 +28,7 @@ Only then, fill a bug on <a target="_blank" href="http://www.dcm4che.org/jira/br
 
 ### Share Your Knowledge
 
-- Do you or your company have a success story about Weasis? Send a story to <a target="_blank" href="https://github.com/nroduit">@nroduit</a> and we'll share it on this website.
+- Do you or your company have [a success story about Weasis](../stories)? Send a story to <a target="_blank" href="https://github.com/nroduit">@nroduit</a> and we'll share it on this website.
 - Help building the documentation. Each page or the entire website can be <a target="_blank" href="https://github.com/nroduit/nroduit.github.io/fork">forked</a> and modify with pull requests.
 - Localization: Help [translating Weasis](../getting-started/translating) into other languages.
 - Help on the <a target="_blank" href="http://groups.google.com/group/dcm4che">forum</a> other users.
