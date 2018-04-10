@@ -10,8 +10,6 @@ The University Hospital of Geneva has a long history of medical imaging sofware.
 
 ### List of Weasis Success Stories
 
-<!-- {{% posts showhidden="true" description="true" %}} */}} -->
-
 {{% notice note %}}
 Tell us if Weasis has been successfully used in your research projects, clinical applications or healthcare networks.<br>
 Edit this page with a pull request or send a message to <a target="_blank" href="https://github.com/nroduit">@nroduit</a> and we'll share it on this page.
