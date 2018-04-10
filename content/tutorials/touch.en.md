@@ -1,6 +1,6 @@
 ---
 title: Weasis Multi-Touch
-weight: 70
+weight: 2000
 description: Redesigned user interface with JavaFX and multi-touch support
 keywords: [ "javafx", "multi-touch", "touch", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "pacs viewer" ]
 ---
