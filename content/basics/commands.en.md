@@ -5,13 +5,13 @@ keywords: [ "commands", "weasis commands", "dicom viewer", "free dicom viewer", 
 weight: 50
 ---
 
-The commands listed below can be applied at start-up or in a telnet session. All the commands starting by "dcmview2d:" allow to drive Weasis and are not adapted to be used at start-up.
+The commands listed below can be applied at start-up or in a telnet session. All the commands starting with "dcmview2d:" allow to drive Weasis and are not adapted to be used at start-up.
 
 {{% notice info %}}
 This page matches to Weasis 2.5.1 or higher. The syntax of usage comes from <a target="_blank" href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap12.html">POSIX</a>.
 {{% /notice %}}
 
-For getting the list of commands, after starting Weasis, open a local telnet session of the OSGI Console and type `lb` for getting the list of bundles and their state or type `help` for getting all the available commands:
+To obtain the list of commands, after starting Weasis, open a local telnet session of the OSGI Console and type `lb` for getting the list of bundles and their state or type `help` for getting all the available commands:
 
 ``` text
 telnet localhost 17179
@@ -256,5 +256,5 @@ Launch Weasis by double clicking on the executable file or in command-line (c.f.
 The command interpreter has changed from weasis 2.6.0. Command containing special characters like '&' must be within quotes or double quotes. Example: 
 dicom:get -w **"url"**
 <br><br>
-It also depends of the command line system. For instance in the Eclipse launcher parameters, ‘&’ wihtin URLs needs to be escaped with backslash.
+It also depends on the command line system. For instance in the Eclipse launcher parameters, ‘&’ within URLs needs to be escaped with a backslash.
 {{% /notice %}}

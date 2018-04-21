@@ -25,16 +25,16 @@ Standard workflow when connecting Weasis to a PACS, RIS, EMR or any web interfac
 The schema above shows that the queries to the PACS are made at the same time the viewer starting.
 {{% /notice %}}
 Workflow where the manifest is embedded in the jnlp file (synchrone processes):
-![embedding the xml manifest](/images/connector-wk-emb.png?classes=border "Embedding the xml manifest")
+![embedding the XML manifest](/images/connector-wk-emb.png?classes=border "Embedding the xml manifest")
 
-## Build your own connector
-This method have two requirements:
+## Build your connector
+This method has two requirements:
 
-1. Building a jnlp file for launching Weasis
-2. Building a xml manifest to donwload images
+1. Building a JNLP file for launching Weasis
+2. Building a XML manifest to download images
 
 ###  Build a JNLP
-Build a <a target="_blank" href="https://docs.oracle.com/javase/8/docs/technotes/guides/javaws/developersguide/contents.html">Java Webstart</a> file (.jnlp) for launching Weasis. This file has at least one dynamic parameter (`<argument>$dicom:get ... </argument>`) to download images. Generally it is the [xml file](#build-an-xml-manifest) containing the UIDs.
+Build a <a target="_blank" href="https://docs.oracle.com/javase/8/docs/technotes/guides/javaws/developersguide/contents.html">Java Webstart</a> file (.jnlp) for launching Weasis. This file has at least one dynamic parameter (`<argument>$dicom:get ... </argument>`) to download images. Generally, it is the [XML file](#build-an-xml-manifest) containing the UIDs.
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -93,7 +93,7 @@ Build a <a target="_blank" href="https://docs.oracle.com/javase/8/docs/technotes
     <!-- Example for opening dicom files from remote xml file -->
     <argument>$dicom:get -w "http://localhost:8080/dcm4chee-web/wadoQueries/wado_query3888637380.xml.gz"</argument>
 
-    <!-- Example for opening dicom files from local foler -->
+    <!-- Example for opening dicom files from a local folder -->
         <argument>$dicom:get -l "/home/Images/MRIX LUMBAR/"</argument>
 
     <!-- Example for opening dicom files by embedding the xml file encoded in gzip and then in base64, it must be in one line without space at the beginning -->
@@ -106,7 +106,7 @@ Build a <a target="_blank" href="https://docs.oracle.com/javase/8/docs/technotes
 ```
 
 {{% notice note %}}
-Replace `http://localhost:8080/weasis` by your server location and `<argument>...</argument>` by your data to load. Adapt other parameters if necessary.
+Replace `http://localhost:8080/weasis` with your server location and `<argument>...</argument>` with your data to load. Adapt other parameters if necessary.
 {{% /notice %}}
 
 {{% notice tip %}}

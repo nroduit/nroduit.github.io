@@ -17,14 +17,14 @@ Only then, fill a bug on <a target="_blank" href="http://www.dcm4che.org/jira/br
     - Task: everything else, something that needs to be done
 2. Use the short summary field to describe the main goal of your issue.
 3. Select the appropriate field:
-    - Priority, for asserting the importance of a issue
+    - Priority, for asserting the importance of an issue
     - Affects version of Weasis
 4. Describe the application basic context (OS, JRE version, ...) and attach error [log file](../faq/#how-to-enable-weasis-logging).
 5. Provide code examples, use cases and/or steps to reproduce the problem.
 
 ### Become a Committer
 
-- Become a committer on an existing project or on one of the incubating projects, for Weasis use <a target="_blank" href="https://github.com/nroduit/Weasis/pulls">pull rquests</a>.
+- Become a committer on an existing project or on one of the incubating projects, for Weasis use <a target="_blank" href="https://github.com/nroduit/Weasis/pulls">pull requests</a>.
 
 ### Share Your Knowledge
 
