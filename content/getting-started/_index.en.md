@@ -8,7 +8,7 @@ pre: "<b>1. </b>"
 ### Try Weasis now
 - [Live demo](../demo) with different DICOM dataset.
 - Download the latest <a  href="https://sourceforge.net/projects/dcm4che/files/Weasis" target="_blank" class="btn btn-default">weasis-portable.zip <i class="fa fa-download"></i></a><br>
-Just unzip and run it on Windows, Linux or Mac. It requires that a Java Runtime Environment (JRE 8 or greater) be installed on your machine to run. From recent Mac OS X releases you need to install JDK and to <a target="_blank" href="https://www.tekrevue.com/tip/gatekeeper-macos-sierra/">disable GateKeeper</a>.
+Unzip and run it on Windows, Linux or Mac. It requires that a Java Runtime Environment (JRE 8 or higher) be installed on your machine to run. From recent Mac OS X releases, you need to install JDK and to <a target="_blank" href="https://www.tekrevue.com/tip/gatekeeper-macos-sierra/">disable GateKeeper</a>.
 {{% notice tip %}}
 Join the <a target="_blank" href="http://groups.google.com/forum/#!forum/weasis">google group</a> (Choose Email to read this group) to stay informed about new releases and updates.
 {{% /notice %}}

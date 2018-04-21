@@ -23,7 +23,7 @@ weight: 20
 | **D** | Distance measurement <i class="fa fa-star" style="color:green"></i> |
 | **A** | Angle measurement <i class="fa fa-star" style="color:green"></i> |
 | **Y** | Polyline measurement |
-| **B** | Text box |
+| **B** | Textbox |
 | **Q** | Context menu |
 | **Ctrl + Spacebar** | Change to the next action |
 | **Ctrl + mouse drag** | Accelerate the current action <i class="fa fa-star" style="color:green"></i> |
@@ -34,7 +34,7 @@ weight: 20
 | **I** | Show/Hide all the annotations (three states) <i class="fa fa-star" style="color:green"></i> |
 | **Escape** | Reset the selected view <i class="fa fa-star" style="color:green"></i> |
 | **P** | Print view(s) with the operating system printer <i class="fa fa-star" style="color:green"></i> |
-| **Right click** | Open the contextual menu for more options |
+| **Right-click** | Open the contextual menu for more options |
 | **Double click** | Toggle fullscreen |
 | **Drag files/directories**<br>(from the OS file manager) | Open DICOMs files |
 
@@ -47,10 +47,10 @@ weight: 20
 | **Click on a thumbnail** and then **Shift + click on another one** | Select all series between |
 | **Enter** | Open the selected series in the default viewer |
 | **Click + drag a thumbnail** in the main view | Display a series |
-| **Right click** | Open the contextual menu for more options |
+| **Right-click** | Open the contextual menu for more options |
 
 {{% notice note %}}
-**Downloading Priorities**: Selecting a thumbnail give it the best priority to download.
+**Downloading Priorities**: Selecting a thumbnail gives the best priority to download.
 {{% /notice %}}
 
 
@@ -65,7 +65,7 @@ weight: 20
 | **Delete** | Delete the selected graphics |
 | **Shift + click on a graphic** | In selection mode: add or remove a graphic to the current selection.<br /> In drawing mode: force to draw on another graphic (without shift the graphic is selected). |
 | **Double click** | Stop adding points for polyline (also available in the context menu) |
-| **Right click** | Open the contextual menu for more options |
+| **Right-click** | Open the contextual menu for more options |
 
 
 ### Tips and Tricks

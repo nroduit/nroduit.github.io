@@ -72,8 +72,8 @@ Example to change language property (It will work only during the first launch o
 | org.apache.sling.commons.log.file.size     | 10MB                                   | yes | F    | Defines how the log file is rotated by size. |
 | org.apache.sling.commons.log.pattern       | {0,date,dd.MM.yyyy HH:mm:ss.SSS} \*{4}\* \[{2}\] {3} {5} | no  | F    | Formatting log messages. java.util.MessageFormat pattern supporting up to six arguments: {0} The timestamp of type java.util.Date, {1} the log marker, {2} the name of the current thread, {3} the name of the logger, {4} the debug level and {5} the actual debug message. |
 | **ONLY from Weasis 2.0**                   |                                        |     |      |           |
-| locale.lang.code                           | en                                     | yes | F    | Language code (see [Java Locale](http://www.oracle.com/technetwork/java/javase/locales-137662.html)). If value is "system" then the locale of the operating system will be used (client-side). |
-| locale.format.code                         | system                                 | yes | F    | Format code for number and date (see [Java Locale](http://www.oracle.com/technetwork/java/javase/locales-137662.html)). If value is "system" then the locale of the operating system will be used (client-side). |
+| locale.lang.code                           | en                                     | yes | F    | Language code (see [Java Locale](http://www.oracle.com/technetwork/java/javase/locales-137662.html)). If the value is "system" then the locale of the operating system will be used (client-side). |
+| locale.format.code                         | system                                 | yes | F    | Format code for number and date (see [Java Locale](http://www.oracle.com/technetwork/java/javase/locales-137662.html)). If the value is "system" then the locale of the operating system will be used (client-side). |
 | weasis.name                                | Weasis                                 | no  | A    | Change the name of the application everywhere in UI |
 | weasis.profile                             | default                                | no  | A    | Application profile, it allows having a custom preferences directory on the client side (will not shared preferences with other Weasis instances) |
 | weasis.resources.url                       | ${weasis.codebase.url}/resources.zip   | no  | A    | Application resource files (logo, presets, LUTs...). "resources.zip" is downloaded again only when the last modified date has changed. |
@@ -99,7 +99,7 @@ Example to change language property (It will work only during the first launch o
 | weasis.acquire.meta.image.display          | ImageComments, ContentDate, ContentTime  | no  | A    | Tags at the image level that are visible in Dicomizer |
 | weasis.acquire.meta.image.edit             | ImageComments, ContentDate, ContentTime  | no  | A    | Image tags which are editable  |
 | weasis.acquire.meta.image.required         | ContentDate                            | no  | A    | Image tags which are required for publication |
-| weasis.acquire.dest.host                   | localhost                              | no  | A    | Host name of DICOM send destination for Dicomizer. If no value, the list of DICOM nodes for storage is displayed. |
+| weasis.acquire.dest.host                   | localhost                              | no  | A    | Hostname of DICOM send destination for Dicomizer. If no value, the list of DICOM nodes for storage is displayed. |
 | weasis.acquire.dest.aet                    | DCM4CHEE                               | no  | A    | AETitle of DICOM send destination for Dicomizer |
 | weasis.acquire.dest.port                   | 11112                                  | no  | A    | Port of DICOM send destination for Dicomizer |
 | weasis.acquire.meta.study.description      | Pictures of follow-up,Pictures of observation,Pictures preoperative,Pictures intraoperative,Pictures postoperative | no  | A    | Comma-separated list of study description elements. Comment this property to have a free text field.|
@@ -142,4 +142,4 @@ The resources are located:
 - Go to he folder ${user.home}/.weasis/data/weasis-dicom-explorer
 - Copy the desired configuration files: dicomNodes.xml, dicomPrinterNodes.xml, dicomWebNodes.xml and dicomCallingNodes.xml
 - Paste at the root path of ressources. For web distribution, unzip, place files and zip again.
-- The new configurations should appears for all the users as non editable configurations.
+- The new configurations should appear for all the users as non-editable configurations.

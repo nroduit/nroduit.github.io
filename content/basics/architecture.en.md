@@ -14,6 +14,6 @@ The following schemas show the main different plug-in types (bundle in OSGi lang
 
 ![packages](/images/architecture-packages.png?classes=border)
 
-For each bundle, translation files are packaging in a separated bundle ending by “i18n” called a bundle fragment (OSGI concept) which is merged during runtime to the application. In this way, translation can be handled separately and they are automatically loaded by the application when they are available.
+For each bundle, translation files are packaging in a separated bundle ending by “i18n” called a bundle fragment (OSGi concept) which is merged during runtime to the application. In this way, translation can be handled separately and they are automatically loaded by the application when they are available.
 
 Some Codec bundles also have bundle fragments. Those fragments contain native libraries (JNI wrapping). The Weasis launcher enables downloading and loading only the native binaries related to the running platform.

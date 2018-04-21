@@ -23,10 +23,10 @@ $ git clone https://github.com/nroduit/Weasis.git
 {{< /highlight >}}
 
 {{% notice warning %}}
-The trunk is not a stable version and snapshot version is not retained in cache for the web distribution (it means the files will be every times downloaded)
+The trunk is not a stable version and snapshot version is not retained in the cache for the web distribution (it means the files will be downloaded every time)
 {{% /notice %}}
 
-Check out a tag version to build a stable version, see <a target="_blank" href="https://github.com/nroduit/Weasis/tags">tag list</a>.
+Check out a tag version to build a stable version, see the <a target="_blank" href="https://github.com/nroduit/Weasis/tags">tag list</a>.
 
 {{< highlight bash >}}
 $ git checkout <TAG_NAME>
@@ -42,17 +42,17 @@ $ mvn clean install
 
 ### Building Weasis Distributions
 
-- Requires to install all the plug-ins in the local Maven repository as described in the item above.
+- Requires installing all the plug-ins in the local Maven repository as described in the item above.
 {{< highlight bash >}}
 $ cd weasis-distributions
 $ mvn clean package -Dportable=true -P pack200
 {{< /highlight >}}
 {{% notice tip %}}
 **-P pack200**: From 1.1.2 it is possible to use the compression pack200 that reduces jar size considerably. It is recommended to use the Oracle jdk with this option (openjdk can throw packging errors).<br>
-**-Dportable=true**: option for building the portable distribution (multi-platform standlone launchers)
+**-Dportable=true**: option for building the portable distribution (multi-platform standalone launchers)
 {{% /notice %}}
 {{% notice warning %}}
-For the WEB distribution using Java Webstart, it is required to sign jar files with your **own certificate** (by replacing values in the command below by your **own values**). A trust-worthy certificate from a certificate authority is now  <a target="_blank" href="https://blogs.oracle.com/java-platform-group/entry/code_signing_understanding_who_and">required</a> to run Java Web Start applications. A self signed certificate generate by keytool will always display a security warning message.
+For the WEB distribution using Java Webstart, it is required to sign jar files with your **own certificate** (by replacing values in the command below with your **own values**). A trust-worthy certificate from a certificate authority is now  <a target="_blank" href="https://blogs.oracle.com/java-platform-group/entry/code_signing_understanding_who_and">required</a> to run Java Web Start applications. A self-signed certificate generate by keytool will always display a security warning message.
 {{% /notice %}}
 The parameters must be placed in the maven user setting or has to be the options in the Maven command:
 {{< highlight bash >}}
@@ -63,11 +63,11 @@ $ mvn clean package -Djarsigner.alias="your_alias" -Djarsigner.storepass="your_p
 <!-- -->
 
 -  Options for building the portable distribution.
-    - By default the executable on Windows runs only a single instance (from Weasis 2.0). To disable single instance in portable version, set windowsName property empty.
+    - By default, the executable on Windows runs only a single instance (from Weasis 2.0). To disable single instance in the portable version, set windowsName property empty.
 {{< highlight bash >}}
 $ mvn clean package -Dportable=true -DwindowsName=
 {{< /highlight >}}
-    -  On 64-bit system, it requires to install the 32-bit compatibility libraries to build the windows executable. On Linux you need to install **ia32-libs** package.
+    -  On 64-bit system, it requires installing the 32-bit compatibility libraries to build the windows executable. On Linux, you need to install **ia32-libs** package.
 {{% notice warning %}}
 Do not place the sources in a path that contains directories with blanks or national characters, the compilation of the win32 executable can fail.
 {{% /notice %}}

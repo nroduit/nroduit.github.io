@@ -17,21 +17,21 @@ This page shows a list of DICOM samples for testing viewer capabilities.
 {{% /notice %}}
 
 {{% notice warning %}}
-The demo server is on free cloud system, so sometime it requires to launch two times the viewer because the server has to wake up (is turned "idle" after a period of inactivity).
+The demo server is on a free cloud system, so sometimes it requires to launch two times the viewer because the server has to wake up (is turned "idle" after a period of inactivity).
 {{% /notice %}}
 
 ### How to launch Weasis
 
-To display the DICOM samples in this page, you need a recent version of Java installed on your system.
+To display the DICOM samples on this page, you need a recent version of Java installed on your system.
 
 Two possible ways of launching Weasis when clicking on Launch button:
 
-1. *Download JNLP* will download a jnlp file on most browsers. The the file needs to be executed (double click on the file) from the download folder.
+1. *Download JNLP* will download a jnlp file on most browsers. The file needs to be executed (double-click on the file) from the download folder.
 2. *JNLP Protocol* will open directly Weasis with the new jnlp protocol (needs a jnlp handler)
 {{% notice note %}}
 Registration of jnlp handler is available in Oracle Java Runtime installer from JRE 8\_111 and in the Java 9 installer:
 
-- On Windows, it works out of box.
+- On Windows, it works out of the box.
 - On Mac OS X, it could be necessary to run once Java Webstart to register the jnlp handler at `/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Resources/javawslauncher.app`
 - On Linux, a <a target="_blank" href="https://docs.oracle.com/javase/9/deploy/overview.htm#JSDPG-GUID-BC1669F9-7238-462D-80AA-3D42BAF99FA7">configuration</a> is required.
 {{% /notice %}}
@@ -88,7 +88,7 @@ Should always render the same image.
 {{% launch-weasis id="st-spacing" params="studyUID=1.3.6.1.4.1.5962.1.2.65535.20090407071000.6523764" %}}
 
 {{% notice info %}}
-Select the view and press 'd' to draw line.
+Select the view and press 'd' to draw a line.
 {{% /notice %}}
 
 ------------------------------------------------------------------------
@@ -102,11 +102,11 @@ Show or hide pixel padding from the "Display" right pane.
 
 ------------------------------------------------------------------------
 
-#### Non square pixels
+#### Non-square pixels
 {{% launch-weasis id="st-square" params="studyUID=2.16.756.5.5.100.397184556.14391.1373576413.1508" %}}
 
 {{% notice info %}}
-Stretch or shrink the image according the "pixel spacing" or "pixel aspect ratio" field.
+Stretch or shrink the image according to the "pixel spacing" or "pixel aspect ratio" field.
 {{% /notice %}}
 
 ------------------------------------------------------------------------
@@ -186,7 +186,7 @@ Open by the embedded Java Audio Player.
 #### DICOM Presentation State (PR, GSPS)
 
 {{% notice info %}}
-Click on the right icon over the image to select the Presentation State. Show or hide graphic layers from the "Display" right panel. See [How to build DICOM PR](../tutorials/build-ko-pr/#presentation-state-pr-or-gsps).
+Click on the right icon over the image to select the Presentation State. Show or hide graphics layers from the "Display" right panel. See [How to build DICOM PR](../tutorials/build-ko-pr/#presentation-state-pr-or-gsps).
 {{% /notice %}}
 
 - Shutter Test {{% launch-weasis id="st-pr-shutter" params="studyUID=1.2.276.0.7230010.3.200.11" %}}
@@ -198,7 +198,7 @@ Click on the right icon over the image to select the Presentation State. Show or
 - Combined LUT PState {{% launch-weasis id="st-pr-clut" params="studyUID=1.2.276.0.7230010.3.200.6" %}}
 - Spatial Transformation {{% launch-weasis id="st-pr-trans" params="studyUID=1.2.276.0.7230010.3.200.7" %}}
 - Overlay {{% launch-weasis id="st-pr-overlay" params="studyUID=1.2.276.0.7230010.3.200.12" %}}
-- Graphic Annotation {{% launch-weasis id="st-pr-graphic" params="studyUID=1.2.276.0.7230010.3.200.9" %}}
+- Graphics Annotation {{% launch-weasis id="st-pr-graphic" params="studyUID=1.2.276.0.7230010.3.200.9" %}}
 - Complex Combination {{% launch-weasis id="st-pr-complex" params="studyUID=1.2.276.0.7230010.3.200.13" %}}
 - GE RA600 Test of CPI GSPS {{% launch-weasis id="st-pr-ge" params="studyUID=1.2.124.113532.3.231.29.12.20020713.160823.3427" %}}
   {{% notice note %}}
