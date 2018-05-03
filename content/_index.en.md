@@ -6,9 +6,9 @@ keywords: [ "dicom viewer", "free dicom viewer", "open source dicom viewer", "we
 
 # <center>Weasis Medical Viewer</center>
 
-Weasis is a multipurpose standalone and web-based DICOM viewer with a highly [modular architecture](basics/architecture). It is a very popular clinical viewer used in healthcare by hospitals, health networks, and patients.
+Weasis is a multipurpose standalone and web-based DICOM viewer with a highly [modular architecture](basics/architecture). It is a very popular clinical viewer used in healthcare by hospitals, health networks, multicenter research trials, and patients.
 
-Weasis DICOM viewer is cross-platform, free/libre and open source software (<a target="_blank" href="https://en.wikipedia.org/wiki/Free_and_open-source_software">FLOSS</a>), <a target="_blank" href="https://www.transifex.com/weasis/weasis/">multi-language</a> and allows [a flexible integration to PACS, RIS, HIS or PHR](basics/customize/integration).
+Weasis DICOM viewer is cross-platform, free/libre and open source software (<a target="_blank" href="https://en.wikipedia.org/wiki/Free_and_open-source_software">FLOSS</a>), <a target="_blank" href="https://www.transifex.com/weasis/weasis/">multi-language</a> and allows [a flexible integration to PACS, RIS, HIS or PHR](basics/customize/integration). This multi-platform DICOM viewer runs on Windows, Linux, and Mac OS X. It allows high-quality renderings with high performance through the <a target="_blank" href="https://github.com/opencv/opencv/wiki/Opencv3">OpenCV</a> library.
 
 {{< load-photoswipe >}}
 
