@@ -65,9 +65,7 @@ Weasis is launched from the dcm4chee administrative web interface, as shown in t
 1. <a target="_blank" href="https://dcm4che.atlassian.net/wiki/spaces/ee2/pages/2555918/Installation">Install dcm4chee</a>, if not already done. For security see also how to limit the <a target="_blank" href="https://github.com/nroduit/openmediavault-dcm4chee/wiki/Configuration-of-dcm4chee#security">server access</a>.
     - dcm4chee-web3 is not compatible with versions of dcm4chee before 2.16.0
     - dcm4chee 2.16.0 to 2.17.0 are compatible with dcm4chee-web3, but the older dcm4chee-web is installed by default.
-    - For dcm4chee 2.17.1+, dcm4chee-web3 is already installed.
-
-        To check if it is the latest version, start dcm4chee-web3 (`http://<your-host>:8080/dcm4chee-web3/`), log in, and mouse over the dcm4chee.org icon in the upper right corner.
+    - For dcm4chee 2.17.1+, dcm4chee-web3 is already installed. To check if it is the latest version, start dcm4chee-web3 (`http://<your-host>:8080/dcm4chee-web3/`), log in, and mouse over the dcm4chee.org icon in the upper right corner.
 
 2. Go <a target="_blank" href="http://sourceforge.net/projects/dcm4che/files/Weasis/">here</a> and download these Weasis files.
 {{% notice warning %}}
