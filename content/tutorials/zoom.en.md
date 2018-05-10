@@ -21,7 +21,7 @@ The zoom factor can be modified from different locations:
 The zoom function always zooms in/out to the center of the screen regardless of where the cursor is.
 {{% /notice %}}
 
-![Zoom tool](/tuto/zoom/zoom.png)
+![Zoom tool](/tuto/zoom/zoom.png?height=500)
 
 {{% notice tip %}}
 For selecting directly the zoom action of the mouse left button, enter "z" as a shortcut.
@@ -50,7 +50,7 @@ This lens can be used in many situations, for instance:
 Using the mouse wheel on the lens changes the zoom factor. Double-clicking on the lens adjusts the zoom factor of the lens to the one of the main image.
 {{% /notice %}}
 
-![Lens](/tuto/zoom/lens.png)
+![Lens](/tuto/zoom/lens.png?height=400)
 
 Parameters of the context menu:
 
@@ -59,4 +59,4 @@ Parameters of the context menu:
 * *Magnify*: Allows to select a zoom magnitude.
 * *Image*: `Freeze parameters` allows to keep the current image processing (c.f. Window/level, LUT or filter) and `Freeze image` allows to keep the current image and its parameters.
 
-![Lens freeze](/tuto/zoom/lens-freeze.png)
+![Lens freeze](/tuto/zoom/lens-freeze.png?height=400)
