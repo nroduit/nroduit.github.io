@@ -54,9 +54,9 @@ Using the mouse wheel on the lens changes the zoom factor. Double-clicking on th
 
 Parameters of the context menu:
 
-* *Synchronize to parent zoom*: When this option is activated, the zoom factor of the lens is permanently adjusted to the zoom factor of the main image (meaningful when using freeze parameters).
-* *Show Drawings*: Displays in the lens the visible drawings.
-* *Magnify*: Allows to select a zoom magnitude.
-* *Image*: `Freeze parameters` allows to keep the current image processing (c.f. Window/level, LUT or filter) and `Freeze image` allows to keep the current image and its parameters.
+* *Synchronize to parent zoom:* When this option is activated, the zoom factor of the lens is permanently adjusted to the zoom factor of the main image (meaningful when using freeze parameters).
+* *Show Drawings:* Displays in the lens the visible drawings.
+* *Magnify:* Allows to select a zoom magnitude.
+* *Image:* `Freeze parameters` allows to keep the current image processing (c.f. Window/level, LUT or filter) and `Freeze image` allows to keep the current image and its parameters.
 
 ![Lens freeze](/tuto/zoom/lens-freeze.png?height=400)
