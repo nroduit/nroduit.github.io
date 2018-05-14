@@ -21,6 +21,8 @@ weight: 70
 | 1.2.840.10008.1.2.4.81 | JPEG-LS Lossy (Near-Lossless) Image Compression | yes |
 | 1.2.840.10008.1.2.4.90 | JPEG 2000 Image Compression (Lossless Only) | yes |
 | 1.2.840.10008.1.2.4.91 | JPEG 2000 Image Compression | yes |
+| 1.2.840.10008.1.2.4.92 | JPEG 2000 Part 2 Multi-component Image Compression (Lossless Only) | yes |
+| 1.2.840.10008.1.2.4.93 | JPEG 2000 Part 2 Multi-component Image Compression | yes |
 
 {{% notice note %}}
 These TSUIDs are available with Weasis 2.5 and later for Windows, Mac OS X and Linux.
@@ -33,6 +35,9 @@ These TSUIDs are available with Weasis 2.5 and later for Windows, Mac OS X and L
 | 1.2.840.10008.1.2.4.101 | MPEG-2 Main Profile High Level | yes |
 | 1.2.840.10008.1.2.4.102 | MPEG-4 AVC/H.264 High Profile / Level 4.1 | yes |
 | 1.2.840.10008.1.2.4.103 | MPEG-4 AVC/H.264 BD-compatible High Profile / Level 4.1 | yes |
+| 1.2.840.10008.1.2.4.104 | MPEG-4 AVC/H.264 High Profile / Level 4.2 For 2D Video | yes |
+| 1.2.840.10008.1.2.4.105 | MPEG-4 AVC/H.264 High Profile / Level 4.2 For 3D Video | yes |
+| 1.2.840.10008.1.2.4.106 | MPEG-4 AVC/H.264 Stereo High Profile / Level 4.2 | yes |
 
 {{% notice note %}}
 These TSUIDs are open by the default system application associated to the MIME type.
