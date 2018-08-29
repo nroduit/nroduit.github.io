@@ -18,6 +18,7 @@ weight: 20
 | **S** | Series scroll <i class="fa fa-star" style="color:green"></i> |
 | **Z** | Zoom <i class="fa fa-star" style="color:green"></i> |
 | **R** | Rotation |
+| **H** | Crosshair: in multiview mode synchronizes the crosshair position to all the views (Note: Ctrl + click or Ctrl + Shift + click allows changing the Window / Level values) |
 | **C** | Cine Start / Stop |
 | **M** | Measure |
 | **D** | Distance measurement <i class="fa fa-star" style="color:green"></i> |
@@ -28,6 +29,9 @@ weight: 20
 | **Ctrl + Spacebar** | Change to the next action |
 | **Ctrl + mouse drag** | Accelerate the current action <i class="fa fa-star" style="color:green"></i> |
 | **Ctrl + Shift + mouse drag** | Accelerate more the current action |
+| **Alt + R** | 90° rotation (clockwise) |
+| **Alt + L** | 90° rotation (counterclockwise) |
+| **Alt + F** | Flip horizontally (after rotation action) |
 | **0 1 2 3**... | DICOM presets |
 | **K** | Toggle key image state |
 | **Spacebar** | Show/Hide all the annotations (three states) |
@@ -73,7 +77,7 @@ weight: 20
 Window / Level: <i class="fa fa-star" style="color:green"></i>
 
 -   Horizontal movement of the mouse to the right will widen the window width (flatten the perceived contrast)
--   Vertical movement of the mouse upwards will lower the window center (increase the perceived brightness)
+-   Vertical movement of the mouse upwards will lower the window center (increase the perceived brightness). See [Preferences](../customize/preferences) to inverse level direction.
 
 Two ways to draw a segment:
 

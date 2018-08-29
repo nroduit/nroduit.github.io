@@ -31,10 +31,18 @@ Weasis is launched from the dcm4chee administrative web interface, as shown in t
 
 4. Configure weasis-pacs-connector 6.x and superior. The default configuration is stored in two files inside weasis-pacs-connector.war . To override the default configuration:
     - Download the current <a target="_blank" href="https://raw.githubusercontent.com/nroduit/weasis-pacs-connector/master/etc/dcm4chee-arc/weasis-pacs-connector.properties" download>weasis-pacs-connector.properties</a> and <a target="_blank" href="https://raw.githubusercontent.com/nroduit/weasis-pacs-connector/master/etc/dcm4chee-arc/dicom-dcm4chee-arc.properties" download>dicom-dcm4chee-arc.properties</a> (configuration of the dcm4chee archive)
-    - Copy the `weasis-pacs-connector.properties` or `dicom-dcm4chee-arc.properties`  into wildfly/standalone/configuration
     - Edit the configuration as needed. For example, dcm4chee may be running on a different computer than Weasis, or the AE Title of dcm4chee may have been changed. If so, edit `weasis-pacs-connector.properties` or `dicom-dcm4chee-arc.properties` (Change pacs.host, pacs.port, and pacs.aet).
-    - Optional: add new properties or arguments in the JNLP file, see the <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#configuration-of-weasis-pacs-connector">configuration of weasis-pacs-connector</a>
+    - Copy the `weasis-pacs-connector.properties` or `dicom-dcm4chee-arc.properties`  into wildfly/standalone/configuration
+{{% notice tip %}}
+Instead of copying the files into wildfly/standalone/configuration, JBoss Command Line Interface Console can be used to override files in the war. Add the two configuration files with the deployment-overlay command:<br>
+{{% /notice %}}
+
+        ``` text
+        deployment-overlay add --name=dcm4chee-arc --deployments=weasis-pacs-connector.war --content=WEB-INF/classes/weasis-connector-default.properties=/tmp/weasis-pacs-connector.properties,WEB-INF/classes/dicom-dcm4chee-arc.properties=/tmp/dicom-dcm4chee-arc.properties --redeploy-affected
+        ```
+
     - For applying the new configuration, from the management console "Disable" weasis-pacs-connector.war and then "Enable"
+    - Optional: add new properties or arguments in the JNLP file, see the <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#configuration-of-weasis-pacs-connector">configuration of weasis-pacs-connector</a>
 
 5. To activate Weasis in dcm4chee-arc-light user interface (required 5.10.2 or superior), you need need to changes two attributes in the configuration
     - Go to the <a target="_blank" href="http://localhost:8080/dcm4chee-arc/ui2/#/device/edit/dcm4chee-arc/dcmArchiveDevice/properties.dcmArchiveDevice">configuration</a>
