@@ -29,6 +29,8 @@ The executable (viewer-win32.exe) allows to embed a JRE in the relative director
 
 The viewer loads automatically images from DICOMDIR or from directories configured in "weasis/conf/config.properties (by default `weasis.portable.dicom.directory=dicom,DICOM,IMAGES,images`).
 
+For burning studies with Weasis, and additionnal plugin must be activated. In the web distribution, add weasis-ext.war. In the portable distribution, 1) uncompress weasis-ext.war, 2) copy weasis-isowriter-x.x.x.jar into weasis-portable/weasis/, 3) replace the file conf/ext-config.properties, 4) edit ext-config.properties and modify ${weasis.codebase.ext.url} by ${weasis.codebase.url}
+
 For burning Weasis with dcm4chee-cdw, look at [Write weasis-portable to DICOM CDs with dcm4chee-cdw](../getting-started/dcm4chee/#write-weasis-portable-to-dicom-cds-with-dcm4chee-cdw).
 {{% /expand%}}
 
@@ -44,7 +46,7 @@ Logs are available either in the Java console or in Weasis log files.
         1. Under the Java console section, select the Show console radio button.
 
 2. By writing to log files:
-    - From Weasis 1.1.2, logging can be activated from *File > Preferences > General*
+    - Logging can be activated from *File > Preferences > General*
     - The default logging configuration comes from config.properties or ext-config.properties, see [Weasis Preferences](../basics/customize/preferences).
 {{% /expand%}}
 
