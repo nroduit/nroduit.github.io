@@ -4,22 +4,22 @@
 {{ $jnlpScheme := "getJnlpScheme/" }}
 {{ $viewer := "viewer?" }}
 {{ $version207 := "&cdb=http%3A%2F%2Fweasis-launcher-weasis.193b.starter-ca-central-1.openshiftapps.com%2Fweasis207&src=weasis1.jnlp&mfv=1" }}
-{{ $version300 := "&cdb=http%3A%2F%2Fweasis-launcher-weasis.193b.starter-ca-central-1.openshiftapps.com%2Fweasis300" }}
+{{ $version263 := "&cdb=http%3A%2F%2Fweasis-launcher-weasis.193b.starter-ca-central-1.openshiftapps.com%2Fweasis263" }}
 {{ $versionTouch := "&cdb=http%3A%2F%2Fweasis-launcher-weasis.193b.starter-ca-central-1.openshiftapps.com%2Fweasis-touch" }}
 
 
 <div id="{{ $did }}" class="jq-dropdown jq-dropdown-tip">
     <ul class="jq-dropdown-menu">
         <li><label>JNLP Protocol</label></li>
-        <li><a href="{{ $baseURL }}{{ $jnlpScheme }}{{ $viewer }}{{ $params }}{{ $version300 }}">Weasis 3.0.1</a></li>
+        <li><a href="{{ $baseURL }}{{ $jnlpScheme }}{{ $viewer }}{{ $params }}">Weasis 3.0.2</a></li>
         <li><a href="{{ $baseURL }}{{ $jnlpScheme }}{{ $viewer }}{{ $params }}{{ $versionTouch }}">Weasis Touch 3.0.0-RC1 (JavaFX)</a></li>
-        <li><a href="{{ $baseURL }}{{ $jnlpScheme }}{{ $viewer }}{{ $params }}">Weasis 2.6.3</a></li>
+        <li><a href="{{ $baseURL }}{{ $jnlpScheme }}{{ $viewer }}{{ $params }}{{ $version263 }}">Weasis 2.6.3</a></li>
         <li><a href="{{ $baseURL }}{{ $jnlpScheme }}{{ $viewer }}{{ $params }}{{ $version207 }}">Weasis 2.0.7</a></li>
         <li class="jq-dropdown-divider"></li>
         <li><label>Download JNLP</label></li>
-        <li><a href="{{ $baseURL }}{{ $viewer }}{{ $params }}{{ $version300 }}">Weasis 3.0.1</a></li>
+        <li><a href="{{ $baseURL }}{{ $viewer }}{{ $params }}">Weasis 3.0.2</a></li>
         <li><a href="{{ $baseURL }}{{ $viewer }}{{ $params }}{{ $versionTouch }}">Weasis Touch 3.0.0-RC1 (JavaFX)</a></li>
-        <li><a href="{{ $baseURL }}{{ $viewer }}{{ $params }}">Weasis 2.6.3</a></li>
+        <li><a href="{{ $baseURL }}{{ $viewer }}{{ $params }}{{ $version263 }}">Weasis 2.6.3</a></li>
         <li><a href="{{ $baseURL }}{{ $viewer }}{{ $params }}{{ $version207 }}">Weasis 2.0.7</a></li>
     </ul>
 </div>
