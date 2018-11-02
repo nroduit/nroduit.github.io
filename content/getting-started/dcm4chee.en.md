@@ -23,7 +23,7 @@ Weasis is launched from the dcm4chee administrative web interface, as shown in t
         - weasis.war
         - weasis-i18n.war (Optional for internationalization)
     - From weasis-pacs-connector folder:
-        - weasis-pacs-connector.war
+        - the latest version of weasis-pacs-connector.war
 
 3. Open the <a target="_blank" href="http://localhost:9990/">wildfly management console</a> (at `http://<your-host>:9990`).
     - Select the “Deployments” tab
@@ -32,7 +32,7 @@ Weasis is launched from the dcm4chee administrative web interface, as shown in t
 4. Configure weasis-pacs-connector 6.x and superior. The default configuration is stored in two files inside weasis-pacs-connector.war . To override the default configuration:
     - Download the current <a target="_blank" href="https://raw.githubusercontent.com/nroduit/weasis-pacs-connector/master/etc/dcm4chee-arc/weasis-pacs-connector.properties" download>weasis-pacs-connector.properties</a> and <a target="_blank" href="https://raw.githubusercontent.com/nroduit/weasis-pacs-connector/master/etc/dcm4chee-arc/dicom-dcm4chee-arc.properties" download>dicom-dcm4chee-arc.properties</a> (configuration of the dcm4chee archive)
     - Edit the configuration as needed. For example, dcm4chee may be running on a different computer than Weasis, or the AE Title of dcm4chee may have been changed. If so, edit `weasis-pacs-connector.properties` or `dicom-dcm4chee-arc.properties` (Change pacs.host, pacs.port, and pacs.aet).
-    - Copy the `weasis-pacs-connector.properties` or `dicom-dcm4chee-arc.properties`  into wildfly/standalone/configuration
+    - Copy `weasis-pacs-connector.properties` and `dicom-dcm4chee-arc.properties` into wildfly/standalone/configuration. With the docker installation use the docker copy command: docker cp ...
 {{% notice tip %}}
 Instead of copying the files into wildfly/standalone/configuration, JBoss Command Line Interface Console can be used to override files in the war. Add the two configuration files with the deployment-overlay command:<br>
 {{% /notice %}}
@@ -84,7 +84,7 @@ Instead of copying the files into wildfly/standalone/configuration, JBoss Comman
         - weasis-i18n.war (Optional for internationalization)
     - From weasis-pacs-connector folder:
         - dcm4chee-web-weasis.jar
-        - weasis-pacs-connector.war
+        - weasis-pacs-connector.war (requires the version 6.1.x, the version 7.x is not supported)
 
 3. Place these files in the dcm4chee deploy folder (server/default/deploy/).
 
@@ -121,7 +121,7 @@ Replace "\<your-host\>" with your server hostname
     - According to the version of  weasis-pacs-connector:
         - weasis-pacs-connector 4.x and 5.x: Download <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector/raw/58221aeed3d2abc1929c0753ebeaa53c67fcc46a/src/main/resources/weasis-connector-default.properties" download>weasis-connector-default.properties</a> and rename it `weasis-pacs-connector.properties`
 
-        - weasis-pacs-connector 6.x and superior: Download the current <a target="_blank" href="https://raw.githubusercontent.com/nroduit/weasis-pacs-connector/master/src/main/resources/weasis-connector-default.properties" download>weasis-connector-default.properties</a> and rename it `weasis-pacs-connector.properties`, and download <a target="_blank" href="https://raw.githubusercontent.com/nroduit/weasis-pacs-connector/master/src/main/resources/dicom-dcm4chee.properties" download>dicom-dcm4chee.properties</a> (configuration of the dcm4chee archive)
+        - weasis-pacs-connector 6.x: Download the current <a target="_blank" href="https://raw.githubusercontent.com/nroduit/weasis-pacs-connector/master/src/main/resources/weasis-connector-default.properties" download>weasis-connector-default.properties</a> and rename it `weasis-pacs-connector.properties`, and download <a target="_blank" href="https://raw.githubusercontent.com/nroduit/weasis-pacs-connector/master/src/main/resources/dicom-dcm4chee.properties" download>dicom-dcm4chee.properties</a> (configuration of the dcm4chee archive)
 
     - Copy the files into a folder in the classpath of the servlet container. In JBoss (inferior to version 7), the best location would typically be server/default/conf.
     - Edit the configuration as needed.
