@@ -6,21 +6,9 @@ keywords: [ "contribute", "weasis contribution", "dicom viewer", "free dicom vie
 
 ### Report Bugs and Enhancements
 
-First, <a target="_blank" href="http://www.dcm4che.org/jira/browse/WEA">search the JIRA system</a>, the <a target="_blank" href="http://groups.google.com/group/dcm4che">forum</a> and/or this website (like [FAQs](../faq) or [Getting Started](../getting-started)) to see if your problem has not been reported yet.
+First, look at the <a target="_blank" href="https://github.com/nroduit/Weasis/issues">GitHub issues system</a>, the <a target="_blank" href="http://groups.google.com/group/dcm4che">forum</a> and/or this website (like [FAQs](../faq) or [Getting Started](../getting-started)) to see if your problem has not been reported yet.
 
-Only then, fill a bug on <a target="_blank" href="http://www.dcm4che.org/jira/browse/WEA">JIRA</a> with the most details:
-
-1. For categorizing the issue, select the appropriate type:
-    - Bug: a bug, anything that does not work as expected
-    - Improvement: an enhancement over an existing feature
-    - New Feature: a new feature
-    - Task: everything else, something that needs to be done
-2. Use the short summary field to describe the main goal of your issue.
-3. Select the appropriate field:
-    - Priority, for asserting the importance of an issue
-    - Affects version of Weasis
-4. Describe the application basic context (OS, JRE version, ...) and attach error [log file](../faq/#how-to-enable-weasis-logging).
-5. Provide code examples, use cases and/or steps to reproduce the problem.
+Only then, fill a bug on <a target="_blank" href="https://github.com/nroduit/Weasis/issues">GitHub</a> with the most details from a template.
 
 ### Become a Committer
 
