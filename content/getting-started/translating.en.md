@@ -50,14 +50,14 @@ $ git clone https://github.com/nroduit/weasis-i18n.git
 Go in the *weasis-i18n* directory, Compile and install all the plug-ins in the local Maven repository
 
 {{< highlight bash >}}
-$ mvn clean install -Dtransifex.credential=<"username:password">
+$ mvn clean install -Dtransifex.credential="username:password"
 {{< /highlight >}}
 
 All of the API calls on Transifex require the user to be authenticated. So the value "username:password" must be replaced by your credential, see how to <a target="_blank" href="https://www.transifex.com/signin">create an account</a> on Transifex.
 
 Command if you are behind a proxy server:
 {{< highlight bash >}}
-$ mvn clean install -DproxySet=true -DproxyHost=&lt;host&gt; -DproxyPort=&lt;port&gt; -Dtransifex.credential=&lt;"username:password"&gt;
+$ mvn clean install -DproxySet=true -DproxyHost="host" -DproxyPort="port"; -Dtransifex.credential="username:password"
 {{< /highlight >}}
 
 {{% notice info %}}
