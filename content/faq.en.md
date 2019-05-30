@@ -14,11 +14,11 @@ EPL is more business-friendly about some patent retaliation and reverse engineer
 
 For more information about EPL, check out the <a target="_blank" href="http://www.eclipse.org/legal/epl-2.0/faq.php">EPL 2 FAQ</a>.
 {{% /expand%}}
-
+<br>
 {{%expand "How to start Weasis automatically from a web page without downloading jnlp?" %}}
 From the Oracle Java Runtime 8 update 111, it is possible to launch a Java Webstart application from the jnlp protocol. See <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#new-way-to-launch-jnlp">the new way of launching Java Westart</a> with weasis-pacs-connector.
 {{% /expand%}}
-
+<br>
 {{%expand "Can Weasis be incorporated in DICOM CDs or other removable media?" %}}
 Yes, the Weasis portable version can be copied in DICOM CD-ROMs as a multi-platform stand-alone viewer with launchers for Mac OS X, Linux and Windows. The viewer requires that a Java Runtime Environment (JRE 8 or greater) be installed on the machine to run. If Java is not installed on Windows, a dialog will propose to install it from the Internet.
 
@@ -33,7 +33,7 @@ For burning studies with Weasis, and additionnal plugin must be activated. In th
 
 For burning Weasis with dcm4chee-cdw, look at [Write weasis-portable to DICOM CDs with dcm4chee-cdw](../getting-started/dcm4chee/#write-weasis-portable-to-dicom-cds-with-dcm4chee-cdw).
 {{% /expand%}}
-
+<br>
 {{%expand "How to enable Weasis logging?" %}}
 Logs are available either in the Java console or in Weasis log files.
 
@@ -48,9 +48,9 @@ Logs are available either in the Java console or in Weasis log files.
 2. By writing to log files:
     - Logging can be activated from *File > Preferences > General*
     - The default logging configuration comes from config.properties or ext-config.properties, see [Weasis Preferences](../basics/customize/preferences).
+
 {{% /expand%}}
-
-
+<br>
 {{% expand "Is it possible to download DICOM files without having a WADO server?" %}}
 Yes, but a WADO server is recommended. Downloading DICOMs can be achieved by:
 
@@ -59,3 +59,4 @@ Yes, but a WADO server is recommended. Downloading DICOMs can be achieved by:
     `$dicom:get -r http://external.server/images/MRIX_LUMBAR/img1.dcm  http://external.server/images/img2.dcm`<br>
     Note: This option must be used only for a very limited number of files
 {{% /expand %}}
+<br>

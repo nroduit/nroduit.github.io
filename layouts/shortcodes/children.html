@@ -7,10 +7,17 @@
 
 <ul class="children children-{{$style}}">
 	{{ .Scratch.Set "pages" .Page.Pages }}
-    {{ if .Page.Sections}}
-	    {{ .Scratch.Set "pages" (.Page.Pages | union .Page.Sections) }}
-    {{end}}
-    {{ $pages := (.Scratch.Get "pages") }}
+	{{if .Page.IsHome}}
+		<!-- Add pages that are in root dir -->
+		{{ $rootPage := where .Page.Pages "Dir" "" }}
+		{{ .Scratch.Set "pages" (.Page.Sections | union $rootPage)}}
+	{{else}}
+		{{ if .Page.Sections}}
+			{{ .Scratch.Set "pages" (.Page.Pages | union .Page.Sections) }}
+		{{end}}
+	{{end}}
+
+	{{ $pages := (.Scratch.Get "pages") }}
 
 	{{if eq $sortTerm "Weight"}}
 		{{template "childs" dict "menu" $pages.ByWeight "style" $style "showhidden" $showhidden "count" 1 "depth" $depth "pages" .Site.Pages "description" $withDescription "sortTerm" $sortTerm}}
@@ -33,21 +40,20 @@
 	{{ range .menu }}
 		{{ if and .Params.hidden (not $.showhidden) }}
 		{{else}}
-
-
-{{if hasPrefix $.style "h"}}
-	{{$num := sub ( int (trim $.style "h") ) 1 }}
-	{{$numn := add $num $.count }}
+			{{if not .IsHome}}
+				{{if hasPrefix $.style "h"}}
+					{{$num := sub ( int (trim $.style "h") ) 1 }}
+					{{$numn := add $num $.count }}
 
 {{(printf "<h%d>" $numn)|safeHTML}}
 <a href="{{.URL}}" >{{ .Title }}</a>
 {{(printf "</h%d>" $numn)|safeHTML}}
 
-{{else}}
+		{{else}}
 {{(printf "<%s>" $.style)|safeHTML}}
 <a href="{{.URL}}" >{{ .Title }}</a>
 {{(printf "</%s>" $.style)|safeHTML}}
-{{end}}
+			{{end}}
 
 
 
@@ -58,6 +64,7 @@
 <p>{{.Description}}</p>
 				{{else}}
 <p>{{.Summary}}</p>
+	{{end}}
 				{{end}}
 			{{end}}
 
@@ -67,11 +74,13 @@
 {{if eq $.style "li"}}
 <ul>
 {{end}}
+{{ if .Sections}}
+	{{ .Scratch.Set "pages" (.Pages | union .Sections) }}
+{{else}}
 	{{ .Scratch.Set "pages" .Pages }}
-    {{ if .Sections}}
-	    {{ .Scratch.Set "pages" (.Pages | union .Sections) }}
-    {{end}}
-    {{ $pages := (.Scratch.Get "pages") }}
+{{end}}
+
+{{ $pages := (.Scratch.Get "pages") }}
 
 	{{if eq $.sortTerm "Weight"}}
 		{{template "childs" dict "menu" $pages.ByWeight  "style" $.style "showhidden" $.showhidden "count" (add $.count 1) "depth" $.depth "pages" $.pages "description" $.description "sortTerm" $.sortTerm}}
