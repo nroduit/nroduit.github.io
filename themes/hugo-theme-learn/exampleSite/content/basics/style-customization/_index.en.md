@@ -33,7 +33,7 @@ The size of the logo will adapt automatically
 
 ## Change the favicon
 
-If your favicon is a png, just drop off your image in your local `static/images/` folder and names it `favicon.png`
+If your favicon is a png, just drop off your image in your local `static/images/` folder and name it `favicon.png`
 
 If you need to change this default behavior, create a new file in `layouts/partials/` named `favicon.html`. Then write something like this:
 
@@ -146,7 +146,7 @@ a:hover {
     -moz-transition: width 0.5s ease;
     -ms-transition: width 0.5s ease;
     transition: width 0.5s ease;
-    background-color: var(--MAIN-HOVER-color);
+    background-color: var(--MAIN-LINK-HOVER-color);
 }
 #sidebar {
 	background-color: var(--MENU-SECTIONS-BG-color);
