@@ -7,7 +7,8 @@ theme = "hugo-theme-learn"
 metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= true
 pygmentsCodeFences = true
-pygmentsUseClasses = true
+#pygmentsUseClasses = true
+PygmentsCodeFencesGuessSyntax = false
 paginate = 6
 
 # For search functionnality

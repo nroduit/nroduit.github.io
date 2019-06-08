@@ -20,9 +20,9 @@ weight: 70
 
 To check out the code, first install Subversion and either checkout the trunk branch using a graphical Subversion client (such as TortoiseSVN) or directly from the command line using the command:
 
-``` bash
+{{< highlight bash >}}
 $ svn co https://svn.code.sf.net/p/dcm4che/svn/weasis/weasis_dcm4chee/trunk/2.17.0 weasis-dcm4chee-2.17.0
-```
+{{< /highlight >}}
 
 This command will copy the current development code (the "trunk") into a local directory named weasis-dcm4chee-2.17.0.
 
@@ -30,10 +30,9 @@ This command will copy the current development code (the "trunk") into a local d
 
 1. Go in the weasis-dcm4chee directory
 2. Compile and make the dcm4chee-web.war (in weasis-dcm4chee/dist folder)
-    ``` bash
-    $ ant dist
-    ```
-
+{{< highlight bash >}}
+$ ant dist
+{{< /highlight >}}
 3. Modify the permission in /dcm4jboss-web/src/etc/conf/dcm4chee-web/folder.permissions or in server/default/conf/dcm4chee-web if dcm4chee is already installed:
 
     > folder.\*=edit,move,delete,<span style="color:red">view</span>,\*export,edit.newStudyUID,mergepat,study\_permission,study\_permission.free\_role\_action,query\_has\_issuer folder.\*export=export\_tf,export\_xds
@@ -74,27 +73,23 @@ This command will copy the current development code (the "trunk") into a local d
 4. Modify dcm4chee-web/folder-tpl.xsl
 
     - Add after <xsl:param name="folder.delete" select="'false'" />
-
-        ``` xml
-        <xsl:param name="folder.view" select="'false'" />
-        ```
-
+{{< highlight xml >}}
+<xsl:param name="folder.view" select="'false'" />
+{{< /highlight >}}
     - Add after `<xsl:if test="$folder.delete='true'"> … </xsl:if>`
-
-        ``` xml
-        <xsl:if test="$folder.view='true'">
-           <td width="40">
-               <input type="image" value="View" name="view" src="images/view.gif"
-                   alt="view" border="0" title="&ViewSelectedEntities;"
-                   onclick="return confirm('&ViewSelectedEntities;?')">
-                   <xsl:if test="total <= 0">
-                       <xsl:attribute name="disabled">disabled </xsl:attribute>
-                   </xsl:if>
-               </input>
-           </td>
-        </xsl:if>
-        ```
-
+{{< highlight xml >}}
+<xsl:if test="$folder.view='true'">
+   <td width="40">
+       <input type="image" value="View" name="view" src="images/view.gif"
+           alt="view" border="0" title="&ViewSelectedEntities;"
+           onclick="return confirm('&ViewSelectedEntities;?')">
+           <xsl:if test="total <= 0">
+               <xsl:attribute name="disabled">disabled </xsl:attribute>
+           </xsl:if>
+       </input>
+   </td>
+</xsl:if>
+{{< /highlight >}}
 5. Rebuild WAR with "ant dist" and get dcm4chee-web.war in dist folder
 
 6. Modify the permission in /dcm4jboss-web/src/etc/conf/dcm4chee-web/folder.permissions or in server/default/conf/dcm4chee-web if dcm4chee is already installed:
