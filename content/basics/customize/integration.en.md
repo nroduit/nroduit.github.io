@@ -35,8 +35,7 @@ This method has two requirements:
 
 ###  Build a JNLP
 Build a <a target="_blank" href="https://docs.oracle.com/javase/8/docs/technotes/guides/javaws/developersguide/contents.html">Java Webstart</a> file (.jnlp) for launching Weasis. This file has at least one dynamic parameter (`<argument>$dicom:get ... </argument>`) to download images. Generally, it is the [XML file](#build-an-xml-manifest) containing the UIDs.
-
-``` xml
+{{< highlight xml >}}
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE jnlp PUBLIC "-//Sun Microsystems, Inc//DTD JNLP Descriptor 6.0//EN" "http://java.sun.com/dtd/JNLP-6.0.dtd">
   <jnlp spec="1.6+" codebase="http://localhost:8080/weasis" href="">
@@ -103,8 +102,7 @@ Build a <a target="_blank" href="https://docs.oracle.com/javase/8/docs/technotes
     <argument>$dicom:get -r "http://server/images/img1.dcm http://server/images/img2.dcm"</argument>
   </application-desc>
   </jnlp>
-```
-
+{{< /highlight >}}
 {{% notice note %}}
 Replace `http://localhost:8080/weasis` with your server location and `<argument>...</argument>` with your data to load. Adapt other parameters if necessary.
 {{% /notice %}}
@@ -115,8 +113,7 @@ Replace `http://localhost:8080/weasis` with your server location and `<argument>
 
 ###  Build an XML manifest
 Build an XML file containing the UIDs of the images which will be retrieved from Weasis. There is <a target="_blank" href="https://github.com/nroduit/Weasis/blob/master/weasis-dicom/weasis-dicom-explorer/src/main/resources/config/manifest.xsd">XLS</a> to validate the content of xml. This file can be either compressed in gzip or uncompressed. Here is an example (required Weasis 2.5 and superior):
-
-``` xml
+{{< highlight xml >}}
 <?xml version="1.0" encoding="UTF-8" ?>
 <manifest xmlns="http://www.weasis.org/xsd/2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <arcQuery additionnalParameters="" arcId="1001" baseUrl="http://archive-weasis.rhcloud.com/archive/wado" requireOnlySOPInstanceUID="false">
@@ -141,8 +138,7 @@ Build an XML file containing the UIDs of the images which will be retrieved from
         </Patient>
     </arcQuery>
 </manifest>
-```
-
+{{< /highlight >}}
 {{% notice note %}}
 Important Parameters (except mandatory parameters):
 
@@ -157,8 +153,7 @@ From Weasis 2.5 it is possible to have multiple archives (allows to have several
 
 ###  Build an XML manifest (no WADO server)
 This example requires only a WEB server and Weasis 2.5 and superior. Weasis will download files by URLs.
-
-``` xml
+{{< highlight xml >}}
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest xmlns="http://www.weasis.org/xsd/2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <arcQuery additionnalParameters="" arcId="1001" baseUrl="http://archive-weasis.rhcloud.com/archive/wado" requireOnlySOPInstanceUID="false">
@@ -173,8 +168,7 @@ This example requires only a WEB server and Weasis 2.5 and superior. Weasis wil
     </Patient>
   </arcQuery>
 </manifest>
-```
-
+{{< /highlight >}}
 {{% notice note %}}
 Important Parameters:
 

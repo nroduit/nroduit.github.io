@@ -126,27 +126,28 @@ For debugging Weasis, you need to create a Debug configuration:
     - Main Class: org.weasis.launcher.WeasisLauncher
 - In the *Arguments* tab
     - Program arguments, examples for loading DICOM locally:
-
-            $dicom:get -l "D:\\images\\dicom"
+{{< highlight text >}}
+$dicom:get -l "D:\\images\\dicom"
+{{< /highlight >}}
 {{% notice note %}}
 For more commands at startup see [Weasis commands](../../basics/commands).
 {{% /notice %}}
 {{% notice warning %}}
 In Eclipse launcher parameters, '&' within URLs needs to be escaped with a backslash.
 {{% /notice %}}
-
     - VM arguments, minimal configuration:
-
-            -Xms64m -Xmx768m -Dgosh.args="-sc telnetd -p 17179 start"
-
+{{< highlight text >}}
+-Xms64m -Xmx768m -Dgosh.args="-sc telnetd -p 17179 start"
+{{< /highlight >}}
     - Other VM arguments, exemples with specific configuration files:
         - For Launching Weasis Dicomizer:
-
-                -Dfelix.extended.config.properties=file:target/conf/ext-dicomizer.properties
-
+{{< highlight text >}}
+-Dfelix.extended.config.properties=file:target/conf/ext-dicomizer.properties
+{{< /highlight >}}
         - Configuration from an URL:
-
-                -Dfelix.extended.config.properties=file:http://mysite.com/weasis/conf/ext-config.properties
+{{< highlight text >}}
+-Dfelix.extended.config.properties=file:http://mysite.com/weasis/conf/ext-config.properties
+{{< /highlight >}}
 {{% notice note %}}
 Meaning of the properties (see also [Preferences](../../basics/customize/preferences)):<br>
 **felix.config.properties** defines the location of config.properties (the OSGI configuration and the list of plug-ins to install/start)<br>

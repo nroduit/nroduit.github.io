@@ -90,10 +90,10 @@ Instead of copying the files into wildfly/standalone/configuration, JBoss Comman
 
 4. To activate Weasis, go to the JMX console (at `http://<your-host>:8080/jmx-console`)
     -   In *dcm4chee.web* select *service=WebConfig* and set these two values:
-
-            WebviewerNames = weasis
-            WebviewerBaseUrl = NONE
-
+{{< highlight ini >}}
+WebviewerNames = weasis
+WebviewerBaseUrl = NONE
+{{< /highlight >}}
         From weasis-pacs-connector 5.0 WebviewerBaseUrl can have different values:
 
         - Launch Weasis as an external application (default value when NONE): WebviewerBaseUrl = `weasis:/weasis-pacs-connector/viewer`

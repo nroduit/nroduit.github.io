@@ -35,17 +35,13 @@ Here is the priority order to set a property:
 Example to change language property (It will work only during the first launch of Weasis on a user session, otherwise delete ${user.home}/.weasis/preferences/).
 
 1.  If you are using weasis-pacs-connector, add in weasis-jnlp.xml the property with the prefix "jnlp.weasis." (properties starting by "jnlp." are required when jnlp is not signed):
-
-    ``` xml
-    <property name="jnlp.weasis.locale.lang.code" value="fr_CH" />
-    ```
-
+{{< highlight xml >}}
+<property name="jnlp.weasis.locale.lang.code" value="fr_CH" />
+{{< /highlight >}}
 2.  Add the property in weasis/conf/ext-config.properties:
-
-    ``` bash
-    locale.lang.code=fr_CH
-    ```
-
+{{< highlight ini >}}
+locale.lang.code=fr_CH
+{{< /highlight >}}
 3.  The default value is "en\_US"
 
 ## List of preferences
@@ -122,12 +118,12 @@ Preferences of the portable distribution (weasis-portable.zip)
 
 Changing the default Look and feel
 
-```bash
+{{< highlight ini >}}
 # Define the Look an Feel for the first launch according to the platform (macosx, linux, windows)
 weasis.look=org.pushingpixels.substance.api.skin.SubstanceSaharaLookAndFeel
 weasis.look.macosx=com.apple.laf.AquaLookAndFeel
 weasis.look.linux=org.pushingpixels.substance.api.skin.SubstanceGraphiteAquaLookAndFeel
-```
+{{< /highlight >}}
 
 ### Customize resources
 

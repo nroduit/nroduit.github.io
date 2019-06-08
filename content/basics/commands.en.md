@@ -13,7 +13,7 @@ This page matches to Weasis 2.5.1 or higher. The syntax of usage comes from <a t
 
 To obtain the list of commands, after starting Weasis, open a local telnet session of the OSGI Console and type `lb` for getting the list of bundles and their state or type `help` for getting all the available commands:
 
-``` text
+{{< highlight text >}}
 telnet localhost 17179
 
 Trying 127.0.0.1...
@@ -27,7 +27,7 @@ ____________________________
 Welcome to Apache Felix Gogo
 
 g! 
-```
+{{< /highlight >}}
 
 {{% notice tip %}}
 **Modifying the default port number**: This value can be changed in the <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#configuration-of-weasis-pacs-connector">configuration of the launcher</a> (by overriding the property or with a new jnlp template)
@@ -37,38 +37,38 @@ g! 
 
 #### dcmview2d:layout
 
-``` text
+{{< highlight text >}}
 g! dcmview2d:layout
 Select a split-screen layout
 Usage: dcmview2d:layout ( -n NUMBER | -i ID )
   -n --number=NUMBER  select the best matching number of views
   -i --id=ID          select the layout from its identifier
   -? --help           show help
-```
+{{< /highlight >}}
 
 #### dcmview2d:mouseLeftAction
 
-``` text
+{{< highlight text >}}
 g! dcmview2d:mouseLeftAction
 Change the mouse left action
 Usage: dcmview2d:mouseLeftAction COMMAND
 COMMAND is (sequence|winLevel|zoom|pan|rotation|crosshair|measure|draw|contextMenu|none)
   -? --help       show help
-```
+{{< /highlight >}}
 
 #### dcmview2d:move
 
-``` text
+{{< highlight text >}}
 g! dcmview2d:move
 Pan the selected image
 Usage: dcmview2d:move -- X Y
 X and Y are Integer. It is mandatory to have '--' (end of options) for negative values
   -? --help       show help
-```
+{{< /highlight >}}
 
 #### dcmview2d:reset
 
-``` text
+{{< highlight text >}}
 g! dcmview2d:reset
 
 Reset image display
@@ -76,11 +76,11 @@ Usage: dcmview2d:reset (-a | COMMAND...)
 COMMAND is (winLevel|zoom|pan|rotation)
   -a --all        reset to original display
   -? --help       show help
-```
+{{< /highlight >}}
 
 #### dcmview2d:scroll
 
-``` text
+{{< highlight text >}}
 g! dcmview2d:scroll
 Scroll into the images of the selected series
 Usage: dcmview2d:scroll ( -s NUMBER | -i NUMBER | -d NUMBER)
@@ -88,31 +88,31 @@ Usage: dcmview2d:scroll ( -s NUMBER | -i NUMBER | -d NUMBER)
   -i --increase=NUMBER  increase of some amount
   -d --decrease=NUMBER  decrease of some amount
   -? --help             show help
-```
+{{< /highlight >}}
 
 #### dcmview2d:synch
 
-``` text
+{{< highlight text >}}
 g! dcmview2d:synch
 Set a synchronization mode
 Usage: dcmview2d:synch VALUE
 VALUE is (None|Stack|Tile)
   -? --help       show help
-```
+{{< /highlight >}}
 
 #### dcmview2d:wl
 
-``` text
+{{< highlight text >}}
 g! dcmview2d:wl
 Change the window/level values of the selected image (increase or decrease into a normalized range of 4096)
 Usage: dcmview2d:wl -- WIN LEVEL
 WIN and LEVEL are Integer. It is mandatory to have '--' (end of options) for negative values
   -? --help       show help
-```
+{{< /highlight >}}
 
 #### dcmview2d:zoom
 
-``` text
+{{< highlight text >}}
 g! dcmview2d:zoom
 Change the zoom value of the selected image
 Usage: dcmview2d:zoom (set VALUE | increase NUMBER | decrease NUMBER)
@@ -120,11 +120,11 @@ Usage: dcmview2d:zoom (set VALUE | increase NUMBER | decrease NUMBER)
   -i --increase=NUMBER  increase of some amount
   -d --decrease=NUMBER  decrease of some amount
   -? --help             show help
-```
+{{< /highlight >}}
 
 #### dicom:get
 
-``` text
+{{< highlight text >}}
 g! dicom:get
 Load DICOM files remotely or locally
 Usage: dicom:get ([-l PATH]... [-r URI]... [-p] [-i DATA]... [-w URI]...)
@@ -135,11 +135,11 @@ PATH is either a directory(recursive) or a file
   -i --iwado=DATA   open DICOMs from an XML manifest (GZIP-Base64)
   -w --wado=URI     open DICOMs from an XML manifest
   -? --help         show help
-```
+{{< /highlight >}}
 
 #### dicom:close
 
-``` text
+{{< highlight text >}}
 g! dicom:close
 Close DICOM files
 Usage: dicom:close  (-a | ([-y UID]... [-s UID]...))
@@ -147,22 +147,22 @@ Usage: dicom:close  (-a | ([-y UID]... [-s UID]...))
   -y --study=UID     close a study, UID is Study Instance UID
   -s --series=UID    close a series, UID is Series Instance UID
   -? --help          show help
-```
+{{< /highlight >}}
 
 #### image:get
 
-``` text
+{{< highlight text >}}
 g! image:get
 Load images remotely or locally
 Usage: image:get ([-f file]... [-u url]...)
   -f --file=FILE     open an image from a file
   -u --url=URL       open an image from an URL
   -? --help          show help
-```
+{{< /highlight >}}
 
 #### image close
 
-``` text
+{{< highlight text >}}
 g! image:close
 Close images
 Usage: dicom:close (-a | ([-g UID]... [-s UID]...))
@@ -170,33 +170,33 @@ Usage: dicom:close (-a | ([-g UID]... [-s UID]...))
   -g --group=UID   close a group from its UID
   -s --series=UID   close an series/image from its UID
   -? --help        show help
-```
+{{< /highlight >}}
 
 #### weasis:info
 
-``` text
+{{< highlight text >}}
 g! weasis:info
 Show information about Weasis
 Usage: weasis:info (-v | -a)
   -v --version    show version
   -a --all        show weasis specifications
   -? --help       show help
-```
+{{< /highlight >}}
 
 #### weasis:ui
 
-``` text
+{{< highlight text >}}
 g! weasis:ui
 Manage user interface
 Usage: weasis:ui (-q | -v)
   -q --quit     shutdown Weasis
   -v --visible  set window on top
   -? --help     show help
-```
+{{< /highlight >}}
 
 #### acquire:patient
 
-``` text
+{{< highlight text >}}
 g! acquire:patient
 Load Patient Context from the first argument
 Usage: acquire:patient (-x | -i | -s | -u) arg
@@ -206,7 +206,7 @@ arg is an XML text in UTF8 or an url with the option '--url'
   -s --iurlsafe    open Patient Context from an XML data containing all DICOM Tags, decoding syntax is [Base64_URL_SAFE/GZip]
   -u --url         open Patient Context from an URL (XML file containing all DICOM TAGs)
   -? --help        show help
-```
+{{< /highlight >}}
 
 {{% notice note %}}
 For identifying the commands at start-up, the symbol "$" must be added before the command (not required in the OSGI console). See examples below.
@@ -227,29 +227,24 @@ Launch Weasis by double clicking on the executable file or in command-line (c.f.
 
 2. Launch arguments
     - Linux and Mac: commands must be in between quotes
+{{< highlight sh >}}
+./viewer-linux.sh '$dicom:get -l /home/Images/'
 
-        ``` text
-        ./viewer-linux.sh '$dicom:get -l /home/Images/'
+# Multiple commands:
+./viewer-linux.sh '$dicom:get -l "/DICOM/Overlay"' '$weasis:ui --visible'
 
+# Local directories (recursive) or files:
+./viewer-linux.sh '$dicom:get -l "/DICOM/Overlay" -l "/DICOM/test/file.dcm"'
 
-        Multiple commands:
-        ./viewer-linux.sh '$dicom:get -l "/DICOM/Overlay"' '$weasis:ui --visible'
-
-
-        Local directories (recursive) or files:
-        ./viewer-linux.sh '$dicom:get -l "/DICOM/Overlay" -l "/DICOM/test/file.dcm"'
-
-        Open non DICOM images (Local and URL):
-        ./viewer-linux.sh '$image:get -f "/home/Images/test.png" -u https://dcm4che.atlassian.net/wiki/download/attachments/3670024/weasis-mpr.png'
-        ```
-
+# Open non DICOM images (Local and URL):
+./viewer-linux.sh '$image:get -f "/home/Images/test.png" -u https://dcm4che.atlassian.net/wiki/download/attachments/3670024/weasis-mpr.png'
+{{< /highlight >}}
     - Windows commands
-
-        ``` text
-        viewer-win32.exe $dicom:get -l "E:\\DICOM\\Overlay" -l "E:\\DICOM\\Shutter"
-         
-        viewer-win32.exe $dicom:get -l "E:/DICOM/Overlay" -l "E:/DICOM/Shutter"
-        ```
+{{< highlight cmd >}}
+viewer-win32.exe $dicom:get -l "E:\\DICOM\\Overlay" -l "E:\\DICOM\\Shutter"
+ 
+viewer-win32.exe $dicom:get -l "E:/DICOM/Overlay" -l "E:/DICOM/Shutter"
+{{< /highlight >}}
 
 {{% notice warning %}}
 **Special characters**:
