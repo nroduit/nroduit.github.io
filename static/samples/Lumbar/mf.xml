@@ -1,0 +1,117 @@
+<manifest xmlns="http://www.weasis.org/xsd/2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<arcQuery arcId="1000" baseUrl="http://localhost:1313/samples/Lumbar">
+		<Patient PatientBirthDate="19510101" PatientID="yI1Yf6zek5U" PatientName="MRIX LUMBAR" PatientSex="O">
+			<Study ReferringPhysicianName="1" StudyDate="20070101" StudyDescription="Lumbar" StudyID="1" StudyInstanceUID="1.2.840.113619.2.176.2025.1499492.7409.1172755464.916" StudyTime="120000.000000">
+				<Series Modality="MR" SeriesDescription="3-Plane Loc" SeriesInstanceUID="1.2.840.113619.2.176.2025.1499492.7409.1172755464.914" SeriesNumber="1">
+					<Instance DirectDownloadFile="/3-PlaneLoc/IM-0001-0001.dcm" InstanceNumber="1" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.87"/>
+					<Instance DirectDownloadFile="/3-PlaneLoc/IM-0001-0002.dcm" InstanceNumber="2" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.88"/>
+					<Instance DirectDownloadFile="/3-PlaneLoc/IM-0001-0003.dcm" InstanceNumber="3" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.89"/>
+					<Instance DirectDownloadFile="/3-PlaneLoc/IM-0001-0004.dcm" nstanceNumber="4" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.90"/>
+					<Instance DirectDownloadFile="/3-PlaneLoc/IM-0001-0005.dcm" InstanceNumber="5" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.91"/>
+					<Instance DirectDownloadFile="/3-PlaneLoc/IM-0001-0006.dcm" InstanceNumber="6" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.92"/>
+					<Instance DirectDownloadFile="/3-PlaneLoc/IM-0001-0007.dcm" InstanceNumber="7" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.93"/>
+					<Instance DirectDownloadFile="/3-PlaneLoc/IM-0001-0008.dcm" InstanceNumber="8" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.94"/>
+					<Instance DirectDownloadFile="/3-PlaneLoc/IM-0001-0009.dcm" InstanceNumber="9" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.95"/>
+					<Instance DirectDownloadFile="/3-PlaneLoc/IM-0001-0010.dcm" InstanceNumber="10" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.96"/>
+					<Instance DirectDownloadFile="/3-PlaneLoc/IM-0001-0011.dcm" InstanceNumber="11" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.97"/>
+					<Instance DirectDownloadFile="/3-PlaneLoc/IM-0001-0012.dcm" InstanceNumber="12" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.98"/>
+					<Instance DirectDownloadFile="/3-PlaneLoc/IM-0001-0013.dcm" InstanceNumber="13" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.99"/>
+					<Instance DirectDownloadFile="/3-PlaneLoc/IM-0001-0014.dcm" InstanceNumber="14" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.100"/>
+					<Instance DirectDownloadFile="/3-PlaneLoc/IM-0001-0015.dcm" InstanceNumber="15" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.101"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_10191465999339575603.jpg" Modality="MR" SeriesDescription="48 FOV Loc" SeriesInstanceUID="1.2.840.113619.2.176.2025.1499492.7409.1172755464.917" SeriesNumber="2">
+					<Instance DirectDownloadFile="/48FOVLoc/IM-0001-0001.dcm" InstanceNumber="1" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.167"/>
+					<Instance DirectDownloadFile="/48FOVLoc/IM-0001-0002.dcm" InstanceNumber="2" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.168"/>
+					<Instance DirectDownloadFile="/48FOVLoc/IM-0001-0003.dcm" InstanceNumber="3" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.169"/>
+					<Instance DirectDownloadFile="/48FOVLoc/IM-0001-0004.dcm" InstanceNumber="4" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.170"/>
+					<Instance DirectDownloadFile="/48FOVLoc/IM-0001-0005.dcm" InstanceNumber="5" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.171"/>
+					<Instance DirectDownloadFile="/48FOVLoc/IM-0001-0006.dcm" InstanceNumber="6" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.172"/>
+					<Instance DirectDownloadFile="/48FOVLoc/IM-0001-0007.dcm" InstanceNumber="7" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.173"/>
+					<Instance DirectDownloadFile="/48FOVLoc/IM-0001-0008.dcm" InstanceNumber="8" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.174"/>
+					<Instance DirectDownloadFile="/48FOVLoc/IM-0001-0009.dcm" InstanceNumber="9" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.175"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_18177422956677247482.jpg" Modality="MR" SeriesDescription="Sag T2 frFSE S" SeriesInstanceUID="1.2.840.113619.2.176.2025.1499492.7409.1172755464.918" SeriesNumber="3">
+					<Instance DirectDownloadFile="/SagT2frFSES/IM-0001-0001.dcm" InstanceNumber="1" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.241"/>
+					<Instance DirectDownloadFile="/SagT2frFSES/IM-0001-0002.dcm" InstanceNumber="2" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.242"/>
+					<Instance DirectDownloadFile="/SagT2frFSES/IM-0001-0003.dcm" InstanceNumber="3" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.243"/>
+					<Instance DirectDownloadFile="/SagT2frFSES/IM-0001-0004.dcm" InstanceNumber="4" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.244"/>
+					<Instance DirectDownloadFile="/SagT2frFSES/IM-0001-0005.dcm" InstanceNumber="5" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.245"/>
+					<Instance DirectDownloadFile="/SagT2frFSES/IM-0001-0006.dcm" InstanceNumber="6" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.246"/>
+					<Instance DirectDownloadFile="/SagT2frFSES/IM-0001-0007.dcm" InstanceNumber="7" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.247"/>
+					<Instance DirectDownloadFile="/SagT2frFSES/IM-0001-0008.dcm" InstanceNumber="8" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.248"/>
+					<Instance DirectDownloadFile="/SagT2frFSES/IM-0001-0009.dcm" InstanceNumber="9" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.249"/>
+					<Instance DirectDownloadFile="/SagT2frFSES/IM-0001-0010.dcm" InstanceNumber="10" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.250"/>
+					<Instance DirectDownloadFile="/SagT2frFSES/IM-0001-0011.dcm" InstanceNumber="11" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.251"/>
+					<Instance DirectDownloadFile="/SagT2frFSES/IM-0001-0012.dcm" InstanceNumber="12" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.252"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_17389934430852397357.jpg" Modality="MR" SeriesDescription="Sag T1 Flair" SeriesInstanceUID="1.2.840.113619.2.176.2025.1499492.7409.1172755464.919" SeriesNumber="4">
+					<Instance DirectDownloadFile="/SagT1Flair/IM-0001-0001.dcm" InstanceNumber="1" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.318"/>
+					<Instance DirectDownloadFile="/SagT1Flair/IM-0001-0002.dcm" InstanceNumber="2" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.319"/>
+					<Instance DirectDownloadFile="/SagT1Flair/IM-0001-0003.dcm" InstanceNumber="3" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.320"/>
+					<Instance DirectDownloadFile="/SagT1Flair/IM-0001-0004.dcm" InstanceNumber="4" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.321"/>
+					<Instance DirectDownloadFile="/SagT1Flair/IM-0001-0005.dcm" InstanceNumber="5" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.322"/>
+					<Instance DirectDownloadFile="/SagT1Flair/IM-0001-0006.dcm" InstanceNumber="6" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.323"/>
+					<Instance DirectDownloadFile="/SagT1Flair/IM-0001-0007.dcm" InstanceNumber="7" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.324"/>
+					<Instance DirectDownloadFile="/SagT1Flair/IM-0001-0008.dcm" InstanceNumber="8" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.325"/>
+					<Instance DirectDownloadFile="/SagT1Flair/IM-0001-0009.dcm" InstanceNumber="9" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.326"/>
+					<Instance DirectDownloadFile="/SagT1Flair/IM-0001-0010.dcm" InstanceNumber="10" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.327"/>
+					<Instance DirectDownloadFile="/SagT1Flair/IM-0001-0011.dcm" InstanceNumber="11" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.328"/>
+					<Instance DirectDownloadFile="/SagT1Flair/IM-0001-0012.dcm" InstanceNumber="12" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.329"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_11048825545019403924.jpg" Modality="MR" SeriesDescription="Ax T2 frFSE S" SeriesInstanceUID="1.2.840.113619.2.176.2025.1499492.7409.1172755464.920" SeriesNumber="5">
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0001.dcm" InstanceNumber="1" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.395"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0002.dcm" InstanceNumber="2" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.408"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0003.dcm" InstanceNumber="3" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.396"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0004.dcm" InstanceNumber="4" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.409"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0005.dcm" InstanceNumber="5" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.397"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0006.dcm" InstanceNumber="6" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.410"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0007.dcm" InstanceNumber="7" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.398"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0008.dcm" InstanceNumber="8" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.411"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0009.dcm" InstanceNumber="9" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.399"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0010.dcm" InstanceNumber="10" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.412"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0011.dcm" InstanceNumber="11" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.400"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0012.dcm" InstanceNumber="12" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.413"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0013.dcm" InstanceNumber="13" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.401"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0014.dcm" InstanceNumber="14" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.414"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0015.dcm" InstanceNumber="15" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.402"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0016.dcm" InstanceNumber="16" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.415"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0017.dcm" InstanceNumber="17" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.403"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0018.dcm" InstanceNumber="18" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.416"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0019.dcm" InstanceNumber="19" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.404"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0020.dcm" InstanceNumber="20" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.417"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0021.dcm" InstanceNumber="21" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.405"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0022.dcm" InstanceNumber="22" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.418"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0023.dcm" InstanceNumber="23" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.406"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0024.dcm" InstanceNumber="24" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.419"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0025.dcm" InstanceNumber="25" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.407"/>
+					<Instance DirectDownloadFile="/AxT2frFSES/IM-0001-0026.dcm" InstanceNumber="26" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.420"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_6726865652992338777.jpg" Modality="MR" SeriesDescription="Ax FRFSE PD" SeriesInstanceUID="1.2.840.113619.2.176.2025.1499492.7409.1172755464.922" SeriesNumber="7">
+					<Instance DirectDownloadFile="/AxFRFSEPD/IM-0001-0001.dcm" InstanceNumber="1" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.563"/>
+					<Instance DirectDownloadFile="/AxFRFSEPD/IM-0001-0002.dcm" InstanceNumber="2" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.564"/>
+					<Instance DirectDownloadFile="/AxFRFSEPD/IM-0001-0003.dcm" InstanceNumber="3" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.565"/>
+					<Instance DirectDownloadFile="/AxFRFSEPD/IM-0001-0004.dcm" InstanceNumber="4" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.566"/>
+					<Instance DirectDownloadFile="/AxFRFSEPD/IM-0001-0005.dcm" InstanceNumber="5" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.567"/>
+					<Instance DirectDownloadFile="/AxFRFSEPD/IM-0001-0006.dcm" InstanceNumber="6" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.568"/>
+					<Instance DirectDownloadFile="/AxFRFSEPD/IM-0001-0007.dcm" InstanceNumber="7" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.569"/>
+					<Instance DirectDownloadFile="/AxFRFSEPD/IM-0001-0008.dcm" InstanceNumber="8" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.570"/>
+					<Instance DirectDownloadFile="/AxFRFSEPD/IM-0001-0009.dcm" InstanceNumber="9" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.571"/>
+					<Instance DirectDownloadFile="/AxFRFSEPD/IM-0001-0010.dcm" InstanceNumber="10" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.572"/>
+					<Instance DirectDownloadFile="/AxFRFSEPD/IM-0001-0011.dcm" InstanceNumber="11" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.573"/>
+					<Instance DirectDownloadFile="/AxFRFSEPD/IM-0001-0012.dcm" InstanceNumber="12" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.574"/>
+					<Instance DirectDownloadFile="/AxFRFSEPD/IM-0001-0013.dcm" InstanceNumber="13" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.575"/>
+					<Instance DirectDownloadFile="/AxFRFSEPD/IM-0001-0014.dcm" InstanceNumber="14" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.576"/>
+					<Instance DirectDownloadFile="/AxFRFSEPD/IM-0001-0015.dcm" InstanceNumber="15" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.577"/>
+					<Instance DirectDownloadFile="/AxFRFSEPD/IM-0001-0016.dcm" InstanceNumber="16" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.578"/>
+					<Instance DirectDownloadFile="/AxFRFSEPD/IM-0001-0017.dcm" InstanceNumber="17" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.579"/>
+					<Instance DirectDownloadFile="/AxFRFSEPD/IM-0001-0018.dcm" InstanceNumber="18" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.580"/>
+					<Instance DirectDownloadFile="/AxFRFSEPD/IM-0001-0019.dcm" InstanceNumber="19" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.581"/>
+					<Instance DirectDownloadFile="/AxFRFSEPD/IM-0001-0020.dcm" InstanceNumber="20" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.582"/>
+					<Instance DirectDownloadFile="/AxFRFSEPD/IM-0001-0021.dcm" InstanceNumber="21" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.583"/>
+					<Instance DirectDownloadFile="/AxFRFSEPD/IM-0001-0022.dcm" InstanceNumber="22" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.584"/>
+					<Instance DirectDownloadFile="/AxFRFSEPD/IM-0001-0023.dcm" InstanceNumber="23" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.585"/>
+				</Series>
+			</Study>
+		</Patient>
+	</arcQuery>
+</manifest>
