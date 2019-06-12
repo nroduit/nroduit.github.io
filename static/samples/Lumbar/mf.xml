@@ -1,12 +1,12 @@
 <manifest xmlns="http://www.weasis.org/xsd/2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<arcQuery arcId="1000" baseUrl="http://localhost:1313/samples/Lumbar">
+	<arcQuery arcId="1000" baseUrl="https://nroduit.github.io/samples/Lumbar">
 		<Patient PatientBirthDate="19510101" PatientID="yI1Yf6zek5U" PatientName="MRIX LUMBAR" PatientSex="O">
 			<Study ReferringPhysicianName="1" StudyDate="20070101" StudyDescription="Lumbar" StudyID="1" StudyInstanceUID="1.2.840.113619.2.176.2025.1499492.7409.1172755464.916" StudyTime="120000.000000">
 				<Series Modality="MR" SeriesDescription="3-Plane Loc" SeriesInstanceUID="1.2.840.113619.2.176.2025.1499492.7409.1172755464.914" SeriesNumber="1">
 					<Instance DirectDownloadFile="/3-PlaneLoc/IM-0001-0001.dcm" InstanceNumber="1" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.87"/>
 					<Instance DirectDownloadFile="/3-PlaneLoc/IM-0001-0002.dcm" InstanceNumber="2" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.88"/>
 					<Instance DirectDownloadFile="/3-PlaneLoc/IM-0001-0003.dcm" InstanceNumber="3" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.89"/>
-					<Instance DirectDownloadFile="/3-PlaneLoc/IM-0001-0004.dcm" nstanceNumber="4" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.90"/>
+					<Instance DirectDownloadFile="/3-PlaneLoc/IM-0001-0004.dcm" InstanceNumber="4" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.90"/>
 					<Instance DirectDownloadFile="/3-PlaneLoc/IM-0001-0005.dcm" InstanceNumber="5" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.91"/>
 					<Instance DirectDownloadFile="/3-PlaneLoc/IM-0001-0006.dcm" InstanceNumber="6" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.92"/>
 					<Instance DirectDownloadFile="/3-PlaneLoc/IM-0001-0007.dcm" InstanceNumber="7" SOPInstanceUID="1.2.840.113619.2.176.2025.1499492.7022.1172755835.93"/>
