@@ -1,6 +1,6 @@
 ---
 title: Print
-weight: 90
+weight: 350
 description: How to print images
 keywords: [ "print", "view", "dicom viewer" ]
 ---

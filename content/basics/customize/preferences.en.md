@@ -15,28 +15,28 @@ Local preferences can be modified:
 Preferences on the server side can be modified:
 
 - in the jnlp file (see how to configure weasis-jnlp.xml at [Installing Weasis in DCM4CHEE](../../../getting-started/dcm4chee))
-- in ext-config.properties which extends (override) the configuration of config.properties. Files are located in the /weasis/conf directory of weasis.war and in Osirix web server: ~/Library/Application Support/OsiriX/weasis-ext-config.properties.
+- in ext-config.properties which extends (override) the configuration of config.properties.
 
 {{% notice tip %}}
 How to modify ext-config.properties:
 
 - Unzip weasis.war, modify the file and zip it again.
-- It is also possible to change the default location of ext-config.properties with the Java property "felix.extended.config.properties" either in JNLP file or in the Java VM argument. The ext-config.properties file can also be placed in a plugin package, see [How to build and install a plug-in](../build-plugins).
+- It is also possible to change the default location of ext-config.properties with the Java property "felix.extended.config.properties" with the parameter `cdb-ext` of the <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis">weasis service</a>. The ext-config.properties file can also be placed in a plugin package, see [How to build and install a plug-in](../build-plugins).
 {{% /notice %}}
 
 ### Priority order for loading a property
 
 Here is the priority order to set a property:
 
-1. Java System property (can be passed as arguments to Java Runtime either by VM arguments or in jnlp with Java Web Start)
+1. Java System property (can be passed as parameter in the <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis-with-other-parameters">launching URI</a>)
 2. Property defined in weasis/conf/ext-config.properties or in weasis/conf/config.properties
 3. Default value of the property (see table below)
 
 Example to change language property (It will work only during the first launch of Weasis on a user session, otherwise delete ${user.home}/.weasis/preferences/).
 
-1.  If you are using weasis-pacs-connector, add in weasis-jnlp.xml the property with the prefix "jnlp.weasis." (properties starting by "jnlp." are required when jnlp is not signed):
-{{< highlight xml >}}
-<property name="jnlp.weasis.locale.lang.code" value="fr_CH" />
+1.  If you are using weasis-pacs-connector, add the <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis-with-other-parameters">property</a> `locale.lang.code`:
+{{< highlight url >}}
+http://localhost:8080/weasis-pacs-connector/weasis?patientID=9702672&pro="locale.lang.code%20fr_CH"
 {{< /highlight >}}
 2.  Add the property in weasis/conf/ext-config.properties:
 {{< highlight ini >}}
@@ -103,6 +103,8 @@ locale.lang.code=fr_CH
 | **ONLY from Weasis 2.6.0**                 |                                        |     |      |       |
 | weasis.level.inverse                       | true                                   | yes | F    | Inverse level direction (moving the cursor down to increase brightness) |
 | weasis.apply.latest.pr                     | false                                  | yes | F    | Apply by default the most recent Presentation State to the related image |
+| **ONLY from Weasis 3.5.3**                 |                                        |     |      |       |
+| weasis.pref.store.local.session            | false                                  | no  | A    | Store user preferences when weasis.user is not specified (only with remote preferences service) |
 
 </font>
 {{% notice info %}}

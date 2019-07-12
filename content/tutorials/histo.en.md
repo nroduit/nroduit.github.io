@@ -1,7 +1,7 @@
 ---
 title: Histogram
-weight: 25
-description: Show histogram of real values and output LUT
+weight: 200
+description: How to display histogram of real values and output LUT
 keywords: [ "histogram", "LUT", "VOI LUT",  "Modality LUT" ]
 ---
 
