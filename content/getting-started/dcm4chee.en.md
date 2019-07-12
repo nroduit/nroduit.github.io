@@ -48,13 +48,14 @@ deployment-overlay add --name=dcm4chee-arc --deployments=weasis-pacs-connector.w
 5. To activate Weasis in dcm4chee-arc-light user interface (required 5.10.2 or superior), you need need to changes two attributes in the configuration
     - Go to the <a target="_blank" href="http://localhost:8080/dcm4chee-arc/ui2/#/device/edit/dcm4chee-arc/dcmArchiveDevice/properties.dcmArchiveDevice">configuration</a>
         or from Configuration > Devices > dcm4chee-arc > Extensions > Archive Device 
-        And fill up the following properties: 
+        And fill up the following properties (add `&cdb` if weasis.war has not been deployed) : 
 
         - Invoke Image Display Patient URL: `../../weasis-pacs-connector/weasis?&patientID={}&target=_self&access_token={}`
         - Invoke Image Display Study URL: `../../weasis-pacs-connector/weasis?&studyUID={}&target=_self&access_token={}`
 {{% notice note %}}
 `&access_token={}` is necessary in secure mode (secured RESTful services) from dcm4chee-arc-light 5.15.1<br>
 `&target=_self` avoids to open a new empty window in the web browser<br>
+`&cdb` [cdb parameter](https://nroduit.github.io/en/getting-started/weasis-protocol/#modify-the-launch-parameters) to override the URL of the Weasis web context to null (when you want only the native local version or when weasis.war has not be deployed)<br>
 See also <a target="_blank" href="https://github.com/dcm4che/dcm4chee-arc-light/wiki/Invoke-Image-Display">Invoke Image Display in dcm4chee</a>
 {{% /notice %}}
 {{% notice tip %}}
