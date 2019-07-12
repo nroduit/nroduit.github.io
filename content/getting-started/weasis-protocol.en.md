@@ -13,9 +13,9 @@ Requires Weasis 3.5 (or superior) installed on the system with a [native install
 
 ### How to use the weasis protocol
 
-* From a web page, just make a [link](weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml) starting with weasis://
+* From a web page, just make a link starting with weasis:// (see below [How to build an URI](#how-to-build-an-uri))
 {{% notice note %}}
-Some web frameworks such as the wiki or the URL field of some browsers only support standard protocols (http, ftp...). To solve this problem, it is necessary to use a URL redirection starting with http like the one proposed in <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector</a>: `http://<your-host>:8080/weasis-pacs-connector/weasis?patientID=TESTS`
+Some web frameworks such as the wiki or the URL field of some browsers only support the standard protocols (http, ftp...). To solve this problem, it is necessary to use a URL redirection starting with http like the one proposed in <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector</a>: `http://<your-host>:8080/weasis-pacs-connector/weasis?patientID=TESTS`
 {{% /notice %}}
 * From the command line:
 {{< highlight bash >}}
@@ -29,37 +29,76 @@ $ xdg-open weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamp
 $ open weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml
 {{< /highlight >}}
 
+{{% notice tip %}}
+When first used in a browser, a popup appears to confirm the opening of the weasis protocol. On Windows, it is possible to make sure that this message never appears:<br>- With IE/Edge set the WarnOnOnOpen value to 0 in HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\ProtocolExecute\weasis.<br>- With Chrome add an entry (key=1  value=weasis://\*) in HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLWhitelist, see how to manage <a target="_blank" href="https://www.chromium.org/administrators/policy-list-3#URLWhitelist">URLWhitelist</a>.
+{{% /notice %}}
+
 ### How to build an URI
 
 The URI scheme "weasis://" allows you to launch Weasis from the system's URI handler while the URI path allows you to build [Weasis commands](../../basics/commands).
 
+<a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis">weasis-pacs-connector</a> will help to build dynamically the manifest (the references of the images to be loaded) and the launch parameters (user, profile, plugins...). It will also manage user preferences.
+
+To build an URI (weasis://path) without weasis-pacs-connector, you must choose one or more commands, encode the commands, and add the scheme `weasis://` as prefix. Here is an example of loading an image:
+
+1. Use [$dicom:get](../../basics/commands/#dicom-get) to load an image from URL
+{{< highlight text >}}
+$dicom:get -r https://nroduit.github.io/samples/us-palette.dcm
+{{< /highlight >}}
+2. Format the URI path with a URL encoder
+{{< highlight text >}}
+%24dicom%3Aget%20-r%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fus-palette.dcm
+{{< /highlight >}}
+3. Make a link by adding "weasis://" at the beginning
+<a  href="weasis://%24dicom%3Aget%20-r%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fus-palette.dcm" class="btn btn-default">Open the remote image</a>
+
+{{% notice tip %}}
 To load multiple remote images, it is recommended to use a manifest listing the references of the images to be loaded. The easiest way to dynamically build this manifest is to use <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector</a>. However, it is possible to build it differently by following the [following instructions](../../basics/customize/integration/#build-an-xml-manifest).
+{{% /notice %}}
 
-#### Command with a manifest containing direct links (without WADO server)
+#### Examples to load images
 
-1. Write a [command](../../basics/commands) to load remotely the XML manifest
+If you use weasis-pacs-connector, please refer to <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis">Launch Weasis</a>.
+
+* Use [$dicom:get](../../basics/commands/#dicom-get) to load a static XML manifest containing direct links (without WADO server) <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml" class="btn btn-default">Launch</a>
 {{< highlight text >}}
 $dicom:get -w https://nroduit.github.io/samples/Lumbar/mf.xml
 {{< /highlight >}}
-2. Format the URI path with a URL encoder
+* Use [$dicom:get](../../basics/commands/#dicom-get) to get dynamically the XML manifest containing direct links (without WADO server) <a  href="weasis://%24dicom%3Aget%20-w%20%22http%3A%2F%2Fweasis-launcher-weasis.1d35.starter-us-east-1.openshiftapps.com%2Fweasis-pacs-connector%2Fmanifest%3FstudyUID%3D1.2.840.113619.2.98.3467.1098086125.0.69%22" class="btn btn-default">Launch</a>
 {{< highlight text >}}
-%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml
+$dicom:get -w "http://weasis-launcher-weasis.1d35.starter-us-east-1.openshiftapps.com/weasis-pacs-connector/manifest?studyUID=1.2.840.113619.2.98.3467.1098086125.0.69"
 {{< /highlight >}}
-3. Make a link by adding "weasis://" at the beginning
-<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml" class="btn btn-default">Open the manifest</a>
+* Use [$dicom:get](../../basics/commands/#dicom-get) to load an image from URL and [remove all](../../basics/commands/#dicom-close) the previous images if Weasis is already open <a  href="weasis://%24dicom%3Aclose%20--all%20%24dicom%3Aget%20-r%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fus-palette.dcm" class="btn btn-default">Launch</a>
+{{< highlight text >}}
+$dicom:close --all $dicom:get -r https://nroduit.github.io/samples/us-palette.dcm
+{{< /highlight >}}
+* Use [$dicom:get](../../basics/commands/#dicom-get) to load multiple local folders and a remote image <a  href="weasis://%24dicom%3Aget%20-l%20%22D%3A%2FDICOM%2FOverlay%22%20-l%20%22D%3A%2FDICOM%2FShutter%22%20-r%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fus-palette.dcm" class="btn btn-default">Launch</a>
+{{< highlight text >}}
+$dicom:get -l "D:/DICOM/Overlay" -l "D:/DICOM/Shutter" -r https://nroduit.github.io/samples/us-palette.dcm
+{{< /highlight >}}
+* Use [$image:get](../../basics/commands/#image-get) to load a non DICOM image <a  href="weasis://%24image%3Aget%20-u%20https%3A%2F%2Fuser-images.githubusercontent.com%2F993975%2F59107662-6c9ed300-8939-11e9-83ee-28f2725f4ae1.jpg" class="btn btn-default">Launch</a>
+{{< highlight text >}}
+$image:get -u https://user-images.githubusercontent.com/993975/59107662-6c9ed300-8939-11e9-83ee-28f2725f4ae1.jpg
+{{< /highlight >}}
 
-#### Command loading directly an image
-1. Write a [command](../../basics/commands) to load an URL
-{{< highlight text >}}
-$dicom:get -r https://nroduit.github.io/samples/CT0081.dcm
-{{< /highlight >}}
-2. Format the URI path with a URL encoder
-{{< highlight text >}}
-%24dicom%3Aget%20-r%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2FCT0081.dcm
-{{< /highlight >}}
-3. Make a link by adding "weasis://" at the beginning
-<a  href="weasis://%24dicom%3Aget%20-r%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2FCT0081.dcm" class="btn btn-default">Open the remote image</a>
+#### Modify the launch parameters
 
-{{% notice tip %}}
-When first used in a browser, a popup appears to confirm the opening of the weasis protocol. On Windows, it is possible to make sure that this message never appears:<br>- With IE/Edge set the WarnOnOnOpen value to 0 in HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\ProtocolExecute\weasis.<br>- With Chrome add an entry (key=1  value=weasis://\*) in HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLWhitelist, see how to manage <a target="_blank" href="https://www.chromium.org/administrators/policy-list-3#URLWhitelist">URLWhitelist</a>.
-{{% /notice %}}
+The command for modifying the configuration at launch is `$weasis:config` which can have different arguments:
+
+* `cdb` is the Weasis web context (The URL of weasis.war). If the value is null, the weasis version installed from the [native installer](../) is used. In the weasis-pacs-connector <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector/blob/master/etc/dcm4chee-arc/weasis-pacs-connector.properties">configuration</a>, the default value is defined by `weasis.base.url`.
+* `cdb-ext` is the extension web context of Weasis (The URL of weasis-ext.war containing additionnal plugins). In the weasis-pacs-connector <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector/blob/master/etc/dcm4chee-arc/weasis-pacs-connector.properties">configuration</a>, the default value is defined by `weasis.ext.url`.
+* `arg` is an argument for the launcher. The value must start by $, like arg="$dicom:close --all" (Note: the value can also be directly in the base URI, outside $weasis:config). Single-valued argument but can be specified multiple times.
+* `pro` is a property for the launcher containing a key and a value separate by a space. Single-valued property but can be specified multiple times.
+* `auth` is the web authorization parameter
+* `wcfg` is the URL the remote Weasis configuration service.
+
+Here are some examples that modify the launcher properties without using <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis">weasis-pacs-connector</a>:
+
+* Configuration for launching Weasis Dicomizer <a  href="weasis://%24weasis%3Aconfig%20pro%3D%22felix.extended.config.properties%20file%3Aconf%2Fext-dicomizer.properties%22%20pro%3D%22weasis.profile%20dicomizer%22%20pro%3D%22gosh.port%2017181%22" class="btn btn-default">Launch</a>
+{{< highlight text >}}
+$weasis:config pro="felix.extended.config.properties file:conf/ext-dicomizer.properties" pro="weasis.profile dicomizer" pro="gosh.port 17181"
+{{< /highlight >}}
+* Change the user, by default is the one of the current system session. The local preferences are associated to a user. <a  href="weasis://%24weasis%3Aconfig%20pro%3D%22weasis.user%20user2%22" class="btn btn-default">Launch</a>
+{{< highlight text >}}
+$weasis:config pro="weasis.user user2"
+{{< /highlight >}}

@@ -16,7 +16,7 @@ Edit this page with a pull request or send a message to <a target="_blank" href=
 {{% /notice %}}
 
 - **Weasis touch**<br>
-[Weasis touch with JavaFX](../tutorials/touch)
+[Weasis touch with JavaFX](touch)
 
 - **PACS in Bhutan**<br>
 <a target="_blank" href="https://link.springer.com/article/10.1007%2Fs13244-016-0512-7">PACS for Bhutan: a cost effective open source architecture for emerging countries</a>

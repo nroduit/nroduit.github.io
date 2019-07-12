@@ -15,10 +15,6 @@ EPL is more business-friendly about some patent retaliation and reverse engineer
 For more information about EPL, check out the <a target="_blank" href="http://www.eclipse.org/legal/epl-2.0/faq.php">EPL 2 FAQ</a>.
 {{% /expand%}}
 <br>
-{{%expand "How to start Weasis automatically from a web page without downloading jnlp?" %}}
-From the Oracle Java Runtime 8 update 111, it is possible to launch a Java Webstart application from the jnlp protocol. See <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#new-way-to-launch-jnlp">the new way of launching Java Westart</a> with weasis-pacs-connector.
-{{% /expand%}}
-<br>
 {{%expand "Can Weasis be incorporated in DICOM CDs or other removable media?" %}}
 Yes, the Weasis portable version can be copied in DICOM CD-ROMs as a multi-platform stand-alone viewer with launchers for Mac OS X, Linux and Windows. The viewer requires that a Java Runtime Environment (JRE 8 or greater) be installed on the machine to run. If Java is not installed on Windows, a dialog will propose to install it from the Internet.
 
@@ -31,13 +27,13 @@ The viewer loads automatically images from DICOMDIR or from directories configur
 
 For burning studies with Weasis, and additionnal plugin must be activated. In the web distribution, add weasis-ext.war. In the portable distribution, 1) uncompress weasis-ext.war, 2) copy weasis-isowriter-x.x.x.jar into weasis-portable/weasis/, 3) replace the file conf/ext-config.properties, 4) edit ext-config.properties and modify ${weasis.codebase.ext.url} by ${weasis.codebase.url}
 
-For burning Weasis with dcm4chee-cdw, look at [Write weasis-portable to DICOM CDs with dcm4chee-cdw](../getting-started/dcm4chee/#write-weasis-portable-to-dicom-cds-with-dcm4chee-cdw).
+For burning Weasis with dcm4chee-cdw, look at [Write weasis-portable to DICOM CDs with dcm4chee-cdw](../old/dcm4chee/#write-weasis-portable-to-dicom-cds-with-dcm4chee-cdw).
 {{% /expand%}}
 <br>
 {{%expand "How to enable Weasis logging?" %}}
-Logs are available either in the Java console or in Weasis log files.
+Logs are available either in Weasis log files (in ${user.home}/.weasis/log) or in the Java console (only with Java Webstart).
 
-1. By displaying the Java console:
+1. By displaying the Java console (not compatible with the Weasis native installer):
     * <a target="_blank" href="http://www.java.com/en/download/help/javaconsole.xml">Windows</a>
     * <a target="_blank" href="http://www.java.com/en/download/help/enable_console_linux.xml">Linux</a>
     *  Mac:
@@ -46,7 +42,7 @@ Logs are available either in the Java console or in Weasis log files.
         1. Under the Java console section, select the Show console radio button.
 
 2. By writing to log files:
-    - Logging can be activated from *File > Preferences > General*
+    - Logging can be activated in Weasis from *File > Preferences > General*
     - The default logging configuration comes from config.properties or ext-config.properties, see [Weasis Preferences](../basics/customize/preferences).
 
 {{% /expand%}}
@@ -54,9 +50,9 @@ Logs are available either in the Java console or in Weasis log files.
 {{% expand "Is it possible to download DICOM files without having a WADO server?" %}}
 Yes, but a WADO server is recommended. Downloading DICOMs can be achieved by:
 
--   [Building an XML](../basics/customize/integration/#build-an-xml-manifest-no-wado-server) file by using `DirectDownloadFile` and `DirectDownloadThumbnail`:
--   Adding the following parameter in the argument tag of the JNLP or [as an argument of the weasis-portable executable file](../basics/commands):<br>
+- [Building an XML](../basics/customize/integration/#build-an-xml-manifest-no-wado-server) file by using `DirectDownloadFile` and `DirectDownloadThumbnail`:
+- Adding the following [command](../basics/commands/#dicom-get):<br>
     `$dicom:get -r http://external.server/images/MRIX_LUMBAR/img1.dcm  http://external.server/images/img2.dcm`<br>
-    Note: This option must be used only for a very limited number of files
+    Note: This option must be used only for a very limited number of files.
 {{% /expand %}}
 <br>

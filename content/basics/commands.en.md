@@ -30,7 +30,7 @@ g! 
 {{< /highlight >}}
 
 {{% notice tip %}}
-**Modifying the default port number**: This value can be changed in the <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#configuration-of-weasis-pacs-connector">configuration of the launcher</a> (by overriding the property or with a new jnlp template)
+**Modifying the default port number**: This value can be changed in the <a target="_blank" href="https://github.com/nroduit/">configuration of the launcher</a> (by overriding the property or with a new jnlp template)
 {{% /notice %}}
 
 ### List of Weasis commands
@@ -208,12 +208,21 @@ arg is an XML text in UTF8 or an url with the option '--url'
   -? --help        show help
 {{< /highlight >}}
 
+#### weasis:config (only at launch)
+
+This command can be used only at launch, see [Modify the launch parameters](../../getting-started/weasis-protocol/#modify-the-launch-parameters)
+
+
 {{% notice note %}}
 For identifying the commands at start-up, the symbol "$" must be added before the command (not required in the OSGI console). See examples below.
 {{% /notice %}}
 
 
 ### Weasis Portable distribution
+
+{{% notice note %}}
+The native installer will progressively replace the portable and the web distribution with the [weasis protocol](../../getting-started/weasis-protocol).
+{{% /notice %}}
 
 There are two ways to open local images with the portable distribution.
 

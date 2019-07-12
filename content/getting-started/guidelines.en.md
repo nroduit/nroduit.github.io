@@ -10,20 +10,13 @@ weight: 50
 
 This page is intended for developers who want to contribute to Weasis and it is a recommendation for developers who want to create their own plug-ins, see also [How to build and install a plug-in](../../basics/customize/build-plugins).
 
-We highly recommend the use of Eclipse IDE, because all the following instructions are based on it and some settings and the coding conventions can be imported directly into Eclipse. Nevertheless, for having a better Maven integration, it is possible to use IntelliJ IDEA or Netbeans by configuring weasis-launcher with similar instructions described in [Debug or Run from Eclipse](#debug-or-run-from-eclipse).
+We recommend the use of Eclipse IDE, because all the following instructions are based on it and some settings and the coding conventions can be imported directly into Eclipse. Nevertheless, for having a better Maven integration, it is possible to use IntelliJ IDEA or Netbeans by configuring weasis-launcher with similar instructions described in [Debug or Run from Eclipse](#debug-or-run-from-eclipse).
 
 ### Prerequisites
 
-1. JDK 8 or higher
-2. Recent version of Eclipse IDE
+1. JDK 11 or higher
+2. Recent version of <a target="_blank" href="https://www.eclipse.org/downloads/packages/">Eclipse IDE for Java Developers</a>
 
-### Install Java and Eclipse
-
-- JDK 8 or higher (Oracle JDK is recommended for Linux)
-{{% notice note %}}
-JRE is not suitable for m2eclipse.
-{{% /notice %}}
-- <a target="_blank" href="http://www.eclipse.org/downloads/eclipse-packages/">Eclipse IDE for Java Developers</a> (at least 4.2.2)
 
 ### Configure Eclipse
 
@@ -32,7 +25,7 @@ JRE is not suitable for m2eclipse.
 {{% notice note %}}
 It is recommended to create a new Workspace for keeping a specific Weasis configuration.
 {{% /notice %}}
--  Go to *Window > Preferences > Java > Installed JREs > Execution Environments* and select the installed JDK for JavaSE-1.8
+-  Go to *Window > Preferences > Java > Installed JREs > Execution Environments* and select the installed JDK
 - In *Window > Preferences > General > Workspace*
     - Select UTF-8 for *Text file encoding*
     - Select Unix for *New text file line delimiter*
@@ -70,7 +63,6 @@ Code style specifications can be imported into Eclipse:
     - From Eclipse Git perspective: *Window > Open Perspective > GIT Repository Exploring*. Click on button "Clone a GIT repository".
     - In the *New* dialog, Add one of the following URIs:
         - `https://github.com/nroduit/Weasis.git` (public repository)
-        - `https://weasis.repositoryhosting.com/git/weasis/weasis-dev.git` (private repository for developers, enter your login)
     - Press, *Next* and then *Finnish*
     - From Eclipse menu, open *File > Import...*
     - In the *New* dialog, select *Maven > Existing Maven Projects*, click *Next* and select the "Weasis" or "weasis-dev" directory.

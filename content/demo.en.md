@@ -22,18 +22,10 @@ The demo server is on a free cloud system, so sometimes it requires to launch tw
 
 ### How to launch Weasis
 
-To display the DICOM samples on this page, you need a recent version of Java installed on your system.
+To display the DICOM samples on this page, you need to install a [recent version Weasis](../getting-started/).
 
-Two possible ways of launching Weasis when clicking on Launch button:
-
-1. *Download JNLP* will download a jnlp file on most browsers. The file needs to be executed (double-click on the file) from the download folder.
-2. *JNLP Protocol* will open directly Weasis with the new jnlp protocol (needs a jnlp handler)
-{{% notice note %}}
-Registration of jnlp handler is available in Oracle Java Runtime installer from JRE 8\_111 and in the Java 9 installer:
-
-- On Windows, it works out of the box.
-- On Mac OS X, it could be necessary to run once Java Webstart to register the jnlp handler at `/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Resources/javawslauncher.app`
-- On Linux, a <a target="_blank" href="https://docs.oracle.com/javase/9/deploy/overview.htm#JSDPG-GUID-BC1669F9-7238-462D-80AA-3D42BAF99FA7">configuration</a> is required.
+{{% notice warning %}}
+The version 3.5 and superior uses the [weasis protocol](../../getting-started/weasis-protocol) instead of Java Web Start because which has been removed from <a target="_blank" href="https://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html#JDK-8185077">Java 11 release</a>.
 {{% /notice %}}
 
 ------------------------------------------------------------------------

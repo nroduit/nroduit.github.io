@@ -1,6 +1,6 @@
 ---
 title: Translation
-weight: 100
+weight: 540
 description: How to change the language and regional settings
 keywords: [ "languages", "locale", "region", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "pacs viewer" ]
 ---

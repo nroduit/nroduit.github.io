@@ -85,7 +85,7 @@ Using `${weasis.codebase.ext.url}` allows to keep the base URL abstract, so movi
 
 - weasis-ext is the default web context when launching Weasis, using another web context requires modifying the property weasis.ext.url, it can be done by:
 
-    - changing the property in jnlp template in <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#configuration-of-weasis-pacs-connector">weasis-pacs-connector configuration</a>.
+    - changing the property in jnlp template in <a target="_blank" href="https://github.com/nroduit/">weasis-pacs-connector configuration</a>.
 {{< highlight ini >}}
 weasis.ext.url=${server.base.url}/weasis-newext
 {{< /highlight >}}
