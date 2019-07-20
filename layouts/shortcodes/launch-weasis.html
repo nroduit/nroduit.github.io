@@ -1,14 +1,14 @@
 {{ $did :=  .Get "id" }}
 {{ $params :=  .Get "params" }}
-{{ $baseURL := "http://weasis-launcher-weasis.1d35.starter-us-east-1.openshiftapps.com/weasis-pacs-connector/" }}
+{{ $baseURL := "http://weasis-launcher-route-weasis.apps.us-east-1.online-starter.openshift.com/weasis-pacs-connector/" }}
 {{ $weasisScheme := "weasis://" }}
 {{ $jnlpScheme := "getJnlpScheme/" }}
 {{ $weasis := "weasis?" }}
 {{ $viewer := "viewer?" }}
 {{ $local := "&cdb=" }}
-{{ $version207 := "&cdb=http%3A%2F%2Fweasis-launcher-weasis.1d35.starter-us-east-1.openshiftapps.com%2Fweasis207&src=weasis1.jnlp&mfv=1" }}
-{{ $version263 := "&cdb=http%3A%2F%2Fweasis-launcher-weasis.1d35.starter-us-east-1.openshiftapps.com%2Fweasis263" }}
-{{ $versionTouch := "&cdb=http%3A%2F%2Fweasis-launcher-weasis.1d35.starter-us-east-1.openshiftapps.com%2Fweasis-touch" }}
+{{ $version207 := "&cdb=http%3A%2F%2Fweasis-launcher-route-weasis.apps.us-east-1.online-starter.openshift.com%2Fweasis207&src=weasis1.jnlp&mfv=1" }}
+{{ $version263 := "&cdb=http%3A%2F%2Fweasis-launcher-route-weasis.apps.us-east-1.online-starter.openshift.com%2Fweasis263" }}
+{{ $versionTouch := "&cdb=http%3A%2F%2Fweasis-launcher-route-weasis.apps.us-east-1.online-starter.openshift.com%2Fweasis-touch" }}
 
 
 <div id="{{ $did }}" class="jq-dropdown jq-dropdown-tip">
