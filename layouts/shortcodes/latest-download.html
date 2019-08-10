@@ -4,17 +4,18 @@
 <table border="0" cellpadding="3" cellspacing="0">
 <tr>
   <th colspan="2" align="center" width="35%">Platform</th>
-  <th align="center">Native installer (Standalone and WEB)</th>
+  <th align="center">Native installer (Standalone and web)</th>
 </tr>
 {{ range $elem_index, $elem_val := $jfile }}
 {{ if (eq $elem_index "assets") }}
     {{ range $burl, $val := $elem_val }}
     {{ $package := path.Ext $val.name }}
     {{ $linux := printf "Linux (x64) %s (>= GLIBC_2.14)" $package }}
+    {{ $windows := printf "Windows %s-bit 7, 8, 10" (cond (in $val.name "64") "64" "32") }}
     {{ $icon := cond (eq $package ".msi") "microsoft" (cond (eq $package ".pkg") "apple" "linux") }}
     <tr bgcolor="#FBFDFD">
       <td align="center"><i class='fab fa-{{ $icon }}' style='font-size:34px'></td>
-      <td align="left">{{ cond (eq $package ".msi") "Windows (x64) 7, 8, 10" (cond (eq $package ".pkg") "Mac OS X (>= 10.9)" $linux ) }}</td>
+      <td align="left">{{ cond (eq $package ".msi") $windows (cond (eq $package ".pkg") "Mac OS X (>= 10.9)" $linux ) }}</td>
       <td align="left"><a  href="{{ $val.browser_download_url }}" target="_blank" class="btn btn-default">{{ $val.name }} <i class="fa fa-download"></i></a></td>
     </tr>
     {{ end }}
