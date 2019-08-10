@@ -47,7 +47,7 @@ locale.lang.code=fr_CH
 ## List of preferences
 
 - **GUI**: if **yes**, the property can be modified in the Weasis user interface.
-- **Type**: **F**: only caught at the first launch of the viewer. **A**: always caught by the to the viewer.
+- **Type**: **F**: only caught at the first launch of the viewer. **A**: always caught by the viewer. **AP**: always caught by the viewer but only from ext-config.properties or config.properties .
 <font size="2">
 
 | Property | Default value | GUI | Type | Description|
@@ -59,7 +59,7 @@ locale.lang.code=fr_CH
 | weasis.look                                | SubstanceTwilight  AquaLookAndFeel (Mac) | yes | F    | Look and feel, if the Substance library is not loaded, Nimbus will be used by default. |
 | weasis.look.${system}                      | SubstanceTwilight  AquaLookAndFeel (Mac) | yes | F    | Look and feel, specific to the platform (macosx, linux, windows). |
 | weasis.show.disclaimer                     | true                                   | no  | A    | Show a disclaimer (requires to be accepted to start the application) during the first launch of Weasis. |
-| weasis.show.release                        | true (from 2.0.0)                      | no  | A    | Show a message when the release has changed |
+| weasis.show.release                        | true (from 2.0.0)                      | no  | A   | Show a message when the release has changed |
 | weasis.export.dicom                        | true (from 1.2.5)                      | no  | A    | Allows exporting DICOM files. |
 | weasis.portable.dicom.cache                | true                                   | no  | A    | Cache the images imported from directories defined in weasis.portable.dicom.directory. If true, it is similar to the WEB import. |
 | org.apache.sling.commons.log.level         | INFO                                   | yes | F    | Sets the logging level of the loggers. This may be any of the defined logging levels TRACE, DEBUG, INFO, WARN, ERROR.|
@@ -70,8 +70,8 @@ locale.lang.code=fr_CH
 | **ONLY from Weasis 2.0**                   |                                        |     |      |           |
 | locale.lang.code                           | en                                     | yes | F    | Language code (see [Java Locale](http://www.oracle.com/technetwork/java/javase/locales-137662.html)). If the value is "system" then the locale of the operating system will be used (client-side). |
 | locale.format.code                         | system                                 | yes | F    | Format code for number and date (see [Java Locale](http://www.oracle.com/technetwork/java/javase/locales-137662.html)). If the value is "system" then the locale of the operating system will be used (client-side). |
-| weasis.name                                | Weasis                                 | no  | A    | Change the name of the application everywhere in UI |
-| weasis.profile                             | default                                | no  | A    | Application profile, it allows having a custom preferences directory on the client side (will not shared preferences with other Weasis instances) |
+| weasis.name                                | Weasis                                 | no  | AP   | Change the name of the application everywhere in UI |
+| weasis.profile                             | default                                | no  | AP   | Application profile, it allows having a custom preferences directory on the client side (will not shared preferences with other Weasis instances) |
 | weasis.resources.url                       | ${weasis.codebase.url}/resources.zip   | no  | A    | Application resource files (logo, presets, LUTs...). "resources.zip" is downloaded again only when the last modified date has changed. |
 | weasis.download.immediately                | true                                   | yes | F    | Start to download series immediately   |
 | download.concurrent.series                 | 3                                      | no  | A    | The number of concurrent series downloads |

@@ -30,7 +30,7 @@ $ open weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%
 {{< /highlight >}}
 
 {{% notice tip %}}
-When first used in a browser, a popup appears to confirm the opening of the weasis protocol. On Windows, it is possible to make sure that this message never appears:<br>- With IE/Edge set the WarnOnOnOpen value to 0 in HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\ProtocolExecute\weasis.<br>- With Chrome add an entry (key=1  value=weasis://\*) in HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLWhitelist, see how to manage <a target="_blank" href="https://www.chromium.org/administrators/policy-list-3#URLWhitelist">URLWhitelist</a>.
+When first used in a browser, a popup appears to confirm the opening of the weasis protocol. On Windows, it is possible to make sure that this message never appears by adding a browser policy which allows the URI weasis://\*<br>- With IE/Edge the policy is applied by the native installer.<br>- With Chrome the policy is applied by the native installer (Windows and Linux), see how to manage <a target="_blank" href="https://support.google.com/chrome/a/answer/7532419?hl=en">URLWhitelist</a> (d).
 {{% /notice %}}
 
 ### How to build an URI
@@ -94,9 +94,9 @@ The command for modifying the configuration at launch is `$weasis:config` which 
 
 Here are some examples that modify the launcher properties without using <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis">weasis-pacs-connector</a>:
 
-* Configuration for launching Weasis Dicomizer <a  href="weasis://%24weasis%3Aconfig%20pro%3D%22felix.extended.config.properties%20file%3Aconf%2Fext-dicomizer.properties%22%20pro%3D%22weasis.profile%20dicomizer%22%20pro%3D%22gosh.port%2017181%22" class="btn btn-default">Launch</a>
+* Configuration for launching Weasis Dicomizer <a  href="weasis://%24weasis%3Aconfig%20pro%3D%22felix.extended.config.properties%20file%3Aconf%2Fext-dicomizer.properties%22%20pro%3D%22gosh.port%2017181%22" class="btn btn-default">Launch</a>
 {{< highlight text >}}
-$weasis:config pro="felix.extended.config.properties file:conf/ext-dicomizer.properties" pro="weasis.profile dicomizer" pro="gosh.port 17181"
+$weasis:config pro="felix.extended.config.properties file:conf/ext-dicomizer.properties" pro="gosh.port 17181"
 {{< /highlight >}}
 * Change the user, by default is the one of the current system session. The local preferences are associated to a user. <a  href="weasis://%24weasis%3Aconfig%20pro%3D%22weasis.user%20user2%22" class="btn btn-default">Launch</a>
 {{< highlight text >}}
