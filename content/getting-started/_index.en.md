@@ -7,14 +7,14 @@ pre: "<b>1. </b>"
 
 ### Try Weasis now
 
-This new package replaces weasis-portable and no longer requires Java to be installed on the system. It also serves as a basis for launching Weasis from a web context using the [weasis protocol](weasis-protocol).
+These native installers below replace the weasis-portable.zip package (still available <a target="_blank" href="https://sourceforge.net/projects/dcm4che/files/Weasis/">here</a>) and no longer requires <a target="_blank" href="https://www.java.com/en/download/">Java</a> to be installed on the system. It also serves as a basis for launching Weasis from a web context using the [weasis protocol](weasis-protocol).
 
 {{< latest-download "deb" >}}
 
 The easiest way to launch Weasis from a web context is to use <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector</a>.
 
 {{% notice note %}}
-To manage Weasis version at the server side, it is possible to install the [Weasis web package](https://github.com/nroduit/weasis-pacs-connector#installation) which will update the local installation at the client side (it works for minor releases by updating all the plug-ins except the launcher).
+To manage Weasis version at the server side, it is possible to install the [Weasis web package](https://github.com/nroduit/weasis-pacs-connector#installation) which will upgrade the native installation at the client side (it works for minor releases by updating all the plug-ins except the launcher).
 {{% /notice %}}
 
 {{% notice tip %}}
