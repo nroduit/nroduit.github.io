@@ -26,6 +26,10 @@ Standard workflow when connecting Weasis to a PACS, RIS, EMR, EPR or any web int
 The schema above shows that the queries to the PACS are made at the same time as the viewer starts. This makes it possible to optimize the launch by simultaneously launching weasis and creating the manifest.
 {{% /notice %}}
 
+{{% notice tip %}}
+<a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector</a> services allow either to build a manifest from a PACS via DICOM C-Find or to upload the manifest by http POST.
+{{% /notice %}}
+
 ## Build your own connector
 
 This documentation describes how to create your own connector without weasis-pacs-connector and without having an archive with a WADO-URI service. There are two parts:
@@ -36,10 +40,6 @@ This documentation describes how to create your own connector without weasis-pac
 ###  Build an URI
 
 Build an URI using the [weasis protocol](../../../getting-started/weasis-protocol/#how-to-build-an-uri) that will launch Weasis with a specific configuration.
-
-{{% notice tip %}}
-<a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector</a> services are based on jnlp templates and they allow either to build a manifest from a PACS via DICOM C-Find or to upload the manifest by http POST.
-{{% /notice %}}
 
 ###  Build an XML manifest
 Build an XML file containing the UIDs of the images which will be retrieved from Weasis. There is <a target="_blank" href="https://github.com/nroduit/Weasis/blob/master/weasis-dicom/weasis-dicom-explorer/src/main/resources/config/manifest.xsd">XLS</a> to validate the content of xml. This output file can be either compressed in gzip or uncompressed. Here is an example:
