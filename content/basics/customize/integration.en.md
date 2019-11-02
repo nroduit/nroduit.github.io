@@ -11,11 +11,12 @@ Here we present how to launch Weasis with associated images from any context eit
 
 Using <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector</a> allows a high degree of integration and facilitates connection to a PACS. Here are some of the advantages:
 
-- The initial URL starts with http and is then redirected to weasis:// (as weasis:// is not allowed by wiki, blog…)
+- Automatically build a manifest according to a configuration with a PACS
+- The initial URL starts with HTTP and is then redirected to weasis:// (as weasis:// is not allowed by wiki, blog…)
 - Manages to build the manifest simultaneously with the start of Weasis
 - The URL returns a manifest ID which can be requested only once (and must be <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector/blob/master/etc/dcm4chee-arc/weasis-pacs-connector.properties#L17">consumed within 5 min</a>)
 
-However, it is possible to build your own connector for particular integrations or when a DICOMWeb service is available.
+However, it is possible to [build your own connector](#build-your-own-connector) for particular integrations or when a DICOMWeb service is available.
 
 {{% notice note %}}
 Requires Weasis 3.5 (or superior) installed on the system with a [native installer](../../../getting-started/).
@@ -24,7 +25,7 @@ Requires Weasis 3.5 (or superior) installed on the system with a [native install
 
 ## Use weasis-pacs-connector
 
-For connecting to dcm4chee web interface, follow the instructions in [Installing Weasis in DCM4CHEE](../../../getting-started/dcm4chee). Otherwise, refer to the documentation of <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector</a>.
+For connecting to dcm4chee web interface, follow the instructions in [Installing Weasis in DCM4CHEE](../../../getting-started/dcm4chee). Otherwise, refer to the documentation of <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#installation">weasis-pacs-connector</a>.
 
 Standard workflow when connecting Weasis to a PACS, RIS, EMR, EPR or any web interface:
 
@@ -110,9 +111,9 @@ Required Parameters:
 
 This integration requires a PACS/VNA with <a target="_blank" href="https://www.dicomstandard.org/dicomweb/">DICOMweb™</a> services (QUERY/RETRIEVE) where the requests are managed directly by Weasis. Here are some of the advantages:
 
-- Very simple integration
-- Do not required to install weasis-pacs-connector
-- Allow to pass token directly in headers (not in the URL)
+- Straightforward integration
+- Do not require to install weasis-pacs-connector
+- Allow passing token directly in headers (not in the URL)
 
 Use [$dicom:rs](../../commands/#dicom-rs) to load DICOM files. Here are some configurations of open source systems:
 
@@ -142,7 +143,7 @@ $dicom:rs --url "https://demo.orthanc-server.com/dicom-web" -r "patientID=5Yp0E"
 <a  href="weasis://%24dicom%3Ars%20--url%20%22https%3A%2F%2Fdemo.orthanc-server.com%2Fdicom-web%22%20-r%20%22patientID%3D5Yp0E%22%20--accept-ext%3D%22%3B%22" class="btn btn-default">Launch</a>
 
 
-Currently the DICOMWeb service of Orthanc doesn't support:
+Currently, the DICOMWeb service of Orthanc doesn't support:
 
 - transfer-syntax=* doesn’t work (always get uncompressed image). Once this issue will be fixes `--accept-ext=";"` can be removed.
 - Thumbnail service is not implemented.
@@ -155,7 +156,7 @@ https://cloud.google.com/healthcare/docs/how-tos/dicomweb
 $weasis:config pro="dicom.qido.query.multi.params true" $dicom:rs --url "https://healthcare.googleapis.com/v1beta1/projects/chc-nih-chest-xray/locations/us-central1/datasets/nih-chest-xray/dicomStores/nih-chest-xray/dicomWeb" -r "studyUID=1.3.6.1.4.1.11129.5.5.184301693334578016850836775758484230512396" -H "Authorization: Bearer <your-token>"
 {{< /highlight >}}
 
-Currently the DICOMWeb service for getting thumnails doesn't work in the Google API.
+Currently, the DICOMWeb service for getting thumbnails doesn't work in the Google API.
 
 {{% notice warning %}}
 `<your-token>` must be replaced by the hostname of your dcm4che installation.

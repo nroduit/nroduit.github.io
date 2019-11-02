@@ -16,7 +16,7 @@ Weasis DICOM viewer is cross-platform, free/libre and open source software (<a t
 
 It has been designed to meet several expectations of clinical information systems and their future evolution regarding medical imaging: providing web-based access to radiological images, as well as covering a considerable number of DICOM types and offering multimedia capabilities.
 
-Weasis can be easily connected to any PACS via a web portal or as an XDS-I consumer in an IHE (Integrating the Healthcare Enterprise) environment.
+Weasis can display the content of most DICOM files including multi-frame, enhanced, MPEG-2, MPEG-4, MIME Encapsulation, SR, PR, KOS, AU, RT and ECG. It has a high level of DICOM implementation, see <a target="_blank" href="https://github.com/nroduit/Weasis#general-features">the viewer features</a>.
 
 {{< gallery dir="gallery2" />}}
 
