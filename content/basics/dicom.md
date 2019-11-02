@@ -45,7 +45,6 @@ These TSUIDs are open by the default system application associated to the MIME t
 
 ### Supported "Photometric Interpretation" pixel format
 
-
 | Photometric Interpretation | Description | Supported |
 | ------ | ------ | --- |
 | MONOCHROME1 | grey level image description (high values=dark, low values=bright) | yes |
