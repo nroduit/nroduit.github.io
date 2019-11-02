@@ -16,7 +16,12 @@ The documentation where Weasis is launched with Java Webstart is still available
 
 ![dcm4chee-arc-light](/gallery-dcm4chee/1Weasis in dcm4chee-arc-light.png?classes=border "dcm4chee-arc-light")
 
+{{% notice tip %}}
+An [alternative configuration](../../basics/customize/integration/#download-directly-with-dicomweb-restful-services) without weasis-pacs-connector and with dcm4chee DICOMWeb services is possible (No need to consider the following points), it requires only the installation of Weasis 3.5.4 or superior.
+{{% /notice %}}
+
 1. <a target="_blank" href="https://github.com/dcm4che/dcm4chee-arc-light/wiki">Install dcm4chee</a>, if not already done (Installation with Docker is straightforward).
+
 2. Go <a target="_blank" href="http://sourceforge.net/projects/dcm4che/files/Weasis/">here</a> and download these following files:
 {{% notice warning %}}
 **Download issue**: Some browsers (like Internet Explorer) may rename war files to zip. If so, use the Save As option when downloading and change the name back to war.

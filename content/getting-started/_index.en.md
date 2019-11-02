@@ -52,6 +52,7 @@ The table below shows the differences between the distributions (the answer yes 
 - **Weasis native installer**: Windows MSI, macOS PKG, and Linux RPM and DEB. Can be used as a standalone application or connected to the web distribution (allows you to launch the defined version remotely)
 - **Weasis portable**: weasis-portable.zip. Can be used in removable devices.
 - **Weasis web with Java Webstart**: weasis.war and using Java Webstart as launcher (JNLP). Java Webstart has been removed from Java 11.
+<font size="2">
 
 | Description of features | Weasis native installer | Weasis portable | Weasis web with Java Webstart |
 | --------------- | ------ | ------ | ------ |
@@ -77,3 +78,5 @@ The table below shows the differences between the distributions (the answer yes 
 | Handle preferences at server-side | Yes | N/A | Yes |
 | API to manage user remote preferences | Yes | N/A | Yes from Weasis 3.5 |
 | API to manage launcher configuration | Yes | N/A | Yes from Weasis 3.5 (not implement in weasis-pacs-connector and not fully compliant) |
+
+</font>
