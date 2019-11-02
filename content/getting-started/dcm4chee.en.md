@@ -24,7 +24,7 @@ The documentation where Weasis is launched with Java Webstart is still available
     - From weasis-pacs-connector folder:
         - [weasis-pacs-connector.war] Requires at least the version 7.1.1
     - From the folder with the latest version number (Optional if you want to run only the [native version](../) installed on the client system):
-        - [weasis.war] requires at least the Weasis 3.5.3
+        - [weasis.war] requires at least Weasis 3.5.3
         - [weasis-i18n.war] Optional for [internationalization](../translating)
         - [weasis-ext.war] Optional package for additional plug-ins (e.g. exporting the images to build an ISO image for CD/DVD)
     - From the folder with the latest version number:
@@ -86,7 +86,7 @@ See also <a target="_blank" href="https://github.com/dcm4che/dcm4chee-arc-light/
         - [weasis-pacs-connector.war] Requires at least the version 6.1.5, the version 7.x is not supported
         - [dcm4chee-web-weasis.jar]
     - From the folder with the latest version number (Optional if you want to run only the [native version](../) installed on the client system):
-        - [weasis.war] requires at least the Weasis 3.5.3
+        - [weasis.war] requires at least Weasis 3.5.3
         - [weasis-i18n.war] Optional for [internationalization](../translating)
         - [weasis-ext.war] Optional package for additional plug-ins (e.g. exporting the images to build an ISO image for CD/DVD)
 

@@ -4,4 +4,4 @@ keywords: [ "dicom viewer", "free dicom viewer", "open source dicom viewer", "we
 weight: 30
 ---
 
-{{% children depth="3" %}}
+{{% children %}}
