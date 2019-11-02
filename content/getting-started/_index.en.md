@@ -49,8 +49,14 @@ Join the <a target="_blank" href="http://groups.google.com/forum/#!forum/weasis"
 
 ### Weasis distributions
 
-| Description of integrations | Weasis native installer | Weasis portable | Weasis web with Java Webstart |
-| ------ | ------ | ------ | ------ |
+The table below shows the differences between the distributions (the answer yes is the best):
+
+- **Weasis native installer**: Windows MSI, macOS PKG, and Linux RPM and DEB. Can be used as a standalone application or connected to the web distribution (allows you to launch the defined version remotely)
+- **Weasis portable**: weasis-portable.zip. Can be used in removable devices.
+- **Weasis web with Java Webstart**: weasis.war and using Java Webstart as launcher (JNLP). Java Webstart has be removed of the recent version of Java.
+
+| Description of features | Weasis native installer | Weasis portable | Weasis web with Java Webstart |
+| --------------- | ------ | ------ | ------ |
 | Does not require a Java installation | Yes | No but a JRE related to the system can be paced in the package (e.g. jre/windows) | No |
 | Does not require admin permissions to install | No | Yes (except on recent Mac OS X versions) | No (requires Java installation) |
 | Supported Java 11 or superior | Yes | Yes but only from Weasis 3.5 | No (JWS has been removed in Java 11) |

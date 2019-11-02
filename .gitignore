@@ -1,2 +1,2 @@
-## use script setup.sh and deploy.sh to ignore public
+## use script setup.sh (only the first time) and deploy.sh (to update the site) to ignore public
 # public

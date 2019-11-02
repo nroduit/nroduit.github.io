@@ -127,13 +127,14 @@ Usage: dcmview2d:zoom (set VALUE | increase NUMBER | decrease NUMBER)
 {{< highlight text >}}
 g! dicom:get
 Load DICOM files remotely or locally
-Usage: dicom:get ([-l PATH]... [-r URI]... [-p] [-i DATA]... [-w URI]...)
+Usage: dicom:get ([-l PATH]... [-w URI]... [-r URI]... [-p] [-i DATA]... [-z URI]...)
 PATH is either a directory(recursive) or a file
   -l --local=PATH   open DICOMs from local disk
   -r --remote=URI   open DICOMs from an URI
+  -w --wado=URI     open DICOMs from an XML manifest
+  -z --zip=URI      open DICOM ZIP from an URI
   -p --portable     open DICOMs from configured directories at the same level of the executable
   -i --iwado=DATA   open DICOMs from an XML manifest (GZIP-Base64)
-  -w --wado=URI     open DICOMs from an XML manifest
   -? --help         show help
 {{< /highlight >}}
 
@@ -147,6 +148,24 @@ Usage: dicom:close  (-a | ([-y UID]... [-s UID]...))
   -y --study=UID     close a study, UID is Study Instance UID
   -s --series=UID    close a series, UID is Series Instance UID
   -? --help          show help
+{{< /highlight >}}
+
+#### dicom:rs
+
+{{< highlight text >}}
+g! dicom:rs
+Load DICOM files from DICOMWeb API (QIDO/WADO-RS)
+Usage: dicom:rs -u URL -r QUERYPARAMS... [-H HEADER]... [--query-header HEADER]... [--retrieve-header HEADER]... [--query-ext EXT] [--retrieve-ext EXT] [--accept-ext EXT]
+  -u --url=URL               URL of the DICOMWeb service
+  -r --request=QUERYPARAMS   Query params of the URL, see weasis-pacs-connector
+  -H --header=HEADER         Pass custom header(s) to all the requests
+  --query-header=HEADER      Pass custom header(s) to the query requests (QIDO)
+  --retrieve-header=HEADER   Pass custom header(s) to the retrieve requests (WADO)
+  --query-ext=EXT            Additionnal parameters for Query URL (QIDO)
+  --retrieve-ext=EXT         Additionnal parameters for Retrieve URL (WADO)
+  --accept-ext=EXT           Additionnal parameters for DICOM multipart/related Accept header of the retrieve URL (WADO). Default value is: transfer-syntax=*
+  --show-whole-study         when downloading a series, show all the other series (ready for download) from the same study
+  -? --help                  show help
 {{< /highlight >}}
 
 #### image:get

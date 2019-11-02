@@ -64,6 +64,10 @@ If you use weasis-pacs-connector, please refer to <a target="_blank" href="https
 {{< highlight text >}}
 $dicom:get -w https://nroduit.github.io/samples/Lumbar/mf.xml
 {{< /highlight >}}
+* Use [$dicom:rs](../../basics/commands/#dicom-rs) to load DICOM files with DICOMWeb RESTful services (see [other examples](../../basics/customize/integration/#download-directly-with-dicomweb-restful-services)) <a  href="weasis://%24dicom%3Ars%20--url%20%22https%3A%2F%2Fdemo.orthanc-server.com%2Fdicom-web%22%20-r%20%22patientID%3D5Yp0E%22%20--accept-ext%3D%22%3B%22" class="btn btn-default">Launch</a>
+{{< highlight text >}}
+$dicom:rs --url "https://demo.orthanc-server.com/dicom-web" -r "patientID=5Yp0E"
+{{< /highlight >}}
 * Use [$dicom:get](../../basics/commands/#dicom-get) to get dynamically the XML manifest containing direct links (without WADO server) <a  href="weasis://%24dicom%3Aget%20-w%20%22http%3A%2F%2Fweasis-launcher-weasis.1d35.starter-us-east-1.openshiftapps.com%2Fweasis-pacs-connector%2Fmanifest%3FstudyUID%3D1.2.840.113619.2.98.3467.1098086125.0.69%22" class="btn btn-default">Launch</a>
 {{< highlight text >}}
 $dicom:get -w "http://weasis-launcher-weasis.1d35.starter-us-east-1.openshiftapps.com/weasis-pacs-connector/manifest?studyUID=1.2.840.113619.2.98.3467.1098086125.0.69"
