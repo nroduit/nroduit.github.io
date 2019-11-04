@@ -125,8 +125,8 @@ To activate Weasis in dcm4chee-arc-light user interface (see the <a target="_bla
     - Invoke Image Display Patient URL: `weasis://$dicom:rs --url "http://<your-host>:8080/dcm4chee-arc/aets/DCM4CHEE/rs" -r "&patientID={}"  --query-ext "&includedefaults=false"`
     - Invoke Image Display Study URL: `weasis://$dicom:rs --url "http://<your-host>:8080/dcm4chee-arc/aets/DCM4CHEE/rs" -r "&studyUID={}"  --query-ext "&includedefaults=false"`
 - dcm4chee-arc secure (https):
-    - Invoke Image Display Patient URL: `weasis://$dicom:rs --url "http://<your-host>:8080/dcm4chee-arc/aets/DCM4CHEE/rs" -r "&patientID={}"  --query-ext "&includedefaults=false" -H "Authorization: &access_token={}`
-    - Invoke Image Display Study URL: `weasis://$dicom:rs --url "http://<your-host>:8080/dcm4chee-arc/aets/DCM4CHEE/rs" -r "&studyUID={}"  --query-ext "&includedefaults=false" -H "Authorization: &access_token={}`
+    - Invoke Image Display Patient URL: `weasis://$dicom:rs --url "http://<your-host>:8080/dcm4chee-arc/aets/DCM4CHEE/rs" -r "&patientID={}"  --query-ext "&includedefaults=false" -H "Authorization: &access_token={}"`
+    - Invoke Image Display Study URL: `weasis://$dicom:rs --url "http://<your-host>:8080/dcm4chee-arc/aets/DCM4CHEE/rs" -r "&studyUID={}"  --query-ext "&includedefaults=false" -H "Authorization: &access_token={}"`
 
 {{% notice warning %}}
 `<your-host>` must be replaced by the hostname of your dcm4chee installation.
