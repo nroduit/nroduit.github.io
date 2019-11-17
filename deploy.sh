@@ -25,6 +25,7 @@ fi
 msg "Removing the old website"
 pushd public
 git rm -rf *
+git rm -rf *
 popd
 
 msg "Building the website"
