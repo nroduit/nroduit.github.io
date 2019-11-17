@@ -17,7 +17,7 @@ msg() {
 # remove all files in public except .git
 find public -type f -not -name '.git' -delete
 
-if [[ $(git status -s --ignore-submodules=dirty) ]]; then
+if [[ $(git status -s --ignore-submodules) ]]; then
     msg "The working directory is dirty, please commit or stash any pending changes"
     exit 1;
 fi
