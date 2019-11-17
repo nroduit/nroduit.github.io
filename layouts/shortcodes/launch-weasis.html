@@ -1,31 +1,26 @@
 {{ $did :=  .Get "id" }}
 {{ $params :=  .Get "params" }}
-{{ $baseURL := "http://weasis-launcher-route-weasis.apps.ca-central-1.starter.openshift-online.com/weasis-pacs-connector/" }}
+{{ $baseURL := "http://weasis-launcher-weasis.apps.us-east-2.starter.openshift-online.com/weasis-pacs-connector/" }}
 {{ $weasisScheme := "weasis://" }}
 {{ $jnlpScheme := "getJnlpScheme/" }}
 {{ $weasis := "weasis?" }}
 {{ $viewer := "viewer?" }}
 {{ $local := "&cdb=" }}
-{{ $version304 := "&cdb=http%3A%2F%2Fweasis-launcher-route-weasis.apps.ca-central-1.starter.openshift-online.com%2Fweasis304" }}
-{{ $version263 := "&cdb=http%3A%2F%2Fweasis-launcher-route-weasis.apps.ca-central-1.starter.openshift-online.com%2Fweasis263" }}
-{{ $versionTouch := "&cdb=http%3A%2F%2Fweasis-launcher-route-weasis.apps.ca-central-1.starter.openshift-online.com%2Fweasis-touch" }}
+{{ $version304 := "&cdb=http%3A%2F%2Fweasis-launcher-weasis.apps.us-east-2.starter.openshift-online.com%2Fweasis304" }}
 
 
 <div id="{{ $did }}" class="jq-dropdown jq-dropdown-tip">
     <ul class="jq-dropdown-menu">
-        <li><label>Weasis Protocol</label></li>
-        <li><a href="{{ $baseURL }}{{ $weasis }}{{ $params }}{{ $local }}">Weasis 3.5 or superior (native installer)</a></li>
-        <li><label>JNLP Protocol (deprecated)</label></li>
+        <li><label>Weasis Protocol <a target="_blank" href="https://nroduit.github.io/en/getting-started/">(native installation)</a></label></li>
+        <li><a href="{{ $baseURL }}{{ $weasis }}{{ $params }}{{ $local }}">Weasis 3.5.4 or superior</a></li>
+        <li class="jq-dropdown-divider"></li>
+        <li><label>JNLP Protocol (deprecated, Java 8)</label></li>
         <li><a href="{{ $baseURL }}{{ $jnlpScheme }}{{ $viewer }}{{ $params }}">Weasis 3.5.4</a></li>
         <li><a href="{{ $baseURL }}{{ $jnlpScheme }}{{ $viewer }}{{ $params }}{{ $version304 }}">Weasis 3.0.4</a></li>
-        <li><a href="{{ $baseURL }}{{ $jnlpScheme }}{{ $viewer }}{{ $params }}{{ $versionTouch }}">Weasis Touch 3.0.0-RC1 (JavaFX)</a></li>
-        <li><a href="{{ $baseURL }}{{ $jnlpScheme }}{{ $viewer }}{{ $params }}{{ $version263 }}">Weasis 2.6.3</a></li>
         <li class="jq-dropdown-divider"></li>
-        <li><label>Download JNLP (deprecated)</label></li>
+        <li><label>Download JNLP (deprecated, Java 8)</label></li>
         <li><a href="{{ $baseURL }}{{ $viewer }}{{ $params }}">Weasis 3.5.4</a></li>
         <li><a href="{{ $baseURL }}{{ $viewer }}{{ $params }}{{ $version304 }}">Weasis 3.0.4</a></li>
-        <li><a href="{{ $baseURL }}{{ $viewer }}{{ $params }}{{ $versionTouch }}">Weasis Touch 3.0.0-RC1 (JavaFX)</a></li>
-        <li><a href="{{ $baseURL }}{{ $viewer }}{{ $params }}{{ $version263 }}">Weasis 2.6.3</a></li>
     </ul>
 </div>
 <input type="button" value="Launch" data-jq-dropdown="#{{ $did }}" data-horizontal-offset="-250" />
