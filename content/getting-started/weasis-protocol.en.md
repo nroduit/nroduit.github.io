@@ -89,12 +89,12 @@ $image:get -u https://user-images.githubusercontent.com/993975/59107662-6c9ed300
 
 The command for modifying the configuration at launch is `$weasis:config` which can have different arguments:
 
-* `cdb` is the Weasis web context (The URL of weasis.war). If the value is null, the weasis version installed from the [native installer](../) is used. In the weasis-pacs-connector <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector/blob/master/etc/dcm4chee-arc/weasis-pacs-connector.properties">configuration</a>, the default value is defined by `weasis.base.url`.
-* `cdb-ext` is the extension web context of Weasis (The URL of weasis-ext.war containing additionnal plugins). In the weasis-pacs-connector <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector/blob/master/etc/dcm4chee-arc/weasis-pacs-connector.properties">configuration</a>, the default value is defined by `weasis.ext.url`.
-* `arg` is an argument for the launcher. The value must start by $, like arg="$dicom:close --all" (Note: the value can also be directly in the base URI, outside $weasis:config). Single-valued argument but can be specified multiple times.
-* `pro` is a property for the launcher containing a key and a value separate by a space. Single-valued property but can be specified multiple times.
-* `auth` is the web authorization parameter
-* `wcfg` is the URL the remote Weasis configuration service.
+* **cdb** is the Weasis web context (The URL of weasis.war). If the value is null, the weasis version installed from the [native installer](../) is used. In the weasis-pacs-connector <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector/blob/master/src/main/resources/weasis-pacs-connector.properties">configuration</a>, the default value is defined by `weasis.base.url`.
+* **cdb-ext** is the extension web context of Weasis (The URL of weasis-ext.war containing additionnal plugins). In the weasis-pacs-connector <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector/blob/master/src/main/resources/weasis-pacs-connector.properties">configuration</a>, the default value is defined by `weasis.ext.url`.
+* **arg** is an argument for the launcher. The value must start by $, like arg="$dicom:close --all" (Note: the value can also be directly in the base URI, outside $weasis:config). Single-valued argument but can be specified multiple times.
+* **pro** is a property for the launcher containing a key and a value separate by a space. Single-valued property but can be specified multiple times.
+* **auth** is the web authorization parameter
+* **wcfg** is the URL the remote Weasis configuration service.
 
 Here are some examples that modify the launcher properties without using <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis">weasis-pacs-connector</a>:
 

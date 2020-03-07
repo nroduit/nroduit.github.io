@@ -27,7 +27,7 @@ An [alternative configuration](../../basics/customize/integration/#download-dire
 **Download issue**: Some browsers (like Internet Explorer) may rename war files to zip. If so, use the Save As option when downloading and change the name back to war.
 {{% /notice %}}
     - From weasis-pacs-connector folder:
-        - [weasis-pacs-connector.war] Requires at least the version 7.1.1
+        - [weasis-pacs-connector.war] Requires at least the version 7.1.2
     - From the folder with the latest version number (Optional if you want to run only the [native version](../) installed on the client system):
         - [weasis.war] requires at least Weasis 3.5.3
         - [weasis-i18n.war] Optional for [internationalization](../translating)
@@ -43,7 +43,7 @@ Alternatively one may deploy .war files using JBoss Command Line Interface Conso
 
 4. Configure weasis-pacs-connector (This step is optional if you just want to keep the default configuration).<br>
 The default configuration is stored in two files inside weasis-pacs-connector.war. To override the default configuration:
-    - Download the current <a target="_blank" href="https://raw.githubusercontent.com/nroduit/weasis-pacs-connector/master/etc/dcm4chee-arc/weasis-pacs-connector.properties" download>weasis-pacs-connector.properties</a> and <a target="_blank" href="https://raw.githubusercontent.com/nroduit/weasis-pacs-connector/master/etc/dcm4chee-arc/dicom-dcm4chee-arc.properties" download>dicom-dcm4chee-arc.properties</a> (configuration of the dcm4chee archive)
+    - Download the current <a target="_blank" href="https://raw.githubusercontent.com/nroduit/weasis-pacs-connector/master/src/main/resources/weasis-pacs-connector.properties" download>weasis-pacs-connector.properties</a> and <a target="_blank" href="https://raw.githubusercontent.com/nroduit/weasis-pacs-connector/master/src/main/resources/dicom-dcm4chee-arc.properties" download>dicom-dcm4chee-arc.properties</a> (configuration of the dcm4chee archive)
     - Edit the configuration as needed. For example, dcm4chee may be running on a different computer than Weasis, or the AE Title of dcm4chee may have been changed. If so, edit `weasis-pacs-connector.properties` or `dicom-dcm4chee-arc.properties` (Change pacs.host, pacs.port, and pacs.aet).
     - Copy `weasis-pacs-connector.properties` and `dicom-dcm4chee-arc.properties` into $WILDFLY_HOME/standalone/configuration (where $WILDFLY_HOME is the path of the running Wildfly).<br>
     With the docker installation use the docker copy command ($ docker cp ...)
@@ -51,17 +51,17 @@ The default configuration is stored in two files inside weasis-pacs-connector.w
 Instead of copying the files into $WILDFLY_HOME/standalone/configuration, JBoss Command Line Interface Console can be used to override files in the war. Add the two configuration files with the deployment-overlay command:<br>
 {{% /notice %}}
 {{< highlight bash >}}
-deployment-overlay add --name=dcm4chee-arc --deployments=weasis-pacs-connector.war --content=WEB-INF/classes/weasis-connector-default.properties=/tmp/weasis-pacs-connector.properties,WEB-INF/classes/dicom-dcm4chee-arc.properties=/tmp/dicom-dcm4chee-arc.properties --redeploy-affected
+deployment-overlay add --name=dcm4chee-arc --deployments=weasis-pacs-connector.war --content=WEB-INF/classes/weasis-pacs-connector.properties=/tmp/weasis-pacs-connector.properties,WEB-INF/classes/dicom-dcm4chee-arc.properties=/tmp/dicom-dcm4chee-arc.properties --redeploy-affected
 {{< /highlight >}}
     - For applying the new configuration, from the management console "Disable" weasis-pacs-connector.war and then "Enable"
 
 5. To activate Weasis in dcm4chee-arc-light user interface (see the <a target="_blank" href="https://github.com/dcm4che/dcm4chee-arc-light/wiki/Weasis-Viewer-Integration">matrix of the required versions</a>, you need need to changes two attributes in the configuration
-    - Go to the <a target="_blank" href="http://localhost:8080/dcm4chee-arc/ui2/#/device/edit/dcm4chee-arc/dcmArchiveDevice/properties.dcmArchiveDevice">configuration</a>
-        or from Configuration > Devices > dcm4chee-arc > Extensions > Archive Device 
-        And fill up the following properties (add `&cdb` if weasis.war has not been deployed) : 
+    - Add the following properties from the left menu Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE 
+        (add `&cdb` to the URL if weasis.war has not been deployed on the server-side): 
 
-        - Invoke Image Display Patient URL: `../../weasis-pacs-connector/weasis?&patientID={}&target=_self&access_token={}`
-        - Invoke Image Display Study URL: `../../weasis-pacs-connector/weasis?&studyUID={}&target=_self&access_token={}`
+        - `IID_PATIENT_URL=../../weasis-pacs-connector/weasis?&patientID={}&target=_self&access_token={}`
+        - `IID_STUDY_URL=../../weasis-pacs-connector/weasis?&studyUID={}&target=_self&access_token={}`
+        
 {{% notice note %}}
 `&access_token={}` is necessary in secure mode (secured RESTful services) from dcm4chee-arc-light 5.15.1<br>
 `&target=_self` avoids to open a new empty window in the web browser<br>
@@ -88,7 +88,7 @@ See also <a target="_blank" href="https://github.com/dcm4che/dcm4chee-arc-light/
 **Download issue**: Some browsers (like Internet Explorer) may rename war files to zip. If so, use the Save As option when downloading and change the name back to war.
 {{% /notice %}}
     - From weasis-pacs-connector folder:
-        - [weasis-pacs-connector.war] Requires at least the version 6.1.5, the version 7.x is not supported
+        - [weasis-pacs-connector.war] Requires the latest version 6.x, the version 7.x is not supported
         - [dcm4chee-web-weasis.jar]
     - From the folder with the latest version number (Optional if you want to run only the [native version](../) installed on the client system):
         - [weasis.war] requires at least Weasis 3.5.3
@@ -112,7 +112,7 @@ This configuration allows launching Weasis with the [weasis protocol](../weasis-
     The default configuration is stored in two files inside weasis-pacs-connector.war.
     To override the default configuration:
 
-    -  Download the current <a target="_blank" href="https://raw.githubusercontent.com/nroduit/weasis-pacs-connector/master/src/main/resources/weasis-connector-default.properties" download>weasis-connector-default.properties</a> and rename it `weasis-pacs-connector.properties`, and download <a target="_blank" href="https://raw.githubusercontent.com/nroduit/weasis-pacs-connector/master/src/main/resources/dicom-dcm4chee.properties" download>dicom-dcm4chee.properties</a> (configuration of the dcm4chee archive)
+    -  Download the current <a target="_blank" href="https://raw.githubusercontent.com/nroduit/weasis-pacs-connector/6.x/src/main/resources/weasis-connector-default.properties" download>weasis-connector-default.properties</a> and rename it `weasis-pacs-connector.properties`, and download <a target="_blank" href="https://raw.githubusercontent.com/nroduit/weasis-pacs-connector/6.x/src/main/resources/dicom-dcm4chee.properties" download>dicom-dcm4chee.properties</a> (configuration of the dcm4chee archive)
     - Copy the files into a folder in the classpath of the servlet container. In JBoss (inferior to version 7), the best location would typically be server/default/conf.
     - Edit the configuration as needed.
         For example, dcm4chee may be running on a different computer than Weasis, or the AE Title of dcm4chee may have been changed.

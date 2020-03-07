@@ -50,10 +50,10 @@ The documentation for building the native installer is not yet available.
 - Requires installing all the plug-ins in the local Maven repository as described in the item above.
 {{< highlight bash >}}
 $ cd weasis-distributions
-$ mvn clean package -Dportable=true -P pack200
+$ mvn clean package -Dportable=true -P compressXZ
 {{< /highlight >}}
 {{% notice tip %}}
-**-P pack200**: From 1.1.2 it is possible to use the compression pack200 that reduces jar size considerably.<br>
+**-P compressXZ**: Option for compressing the packages in <a target="_blank" href="https://en.wikipedia.org/wiki/XZ_Utils">xz</a>, only from Weasis 3.6.0. The compression pack200 is not supported anymore (removed from Java 14), before 3.6.0 the profile was **-P pack200**.<br>
 **-Dportable=true**: Option for building the portable distribution (multi-platform standalone launchers)
 {{% /notice %}}
 {{% notice warning %}}
@@ -61,7 +61,7 @@ For the WEB distribution using Java Webstart, it is required to sign jar files w
 {{% /notice %}}
 The parameters must be placed in the maven user setting or has to be the options in the Maven command:
 {{< highlight bash >}}
-$ mvn clean package -Djarsigner.alias="your_alias" -Djarsigner.storepass="your_pwd" -Djarsigner.keystore="your_path/keystore" -Dportable=true -P pack200
+$ mvn clean package -Djarsigner.alias="your_alias" -Djarsigner.storepass="your_pwd" -Djarsigner.keystore="your_path/keystore" -Dportable=true -P compressXZ
 {{< /highlight >}}
 
 
