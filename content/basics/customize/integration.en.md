@@ -14,7 +14,7 @@ Using <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector"
 - Automatically build a manifest according to a configuration with a PACS
 - The initial URL starts with HTTP and is then redirected to weasis:// (as weasis:// is not allowed by wiki, blog…)
 - Manages to build the manifest simultaneously with the start of Weasis
-- The URL returns a manifest ID which can be requested only once (and must be <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector/blob/master/etc/dcm4chee-arc/weasis-pacs-connector.properties#L17">consumed within 5 min</a>)
+- The URL returns a manifest ID which can be requested only once (and must be <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector/blob/master/src/main/resources/weasis-pacs-connector.properties#L17">consumed within 5 min</a>)
 
 However, it is possible to [build your own connector](#build-your-own-connector) for particular integrations or when a DICOMWeb service is available.
 
@@ -119,14 +119,16 @@ Use [$dicom:rs](../../commands/#dicom-rs) to load DICOM files. Here are some con
 
 #### dcm4chee-arc-light
 
-To activate Weasis in dcm4chee-arc-light user interface (see the <a target="_blank" href="https://github.com/dcm4che/dcm4chee-arc-light/wiki/Weasis-Viewer-Integration">matrix of the required versions</a>, you need need to changes two attributes in the configuration. For this purpose, go to the <a target="_blank" href="http://localhost:8080/dcm4chee-arc/ui2/#/device/edit/dcm4chee-arc/dcmArchiveDevice/properties.dcmArchiveDevice">configuration</a> or from Configuration > Devices > dcm4chee-arc > Extensions > Archive Device 
+To activate Weasis in dcm4chee-arc-light user interface (see the <a target="_blank" href="https://github.com/dcm4che/dcm4chee-arc-light/wiki/Weasis-Viewer-Integration">matrix of the required versions</a>, you need need to changes two attributes in the configuration. For this purpose, add the following properties from the left menu Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE
 
 - dcm4chee-arc unsecure (http):
-    - Invoke Image Display Patient URL: `weasis://$dicom:rs --url "http://<your-host>:8080/dcm4chee-arc/aets/DCM4CHEE/rs" -r "&patientID={}"  --query-ext "&includedefaults=false"`
-    - Invoke Image Display Study URL: `weasis://$dicom:rs --url "http://<your-host>:8080/dcm4chee-arc/aets/DCM4CHEE/rs" -r "&studyUID={}"  --query-ext "&includedefaults=false"`
-- dcm4chee-arc secure (https):
-    - Invoke Image Display Patient URL: `weasis://$dicom:rs --url "http://<your-host>:8080/dcm4chee-arc/aets/DCM4CHEE/rs" -r "&patientID={}"  --query-ext "&includedefaults=false" -H "Authorization: &access_token={}"`
-    - Invoke Image Display Study URL: `weasis://$dicom:rs --url "http://<your-host>:8080/dcm4chee-arc/aets/DCM4CHEE/rs" -r "&studyUID={}"  --query-ext "&includedefaults=false" -H "Authorization: &access_token={}"`
+    - `IID_PATIENT_URL=weasis://$dicom:rs --url "http://<your-host>:8080/dcm4chee-arc/aets/DCM4CHEE/rs" -r "&patientID={}"  --query-ext "&includedefaults=false"`
+    - `IID_STUDY_URL=weasis://$dicom:rs --url "http://<your-host>:8080/dcm4chee-arc/aets/DCM4CHEE/rs" -r "&studyUID={}"  --query-ext "&includedefaults=false"`
+- dcm4chee-arc secure (with https required a real valid certificate otherwise the certificate must be imported into the Weasis Java keystore):
+    - `IID_PATIENT_URL=weasis://$dicom:rs --url "http://<your-host>:8080/dcm4chee-arc/aets/DCM4CHEE/rs" -r "&patientID={}"  --query-ext "&includedefaults=false" -H "Authorization: &access_token={}"`
+    - `IID_STUDY_URL=weasis://$dicom:rs --url "http://<your-host>:8080/dcm4chee-arc/aets/DCM4CHEE/rs" -r "&studyUID={}"  --query-ext "&includedefaults=false" -H "Authorization: &access_token={}"`
+
+Refresh the page for having the viewer button.
 
 {{% notice warning %}}
 `<your-host>` must be replaced by the hostname of your dcm4chee installation.
@@ -161,3 +163,18 @@ Currently, the DICOMWeb service for getting thumbnails doesn't work in the Googl
 {{% notice warning %}}
 `<your-token>` must be replaced by the hostname of your dcm4che installation.
 {{% /notice %}}
+
+#### DICOMcloud (for Azure cloud)
+
+https://github.com/DICOMcloud/DICOMcloud
+
+{{< highlight text >}}
+$dicom:rs --url "https://dicomcloud.azurewebsites.net/api" -r "studyUID=1.2.840.113619.2.25.1.1762157631.873231884.123" -r "studyUID=1.3.6.1.4.1.5962.99.1.2280943358.716200484.1363785608958.3.0"
+{{< /highlight >}}
+
+<a  href="weasis://%24dicom%3Ars%20--url%20%22https%3A%2F%2Fdicomcloud.azurewebsites.net%2Fapi%22%20-r%20%22studyUID%3D1.2.840.113619.2.25.1.1762157631.873231884.123%22%20-r%20%22studyUID%3D1.3.6.1.4.1.5962.99.1.2280943358.716200484.1363785608958.3.0%22" class="btn btn-default">Launch</a>
+
+
+Currently, the DICOMWeb service of DICOMcloud doesn't support:
+
+- Thumbnail service is not implemented.
