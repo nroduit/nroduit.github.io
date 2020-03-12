@@ -34,19 +34,18 @@ For burning studies with Weasis, and additionnal plugin must be activated. In th
 For burning Weasis with dcm4chee-cdw, look at [Write weasis-portable to DICOM CDs with dcm4chee-cdw](../old/dcm4chee/#write-weasis-portable-to-dicom-cds-with-dcm4chee-cdw).
 
 ### How to enable Weasis logging? ###
-Logs are available either in Weasis log files (in ${user.home}/.weasis/log) or in the Java console (only with Java Webstart).
 
-1. By displaying the Java console (not compatible with the Weasis native installer):
+* From Weasis 3.5, a boot log file is always written in ${user.home}/.weasis/log/boot-x.log to trace the launching configuration. A default.log file in the same folder can trace all the Weasis activities; it must be activated:
+    - From *File > Preferences > General* enable *Rolling log*, select a log level and a stacktrace limit (DEBUG and empty (unlimited stacktrace lines) are recommended for investigating problems).
+    - The default logging configuration comes from config.properties or ext-config.properties, see [Weasis Preferences](../basics/customize/preferences).
+
+* By displaying the Java console (only when launching with Java Webstart, not compatible with [weasis protocol](../getting-started/weasis-protocol)):
     * <a target="_blank" href="http://www.java.com/en/download/help/javaconsole.xml">Windows</a>
     * <a target="_blank" href="http://www.java.com/en/download/help/enable_console_linux.xml">Linux</a>
     *  Mac:
         1. Navigate to the following folder: Applications > Utilities > Java.
         1. Click the Java Preferences icon and then the Advanced tab.
         1. Under the Java console section, select the Show console radio button.
-
-2. By writing to log files:
-    - Logging can be activated in Weasis from *File > Preferences > General*
-    - The default logging configuration comes from config.properties or ext-config.properties, see [Weasis Preferences](../basics/customize/preferences).
 
 ### Is it possible to download DICOM files without having a WADO server? ###
 Yes, but a WADO server is recommended. Downloading DICOMs can be achieved by:
