@@ -119,20 +119,20 @@ Use [$dicom:rs](../../commands/#dicom-rs) to load DICOM files. Here are some con
 
 #### dcm4chee-arc-light
 
-To activate Weasis in dcm4chee-arc-light user interface (see the <a target="_blank" href="https://github.com/dcm4che/dcm4chee-arc-light/wiki/Weasis-Viewer-Integration">matrix of the required versions</a>, you need need to changes two attributes in the configuration. For this purpose, add the following properties from the left menu Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE
+This configuration requires at least dcm4chee-arc-light 5.19.1 and Weasis 3.5.4. To activate Weasis in dcm4chee-arc-light user interface, you need to add the two following properties by either editing docker-compose.env (required dcm4chee-arc-light 5.22.0 or superior) or in the web portal from the left menu *Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE*
 
-- dcm4chee-arc unsecure (http):
+- dcm4chee-arc unsecure (HTTP):
     - `IID_PATIENT_URL=weasis://$dicom:rs --url "http://<your-host>:8080/dcm4chee-arc/aets/DCM4CHEE/rs" -r "&patientID={}"  --query-ext "&includedefaults=false"`
     - `IID_STUDY_URL=weasis://$dicom:rs --url "http://<your-host>:8080/dcm4chee-arc/aets/DCM4CHEE/rs" -r "&studyUID={}"  --query-ext "&includedefaults=false"`
-- dcm4chee-arc secure (with https required a real valid certificate otherwise the certificate must be imported into the Weasis Java keystore):
-    - `IID_PATIENT_URL=weasis://$dicom:rs --url "http://<your-host>:8080/dcm4chee-arc/aets/DCM4CHEE/rs" -r "&patientID={}"  --query-ext "&includedefaults=false" -H "Authorization: &access_token={}"`
-    - `IID_STUDY_URL=weasis://$dicom:rs --url "http://<your-host>:8080/dcm4chee-arc/aets/DCM4CHEE/rs" -r "&studyUID={}"  --query-ext "&includedefaults=false" -H "Authorization: &access_token={}"`
-
-Refresh the page for having the viewer button.
+- dcm4chee-arc secure (HTTPS):
+    - `IID_PATIENT_URL=weasis://$dicom:rs --url "https://<your-host>:8443/dcm4chee-arc/aets/DCM4CHEE/rs" -r "&patientID={}"  --query-ext "&includedefaults=false" -H "Authorization: &access_token={}"`
+    - `IID_STUDY_URL=weasis://$dicom:rs --url "https://<your-host>:8443/dcm4chee-arc/aets/DCM4CHEE/rs" -r "&studyUID={}"  --query-ext "&includedefaults=false" -H "Authorization: &access_token={}"`
 
 {{% notice warning %}}
-`<your-host>` must be replaced by the hostname of your dcm4chee installation.
+`<your-host>` must be replaced by the hostname of your dcm4che installation. Configuration of HTTPS required a real valid certificate; otherwise, the certificate must be imported into the Weasis Java keystore. For testing purposes in secure mode, you can use the HTTP URL if it is mapped in the OIDC client of keycloack.
 {{% /notice %}}
+
+Finally, refresh the page for having the viewer button.
 
 #### Orthanc WEB Server
 
