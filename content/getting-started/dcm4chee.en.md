@@ -9,16 +9,14 @@ This page describes how installing Weasis to be the default web viewer of dcm4ch
 
 Weasis is launched from the dcm4chee administrative web interface with the [weasis protocol](../weasis-protocol), as shown in the pictures below.
 {{% notice note %}}
-The documentation where Weasis is launched with Java Webstart is still available [here](../../old/dcm4chee).
+The documentation where Weasis was launched with Java Webstart is still available [here](../../old/dcm4chee).
 {{% /notice %}}
 
 ### For dcm4chee-arc-light
 
 ![dcm4chee-arc-light](/gallery-dcm4chee/1Weasis in dcm4chee-arc-light.png?classes=border "dcm4chee-arc-light")
 
-{{% notice tip %}}
-An [alternative configuration](../../basics/customize/integration/#download-directly-with-dicomweb-restful-services) without weasis-pacs-connector and with dcm4chee DICOMWeb services is possible (No need to consider the following points), it requires only the installation of Weasis 3.5.4 or superior.
-{{% /notice %}}
+For a simpler and faster installation without server components, please follow these [instructions](../../basics/customize/integration/#download-directly-with-dicomweb-restful-services); no need to consider the following points on this page. Otherwise if you need more advanced configurations then follow these steps:
 
 1. <a target="_blank" href="https://github.com/dcm4che/dcm4chee-arc-light/wiki">Install dcm4chee</a>, if not already done (Installation with Docker is straightforward).
 
@@ -55,13 +53,10 @@ deployment-overlay add --name=dcm4chee-arc --deployments=weasis-pacs-connector.w
 {{< /highlight >}}
     - For applying the new configuration, from the management console "Disable" weasis-pacs-connector.war and then "Enable"
 
-5. To activate Weasis in dcm4chee-arc-light user interface (see the <a target="_blank" href="https://github.com/dcm4che/dcm4chee-arc-light/wiki/Weasis-Viewer-Integration">matrix of the required versions</a>, you need need to changes two attributes in the configuration
-    - Add the following properties from the left menu Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE 
-        (add `&cdb` to the URL if weasis.war has not been deployed on the server-side): 
+5. To activate Weasis in dcm4chee-arc-light (from 5.19.1) user interface (see the <a target="_blank" href="https://github.com/dcm4che/dcm4chee-arc-light/wiki/Weasis-Viewer-Integration">matrix of the required versions</a>, you need need to add the two following attributes in docker-compose.env (from 5.22.0) or from the left menu Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE (add `&cdb` to the URL if weasis.war has not been deployed on the server-side): 
+    - `IID_PATIENT_URL=../../weasis-pacs-connector/weasis?&patientID={}&target=_self&access_token={}`
+    - `IID_STUDY_URL=../../weasis-pacs-connector/weasis?&studyUID={}&target=_self&access_token={}`
 
-        - `IID_PATIENT_URL=../../weasis-pacs-connector/weasis?&patientID={}&target=_self&access_token={}`
-        - `IID_STUDY_URL=../../weasis-pacs-connector/weasis?&studyUID={}&target=_self&access_token={}`
-        
 {{% notice note %}}
 `&access_token={}` is necessary in secure mode (secured RESTful services) from dcm4chee-arc-light 5.15.1<br>
 `&target=_self` avoids to open a new empty window in the web browser<br>
