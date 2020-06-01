@@ -86,8 +86,8 @@ deployment-overlay add --name=dcm4chee-arc --deployments=weasis-pacs-connector.w
 | Unsecured* | from 5.19.1 to 5.22.1 | IID_PATIENT_URL=../../weasis-pacs-connector/weasis?&patientID={}&cdb&target=_self<br>IID_STUDY_URL=../../weasis-pacs-connector/weasis?&studyUID={}&cdb&target=_self |
 | Secured | from 5.19.1 to 5.22.1 | IID_PATIENT_URL=../../weasis-pacs-connector/weasis?&patientID={}&target=_self&access_token={}<br>IID_STUDY_URL=../../weasis-pacs-connector/weasis?&studyUID={}&target=_self&access_token={} |
 | Secured* | from 5.19.1 to 5.22.1 | IID_PATIENT_URL=../../weasis-pacs-connector/weasis?&patientID={}&cdb&target=_self&access_token={}<br>IID_STUDY_URL=../../weasis-pacs-connector/weasis?&studyUID={}&cdb&target=_self&access_token={} |
-| Secured | from 5.22.2 | IID_PATIENT_URL=../../weasis-pacs-connector/weasis?patientID={{patientID}}&access_token={{access_token}}<br>IID_STUDY_URL=../../weasis-pacs-connector/weasis?studyUID={{studyUID}}&access_token={{access_token}}<br>IID_PATIENT_URL_TARGET=_self<br>IID_STUDY_URL_TARGE=_self |
-| Secured* | from 5.22.2 | IID_PATIENT_URL=../../weasis-pacs-connector/weasis?patientID={{patientID}}&cdb&access_token={{access_token}}<br>IID_STUDY_URL=../../weasis-pacs-connector/weasis?studyUID={{studyUID}}&cdb&access_token={{access_token}}<br>IID_PATIENT_URL_TARGET=_self<br>IID_STUDY_URL_TARGE=_self |
+| Secured | from 5.22.2 | IID_PATIENT_URL=../../weasis-pacs-connector/weasis?patientID={{patientID}}&access_token={{access_token}}<br>IID_STUDY_URL=../../weasis-pacs-connector/weasis?studyUID={{studyUID}}&access_token={{access_token}}<br>IID_PATIENT_URL_TARGET=_self<br>IID_STUDY_URL_TARGET=_self |
+| Secured* | from 5.22.2 | IID_PATIENT_URL=../../weasis-pacs-connector/weasis?patientID={{patientID}}&cdb&access_token={{access_token}}<br>IID_STUDY_URL=../../weasis-pacs-connector/weasis?studyUID={{studyUID}}&cdb&access_token={{access_token}}<br>IID_PATIENT_URL_TARGET=_self<br>IID_STUDY_URL_TARGET=_self |
 
 </font>
 

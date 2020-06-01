@@ -122,7 +122,7 @@ Use [$dicom:rs](../../commands/#dicom-rs) to load DICOM files. Here are some con
 This configuration requires at least dcm4chee-arc-light 5.22.2 and Weasis 3.6.0. To activate Weasis in dcm4chee-arc-light user interface, you need to add the four following properties in the web portal from the left menu *Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE*
 {{< highlight text >}}
 IID_PATIENT_URL_TARGET=_self
-IID_STUDY_URL_TARGE=_self
+IID_STUDY_URL_TARGET=_self
 IID_PATIENT_URL=weasis://$dicom:rs --url "{{qidoBaseURL}}{{qidoBasePath}}" -r "patientID={{patientID}}" --query-ext "&includedefaults=false" -H "Authorization: Bearer {{access_token}}"
 IID_STUDY_URL=weasis://$dicom:rs --url "{{qidoBaseURL}}{{qidoBasePath}}" -r "studyUID={{studyUID}}" --query-ext "&includedefaults=false" -H "Authorization: Bearer {{access_token}}"
 {{< /highlight >}}
@@ -130,7 +130,7 @@ IID_STUDY_URL=weasis://$dicom:rs --url "{{qidoBaseURL}}{{qidoBasePath}}" -r "stu
 The four properties can also be passed directly to the docker-compose.env file:
 {{< highlight text >}}
 IID_PATIENT_URL_TARGET=_self
-IID_STUDY_URL_TARGE=_self
+IID_STUDY_URL_TARGET=_self
 IID_PATIENT_URL=weasis://$dicom:rs --url "{{qidoBaseURL}}{{qidoBasePath}}" -r "patientID={{patientID}}" --query-ext "\&includedefaults=false" -H "Authorization: Bearer {{access_token}}"
 IID_STUDY_URL=weasis://$dicom:rs --url "{{qidoBaseURL}}{{qidoBasePath}}" -r "studyUID={{studyUID}}" --query-ext "\&includedefaults=false" -H "Authorization: Bearer {{access_token}}"
 {{< /highlight >}}
