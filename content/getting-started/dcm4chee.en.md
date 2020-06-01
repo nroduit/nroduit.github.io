@@ -58,7 +58,7 @@ deployment-overlay add --name=dcm4chee-arc --deployments=weasis-pacs-connector.w
      - Configure the URL for having a view button for the patient or study level.
         - From dcm4chee-arc-light 5.10.2 to 5.19.0 the left menu Configuration > Devices > dcm4chee-arc > Extensions > Archive Device
         - From dcm4chee-arc-light 5.19.1 the left menu Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE
-        - From dcm4chee-arc-light 5.22.0 by editing docker-compose.env (It allows you to directly apply the properties when deploying, then the can be edited in the web portal)
+        - From dcm4chee-arc-light 5.22.0 by editing docker-compose.env (It allows you to directly apply the properties when deploying, then the can be edited in the web portal). Note: the character ‘&’ must be escaped (e.g. IID_STUDY_URL=../../weasis-pacs-connector/weasis?studyUID={{studyUID}}\\&access_token={{access_token}})
 {{% notice note %}}
 **URL parameters**
 
