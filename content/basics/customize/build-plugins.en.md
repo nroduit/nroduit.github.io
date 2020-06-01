@@ -52,6 +52,12 @@ Example with [weasis-isowriter](http://github.com/nroduit/weasis-isowriter):
 felix.auto.start.85=${weasis.codebase.url}/plugins/weasis-isowriter-2.6.1.jar
 {{< /highlight >}}
 {{% notice tip %}}
+If you want to use another directory for a plugin on your computer, you should use one of the following properties:  
+On Windows: `felix.auto.start.85=file:///C:/path/to/weasis-isowriter-2.6.1.jar`  
+On linux: `felix.auto.start.85=file:///home/Username/path/to/weasis-isowriter-2.6.1.jar`  
+On macOS: `felix.auto.start.85=file:///Users/Username/path/to/weasis-isowriter-2.6.1.jar`
+{{% /notice %}}
+{{% notice tip %}}
 For not modifying the current ext-config.properties create a new file and add to the launcher the following VM argument:
     `-Dfelix.extended.config.properties="file:///your_plugin_path/myplugin-config.properties"`
 {{% /notice %}}
