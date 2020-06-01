@@ -50,25 +50,30 @@ Should display:
 Should always render the same image.
 {{% /notice %}}
 
-- Unsigned data
+<ul>
+<li style="margin-bottom:10px;">Unsigned data
 {{% launch-weasis id="st-unsigned" params="studyUID=1.3.6.1.4.1.5962.1.2.10.1073676931.29447.0&studyUID=1.3.6.1.4.1.5962.1.2.11.1073676943.29651.0&studyUID=1.3.6.1.4.1.5962.1.2.12.1073676957.153.0&studyUID=1.3.6.1.4.1.5962.1.2.13.1073676974.625.0&studyUID=1.3.6.1.4.1.5962.1.2.14.1073676983.853.0&studyUID=1.3.6.1.4.1.5962.1.2.15.1073676998.1323.0&studyUID=1.3.6.1.4.1.5962.1.2.16.1073677013.1817.0&studyUID=1.3.6.1.4.1.5962.1.2.9.1073676916.29073.0" %}}
-
-- Signed data
+</li>
+<li style="margin-bottom:10px;">Signed data
 {{% launch-weasis id="st-signed" params="studyUID=1.3.6.1.4.1.5962.1.2.10.1073676936.29494.0&studyUID=1.3.6.1.4.1.5962.1.2.11.1073676947.29791.0&studyUID=1.3.6.1.4.1.5962.1.2.12.1073676968.345.0&studyUID=1.3.6.1.4.1.5962.1.2.13.1073676981.726.0&studyUID=1.3.6.1.4.1.5962.1.2.15.1073677001.1422.0&studyUID=1.3.6.1.4.1.5962.1.2.14.1073676989.1033.0&studyUID=1.3.6.1.4.1.5962.1.2.16.1073677017.1876.0&studyUID=1.3.6.1.4.1.5962.1.2.9.1073676922.29189.0" %}}
+</li>
+</ul>
 
 ------------------------------------------------------------------------
 
 #### Compression
 
-- Different compression syntaxes (JPEG, JPEG-Lossless, JPEG-LS, J2K, RLE)
+<ul>
+<li style="margin-bottom:10px;">Different compression syntaxes (JPEG, JPEG-Lossless, JPEG-LS, J2K, RLE)
 {{% launch-weasis id="st-compression" params="studyUID=1.3.6.1.4.1.5962.1.2.8.20031208063649.855" %}}
-
-- Compression and fragments (the file contains the encoded pixel data stream fragmented into several parts, see [DICOM part5](http://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_A.4.html))
+</li>
+<li style="margin-bottom:10px;">Compression and fragments (the file contains the encoded pixel data stream fragmented into several parts, see <a target="_blank" href="http://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_A.4.html">DICOM part5</a>)
 {{% launch-weasis id="st-compression-fr" params="studyUID=1.3.6.1.4.1.5962.1.2.17.20031208063649.855" %}}
-
-- Compression, multi-frame and fragments
+</li>
+<li style="margin-bottom:10px;">Compression, multi-frame and fragments
 {{% launch-weasis id="st-compression-multi" params="studyUID=1.3.6.1.4.1.5962.1.2.5000.1166546115.14677" %}}
-
+</li>
+</ul>
 ------------------------------------------------------------------------
 
 #### Photometric Interpretation
@@ -181,22 +186,35 @@ Open by the embedded Java Audio Player.
 Click on the right icon over the image to select the Presentation State. Show or hide graphics layers from the "Display" right panel. See [How to build DICOM PR](../tutorials/build-ko-pr/#presentation-state-pr-or-gsps).
 {{% /notice %}}
 
-- Shutter Test {{% launch-weasis id="st-pr-shutter" params="studyUID=1.2.276.0.7230010.3.200.11" %}}
-- Text Annotation {{% launch-weasis id="st-pr-text" params="studyUID=1.2.276.0.7230010.3.200.10" %}}
-- Displayed Area {{% launch-weasis id="st-pr-area" params="studyUID=1.2.276.0.7230010.3.200.8" %}}
-- Modality LUT PState{{% launch-weasis id="st-pr-modlut" params="studyUID=1.2.276.0.7230010.3.200.3" %}}
-- VOI LUT PState {{% launch-weasis id="st-pr-voilut" params="studyUID=1.2.276.0.7230010.3.200.4" %}}
-- Presentation LUT PState {{% launch-weasis id="st-pr-prlut" params="studyUID==1.2.276.0.7230010.3.200.5" %}}
-- Combined LUT PState {{% launch-weasis id="st-pr-clut" params="studyUID=1.2.276.0.7230010.3.200.6" %}}
-- Spatial Transformation {{% launch-weasis id="st-pr-trans" params="studyUID=1.2.276.0.7230010.3.200.7" %}}
-- Overlay {{% launch-weasis id="st-pr-overlay" params="studyUID=1.2.276.0.7230010.3.200.12" %}}
-- Graphics Annotation {{% launch-weasis id="st-pr-graphic" params="studyUID=1.2.276.0.7230010.3.200.9" %}}
-- Complex Combination {{% launch-weasis id="st-pr-complex" params="studyUID=1.2.276.0.7230010.3.200.13" %}}
-- GE RA600 Test of CPI GSPS {{% launch-weasis id="st-pr-ge" params="studyUID=1.2.124.113532.3.231.29.12.20020713.160823.3427" %}}
+<ul>
+<li style="margin-bottom:10px;">Shutter Test {{% launch-weasis id="st-pr-shutter" params="studyUID=1.2.276.0.7230010.3.200.11" %}}
+</li>
+<li style="margin-bottom:10px;">Text Annotation {{% launch-weasis id="st-pr-text" params="studyUID=1.2.276.0.7230010.3.200.10" %}}
+</li>
+<li style="margin-bottom:10px;">Displayed Area {{% launch-weasis id="st-pr-area" params="studyUID=1.2.276.0.7230010.3.200.8" %}}
+</li>
+<li style="margin-bottom:10px;">Modality LUT PState{{% launch-weasis id="st-pr-modlut" params="studyUID=1.2.276.0.7230010.3.200.3" %}}
+</li>
+<li style="margin-bottom:10px;">VOI LUT PState {{% launch-weasis id="st-pr-voilut" params="studyUID=1.2.276.0.7230010.3.200.4" %}}
+</li>
+<li style="margin-bottom:10px;">Presentation LUT PState {{% launch-weasis id="st-pr-prlut" params="studyUID==1.2.276.0.7230010.3.200.5" %}}
+</li>
+<li style="margin-bottom:10px;">Combined LUT PState {{% launch-weasis id="st-pr-clut" params="studyUID=1.2.276.0.7230010.3.200.6" %}}
+</li>
+<li style="margin-bottom:10px;">Spatial Transformation {{% launch-weasis id="st-pr-trans" params="studyUID=1.2.276.0.7230010.3.200.7" %}}
+</li>
+<li style="margin-bottom:10px;">Overlay {{% launch-weasis id="st-pr-overlay" params="studyUID=1.2.276.0.7230010.3.200.12" %}}
+</li>
+<li style="margin-bottom:10px;">Graphics Annotation {{% launch-weasis id="st-pr-graphic" params="studyUID=1.2.276.0.7230010.3.200.9" %}}
+</li>
+<li style="margin-bottom:10px;">Complex Combination {{% launch-weasis id="st-pr-complex" params="studyUID=1.2.276.0.7230010.3.200.13" %}}
+</li>
+<li style="margin-bottom:10px;">GE RA600 Test of CPI GSPS {{% launch-weasis id="st-pr-ge" params="studyUID=1.2.124.113532.3.231.29.12.20020713.160823.3427" %}}
   {{% notice note %}}
   This sample is produced by a GE workstation and contains some proprietary items (so not all PRs can be applied)
   {{% /notice %}}
-
+</li>
+</ul>
 ------------------------------------------------------------------------
 
 #### DICOM Key Object Selection (KO)

@@ -11,6 +11,11 @@ pygmentsCodeFences = true
 PygmentsCodeFencesGuessSyntax = false
 paginate = 6
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 # For search functionnality
 [outputs]
   home = [ "HTML", "RSS", "JSON"]

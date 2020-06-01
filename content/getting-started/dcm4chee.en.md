@@ -53,22 +53,46 @@ deployment-overlay add --name=dcm4chee-arc --deployments=weasis-pacs-connector.w
 {{< /highlight >}}
     - For applying the new configuration, from the management console "Disable" weasis-pacs-connector.war and then "Enable"
 
-5. To activate Weasis in dcm4chee-arc-light (from 5.19.1) user interface (see the <a target="_blank" href="https://github.com/dcm4che/dcm4chee-arc-light/wiki/Weasis-Viewer-Integration">matrix of the required versions</a>, you need need to add the two following attributes in docker-compose.env (from 5.22.0) or from the left menu Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE (add `&cdb` to the URL if weasis.war has not been deployed on the server-side): 
-    - `IID_PATIENT_URL=../../weasis-pacs-connector/weasis?&patientID={}&target=_self&access_token={}`
-    - `IID_STUDY_URL=../../weasis-pacs-connector/weasis?&studyUID={}&target=_self&access_token={}`
-
+5. To activate Weasis in the dcm4chee-arc-light user interface (see the matrix of the required versions in the table below):
+ you need to add attributes by either editing docker-compose.env (from 5.22.0) or from the left menu Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE (add `&cdb` to the URL if weasis.war has not been deployed on the server-side):
+     - Configure the URL for having a view button for the patient or study level.
+        - From dcm4chee-arc-light 5.10.2 to 5.19.0 the left menu Configuration > Devices > dcm4chee-arc > Extensions > Archive Device
+        - From dcm4chee-arc-light 5.19.1 the left menu Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE
+        - From dcm4chee-arc-light 5.22.0 by editing docker-compose.env (It allows you to directly apply the properties when deploying, then the can be edited in the web portal)
 {{% notice note %}}
-`&access_token={}` is necessary in secure mode (secured RESTful services) from dcm4chee-arc-light 5.15.1<br>
-`&target=_self` avoids to open a new empty window in the web browser<br>
-`&cdb` [cdb parameter](https://nroduit.github.io/en/getting-started/weasis-protocol/#modify-the-launch-parameters) to override the URL of the Weasis web context to null (when you want only the native local version or when weasis.war has not be deployed)<br>
-See also <a target="_blank" href="https://github.com/dcm4che/dcm4chee-arc-light/wiki/Invoke-Image-Display">Invoke Image Display in dcm4chee</a>
+**URL parameters**
+
+- `access_token` is necessary in secure mode (secured RESTful services) from dcm4chee-arc-light 5.15.1
+- `_self` avoids to open a new empty window in the web browser<br>
+- `cdb` [cdb parameter](https://nroduit.github.io/en/getting-started/weasis-protocol/#modify-the-launch-parameters) to override the URL of the Weasis web context to null (when you want only the native local version or when weasis.war has not be deployed with weasis-pacs-connector)<br>
+- See also <a target="_blank" href="https://github.com/dcm4che/dcm4chee-arc-light/wiki/Invoke-Image-Display">Invoke Image Display in dcm4chee</a>
 {{% /notice %}}
 {{% notice tip %}}
 **Absolute path**: The values above starting by "../" are the default relative path when weasis-pacs-connector is installed in the same JBoss as dcm4chee. Otherwise replace the relative URL by an absolute value, ex: `http://<your-host>:<port>/weasis-pacs-connector/...`
 {{% /notice %}}
     - Optional: add <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis-with-other-parameters">other properties</a> in the URL.
     - Refresh the web page and the view button should appear as in the screenshot above
-    - To launch the viewer from the web portal, the client computer must have installed the [Weasis package](../) on the operating system.
+    - To launch the viewer from the web portal, the client computer must have installed the [Weasis package](../).
+
+<font size="2">
+
+| Mode | dcm4chee version | Configuration |
+| ---- | ---------------- | --------------|
+| Unsecured | from 5.10.2 to 5.19.0 | ../../weasis-pacs-connector/weasis?&patientID={}&target=_self<br>../../weasis-pacs-connector/weasis?&studyUID={}&target=_self |
+| Unsecured* | from 5.10.2 to 5.19.0 | ../../weasis-pacs-connector/weasis?&patientID={}&cdb&target=_self<br>../../weasis-pacs-connector/weasis?&studyUID={}&cdb&target=_self |
+| Secured | from  5.15.1 to 5.19.0 | ../../weasis-pacs-connector/weasis?&patientID={}&target=_self&access_token={}<br>../../weasis-pacs-connector/weasis?&studyUID={}&target=_self&access_token={} |
+| Secured* | from  5.15.1 to 5.19.0 | ../../weasis-pacs-connector/weasis?&patientID={}&cdb&target=_self&access_token={}<br>../../weasis-pacs-connector/weasis?&studyUID={}&cdb&target=_self&access_token={} |
+| Unsecured | from 5.19.1 to 5.22.1 | IID_PATIENT_URL=../../weasis-pacs-connector/weasis?&patientID={}&target=_self<br>IID_STUDY_URL=../../weasis-pacs-connector/weasis?&studyUID={}&target=_self |
+| Unsecured* | from 5.19.1 to 5.22.1 | IID_PATIENT_URL=../../weasis-pacs-connector/weasis?&patientID={}&cdb&target=_self<br>IID_STUDY_URL=../../weasis-pacs-connector/weasis?&studyUID={}&cdb&target=_self |
+| Secured | from 5.19.1 to 5.22.1 | IID_PATIENT_URL=../../weasis-pacs-connector/weasis?&patientID={}&target=_self&access_token={}<br>IID_STUDY_URL=../../weasis-pacs-connector/weasis?&studyUID={}&target=_self&access_token={} |
+| Secured* | from 5.19.1 to 5.22.1 | IID_PATIENT_URL=../../weasis-pacs-connector/weasis?&patientID={}&cdb&target=_self&access_token={}<br>IID_STUDY_URL=../../weasis-pacs-connector/weasis?&studyUID={}&cdb&target=_self&access_token={} |
+| Secured | from 5.22.2 | IID_PATIENT_URL=../../weasis-pacs-connector/weasis?patientID={{patientID}}&access_token={{access_token}}<br>IID_STUDY_URL=../../weasis-pacs-connector/weasis?studyUID={{studyUID}}&access_token={{access_token}}<br>IID_PATIENT_URL_TARGET=_self<br>IID_STUDY_URL_TARGE=_self |
+| Secured* | from 5.22.2 | IID_PATIENT_URL=../../weasis-pacs-connector/weasis?patientID={{patientID}}&cdb&access_token={{access_token}}<br>IID_STUDY_URL=../../weasis-pacs-connector/weasis?studyUID={{studyUID}}&cdb&access_token={{access_token}}<br>IID_PATIENT_URL_TARGET=_self<br>IID_STUDY_URL_TARGE=_self |
+
+</font>
+
+\* Running only the local native version of Weasis (when not connected to a remote version - weasis.war -)
+
 
 ------------------------------------------------------------------------
 

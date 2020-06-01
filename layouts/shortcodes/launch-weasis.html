@@ -1,12 +1,13 @@
 {{ $did :=  .Get "id" }}
 {{ $params :=  .Get "params" }}
-{{ $baseURL := "http://weasis-launcher-weasis.apps.us-east-2.starter.openshift-online.com/weasis-pacs-connector/" }}
+{{ $host := "weasis-launcher-weasis.apps.us-east-1.starter.openshift-online.com" }}
+{{ $baseURL := printf "http://%s/weasis-pacs-connector/" $host }}
 {{ $weasisScheme := "weasis://" }}
 {{ $jnlpScheme := "getJnlpScheme/" }}
 {{ $weasis := "weasis?" }}
 {{ $viewer := "viewer?" }}
 {{ $local := "&cdb=" }}
-{{ $version304 := "&cdb=http%3A%2F%2Fweasis-launcher-weasis.apps.us-east-1.starter.openshift-online.com%2Fweasis304" }}
+{{ $version304 := printf "&cdb=http%%3A%%2F%%2F%s%%2Fweasis304" $host }}
 
 
 <div id="{{ $did }}" class="jq-dropdown jq-dropdown-tip">
@@ -23,4 +24,4 @@
         <li><a href="{{ $baseURL }}{{ $viewer }}{{ $params }}{{ $version304 }}">Weasis 3.0.4</a></li>
     </ul>
 </div>
-<input type="button" value="Launch" data-jq-dropdown="#{{ $did }}" data-horizontal-offset="-250" />
+<input type="button" value="Launch" data-jq-dropdown="#{{ $did }}" jq-dropdown-relative="" data-horizontal-offset="-250" />

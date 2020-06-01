@@ -7,7 +7,7 @@ pre: "<b>1. </b>"
 
 ### Try Weasis now
 
-These native installers below replace the weasis-portable.zip package (still available <a target="_blank" href="https://sourceforge.net/projects/dcm4che/files/Weasis/">here</a>) and no longer requires <a target="_blank" href="https://www.java.com/en/download/">Java</a> to be installed on the system. It also serves as a basis for launching Weasis from a web context using the [weasis protocol](weasis-protocol). See below the differences between the [weasis distributions](#weasis-distributions).
+These native installers below replace the weasis-portable.zip package (still available [here](https://sourceforge.net/projects/dcm4che/files/Weasis/) until version 4.0) and no longer requires [Java](https://www.java.com/en/download/) to be installed on the system. It also serves as a basis for launching Weasis from a web context using the [weasis protocol](weasis-protocol). See below the differences between the [weasis distributions](#weasis-distributions).
 
 {{< latest-download "deb" >}}
 
@@ -18,7 +18,7 @@ To manage Weasis version at the server side, it is possible to install the [Weas
 {{% /notice %}}
 
 {{% notice tip %}}
-Join the <a target="_blank" href="http://groups.google.com/forum/#!forum/weasis">google group</a> (Choose Email to read this group) to stay informed about new releases and updates.
+Join the [google group](http://groups.google.com/forum/#!forum/weasis) (Choose Email to read this group) to stay informed about new releases and updates.
 {{% /notice %}}
 
 
@@ -28,7 +28,7 @@ Join the <a target="_blank" href="http://groups.google.com/forum/#!forum/weasis"
 - [Weasis Web Protocol](weasis-protocol)
 - [Installing Weasis in DCM4CHEE](dcm4chee)
 - [Tutorials](../tutorials)
-- <a target="_blank" href="http://groups.google.com/group/dcm4che">Weasis Forum</a>
+- [Weasis Forum](http://groups.google.com/group/dcm4che)
 - [Frequently Asked Questions (FAQs)](../faq)
 - [Dicom Conformance and IHE](../basics/dicom)
 - [Get Involved!](../get-involved)
@@ -42,8 +42,8 @@ Join the <a target="_blank" href="http://groups.google.com/forum/#!forum/weasis"
 - [How to launch Weasis from any environments](../basics/customize/integration)
 - [Translating Weasis Plug-ins](translating)
 - [Weasis Preferences](../basics/customize/preferences)
-- <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#build-weasis-pacs-connector">Building weasis-pacs-connector</a>
-- <a target="_blank" href="https://github.com/nroduit/Weasis/issues">Issues on Github</a>
+- [Building weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector#build-weasis-pacs-connector) 
+- [Issues on Github](https://github.com/nroduit/Weasis/issues)
 
 ### Weasis distributions
 

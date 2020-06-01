@@ -6,17 +6,17 @@ keywords: [ "contribute", "weasis contribution", "dicom viewer", "free dicom vie
 
 ### Report Bugs and Enhancements
 
-First, look at the <a target="_blank" href="https://github.com/nroduit/Weasis/issues">GitHub issues system</a>, the <a target="_blank" href="http://groups.google.com/group/dcm4che">forum</a> and/or this website (like [FAQs](../faq) or [Getting Started](../getting-started)) to see if your problem has not been reported yet.
+First, look at the [GitHub issues system](https://github.com/nroduit/Weasis/issues), the [forum](http://groups.google.com/group/dcm4che) and/or this website (like [FAQs](../faq) or [Getting Started](../getting-started)) to see if your problem has not been reported yet.
 
-Only then, fill a bug on <a target="_blank" href="https://github.com/nroduit/Weasis/issues">GitHub</a> with the most details from a template.
+Only then, fill a bug on [GitHub](https://github.com/nroduit/Weasis/issues) with the most details from a template.
 
 ### Become a Committer
 
-- Become a committer on an existing project or on one of the incubating projects, for Weasis use <a target="_blank" href="https://github.com/nroduit/Weasis/pulls">pull requests</a>.
+- Become a committer on an existing project or on one of the incubating projects, for Weasis use [pull requests](https://github.com/nroduit/Weasis/pulls).
 
 ### Share Your Knowledge
 
-- Do you or your company have [a success story about Weasis](../stories)? Send a story to <a target="_blank" href="https://github.com/nroduit">@nroduit</a> and we'll share it on this website.
-- Help building the documentation. Each page or the entire website can be <a target="_blank" href="https://github.com/nroduit/nroduit.github.io/fork">forked</a> and modify with pull requests.
+- Do you or your company have [a success story about Weasis](../stories)? Send a story to [@nroduit](https://github.com/nroduit) and we'll share it on this website.
+- Help building the documentation. Each page or the entire website can be [forked](https://github.com/nroduit/nroduit.github.io/fork) and modify with pull requests.
 - Localization: Help [translating Weasis](../getting-started/translating) into other languages.
-- Help on the <a target="_blank" href="http://groups.google.com/group/dcm4che">forum</a> other users.
+- Help on the [forum](http://groups.google.com/group/dcm4che) other users.

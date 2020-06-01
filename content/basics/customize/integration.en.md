@@ -119,17 +119,29 @@ Use [$dicom:rs](../../commands/#dicom-rs) to load DICOM files. Here are some con
 
 #### dcm4chee-arc-light
 
-This configuration requires at least dcm4chee-arc-light 5.19.1 and Weasis 3.5.4. To activate Weasis in dcm4chee-arc-light user interface, you need to add the two following properties by either editing docker-compose.env (required dcm4chee-arc-light 5.22.0 or superior) or in the web portal from the left menu *Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE*
+This configuration requires at least dcm4chee-arc-light 5.22.2 and Weasis 3.6.0. To activate Weasis in dcm4chee-arc-light user interface, you need to add the four following properties in the web portal from the left menu *Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE*
+{{< highlight text >}}
+IID_PATIENT_URL_TARGET=_self
+IID_STUDY_URL_TARGE=_self
+IID_PATIENT_URL=weasis://$dicom:rs --url "{{qidoBaseURL}}{{qidoBasePath}}" -r "patientID={{patientID}}" --query-ext "&includedefaults=false" -H "Authorization: Bearer {{access_token}}"
+IID_STUDY_URL=weasis://$dicom:rs --url "{{qidoBaseURL}}{{qidoBasePath}}" -r "studyUID={{studyUID}}" --query-ext "&includedefaults=false" -H "Authorization: Bearer {{access_token}}"
+{{< /highlight >}}
 
-- dcm4chee-arc unsecure (HTTP):
-    - `IID_PATIENT_URL=weasis://$dicom:rs --url "http://<your-host>:8080/dcm4chee-arc/aets/DCM4CHEE/rs" -r "&patientID={}"  --query-ext "&includedefaults=false"`
-    - `IID_STUDY_URL=weasis://$dicom:rs --url "http://<your-host>:8080/dcm4chee-arc/aets/DCM4CHEE/rs" -r "&studyUID={}"  --query-ext "&includedefaults=false"`
-- dcm4chee-arc secure (HTTPS):
-    - `IID_PATIENT_URL=weasis://$dicom:rs --url "https://<your-host>:8443/dcm4chee-arc/aets/DCM4CHEE/rs" -r "&patientID={}"  --query-ext "&includedefaults=false" -H "Authorization: &access_token={}"`
-    - `IID_STUDY_URL=weasis://$dicom:rs --url "https://<your-host>:8443/dcm4chee-arc/aets/DCM4CHEE/rs" -r "&studyUID={}"  --query-ext "&includedefaults=false" -H "Authorization: &access_token={}"`
+The four properties can also be passed directly to the docker-compose.env file:
+{{< highlight text >}}
+IID_PATIENT_URL_TARGET=_self
+IID_STUDY_URL_TARGE=_self
+IID_PATIENT_URL=weasis://$dicom:rs --url "{{qidoBaseURL}}{{qidoBasePath}}" -r "patientID={{patientID}}" --query-ext "\&includedefaults=false" -H "Authorization: Bearer {{access_token}}"
+IID_STUDY_URL=weasis://$dicom:rs --url "{{qidoBaseURL}}{{qidoBasePath}}" -r "studyUID={{studyUID}}" --query-ext "\&includedefaults=false" -H "Authorization: Bearer {{access_token}}"
+{{< /highlight >}}
 
 {{% notice warning %}}
-`<your-host>` must be replaced by the hostname of your dcm4che installation. Configuration of HTTPS required a real valid certificate; otherwise, the certificate must be imported into the Weasis Java keystore. For testing purposes in secure mode, you can use the HTTP URL if it is mapped in the OIDC client of keycloack.
+Configuration notes:
+
+- See [configuration](../../../getting-started/dcm4chee) for versions before 5.22.2.
+- The character '&' must be escaped in the Docker environment variables.
+- The Authorization header is not required for unsecure service.
+- URL with HTTPS requires a real valid certificate; otherwise, the certificate must be imported into the Weasis Java keystore. For testing purposes in secure mode, you can use the HTTP URL if it is mapped in the OIDC client of keycloack (--url "http://<your-host>:8080/dcm4chee-arc/aets/DCM4CHEE/rs").
 {{% /notice %}}
 
 Finally, refresh the page for having the viewer button.

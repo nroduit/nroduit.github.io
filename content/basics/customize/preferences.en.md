@@ -21,20 +21,20 @@ Preferences on the server side can be modified:
 How to modify ext-config.properties:
 
 - Unzip weasis.war, modify the file and zip it again.
-- It is also possible to change the default location of ext-config.properties with the Java property "felix.extended.config.properties" with the parameter `cdb-ext` of the <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis">weasis service</a>. The ext-config.properties file can also be placed in a plugin package, see [How to build and install a plug-in](../build-plugins).
+- It is also possible to change the default location of ext-config.properties with the Java property "felix.extended.config.properties" with the parameter `cdb-ext` of the [weasis service](https://github.com/nroduit/weasis-pacs-connector#launch-weasis). The ext-config.properties file can also be placed in a plugin package, see [How to build and install a plug-in](../build-plugins).
 {{% /notice %}}
 
 ### Priority order for loading a property
 
 Here is the priority order to set a property:
 
-1. Java System property (can be passed as parameter in the <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis-with-other-parameters">launching URI</a>)
+1. Java System property (can be passed as parameter in the [launching URI](https://github.com/nroduit/weasis-pacs-connector#launch-weasis-with-other-parameters))
 2. Property defined in weasis/conf/ext-config.properties or in weasis/conf/config.properties
 3. Default value of the property (see table below)
 
 Example to change language property (It will work only during the first launch of Weasis on a user session, otherwise delete ${user.home}/.weasis/preferences/).
 
-1.  If you are using weasis-pacs-connector, add the <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis-with-other-parameters">property</a> `locale.lang.code`:
+1.  If you are using weasis-pacs-connector, add the [property](https://github.com/nroduit/weasis-pacs-connector#launch-weasis-with-other-parameters) `locale.lang.code`:
 {{< highlight url >}}
 http://localhost:8080/weasis-pacs-connector/weasis?patientID=9702672&pro="locale.lang.code%20fr_CH"
 {{< /highlight >}}

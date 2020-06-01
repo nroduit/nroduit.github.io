@@ -13,11 +13,11 @@ disableToc: true
  - [Is it possible to download DICOM files without having a WADO server?](#is-it-possible-to-download-dicom-files-without-having-a-wado-server)
 
 ### Why is the Weasis license Eclipse Public License? ###
-The <a target="_blank" href="http://www.eclipse.org/legal/epl-v20.html">Eclipse Public License</a> is an <a target="_blank" href="http://www.opensource.org">OSI approved</a> license and a commercially friendly copyleft license.
+The [Eclipse Public License](http://www.eclipse.org/legal/epl-v20.html) is an [OSI approved](http://www.opensource.org) license and a commercially friendly copyleft license.
 
 EPL is more business-friendly about some patent retaliation and reverse engineering clauses than LGPL. With EPL, derivative work (weasis plugin) can be distributed in any license type: open source, freeware, commercial... However, if you distribute Weasis with some modifications (changing existing source code of the open source Weasis plug-ins), even if it is a free distribution, you are obligated to make your modifications available to others.
 
-For more information about EPL, check out the <a target="_blank" href="http://www.eclipse.org/legal/epl-2.0/faq.php">EPL 2 FAQ</a>.
+For more information about EPL, check out the [EPL 2 FAQ](http://www.eclipse.org/legal/epl-2.0/faq.php).
 
 ### Can Weasis be incorporated in DICOM CDs or other removable media? ###
 Yes, the Weasis portable version can be copied in DICOM CD-ROMs as a multi-platform stand-alone viewer with launchers for Mac OS X, Linux and Windows. The viewer requires that a Java Runtime Environment (JRE 8 or greater) be installed on the machine to run. If Java is not installed on Windows, a dialog will propose to install it from the Internet.
@@ -40,8 +40,8 @@ For burning Weasis with dcm4chee-cdw, look at [Write weasis-portable to DICOM CD
     - The default logging configuration comes from config.properties or ext-config.properties, see [Weasis Preferences](../basics/customize/preferences).
 
 * By displaying the Java console (only when launching with Java Webstart, not compatible with [weasis protocol](../getting-started/weasis-protocol)):
-    * <a target="_blank" href="http://www.java.com/en/download/help/javaconsole.xml">Windows</a>
-    * <a target="_blank" href="http://www.java.com/en/download/help/enable_console_linux.xml">Linux</a>
+    * [Windows](http://www.java.com/en/download/help/javaconsole.xml)
+    * [Linux](http://www.java.com/en/download/help/enable_console_linux.xml)
     *  Mac:
         1. Navigate to the following folder: Applications > Utilities > Java.
         1. Click the Java Preferences icon and then the Advanced tab.
