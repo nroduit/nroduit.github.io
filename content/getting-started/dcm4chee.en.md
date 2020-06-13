@@ -14,7 +14,7 @@ The documentation where Weasis was launched with Java Webstart is still availabl
 
 ### For dcm4chee-arc-light
 
-![dcm4chee-arc-light](/gallery-dcm4chee/1Weasis in dcm4chee-arc-light.png?classes=border "dcm4chee-arc-light")
+![dcm4chee-arc-light](/gallery-dcm4chee/1Weasis%20in%20dcm4chee-arc-light.png?classes=border "dcm4chee-arc-light")
 
 For a simpler and faster installation without server components, please follow these [instructions](../../basics/customize/integration/#download-directly-with-dicomweb-restful-services); no need to consider the following points on this page. Otherwise if you need more advanced configurations then follow these steps:
 
@@ -98,7 +98,7 @@ deployment-overlay add --name=dcm4chee-arc --deployments=weasis-pacs-connector.w
 
 ### For dcm4chee-web3
 
-![dcm4chee-web3](/gallery-dcm4chee/2Weasis in dcm4chee-web3.png?classes=border "dcm4chee-web3")
+![dcm4chee-web3](/gallery-dcm4chee/2Weasis%20in%20dcm4chee-web3.png?classes=border "dcm4chee-web3")
 
 1. <a target="_blank" href="https://dcm4che.atlassian.net/wiki/spaces/ee2/pages/2555918/Installation">Install dcm4chee</a> (2.18.3 recommended), if not already done. For security see also how to limit the <a target="_blank" href="https://github.com/nroduit/openmediavault-dcm4chee/wiki/Configuration-of-dcm4chee#security">server access</a>.
 
