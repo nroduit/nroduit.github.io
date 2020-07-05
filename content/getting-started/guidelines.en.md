@@ -119,10 +119,11 @@ For debugging Weasis, you need to create a Debug configuration:
 - In the *Arguments* tab
     - Program arguments, examples for loading DICOM locally:
 {{< highlight text >}}
-$dicom:get -l "D:\\images\\dicom"
+$dicom:get -l \"D:\images test\dicom\"
 {{< /highlight >}}
 {{% notice note %}}
-For more commands at startup see [Weasis commands](../../basics/commands).
+Some command interpreters need to escape the quotes or double quotes required for paths or URLs. This is the case with Eclipse.<br>
+For more commands at startup see also [Weasis commands](../../basics/commands).
 {{% /notice %}}
 {{% notice warning %}}
 In Eclipse launcher parameters, '&' within URLs needs to be escaped with a backslash.

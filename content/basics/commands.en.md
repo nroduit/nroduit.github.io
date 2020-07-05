@@ -236,6 +236,13 @@ This command can be used only at launch, see [Modify the launch parameters](../.
 For identifying the commands at start-up, the symbol "$" must be added before the command (not required in the OSGI console). See examples below.
 {{% /notice %}}
 
+{{% notice warning %}}
+**Special characters**:
+A command containing special characters like '&' or space must be within quotes or double quotes. Example: 
+dicom:get -w **"https://dicom.com/test&sopuid=322344"**
+<br><br>
+Depending the command line system, quotes or double quote needs to be escaped with a backslash. Ex. simple quote must be escaped in Eclipse but not in Intellij.
+{{% /notice %}}
 
 ### Weasis Portable distribution
 
@@ -269,15 +276,7 @@ Launch Weasis by double clicking on the executable file or in command-line (c.f.
 {{< /highlight >}}
     - Windows commands
 {{< highlight cmd >}}
-viewer-win32.exe $dicom:get -l "E:\\DICOM\\Overlay" -l "E:\\DICOM\\Shutter"
+viewer-win32.exe $dicom:get -l "E:\DICOM\Overlay" -l "E:\DICOM\Shutter"
  
 viewer-win32.exe $dicom:get -l "E:/DICOM/Overlay" -l "E:/DICOM/Shutter"
 {{< /highlight >}}
-
-{{% notice warning %}}
-**Special characters**:
-The command interpreter has changed from weasis 2.6.0. Command containing special characters like '&' must be within quotes or double quotes. Example: 
-dicom:get -w **"url"**
-<br><br>
-It also depends on the command line system. For instance in the Eclipse launcher parameters, ‘&’ within URLs needs to be escaped with a backslash.
-{{% /notice %}}
