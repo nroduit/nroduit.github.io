@@ -126,7 +126,7 @@ IID_STUDY_URL=weasis://$dicom:rs --url "{{qidoBaseURL}}{{qidoBasePath}}" -r "stu
 IID_URL_TARGET=_self
 {{< /highlight >}}
 
-The four properties can also be passed directly to the docker-compose.env file:
+The properties can also be passed directly to the docker-compose.env file:
 {{< highlight text >}}
 IID_PATIENT_URL=weasis://$dicom:rs --url "{{qidoBaseURL}}{{qidoBasePath}}" -r "patientID={{patientID}}" --query-ext "\&includedefaults=false" -H "Authorization: Bearer {{access_token}}"
 IID_STUDY_URL=weasis://$dicom:rs --url "{{qidoBaseURL}}{{qidoBasePath}}" -r "studyUID={{studyUID}}" --query-ext "\&includedefaults=false" -H "Authorization: Bearer {{access_token}}"

@@ -10,7 +10,7 @@
 {{ if (eq $elem_index "assets") }}
     {{ range $burl, $val := $elem_val }}
     {{ $package := path.Ext $val.name }}
-    {{ $linux := printf "Linux (x64) %s (>= GLIBC_2.14)" $package }}
+    {{ $linux := printf "Linux x64 %s (>= GLIBC_2.14)" $package }}
     {{ $windows := printf "Windows %s-bit 7, 8, 10" (cond (in $val.name "64") "64" "32") }}
     {{ $icon := cond (eq $package ".msi") "microsoft" (cond (eq $package ".pkg") "apple" "linux") }}
     <tr bgcolor="#FBFDFD">
