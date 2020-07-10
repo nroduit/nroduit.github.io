@@ -68,9 +68,9 @@ $dicom:get -w https://nroduit.github.io/samples/Lumbar/mf.xml
 {{< highlight text >}}
 $dicom:rs --url "https://demo.orthanc-server.com/dicom-web" -r "patientID=5Yp0E"
 {{< /highlight >}}
-* Use [$dicom:get](../../basics/commands/#dicom-get) to get dynamically the XML manifest containing direct links (without WADO server) <a  href="weasis://%24dicom%3Aget%20-w%20%22http%3A%2F%2Fweasis-launcher-weasis.apps.us-east-2.starter.openshift-online.com%2Fweasis-pacs-connector%2Fmanifest%3FstudyUID%3D1.2.840.113619.2.98.3467.1098086125.0.69%22" class="btn btn-default">Launch</a>
+* Use [$dicom:get](../../basics/commands/#dicom-get) to get dynamically the XML manifest containing direct links (without WADO server) <a  href="weasis://%24dicom%3Aget%20-w%20%22http%3A%2F%2Fweasis-launcher-weasis.apps.us-west-1.starter.openshift-online.com%2Fweasis-pacs-connector%2Fmanifest%3FstudyUID%3D1.2.840.113619.2.98.3467.1098086125.0.69%22" class="btn btn-default">Launch</a>
 {{< highlight text >}}
-$dicom:get -w "http://weasis-launcher-weasis.apps.us-east-2.starter.openshift-online.com/weasis-pacs-connector/manifest?studyUID=1.2.840.113619.2.98.3467.1098086125.0.69"
+$dicom:get -w "http://weasis-launcher-weasis.apps.us-west-1.starter.openshift-online.com/weasis-pacs-connector/manifest?studyUID=1.2.840.113619.2.98.3467.1098086125.0.69"
 {{< /highlight >}}
 * Use [$dicom:get](../../basics/commands/#dicom-get) to load an image from URL and [remove all](../../basics/commands/#dicom-close) the previous images if Weasis is already open <a  href="weasis://%24dicom%3Aclose%20--all%20%24dicom%3Aget%20-r%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fus-palette.dcm" class="btn btn-default">Launch</a>
 {{< highlight text >}}
