@@ -35,9 +35,13 @@ For burning Weasis with dcm4chee-cdw, look at [Write weasis-portable to DICOM CD
 
 ### How to enable Weasis logging? ###
 
-* From Weasis 3.5, a boot log file is always written in ${user.home}/.weasis/log/boot-x.log to trace the launching configuration. A default.log file in the same folder can trace all the Weasis activities; it must be activated:
+* From Weasis 3.5, a boot log file is always written in ${user.home}/.weasis/log/boot-x.log to trace the launching configuration. A default.log file in the same folder can trace all the Weasis activities; this one must be activated:
     - From *File > Preferences > General* enable *Rolling log*, select a log level and a stacktrace limit (DEBUG and empty (unlimited stacktrace lines) are recommended for investigating problems).
     - The default logging configuration comes from config.properties or ext-config.properties, see [Weasis Preferences](../basics/customize/preferences).
+
+{{% notice tip %}}
+To determine the path of ${user.home}/.weasis go to the *Help > About Weasis* menu and find the property weasis.path in the System Information tab
+{{% /notice %}}
 
 * By displaying the Java console (only when launching with Java Webstart, not compatible with [weasis protocol](../getting-started/weasis-protocol)):
     * [Windows](http://www.java.com/en/download/help/javaconsole.xml)
