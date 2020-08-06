@@ -9,10 +9,10 @@ These instructions describe how to build Weasis directly from the Git repository
 
 **Prerequisites**
 
-1.  JDK 11 or higher
-2.  Maven 3.5 or higher<br>
-    If your computer is behind a proxy server, <a target="_blank" href="http://maven.apache.org/guides/mini/guide-proxies.html">configure maven</a>.
-3.  Git or directly download source from <a target="_blank" href="https://github.com/nroduit/Weasis">github</a>
+1. JDK 11 or higher
+2. Maven 3.5.3 or higher<br>
+   If your computer is behind a proxy server, <a target="_blank" href="http://maven.apache.org/guides/mini/guide-proxies.html">configure maven</a>.
+3. Git or directly download source from <a target="_blank" href="https://github.com/nroduit/Weasis">github</a>
 
 ### Getting the Source
 
@@ -44,7 +44,7 @@ $ mvn clean install
 
 {{% notice note %}}
 The native installer will progressively replace the portable and the web distribution. It uses the [weasis protocol](../../getting-started/weasis-protocol) (which not requires jar signing) instead of Java Web Start which has been removed from <a target="_blank" href="https://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html#JDK-8185077">Java 11 release</a> and because the end of public Oracle Java 8 updates from April 2019.<br>
-The documentation for building the native installer is not yet available.
+The documentation for building the native installer we be available from Weasis 4.
 {{% /notice %}}
 
 - Requires installing all the plug-ins in the local Maven repository as described in the item above.
@@ -62,6 +62,13 @@ For the WEB distribution using Java Webstart, it is required to sign jar files w
 The parameters must be placed in the maven user setting or has to be the options in the Maven command:
 {{< highlight bash >}}
 $ mvn clean package -Djarsigner.alias="your_alias" -Djarsigner.storepass="your_pwd" -Djarsigner.keystore="your_path/keystore" -Dportable=true -P compressXZ
+{{< /highlight >}}
+{{% notice tip %}}
+For production, version must not end with SNAPSHOT (otherwise packages will not be kept in cache). So to remove SNAPASHOT or to make your own release (for avoiding package mix-up in cache), modify the changelist property. From the Weasis root folder, execute:
+{{% /notice %}}
+{{< highlight bash >}}
+$ mvn clean install -Dchangelist=-mybuild
+$ mvn clean package -Dchangelist=-mybuild -Dportable=true -P compressXZ -f weasis-distributions
 {{< /highlight >}}
 
 

@@ -53,7 +53,7 @@ $dicom:get -r https://nroduit.github.io/samples/us-palette.dcm
 <a  href="weasis://%24dicom%3Aget%20-r%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fus-palette.dcm" class="btn btn-default">Open the remote image</a>
 
 {{% notice tip %}}
-To load multiple remote images, it is recommended to use a manifest listing the references of the images to be loaded. The easiest way to dynamically build this manifest is to use <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector</a>. However, it is possible to build it differently by following the [following instructions](../../basics/customize/integration/#build-an-xml-manifest).
+To load multiple remote images, it is recommended to use a manifest listing the references of the images to be loaded. The easiest way to dynamically build this manifest is to use <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector</a>. However, it is possible to build it differently with the [following instructions](../../basics/customize/integration/#build-an-xml-manifest).
 {{% /notice %}}
 
 #### Examples to load images
