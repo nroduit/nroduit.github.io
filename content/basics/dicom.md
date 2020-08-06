@@ -5,16 +5,18 @@ keywords: [ "DICOM Conformance Statements", "IHE", "dicom viewer", "free dicom v
 weight: 70
 ---
 
-### Compatibility of DICOM Transfer Syntax
+### Compatibility of [DICOM Transfer Syntax](http://dicom.nema.org/medical/dicom/current/output/chtml/part06/chapter_A.html)
 
 | Transfer Syntax UID | Description | Supported |
 | ------ | ------ | --- |
 | 1.2.840.10008.1.2 | Implicit VR - Little Endian | yes |
 | 1.2.840.10008.1.2.1 | Explicit VR - Little Endian | yes |
-| 1.2.840.10008.1.2.2 | Explicit VR - Big Endian | yes |
+| 1.2.840.10008.1.2.2 | Explicit VR Big Endian (Retired) | yes |
 | 1.2.840.10008.1.2.5 | RLE (Run Length Encoding) Lossless | yes |
 | 1.2.840.10008.1.2.4.50 | JPEG Baseline (Process 1): Default Transfer Syntax for Lossy JPEG 8 Bit Image Compression | yes |
 | 1.2.840.10008.1.2.4.51 | JPEG Extended (Process 2 &amp; 4): Default Transfer Syntax for Lossy JPEG 12 Bit Image Compression (Process 4 only) | yes |
+| 1.2.840.10008.1.2.4.53 | JPEG Spectral Selection, Non-Hierarchical (Process 6 & 8) (Retired) | yes |
+| 1.2.840.10008.1.2.4.55 | JPEG Full Progression, Non-Hierarchical (Process 10 & 12) (Retired) | yes |
 | 1.2.840.10008.1.2.4.57 | JPEG Lossless, Non-Hierarchical (Process 14) | yes |
 | 1.2.840.10008.1.2.4.70 | JPEG Lossless, Non-Hierarchical, First-Order Prediction (Process 14 [Selection Value 1]): Default Transfer Syntax for Lossless JPEG Image Compression | yes |
 | 1.2.840.10008.1.2.4.80 | JPEG-LS Lossless Image Compression | yes |
@@ -53,3 +55,7 @@ These TSUIDs are open by the default system application associated to the MIME t
 | RGB | true color image description | yes |
 | YBR_FULL | true color image description | yes |
 | YBR_FULL_422 | true color image description | yes |
+| YBR_PARTIAL_422 | true color image description (Retired) | yes |
+| YBR_PARTIAL_420 | true color image description | yes |
+| YBR_ICT | true color image description (JPEG-2000) | yes |
+| YBR_RCT | true color image description (JPEG-2000) | yes |
