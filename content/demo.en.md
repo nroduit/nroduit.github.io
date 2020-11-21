@@ -126,7 +126,7 @@ Can be changed in the "Image Tool" right panel.
 ------------------------------------------------------------------------
 
 #### Combined LUT
-<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fvclut.xml" class="btn btn-default">Launch</a>
+<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fclut.xml" class="btn btn-default">Launch</a>
 
 {{% notice info %}}
 Should always render the same image.
@@ -193,7 +193,7 @@ Click on the right icon over the image to select the Presentation State. Show or
 <ul>
 <li style="margin-bottom:10px;">Shutter Test <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fpr-shutter.xml" class="btn btn-default">Launch</a>
 </li>
-<li style="margin-bottom:10px;">Text Annotation <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2pr-text.xml" class="btn btn-default">Launch</a>
+<li style="margin-bottom:10px;">Text Annotation <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fpr-text.xml" class="btn btn-default">Launch</a>
 </li>
 <li style="margin-bottom:10px;">Displayed Area <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fpr-area.xml" class="btn btn-default">Launch</a>
 </li>
