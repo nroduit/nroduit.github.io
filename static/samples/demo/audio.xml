@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<manifest uid="b9430b07-1159-4f2b-b5dc-b7246360f72d" xmlns="http://www.weasis.org/xsd/2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<arcQuery arcId="local" baseUrl="https://nroduit.github.io/samples/demo/">
+		<Patient PatientID="test-audio" PatientName="TEST^Audio" PatientSex="M">
+			<Study StudyDate="20060722" StudyDescription="Audio Test (Charles Aznavour)" StudyID="123456" StudyInstanceUID="1.2.826.0.1.3680043.2.1396.999.20060722.113000.1" StudyTime="113000">
+				<Series Modality="AU" SeriesDescription="Audio Test (Charles Aznavour)" SeriesInstanceUID="1.2.826.0.1.3680043.2.1396.999.20060722.113000.2" SeriesNumber="1">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.826.0.1.3680043.2.1396.999.20060722.113000.10" DirectDownloadFile="1.2.826.0.1.3680043.2.1396.999.20060722.113000.10"/>
+				</Series>
+			</Study>
+		</Patient>
+	</arcQuery>
+</manifest>

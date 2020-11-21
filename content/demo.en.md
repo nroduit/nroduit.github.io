@@ -162,7 +162,7 @@ Open by the default viewer (associated to the video mime type) of the operating 
 ------------------------------------------------------------------------
 
 #### DICOM Audio (AU)
-{{% launch-weasis id="st-audio" params="studyUID=1.2.826.0.1.3680043.2.1396.999.20060722.113000.1" %}}
+<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Faudio.xml" class="btn btn-default">Launch</a>
 
 {{% notice info %}}
 Open by the embedded Java Audio Player.
@@ -171,7 +171,11 @@ Open by the embedded Java Audio Player.
 ------------------------------------------------------------------------
 
 #### DICOM floating point pixel data
-{{% launch-weasis id="st-floating" params="studyUID=1.3.6.1.4.1.5962.99.1.1839181372.1275896472.1436358291004.4.0" %}}
+<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Ffloat.xml" class="btn btn-default">Launch</a>
+
+{{% notice info %}}
+ Specific dicom pixel data containing float or double.
+{{% /notice %}}
 
 ------------------------------------------------------------------------
 
