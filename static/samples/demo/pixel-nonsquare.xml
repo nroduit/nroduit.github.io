@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<manifest uid="99773076-fbb3-4e54-882e-55e4b44238c9" xmlns="http://www.weasis.org/xsd/2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<arcQuery arcId="local" baseUrl="https://nroduit.github.io/samples/demo/">
+		<Patient PatientID="H13885_9M" PatientName="TEST^Non square pixels" PatientSex="F">
+			<Study StudyDate="20130711" StudyDescription="Test non square pixels" StudyID="PKD" StudyInstanceUID="2.16.756.5.5.100.397184556.14391.1373576413.1508" StudyTime="160013">
+				<Series DirectDownloadThumbnail="thumb/tumb_2550702355727142394.jpg" Modality="US" SeriesDescription="Non square pixels: Pixel Aspect Ratio" SeriesInstanceUID="1.2.40.0.13.1.1.87878503032592846377547034671833520632" SeriesNumber="2">
+					<Instance DirectDownloadFile="1.2.40.0.13.1.1.126082073005720329436273995268222863740" InstanceNumber="107" SOPInstanceUID="1.2.40.0.13.1.1.126082073005720329436273995268222863740"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_14374507632041725844.jpg" Modality="MR" SeriesDescription="Non square pixels: Pixel Spacing" SeriesInstanceUID="2.16.756.5.5.100.397184556.7220.1373578035.1" SeriesNumber="40001">
+					<Instance DirectDownloadFile="2.16.756.5.5.100.397184556.7220.1373578035.1.0" InstanceNumber="1" SOPInstanceUID="2.16.756.5.5.100.397184556.7220.1373578035.1.0"/>
+					<Instance DirectDownloadFile="2.16.756.5.5.100.397184556.7220.1373578035.1.1" InstanceNumber="2" SOPInstanceUID="2.16.756.5.5.100.397184556.7220.1373578035.1.1"/>
+					<Instance DirectDownloadFile="2.16.756.5.5.100.397184556.7220.1373578035.1.2" InstanceNumber="3" SOPInstanceUID="2.16.756.5.5.100.397184556.7220.1373578035.1.2"/>
+					<Instance DirectDownloadFile="2.16.756.5.5.100.397184556.7220.1373578035.1.3" InstanceNumber="4" SOPInstanceUID="2.16.756.5.5.100.397184556.7220.1373578035.1.3"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_12144782705791706893.jpg" Modality="MR" SeriesDescription="Non square pixels: Pixel Spacing" SeriesInstanceUID="2.16.756.5.5.100.397184556.7220.1373578664.2" SeriesNumber="50001">
+					<Instance DirectDownloadFile="2.16.756.5.5.100.397184556.7220.1373578664.2.0" InstanceNumber="1" SOPInstanceUID="2.16.756.5.5.100.397184556.7220.1373578664.2.0"/>
+					<Instance DirectDownloadFile="2.16.756.5.5.100.397184556.7220.1373578664.2.1" InstanceNumber="2" SOPInstanceUID="2.16.756.5.5.100.397184556.7220.1373578664.2.1"/>
+					<Instance DirectDownloadFile="2.16.756.5.5.100.397184556.7220.1373578664.2.2" InstanceNumber="3" SOPInstanceUID="2.16.756.5.5.100.397184556.7220.1373578664.2.2"/>
+					<Instance DirectDownloadFile="2.16.756.5.5.100.397184556.7220.1373578664.2.3" InstanceNumber="4" SOPInstanceUID="2.16.756.5.5.100.397184556.7220.1373578664.2.3"/>
+				</Series>
+			</Study>
+		</Patient>
+	</arcQuery>
+</manifest>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<manifest uid="d1c1133f-6071-4d4a-bd3c-ad01f3c2f29d" xmlns="http://www.weasis.org/xsd/2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<arcQuery arcId="local" baseUrl="https://nroduit.github.io/samples/demo/">
+		<Patient PatientID="testPixelDepthunsigned" PatientName="TEST^Pixel Depth (ungsigned data)">
+			<Study StudyDescription="Unsigned Data (10 bits)" StudyID="10unsigned" StudyInstanceUID="1.3.6.1.4.1.5962.1.2.10.1073676931.29447.0">
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Unsigned^10 No Window" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.10.1.1073676926.29280.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.10.1.1.1073676926.29280.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.10.1.1.1073676926.29280.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Unsigned^10" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.10.1.1073676927.29326.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.10.1.1.1073676927.29326.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.10.1.1.1073676927.29326.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimited^10 No Window" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.10.1.1073676928.29375.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.10.1.1.1073676928.29375.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.10.1.1.1073676928.29375.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimited^10" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.10.1.1073676929.29386.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.10.1.1.1073676929.29386.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.10.1.1.1073676929.29386.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimited^10 No Window" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.10.1.1073676930.29435.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.10.1.1.1073676930.29435.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.10.1.1.1073676930.29435.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimitedRescale^10" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.10.1.1073676931.29447.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.10.1.1.1073676931.29447.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.10.1.1.1073676931.29447.0"/>
+				</Series>
+			</Study>
+			<Study StudyDescription="Unsigned Data (11 bits)" StudyID="11unsigned" StudyInstanceUID="1.3.6.1.4.1.5962.1.2.11.1073676943.29651.0">
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Unsigned^11 No Window" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.11.1.1073676942.29601.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.11.1.1.1073676942.29601.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.11.1.1.1073676942.29601.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Unsigned^11" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.11.1.1073676943.29651.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.11.1.1.1073676943.29651.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.11.1.1.1073676943.29651.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimited^11 No Window" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.11.1.1073676944.29704.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.11.1.1.1073676944.29704.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.11.1.1.1073676944.29704.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimited^11" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.11.1.1073676945.29715.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.11.1.1.1073676945.29715.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.11.1.1.1073676945.29715.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimited^11 No Window" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.11.1.1073676946.29768.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.11.1.1.1073676946.29768.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.11.1.1.1073676946.29768.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimitedRescale^11" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.11.1.1073676947.29780.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.11.1.1.1073676947.29780.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.11.1.1.1073676947.29780.0"/>
+				</Series>
+			</Study>
+			<Study StudyDescription="Unsigned Data (12 bits)" StudyID="12unsigned" StudyInstanceUID="1.3.6.1.4.1.5962.1.2.12.1073676957.153.0">
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Unsigned^12 No Window" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.12.1.1073676955.29938.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.12.1.1.1073676955.29938.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.12.1.1.1073676955.29938.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Unsigned^12" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.12.1.1073676956.29992.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.12.1.1.1073676956.29992.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.12.1.1.1073676956.29992.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimited^12 No Window" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.12.1.1073676957.153.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.12.1.1.1073676957.153.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.12.1.1.1073676957.153.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimited^12" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.12.1.1073676957.166.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.12.1.1.1073676957.166.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.12.1.1.1073676957.166.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimited^12 No Window" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.12.1.1073676958.231.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.12.1.1.1073676958.231.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.12.1.1.1073676958.231.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimitedRescale^12" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.12.1.1073676959.243.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.12.1.1.1073676959.243.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.12.1.1.1073676959.243.0"/>
+				</Series>
+			</Study>
+			<Study StudyDescription="Unsigned Data (13 bits)" StudyID="13unsigned" StudyInstanceUID="1.3.6.1.4.1.5962.1.2.13.1073676974.625.0">
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Unsigned^13 No Window" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.13.1.1073676970.422.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.13.1.1.1073676970.422.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.13.1.1.1073676970.422.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Unsigned^13" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.13.1.1073676971.480.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.13.1.1.1073676971.480.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.13.1.1.1073676971.480.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimited^13 No Window" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.13.1.1073676972.541.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.13.1.1.1073676972.541.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.13.1.1.1073676972.541.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimited^13" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.13.1.1073676973.552.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.13.1.1.1073676973.552.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.13.1.1.1073676973.552.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimited^13 No Window" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.13.1.1073676974.613.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.13.1.1.1073676974.613.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.13.1.1.1073676974.613.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimitedRescale^13" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.13.1.1073676974.625.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.13.1.1.1073676974.625.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.13.1.1.1073676974.625.0"/>
+				</Series>
+			</Study>
+			<Study StudyDescription="Unsigned Data (14 bits)" StudyID="14unsigned" StudyInstanceUID="1.3.6.1.4.1.5962.1.2.14.1073676983.853.0">
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Unsigned^14 No Window" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.14.1.1073676982.791.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.14.1.1.1073676982.791.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.14.1.1.1073676982.791.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Unsigned^14" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.14.1.1073676983.853.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.14.1.1.1073676983.853.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.14.1.1.1073676983.853.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimited^14 No Window" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.14.1.1073676985.918.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.14.1.1.1073676985.918.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.14.1.1.1073676985.918.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimited^14" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.14.1.1073676985.929.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.14.1.1.1073676985.929.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.14.1.1.1073676985.929.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimited^14 No Window" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.14.1.1073676986.994.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.14.1.1.1073676986.994.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.14.1.1.1073676986.994.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimitedRescale^14" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.14.1.1073676987.1006.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.14.1.1.1073676987.1006.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.14.1.1.1073676987.1006.0"/>
+				</Series>
+			</Study>
+			<Study StudyDescription="Unsigned Data (15 bits)" StudyID="15unsigned" StudyInstanceUID="1.3.6.1.4.1.5962.1.2.15.1073676998.1323.0">
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Unsigned^15 No Window" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.15.1.1073676995.1176.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.15.1.1.1073676995.1176.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.15.1.1.1073676995.1176.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Unsigned^15" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.15.1.1073676996.1242.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.15.1.1.1073676996.1242.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.15.1.1.1073676996.1242.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimited^15 No Window" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.15.1.1073676997.1311.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.15.1.1.1073676997.1311.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.15.1.1.1073676997.1311.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimited^15" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.15.1.1073676998.1323.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.15.1.1.1073676998.1323.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.15.1.1.1073676998.1323.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimited^15 No Window" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.15.1.1073676999.1392.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.15.1.1.1073676999.1392.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.15.1.1.1073676999.1392.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimitedRescale^15" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.15.1.1073677000.1404.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.15.1.1.1073677000.1404.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.15.1.1.1073677000.1404.0"/>
+				</Series>
+			</Study>
+			<Study StudyDescription="Unsigned Data (16 bits)" StudyID="16unsigned" StudyInstanceUID="1.3.6.1.4.1.5962.1.2.16.1073677013.1817.0">
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Unsigned^16 No Window" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.16.1.1073677008.1578.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.16.1.1.1073677008.1578.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.16.1.1.1073677008.1578.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Unsigned^16" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.16.1.1073677009.1648.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.16.1.1.1073677009.1648.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.16.1.1.1073677009.1648.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimited^16 No Window" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.16.1.1073677010.1721.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.16.1.1.1073677010.1721.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.16.1.1.1073677010.1721.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimited^16" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.16.1.1073677011.1732.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.16.1.1.1073677011.1732.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.16.1.1.1073677011.1732.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimited^16 No Window" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.16.1.1073677012.1805.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.16.1.1.1073677012.1805.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.16.1.1.1073677012.1805.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimitedRescale^16" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.16.1.1073677013.1817.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.16.1.1.1073677013.1817.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.16.1.1.1073677013.1817.0"/>
+				</Series>
+			</Study>
+			<Study StudyDescription="Unsigned Data (9 bits)" StudyID="9unsigned" StudyInstanceUID="1.3.6.1.4.1.5962.1.2.9.1073676916.29073.0">
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Unsigned^9 No Window" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.9.1.1073676914.28975.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.9.1.1.1073676914.28975.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.9.1.1.1073676914.28975.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Unsigned^9" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.9.1.1073676915.29017.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.9.1.1.1073676915.29017.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.9.1.1.1073676915.29017.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimited^9 No Window" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.9.1.1073676916.29062.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.9.1.1.1073676916.29062.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.9.1.1.1073676916.29062.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimited^9" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.9.1.1073676916.29073.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.9.1.1.1073676916.29073.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.9.1.1.1073676916.29073.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimited^9 No Window" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.9.1.1073676917.29118.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.9.1.1.1073676917.29118.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.9.1.1.1073676917.29118.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="UnsignedLimitedRescale^9" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.9.1.1073676918.29130.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.9.1.1.1073676918.29130.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.9.1.1.1073676918.29130.0"/>
+				</Series>
+			</Study>
+		</Patient>
+	</arcQuery>
+</manifest>

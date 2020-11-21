@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<manifest uid="d9eb976e-10f5-4a9b-b2ec-7b71ae0df002" xmlns="http://www.weasis.org/xsd/2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<arcQuery arcId="local" baseUrl="https://nroduit.github.io/samples/demo/">
+		<Patient PatientID="XLUT_nn" PatientName="TEST^Combined LUT" PatientSex="O">
+			<Study StudyDate="20020322" StudyDescription="Combined LUT Test" StudyID="XLUT_nn" StudyInstanceUID="1.2.276.0.7230010.3.200.14" StudyTime="120000">
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="8 in 8,range 128 to +255,unsign.,mono2,s/i 2/-128,c/w 255.5/255" SeriesInstanceUID="1.2.276.0.7230010.3.200.14.1" SeriesNumber="01">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.14.1.1" DirectDownloadFile="1.2.276.0.7230010.3.200.14.1.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="16 in 16,r. 1024 to +65535,u.,m2,s/i 0.125/-1024, c/w 3136/8064" SeriesInstanceUID="1.2.276.0.7230010.3.200.14.2" SeriesNumber="02">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.14.2.1" DirectDownloadFile="1.2.276.0.7230010.3.200.14.2.1"/>
+				</Series>
+			</Study>
+		</Patient>
+	</arcQuery>
+</manifest>

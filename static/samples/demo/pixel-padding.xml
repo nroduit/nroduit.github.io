@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<manifest uid="2e8d757a-8272-461e-b747-568668032261" xmlns="http://www.weasis.org/xsd/2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<arcQuery arcId="local" baseUrl="https://nroduit.github.io/samples/demo/">
+		<Patient PatientBirthDate="19010101" PatientID="011001" PatientName="TEST^Pixel Padding Value" PatientSex="F">
+			<Study StudyDate="20051218" StudyDescription="Test Application of pixel padding value" StudyID="011001" StudyInstanceUID="1.3.6.1.4.1.5962.1.2.11001.1139672893.9523.0" StudyTime="200000">
+				<Series DirectDownloadThumbnail="thumb/tumb_2507331889198051449.jpg" Modality="MG" SeriesDescription="Non-zero pixel padding value" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.11001.1.1139672893.9523.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.11001.1.2.1139672900.9535.0" InstanceNumber="2" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.11001.1.2.1139672900.9535.0"/>
+				</Series>
+			</Study>
+		</Patient>
+	</arcQuery>
+</manifest>

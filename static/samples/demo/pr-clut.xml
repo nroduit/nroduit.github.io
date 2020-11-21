@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<manifest uid="d14c9541-25de-4307-93c8-e782fd4c5c1f" xmlns="http://www.weasis.org/xsd/2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<arcQuery arcId="local" baseUrl="https://nroduit.github.io/samples/demo/">
+		<Patient PatientID="XLUT_Pnn" PatientName="TEST^Combined LUT PState">
+			<Study StudyDate="19991117" StudyDescription="Combined LUT PState Test" StudyID="XLUT_Pnn" StudyInstanceUID="1.2.276.0.7230010.3.200.6" StudyTime="083115">
+				<Series Modality="PR" SeriesDescription="pstates for combined lut test" SeriesInstanceUID="1.2.276.0.7230010.3.200.6.0" SeriesNumber="00">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.6.0.2" InstanceNumber="2" SOPInstanceUID="1.2.276.0.7230010.3.200.6.0.2"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.6.0.3" InstanceNumber="3" SOPInstanceUID="1.2.276.0.7230010.3.200.6.0.3"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="12 in 16,range -2048 to +2047,signed,mono1,no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.6.2" SeriesNumber="02">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.6.2.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.6.2.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_4886733643187458581.jpg" Modality="OT" SeriesDescription="8 in 8,range 0 to +255,unsigned,mono2,scrambled pixel data/luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.6.3" SeriesNumber="03">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.6.3.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.6.3.1"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.6.3.2" InstanceNumber="2" SOPInstanceUID="1.2.276.0.7230010.3.200.6.3.2"/>
+				</Series>
+			</Study>
+		</Patient>
+	</arcQuery>
+</manifest>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<manifest uid="06f0de9e-c08c-4fcc-8741-873c752dd17d" xmlns="http://www.weasis.org/xsd/2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<arcQuery arcId="local" baseUrl="https://nroduit.github.io/samples/demo/">
+		<Patient PatientID="SPAT_Pnn" PatientName="TEST^Spatial Transformation PState">
+			<Study StudyDate="19991117" StudyDescription="Spatial Transformation Test" StudyID="SPAT_Pnn" StudyInstanceUID="1.2.276.0.7230010.3.200.7" StudyTime="083142">
+				<Series Modality="PR" SeriesDescription="1024*1024,horizontal flip,90 degrees clockwise" SeriesInstanceUID="1.2.276.0.7230010.3.200.7.0" SeriesNumber="00">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.0.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.7.0.1"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.0.2" InstanceNumber="2" SOPInstanceUID="1.2.276.0.7230010.3.200.7.0.2"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.0.3" InstanceNumber="3" SOPInstanceUID="1.2.276.0.7230010.3.200.7.0.3"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.0.4" InstanceNumber="4" SOPInstanceUID="1.2.276.0.7230010.3.200.7.0.4"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.0.5" InstanceNumber="5" SOPInstanceUID="1.2.276.0.7230010.3.200.7.0.5"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.0.6" InstanceNumber="6" SOPInstanceUID="1.2.276.0.7230010.3.200.7.0.6"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.0.7" InstanceNumber="7" SOPInstanceUID="1.2.276.0.7230010.3.200.7.0.7"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.0.8" InstanceNumber="8" SOPInstanceUID="1.2.276.0.7230010.3.200.7.0.8"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.0.9" InstanceNumber="9" SOPInstanceUID="1.2.276.0.7230010.3.200.7.0.9"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.0.10" InstanceNumber="10" SOPInstanceUID="1.2.276.0.7230010.3.200.7.0.10"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.0.11" InstanceNumber="11" SOPInstanceUID="1.2.276.0.7230010.3.200.7.0.11"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.0.12" InstanceNumber="12" SOPInstanceUID="1.2.276.0.7230010.3.200.7.0.12"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.0.13" InstanceNumber="13" SOPInstanceUID="1.2.276.0.7230010.3.200.7.0.13"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.0.14" InstanceNumber="14" SOPInstanceUID="1.2.276.0.7230010.3.200.7.0.14"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.0.15" InstanceNumber="15" SOPInstanceUID="1.2.276.0.7230010.3.200.7.0.15"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="no horizontal flip,0 degrees" SeriesInstanceUID="1.2.276.0.7230010.3.200.7.1" SeriesNumber="01">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.1.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.7.1.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_11310407267162030544.jpg" Modality="OT" SeriesDescription="no horizontal flip,90 degrees clockwise" SeriesInstanceUID="1.2.276.0.7230010.3.200.7.2" SeriesNumber="02">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.2.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.7.2.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="no horizontal flip,180 degrees clockwise" SeriesInstanceUID="1.2.276.0.7230010.3.200.7.3" SeriesNumber="03">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.3.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.7.3.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_11310407267162030544.jpg" Modality="OT" SeriesDescription="no horizontal flip,270 degrees clockwise" SeriesInstanceUID="1.2.276.0.7230010.3.200.7.4" SeriesNumber="04">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.4.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.7.4.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="horizontal flip,0 degrees" SeriesInstanceUID="1.2.276.0.7230010.3.200.7.5" SeriesNumber="05">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.5.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.7.5.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_11310407267162030544.jpg" Modality="OT" SeriesDescription="horizontal flip,90 degrees clockwise" SeriesInstanceUID="1.2.276.0.7230010.3.200.7.6" SeriesNumber="06">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.6.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.7.6.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="horizontal flip,180 degrees clockwise" SeriesInstanceUID="1.2.276.0.7230010.3.200.7.7" SeriesNumber="07">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.7.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.7.7.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_11310407267162030544.jpg" Modality="OT" SeriesDescription="horizontal flip,270 degrees clockwise" SeriesInstanceUID="1.2.276.0.7230010.3.200.7.8" SeriesNumber="08">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.8.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.7.8.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_16499216068453115511.jpg" Modality="OT" SeriesDescription="1024*1024,no horizontal flip,90 degrees clockwise" SeriesInstanceUID="1.2.276.0.7230010.3.200.7.9" SeriesNumber="09">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.9.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.7.9.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_14272228692339930139.jpg" Modality="OT" SeriesDescription="1024*1024,no horizontal flip,180 degrees clockwise" SeriesInstanceUID="1.2.276.0.7230010.3.200.7.10" SeriesNumber="10">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.10.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.7.10.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_16499216068453115511.jpg" Modality="OT" SeriesDescription="1024*1024,no horizontal flip,270 degrees clockwise" SeriesInstanceUID="1.2.276.0.7230010.3.200.7.11" SeriesNumber="11">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.11.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.7.11.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_14272228692339930139.jpg" Modality="OT" SeriesDescription="1024*1024,horizontal flip,0 degrees" SeriesInstanceUID="1.2.276.0.7230010.3.200.7.12" SeriesNumber="12">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.12.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.7.12.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_16499216068453115511.jpg" Modality="OT" SeriesDescription="1024*1024,horizontal flip,90 degrees clockwise" SeriesInstanceUID="1.2.276.0.7230010.3.200.7.13" SeriesNumber="13">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.13.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.7.13.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_14272228692339930139.jpg" Modality="OT" SeriesDescription="1024*1024,horizontal flip,180 degrees clockwise" SeriesInstanceUID="1.2.276.0.7230010.3.200.7.14" SeriesNumber="14">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.14.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.7.14.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_16499216068453115511.jpg" Modality="OT" SeriesDescription="1024*1024,horizontal flip,270 degrees clockwise" SeriesInstanceUID="1.2.276.0.7230010.3.200.7.15" SeriesNumber="15">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.7.15.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.7.15.1"/>
+				</Series>
+			</Study>
+		</Patient>
+	</arcQuery>
+</manifest>

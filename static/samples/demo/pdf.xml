@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<manifest uid="a5c4c093-a40f-4231-a94b-4600668cd7d4" xmlns="http://www.weasis.org/xsd/2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<arcQuery arcId="local" baseUrl="https://nroduit.github.io/samples/demo/">
+		<Patient PatientID="DAC009_REPPDF" PatientName="TEST^PDF">
+			<Study StudyDate="20091008" StudyDescription="ECG in PDF" StudyInstanceUID="1.2.840.113619.2.235.142733225228202183621236780" StudyTime="163153">
+				<Series Modality="ECG" SeriesDescription="ECG in PDF" SeriesInstanceUID="1.2.840.113619.2.235.189139638115350198281218568" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.2.840.113619.2.235.269315576960411179141218324" InstanceNumber="0" SOPInstanceUID="1.2.840.113619.2.235.269315576960411179141218324"/>
+				</Series>
+			</Study>
+			<Study AccessionNumber="DAC009_REPPDF" StudyDate="20090731" StudyDescription="Encapsulated PDF" StudyID="DAC009_REPPDF" StudyInstanceUID="1.3.6.1.4.1.5962.1.2.0.1359229044.2601.0" StudyTime="110221">
+				<Series Modality="OT" SeriesDescription="Encapsulated PDF" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.0.1.1359229044.2601.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.0.1.1.1359229044.2601.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.0.1.1.1359229044.2601.0"/>
+				</Series>
+			</Study>
+		</Patient>
+	</arcQuery>
+</manifest>

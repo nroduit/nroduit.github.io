@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<manifest uid="2ae7c868-8b37-4470-89f8-7f68d4864ef7" xmlns="http://www.weasis.org/xsd/2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<arcQuery arcId="local" baseUrl="https://nroduit.github.io/samples/demo/">
+		<Patient PatientID="CPLX_Pnn" PatientName="TEST^Complex Combination PState">
+			<Study StudyDate="19991117" StudyDescription="Complex Combination Test" StudyID="CPLX_Pnn" StudyInstanceUID="1.2.276.0.7230010.3.200.13" StudyTime="083303">
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="PR" SeriesDescription="pstates for complex combination test" SeriesInstanceUID="1.2.276.0.7230010.3.200.13.0" SeriesNumber="00">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.13.0.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.13.0.1"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.13.0.2" InstanceNumber="2" SOPInstanceUID="1.2.276.0.7230010.3.200.13.0.2"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.13.0.3" InstanceNumber="3" SOPInstanceUID="1.2.276.0.7230010.3.200.13.0.3"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_2231424198591099232.jpg" Modality="OT" SeriesDescription="complex combination of various pstate features" SeriesInstanceUID="1.2.276.0.7230010.3.200.13.1" SeriesNumber="01">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.13.1.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.13.1.1"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.13.1.2" InstanceNumber="2" SOPInstanceUID="1.2.276.0.7230010.3.200.13.1.2"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="complex combination with multi-frame image" SeriesInstanceUID="1.2.276.0.7230010.3.200.13.2" SeriesNumber="02">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.13.2.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.13.2.1"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.13.2.2" InstanceNumber="2" SOPInstanceUID="1.2.276.0.7230010.3.200.13.2.2"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="complex combination with multiple images" SeriesInstanceUID="1.2.276.0.7230010.3.200.13.3" SeriesNumber="03">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.13.3.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.13.3.1"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.13.3.2" InstanceNumber="2" SOPInstanceUID="1.2.276.0.7230010.3.200.13.3.2"/>
+				</Series>
+			</Study>
+		</Patient>
+	</arcQuery>
+</manifest>

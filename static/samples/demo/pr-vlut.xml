@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<manifest uid="7818340c-1e58-4b3e-baf8-dc76969b1863" xmlns="http://www.weasis.org/xsd/2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<arcQuery arcId="local" baseUrl="https://nroduit.github.io/samples/demo/">
+		<Patient PatientID="VLUT_Pnn" PatientName="TEST^VOI LUT PState">
+			<Study StudyDate="19991117" StudyDescription="VOI LUT PState Test" StudyID="VLUT_Pnn" StudyInstanceUID="1.2.276.0.7230010.3.200.4" StudyTime="083040">
+				<Series Modality="PR" SeriesDescription="pstates for voi lut pstate test" SeriesInstanceUID="1.2.276.0.7230010.3.200.4.0" SeriesNumber="00">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.4.0.1" DirectDownloadFile="1.2.276.0.7230010.3.200.4.0.1"/>
+					<Instance InstanceNumber="2" SOPInstanceUID="1.2.276.0.7230010.3.200.4.0.2" DirectDownloadFile="1.2.276.0.7230010.3.200.4.0.2"/>
+					<Instance InstanceNumber="3" SOPInstanceUID="1.2.276.0.7230010.3.200.4.0.3" DirectDownloadFile="1.2.276.0.7230010.3.200.4.0.3"/>
+					<Instance InstanceNumber="4" SOPInstanceUID="1.2.276.0.7230010.3.200.4.0.4" DirectDownloadFile="1.2.276.0.7230010.3.200.4.0.4"/>
+					<Instance InstanceNumber="5" SOPInstanceUID="1.2.276.0.7230010.3.200.4.0.5" DirectDownloadFile="1.2.276.0.7230010.3.200.4.0.5"/>
+					<Instance InstanceNumber="6" SOPInstanceUID="1.2.276.0.7230010.3.200.4.0.6" DirectDownloadFile="1.2.276.0.7230010.3.200.4.0.6"/>
+					<Instance InstanceNumber="7" SOPInstanceUID="1.2.276.0.7230010.3.200.4.0.7" DirectDownloadFile="1.2.276.0.7230010.3.200.4.0.7"/>
+					<Instance InstanceNumber="8" SOPInstanceUID="1.2.276.0.7230010.3.200.4.0.8" DirectDownloadFile="1.2.276.0.7230010.3.200.4.0.8"/>
+					<Instance InstanceNumber="9" SOPInstanceUID="1.2.276.0.7230010.3.200.4.0.9" DirectDownloadFile="1.2.276.0.7230010.3.200.4.0.9"/>
+					<Instance InstanceNumber="10" SOPInstanceUID="1.2.276.0.7230010.3.200.4.0.10" DirectDownloadFile="1.2.276.0.7230010.3.200.4.0.10"/>
+					<Instance InstanceNumber="11" SOPInstanceUID="1.2.276.0.7230010.3.200.4.0.11" DirectDownloadFile="1.2.276.0.7230010.3.200.4.0.11"/>
+					<Instance InstanceNumber="12" SOPInstanceUID="1.2.276.0.7230010.3.200.4.0.12" DirectDownloadFile="1.2.276.0.7230010.3.200.4.0.12"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="8 in 8,range 0 to +255,unsigned,mono2,no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.4.1" SeriesNumber="01">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.4.1.1" DirectDownloadFile="1.2.276.0.7230010.3.200.4.1.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="8 in 8,range 0 to +255,unsigned,mono2,no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.4.2" SeriesNumber="02">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.4.2.1" DirectDownloadFile="1.2.276.0.7230010.3.200.4.2.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_15401952976411726100.jpg" Modality="OT" SeriesDescription="8 in 8,range 25 to 75,unsigned,mono2,no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.4.3" SeriesNumber="03">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.4.3.1" DirectDownloadFile="1.2.276.0.7230010.3.200.4.3.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="8 in 8,range 0 to +255,unsigned,mono2,no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.4.4" SeriesNumber="04">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.4.4.1" DirectDownloadFile="1.2.276.0.7230010.3.200.4.4.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="8 in 8,range 0 to +255,unsigned,mono1,no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.4.5" SeriesNumber="05">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.4.5.1" DirectDownloadFile="1.2.276.0.7230010.3.200.4.5.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="12 in 16,range -2048 to +2047,signed,mono2,no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.4.6" SeriesNumber="06">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.4.6.1" DirectDownloadFile="1.2.276.0.7230010.3.200.4.6.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="12 in 16,range -2048 to +2047,signed,mono2,no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.4.7" SeriesNumber="07">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.4.7.1" DirectDownloadFile="1.2.276.0.7230010.3.200.4.7.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="12 in 16,range 25 to 74,signed,mono2,no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.4.8" SeriesNumber="08">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.4.8.1" DirectDownloadFile="1.2.276.0.7230010.3.200.4.8.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="12 in 16,range -2048 to +2047,signed,mono2,no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.4.9" SeriesNumber="09">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.4.9.1" DirectDownloadFile="1.2.276.0.7230010.3.200.4.9.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="12 in 16,range -2048 to +2047,signed,mono1,no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.4.10" SeriesNumber="10">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.4.10.1" DirectDownloadFile="1.2.276.0.7230010.3.200.4.10.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_15401952976411726100.jpg" Modality="OT" SeriesDescription="inappropriate voi lut transform" SeriesInstanceUID="1.2.276.0.7230010.3.200.4.11" SeriesNumber="11">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.4.11.1" DirectDownloadFile="1.2.276.0.7230010.3.200.4.11.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_16202890175603001338.jpg" Modality="OT" SeriesDescription="inappropriate voi lut transform" SeriesInstanceUID="1.2.276.0.7230010.3.200.4.12" SeriesNumber="12">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.4.12.1" DirectDownloadFile="1.2.276.0.7230010.3.200.4.12.1"/>
+				</Series>
+			</Study>
+		</Patient>
+	</arcQuery>
+</manifest>

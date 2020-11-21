@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<manifest uid="d83fc358-2635-478e-95d2-e56ad2d2fcb9" xmlns="http://www.weasis.org/xsd/2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<arcQuery arcId="local" baseUrl="https://nroduit.github.io/samples/demo/">
+		<Patient PatientID="TEAN_Pnn" PatientName="TEST^Text Annotation PState">
+			<Study StudyDate="19991117" StudyDescription="Text Annotation Test" StudyID="TEAN_Pnn" StudyInstanceUID="1.2.276.0.7230010.3.200.10" StudyTime="083301">
+				<Series Modality="PR" SeriesDescription="pstates for text annotation test" SeriesInstanceUID="1.2.276.0.7230010.3.200.10.0" SeriesNumber="00">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.10.0.1" DirectDownloadFile="1.2.276.0.7230010.3.200.10.0.1"/>
+					<Instance InstanceNumber="2" SOPInstanceUID="1.2.276.0.7230010.3.200.10.0.2" DirectDownloadFile="1.2.276.0.7230010.3.200.10.0.2"/>
+					<Instance InstanceNumber="3" SOPInstanceUID="1.2.276.0.7230010.3.200.10.0.3" DirectDownloadFile="1.2.276.0.7230010.3.200.10.0.3"/>
+					<Instance InstanceNumber="4" SOPInstanceUID="1.2.276.0.7230010.3.200.10.0.4" DirectDownloadFile="1.2.276.0.7230010.3.200.10.0.4"/>
+					<Instance InstanceNumber="5" SOPInstanceUID="1.2.276.0.7230010.3.200.10.0.5" DirectDownloadFile="1.2.276.0.7230010.3.200.10.0.5"/>
+					<Instance InstanceNumber="6" SOPInstanceUID="1.2.276.0.7230010.3.200.10.0.6" DirectDownloadFile="1.2.276.0.7230010.3.200.10.0.6"/>
+					<Instance InstanceNumber="7" SOPInstanceUID="1.2.276.0.7230010.3.200.10.0.7" DirectDownloadFile="1.2.276.0.7230010.3.200.10.0.7"/>
+					<Instance InstanceNumber="8" SOPInstanceUID="1.2.276.0.7230010.3.200.10.0.8" DirectDownloadFile="1.2.276.0.7230010.3.200.10.0.8"/>
+					<Instance InstanceNumber="9" SOPInstanceUID="1.2.276.0.7230010.3.200.10.0.9" DirectDownloadFile="1.2.276.0.7230010.3.200.10.0.9"/>
+					<Instance InstanceNumber="10" SOPInstanceUID="1.2.276.0.7230010.3.200.10.0.10" DirectDownloadFile="1.2.276.0.7230010.3.200.10.0.10"/>
+					<Instance InstanceNumber="11" SOPInstanceUID="1.2.276.0.7230010.3.200.10.0.11" DirectDownloadFile="1.2.276.0.7230010.3.200.10.0.11"/>
+					<Instance InstanceNumber="12" SOPInstanceUID="1.2.276.0.7230010.3.200.10.0.12" DirectDownloadFile="1.2.276.0.7230010.3.200.10.0.12"/>
+					<Instance InstanceNumber="13" SOPInstanceUID="1.2.276.0.7230010.3.200.10.0.13" DirectDownloadFile="1.2.276.0.7230010.3.200.10.0.13"/>
+					<Instance InstanceNumber="14" SOPInstanceUID="1.2.276.0.7230010.3.200.10.0.14" DirectDownloadFile="1.2.276.0.7230010.3.200.10.0.14"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_2608154159998367780.jpg" Modality="OT" SeriesDescription="image relative text in bounding box" SeriesInstanceUID="1.2.276.0.7230010.3.200.10.1" SeriesNumber="01">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.10.1.1" DirectDownloadFile="1.2.276.0.7230010.3.200.10.1.1"/>
+					<Instance InstanceNumber="2" SOPInstanceUID="1.2.276.0.7230010.3.200.10.1.2" DirectDownloadFile="1.2.276.0.7230010.3.200.10.1.2"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_2608154159998367780.jpg" Modality="OT" SeriesDescription="display relative text in bounding box" SeriesInstanceUID="1.2.276.0.7230010.3.200.10.2" SeriesNumber="02">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.10.2.1" DirectDownloadFile="1.2.276.0.7230010.3.200.10.2.1"/>
+					<Instance InstanceNumber="2" SOPInstanceUID="1.2.276.0.7230010.3.200.10.2.2" DirectDownloadFile="1.2.276.0.7230010.3.200.10.2.2"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_2608154159998367780.jpg" Modality="OT" SeriesDescription="image relative text in too small bounding box" SeriesInstanceUID="1.2.276.0.7230010.3.200.10.3" SeriesNumber="03">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.10.3.1" DirectDownloadFile="1.2.276.0.7230010.3.200.10.3.1"/>
+					<Instance InstanceNumber="2" SOPInstanceUID="1.2.276.0.7230010.3.200.10.3.2" DirectDownloadFile="1.2.276.0.7230010.3.200.10.3.2"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_2608154159998367780.jpg" Modality="OT" SeriesDescription="display relative text in too small bounding box" SeriesInstanceUID="1.2.276.0.7230010.3.200.10.4" SeriesNumber="04">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.10.4.1" DirectDownloadFile="1.2.276.0.7230010.3.200.10.4.1"/>
+					<Instance InstanceNumber="2" SOPInstanceUID="1.2.276.0.7230010.3.200.10.4.2" DirectDownloadFile="1.2.276.0.7230010.3.200.10.4.2"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_2608154159998367780.jpg" Modality="OT" SeriesDescription="image relative text,bounding box,invisible anchor point" SeriesInstanceUID="1.2.276.0.7230010.3.200.10.5" SeriesNumber="05">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.10.5.1" DirectDownloadFile="1.2.276.0.7230010.3.200.10.5.1"/>
+					<Instance InstanceNumber="2" SOPInstanceUID="1.2.276.0.7230010.3.200.10.5.2" DirectDownloadFile="1.2.276.0.7230010.3.200.10.5.2"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_2608154159998367780.jpg" Modality="OT" SeriesDescription="display relative text,bounding box,invisible anchor point" SeriesInstanceUID="1.2.276.0.7230010.3.200.10.6" SeriesNumber="06">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.10.6.1" DirectDownloadFile="1.2.276.0.7230010.3.200.10.6.1"/>
+					<Instance InstanceNumber="2" SOPInstanceUID="1.2.276.0.7230010.3.200.10.6.2" DirectDownloadFile="1.2.276.0.7230010.3.200.10.6.2"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_13201796005513787914.jpg" Modality="OT" SeriesDescription="image relative text,bounding box,visible anchor point" SeriesInstanceUID="1.2.276.0.7230010.3.200.10.7" SeriesNumber="07">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.10.7.1" DirectDownloadFile="1.2.276.0.7230010.3.200.10.7.1"/>
+					<Instance InstanceNumber="2" SOPInstanceUID="1.2.276.0.7230010.3.200.10.7.2" DirectDownloadFile="1.2.276.0.7230010.3.200.10.7.2"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_13201796005513787914.jpg" Modality="OT" SeriesDescription="display relative text,bounding box,visible anchor point" SeriesInstanceUID="1.2.276.0.7230010.3.200.10.8" SeriesNumber="08">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.10.8.1" DirectDownloadFile="1.2.276.0.7230010.3.200.10.8.1"/>
+					<Instance InstanceNumber="2" SOPInstanceUID="1.2.276.0.7230010.3.200.10.8.2" DirectDownloadFile="1.2.276.0.7230010.3.200.10.8.2"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_10518103904347718510.jpg" Modality="OT" SeriesDescription="image relative text,invisible anchor point" SeriesInstanceUID="1.2.276.0.7230010.3.200.10.9" SeriesNumber="09">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.10.9.1" DirectDownloadFile="1.2.276.0.7230010.3.200.10.9.1"/>
+					<Instance InstanceNumber="2" SOPInstanceUID="1.2.276.0.7230010.3.200.10.9.2" DirectDownloadFile="1.2.276.0.7230010.3.200.10.9.2"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_10518103904347718510.jpg" Modality="OT" SeriesDescription="display relative text,invisible anchor point" SeriesInstanceUID="1.2.276.0.7230010.3.200.10.10" SeriesNumber="10">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.10.10.1" DirectDownloadFile="1.2.276.0.7230010.3.200.10.10.1"/>
+					<Instance InstanceNumber="2" SOPInstanceUID="1.2.276.0.7230010.3.200.10.10.2" DirectDownloadFile="1.2.276.0.7230010.3.200.10.10.2"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_11082582473335707440.jpg" Modality="OT" SeriesDescription="image relative text,visible anchor point" SeriesInstanceUID="1.2.276.0.7230010.3.200.10.11" SeriesNumber="11">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.10.11.1" DirectDownloadFile="1.2.276.0.7230010.3.200.10.11.1"/>
+					<Instance InstanceNumber="2" SOPInstanceUID="1.2.276.0.7230010.3.200.10.11.2" DirectDownloadFile="1.2.276.0.7230010.3.200.10.11.2"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_11082582473335707440.jpg" Modality="OT" SeriesDescription="display relative text,visible anchor point" SeriesInstanceUID="1.2.276.0.7230010.3.200.10.12" SeriesNumber="12">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.10.12.1" DirectDownloadFile="1.2.276.0.7230010.3.200.10.12.1"/>
+					<Instance InstanceNumber="2" SOPInstanceUID="1.2.276.0.7230010.3.200.10.12.2" DirectDownloadFile="1.2.276.0.7230010.3.200.10.12.2"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_17697974193539624259.jpg" Modality="OT" SeriesDescription="multi-line text with justification left/center/right" SeriesInstanceUID="1.2.276.0.7230010.3.200.10.13" SeriesNumber="13">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.10.13.1" DirectDownloadFile="1.2.276.0.7230010.3.200.10.13.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_17697974193539624259.jpg" Modality="OT" SeriesDescription="rotated text annotations" SeriesInstanceUID="1.2.276.0.7230010.3.200.10.14" SeriesNumber="14">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.10.14.1" DirectDownloadFile="1.2.276.0.7230010.3.200.10.14.1"/>
+				</Series>
+			</Study>
+		</Patient>
+	</arcQuery>
+</manifest>

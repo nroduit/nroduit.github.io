@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<manifest uid="e5a78020-d6ff-4ded-8193-bb6068721999" xmlns="http://www.weasis.org/xsd/2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<arcQuery arcId="local" baseUrl="https://nroduit.github.io/samples/demo/">
+		<Patient PatientID="DISA_Pnn" PatientName="TEST^Displayed Area PState">
+			<Study StudyDate="20000626" StudyDescription="Displayed Area Test" StudyID="DISA_Pnn" StudyInstanceUID="1.2.276.0.7230010.3.200.8" StudyTime="120000">
+				<Series Modality="PR" SeriesDescription="pstates for displayed area test" SeriesInstanceUID="1.2.276.0.7230010.3.200.8.0" SeriesNumber="00">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.8.0.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.8.0.1"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.8.0.2" InstanceNumber="2" SOPInstanceUID="1.2.276.0.7230010.3.200.8.0.2"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.8.0.3" InstanceNumber="3" SOPInstanceUID="1.2.276.0.7230010.3.200.8.0.3"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.8.0.4" InstanceNumber="4" SOPInstanceUID="1.2.276.0.7230010.3.200.8.0.4"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.8.0.5" InstanceNumber="5" SOPInstanceUID="1.2.276.0.7230010.3.200.8.0.5"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_8462119700016019071.jpg" Modality="OT" SeriesDescription="displayed area magnification 2.5 center" SeriesInstanceUID="1.2.276.0.7230010.3.200.8.1" SeriesNumber="01">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.8.1.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.8.1.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_8294362162778025602.jpg" Modality="OT" SeriesDescription="displayed area magnification 2.5 BRHC" SeriesInstanceUID="1.2.276.0.7230010.3.200.8.2" SeriesNumber="02">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.8.2.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.8.2.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="displayed area magnification factor 0.5" SeriesInstanceUID="1.2.276.0.7230010.3.200.8.3" SeriesNumber="03">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.8.3.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.8.3.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_2743843520217021634.jpg" Modality="OT" SeriesDescription="displayed area true size 200 mm" SeriesInstanceUID="1.2.276.0.7230010.3.200.8.4" SeriesNumber="04">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.8.4.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.8.4.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_1944664692520019707.jpg" Modality="OT" SeriesDescription="displayed area with presentation pixel aspect ratio 1/2" SeriesInstanceUID="1.2.276.0.7230010.3.200.8.5" SeriesNumber="05">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.8.5.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.8.5.1"/>
+				</Series>
+			</Study>
+		</Patient>
+	</arcQuery>
+</manifest>

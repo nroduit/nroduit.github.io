@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<manifest uid="7d18ca17-3de0-4d34-9f8a-df2ad08c120e" xmlns="http://www.weasis.org/xsd/2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<arcQuery arcId="local" baseUrl="https://nroduit.github.io/samples/demo/">
+		<Patient PatientID="SCSFREN" PatientName="TEST-i18n-Buc^Jérôme">
+			<Study StudyDescription="Internationalized character test" StudyID="SCSFREN" StudyInstanceUID="1.3.6.1.4.1.5962.1.2.0.1175775772.5720.0">
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Internationalized character test" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.0.1.1175775772.5720.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.0.1.1.1175775772.5720.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.0.1.1.1175775772.5720.0"/>
+				</Series>
+			</Study>
+		</Patient>
+		<Patient PatientID="I2EXAMPLE" PatientName="TEST-i18n-Hong^Gildong=洪^吉洞=홍^길동">
+			<Study StudyDescription="Internationalized character test" StudyID="I2EXAMPLE" StudyInstanceUID="1.3.6.1.4.1.5962.1.2.0.1175775771.5708.0">
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Internationalized character test" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.0.1.1175775771.5708.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.0.1.1.1175775771.5708.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.0.1.1.1175775771.5708.0"/>
+				</Series>
+			</Study>
+		</Patient>
+		<Patient PatientID="X2EXAMPLE" PatientName="TEST-i18n-Wang^XiaoDong=王^小东=">
+			<Study StudyDescription="Internationalized character test" StudyID="X2EXAMPLE" StudyInstanceUID="1.3.6.1.4.1.5962.1.2.0.1175775771.5714.0">
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Internationalized character test" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.0.1.1175775771.5714.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.0.1.1.1175775771.5714.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.0.1.1.1175775771.5714.0"/>
+				</Series>
+			</Study>
+		</Patient>
+		<Patient PatientID="X1EXAMPLE" PatientName="TEST-i18n-Wang^XiaoDong=王^小東=">
+			<Study StudyDescription="Internationalized character test" StudyID="X1EXAMPLE" StudyInstanceUID="1.3.6.1.4.1.5962.1.2.0.1175775771.5711.0">
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Internationalized character test" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.0.1.1175775771.5711.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.0.1.1.1175775771.5711.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.0.1.1.1175775771.5711.0"/>
+				</Series>
+			</Study>
+		</Patient>
+		<Patient PatientID="H31EXAMPLE" PatientName="TEST-i18n-Yamada^Tarou=山田^太郎=やまだ^たろう">
+			<Study StudyDescription="Internationalized character test" StudyID="H31EXAMPLE" StudyInstanceUID="1.3.6.1.4.1.5962.1.2.0.1175775771.5702.0">
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Internationalized character test" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.0.1.1175775771.5702.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.0.1.1.1175775771.5702.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.0.1.1.1175775771.5702.0"/>
+				</Series>
+			</Study>
+		</Patient>
+		<Patient PatientID="SCSGERM" PatientName="TEST-i18n-Äneas^Rüdiger">
+			<Study StudyDescription="Internationalized character test" StudyID="SCSGERM" StudyInstanceUID="1.3.6.1.4.1.5962.1.2.0.1175775772.5723.0">
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Internationalized character test" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.0.1.1175775772.5723.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.0.1.1.1175775772.5723.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.0.1.1.1175775772.5723.0"/>
+				</Series>
+			</Study>
+		</Patient>
+		<Patient PatientID="SCSRUSS" PatientName="TEST-i18n-Люкceмбypг">
+			<Study StudyDescription="Internationalized character test" StudyID="SCSRUSS" StudyInstanceUID="1.3.6.1.4.1.5962.1.2.0.1175775772.5729.0">
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Internationalized character test" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.0.1.1175775772.5729.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.0.1.1.1175775772.5729.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.0.1.1.1175775772.5729.0"/>
+				</Series>
+			</Study>
+		</Patient>
+		<Patient PatientID="SCSHBRW" PatientName="TEST-i18n-שרון^דבורה">
+			<Study StudyDescription="Internationalized character test" StudyID="SCSHBRW" StudyInstanceUID="1.3.6.1.4.1.5962.1.2.0.1175775772.5732.0">
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Internationalized character test" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.0.1.1175775772.5732.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.0.1.1.1175775772.5732.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.0.1.1.1175775772.5732.0"/>
+				</Series>
+			</Study>
+		</Patient>
+		<Patient PatientID="SCSARAB" PatientName="TEST-i18n-قباني^لنزار">
+			<Study StudyDescription="Internationalized character test" StudyID="SCSARAB" StudyInstanceUID="1.3.6.1.4.1.5962.1.2.0.1175775772.5726.0">
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Internationalized character test" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.0.1.1175775772.5726.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.0.1.1.1175775772.5726.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.0.1.1.1175775772.5726.0"/>
+				</Series>
+			</Study>
+		</Patient>
+		<Patient PatientBirthDate="17991231" PatientID="2008-3-i18n" PatientName="TEST-i18n-김희중" PatientSex="M">
+			<Study AccessionNumber="2008050417172310" StudyDate="20080504" StudyDescription="Internationalized character test" StudyInstanceUID="1.3.51.0.7.11986030739.15242.20106.39861.48967.23056.44419" StudyTime="171715">
+				<Series DirectDownloadThumbnail="thumb/tumb_3244753279911584146.jpg" Modality="CR" SeriesDescription="Internationalized character test" SeriesInstanceUID="1.3.51.5156.11871.20080504.1104918" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.51.0.7.11267079384.54094.16836.47802.41082.29308.17461" InstanceNumber="1" SOPInstanceUID="1.3.51.0.7.11267079384.54094.16836.47802.41082.29308.17461"/>
+				</Series>
+			</Study>
+		</Patient>
+		<Patient PatientID="H32EXAMPLE" PatientName="TEST-i18n-ﾔﾏﾀﾞ^ﾀﾛｳ=山田^太郎=やまだ^たろう">
+			<Study StudyDescription="Internationalized character test" StudyID="H32EXAMPLE" StudyInstanceUID="1.3.6.1.4.1.5962.1.2.0.1175775771.5705.0">
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="Internationalized character test" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.0.1.1175775771.5705.0" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.0.1.1.1175775771.5705.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.0.1.1.1175775771.5705.0"/>
+				</Series>
+			</Study>
+		</Patient>
+	</arcQuery>
+</manifest>

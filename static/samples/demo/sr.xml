@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<manifest uid="722432de-1edc-49a4-af24-3e3d3228f8b4" xmlns="http://www.weasis.org/xsd/2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<arcQuery arcId="local" baseUrl="https://nroduit.github.io/samples/demo/">
+		<Patient PatientID="G0001-sr" PatientName="TEST^SR Dose Report" PatientSex="F">
+			<Study AccessionNumber="G0001" StudyDate="20100101" StudyDescription="DICOM RDSR" StudyInstanceUID="1.3.6.1.4.1.5962.99.1.573361952.291015276.1289063583520.3.0" StudyTime="000000">
+				<Series Modality="SR" SeriesDescription="Radiation Dose Information" SeriesInstanceUID="1.3.6.1.4.1.5962.99.1.575378522.1063224325.1289065600090.3.0" SeriesNumber="897">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.99.1.575378522.1063224325.1289065600090.2.0" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.99.1.575378522.1063224325.1289065600090.2.0"/>
+				</Series>
+			</Study>
+		</Patient>
+		<Patient PatientBirthDate="19950210" PatientID="KHIS001" PatientName="TEST^SR Gamage Mary" PatientSex="F">
+			<Study AccessionNumber="KHIS073013420" StudyDate="19950730" StudyDescription="OFFIS Structured Reporting Samples" StudyID="14067" StudyInstanceUID="1.2.840.113654.2.4.4.3.4.119950730134200" StudyTime="134200">
+				<Series Modality="SR" SeriesDescription="RSNA '95, Kodak, CR" SeriesInstanceUID="1.2.276.0.7230010.3.1.3.1787205428.166.1117461927.66" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.1.4.1787205428.166.1117461927.65" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.1.4.1787205428.166.1117461927.65"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3806028912719330835.jpg" Modality="CR" SeriesInstanceUID="1.2.840.113654.2.4.4.3.5.119950730134200" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.2.840.113654.2.4.4.3.6.1.119950730.1807310414" InstanceNumber="807310414" SOPInstanceUID="1.2.840.113654.2.4.4.3.6.1.119950730.1807310414"/>
+				</Series>
+			</Study>
+		</Patient>
+		<Patient PatientBirthDate="19320810" PatientID="62789" PatientName="TEST^SR Mars Verna Marie^de" PatientSex="F">
+			<Study StudyDescription="OFFIS Structured Reporting Samples" StudyInstanceUID="1.2.276.0.7230010.3.1.2.1787205428.166.1117461927.32">
+				<Series Modality="SR" SeriesDescription="Text Report with hierarchical structure" SeriesInstanceUID="1.2.276.0.7230010.3.1.3.1787205428.166.1117461927.33" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.1.4.1787205428.166.1117461927.31" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.1.4.1787205428.166.1117461927.31"/>
+				</Series>
+			</Study>
+		</Patient>
+		<Patient PatientBirthDate="19500420" PatientID="ACN000001" PatientName="TEST^SR NAPPER MARGRET" PatientSex="F">
+			<Study AccessionNumber="ACN000001" StudyDate="19950119" StudyDescription="Structured Reporting Samples" StudyInstanceUID="1.2.840.113680.3.103.775.2873347909.282313" StudyTime="092854">
+				<Series Modality="SR" SeriesDescription="RSNA '95, Acuson, US" SeriesInstanceUID="1.2.276.0.7230010.3.1.3.1787205428.166.1117461927.71" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.1.4.1787205428.166.1117461927.70" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.1.4.1787205428.166.1117461927.70"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_10138404388748808143.jpg" Modality="US" SeriesInstanceUID="1.2.840.113680.3.103.775.2873347909.282313">
+					<Instance DirectDownloadFile="1.2.840.113680.3.103.775.2873347909.282313.2" InstanceNumber="2" SOPInstanceUID="1.2.840.113680.3.103.775.2873347909.282313.2"/>
+				</Series>
+			</Study>
+		</Patient>
+		<Patient PatientBirthDate="19511104" PatientID="SMS511104" PatientName="TEST^SR NEUBAUER ANNA" PatientSex="F">
+			<Study AccessionNumber="SMS000013" StudyDate="19940613" StudyDescription="Structured Reporting Samples" StudyID="000003" StudyInstanceUID="1.3.12.2.1107.5.8.1.123456789.199507271758050705910" StudyTime="153226.392">
+				<Series DirectDownloadThumbnail="thumb/tumb_4296721513652136714.jpg" Modality="MR" SeriesInstanceUID="1.3.12.2.1107.5.8.1.123456789.199507271758050706635" SeriesNumber="0">
+					<Instance DirectDownloadFile="1.3.12.2.1107.5.8.1.123456789.199507271758050707765" InstanceNumber="13" SOPInstanceUID="1.3.12.2.1107.5.8.1.123456789.199507271758050707765"/>
+				</Series>
+				<Series Modality="SR" SeriesDescription="RSNA '95, Siemens, MR" SeriesInstanceUID="1.2.276.0.7230010.3.1.3.1787205428.166.1117461927.86" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.1.4.1787205428.166.1117461927.85" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.1.4.1787205428.166.1117461927.85"/>
+				</Series>
+			</Study>
+		</Patient>
+		<Patient PatientBirthDate="19900808" PatientID="4523" PatientName="TEST^SR Russel William" PatientSex="M">
+			<Study StudyDescription="OFFIS Structured Reporting Samples" StudyInstanceUID="1.2.276.0.7230010.3.1.4.123456">
+				<Series Modality="SR" SeriesDescription="Report with Image Reference" SeriesInstanceUID="1.2.276.0.7230010.3.1.3.1787205428.166.1117461927.41" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.1.4.1787205428.166.1117461927.40" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.1.4.1787205428.166.1117461927.40"/>
+				</Series>
+				<Series Modality="SR" SeriesDescription="Report with Image and Presentation State Reference" SeriesInstanceUID="1.2.276.0.7230010.3.1.3.1787205428.166.1117461927.46" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.1.4.1787205428.166.1117461927.45" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.1.4.1787205428.166.1117461927.45"/>
+				</Series>
+				<Series Modality="SR" SeriesDescription="Report with Presentation State Reference" SeriesInstanceUID="1.2.276.0.7230010.3.1.3.1787205428.166.1117461927.51" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.1.4.1787205428.166.1117461927.50" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.1.4.1787205428.166.1117461927.50"/>
+				</Series>
+			</Study>
+		</Patient>
+		<Patient IssuerOfPatientID="DCM4CHEE" PatientBirthDate="19811010" PatientID="PACS-2561313222" PatientName="TEST^SR Silverman Elaine J." PatientSex="F">
+			<Study StudyDescription="OFFIS Structured Reporting Samples" StudyInstanceUID="1.2.276.0.7230010.3.1.2.1787205428.166.1117461927.29">
+				<Series Modality="SR" SeriesDescription="Text Report with different sections" SeriesInstanceUID="1.2.276.0.7230010.3.1.3.1787205428.166.1117461927.30" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.1.4.1787205428.166.1117461927.28" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.1.4.1787205428.166.1117461927.28"/>
+				</Series>
+			</Study>
+			<Study StudyDescription="OFFIS Structured Reporting Samples" StudyInstanceUID="1.2.276.0.7230010.3.1.2.1787205428.166.1117461927.35">
+				<Series Modality="SR" SeriesDescription="Text Report with different sections" SeriesInstanceUID="1.2.276.0.7230010.3.1.3.1787205428.166.1117461927.36" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.1.4.1787205428.166.1117461927.34" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.1.4.1787205428.166.1117461927.34"/>
+				</Series>
+			</Study>
+		</Patient>
+		<Patient PatientID="ATL000001" PatientName="TEST^SR Smith Mary" PatientSex="F">
+			<Study AccessionNumber="ATL000001" StudyDate="19950725" StudyDescription="OFFIS Structured Reporting Samples" StudyID="0" StudyInstanceUID="1.2.840.113663.19950725.1.0" StudyTime="083017">
+				<Series DirectDownloadThumbnail="thumb/tumb_6281298389345691982.jpg" Modality="US" SeriesInstanceUID="1.2.840.113663.19950725.1.0.0" SeriesNumber="0">
+					<Instance DirectDownloadFile="1.2.840.113663.19950725083017.0.0.0" InstanceNumber="0" SOPInstanceUID="1.2.840.113663.19950725083017.0.0.0"/>
+				</Series>
+				<Series Modality="SR" SeriesDescription="RSNA '95, ATL, US" SeriesInstanceUID="1.2.276.0.7230010.3.1.3.1787205428.166.1117461927.106" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.1.4.1787205428.166.1117461927.105" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.1.4.1787205428.166.1117461927.105"/>
+				</Series>
+			</Study>
+		</Patient>
+		<Patient PatientBirthDate="19250824" PatientID="FUJI00001" PatientName="TEST^SR Tanaka Hanako" PatientSex="M">
+			<Study AccessionNumber="FUJI95701" StudyDescription="OFFIS Structured Reporting Samples" StudyInstanceUID="1.2.392.200036.9125.0.198811291108.7">
+				<Series Modality="SR" SeriesDescription="RSNA '95, Fuji, CR" SeriesInstanceUID="1.2.276.0.7230010.3.1.3.1787205428.166.1117461927.101" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.1.4.1787205428.166.1117461927.100" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.1.4.1787205428.166.1117461927.100"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_17095432474145019139.jpg" Modality="CR" SeriesInstanceUID="1.2.392.200036.9125.0.198811291108.7">
+					<Instance DirectDownloadFile="1.2.392.200036.9125.0.19950720093509" InstanceNumber="7" SOPInstanceUID="1.2.392.200036.9125.0.19950720093509"/>
+				</Series>
+			</Study>
+		</Patient>
+		<Patient PatientID="GE0514-sr" PatientName="TEST^SR Wilkins Charles" PatientSex="M">
+			<Study AccessionNumber="THU9948" StudyDate="19950608" StudyDescription="OFFIS Structured Reporting Samples" StudyID="1784" StudyInstanceUID="1.2.840.113674.514.212.200" StudyTime="131646">
+				<Series Modality="SR" SeriesDescription="RSNA '95, GE, CT" SeriesInstanceUID="1.2.276.0.7230010.3.1.3.1787205428.166.1117461927.76" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.1.4.1787205428.166.1117461927.75" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.1.4.1787205428.166.1117461927.75"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_12891750681409816769.jpg" Modality="CT" SeriesInstanceUID="1.2.840.113674.514.212.82.300" SeriesNumber="2">
+					<Instance DirectDownloadFile="1.2.840.113674.950809132337081.100" InstanceNumber="18" SOPInstanceUID="1.2.840.113674.950809132337081.100"/>
+				</Series>
+			</Study>
+		</Patient>
+	</arcQuery>
+</manifest>

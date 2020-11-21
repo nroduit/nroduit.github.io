@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<manifest uid="b2cbd738-d3dd-47bd-97ab-b0591c3de050" xmlns="http://www.weasis.org/xsd/2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<arcQuery arcId="local" baseUrl="https://nroduit.github.io/samples/demo/">
+		<Patient PatientID="MLUT_Pnn" PatientName="TEST^Modality LUT PState">
+			<Study StudyDate="19991117" StudyDescription="Modality LUT PState Test" StudyID="MLUT_Pnn" StudyInstanceUID="1.2.276.0.7230010.3.200.3" StudyTime="083035">
+				<Series Modality="PR" SeriesDescription="pstates for modality lut pstate test" SeriesInstanceUID="1.2.276.0.7230010.3.200.3.0" SeriesNumber="00">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.3.0.1" DirectDownloadFile="1.2.276.0.7230010.3.200.3.0.1"/>
+					<Instance InstanceNumber="3" SOPInstanceUID="1.2.276.0.7230010.3.200.3.0.3" DirectDownloadFile="1.2.276.0.7230010.3.200.3.0.3"/>
+					<Instance InstanceNumber="4" SOPInstanceUID="1.2.276.0.7230010.3.200.3.0.4" DirectDownloadFile="1.2.276.0.7230010.3.200.3.0.4"/>
+					<Instance InstanceNumber="5" SOPInstanceUID="1.2.276.0.7230010.3.200.3.0.5" DirectDownloadFile="1.2.276.0.7230010.3.200.3.0.5"/>
+					<Instance InstanceNumber="6" SOPInstanceUID="1.2.276.0.7230010.3.200.3.0.6" DirectDownloadFile="1.2.276.0.7230010.3.200.3.0.6"/>
+					<Instance InstanceNumber="7" SOPInstanceUID="1.2.276.0.7230010.3.200.3.0.7" DirectDownloadFile="1.2.276.0.7230010.3.200.3.0.7"/>
+					<Instance InstanceNumber="8" SOPInstanceUID="1.2.276.0.7230010.3.200.3.0.8" DirectDownloadFile="1.2.276.0.7230010.3.200.3.0.8"/>
+					<Instance InstanceNumber="9" SOPInstanceUID="1.2.276.0.7230010.3.200.3.0.9" DirectDownloadFile="1.2.276.0.7230010.3.200.3.0.9"/>
+					<Instance InstanceNumber="11" SOPInstanceUID="1.2.276.0.7230010.3.200.3.0.11" DirectDownloadFile="1.2.276.0.7230010.3.200.3.0.11"/>
+					<Instance InstanceNumber="12" SOPInstanceUID="1.2.276.0.7230010.3.200.3.0.12" DirectDownloadFile="1.2.276.0.7230010.3.200.3.0.12"/>
+					<Instance InstanceNumber="13" SOPInstanceUID="1.2.276.0.7230010.3.200.3.0.13" DirectDownloadFile="1.2.276.0.7230010.3.200.3.0.13"/>
+					<Instance InstanceNumber="14" SOPInstanceUID="1.2.276.0.7230010.3.200.3.0.14" DirectDownloadFile="1.2.276.0.7230010.3.200.3.0.14"/>
+					<Instance InstanceNumber="16" SOPInstanceUID="1.2.276.0.7230010.3.200.3.0.16" DirectDownloadFile="1.2.276.0.7230010.3.200.3.0.16"/>
+					<Instance InstanceNumber="18" SOPInstanceUID="1.2.276.0.7230010.3.200.3.0.18" DirectDownloadFile="1.2.276.0.7230010.3.200.3.0.18"/>
+					<Instance InstanceNumber="19" SOPInstanceUID="1.2.276.0.7230010.3.200.3.0.19" DirectDownloadFile="1.2.276.0.7230010.3.200.3.0.19"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="8 in 8,range 0 to +255,unsigned,mono2,no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.3.1" SeriesNumber="01">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.3.1.1" DirectDownloadFile="1.2.276.0.7230010.3.200.3.1.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="12 in 16, range 0 to +4095, high zero, unsigned, mono2, no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.3.3" SeriesNumber="03">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.3.3.1" DirectDownloadFile="1.2.276.0.7230010.3.200.3.3.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="12 in 16, range 0 to +4095, high zero, unsigned, mono2, no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.3.4" SeriesNumber="04">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.3.4.1" DirectDownloadFile="1.2.276.0.7230010.3.200.3.4.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="12 in 16,range 0 to +4095,high bits ones,unsigned,mono2,no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.3.5" SeriesNumber="05">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.3.5.1" DirectDownloadFile="1.2.276.0.7230010.3.200.3.5.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="12 in 16,range 0 to +4095,high bits ones,unsigned,mono2,no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.3.6" SeriesNumber="06">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.3.6.1" DirectDownloadFile="1.2.276.0.7230010.3.200.3.6.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="15 in 16,range 0 to +32767,high zero,unsigned,mono2,no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.3.7" SeriesNumber="07">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.3.7.1" DirectDownloadFile="1.2.276.0.7230010.3.200.3.7.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="15 in 16,range 0 to +32767,high bits zero,unsigned,mono2,no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.3.8" SeriesNumber="08">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.3.8.1" DirectDownloadFile="1.2.276.0.7230010.3.200.3.8.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="12 in 16,range 0 to +65535,high bits ones,unsigned,mono2,no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.3.9" SeriesNumber="09">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.3.9.1" DirectDownloadFile="1.2.276.0.7230010.3.200.3.9.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="12 in 16,range -2048 to +2047,high zero,signed,mono2,no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.3.11" SeriesNumber="11">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.3.11.1" DirectDownloadFile="1.2.276.0.7230010.3.200.3.11.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="12 in 16,range -2048 to +2047,high zero,signed,mono2,no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.3.12" SeriesNumber="12">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.3.12.1" DirectDownloadFile="1.2.276.0.7230010.3.200.3.12.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="16 in 16,range -32768 to +32767,signed,mono2,no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.3.13" SeriesNumber="13">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.3.13.1" DirectDownloadFile="1.2.276.0.7230010.3.200.3.13.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="16 in 16,range -32768 to +32767,signed,mono2,no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.3.14" SeriesNumber="14">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.3.14.1" DirectDownloadFile="1.2.276.0.7230010.3.200.3.14.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="16 in 16,range -32768 to +32767,signed,mono2,no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.3.16" SeriesNumber="16">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.3.16.1" DirectDownloadFile="1.2.276.0.7230010.3.200.3.16.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="12 in 16,range -2048 to +2047,signed,mono2,no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.3.18" SeriesNumber="18">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.3.18.1" DirectDownloadFile="1.2.276.0.7230010.3.200.3.18.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_3076281937194119351.jpg" Modality="OT" SeriesDescription="12 in 16,range -2048 to +2047,signed,mono1,no luts" SeriesInstanceUID="1.2.276.0.7230010.3.200.3.19" SeriesNumber="19">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.3.19.1" DirectDownloadFile="1.2.276.0.7230010.3.200.3.19.1"/>
+				</Series>
+			</Study>
+		</Patient>
+	</arcQuery>
+</manifest>

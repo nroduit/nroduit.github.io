@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<manifest uid="6cc68ac6-2e0f-4c79-9bb5-f06a16661b13" xmlns="http://www.weasis.org/xsd/2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<arcQuery arcId="local" baseUrl="https://nroduit.github.io/samples/demo/">
+		<Patient IssuerOfPatientID="weasis" PatientBirthDate="19660815" PatientID="PIDBIRAA9" PatientName="TEST^Shutter" PatientSex="M">
+			<Study AccessionNumber="ACCBIRAA9" StudyDate="20090910" StudyDescription="Shutter Test" StudyID="STUDYIDAA9" StudyInstanceUID="1.3.6.1.4.1.21367.0.1.13.1021" StudyTime="083010">
+				<Series DirectDownloadThumbnail="thumb/tumb_9238049569485226618.jpg" Modality="CR" SeriesDescription="Circle and rectangle shutter" SeriesInstanceUID="1.3.6.1.4.1.21367.0.1.14.1032" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.21367.0.1.15.1246" InstanceNumber="10" SOPInstanceUID="1.3.6.1.4.1.21367.0.1.15.1246"/>
+					<Instance DirectDownloadFile="1.3.6.1.4.1.21367.0.1.15.1247" InstanceNumber="10" SOPInstanceUID="1.3.6.1.4.1.21367.0.1.15.1247"/>
+				</Series>
+			</Study>
+			<Study AccessionNumber="2" StudyDate="20061207" StudyDescription="Shutter combining circle and rectangle" StudyID="2" StudyInstanceUID="1.3.6.1.4.1.5962.1.1.0.0.0.1168612284.20369.0.1" StudyTime="151414">
+				<Series DirectDownloadThumbnail="thumb/tumb_4318565872428615985.jpg" Modality="RF" SeriesDescription="Shutter combining circle and rectangle" SeriesInstanceUID="1.3.6.1.4.1.5962.1.1.0.0.0.1168612284.20369.0.2" SeriesNumber="1">
+					<Instance DirectDownloadFile="1.3.6.1.4.1.5962.1.1.0.0.0.1168612284.20369.0.3" InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.0.0.0.1168612284.20369.0.3"/>
+				</Series>
+			</Study>
+		</Patient>
+	</arcQuery>
+</manifest>

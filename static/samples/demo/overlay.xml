@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<manifest uid="2d2bc075-be5d-4a2d-90ad-76c976db6e69" xmlns="http://www.weasis.org/xsd/2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<arcQuery arcId="local" baseUrl="https://nroduit.github.io/samples/demo/">
+		<Patient PatientBirthDate="19890507" PatientID="overlay728" PatientName="TEST^Overlay">
+			<Study AccessionNumber="test081112048" StudyDate="20111221" StudyDescription="Overlay in pixel data (type G)" StudyID="A10081111961" StudyInstanceUID="2.16.840.1.113669.632.20.1211.10001557400" StudyTime="154757.75">
+				<Series DirectDownloadThumbnail="thumb/tumb_3142321948141315067.jpg" Modality="CT" SeriesDescription="Overlay in pixel data (type G)" SeriesInstanceUID="1.3.12.2.1107.5.1.4.1003.30000011122107265876500005565" SeriesNumber="2">
+					<Instance DirectDownloadFile="1.3.12.2.1107.5.1.4.1003.30000011122107265876500005634" InstanceNumber="69" SOPInstanceUID="1.3.12.2.1107.5.1.4.1003.30000011122107265876500005634"/>
+				</Series>
+			</Study>
+			<Study StudyDate="20110405" StudyDescription="Overlay in pixel data, mLUT and Shutter" StudyID="2011040518455806" StudyInstanceUID="1.3.12.2.1107.5.3.3.5067.2011040518455806" StudyTime="211936.478">
+				<Series DirectDownloadThumbnail="thumb/tumb_7502657475612634779.jpg" Modality="RF" SeriesDescription="Overlay in pixel data and MLUT Sequence (outside shutter)" SeriesInstanceUID="1.3.12.2.1107.5.3.3.5067.2011040519010448" SeriesNumber="15">
+					<Instance DirectDownloadFile="1.3.12.2.1107.5.3.3.5067.2011040519010452.20200001" InstanceNumber="1" SOPInstanceUID="1.3.12.2.1107.5.3.3.5067.2011040519010452.20200001"/>
+				</Series>
+			</Study>
+			<Study StudyDate="20090925" StudyDescription="Overlay in pixel data" StudyID="test835623" StudyInstanceUID="2.16.840.1.113669.632.20.1211.10000999666" StudyTime="095408.484">
+				<Series DirectDownloadThumbnail="thumb/tumb_6105171820746274297.jpg" Modality="MR" SeriesDescription="Overlay in pixel data" SeriesInstanceUID="1.3.12.2.1107.5.2.32.35150.2009092510481440099568628.0.0.0" SeriesNumber="18">
+					<Instance DirectDownloadFile="1.3.12.2.1107.5.2.32.35150.30000009092508554321800000003" InstanceNumber="1" SOPInstanceUID="1.3.12.2.1107.5.2.32.35150.30000009092508554321800000003"/>
+					<Instance DirectDownloadFile="1.3.12.2.1107.5.2.32.35150.30000009092508554321800000004" InstanceNumber="2" SOPInstanceUID="1.3.12.2.1107.5.2.32.35150.30000009092508554321800000004"/>
+					<Instance DirectDownloadFile="1.3.12.2.1107.5.2.32.35150.30000009092508554321800000005" InstanceNumber="3" SOPInstanceUID="1.3.12.2.1107.5.2.32.35150.30000009092508554321800000005"/>
+				</Series>
+			</Study>
+			<Study AccessionNumber="8000000000330109" StudyDate="20051130" StudyDescription="Overlay in group 0x600xx" StudyID="8000000000330109" StudyInstanceUID="1.2.124.113532.10.122.1.203.20051130.122937.2950157" StudyTime="132645.921">
+				<Series DirectDownloadThumbnail="thumb/tumb_17212225519961910258.jpg" Modality="MR" SeriesDescription="Overlay in group 0x600xx" SeriesInstanceUID="1.3.12.2.1107.5.2.30.25641.30010005113009191059300000190" SeriesNumber="18">
+					<Instance DirectDownloadFile="1.3.12.2.1107.5.2.30.25641.30010005113009191059300000189" InstanceNumber="1" SOPInstanceUID="1.3.12.2.1107.5.2.30.25641.30010005113009191059300000189"/>
+				</Series>
+			</Study>
+			<Study StudyDate="19991117" StudyDescription="Overlay Test" StudyID="OVLY_Pnn" StudyInstanceUID="1.2.276.0.7230010.3.200.12" StudyTime="083201">
+				<Series Modality="PR" SeriesDescription="pstates for overlay test" SeriesInstanceUID="1.2.276.0.7230010.3.200.12.0" SeriesNumber="00">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.12.0.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.12.0.1"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_14297460697753932612.jpg" Modality="OT" SeriesDescription="six overlays type" SeriesInstanceUID="1.2.276.0.7230010.3.200.12.1" SeriesNumber="01">
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.12.1.1" InstanceNumber="1" SOPInstanceUID="1.2.276.0.7230010.3.200.12.1.1"/>
+					<Instance DirectDownloadFile="1.2.276.0.7230010.3.200.12.1.2" InstanceNumber="2" SOPInstanceUID="1.2.276.0.7230010.3.200.12.1.2"/>
+				</Series>
+			</Study>
+		</Patient>
+	</arcQuery>
+</manifest>

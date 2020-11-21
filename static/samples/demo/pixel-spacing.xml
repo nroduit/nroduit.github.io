@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<manifest uid="8be0d8a5-54e6-4d37-8461-bae8b8790282" xmlns="http://www.weasis.org/xsd/2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<arcQuery arcId="local" baseUrl="https://nroduit.github.io/samples/demo/">
+		<Patient PatientID="62354PQGRRST" PatientName="TEST^Pixel Spacing">
+			<Study AccessionNumber="8-13547713751" StudyDate="20090407" StudyDescription="Test support of different pixel spacing attributes" StudyID="734591762345" StudyInstanceUID="1.3.6.1.4.1.5962.1.2.65535.20090407071000.6523764" StudyTime="121000">
+				<Series DirectDownloadThumbnail="thumb/tumb_12586731131228931217.jpg" Modality="MG" SeriesDescription="Mammography - Pixel Spacing and Imager Pixel Spacing" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.65535.102.1239106253.3780.0" SeriesNumber="102">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.65535.102.1.1239106253.3780.0" DirectDownloadFile="1.3.6.1.4.1.5962.1.1.65535.102.1.1239106253.3780.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_12586731131228931217.jpg" Modality="DX" SeriesDescription="Digital X-Ray - Pixel Spacing and Imager Pixel Spacing" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.65535.103.1239106253.3783.0" SeriesNumber="103">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.65535.103.1.1239106253.3783.0" DirectDownloadFile="1.3.6.1.4.1.5962.1.1.65535.103.1.1239106253.3783.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_12586731131228931217.jpg" Modality="CR" SeriesDescription="Computed Radiography - Pixel Spacing and Imager Pixel Spacing" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.65535.104.1239106253.3786.0" SeriesNumber="104">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.65535.104.1.1239106253.3786.0" DirectDownloadFile="1.3.6.1.4.1.5962.1.1.65535.104.1.1239106253.3786.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_12586731131228931217.jpg" Modality="XA" SeriesDescription="X-Ray Angiography - Pixel Spacing and Imager Pixel Spacing" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.65535.105.1239106253.3789.0" SeriesNumber="105">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.65535.105.1.1239106253.3789.0" DirectDownloadFile="1.3.6.1.4.1.5962.1.1.65535.105.1.1239106253.3789.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_7440309149843010789.jpg" Modality="MG" SeriesDescription="Mammography - Only Imager Pixel Spacing" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.65535.202.1239106254.3824.0" SeriesNumber="202">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.65535.202.1.1239106254.3824.0" DirectDownloadFile="1.3.6.1.4.1.5962.1.1.65535.202.1.1239106254.3824.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_7440309149843010789.jpg" Modality="DX" SeriesDescription="Digital X-Ray - Only Imager Pixel Spacing" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.65535.203.1239106254.3825.0" SeriesNumber="203">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.65535.203.1.1239106254.3825.0" DirectDownloadFile="1.3.6.1.4.1.5962.1.1.65535.203.1.1239106254.3825.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_7440309149843010789.jpg" Modality="CR" SeriesDescription="Computed Radiography - Only Imager Pixel Spacing" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.65535.204.1239106254.3826.0" SeriesNumber="204">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.65535.204.1.1239106254.3826.0" DirectDownloadFile="1.3.6.1.4.1.5962.1.1.65535.204.1.1239106254.3826.0"/>
+				</Series>
+				<Series DirectDownloadThumbnail="thumb/tumb_7440309149843010789.jpg" Modality="XA" SeriesDescription="X-Ray Angiography - Only Imager Pixel Spacing" SeriesInstanceUID="1.3.6.1.4.1.5962.1.3.65535.205.1239106254.3827.0" SeriesNumber="205">
+					<Instance InstanceNumber="1" SOPInstanceUID="1.3.6.1.4.1.5962.1.1.65535.205.1.1239106254.3827.0" DirectDownloadFile="1.3.6.1.4.1.5962.1.1.65535.205.1.1239106254.3827.0"/>
+				</Series>
+			</Study>
+		</Patient>
+	</arcQuery>
+</manifest>
