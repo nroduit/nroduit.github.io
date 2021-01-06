@@ -16,7 +16,6 @@ The translation files are now hosted and managed on <a target="_blank" href="htt
 For special words or particular contexts look at the "Instructions" text box (gives explanations or definitions).
 {{% /notice %}}
 
-
 ## Building Weasis-i18n
 
 <a target="_blank" href="https://github.com/nroduit/weasis-i18n">weasis-i18n</a> is the internationalization project (i18n) of Weasis. As a separate project, it can have its own release cycle. The <a target="_blank" href="https://www.osgi.org">OSGi</a> fragments of plug-ins contain only the translation files which are merged during runtime to the matching module of the application.
@@ -32,10 +31,10 @@ The <a target="_blank" href="https://www.transifex.com/organization/weasis/dashb
 
 ### Prerequisites
 
-1.  JDK 8 or higher
-2.  Maven 3 or higher<br>
+1. JDK 8 or higher
+2. Maven 3 or higher<br>
     If your computer is behind a proxy server, <a target="_blank" href="http://maven.apache.org/guides/mini/guide-proxies.html">configure maven</a>.
-3.  Git or directly download the source code from <a target="_blank" href="https://github.com/nroduit/weasis-i18n">GitHub</a>
+3. Git or directly download the source code from <a target="_blank" href="https://github.com/nroduit/weasis-i18n">GitHub</a>
 
 ### Getting the Source
 
@@ -57,7 +56,7 @@ All of the API calls on Transifex require the user to be authenticated. So the v
 
 Command if you are behind a proxy server:
 {{< highlight bash >}}
-$ mvn clean install -DproxySet=true -DproxyHost="host" -DproxyPort="port"; -Dtransifex.credential="username:password"
+$ mvn clean install -DproxySet=true -DproxyHost="host" -DproxyPort="port" -Dtransifex.credential="username:password"
 {{< /highlight >}}
 
 {{% notice info %}}

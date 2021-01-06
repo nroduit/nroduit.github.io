@@ -149,15 +149,13 @@ Finally, refresh the page for having the viewer button.
 https://www.orthanc-server.com/static.php?page=dicomweb
 
 {{< highlight text >}}
-$dicom:rs --url "https://demo.orthanc-server.com/dicom-web" -r "patientID=5Yp0E" --accept-ext=";"
+$dicom:rs --url "https://demo.orthanc-server.com/dicom-web" -r "patientID=ozp00SjY2xG"
 {{< /highlight >}}
 
-<a  href="weasis://%24dicom%3Ars%20--url%20%22https%3A%2F%2Fdemo.orthanc-server.com%2Fdicom-web%22%20-r%20%22patientID%3D5Yp0E%22%20--accept-ext%3D%22%3B%22" class="btn btn-default">Launch</a>
-
+<a  href="weasis://%24dicom%3Ars%20--url%20%22https%3A%2F%2Fdemo.orthanc-server.com%2Fdicom-web%22%20-r%20%22patientID%3Dozp00SjY2xG%22" class="btn btn-default">Launch</a>
 
 Currently, the DICOMWeb service of Orthanc doesn't support:
 
-- transfer-syntax=* doesn’t work (always get uncompressed image). Once this issue will be fixes `--accept-ext=";"` can be removed.
 - Thumbnail service is not implemented.
 
 #### Google Cloud Healthcare API
