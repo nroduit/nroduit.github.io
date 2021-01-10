@@ -20,13 +20,15 @@ For special words or particular contexts look at the "Instructions" text box (gi
 
 <a target="_blank" href="https://github.com/nroduit/weasis-i18n">weasis-i18n</a> is the internationalization project (i18n) of Weasis. As a separate project, it can have its own release cycle. The <a target="_blank" href="https://www.osgi.org">OSGi</a> fragments of plug-ins contain only the translation files which are merged during runtime to the matching module of the application.
 
+To obtain daily built packages, see this [page](https://github.com/nroduit/weasis-i18n).
+
 {{% notice note %}}
 That means the weasis-i18n.war file can be deployed at any time, it does not need to follow the Weasis life cycle. The plug-in translation will be updated by Weasis only if the timestamp number has changed. This timestamp is set during the build phase described below.
 {{% /notice %}}
 
 {{% notice info %}}
-**Additional projects to obtain a full translation of Weasis:**<br>
-The <a target="_blank" href="https://www.transifex.com/organization/weasis/dashboard/java-swing-dialogs">java-swing-dialogs</a> translations must be updated manually in the weasis-launcher module and <a target="_blank" href="https://www.transifex.com/weasis/docking-frames">docking-frames</a> translations must be packaged with the library.
+Additional projects to obtain a full translation of Weasis:<br>
+The <a target="_blank" href="https://www.transifex.com/organization/weasis/dashboard/java-swing-dialogs">java-swing-dialogs</a> translations must be updated manually in the weasis-launcher module and <a target="_blank" href="https://www.transifex.com/weasis/docking-frames">docking-frames</a> translations must be packaged witin the library.
 {{% /notice %}}
 
 ### Prerequisites
@@ -60,7 +62,7 @@ $ mvn clean install -DproxySet=true -DproxyHost="host" -DproxyPort="port" -Dtran
 {{< /highlight >}}
 
 {{% notice info %}}
-The distribution files are located in the *weasis-i18n-dist/target/dist* folder. weasis-i18n.war must be placed in the same base context as weasis.war (if in other web context, the value of the property *weasis.i18n* in JNLP file must be adapted).<br><br>
+The distribution files are located in the *weasis-i18n-dist/target/dist* folder. weasis-i18n.war must be placed in the same base context as weasis.war (if in other web context, the launch property *weasis.i18n* must be adapted).<br><br>
 To update translation packs in weasis-portable, unzip weasis-i18n.zip and replace files in weasis-portable/weasis/bundle-i18n/.
 {{% /notice %}}
 
