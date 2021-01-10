@@ -19,6 +19,8 @@ EPL is more business-friendly about some patent retaliation and reverse engineer
 
 For more information about EPL, check out the [EPL 2 FAQ](http://www.eclipse.org/legal/epl-2.0/faq.php).
 
+Note that since version 3.7.0 the source code is released in dual license mode ([EPL-2.0 OR Apache-2.0](https://github.com/nroduit/Weasis/blob/master/LICENSE)). This allows the user to choose one of these two licenses.
+
 ### Can Weasis be incorporated in DICOM CDs or other removable media? ###
 Yes, the Weasis portable version can be copied in DICOM CD-ROMs as a multi-platform stand-alone viewer with launchers for Mac OS X, Linux and Windows. The viewer requires that a Java Runtime Environment (JRE 8 or greater) be installed on the machine to run. If Java is not installed on Windows, a dialog will propose to install it from the Internet.
 
@@ -55,7 +57,7 @@ To determine the path of ${user.home}/.weasis go to the *Help > About Weasis* me
 Yes, but a WADO server is recommended. Downloading DICOMs can be achieved by:
 
 - [Building an XML](../basics/customize/integration/#build-an-xml-manifest-no-wado-server) file by using `DirectDownloadFile` and `DirectDownloadThumbnail`:
-- Adding the following [command](../basics/commands/#dicom-get):<br>
+- Adding the following [command](../basics/commands/#dicomget):<br>
     `$dicom:get -r http://external.server/images/MRIX_LUMBAR/img1.dcm  http://external.server/images/img2.dcm`<br>
     Note: This option must be used only for a very limited number of files.
 <br>
