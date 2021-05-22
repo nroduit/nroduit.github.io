@@ -5,17 +5,17 @@ weight: 20
 keywords: [ "preferences", "weasis preferences", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
 ---
 
-The WEB distribution (weasis.war) allows to deliver preferences from the server side to the client side. Some preferences on the server side are used by Weasis only during the first launch, because they can be changed lately in the Weasis user interface. The other preferences at server side are used by Weasis at every launch.
+The WEB distribution (weasis.war) allows delivering preferences from the server-side to the client-side. Some preferences on the server-side are used by Weasis only during the first launch because they can be changed later in the Weasis user interface. The other preferences at the server-side are used by Weasis at every launch.
 
 Local preferences can be modified:
 
-- in the Weasis user interface: File > Preferences
-- in files stored in ${user.home}/.weasis/preferences/ (not recommended)
+- In the Weasis user interface: File > Preferences
+- By the weasis protocol with the command [weasis:config](../../../getting-started/weasis-protocol/#modify-the-launch-parameters)
 
-Preferences on the server side can be modified:
+Preferences on the server-side can be modified:
 
-- in the jnlp file (see how to configure weasis-jnlp.xml at [Installing Weasis in DCM4CHEE](../../../getting-started/dcm4chee))
-- in ext-config.properties which extends (override) the configuration of config.properties.
+- In ext-config.properties which extends (override) the configuration of config.properties.
+- Using [query parameters in weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector#launch-weasis-with-other-parameters)
 
 {{% notice tip %}}
 How to modify ext-config.properties:
@@ -28,9 +28,9 @@ How to modify ext-config.properties:
 
 Here is the priority order to set a property:
 
-1. Java System property (can be passed as parameter in the [launching URI](https://github.com/nroduit/weasis-pacs-connector#launch-weasis-with-other-parameters))
+1. Java System property (can be passed as a parameter in the [launching URI](https://github.com/nroduit/weasis-pacs-connector#launch-weasis-with-other-parameters))
 2. Property defined in weasis/conf/ext-config.properties or in weasis/conf/config.properties
-3. Default value of the property (see table below)
+3. The default value of the property (see table below)
 
 Example to change language property (It will work only during the first launch of Weasis on a user session, otherwise delete ${user.home}/.weasis/preferences/).
 
@@ -103,18 +103,11 @@ locale.lang.code=fr_CH
 | **ONLY from Weasis 2.6.0**                 |                                        |     |      |       |
 | weasis.level.inverse                       | true                                   | yes | F    | Inverse level direction (moving the cursor down to increase brightness) |
 | weasis.apply.latest.pr                     | false                                  | yes | F    | Apply by default the most recent Presentation State to the related image |
+| weasis.user                                | system user                            | no  | A    | Defines a user with its own preferences |
 | **ONLY from Weasis 3.5.3**                 |                                        |     |      |       |
 | weasis.pref.store.local.session            | false                                  | no  | A    | Store user preferences when weasis.user is not specified (only with remote preferences service) |
 
 </font>
-{{% notice info %}}
-Preferences of the portable distribution (weasis-portable.zip)
-
-- ext-config.properties is located in weasis/conf
-- file resources are located in weasis/resources
-{{% /notice %}}
-
-
 
 ### Examples of properties in ext-config.properties
 
@@ -129,15 +122,15 @@ weasis.look.linux=org.pushingpixels.substance.api.skin.SubstanceGraphiteAquaLook
 
 ### Customize resources
 
-The resources are located:
+The default resources are located:
 
-- in web distribution: in "resources.zip" at root of weasis.war (see above how to set a new URL for resources)
-- in portable distribution:  in ./weasis/resources
+- For the web distribution in "resources.zip" at the root of weasis.war (see above how to set a new URL for resources)
+- For the portable distribution in ./weasis/resources
 
-### How to add DICOM node or DICOM printers configuration at the server side (only from Weasis 2.5.0)
+### How to add DICOM nodes or DICOM printers at the server-side
 
 - From the graphical user interface, configure the DICOM printers (File > Print > DICOM Print) or DICOM nodes (File > Preferences > Dicom node list)
 - Go to he folder ${user.home}/.weasis/data/weasis-dicom-explorer
 - Copy the desired configuration files: dicomNodes.xml, dicomPrinterNodes.xml, dicomWebNodes.xml and dicomCallingNodes.xml
-- Paste at the root path of ressources. For web distribution, unzip, place files and zip again.
-- The new configurations should appear for all the users as non-editable configurations.
+- Paste at the root path of resources. For web distribution, unzip, place files and zip again.
+- The new configurations should appear for all the users as non-editable configurations in Weasis.
