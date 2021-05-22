@@ -44,5 +44,5 @@ In the DICOM Print dialog, you can manage several configurations. For the option
 ![DICOM](/tuto/print/dicom.png)
 
 {{% notice note %}}
-The DICOM printer configurations can be distributed at the server side for all the clients, see [preferences](../../basics/customize/preferences/#how-to-add-dicom-node-or-dicom-printers-configuration-at-the-server-side-only-from-weasis-2-5-0).
+The DICOM printer configurations can be distributed at the server side for all the clients, see [preferences](../../basics/customize/preferences/#how-to-add-dicom-nodes-or-dicom-printers-at-the-server-side).
 {{% /notice %}}
