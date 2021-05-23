@@ -7,20 +7,20 @@ pre: "<b>1. </b>"
 
 ### Try Weasis now
 
-These native installers below replace the weasis-portable.zip package (still available [here](https://sourceforge.net/projects/dcm4che/files/Weasis/) until version 4.0) and no longer requires [Java](https://www.java.com/en/download/) to be installed on the system. It also serves as a basis for launching Weasis from a web context using the [weasis protocol](weasis-protocol). See below the differences between the [weasis distributions](#weasis-distributions).
+These native installers below replace the weasis-portable.zip package (still available [here](https://sourceforge.net/projects/dcm4che/files/Weasis/) until version 4.0) and no longer requires Java to be installed on the system. It also serves as a basis for launching Weasis from a web context using the [weasis protocol](weasis-protocol). See below the differences between the [weasis distributions](#weasis-distributions).
 
 {{< latest-download "deb" >}}
 
-The different possibilities for integrating Weasis with other systems are described [here](../basics/customize/integration).
+See this [page](download) for getting the list of all the packages to download and other Websites distibuting Weasis.
 
 {{% notice note %}}
-To manage Weasis version at the server side, it is possible to install the [Weasis web package](https://github.com/nroduit/weasis-pacs-connector#installation) which will upgrade the native installation at the client side (it works for minor releases by updating all the plug-ins except the launcher).
+To manage Weasis version at the server side, it is possible to install the [Weasis web package](https://github.com/nroduit/weasis-pacs-connector#installation) which will upgrade the native installation at the client side (it works for minor releases by updating all the plug-ins except the launcher).<br>
+The different possibilities for integrating Weasis with other systems are described [here](../basics/customize/integration).
 {{% /notice %}}
 
 {{% notice tip %}}
 Join the [google group](http://groups.google.com/forum/#!forum/weasis) (Choose Email to read this group) to stay informed about new releases and updates.
 {{% /notice %}}
-
 
 ### General Topics
 
@@ -52,6 +52,7 @@ The table below shows the differences between the distributions (the answer yes 
 - **Weasis native installer**: Windows MSI, macOS PKG, and Linux RPM and DEB. Can be used as a standalone application or connected to the web distribution (allows you to launch the defined version remotely)
 - **Weasis portable**: weasis-portable.zip. Can be used in removable devices.
 - **Weasis web with Java Webstart**: weasis.war and using Java Webstart as launcher (JNLP). Java Webstart has been removed from Java 11.
+
 <font size="2">
 
 | Description of features | Weasis native installer | Weasis portable | Weasis web with Java Webstart |
