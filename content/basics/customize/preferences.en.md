@@ -7,15 +7,16 @@ keywords: [ "preferences", "weasis preferences", "dicom viewer", "free dicom vie
 
 The WEB distribution (weasis.war) allows delivering preferences from the server-side to the client-side. Some preferences on the server-side are used by Weasis only during the first launch because they can be changed later in the Weasis user interface. The other preferences at the server-side are used by Weasis at every launch.
 
-Local preferences can be modified:
+Local preferences can be changed by:
 
-- In the Weasis user interface: File > Preferences
-- By the weasis protocol with the command [weasis:config](../../../getting-started/weasis-protocol/#modify-the-launch-parameters)
+- The Weasis user interface: File > Preferences
+- The weasis protocol with the command [weasis:config](../../../getting-started/weasis-protocol/#modify-the-launch-parameters) and the *pro* parameter
 
-Preferences on the server-side can be modified:
+Preferences on the server-side can be changed by:
 
-- In ext-config.properties which extends (override) the configuration of config.properties.
+- Replacing *ext-config.properties* which extends and overrides *config.properties*, see the tip below.
 - Using [query parameters in weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector#launch-weasis-with-other-parameters)
+- The weasis protocol with the command [weasis:config](../../../getting-started/weasis-protocol/#modify-the-launch-parameters) and the *pro* parameter
 
 {{% notice tip %}}
 How to modify ext-config.properties:
@@ -28,21 +29,21 @@ How to modify ext-config.properties:
 
 Here is the priority order to set a property:
 
-1. Java System property (can be passed as a parameter in the [launching URI](https://github.com/nroduit/weasis-pacs-connector#launch-weasis-with-other-parameters))
+1. Java System property providing from parameters of [weasis:config](../../../getting-started/weasis-protocol/#modify-the-launch-parameters) or the [launching URI](https://github.com/nroduit/weasis-pacs-connector#launch-weasis-with-other-parameters))
 2. Property defined in weasis/conf/ext-config.properties or in weasis/conf/config.properties
 3. The default value of the property (see table below)
 
 Example to change language property (It will work only during the first launch of Weasis on a user session, otherwise delete ${user.home}/.weasis/preferences/).
 
-1.  If you are using weasis-pacs-connector, add the [property](https://github.com/nroduit/weasis-pacs-connector#launch-weasis-with-other-parameters) `locale.lang.code`:
+1. If you are using weasis-pacs-connector, add the [property](https://github.com/nroduit/weasis-pacs-connector#launch-weasis-with-other-parameters) `locale.lang.code`:
 {{< highlight url >}}
 http://localhost:8080/weasis-pacs-connector/weasis?patientID=9702672&pro="locale.lang.code%20fr_CH"
 {{< /highlight >}}
-2.  Add the property in weasis/conf/ext-config.properties:
+2. Add the property in weasis/conf/ext-config.properties:
 {{< highlight ini >}}
 locale.lang.code=fr_CH
 {{< /highlight >}}
-3.  The default value is "en\_US"
+3. The default value is "en\_US"
 
 ## List of preferences
 
