@@ -44,7 +44,7 @@ This documentation describes how to create your own connector without weasis-pac
 
 Here are examples with XML manifests or with DICOMWeb RESTful services.
 
-###  Build an XML manifest
+### Build an XML manifest
 
 Use [$dicom:get](../../commands/#dicom-get) to load a XML manifest returned by your service.
 {{< highlight text >}}
@@ -87,10 +87,10 @@ Important Parameters (except mandatory parameters defined in xsd):
 {{% /notice %}}
 
 {{% notice tip %}}
-From Weasis 2.5 it is possible to have multiple archives (allows to have several arcQuery tags) and the <a target="_blank" href="https://github.com/nroduit/Weasis/blob/master/weasis-dicom/weasis-dicom-explorer/src/main/resources/config/presentations.xsd">presentations</a> tag which contains the image annotations.
+From Weasis 2.5 it is possible to have multiple archives (allows to have several arcQuery tags) and the [presentations](https://github.com/nroduit/Weasis/blob/master/weasis-dicom/weasis-dicom-explorer/src/main/resources/config/presentations.xsd)</a> tag which contains the image annotations.
 {{% /notice %}}
 
-###  Build an XML manifest (no WADO server)
+### Build an XML manifest (no WADO server)
 This example requires only a WEB server. Weasis will download DICOM files by URLs.
 
 Use [$dicom:get](../../commands/#dicom-get) to load a <a target="_blank" href="https://nroduit.github.io/samples/Lumbar/mf.xml">XML manifest</a> containing direct links <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml" class="btn btn-default">Launch</a>
@@ -107,7 +107,7 @@ Required Parameters:
 {{% /notice %}}
 
 
-### Download directly with DICOMWeb RESTful services
+## Download directly with DICOMWeb RESTful services
 
 This integration requires a PACS/VNA with <a target="_blank" href="https://www.dicomstandard.org/dicomweb/">DICOMweb™</a> services (QUERY/RETRIEVE) where the requests are managed directly by Weasis. Here are some of the advantages:
 
@@ -117,7 +117,7 @@ This integration requires a PACS/VNA with <a target="_blank" href="https://www.d
 
 Use [$dicom:rs](../../commands/#dicom-rs) to load DICOM files. Here are some configurations of open source systems:
 
-#### dcm4chee-arc-light
+### dcm4chee-arc-light
 
 This configuration requires at least dcm4chee-arc-light 5.22.2 and Weasis 3.6.0. To activate Weasis in dcm4chee-arc-light user interface, you need to add the four following properties in the web portal from the left menu *Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE*
 {{< highlight text >}}
@@ -144,7 +144,7 @@ Configuration notes:
 
 Finally, refresh the page for having the viewer button.
 
-#### Orthanc WEB Server
+### Orthanc WEB Server
 
 https://www.orthanc-server.com/static.php?page=dicomweb
 
@@ -158,7 +158,7 @@ Currently, the DICOMWeb service of Orthanc doesn't support:
 
 - Thumbnail service is not implemented.
 
-#### Google Cloud Healthcare API
+### Google Cloud Healthcare API
 
 https://cloud.google.com/healthcare/docs/how-tos/dicomweb
 
@@ -172,7 +172,7 @@ Currently, the DICOMWeb service for getting thumbnails doesn't work in the Googl
 `<your-token>` must be replaced by the hostname of your dcm4che installation.
 {{% /notice %}}
 
-#### DICOMcloud (for Azure cloud)
+### DICOMcloud (for Azure cloud)
 
 https://github.com/DICOMcloud/DICOMcloud
 
