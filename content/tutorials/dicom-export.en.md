@@ -1,17 +1,17 @@
 ---
-title: DICOM Explorer
-weight: 30
-description: Structure and display of Patients/Studies/Series
-keywords: [ "dicom explorer", "patient", "study", "series", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "pacs viewer" ]
+title: DICOM Export
+weight: 20
+description: How to export DICOM files
+keywords: [ "dicom exexport", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "pacs viewer" ]
 ---
 
-## <center>Structure and display of Patients/Studies/Series</center>
+## <center>How to export DICOM files</center>
 
 ### DICOM Explorer
 
 The DICOM Explorer is the panel on the left that displays the [Patient/Study/Series representation](http://dicom.nema.org/medical/dicom/current/output/chtml/part03/chapter_A.html) defined in the DICOM standard.
 
-The data displayed in the DICOM Explorer can be [imported form different ways](../dicom-import).
+The data displayed in the DICOM Explorer can be imported locally (from the Import/Open menu or by drag and drop) or [remotely](../../basics/customize/integration).
 
 ![DICOM EXplorer](/tuto/explorer/structure.png)
 
