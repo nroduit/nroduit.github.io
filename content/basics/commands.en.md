@@ -244,7 +244,7 @@ dicom:get -w **"https://dicom.com/test&sopuid=322344"**
 Depending the command line system, quotes or double quote needs to be escaped with a backslash. Ex. simple quote must be escaped in Eclipse but not in Intellij.
 {{% /notice %}}
 
-### Weasis Portable distribution
+### Weasis Portable distribution (deprecated)
 
 {{% notice note %}}
 The native installer will progressively replace the portable and the web distribution with the [weasis protocol](../../getting-started/weasis-protocol).
