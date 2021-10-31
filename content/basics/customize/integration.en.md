@@ -137,6 +137,7 @@ IID_URL_TARGET=_self
 Configuration notes:
 
 - See [configuration](../../../getting-started/dcm4chee) for versions before 5.22.2.
+- From 5.24.0 {{qidoBaseURL}} must be replaced by your base URL (e.g. https://pacs2.test.com:8443)
 - The character '&' must be escaped in the Docker environment variables.
 - The Authorization header is not required for unsecure service.
 - URL with HTTPS requires a real valid certificate; otherwise, the certificate must be imported into the Weasis Java keystore. For testing purposes in secure mode, you can use the HTTP URL if it is mapped in the OIDC client of keycloack (--url "http://<your-host>:8080/dcm4chee-arc/aets/DCM4CHEE/rs").
