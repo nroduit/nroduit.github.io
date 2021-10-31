@@ -13,9 +13,13 @@ From the main menu, open File > Preferences (Alt + P) and select *Proxy Server*.
 
 The default configuration is *Direct connection (no proxy)* and by clicking on *Manual proxy configuration* you can define a custom proxy server (in the image below, a local proxy like Squid).
 
-To fill in the fields you must refer to the [Java documentation](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/net/doc-files/net-properties.html).
+To fill in the fields you must refer to the [Java documentation](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/net/doc-files/net-properties.html).
 
-![dcm4chee-web3](/tuto/proxy/proxy-ui.png)
+![Proxy configuration](/tuto/proxy/proxy-ui.png)
+
+{{% notice tip %}}
+In some cases it is necessary to restart Weasis.
+{{% /notice %}}
 
 ### Configuration at launch
 
