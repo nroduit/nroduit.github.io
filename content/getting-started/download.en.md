@@ -11,7 +11,7 @@ Weasis can also be retrieved from other websites or package management systems, 
 
 - [Windows store](https://www.microsoft.com/en-us/p/weasis/9nhtv46lg4nh)
 - [Chocolatey Community Repository](https://community.chocolatey.org/packages/weasis)
-- [Arclinux](https://aur.archlinux.org/packages/weasis-bin/)
+- [Arch Linux](https://aur.archlinux.org/packages/weasis-bin/)
 - [Sourceforge](https://sourceforge.net/projects/dcm4che/files/Weasis/)
 - Softpedia [Windows](https://www.softpedia.com/get/Science-CAD/Weasis.shtml) and [Mac OS](https://mac.softpedia.com/get/Math-Scientific/Weasis.shtml)
 - [Mac Update](https://www.macupdate.com/app/mac/61783/weasis)
