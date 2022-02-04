@@ -38,7 +38,7 @@ The data displayed in the DICOM Explorer can be [imported form different ways](.
 * The sorting of the series is done by the serial number and if this last one is not present then in a chronological way by the date of the series or other dates.
 * To open new series:
   * Drag and drop a thumbnail in the main area (if the series is dropped in a view of the same patient then the series is replaced otherwise a new tab is created).
-  * Double click or press return on an selected thumbnail (if a view of the same patient exists then the series in the view surrounded by an orange line is replaced)
+  * Double click or navigate with the `up/down arrow` key and press `return` on an selected thumbnail (if a view of the same patient exists then the series in the view surrounded by an orange line is replaced)
   * Select one or more thumbnails and choose an action from the "2D DICOM Viewer" context menu:
     * Open: Opens the series in the most appropriate layout (replaces the series if the patient's tab already exists)
     * Open in new tab: Opens the series in the most appropriate layout in a new tab.
