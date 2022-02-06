@@ -9,15 +9,17 @@ weight: 9
 
 Weasis can also be retrieved from other websites or package management systems, here are some of them:
 
-- [Windows store](https://www.microsoft.com/en-us/p/weasis/9nhtv46lg4nh)
-- [Chocolatey Community Repository](https://community.chocolatey.org/packages/weasis)
-- [Arch Linux](https://aur.archlinux.org/packages/weasis-bin/)
+- [Microsoft Windows store](https://www.microsoft.com/en-us/p/weasis/9nhtv46lg4nh)
+- [Chocolatey Community Repository](https://community.chocolatey.org/packages/weasis) (Windows deployment with PowerShell, Ansible, CHEF, Puppet...)
+- [Flathub repository](https://flathub.org/apps/details/io.github.nroduit.Weasis) (Flatpak Linux package management)
+- [Arch Linux package](https://aur.archlinux.org/packages/weasis-bin/)
 - [Sourceforge](https://sourceforge.net/projects/dcm4che/files/Weasis/)
 - Softpedia [Windows](https://www.softpedia.com/get/Science-CAD/Weasis.shtml) and [Mac OS](https://mac.softpedia.com/get/Math-Scientific/Weasis.shtml)
 - [Mac Update](https://www.macupdate.com/app/mac/61783/weasis)
 
 ### List of all the installers
 
-These native installers below no longer requires Java Runtimes to be installed on the system.
+These native installers below no longer requires Java Runtimes to be installed on the system.<br>
+For more information about [the GLIBC versions regarding the life cylcle of the different Linux distributions](https://gist.github.com/wagenet/35adca1a032cec2999d47b6c40aa45b1#file-glibc-md).
 
 {{< old-download >}}

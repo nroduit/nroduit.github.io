@@ -27,7 +27,11 @@
         <td align="left">{{ upper ( substr $package 1 ) }}</td>
         <td align="left">{{  printf "%.1f MB"  (div $val.size 1000000) }}</td>
         <td align="left"><a  href="{{ $val.browser_download_url }}" target="_blank" class="btn btn-default">{{ $val.name }} <i class="fa fa-download"></i></a></td>
-        <td align="left">{{ cond (eq $package ".msi") "Requires Windows 7, 8 or 10" (cond (eq $package ".pkg") "Requires Mac OS 10.9 or higher" (cond (eq $arch "ARM 32-bit") "Requires GLIBC_2.7 or higher. Only tested with Raspberry Pi 4" "Requires GLIBC_2.14 or higher" )) }}</td>
+        <td align="left">{{ cond (eq $package ".msi") "Requires Windows 7, 8 10 or 11"
+          (cond (eq $package ".pkg") (cond (eq $arch "ARM 64-bit") "Requires Mac OS 11 or higher" "Requires Mac OS 10.9 or higher" )
+          (cond (eq $arch "ARM 32-bit") "Requires GLIBC_2.7. Only tested with Raspberry Pi 4" 
+          (cond (eq $arch "ARM 64-bit") "Requires GLIBC_2.27" "Requires GLIBC_2.14" ))) 
+          }}</td>
       </tr>
       {{ end }}
   {{ end }}
