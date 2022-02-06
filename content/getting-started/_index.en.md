@@ -11,7 +11,8 @@ These native installers below replace the weasis-portable.zip package (still ava
 
 {{< latest-download "deb" >}}
 
-See this [page](download) for getting the list of all the packages to download and other Websites distibuting Weasis.
+See this [page](download) for getting the list of all the packages to download and other Websites distibuting Weasis.<br>
+For more information about [the GLIBC versions regarding the life cylcle of the different Linux distributions](https://gist.github.com/wagenet/35adca1a032cec2999d47b6c40aa45b1#file-glibc-md).
 
 {{% notice note %}}
 To manage Weasis version at the server side, it is possible to install the [Weasis web package](https://github.com/nroduit/weasis-pacs-connector#installation) which will upgrade the native installation at the client side (it works for minor releases by updating all the plug-ins except the launcher).<br>
