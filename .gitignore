@@ -1,2 +1,8 @@
 ## use script setup.sh (only the first time) and deploy.sh (to update the site) to ignore public
 # public
+
+# IntelliJ project files
+*.iml
+*.iws
+*.ipr
+.idea/
