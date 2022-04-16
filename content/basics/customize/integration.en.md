@@ -7,35 +7,37 @@ keywords: [ "workflow", "integration", "dicom viewer", "free dicom viewer", "ope
 
 ## <center>How to launch Weasis from any environments</center>
 
-Here we present how to launch Weasis with associated images from any context either [using weasis-pacs-connector](#use-weasis-pacs-connector) or by [building your own connector](#build-your-own-connector). The launch of the application is based on the [weasis protocol](../../../getting-started/weasis-protocol) available since version 3.5. However, it is still possible to use weasis 3.5 with Java Webstart (but only with Java 8 to 10), see the [old documentation](../../../old/integration).
+Here we present how to launch Weasis with associated images from any context either [using weasis-pacs-connector](#use-weasis-pacs-connector) or by [building your own connector](#build-your-own-connector). The launch of the application is based on the [weasis protocol](../../../getting-started/weasis-protocol) available since {{< badge "v3.5.3" >}}.
 
-Using <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector</a> allows a high degree of integration and facilitates connection to a PACS. Here are some of the advantages:
+Using [weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector) allows a high degree of integration and facilitates connection to a PACS. Here are some of the advantages:
 
 - Automatically build a manifest according to a configuration with a PACS
 - The initial URL starts with HTTP and is then redirected to weasis:// (as weasis:// is not allowed by wiki, blog…)
-- Manages to build the manifest simultaneously with the start of Weasis
-- The URL returns a manifest ID which can be requested only once (and must be <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector/blob/master/src/main/resources/weasis-pacs-connector.properties#L17">consumed within 5 min</a>)
+- Manages to build the manifest simultaneously with the start of Weasis (Loading time optimization)
+- The URL returns a manifest ID which can be requested only once (and must be [consumed within 5 min](https://github.com/nroduit/weasis-pacs-connector/blob/master/src/main/resources/weasis-pacs-connector.properties#L17))
 
-However, it is possible to [build your own connector](#build-your-own-connector) for particular integrations or when a DICOMWeb service is available.
+However, it is also possible 
+- To [build your own connector](#build-your-own-connector) for particular integrations
+- To let Weasis [querying DICOMWeb services](#download-directly-with-dicomweb-restful-services) directly.
 
 {{% notice note %}}
-Requires Weasis 3.5 (or superior) installed on the system with a [native installer](../../../getting-started/).
+Requires Weasis installed on the system with the [native installer](../../../getting-started/).
 {{% /notice %}}
 
 
 ## Use weasis-pacs-connector
 
-For connecting to dcm4chee web interface, follow the instructions in [Installing Weasis in DCM4CHEE](../../../getting-started/dcm4chee). Otherwise, refer to the documentation of <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#installation">weasis-pacs-connector</a>.
+For connecting to dcm4chee web interface, follow the instructions in [Installing Weasis in DCM4CHEE](../../../getting-started/dcm4chee). Otherwise, refer to the documentation of [weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector#installation).
 
 Standard workflow when connecting Weasis to a PACS, RIS, EMR, EPR or any web interface:
 
 {{< svg "static/images/weasis-pacs-connector.svg" >}}
 {{% notice note %}}
-The schema above shows that the queries to the PACS are made at the same time as the viewer starts. This makes it possible to optimize the launch by simultaneously launching weasis and creating the manifest.
+The schema above shows that the queries to the PACS are made at the same time as the viewer starts. This makes it possible to optimize the launch by simultaneously launching weasis and building the manifest.
 {{% /notice %}}
 
 {{% notice tip %}}
-<a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector</a> services allow either to build a manifest from a PACS via DICOM C-Find or to upload the manifest by http POST.
+[weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector) services allow either to build a manifest from a PACS via DICOM C-Find or to upload the manifest by http POST.
 {{% /notice %}}
 
 ## Build your own connector
@@ -51,7 +53,7 @@ Use [$dicom:get](../../commands/#dicom-get) to load a XML manifest returned by y
 $dicom:get -w https://myservice/manifest?studyUID=2.16.756.5.5.100.397184556.14391.1373576413.1508
 {{< /highlight >}}
 
-Build an XML file containing the UIDs of the images which will be retrieved from Weasis. There is <a target="_blank" href="https://github.com/nroduit/Weasis/blob/master/weasis-dicom/weasis-dicom-explorer/src/main/resources/config/manifest.xsd">XLS</a> to validate the content of xml. This output file can be either compressed in gzip or uncompressed. Here is an example:
+Build an XML file containing the UIDs of the images which will be retrieved from Weasis. There is [XLS](https://github.com/nroduit/Weasis/blob/master/weasis-dicom/weasis-dicom-explorer/src/main/resources/config/manifest.xsd) to validate the content of xml. This output file can be either compressed in gzip or uncompressed. Here is an example:
 {{< highlight xml >}}
 <?xml version="1.0" encoding="UTF-8" ?>
 <manifest xmlns="http://www.weasis.org/xsd/2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -87,7 +89,7 @@ Important Parameters (except mandatory parameters defined in xsd):
 {{% /notice %}}
 
 {{% notice tip %}}
-From Weasis 2.5 it is possible to have multiple archives (allows to have several arcQuery tags) and the [presentations](https://github.com/nroduit/Weasis/blob/master/weasis-dicom/weasis-dicom-explorer/src/main/resources/config/presentations.xsd)</a> tag which contains the image annotations.
+From Weasis 2.5 it is possible to have multiple archives (allows to have several arcQuery tags) and the [presentations](https://github.com/nroduit/Weasis/blob/master/weasis-dicom/weasis-dicom-explorer/src/main/resources/config/presentations.xsd) tag which contains the image annotations.
 {{% /notice %}}
 
 ### Build an XML manifest (no WADO server)
@@ -109,13 +111,15 @@ Required Parameters:
 
 ## Download directly with DICOMWeb RESTful services
 
-This integration requires a PACS/VNA with <a target="_blank" href="https://www.dicomstandard.org/dicomweb/">DICOMweb™</a> services (QUERY/RETRIEVE) where the requests are managed directly by Weasis. Here are some of the advantages:
+This integration requires a PACS/VNA with [DICOMweb](https://www.dicomstandard.org/using/dicomweb) services (QUERY/RETRIEVE) where the requests are managed directly by Weasis. Here are some of the advantages:
 
 - Straightforward integration
 - Do not require to install weasis-pacs-connector
 - Allow passing token directly in headers (not in the URL)
 
-Use [$dicom:rs](../../commands/#dicom-rs) to load DICOM files. Here are some configurations of open source systems:
+The following configurations allow images to be loaded by initiating the request from a WEB context. However, it is possible to access DICOMWeb services by initiating the request directly from the [Weasis import](../../../tutorials/dicom-import).
+
+Use [$dicom:rs](../../commands/#dicom-rs) to load DICOM files. Here are some configuration examples of DICOMweb applications:
 
 ### dcm4chee-arc-light
 
@@ -133,6 +137,8 @@ IID_STUDY_URL=weasis://$dicom:rs --url "{{qidoBaseURL}}{{qidoBasePath}}" -r "stu
 IID_URL_TARGET=_self
 {{< /highlight >}}
 
+Finally, refresh the page for having the viewer button.
+
 {{% notice warning %}}
 Configuration notes:
 
@@ -143,7 +149,9 @@ Configuration notes:
 - URL with HTTPS requires a real valid certificate; otherwise, the certificate must be imported into the Weasis Java keystore. For testing purposes in secure mode, you can use the HTTP URL if it is mapped in the OIDC client of keycloack (--url "http://<your-host>:8080/dcm4chee-arc/aets/DCM4CHEE/rs").
 {{% /notice %}}
 
-Finally, refresh the page for having the viewer button.
+{{% notice note %}}
+Known issue: Weasis cannot open the images because of the token length which is cut by IE and Chrome only under Windows. It is working with Firefox on Windows.
+{{% /notice %}}
 
 ### Orthanc WEB Server
 
@@ -169,8 +177,8 @@ $weasis:config pro="dicom.qido.query.multi.params true" $dicom:rs --url "https:/
 
 Currently, the DICOMWeb service for getting thumbnails doesn't work in the Google API.
 
-{{% notice warning %}}
-`<your-token>` must be replaced by the hostname of your dcm4che installation.
+{{% notice note %}}
+`<your-token>` must be replaced by a valid token.
 {{% /notice %}}
 
 ### DICOMcloud (for Azure cloud)
@@ -178,11 +186,14 @@ Currently, the DICOMWeb service for getting thumbnails doesn't work in the Googl
 https://github.com/DICOMcloud/DICOMcloud
 
 {{< highlight text >}}
-$dicom:rs --url "https://dicomcloud.azurewebsites.net/api" -r "studyUID=1.2.840.113619.2.25.1.1762157631.873231884.123" -r "studyUID=1.3.6.1.4.1.5962.99.1.2280943358.716200484.1363785608958.3.0"
+$dicom:rs --url "https://dicomcloud.azurewebsites.net/api" -r "studyUID=1.3.6.1.4.1.14519.5.2.1.4429.7055.198257099234774234268879426857"
 {{< /highlight >}}
 
-<a  href="weasis://%24dicom%3Ars%20--url%20%22https%3A%2F%2Fdicomcloud.azurewebsites.net%2Fapi%22%20-r%20%22studyUID%3D1.2.840.113619.2.25.1.1762157631.873231884.123%22%20-r%20%22studyUID%3D1.3.6.1.4.1.5962.99.1.2280943358.716200484.1363785608958.3.0%22" class="btn btn-default">Launch</a>
+<a  href="weasis://%24dicom%3Ars%20--url%20%22https%3A%2F%2Fdicomcloud.azurewebsites.net%2Fapi%22%20-r%20%22studyUID%3D1.3.6.1.4.1.14519.5.2.1.4429.7055.198257099234774234268879426857%22" class="btn btn-default">Launch</a>
 
+{{% notice note %}}
+The demo server is no longer accessible.
+{{% /notice %}}
 
 Currently, the DICOMWeb service of DICOMcloud doesn't support:
 

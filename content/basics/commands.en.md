@@ -8,7 +8,7 @@ weight: 50
 The commands listed below can be applied at start-up or in a telnet session. All the commands starting with "dcmview2d:" allow to drive Weasis and are not adapted to be used at start-up.
 
 {{% notice info %}}
-This page matches to Weasis 2.5.1 or higher. The syntax of usage comes from <a target="_blank" href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap12.html">POSIX</a>.
+This page matches to Weasis 3.5.1 or higher. The syntax of usage comes from [POSIX](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap12.html).
 {{% /notice %}}
 
 To obtain the list of commands, after starting Weasis, open a local telnet session of the OSGI Console and type `lb` for getting the list of bundles and their state or type `help` for getting all the available commands:
@@ -28,10 +28,6 @@ Welcome to Apache Felix Gogo
 
 g!
 {{< /highlight >}}
-
-{{% notice tip %}}
-**Modifying the default port number**: This value can be changed in the <a target="_blank" href="https://github.com/nroduit/">configuration of the launcher</a> (by overriding the property or with a new jnlp template)
-{{% /notice %}}
 
 ### List of Weasis commands
 
@@ -238,9 +234,10 @@ For identifying the commands at start-up, the symbol "$" must be added before th
 
 {{% notice warning %}}
 **Special characters**:
-A command containing special characters like '&' or space must be within quotes or double quotes. Example: 
-dicom:get -w **"https://dicom.com/test&sopuid=322344"**
-<br><br>
+A command containing special characters like '&' or space must be within quotes or double quotes. Example:
+{{< highlight text >}}
+dicom:get -w "http://localhost/weasis-pacs-connector/manifest?patientID=97026728&modalitiesInStudy=MR"
+{{< /highlight >}}
 Depending the command line system, quotes or double quote needs to be escaped with a backslash. Ex. simple quote must be escaped in Eclipse but not in Intellij.
 {{% /notice %}}
 

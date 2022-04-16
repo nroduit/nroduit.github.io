@@ -19,7 +19,5 @@ Weasis can also be retrieved from other websites or package management systems, 
 
 ### List of all the installers
 
-These native installers below no longer requires Java Runtimes to be installed on the system.<br>
-For more information about [the GLIBC versions regarding the life cylcle of the different Linux distributions](https://gist.github.com/wagenet/35adca1a032cec2999d47b6c40aa45b1#file-glibc-md).
-
+For more information on GLIBC versions regarding the life cycle of the different Linux distributions, see this [page](https://gist.github.com/wagenet/35adca1a032cec2999d47b6c40aa45b1#file-glibc-md).
 {{< old-download >}}

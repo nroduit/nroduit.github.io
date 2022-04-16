@@ -1,18 +1,19 @@
 ---
 title: Getting Started
-keywords: [ "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer", "clinical viewer", "radiolgical viewer", "linux dicom viewer",  "mac dicom viewer" ]
+keywords: [ "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer", "clinical viewer", "radiological viewer", "linux dicom viewer",  "mac dicom viewer" ]
 weight: 5
 pre: "<b>1. </b>"
 ---
 
 ### Try Weasis now
 
-These native installers below replace the weasis-portable.zip package (still available [here](https://sourceforge.net/projects/dcm4che/files/Weasis/) until version 4.0) and no longer requires Java to be installed on the system. It also serves as a basis for launching Weasis from a web context using the [weasis protocol](weasis-protocol). See below the differences between the [weasis distributions](#weasis-distributions).
+Since version 4, only the distribution with a native installer is maintained to ensure a better user experience in terms of installation, configuration and compatibility. This distribution also allows launching Weasis from a web context using the [weasis protocol](weasis-protocol).
 
 {{< latest-download "deb" >}}
 
-See this [page](download) for getting the list of all the packages to download and other Websites distibuting Weasis.<br>
-For more information about [the GLIBC versions regarding the life cylcle of the different Linux distributions](https://gist.github.com/wagenet/35adca1a032cec2999d47b6c40aa45b1#file-glibc-md).
+Please consult this [page](download) to get the complete list of downloads and if you want an automatic update of the installer package.<br>
+
+For more information on GLIBC versions regarding the life cycle of the different Linux distributions, see this [page](https://gist.github.com/wagenet/35adca1a032cec2999d47b6c40aa45b1#file-glibc-md).
 
 {{% notice note %}}
 To manage Weasis version at the server side, it is possible to install the [Weasis web package](https://github.com/nroduit/weasis-pacs-connector#installation) which will upgrade the native installation at the client side (it works for minor releases by updating all the plug-ins except the launcher).<br>

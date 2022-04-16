@@ -46,13 +46,13 @@ The default value is \<relativePath>../Weasis/weasis-parent/pom.xml\</relativePa
 
 ### Install plug-ins
 
-#### For weasis-portable distribution
+#### For the installed distribution
 
-The file "/weasis/conf/ext-config.properties" must be adapted and plug-ins must be placed in the directory "/weasis/plugins".
+The file "app/conf/ext-config.properties" must be adapted and plug-ins must be placed in the directory "app/plugins".
 
 Example with [weasis-isowriter](http://github.com/nroduit/weasis-isowriter):
 
-- Add in /weasis/conf/ext-config.properties:
+- Add in app/conf/ext-config.properties:
 {{< highlight ini >}}
 felix.auto.start.85=${weasis.codebase.url}/plugins/weasis-isowriter-2.6.1.jar
 {{< /highlight >}}
@@ -95,13 +95,16 @@ Using `${weasis.codebase.ext.url}` allows to keep the base URL abstract, so movi
 {{% /notice %}}
 
 - weasis-ext is the default web context when launching Weasis, using another web context requires modifying the property weasis.ext.url, it can be done by:
-
-- changing the property in jnlp template in <a target="_blank" href="https://github.com/nroduit/">weasis-pacs-connector configuration</a>.
 {{< highlight ini >}}
 weasis.ext.url=${server.base.url}/weasis-newext
 {{< /highlight >}}
+
+- Changing the property in [weasis-pacs-connector configuration](https://github.com/nroduit/weasis-pacs-connector#launch-weasis-with-other-parameters).
 {{% notice note %}}
-It is also possible to add the code base for plugins (cdb-ext) directly in the URL: `http://localhost:8080/weasis-pacs-connector/viewer?patientID=9702672&cdb-ext=http://localhost:8080/plugins/weasis-ext`
+It is also possible to add the code base for plugins (cdb-ext) directly in the URL:
+{{< highlight text >}}
+http://localhost:8080/weasis-pacs-connector/viewer?patientID=9702672&cdb-ext=http://localhost:8080/plugins/weasis-ext
+{{< /highlight >}}
 {{% /notice %}}
 
 {{% notice tip %}}
@@ -109,7 +112,7 @@ It is also possible to add the code base for plugins (cdb-ext) directly in the U
 `-Dfelix.extended.config.properties="http://server:port/weasis-ext/conf/ext-config.properties`
 {{% /notice %}}
 
-[An example](https://github.com/nroduit/weasis-plugins-war-builder) that makes a package of [weasis-isowriter](http://github.com/nroduit/weasis-isowriter) plugin:
+[An example](https://github.com/nroduit/weasis-plugins-war-builder) that makes a package of [weasis-isowriter](https://github.com/nroduit/weasis-isowriter) plugin:
 
 - Build "weasis-ext.war":
 {{< highlight text >}}
@@ -134,7 +137,7 @@ public class SamplePrefFactory implements PreferencesPageFactory {
 }
 {{< /highlight >}}
 {{% notice tip %}}
-For more information about annotations see the <a target="_blank" href="http://felix.apache.org/documentation/subprojects/apache-felix-maven-scr-plugin/scr-annotations.html">Apache Felix SCR Annotations</a>.
+For more information about annotations see the [Apache Felix SCR Annotations](https://felix.apache.org/documentation/subprojects/apache-felix-maven-scr-plugin/scr-annotations.html).
 {{% /notice %}}
 
 2. Add in pom.xml of the plug-in the maven-scr-plugin (to generate XML file from the Java annotations) and the property for loading any XML file in maven-bundle-plugin:

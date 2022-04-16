@@ -1,6 +1,6 @@
 <style>
     .image-gallery {overflow: auto; margin-left: -1%!important;}
-    .image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 19%;}
+    .image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 32%;}
     .image-gallery li a {text-align: center; text-decoration: none!important;}
     .image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
     .image-gallery li a img {width: 100%; display: block; margin: 0!important;}
@@ -13,8 +13,8 @@
   {{- $imageurl := printf "/%s/%s" $dir .Name -}}
   {{- $imagetitle := index (split .Name ".") 0 -}}
     <li>
-      <a href="{{ ($image.Fit "1600x1600 q50").Permalink }}" title="{{ $imagetitle }}" class="lightbox-image">
-        <img src="{{ ($image.Fill "500x400 q50").Permalink }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}">
+      <a href="{{ ($image.Fit "1600x1200").Permalink }}" class="lightbox-image" title="{{ $imagetitle }}">
+        <img src="{{ ($image.Fill "300x225").Permalink }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}">
         <span>{{ $imagetitle }}</span>
       </a>
     </li>

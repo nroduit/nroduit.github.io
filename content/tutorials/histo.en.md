@@ -25,7 +25,7 @@ General histogram parameters:
 The values on the x-axis represent the modality values (e.g. Hounsfield for CT) or the pixel values for some modalities such as XA or MR. If the unit of the pixel value of the modality exists, it is visible at the end of the histogram title.
 {{% /notice %}}
 
-![Open Histogram](/tuto/histo/histo.png?height=400)
+![Open Histogram](/tuto/histogram.jpg?classes=shadow&width=700px)
 
 {{% notice tip %}}
 To display the LUT on the image, select it from the Display panel on the right.
@@ -44,7 +44,7 @@ Display histogram parameters:
 It is possible to display the histogram of a region with the measurement tools. Simply select the region to display its histogram (see the image below).
 {{% /notice %}}
 
-![Histogram parameters](/tuto/histo/histo2.png?height=400)
+![Histogram parameters](/tuto/color-histogram.png?classes=shadow&width=700px)
 
 {{% notice tip %}}
 Clicking on the histogram bin allows displying the number of occurences and the modality range values of the selected bin.

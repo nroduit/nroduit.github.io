@@ -20,19 +20,19 @@ Some web frameworks such as the wiki or the URL field of some browsers only supp
 * From the command line:
 {{< tabs >}}
 {{% tab name="Windows" %}}
-```shell
+{{< highlight shell >}}
 start weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml
-```
+{{< /highlight >}}
 {{% /tab %}}
 {{% tab name="Linux" %}}
-```shell
+{{< highlight shell >}}
 xdg-open weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml
-```
+{{< /highlight >}}
 {{% /tab %}}
 {{% tab name="Mac OS" %}}
-```shell
+{{< highlight shell >}}
 open weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml
-```
+{{< /highlight >}}
 {{% /tab %}}
 {{< /tabs >}}
 

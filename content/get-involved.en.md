@@ -9,11 +9,11 @@ tags: ["help", "contribute"]
 
 First, look at the [GitHub issues system](https://github.com/nroduit/Weasis/issues), the [forum](https://groups.google.com/group/dcm4che) and/or this website (like [FAQs](../faq) or [Getting Started](../getting-started)) to see if your problem has not been reported yet.
 
-Only then, fill a bug on [GitHub](https://github.com/nroduit/Weasis/issues) with the most details from a template.
+Only then, fill out a bug on [GitHub](https://github.com/nroduit/Weasis/issues) with as much detail as possible from a template.
 
 ### Become a Committer
 
-- Become a committer on an existing project or on one of the incubating modules, for Weasis use [pull requests](https://github.com/nroduit/Weasis/pulls).
+- Become a committer in an existing modules or in one of the incubating modules by using [pull requests](https://github.com/nroduit/Weasis/pulls).
 
 ### Share Your Knowledge
 
