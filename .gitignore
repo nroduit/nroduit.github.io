@@ -6,3 +6,6 @@
 *.iws
 *.ipr
 .idea/
+
+/resources/_gen/images
+.hugo_build.lock

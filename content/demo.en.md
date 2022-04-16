@@ -29,8 +29,10 @@ Clicking on the "Launch" button launches Weasis and displays the selected images
 #### Internationalized characters
 <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Finternational.xml" class="btn btn-default">Launch</a>
 
+{{% notice info %}}
 Should display:
 ![charset samples](/images/charset.png)
+{{% /notice %}}
 
 ------------------------------------------------------------------------
 

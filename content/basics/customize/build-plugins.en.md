@@ -19,7 +19,7 @@ This page describes how to build new Weasis plug-ins and how they can be incorpo
 - Export data into an explorer (ex. `ExportDicom` and the factory implements `DicomExportFactory`)
 - DICOM editor or viewer for special modalities (`DicomSpecialElementFactory` and `SeriesViewerFactory`), see weasis-dicom-sr
 - Media codec (implements `Codec`)
-- Preferences (implements `PreferencesPageFactory`)
+- Preferences (implements `PreferencesPageFactory`)
 - UI aggregator. This is the application main user interface bundle. The maven artifact of this bundle must be defined in config.properties (ex. weasis.main.ui=weasis-base-ui)
 
 {{% notice tip %}}
