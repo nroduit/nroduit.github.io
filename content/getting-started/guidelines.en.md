@@ -14,15 +14,28 @@ We recommend the use of [IntelliJ IDEA](https://www.jetbrains.com/idea/) because
 ### Prerequisites
 
 1. Install [IntelliJ IDEA](https://www.jetbrains.com/idea/) (Community or Ultimate Edition)
-2. In *File > Settings... > Plugins* install google-java-format plugin from Marketplace and enable it from *google-java-format Settings*
+2. Use JDK 17 or higher and set the language level to 17.
+![Project Structure](/images/conf/project-structure.png)
+3. In *File > Settings... > Plugins* install google-java-format plugin from Marketplace and enable it from *google-java-format Settings*
 
 ### Code style and convention
 
-Weasis uses [google-java-format](https://github.com/google/google-java-format) as coding conventions. The format can be applied by Maven through the [Spotless plugin](https://github.com/diffplug/spotless/tree/main/plugin-maven) or the IDE. Formatting code with an IDE is not 100% compatible with Spotless, so it is better to use the latter before submitting new commits. This guarantees identical code formatting regardless of the system or code editor used.
+Weasis uses [google-java-format](https://github.com/google/google-java-format) as coding conventions. The format can be applied by Maven through the [Spotless plugin](https://github.com/diffplug/spotless/tree/main/plugin-maven) or from the [IDE](https://github.com/google/google-java-format#intellij-android-studio-and-other-jetbrains-ides) (by importing the IntelliJ Java Google Style file). Formatting code with an IDE is not 100% compatible with Spotless, so it is better to use the latter before submitting new commits. This guarantees identical code formatting regardless of the system or code editor used.
 
 - From Maven command: `mvn spotless:apply`
 - From the Maven panel
 ![Maven Spotless](/images/conf/mvn-spotless.png)
+
+{{% notice warning %}}
+google-java-format is still not fully compliant with Java 17. So it requires to create a Maven launcher with the command `mvn spotless:apply` and add the JVM Options:
+{{< highlight text >}}
+--add-exports jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED
+--add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED
+--add-exports jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED
+--add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED
+--add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED
+{{< /highlight >}}
+{{% /notice %}}
 
 ### Getting the source and building Weasis
 
@@ -31,11 +44,11 @@ Weasis uses [google-java-format](https://github.com/google/google-java-format) a
   - From IntelliJ IDEA: *New > Project from Version Control...*
     - In the *Get from Version Control* dialog, select the menu *Repository URL* and enter the following URL: `https://github.com/nroduit/Weasis.git` (public repository)
 - Building Weasis plug-ins
-  - In *File > Project Structure...* select JDK 11 or higher as *Project SDK* and 8 as *Project language level*
-  - In the maven panel, select clean/install in Lifecyle of *weasis-framework (root)* to compile and to install all the plug-ins in the local Maven repository
+  - In the maven panel, select clean/install in Lifecycle of *weasis-framework (root)* to compile and to install all the plug-ins in the local Maven repository.
 
 {{% notice tip %}}
-See also building the final [Weasis Distributions]((../building-weasis#building-weasis-distributions))
+* It is possible to use a JVM Option (e.g. `--Dweasis.arch=linux-x86-64`) to limit the build of native plugins only to the architecture of the current system (do not use this option when building the distribution).
+* See also building the final [Weasis Distributions]((../building-weasis#building-weasis-distributions))
 {{% /notice %}}  
 
 ### Add a launcher
@@ -47,9 +60,9 @@ For running or debugging Weasis, you need to create a launcher:
   - Select *weasis-launcher* as a module (field starting by *-cp*)
   - Main Class: browse *org.weasis.launcher.AppLauncher*
   - Click on *Modify Options*
-    - Select *Include dependencies with "Provided" scope*
-    - Select *Add before launch task* and remove the task *Build*
-    - Select *Add VM Options* and enter `-Xms64m -Xmx768m -Dgosh.port=17179 --illegal-access=warn`
+    - Select *Add dependencies with "Provided" scope to classpath*
+    - Select *Do not build before run*
+    - Select *Add VM Options* and enter `-Xms64m -Xmx768m -Dgosh.port=17179`
   - Working Directory: remove the current value and add *%MODULE_WORKING_DIR%* from the Insert Macros button
 ![Launcher Configuration](/images/conf/launcher.png)
 {{% notice note %}}

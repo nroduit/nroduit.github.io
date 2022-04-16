@@ -6,7 +6,7 @@ keywords: [ "weasis demo", "dicom sammples", "dicom examples", "dicom viewer", "
 
 ## <center>Demo with multiple DICOM Samples</center>
 
-This page shows a list of DICOM samples for testing viewer capabilities.
+This page provides a list of DICOM samples to test the capabilities of the viewer.
 
 {{% notice tip %}}
 **Naming convention**
@@ -18,10 +18,10 @@ This page shows a list of DICOM samples for testing viewer capabilities.
 
 ### How to launch Weasis
 
-To display the DICOM samples on this page, you need to install a [recent version of Weasis](../getting-started/).
+In order to display the DICOM samples on this page, you must install a [recent version of Weasis](../getting-started/).
 
 {{% notice tip %}}
-Clicking on the "Launch" button launches Weasis and displays the selected images, or if Weasis is already open then the images are added to a new tab in the main view.
+By clicking on the "Launch" button, Weasis starts and displays the related images, or if Weasis is already open, the images are added to a new tab in the main view.
 {{% /notice %}}
 
 ------------------------------------------------------------------------
@@ -122,7 +122,7 @@ Should always render the same image.
 <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fvlut.xml" class="btn btn-default">Launch</a>
 
 {{% notice info %}}
-Can be changed in the "Image Tool" right panel.
+VOI LUT can be changed in the "Image Tool" right panel.
 {{% /notice %}}
 
 ------------------------------------------------------------------------
@@ -149,7 +149,7 @@ Show or hide from the "Display" right panel.
 <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fpdf.xml" class="btn btn-default">Launch</a>
 
 {{% notice info %}}
-Open by the default PDF viewer of the operating system.
+Open the default PDF viewer of the operating system.
 {{% /notice %}}
 
 ------------------------------------------------------------------------
@@ -158,7 +158,7 @@ Open by the default PDF viewer of the operating system.
 <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fvideo.xml" class="btn btn-default">Launch</a>
 
 {{% notice info %}}
-Open by the default viewer (associated to the video mime type) of the operating system.
+Open the default viewer (associated to the video mime type) of the operating system.
 {{% /notice %}}
 
 ------------------------------------------------------------------------
@@ -167,7 +167,7 @@ Open by the default viewer (associated to the video mime type) of the operating 
 <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Faudio.xml" class="btn btn-default">Launch</a>
 
 {{% notice info %}}
-Open by the embedded Java Audio Player.
+Open the embedded Java Audio Player.
 {{% /notice %}}
 
 ------------------------------------------------------------------------
@@ -176,7 +176,7 @@ Open by the embedded Java Audio Player.
 <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Ffloat.xml" class="btn btn-default">Launch</a>
 
 {{% notice info %}}
- Specific dicom pixel data containing float or double.
+Specific dicom pixel data containing float or double. Floating values must be supported by the Window/Level tools.
 {{% /notice %}}
 
 ------------------------------------------------------------------------
@@ -184,12 +184,16 @@ Open by the embedded Java Audio Player.
 #### DICOM Structured Report (SR)
 <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fsr.xml" class="btn btn-default">Launch</a>
 
+{{% notice info %}}
+The DICOM SR is formatted according to the order and hierarchy of the tags.
+{{% /notice %}}
+
 ------------------------------------------------------------------------
 
 #### DICOM Presentation State (PR, GSPS)
 
 {{% notice info %}}
-Click on the right icon over the image to select the Presentation State. Show or hide graphics layers from the "Display" right panel. See [How to build DICOM PR](../tutorials/build-ko-pr/#presentation-state-pr-or-gsps).
+Click on the right icon over the image to select the Presentation State. See [How to build DICOM PR](../tutorials/build-ko-pr/#presentation-state-pr-or-gsps).
 {{% /notice %}}
 
 <ul>

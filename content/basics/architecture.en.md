@@ -6,11 +6,11 @@ weight: 10
 ---
 
 
-Weasis has a modular architecture based on <a target="_blank" href="https://www.osgi.org">OSGi</a>: the dynamic module system for Java. It uses the <a target="_blank" href="http://felix.apache.org">Apache Felix OSGi framework</a> which is an open source implementation of the OSGi Release 4.2 specification (<a target="_blank" href="https://www.osgi.org/osgi-compliance/osgi-certification/osgi-certified-products/">OSGi Certified</a>).
+Weasis has a modular architecture based on <a target="_blank" href="https://www.osgi.org">OSGi</a>: the dynamic module system for Java. It uses the [Apache Felix OSGi framework](https://felix.apache.org) which is an open source implementation of the OSGi specification.
 
-The following schemas show the main different plug-in types (bundle in OSGi language) and their relationships. Viewer, Viewer Tool Pane, Tool Bar, Data Explorer and Codec bundles are registered dynamically by the Declarative Services (a way to push or to consume services in OSGi environment).
+The following schemas show the main different plug-in types (bundle in OSGi language) and their relationships. *Viewer*, *Viewer Tool Pane*, *Tool Bar*, *Data Explorer* and *Codec* bundles are registered dynamically by the Declarative Services (a way to push or to consume services in OSGi environment).
 
-![bundles](/images/architecture-bundles.png?classes=border)
+{{< svg "static/images/architecture-bundles.svg" >}}
 
 ![packages](/images/architecture-packages.png?classes=border)
 

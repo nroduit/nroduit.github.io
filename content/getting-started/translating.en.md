@@ -5,7 +5,7 @@ keywords: [ "internationalization", "weasis internationalization", "development"
 weight: 80
 ---
 
-The translation files are now hosted and managed on <a target="_blank" href="https://www.transifex.com/weasis/public/">Transifex</a> website. Get an account at <a target="_blank" href="https://www.transifex.com/signin">Transifex</a> and help to translate to your language! If your language is missing, just head over to Transifex and request a new language.
+Translation files are hosted and managed on the [Transifex](https://www.transifex.com/weasis/public/) website. Get an account at [Transifex](https://www.transifex.com/signin) and help to translate to your language! If your language is missing, just head over to Transifex and request a new language.
 
 {{% notice warning %}}
 **Text length**: The translations for many languages frequently exceed the length of the corresponding English source. It could be a problem for the layout of graphical components (e.g. buttons).
