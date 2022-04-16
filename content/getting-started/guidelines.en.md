@@ -29,7 +29,7 @@ Weasis uses [google-java-format](https://github.com/google/google-java-format) a
 - Getting the Source
   - For external Git client, see [Building Weasis](../building-weasis).
   - From IntelliJ IDEA: *New > Project from Version Control...*
-    - In the *Get from Version Control* dialog, select the menu *Repository URL* and enter the following URL: `https://github.com/nroduit/Weasis.git` (public repository)
+    - In the *Get from Version Control* dialog, select the menu *Repository URL* and enter the following URL: `https://github.com/nroduit/Weasis.git` (public repository)
 - Building Weasis plug-ins
   - In *File > Project Structure...* select JDK 11 or higher as *Project SDK* and 8 as *Project language level*
   - In the maven panel, select clean/install in Lifecyle of *weasis-framework (root)* to compile and to install all the plug-ins in the local Maven repository
@@ -64,10 +64,10 @@ $dicom:get -l \"D:\images test\dicom\"
 {{< /highlight >}}
 {{% notice note %}}
 Some command interpreters need to escape the quotes or double quotes required for paths or URLs. This is the case with IntelliJ IDEA or Eclipse.<br>
-For more commands at startup see also [Weasis commands](../../basics/commands).
+For more commands at startup see also [Weasis commands](../../basics/commands).
 {{% /notice %}}
 {{% notice warning %}}
-In Eclipse launcher parameters, '&' within URLs needs to be escaped with a backslash.
+In Eclipse launcher parameters, '&' within URLs needs to be escaped with a backslash.
 {{% /notice %}}
 - Examples of other VM options for overriding the default [Preferences](../../basics/customize/preferences)
   - Removing the possibility of exporting DICOM: `-Dweasis.export.dicom=false`
@@ -77,5 +77,5 @@ In Eclipse launcher parameters, '&' within URLs needs to be escaped with a back
     - Configuration from an URL: `-Dfelix.extended.config.properties=https://mysite.com/weasis/conf/ext-config.properties`
 {{% notice note %}}
 **felix.config.properties** defines the location of config.properties (the OSGI configuration and the list of plug-ins to install/start)<br>
-**felix.extended.config.properties** defines the location of ext-config.properties (extends/overrides config.properties)
+**felix.extended.config.properties** defines the location of ext-config.properties (extends/overrides config.properties)
 {{% /notice %}}

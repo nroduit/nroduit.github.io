@@ -9,17 +9,17 @@ These instructions describe how to build Weasis directly from the Git repository
 
 **Prerequisites**
 
-1. JDK 11 or higher
+1. JDK 17 or higher
 2. Maven 3.5.3 or higher<br>
-   If your computer is behind a proxy server, <a target="_blank" href="http://maven.apache.org/guides/mini/guide-proxies.html">configure maven</a>.
-3. Git or directly download source from <a target="_blank" href="https://github.com/nroduit/Weasis">github</a>
+   If your computer is behind a proxy server, [configure maven](https://maven.apache.org/guides/mini/guide-proxies.html).
+3. Git or directly download source from [github](https://github.com/nroduit/Weasis)
 
 ### Getting the Source
 
 To clone the repository, first install GIT and either clone using a graphical GIT client or directly from the command line using the command:
 
-{{< highlight bash >}}
-$ git clone https://github.com/nroduit/Weasis.git
+{{< highlight shell >}}
+git clone https://github.com/nroduit/Weasis.git
 {{< /highlight >}}
 
 {{% notice warning %}}
@@ -28,15 +28,15 @@ The trunk is not a stable version and snapshot version is not retained in the ca
 
 Check out a tag version to build a stable version, see the <a target="_blank" href="https://github.com/nroduit/Weasis/tags">tag list</a>.
 
-{{< highlight bash >}}
-$ git checkout <TAG_NAME>
+{{< highlight shell >}}
+git checkout <TAG_NAME>
 {{< /highlight >}}
 
 ### Building all Plug-ins
 
 - Go in the *Weasis* directory, compile and install all the plug-ins in the local Maven repository
-{{< highlight bash >}}
-$ mvn clean install
+{{< highlight shell >}}
+mvn clean install
 {{< /highlight >}}
 
 
@@ -48,9 +48,9 @@ The documentation for building the native installer we be available from Weasis 
 {{% /notice %}}
 
 - Requires installing all the plug-ins in the local Maven repository as described in the item above.
-{{< highlight bash >}}
-$ cd weasis-distributions
-$ mvn clean package -Dportable=true -P compressXZ
+{{< highlight shell >}}
+cd weasis-distributions
+mvn clean package -Dportable=true -P compressXZ
 {{< /highlight >}}
 {{% notice tip %}}
 **-P compressXZ**: Option for compressing the packages in <a target="_blank" href="https://en.wikipedia.org/wiki/XZ_Utils">xz</a>, only from Weasis 3.6.0. The compression pack200 is not supported anymore (removed from Java 14), before 3.6.0 the profile was **-P pack200**.<br>
@@ -66,7 +66,7 @@ $ mvn clean package -Djarsigner.alias="your_alias" -Djarsigner.storepass="your_p
 {{% notice tip %}}
 For production, version must not end with SNAPSHOT (otherwise packages will not be kept in cache). So to remove SNAPASHOT or to make your own release (for avoiding package mix-up in cache), modify the changelist property. From the Weasis root folder, execute:
 {{% /notice %}}
-{{< highlight bash >}}
+{{< highlight shell >}}
 $ mvn clean install -Dchangelist=-mybuild
 $ mvn clean package -Dchangelist=-mybuild -Dportable=true -P compressXZ -f weasis-distributions
 {{< /highlight >}}
@@ -76,7 +76,7 @@ $ mvn clean package -Dchangelist=-mybuild -Dportable=true -P compressXZ -f weasi
 
 -  Options for building the portable distribution.
     - By default, the executable on Windows runs only a single instance (from Weasis 2.0). To disable single instance in the portable version, set windowsName property empty.
-{{< highlight bash >}}
+{{< highlight shell >}}
 $ mvn clean package -Dportable=true -DwindowsName=
 {{< /highlight >}}
     -  On 64-bit system, it requires installing the 32-bit compatibility libraries to build the windows executable. On Linux, you need to install **ia32-libs** package.

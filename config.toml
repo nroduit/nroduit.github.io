@@ -36,7 +36,7 @@ title = "Weasis Documentation"
   disableNextPrev = false
   disableLandingPageButton = true
   titleSeparator = "::"
-  themeVariant = [ "relearn-dark", "relearn-light", "learn", "neon", "blue", "green", "red" ]
+  themeVariant = [ "relearn-light", "relearn-dark", "learn", "neon", "blue", "green", "red" ]
   disableSeoHiddenPages = true
   # this is for the stylesheet genertor to allow for interactivity in mermaid
   # graphs; you usually will not need it and you should remove this for

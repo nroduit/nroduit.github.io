@@ -5,7 +5,7 @@ keywords: [ "commands", "weasis commands", "dicom viewer", "free dicom viewer", 
 weight: 50
 ---
 
-The commands listed below can be applied at start-up or in a telnet session. All the commands starting with "dcmview2d:" allow to drive Weasis and are not adapted to be used at start-up.
+The commands listed below can be applied at start-up or in a telnet session. All the commands starting with "dcmview2d:" allow to drive Weasis and are not adapted to be used at start-up.
 
 {{% notice info %}}
 This page matches to Weasis 2.5.1 or higher. The syntax of usage comes from <a target="_blank" href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap12.html">POSIX</a>.
@@ -26,7 +26,7 @@ ____________________________
 
 Welcome to Apache Felix Gogo
 
-g! 
+g!
 {{< /highlight >}}
 
 {{% notice tip %}}
@@ -238,45 +238,9 @@ For identifying the commands at start-up, the symbol "$" must be added before th
 
 {{% notice warning %}}
 **Special characters**:
-A command containing special characters like '&' or space must be within quotes or double quotes. Example: 
+A command containing special characters like '&' or space must be within quotes or double quotes. Example: 
 dicom:get -w **"https://dicom.com/test&sopuid=322344"**
 <br><br>
 Depending the command line system, quotes or double quote needs to be escaped with a backslash. Ex. simple quote must be escaped in Eclipse but not in Intellij.
 {{% /notice %}}
 
-### Weasis Portable distribution (deprecated)
-
-{{% notice note %}}
-The native installer will progressively replace the portable and the web distribution with the [weasis protocol](../../getting-started/weasis-protocol).
-{{% /notice %}}
-
-There are two ways to open local images with the portable distribution.
-
-1. Load images automatically from a configured directory
-
-    Set images into a “dicom” or “images” directory at the same level of the binary launcher (c.f. weasis-win32.exe). The default directories can be changed in weasis/conf/config.properties, see the properties starting by "weasis.portable." in [Weasis Weasis Preferences](../customize/preferences).
-{{% notice tip %}}
-Launch Weasis by double clicking on the executable file or in command-line (c.f. on Linux: ./weasis-linux.sh '$dicom:get --portable')
-{{% /notice %}}
-
-
-2. Launch arguments
-    - Linux and Mac: commands must be in between quotes
-{{< highlight sh >}}
-./viewer-linux.sh '$dicom:get -l /home/Images/'
-
-# Multiple commands:
-./viewer-linux.sh '$dicom:get -l "/DICOM/Overlay"' '$weasis:ui --visible'
-
-# Local directories (recursive) or files:
-./viewer-linux.sh '$dicom:get -l "/DICOM/Overlay" -l "/DICOM/test/file.dcm"'
-
-# Open non DICOM images (Local and URL):
-./viewer-linux.sh '$image:get -f "/home/Images/test.png" -u https://dcm4che.atlassian.net/wiki/download/attachments/3670024/weasis-mpr.png'
-{{< /highlight >}}
-    - Windows commands
-{{< highlight cmd >}}
-viewer-win32.exe $dicom:get -l "E:\DICOM\Overlay" -l "E:\DICOM\Shutter"
- 
-viewer-win32.exe $dicom:get -l "E:/DICOM/Overlay" -l "E:/DICOM/Shutter"
-{{< /highlight >}}

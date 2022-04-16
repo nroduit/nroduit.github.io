@@ -56,7 +56,7 @@ locale.lang.code=fr_CH
 | weasis.language                            | en                                     | yes | F    | Language code defined by [ISO 639](http://lcweb.loc.gov/standards/iso639-2/langcodes.html). Replaced by locale.lang.code in Weasis 2 |
 | weasis.country                             | US                                     | yes | F    | Country or region code defined by [ISO 3166](http://www.iso.org/iso/en/prods-services/iso3166ma/02iso-3166-code-lists/list-en1.html). Replaced by locale.lang.code in Weasis 2 |
 | weasis.variant                             |                                        | yes | F    | Optional variant code. Replaced by locale.lang.code in Weasis 2  |
-| weasis.confirm.closing                     | false (from 2.0.0)                     | yes | F    | Show a message of confirmation when closing the application. |
+| weasis.confirm.closing                     | false (from 2.0.0)                     | yes | F    | Show a message of confirmation when closing the application. |
 | weasis.look                                | SubstanceTwilight  AquaLookAndFeel (Mac) | yes | F    | Look and feel, if the Substance library is not loaded, Nimbus will be used by default. |
 | weasis.look.${system}                      | SubstanceTwilight  AquaLookAndFeel (Mac) | yes | F    | Look and feel, specific to the platform (macosx, linux, windows). |
 | weasis.show.disclaimer                     | true                                   | no  | A    | Show a disclaimer (requires to be accepted to start the application) during the first launch of Weasis. |
@@ -87,13 +87,13 @@ locale.lang.code=fr_CH
 | weasis.export.dicom.send                   | true                                   | no  | A    | Allows DICOM send. Is always false when weasis.export.dicom=false. |
 | weasis.import.dicom                        | true                                   | no  | A    | Allows importing DICOMs |
 | weasis.import.dicom.qr                     | true                                   | no  | A    | Allows DICOM Q/R. Is always false when weasis.import.dicom=false.  |
-| weasis.acquire.meta.global.display         | PatientID,PatientName, PatientBirthDate, PatientSex, AccessionNumber, StudyDescription  | no  | A    | Global tags at the patient or study level that are visible in Dicomizer   |
+| weasis.acquire.meta.global.display         | PatientID,PatientName, PatientBirthDate, PatientSex, AccessionNumber, StudyDescription  | no  | A    | Global tags at the patient or study level that are visible in Dicomizer   |
 | weasis.acquire.meta.global.edit            | StudyDescription                       | no  | A    | Global tags which are editable |
 | weasis.acquire.meta.global.required        | PatientID, PatientName, AccessionNumber, StudyDescription  | no  | A    | Global tags which are required for publication  |
-| weasis.acquire.meta.series.display         | Modality, OperatorsName, ReferringPhysicianName, BodyPartExamined, SeriesDescription  | no  | A    | Tags at the series level that are visible in Dicomizer |
+| weasis.acquire.meta.series.display         | Modality, OperatorsName, ReferringPhysicianName, BodyPartExamined, SeriesDescription  | no  | A    | Tags at the series level that are visible in Dicomizer |
 | weasis.acquire.meta.series.edit            | ReferringPhysicianName, BodyPartExamined, SeriesDescription  | no  | A    | Series tags which are editable  |
 | weasis.acquire.meta.series.required        | Modality, SeriesDescription             | no  | A    | Series tags which are required for publication |
-| weasis.acquire.meta.image.display          | ImageComments, ContentDate, ContentTime  | no  | A    | Tags at the image level that are visible in Dicomizer |
+| weasis.acquire.meta.image.display          | ImageComments, ContentDate, ContentTime  | no  | A    | Tags at the image level that are visible in Dicomizer |
 | weasis.acquire.meta.image.edit             | ImageComments, ContentDate, ContentTime  | no  | A    | Image tags which are editable  |
 | weasis.acquire.meta.image.required         | ContentDate                            | no  | A    | Image tags which are required for publication |
 | weasis.acquire.dest.host                   | localhost                              | no  | A    | Hostname of DICOM send destination for Dicomizer. If no value, the list of DICOM nodes for storage is displayed. |
@@ -121,17 +121,17 @@ weasis.look.macosx=com.apple.laf.AquaLookAndFeel
 weasis.look.linux=org.pushingpixels.substance.api.skin.SubstanceGraphiteAquaLookAndFeel
 {{< /highlight >}}
 
-### Customize resources
+### Customize resources
 
 The default resources are located:
 
-- For the web distribution in "resources.zip" at the root of weasis.war (see above how to set a new URL for resources)
+- For the web distribution in "resources.zip" at the root of weasis.war (see above how to set a new URL for resources)
 - For the portable distribution in ./weasis/resources
 
 ### How to add DICOM nodes or DICOM printers at the server-side
 
 - From the graphical user interface, configure the DICOM printers (File > Print > DICOM Print) or DICOM nodes (File > Preferences > Dicom node list)
-- Go to he folder ${user.home}/.weasis/data/weasis-dicom-explorer
-- Copy the desired configuration files: dicomNodes.xml, dicomPrinterNodes.xml, dicomWebNodes.xml and dicomCallingNodes.xml
-- Paste at the root path of resources. For web distribution, unzip, place files and zip again.
+- Go to he folder ${user.home}/.weasis/data/weasis-dicom-explorer
+- Copy the desired configuration files: dicomNodes.xml, dicomPrinterNodes.xml, dicomWebNodes.xml and dicomCallingNodes.xml
+- Paste at the root path of resources. For web distribution, unzip, place files and zip again.
 - The new configurations should appear for all the users as non-editable configurations in Weasis.

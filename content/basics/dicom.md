@@ -5,12 +5,13 @@ keywords: [ "DICOM Conformance Statements", "IHE", "dicom viewer", "free dicom v
 weight: 70
 ---
 
-### Compatibility of [DICOM Transfer Syntax](http://dicom.nema.org/medical/dicom/current/output/chtml/part06/chapter_A.html)
+### Compatibility of [DICOM Transfer Syntax](https://dicom.nema.org/medical/dicom/current/output/chtml/part06/chapter_A.html)
 
 | Transfer Syntax UID | Description | Supported |
-| ------ | ------ | --- |
+| ------ | ----- | --- |
 | 1.2.840.10008.1.2 | Implicit VR - Little Endian | yes |
 | 1.2.840.10008.1.2.1 | Explicit VR - Little Endian | yes |
+| 1.2.840.10008.1.2.1.99 | Deflated Explicit VR Little Endian | yes |
 | 1.2.840.10008.1.2.2 | Explicit VR Big Endian (Retired) | yes |
 | 1.2.840.10008.1.2.5 | RLE (Run Length Encoding) Lossless | yes |
 | 1.2.840.10008.1.2.4.50 | JPEG Baseline (Process 1): Default Transfer Syntax for Lossy JPEG 8 Bit Image Compression | yes |
@@ -26,9 +27,7 @@ weight: 70
 | 1.2.840.10008.1.2.4.92 | JPEG 2000 Part 2 Multi-component Image Compression (Lossless Only) | yes |
 | 1.2.840.10008.1.2.4.93 | JPEG 2000 Part 2 Multi-component Image Compression | yes |
 
-{{% notice note %}}
-These TSUIDs are available with Weasis 2.5 and later for Windows, Mac OS X and Linux.
-{{% /notice %}}
+<br>
 
 | Transfer Syntax UID | Description | Supported |
 | ------ | ------ | ------ |
@@ -42,7 +41,7 @@ These TSUIDs are available with Weasis 2.5 and later for Windows, Mac OS X and L
 | 1.2.840.10008.1.2.4.106 | MPEG-4 AVC/H.264 Stereo High Profile / Level 4.2 | yes |
 
 {{% notice note %}}
-These TSUIDs are open by the default system application associated to the MIME type.
+The latter groups of TSUIDs are opened by the default system application associated with the MIME type.
 {{% /notice %}}
 
 ### Supported "Photometric Interpretation" pixel format
