@@ -12,11 +12,11 @@ These instructions describe how to build Weasis directly from the Git repository
 1. JDK 17 or higher
 2. Maven 3.5.3 or higher<br>
    If your computer is behind a proxy server, [configure maven](https://maven.apache.org/guides/mini/guide-proxies.html).
-3. Git or directly download source from [github](https://github.com/nroduit/Weasis)
+3. Git or directly download source from [GitHub](https://github.com/nroduit/Weasis)
 
 ### Getting the Source
 
-To clone the repository, first install GIT and either clone using a graphical GIT client or directly from the command line using the command:
+In order to clone the repository, first install GIT and either clone using a graphical GIT client or directly from the command line using the command:
 
 {{< highlight shell >}}
 git clone https://github.com/nroduit/Weasis.git
@@ -49,12 +49,10 @@ The documentation for building the native installer we be available from Weasis 
 
 - Requires installing all the plug-ins in the local Maven repository as described in the item above.
 {{< highlight shell >}}
-cd weasis-distributions
-mvn clean package -Dportable=true -P compressXZ
+mvn -P compressXZ -f weasis-distributions clean package
 {{< /highlight >}}
 {{% notice tip %}}
 **-P compressXZ**: Option for compressing the packages in <a target="_blank" href="https://en.wikipedia.org/wiki/XZ_Utils">xz</a>, only from Weasis 3.6.0. The compression pack200 is not supported anymore (removed from Java 14), before 3.6.0 the profile was **-P pack200**.<br>
-**-Dportable=true**: Option for building the portable distribution (multi-platform standalone launchers)
 {{% /notice %}}
 {{% notice warning %}}
 For the WEB distribution using Java Webstart, it is required to sign jar files with your **own certificate** (by replacing values in the command below with your **own values**). A trust-worthy certificate from a certificate authority is  <a target="_blank" href="https://blogs.oracle.com/java-platform-group/entry/code_signing_understanding_who_and">required</a> to run Java Web Start applications. A self-signed certificate generate by keytool will always display a security warning message.
