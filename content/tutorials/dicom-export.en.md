@@ -24,7 +24,7 @@ Export the view according to the original image with some options.
 ![Export view](/tuto/dicom-export-view.png?classes=shadow&width=350)
 
 * Size: Change the image size in percent
-* Preserve 16-bit per channel: Option to preserve the pixel depth (e.g. 16-bit in PNG/JPEG2000/TIF, double values in TIF)
+* Preserve 16-bit per channel: Option to preserve the pixel depth (e.g. 16-bit in PNG/JPEG 2000/TIFF, double values in TIFF). When this option is applied, the pixel values will match with the Modality LUT values (e.g. Hounsfield values). Exporting in JPEG Lossy is only possible when unchecked for 8-bit image.
 * DICOM Pixel Padding: Apply the DICOM pixel padding when checked
 * DICOM Shutter: Apply the DICOM shutters when checked
 * DICOM Overlay: Apply the DICOM overlays when checked
@@ -42,8 +42,14 @@ Export the view according to the original image with some options.
    * Include DICOMDIR: Create DICOMDIR file
    * DICOM CD folders: Add a directory to be compliant with DICOM CD
    * Keep directory names: Preserve the name in the directory hierarchy (not compliant with DICOMDIR)
-4. Select the patient/study/series/instance to export. Note: [series created by Weasis](../build-ko-pr/) have a flag "NEW"
-5. Export the selection and close the Window
+3. Select the patient/study/series/instance to export. Note: [series created by Weasis](../build-ko-pr/) have a flag "NEW"
+4. Export the selection and close the Window
+
+{{% notice note %}}
+When DICOM data is exported in a native image format (JPG, PNG, JPEG 2000 or TIFF), only the images are transformed (see [original image options](#original-image)) and the encapsulated files (video, audio and PDF) are extracted.
+
+Multiframe images are exported by adding a number to the end of the file name.
+{{% /notice %}}
 
 #### DICOM Send
 
