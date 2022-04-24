@@ -18,6 +18,7 @@ theme = "hugo-theme-relearn"
 # available in this showcase
 languageCode = "en"
 defaultContentLanguage = "en"
+defaultContentLanguageInSubdir= true
 
 # the site's title of this showcase; you should change this ;-)
 title = "Weasis Documentation"
@@ -100,3 +101,8 @@ weight = 10
   url = "tags/"
   weight = 40
 
+
+[Languages.fr]
+title = "Documentation"
+weight = 2
+languageName = "Français"
