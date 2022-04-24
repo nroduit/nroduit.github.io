@@ -101,7 +101,6 @@ weight = 10
   url = "tags/"
   weight = 40
 
-
 [Languages.fr]
 title = "Documentation"
 weight = 2
