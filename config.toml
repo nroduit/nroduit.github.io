@@ -44,6 +44,12 @@ title = "Weasis Documentation"
   # security reasons
   mermaidInitialize = "{ \"securityLevel\": \"loose\" }"
 
+[outputFormats]
+  [outputFormats.API]
+    mediaType= "application/json"
+    baseName="api"
+    isPlainText= true
+
 [outputs]
   # add JSON to the home page to support lunr search; This is a mandatory setting
   # for the search functionality
