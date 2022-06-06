@@ -60,24 +60,24 @@ The [official build](https://github.com/nroduit/Weasis/blob/master/.github/workf
 However, it is possible to run a local script `weasis-distributions/script/package-weasis.sh` on most systems but without guarantee because the system must have a correct configuration of several tools (see [jpackage prerequisites](https://docs.oracle.com/en/java/javase/18/jpackage/packaging-overview.html)).
 
 - From the Weasis root folder, unzip the package built in the previous step:
-{{< tabs >}}
-{{% tab name="Linux" %}}
+{{< tabs groupId="build-native" >}}
+{{% tab name="Bash" %}}
 {{< highlight shell >}}
 unzip weasis-distributions/target/native-dist/weasis-native.zip -d weasis-distributions/target/native-dist/weasis-native/
 {{< /highlight >}}
 {{% /tab %}}
 {{< /tabs >}}
 - Build only the native binaries (without installer)
-{{< tabs >}}
-{{% tab name="Linux" %}}
+{{< tabs groupId="build-native" >}}
+{{% tab name="Bash" %}}
 {{< highlight shell >}}
 weasis-distributions/script/package-weasis.sh --input ./weasis-distributions/target/native-dist/weasis-native --output build-dist --no-installer --jdk /home/.jdks/temurin-18.0.1/
 {{< /highlight >}}
 {{% /tab %}}
 {{< /tabs >}}
 - Build only the native binaries and the installer
-{{< tabs >}}
-{{% tab name="Linux" %}}
+{{< tabs groupId="build-native" >}}
+{{% tab name="Bash" %}}
 {{< highlight shell >}}
 weasis-distributions/script/package-weasis.sh --input ./weasis-distributions/target/native-dist/weasis-native --output build-installer --jdk /home/.jdks/temurin-18.0.1/
 {{< /highlight >}}
