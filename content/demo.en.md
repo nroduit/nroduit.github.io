@@ -27,7 +27,9 @@ By clicking on the "Launch" button, Weasis starts and displays the related image
 ------------------------------------------------------------------------
 
 #### Internationalized characters
-<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Finternational.xml" class="btn btn-default">Launch</a>
+{{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/international.xml"
+{{< /launch >}}
 
 {{% notice info %}}
 Should display:
@@ -44,10 +46,14 @@ Should always render the same image.
 
 <ul>
 <li style="margin-bottom:10px;">Unsigned data
-<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fpixel-depth-unsigned.xml" class="btn btn-default">Launch</a>
+{{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/pixel-depth-unsigned.xml"
+{{< /launch >}}
 </li>
 <li style="margin-bottom:10px;">Signed data
-<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fpixel-depth-signed.xml" class="btn btn-default">Launch</a>
+{{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/pixel-depth-signed.xml"
+{{< /launch >}}
 </li>
 </ul>
 
@@ -57,24 +63,34 @@ Should always render the same image.
 
 <ul>
 <li style="margin-bottom:10px;">Different compression syntaxes (JPEG, JPEG-Lossless, JPEG-LS, J2K, RLE)
-<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fcompression1.xml" class="btn btn-default">Launch</a>
+{{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/compression1.xml"
+{{< /launch >}}
 </li>
 <li style="margin-bottom:10px;">Compression and fragments (the file contains the encoded pixel data stream fragmented into several parts, see <a target="_blank" href="http://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_A.4.html">DICOM part5</a>)
-<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fcompression2.xml" class="btn btn-default">Launch</a>
+{{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/compression2.xml"
+{{< /launch >}}
 </li>
 <li style="margin-bottom:10px;">Compression, multi-frame and fragments
-<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fcompression3.xml" class="btn btn-default">Launch</a>
+{{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/compression3.xml"
+{{< /launch >}}
 </li>
 </ul>
 ------------------------------------------------------------------------
 
 #### Photometric Interpretation
-<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fcolor.xml" class="btn btn-default">Launch</a>
+{{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/color.xml"
+{{< /launch >}}
 
 ------------------------------------------------------------------------
 
 #### Pixel Spacing
-<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fpixel-spacing.xml" class="btn btn-default">Launch</a>
+{{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/pixel-spacing.xml"
+{{< /launch >}}
 
 {{% notice info %}}
 Select the view and press 'd' to draw a line.
@@ -83,7 +99,9 @@ Select the view and press 'd' to draw a line.
 ------------------------------------------------------------------------
 
 #### Pixel Padding Value
-<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fpixel-padding.xml" class="btn btn-default">Launch</a>
+{{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/pixel-padding.xml"
+{{< /launch >}}
 
 {{% notice info %}}
 Show or hide pixel padding from the "Display" right pane.
@@ -92,7 +110,9 @@ Show or hide pixel padding from the "Display" right pane.
 ------------------------------------------------------------------------
 
 #### Non-square pixels
-<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fpixel-nonsquare.xml" class="btn btn-default">Launch</a>
+{{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/pixel-nonsquare.xml"
+{{< /launch >}}
 
 {{% notice info %}}
 Stretch or shrink the image according to the "pixel spacing" or "pixel aspect ratio" field.
@@ -101,7 +121,9 @@ Stretch or shrink the image according to the "pixel spacing" or "pixel aspect ra
 ------------------------------------------------------------------------
 
 #### Overlay
-<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Foverlay.xml" class="btn btn-default">Launch</a>
+{{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/overlay.xml"
+{{< /launch >}}
 
 {{% notice info %}}
 Show or hide from the "Display" right panel.
@@ -110,7 +132,9 @@ Show or hide from the "Display" right panel.
 ------------------------------------------------------------------------
 
 #### Modality LUT
-<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fmlut.xml" class="btn btn-default">Launch</a>
+{{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/mlut.xml"
+{{< /launch >}}
 
 {{% notice info %}}
 Should always render the same image.
@@ -119,7 +143,9 @@ Should always render the same image.
 ------------------------------------------------------------------------
 
 #### VOI LUT
-<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fvlut.xml" class="btn btn-default">Launch</a>
+{{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/vlut.xml"
+{{< /launch >}}
 
 {{% notice info %}}
 VOI LUT can be changed in the "Image Tool" right panel.
@@ -128,7 +154,9 @@ VOI LUT can be changed in the "Image Tool" right panel.
 ------------------------------------------------------------------------
 
 #### Combined LUT
-<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fclut.xml" class="btn btn-default">Launch</a>
+{{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/clut.xml"
+{{< /launch >}}
 
 {{% notice info %}}
 Should always render the same image.
@@ -137,7 +165,9 @@ Should always render the same image.
 ------------------------------------------------------------------------
 
 #### Shutter
-<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fshutter.xml" class="btn btn-default">Launch</a>
+{{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/shutter.xml"
+{{< /launch >}}
 
 {{% notice info %}}
 Show or hide from the "Display" right panel.
@@ -146,7 +176,9 @@ Show or hide from the "Display" right panel.
 ------------------------------------------------------------------------
 
 #### DICOM PDF
-<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fpdf.xml" class="btn btn-default">Launch</a>
+{{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/pdf.xml"
+{{< /launch >}}
 
 {{% notice info %}}
 Open the default PDF viewer of the operating system.
@@ -155,7 +187,9 @@ Open the default PDF viewer of the operating system.
 ------------------------------------------------------------------------
 
 #### DICOM video
-<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fvideo.xml" class="btn btn-default">Launch</a>
+{{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/video.xml"
+{{< /launch >}}
 
 {{% notice info %}}
 Open the default viewer (associated to the video mime type) of the operating system.
@@ -164,7 +198,9 @@ Open the default viewer (associated to the video mime type) of the operating sys
 ------------------------------------------------------------------------
 
 #### DICOM Audio (AU)
-<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Faudio.xml" class="btn btn-default">Launch</a>
+{{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/audio.xml"
+{{< /launch >}}
 
 {{% notice info %}}
 Open the embedded Java Audio Player.
@@ -173,7 +209,9 @@ Open the embedded Java Audio Player.
 ------------------------------------------------------------------------
 
 #### DICOM floating point pixel data
-<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Ffloat.xml" class="btn btn-default">Launch</a>
+{{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/float.xml"
+{{< /launch >}}
 
 {{% notice info %}}
 Specific dicom pixel data containing float or double. Floating values must be supported by the Window/Level tools.
@@ -182,7 +220,9 @@ Specific dicom pixel data containing float or double. Floating values must be su
 ------------------------------------------------------------------------
 
 #### DICOM Structured Report (SR)
-<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fsr.xml" class="btn btn-default">Launch</a>
+{{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/sr.xml"
+{{< /launch >}}
 
 {{% notice info %}}
 The DICOM SR is formatted according to the order and hierarchy of the tags.
@@ -197,29 +237,53 @@ Click on the right icon over the image to select the Presentation State. See [Ho
 {{% /notice %}}
 
 <ul>
-<li style="margin-bottom:10px;">Shutter Test <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fpr-shutter.xml" class="btn btn-default">Launch</a>
+<li style="margin-bottom:10px;">Shutter Test {{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/pr-shutter.xml"
+{{< /launch >}}
 </li>
-<li style="margin-bottom:10px;">Text Annotation <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fpr-text.xml" class="btn btn-default">Launch</a>
+<li style="margin-bottom:10px;">Text Annotation {{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/pr-text.xml"
+{{< /launch >}}
 </li>
-<li style="margin-bottom:10px;">Displayed Area <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fpr-area.xml" class="btn btn-default">Launch</a>
+<li style="margin-bottom:10px;">Displayed Area {{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/pr-area.xml"
+{{< /launch >}}
 </li>
-<li style="margin-bottom:10px;">Modality LUT PState <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fpr-mlut.xml" class="btn btn-default">Launch</a>
+<li style="margin-bottom:10px;">Modality LUT PState {{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/pr-mlut.xml"
+{{< /launch >}}
 </li>
-<li style="margin-bottom:10px;">VOI LUT PState <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fpr-vlut.xml" class="btn btn-default">Launch</a>
+<li style="margin-bottom:10px;">VOI LUT PState {{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/pr-vlut.xml"
+{{< /launch >}}
 </li>
-<li style="margin-bottom:10px;">Presentation LUT PState <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fpr-plut.xml" class="btn btn-default">Launch</a>
+<li style="margin-bottom:10px;">Presentation LUT PState {{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/pr-plut.xml"
+{{< /launch >}}
 </li>
-<li style="margin-bottom:10px;">Combined LUT PState <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fpr-clut.xml" class="btn btn-default">Launch</a>
+<li style="margin-bottom:10px;">Combined LUT PState {{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/pr-clut.xml"
+{{< /launch >}}
 </li>
-<li style="margin-bottom:10px;">Spatial Transformation <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fpr-spatial.xml" class="btn btn-default">Launch</a>
+<li style="margin-bottom:10px;">Spatial Transformation {{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/pr-spatial.xml"
+{{< /launch >}}
 </li>
-<li style="margin-bottom:10px;">Overlay <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fpr-overlay.xml" class="btn btn-default">Launch</a>
+<li style="margin-bottom:10px;">Overlay {{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/pr-overlay.xml"
+{{< /launch >}}
 </li>
-<li style="margin-bottom:10px;">Graphics Annotation <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fpr-graphics.xml" class="btn btn-default">Launch</a>
+<li style="margin-bottom:10px;">Graphics Annotation {{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/pr-graphics.xml"
+{{< /launch >}}
 </li>
-<li style="margin-bottom:10px;">Complex Combination <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fpr-commplex.xml" class="btn btn-default">Launch</a>
+<li style="margin-bottom:10px;">Complex Combination {{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/pr-commplex.xml"
+{{< /launch >}}
 </li>
-<li style="margin-bottom:10px;">GE RA600 Test of CPI GSPS <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fpr-ge.xml" class="btn btn-default">Launch</a>
+<li style="margin-bottom:10px;">GE RA600 Test of CPI GSPS {{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/pr-ge.xml"
+{{< /launch >}}
   {{% notice note %}}
   This sample is produced by a GE workstation and contains some proprietary items (so not all PRs can be applied)
   {{% /notice %}}
@@ -228,7 +292,9 @@ Click on the right icon over the image to select the Presentation State. See [Ho
 ------------------------------------------------------------------------
 
 #### DICOM Key Object Selection (KO)
-<a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fdemo%2Fko.xml" class="btn btn-default">Launch</a>
+{{< launch >}}
+$dicom:get -w "https://nroduit.github.io/samples/demo/ko.xml"
+{{< /launch >}}
 
 {{% notice info %}}
 Click on the right icon over the image to select the Key Object Selection. See [How to build and export DICOM KO](../tutorials/build-ko-pr).

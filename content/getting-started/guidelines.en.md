@@ -48,7 +48,7 @@ google-java-format is still not fully compliant with Java 17. So it requires to 
 
 {{% notice tip %}}
 * It is possible to use a JVM Option (e.g. `--Dweasis.arch=linux-x86-64`) to limit the build of native plugins only to the architecture of the current system (do not use this option when building the distribution).
-* See also building the final [Weasis Distributions]((../building-weasis#building-weasis-distributions))
+* See also building the final [Weasis Distributions]((../building-weasis#building-native-binaries-and-installers))
 {{% /notice %}}  
 
 ### Add a launcher

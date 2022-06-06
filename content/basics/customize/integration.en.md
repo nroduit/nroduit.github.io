@@ -50,7 +50,7 @@ Here are examples with XML manifests or with DICOMWeb RESTful services.
 
 Use [$dicom:get](../../commands/#dicom-get) to load a XML manifest returned by your service.
 {{< highlight text >}}
-$dicom:get -w https://myservice/manifest?studyUID=2.16.756.5.5.100.397184556.14391.1373576413.1508
+$dicom:get -w "https://myservice/manifest?studyUID=2.16.756.5.5.100.397184556.14391.1373576413.1508"
 {{< /highlight >}}
 
 Build an XML file containing the UIDs of the images which will be retrieved from Weasis. There is [XLS](https://github.com/nroduit/Weasis/blob/master/weasis-dicom/weasis-dicom-explorer/src/main/resources/config/manifest.xsd) to validate the content of xml. This output file can be either compressed in gzip or uncompressed. Here is an example:
@@ -95,9 +95,9 @@ From Weasis 2.5 it is possible to have multiple archives (allows to have several
 ### Build an XML manifest (no WADO server)
 This example requires only a WEB server. Weasis will download DICOM files by URLs.
 
-Use [$dicom:get](../../commands/#dicom-get) to load a <a target="_blank" href="https://nroduit.github.io/samples/Lumbar/mf.xml">XML manifest</a> containing direct links <a  href="weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml" class="btn btn-default">Launch</a>
+Use [$dicom:get](../../commands/#dicom-get) to load a <a target="_blank" href="https://nroduit.github.io/samples/Lumbar/mf.xml">XML manifest</a> containing direct links {{< launch >}}$dicom:get -w "https://nroduit.github.io/samples/Lumbar/mf.xml"{{< /launch >}}
 {{< highlight text >}}
-$dicom:get -w https://nroduit.github.io/samples/Lumbar/mf.xml
+$dicom:get -w "https://nroduit.github.io/samples/Lumbar/mf.xml"
 {{< /highlight >}}
 
 {{% notice note %}}
@@ -161,7 +161,9 @@ https://www.orthanc-server.com/static.php?page=dicomweb
 $dicom:rs --url "https://demo.orthanc-server.com/dicom-web" -r "patientID=ozp00SjY2xG"
 {{< /highlight >}}
 
-<a  href="weasis://%24dicom%3Ars%20--url%20%22https%3A%2F%2Fdemo.orthanc-server.com%2Fdicom-web%22%20-r%20%22patientID%3Dozp00SjY2xG%22" class="btn btn-default">Launch</a>
+{{< launch >}}
+$dicom:rs --url "https://demo.orthanc-server.com/dicom-web" -r "patientID=ozp00SjY2xG"
+{{< /launch >}}
 
 Currently, the DICOMWeb service of Orthanc doesn't support:
 
@@ -189,7 +191,9 @@ https://github.com/DICOMcloud/DICOMcloud
 $dicom:rs --url "https://dicomcloud.azurewebsites.net/api" -r "studyUID=1.3.6.1.4.1.14519.5.2.1.4429.7055.198257099234774234268879426857"
 {{< /highlight >}}
 
-<a  href="weasis://%24dicom%3Ars%20--url%20%22https%3A%2F%2Fdicomcloud.azurewebsites.net%2Fapi%22%20-r%20%22studyUID%3D1.3.6.1.4.1.14519.5.2.1.4429.7055.198257099234774234268879426857%22" class="btn btn-default">Launch</a>
+{{< launch >}}
+$dicom:rs --url "https://dicomcloud.azurewebsites.net/api" -r "studyUID=1.3.6.1.4.1.14519.5.2.1.4429.7055.198257099234774234268879426857"
+{{< /launch >}}
 
 {{% notice note %}}
 The demo server is no longer accessible.
