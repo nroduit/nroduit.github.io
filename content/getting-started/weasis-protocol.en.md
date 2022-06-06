@@ -21,17 +21,17 @@ Some web frameworks such as the wiki or the URL field of some browsers only supp
 {{< tabs >}}
 {{% tab name="Windows" %}}
 {{< highlight shell >}}
-start weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml
+start weasis://%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml%22
 {{< /highlight >}}
 {{% /tab %}}
 {{% tab name="Linux" %}}
 {{< highlight shell >}}
-xdg-open weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml
+xdg-open weasis://%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml%22
 {{< /highlight >}}
 {{% /tab %}}
 {{% tab name="Mac OS" %}}
 {{< highlight shell >}}
-open weasis://%24dicom%3Aget%20-w%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml
+open weasis://%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml%22
 {{< /highlight >}}
 {{% /tab %}}
 {{< /tabs >}}
@@ -50,14 +50,16 @@ To build an URI (weasis://path) without weasis-pacs-connector, you must choose o
 
 1. Use [$dicom:get](../../basics/commands/#dicomget) to load an image from URL
 {{< highlight text >}}
-$dicom:get -r https://nroduit.github.io/samples/us-palette.dcm
+$dicom:get -r "https://nroduit.github.io/samples/us-palette.dcm"
 {{< /highlight >}}
 2. Format the URI path with a URL encoder
 {{< highlight text >}}
-%24dicom%3Aget%20-r%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fus-palette.dcm
+%24dicom%3Aget+-r+%22https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fus-palette.dcm%22
 {{< /highlight >}}
 3. Make a link by adding "weasis://" at the beginning
-<a  href="weasis://%24dicom%3Aget%20-r%20https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fus-palette.dcm" class="btn btn-default">Open the remote image</a>
+{{< launch title="Open the remote image" >}}
+$dicom:get -r "https://nroduit.github.io/samples/us-palette.dcm"
+{{< /launch >}}
 
 {{% notice tip %}}
 To load multiple remote images, it is recommended to use a manifest listing the references of the images to be loaded. The easiest way to dynamically build this manifest is to use <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector</a>. However, it is possible to build it differently with the [following instructions](../../basics/customize/integration/#build-an-xml-manifest).
@@ -67,23 +69,23 @@ To load multiple remote images, it is recommended to use a manifest listing the 
 
 If you use weasis-pacs-connector, please refer to <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis">Launch Weasis</a>.
 
-* Use [$dicom:get](../../basics/commands/#dicomget) to load a static XML manifest containing direct links (without WADO server) <a  href="weasis://%24dicom%3Aget%20-w%20%22https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml%22" class="btn btn-default">Launch</a>
+* Use [$dicom:get](../../basics/commands/#dicomget) to load a static XML manifest containing direct links (without WADO server) {{< launch >}}$dicom:get -w "https://nroduit.github.io/samples/Lumbar/mf.xml"{{< /launch >}}
 {{< highlight shell >}}
 $dicom:get -w "https://nroduit.github.io/samples/Lumbar/mf.xml"
 {{< /highlight >}}
-* Use [$dicom:rs](../../basics/commands/#dicomrs) to load DICOM files with DICOMWeb RESTful services (see [other examples](../../basics/customize/integration/#download-directly-with-dicomweb-restful-services)) <a  href="weasis://%24dicom%3Ars%20--url%20%22https%3A%2F%2Fdemo.orthanc-server.com%2Fdicom-web%22%20-r%20%22patientID%3D5Yp0E%22" class="btn btn-default">Launch</a>
+* Use [$dicom:rs](../../basics/commands/#dicomrs) to load DICOM files with DICOMWeb RESTful services (see [other examples](../../basics/customize/integration/#download-directly-with-dicomweb-restful-services)) {{< launch >}}$dicom:rs --url "https://demo.orthanc-server.com/dicom-web" -r "patientID=5Yp0E"{{< /launch >}}
 {{< highlight shell >}}
 $dicom:rs --url "https://demo.orthanc-server.com/dicom-web" -r "patientID=5Yp0E"
 {{< /highlight >}}
-* Use [$dicom:get](../../basics/commands/#dicomget) to load an image from URL and [remove all](../../basics/commands/#dicomclose) the previous images if Weasis is already open <a  href="weasis://%24dicom%3Aclose%20--all%20%24dicom%3Aget%20-r%20%22https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fus-palette.dcm%22" class="btn btn-default">Launch</a>
+* Use [$dicom:get](../../basics/commands/#dicomget) to load an image from URL and [remove all](../../basics/commands/#dicomclose) the previous images if Weasis is already open {{< launch >}}$dicom:close --all $dicom:get -r "https://nroduit.github.io/samples/us-palette.dcm"{{< /launch >}}
 {{< highlight shell >}}
 $dicom:close --all $dicom:get -r "https://nroduit.github.io/samples/us-palette.dcm"
 {{< /highlight >}}
-* Use [$dicom:get](../../basics/commands/#dicomget) to load multiple local folders and a remote image <a  href="weasis://%24dicom%3Aget%20-l%20%22D%3A%2FDICOM%2FOverlay%22%20-l%20%22D%3A%2FDICOM%2FShutter%22%20-r%20%22https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fus-palette.dcm%22" class="btn btn-default">Launch</a>
+* Use [$dicom:get](../../basics/commands/#dicomget) to load multiple local folders and a remote image {{< launch >}}$dicom:get -l "D:/DICOM/Overlay" -l "D:/DICOM/Shutter" -r "https://nroduit.github.io/samples/us-palette.dcm"{{< /launch >}}
 {{< highlight shell >}}
 $dicom:get -l "D:/DICOM/Overlay" -l "D:/DICOM/Shutter" -r "https://nroduit.github.io/samples/us-palette.dcm"
 {{< /highlight >}}
-* Use [$image:get](../../basics/commands/#imageget) to load a non DICOM image <a  href="weasis://%24image%3Aget%20-u%20%22https%3A%2F%2Fuser-images.githubusercontent.com%2F993975%2F59107662-6c9ed300-8939-11e9-83ee-28f2725f4ae1.jpg%22" class="btn btn-default">Launch</a>
+* Use [$image:get](../../basics/commands/#imageget) to load a non DICOM image {{< launch >}}$image:get -u "https://user-images.githubusercontent.com/993975/59107662-6c9ed300-8939-11e9-83ee-28f2725f4ae1.jpg"{{< /launch >}}
 {{< highlight shell >}}
 $image:get -u "https://user-images.githubusercontent.com/993975/59107662-6c9ed300-8939-11e9-83ee-28f2725f4ae1.jpg"
 {{< /highlight >}}
@@ -101,11 +103,11 @@ The command for modifying the configuration at launch is `$weasis:config` which 
 
 Here are some examples that modify the launcher properties without using <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis">weasis-pacs-connector</a>:
 
-* Configuration for launching Weasis Dicomizer <a  href="weasis://%24weasis%3Aconfig%20pro%3D%22felix.extended.config.properties%20file%3Aconf%2Fext-dicomizer.properties%22%20pro%3D%22gosh.port%2017181%22" class="btn btn-default">Launch</a>
+* Configuration for launching Weasis Dicomizer {{< launch >}}$weasis:config pro="felix.extended.config.properties file:conf/ext-dicomizer.properties" pro="gosh.port 17181"{{< /launch >}}
 {{< highlight shell >}}
 $weasis:config pro="felix.extended.config.properties file:conf/ext-dicomizer.properties" pro="gosh.port 17181"
 {{< /highlight >}}
-* Change the user, by default is the one of the current system session. The local preferences are associated to a user. <a  href="weasis://%24weasis%3Aconfig%20pro%3D%22weasis.user%20user2%22" class="btn btn-default">Launch</a>
+* Change the user, by default is the one of the current system session. The local preferences are associated to a user. {{< launch >}}$weasis:config pro="weasis.user user2"{{< /launch >}}
 {{< highlight shell >}}
 $weasis:config pro="weasis.user user2"
 {{< /highlight >}}

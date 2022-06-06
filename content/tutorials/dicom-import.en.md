@@ -31,7 +31,7 @@ Select a way to import DICOM
   * Search recursively: when this option is activated the import takes into account the subdirectories
   * Open in new tab: it allows to manage the way new tabs are opened
 * DICOM ZIP:
-  * Select: browse a DICOM zip file
+  * Select: browse a DICOM zip file. When the archive file is encrypted, a password prompt is displayed.
   * Open in new tab: it allows to manage the way new tabs are opened.
 * DICOMDIR: from a DICOM CD/DVD or a folder containing a DICOMDIR
   * Path: browse a folder containing a DICOMDIR

@@ -22,66 +22,76 @@ In order to clone the repository, first install GIT and either clone using a gra
 git clone https://github.com/nroduit/Weasis.git
 {{< /highlight >}}
 
-{{% notice warning %}}
-The trunk is not a stable version and snapshot version is not retained in the cache for the web distribution (it means the files will be downloaded every time)
-{{% /notice %}}
-
-Check out a tag version to build a stable version, see the <a target="_blank" href="https://github.com/nroduit/Weasis/tags">tag list</a>.
-
-{{< highlight shell >}}
-git checkout <TAG_NAME>
-{{< /highlight >}}
-
 ### Building all Plug-ins
 
-- Go in the *Weasis* directory, compile and install all the plug-ins in the local Maven repository
+- Go in the *Weasis* directory, compile and install all the plug-ins in the local Maven repository:
 {{< highlight shell >}}
 mvn clean install
 {{< /highlight >}}
 
-
-### Building Weasis Distributions
-
-{{% notice note %}}
-The native installer will progressively replace the portable and the web distribution. It uses the [weasis protocol](../../getting-started/weasis-protocol) (which not requires jar signing) instead of Java Web Start which has been removed from <a target="_blank" href="https://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html#JDK-8185077">Java 11 release</a> and because the end of public Oracle Java 8 updates from April 2019.<br>
-The documentation for building the native installer we be available from Weasis 4.
-{{% /notice %}}
-
-- Requires installing all the plug-ins in the local Maven repository as described in the item above.
+- Package the distribution (output files are located in `target/native-dist/`) {{< badge "v4.0.0" >}} :
 {{< highlight shell >}}
 mvn -P compressXZ -f weasis-distributions clean package
 {{< /highlight >}}
 {{% notice tip %}}
-**-P compressXZ**: Option for compressing the packages in <a target="_blank" href="https://en.wikipedia.org/wiki/XZ_Utils">xz</a>, only from Weasis 3.6.0. The compression pack200 is not supported anymore (removed from Java 14), before 3.6.0 the profile was **-P pack200**.<br>
+**-P compressXZ**: Option for compressing the packages in [xz](https://en.wikipedia.org/wiki/XZ_Utils), only from Weasis 3.6.0. The compression pack200 is not supported anymore (removed from Java 14), before 3.6.0 the profile was **-P pack200**.<br>
 {{% /notice %}}
-{{% notice warning %}}
-For the WEB distribution using Java Webstart, it is required to sign jar files with your **own certificate** (by replacing values in the command below with your **own values**). A trust-worthy certificate from a certificate authority is  <a target="_blank" href="https://blogs.oracle.com/java-platform-group/entry/code_signing_understanding_who_and">required</a> to run Java Web Start applications. A self-signed certificate generate by keytool will always display a security warning message.
-{{% /notice %}}
-The parameters must be placed in the maven user setting or has to be the options in the Maven command:
-{{< highlight bash >}}
-$ mvn clean package -Djarsigner.alias="your_alias" -Djarsigner.storepass="your_pwd" -Djarsigner.keystore="your_path/keystore" -Dportable=true -P compressXZ
-{{< /highlight >}}
 {{% notice tip %}}
-For production, version must not end with SNAPSHOT (otherwise packages will not be kept in cache). So to remove SNAPASHOT or to make your own release (for avoiding package mix-up in cache), modify the changelist property. From the Weasis root folder, execute:
+**-P purgeI18nPackage**: Option to delete the translation package in the local maven repository (active by default). To disable this option, add `-` before the profile:
+{{< highlight bash >}}
+mvn -P compressXZ,-purgeI18nPackage -f weasis-distributions clean package
+{{< /highlight >}}
 {{% /notice %}}
-{{< highlight shell >}}
-$ mvn clean install -Dchangelist=-mybuild
-$ mvn clean package -Dchangelist=-mybuild -Dportable=true -P compressXZ -f weasis-distributions
-{{< /highlight >}}
-
-
-<!-- -->
-
--  Options for building the portable distribution.
-    - By default, the executable on Windows runs only a single instance (from Weasis 2.0). To disable single instance in the portable version, set windowsName property empty.
-{{< highlight shell >}}
-$ mvn clean package -Dportable=true -DwindowsName=
-{{< /highlight >}}
-    -  On 64-bit system, it requires installing the 32-bit compatibility libraries to build the windows executable. On Linux, you need to install **ia32-libs** package.
 {{% notice warning %}}
-Do not place the sources in a path that contains directories with blanks or national characters, the compilation of the win32 executable can fail.
+For production, version must not be SNAPSHOT (otherwise packages will not be kept in cache). So to remove SNAPASHOT or to make your own release (for avoiding package mix-up in cache), modify the changelist property. From the Weasis root folder, execute:
+{{< highlight shell >}}
+mvn -Dchangelist=-mybuild-beta clean install
+mvn -Dchangelist=-mybuild-beta -P compressXZ -f weasis-distributions clean package
+{{< /highlight >}}
 {{% /notice %}}
 
-- The distribution files are located in:
-    - target/web-dist/
-    - target/portable-dist/
+
+### Building native binaries and installers
+
+Since {{< badge "v4.0.0" >}} , the native installer has completely replaced the portable and the Java Webstart distributions.
+
+The [official build](https://github.com/nroduit/Weasis/blob/master/.github/workflows/build-installer.yml) is done by Github actions with [GitHub-hosted runners](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners) (Linux, Mac OS and Windows). 
+
+However, it is possible to run a local script `weasis-distributions/script/package-weasis.sh` on most systems but without guarantee because the system must have a correct configuration of several tools (see [jpackage prerequisites](https://docs.oracle.com/en/java/javase/18/jpackage/packaging-overview.html)).
+
+- From the Weasis root folder, unzip the package built in the previous step:
+{{< tabs >}}
+{{% tab name="Linux" %}}
+{{< highlight shell >}}
+unzip weasis-distributions/target/native-dist/weasis-native.zip -d weasis-distributions/target/native-dist/weasis-native/
+{{< /highlight >}}
+{{% /tab %}}
+{{< /tabs >}}
+- Build only the native binaries (without installer)
+{{< tabs >}}
+{{% tab name="Linux" %}}
+{{< highlight shell >}}
+weasis-distributions/script/package-weasis.sh --input ./weasis-distributions/target/native-dist/weasis-native --output build-dist --no-installer --jdk /home/.jdks/temurin-18.0.1/
+{{< /highlight >}}
+{{% /tab %}}
+{{< /tabs >}}
+- Build only the native binaries and the installer
+{{< tabs >}}
+{{% tab name="Linux" %}}
+{{< highlight shell >}}
+weasis-distributions/script/package-weasis.sh --input ./weasis-distributions/target/native-dist/weasis-native --output build-installer --jdk /home/.jdks/temurin-18.0.1/
+{{< /highlight >}}
+{{% /tab %}}
+{{< /tabs >}}
+
+{{% notice note %}}
+In the commands above, adapt the options `--output` and `--jdk` to your configuration.<br>
+In order to see the use of the script and its options, run:
+{{< highlight shell >}}
+weasis-distributions/script/package-weasis.sh --help
+{{< /highlight >}}
+{{% /notice %}}
+
+{{% notice tip %}}
+On Windows the bash script must be executed with Git Bash or Cygwin. Avoid having spaces in the input and output paths.
+{{% /notice %}}

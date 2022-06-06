@@ -14,21 +14,27 @@
 {{ if (eq $elem_index "assets") }}
     {{ range $burl, $val := sort $elem_val "content_type" }}
     {{ $package := path.Ext $val.name }}
-    {{ $arch := printf "%s %s-bit" (cond (or (in $val.name "aarch") (in $val.name "arm")) "arm" "x86") (cond (or (in $val.name "64") (eq $package ".pkg") ) "64" "32") }}
-    {{ $system := cond (eq $package ".msi") "Windows" (cond (eq $package ".pkg") "Mac OS" "Linux") }}
-    {{ $icon := cond (eq $package ".msi") "microsoft" (cond (eq $package ".pkg") "apple" "linux") }}
-    <tr>
-      <td align="left"><i class='fab fa-{{ $icon }}' style='font-size:24px'></i> {{ $system }}</td>
-      <td align="left">{{ $arch }}</td>
-      <td align="left">{{ upper ( substr $package 1 ) }}</td>
-      <td align="left">{{  printf "%.1f MB"  (div $val.size 1000000) }}</td>
-      <td align="left"><a  href="{{ $val.browser_download_url }}" target="_blank" class="btn btn-default">{{ $val.name }} <i class="fa fa-download"></i></a></td>
-      <td align="left">{{ cond (eq $package ".msi") "Requires Windows 7, 8 10 or 11"
-        (cond (eq $package ".pkg") (cond (eq $arch "arm 64-bit") "Requires Mac OS 11 or higher" "Requires Mac OS 10.11 or higher" )
-        (cond (eq $arch "arm 32-bit") "Requires GLIBC_2.7. Only tested with Raspberry Pi 4"
-        (cond (eq $arch "arm 64-bit") "Requires GLIBC_2.27" "Requires GLIBC_2.14" )))
-        }}</td>
-    </tr>
+    {{ if or (eq $package ".msi") (eq $package ".deb") (eq $package ".rpm") (eq $package ".pkg") }}
+      {{ $arch := printf "%s %s-bit" (cond (or (in $val.name "aarch") (in $val.name "arm")) "arm" "x86") (cond (or (in $val.name "64") (eq $package ".pkg") ) "64" "32") }}
+      {{ $system := cond (eq $package ".msi") "Windows" (cond (eq $package ".pkg") "Mac OS" "Linux") }}
+      {{ $icon := cond (eq $package ".msi") "microsoft" (cond (eq $package ".pkg") "apple" "linux") }}
+      <tr>
+        <td align="left"><i class='fab fa-{{ $icon }}' style='font-size:24px'></i> {{ $system }}</td>
+        <td align="left">{{ $arch }}</td>
+        <td align="left">{{ upper ( substr $package 1 ) }}</td>
+        <td align="left">{{ printf "%.1f MB"  (div $val.size 1000000) }}</td>
+        <td align="left">
+        <span class="btn cstyle transparent">
+          <a href="{{ $val.browser_download_url }}" target="_blank">{{ $val.name }} <i class="fa-fw fas fa-download"></i></a>
+        </span>
+        </td>
+        <td align="left">{{ cond (eq $package ".msi") "Requires Windows 7, 8 10 or 11"
+          (cond (eq $package ".pkg") (cond (eq $arch "arm 64-bit") "Requires Mac OS 11 or higher" "Requires Mac OS 10.11 or higher" )
+          (cond (eq $arch "arm 32-bit") "Requires GLIBC_2.7. Only tested with Raspberry Pi 4"
+          (cond (eq $arch "arm 64-bit") "Requires GLIBC_2.27" "Requires GLIBC_2.14" )))
+          }}</td>
+      </tr>
+      {{ end }}
     {{ end }}
 {{ end }}
 {{ end }}

@@ -1,0 +1,10 @@
+{{- $_hugo_config := `{ "version": 1 }` }}
+{{- $cmd := trim .Inner "\n" }}
+{{- $style := .Get "style" | default "transparent" }}
+{{- $title := .Get "title" | default "Launch" }}
+<span class="btn cstyle {{ $style }}">
+  <a href="weasis://{{ urlquery $cmd }}" class="no-lightbox">
+    <i class="fa-fw fas fa-play"></i>
+    {{ $title }}
+  </a>
+</span>
