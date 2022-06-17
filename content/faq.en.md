@@ -32,18 +32,18 @@ The executable (viewer-win32.exe) allows to embed a JRE in the relative director
 
 The viewer loads automatically images from DICOMDIR or from directories configured in "weasis/conf/config.properties (by default `weasis.portable.dicom.directory=dicom,DICOM,IMAGES,images`).
 
-For burning studies with Weasis, and additionnal plugin must be activated. In the web distribution, add weasis-ext.war. In the portable distribution, 1) uncompress weasis-ext.war, 2) copy weasis-isowriter-x.x.x.jar into weasis-portable/weasis/, 3) replace the file conf/ext-config.properties, 4) edit ext-config.properties and modify ${weasis.codebase.ext.url} by ${weasis.codebase.url}
+For burning studies with Weasis, and additional plugin must be activated. In the web distribution, add weasis-ext.war. In the portable distribution, 1) uncompress weasis-ext.war, 2) copy weasis-isowriter-x.x.x.jar into weasis-portable/weasis/, 3) replace the file conf/ext-config.properties, 4) edit ext-config.properties and modify ${weasis.codebase.ext.url} by ${weasis.codebase.url}
 
 For burning Weasis with dcm4chee-cdw, look at [Write weasis-portable to DICOM CDs with dcm4chee-cdw](../old/dcm4chee/#write-weasis-portable-to-dicom-cds-with-dcm4chee-cdw).
 
 ### How to enable Weasis logging? ###
 
-Starting with Weasis 3.5, a boot log file is always written in ${user.home}/.weasis/log/boot-x.log to trace the boot configuration. A default.log file in the same folder can trace all the Weasis activities; the latter must be activated:
+Starting with Weasis 3.5, a boot log file is always written in <user.home>/.weasis/log/boot-x.log to trace the boot configuration. A default.log file in the same folder can trace all the Weasis activities; the latter must be activated:
 * From *File > Preferences > General* enable *Rolling log*, select a log level and a stacktrace limit (DEBUG and empty (unlimited stacktrace lines) are recommended for investigating problems).
 * The default logging configuration comes from config.properties or ext-config.properties, see [Weasis Preferences](../basics/customize/preferences).
 
 {{% notice tip %}}
-To determine the path of ${user.home}/.weasis go to the *Help > About Weasis* menu and find the property weasis.path in the System Information tab.
+In order to determine the path of <user.home>/.weasis go to the *Help > About Weasis* menu and find the property weasis.path in the System Information tab.
 {{% /notice %}}
 
 ### Is it possible to download DICOM files without having a WADO server? ###

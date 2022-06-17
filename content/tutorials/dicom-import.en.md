@@ -22,7 +22,9 @@ On Windows only the files with the extension ".dcm" are associated with Weasis. 
 
 ### From Weasis menu or toolbar
 
-From the main menu, open File > Import > DICOM or from the first import button in the toolbar.
+From the main menu, open File > Import > DICOM or from the first import button in the toolbar. ![Open toolbar](/tuto/dicom-open-icon.png?classes=shadow)
+
+In order to import DICOM CD/DVD go the main menu, open File > Import > DICOM CD or from the second import button in the toolbar.
 
 Select a way to import DICOM
 
