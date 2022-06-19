@@ -22,7 +22,7 @@ Edit this page with a pull request or send a message to [@nroduit](https://githu
   [PACS for Bhutan: a cost effective open source architecture for emerging countries](https://link.springer.com/article/10.1007%2Fs13244-016-0512-7)
 
 - **Weasis plugin for quantitative analysis**<br>
-  [A Response Assessment Platform for Development and Validation of Imaging Biomarkers in Oncology](https://tomography.org/volume-2/issue-4-december/research-articles/j-tom-2016-00223)
+  [A Response Assessment Platform for Development and Validation of Imaging Biomarkers in Oncology](https://www.researchgate.net/publication/326619646_A_Response_Assessment_Platform_for_Development_and_Validation_of_Imaging_Biomarkers_in_Oncology)
 
 - **Weasis UI driven by Kinect**
    - [Kinect in the operating room](https://www.youtube.com/watch?v=AeS12uMKvrE)

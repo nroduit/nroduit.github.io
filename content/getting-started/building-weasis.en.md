@@ -75,7 +75,7 @@ weasis-distributions/script/package-weasis.sh --input ./weasis-distributions/tar
 {{< /highlight >}}
 {{% /tab %}}
 {{< /tabs >}}
-- Build only the native binaries and the installer
+- Build the native binaries and the installer
 {{< tabs groupId="build-native" >}}
 {{% tab name="Bash" %}}
 {{< highlight shell >}}
