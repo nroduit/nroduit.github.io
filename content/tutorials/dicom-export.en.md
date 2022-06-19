@@ -57,3 +57,15 @@ Multiframe images are exported by adding a number to the end of the file name.
 2. Select the destination node (either a DICOM node or a DICOMWeb node)
 3. Select the patient/study/series/instance to export. Note: [series created by Weasis](../build-ko-pr/) have a flag "NEW"
 4. Send the selection to the destination and close the Window
+
+#### CD/DVD Image
+
+![Export DICOM](/tuto/dicom-export-cd.png?classes=shadow&width=750)
+1. Select the *CD/DVD Image* item
+2. Choose the exporting options
+   * Transcoding: It allows to change the DICOM transfer syntax. Use this option only if you understand well what you are doing.
+   * Generate new unique identifiers: Create new UIDs for some attributes. For an export, the consistency between UIDs and their references is preserved.
+3. *Add JPEG images* allows extracting the images and the encapsulated files (video, audio and PDF) into a JPEG folder
+4. *Add Weasis* allows embedding the viewer into the iso image. This option is only possible on Windows.
+5. Select the patient/study/series/instance to export
+6. Export the selection and close the Window

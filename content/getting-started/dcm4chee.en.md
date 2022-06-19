@@ -8,9 +8,6 @@ weight: 10
 This page describes how installing Weasis to be the default web viewer of dcm4chee web interface. See [How to launch Weasis from any environments](../../basics/customize/integration) to integrate Weasis into your own user interface.
 
 Weasis is launched from the dcm4chee administrative web interface with the [weasis protocol](../weasis-protocol), as shown in the pictures below.
-{{% notice note %}}
-The documentation where Weasis was launched with Java Webstart is still available [here](../../old/dcm4chee).
-{{% /notice %}}
 
 ### For dcm4chee-arc-light
 
