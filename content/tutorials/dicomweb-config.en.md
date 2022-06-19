@@ -25,7 +25,7 @@ Google provides a [Cloud Healthcare API's implementation of DICOMweb](https://cl
 
 1. Select the Google Cloud Healthcare template
 2. Click on *Fill* and optionally edit the name
-3. Enter your *Client ID* and *Client Secret*
+3. Enter your *Client ID* and *Client Secret*, Click on OK and close the other windows. Then open the [DICOM Import](../dicom-import/#from-weasis-menu-or-toolbar) dialog and select the node.
 
 ![Google template](/tuto/dicomweb-google-auth.png?classes=shadow&width=750)
 

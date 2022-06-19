@@ -44,7 +44,7 @@ Select a way to import DICOM
     ![DICOM import archive](/tuto/dicom-import-archive.png?classes=shadow)
     * Archive: select the archive to query
       * With DICOM nodes: classic DIMSE C-Find with C-Move, C-Get or WADO-URI for retrieving DICOM files
-      * With DICOMWeb nodes: QIDO and WADO-RS for retrieving DICOM files
+      * With DICOMWeb nodes: QIDO and WADO-RS for retrieving DICOM files (no other options are required)
     * Retrieve (only with DICOM archive): the protocol to retrieve the images
       * C-MOVE: the classic DIMSE protocol (accepts all sop classes, not recommended for WEB)
       * C-GET: transfer syntaxes are negotiated by each sop classes according a configuration file
@@ -61,6 +61,8 @@ Select a way to import DICOM
 
 {{% notice tip %}}
 When a query is too long, try to click on the *Clear* button in *Search Criteria* in order to cancel the request.
+
+With a DICOMWeb node, a login from a web browser can be required (e.g. login to your Google account). If something goes wrong Weasis may freeze for at least 1 minute waiting for the authorization code.
 {{% /notice %}}
 
 ### From commands
