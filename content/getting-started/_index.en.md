@@ -7,11 +7,11 @@ pre: "<b>1. </b>"
 
 ### Try Weasis now
 
+Please see this [page](download-dicom-viewer) for a complete list of downloads and if you would like an automatic update of Weasis according to your system.<br>
+
 Since version 4, only the distribution with a native installer is maintained to ensure a better user experience in terms of installation, configuration and compatibility. This distribution also allows launching Weasis from a web context using the [weasis protocol](weasis-protocol).
 
 {{< latest-download "deb" >}}
-
-Please consult this [page](download-dicom-viewer) to get the complete list of downloads and if you want an automatic update of the installer package.<br>
 
 For more information on GLIBC versions regarding the life cycle of the different Linux distributions, see this [page](https://gist.github.com/wagenet/35adca1a032cec2999d47b6c40aa45b1#file-glibc-md).
 

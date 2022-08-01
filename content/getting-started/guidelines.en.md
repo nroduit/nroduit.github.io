@@ -26,17 +26,6 @@ Weasis uses [google-java-format](https://github.com/google/google-java-format) a
 - From the Maven panel
 ![Maven Spotless](/images/conf/mvn-spotless.png)
 
-{{% notice warning %}}
-google-java-format is still not fully compliant with Java 17. So it requires to create a Maven launcher with the command `mvn spotless:apply` and add the JVM Options:
-{{< highlight text >}}
---add-exports jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED
---add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED
---add-exports jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED
---add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED
---add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED
-{{< /highlight >}}
-{{% /notice %}}
-
 ### Getting the source and building Weasis
 
 - Getting the Source
