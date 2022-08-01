@@ -83,7 +83,6 @@ title = "Weasis Documentation"
     title = "Weasis Documentation"
     weight = 1
     languageName = "English"
-    landingPageURL = "/"
     landingPageName = "<i class='fas fa-home'></i> Home"
 
 [[Languages.en.menu.shortcuts]]

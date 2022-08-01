@@ -16,6 +16,7 @@ If you want to get automatic updates of the Weasis DICOM viewer then check these
 ### Linux
 - [Flathub repository](https://flathub.org/apps/details/io.github.nroduit.Weasis) (Flatpak package management)
 - [Snapcraft: The app store for Linux](https://snapcraft.io/weasis) (Snap package management)
+- [Arch Linux repository](https://aur.archlinux.org/packages/weasis-bin/)
 
 {{% notice note %}}
 The package management systems above can limit certain functionalities because they work in sandbox mode.
