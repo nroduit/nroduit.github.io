@@ -19,6 +19,8 @@ The zoom factor can be modified from different locations:
 
 {{% notice note %}}
 The zoom function always zooms in/out to the center of the screen regardless of where the cursor is.
+
+Since "Resize to best fit" is the default mode for a view, the image will be centered when scrolling to the next image. You need to change the mode or the zoom factor to keep the image off center when scrolling.
 {{% /notice %}}
 
 ![Zoom tool](/tuto/zoom-actions.jpg?classes=shadow&width=700px)
