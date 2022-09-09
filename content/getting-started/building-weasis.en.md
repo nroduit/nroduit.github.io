@@ -71,7 +71,7 @@ unzip weasis-distributions/target/native-dist/weasis-native.zip -d weasis-distri
 {{< tabs groupId="build-native" >}}
 {{% tab name="Bash" %}}
 {{< highlight shell >}}
-weasis-distributions/script/package-weasis.sh --input ./weasis-distributions/target/native-dist/weasis-native --output build-dist --no-installer --jdk /home/.jdks/temurin-18.0.1/
+weasis-distributions/script/package-weasis.sh --input ./weasis-distributions/target/native-dist/weasis-native --output build-dist --no-installer --jdk /home/.jdks/temurin-18.0.1
 {{< /highlight >}}
 {{% /tab %}}
 {{< /tabs >}}
@@ -79,7 +79,7 @@ weasis-distributions/script/package-weasis.sh --input ./weasis-distributions/tar
 {{< tabs groupId="build-native" >}}
 {{% tab name="Bash" %}}
 {{< highlight shell >}}
-weasis-distributions/script/package-weasis.sh --input ./weasis-distributions/target/native-dist/weasis-native --output build-installer --jdk /home/.jdks/temurin-18.0.1/
+weasis-distributions/script/package-weasis.sh --input ./weasis-distributions/target/native-dist/weasis-native --output build-installer --jdk /home/.jdks/temurin-18.0.1
 {{< /highlight >}}
 {{% /tab %}}
 {{< /tabs >}}
