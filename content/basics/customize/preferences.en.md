@@ -126,7 +126,7 @@ The default resources are located:
 ### How to add DICOM nodes or DICOM printers at the server-side
 
 - From the graphical user interface, configure the DICOM printers (File > Print > DICOM Print) or DICOM nodes (File > Preferences > Dicom node list)
-- Go to he folder ${user.home}/.weasis/data/weasis-dicom-explorer
+- Go to the folder ${user.home}/.weasis/data/weasis-dicom-explorer
 - Copy the desired configuration files: dicomNodes.xml, dicomPrinterNodes.xml, dicomWebNodes.xml and dicomCallingNodes.xml
 - Paste at the root path of resources. For web distribution, unzip, place files and zip again.
 - The new configurations should appear for all the users as non-editable configurations in Weasis.
