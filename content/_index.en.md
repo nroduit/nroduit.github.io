@@ -1,10 +1,10 @@
 ---
 title: "Weasis DICOM medical viewer"
-Description: "Documentation of Weasis - A free application for displaying medical images"
+Description: "General presentation"
 archetype: "home"
-keywords: [ "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer", "clinical viewer", "radiolgical viewer", "linux dicom viewer",  "mac dicom viewer" ]
+keywords: [ "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer", "clinical viewer", "radiological viewer", "linux dicom viewer",  "mac dicom viewer" ]
 ---
-# <center>Weasis Medical Viewer</center>
+# <center>A free/libre DICOM viewer</center>
 
 {{< mkd "description-1.en.md" >}}
 
