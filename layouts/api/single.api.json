@@ -9,5 +9,5 @@
 {{  printf "\"version\": \"%s\"," $elem_val }}
 {{ end -}}
 {{ end -}}
-{{  printf "\"url\": \"%s\"" "https://nroduit.github.io/en/getting-started/download/" }}
+{{  printf "\"url\": \"%s\"" "https://nroduit.github.io/en/getting-started/download-dicom-viewer/" }}
 {{  printf "}" }}
