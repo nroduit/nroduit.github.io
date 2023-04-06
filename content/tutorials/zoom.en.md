@@ -24,7 +24,7 @@ Since "Resize to best fit" is the default mode for a view, the image will be cen
 {{% /notice %}}
 
 ![Zoom tool](/tuto/zoom-actions.jpg?classes=shadow&width=700px)
-
+<br>
 {{% notice tip %}}
 For selecting directly the zoom action of the mouse left button, enter "z" as a shortcut.
 {{% /notice %}}
@@ -53,7 +53,7 @@ Using the mouse wheel on the lens changes the zoom factor. Double-clicking on th
 {{% /notice %}}
 
 ![Lens](/tuto/lens-drawing.jpg?classes=shadow&width=700px)
-
+<br>
 Parameters of the context menu:
 
 * *Synchronize to parent zoom:* When this option is activated, the zoom factor of the lens is permanently adjusted to the zoom factor of the main image (meaningful when using freeze parameters).

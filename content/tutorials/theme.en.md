@@ -11,7 +11,7 @@ keywords: [ "theme", "style", "substance", "dicom viewer", "free dicom viewer", 
 From the main menu, open File > Preferences (Alt + P) and select the desired theme and click on "show" to see a partial preview (1).
 
 ![Preferences](/tuto/theme-prefs.png?classes=shadow)
-
+<br>
 ### How to scale the user interface
 
 It is recommended to adapt the scale factor to the one of the system (2). In this way, Weasis will scale on HiDPI displays as the operating system. On Windows it is the *Display Scaling* preference and on  Linux it is either the display scaling factor or the text scaling factor.

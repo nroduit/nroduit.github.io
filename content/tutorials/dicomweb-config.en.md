@@ -11,7 +11,7 @@ This page explains how to configure a remote archive in DICOMWeb. However, it is
 
 From the main menu, open File > Preferences (Alt + P) and select DICOM node list.
 ![DICOMWeb nodes](/tuto/dicomweb-nodes.png?classes=shadow&width=750)
-
+<br>
 ### Google Cloud Healthcare API
 
 Google provides a [Cloud Healthcare API's implementation of DICOMweb](https://cloud.google.com/healthcare/docs/how-tos/dicomweb).
@@ -22,7 +22,7 @@ Google provides a [Cloud Healthcare API's implementation of DICOMweb](https://cl
 4. Add an authentication by clicking on the *Manager* button and then click on *Add*
 
 ![Google node](/tuto/dicomweb-google-node.png?classes=shadow&width=750)
-
+<br>
 1. Select the Google Cloud Healthcare template
 2. Click on *Fill* and optionally edit the name
 3. Enter your *Client ID* and *Client Secret*, Click on OK and close the other windows. Then open the [DICOM Import](../dicom-import/#from-weasis-menu-or-toolbar) dialog and select the node.
@@ -44,7 +44,7 @@ https://demo.orthanc-server.com/dicom-web
 {{< /highlight >}}
 
 ![Orthanc node](/tuto/dicomweb-orthanc.png?classes=shadow&width=750)
-
+<br>
 ### dcm4chee-arc-light
 
 ### Kheops

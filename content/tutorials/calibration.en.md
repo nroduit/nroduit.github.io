@@ -14,9 +14,9 @@ When the image does not contain a default spatial calibration and it contains a 
 3. Right-click on the selected line and enter the distance on the *Manual Calibration* window
 
 ![Calibration](/tuto/spatial-calibration.jpg?classes=shadow&width=700px)
-
+<br>
 ![Apply Calibration](/tuto/apply-calibration.png?classes=shadow)
-
+<br>
 {{% notice note %}}
 The calibration can be applied only to the current image or to all the images belonging to the series.
 {{% /notice %}}

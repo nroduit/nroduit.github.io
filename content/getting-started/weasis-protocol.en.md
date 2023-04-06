@@ -18,7 +18,7 @@ Requires Weasis 3.5 (or superior) installed on the system with a [native install
 Some web frameworks such as the wiki or the URL field of some browsers only support the standard protocols (http, ftp...). To solve this problem, it is necessary to use a URL redirection starting with http like the one proposed in <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector</a>: `http://<your-host>:8080/weasis-pacs-connector/weasis?patientID=TESTS`
 {{% /notice %}}
 * From the command line:
-{{< tabs >}}
+{{< tabs groupid="launchWeasisProtocol">}}
 {{% tab name="Windows" %}}
 {{< highlight shell >}}
 start weasis://%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml%22

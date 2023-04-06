@@ -57,7 +57,7 @@ Since {{< badge "v4.0.0" >}} , the native installer has completely replaced the 
 
 The [official build](https://github.com/nroduit/Weasis/blob/master/.github/workflows/build-installer.yml) is done by Github actions with [GitHub-hosted runners](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners) (Linux, Mac OS and Windows). 
 
-However, it is possible to run a local script `weasis-distributions/script/package-weasis.sh` on most systems but without guarantee because the system must have a correct configuration of several tools (see [jpackage prerequisites](https://docs.oracle.com/en/java/javase/18/jpackage/packaging-overview.html)).
+However, it is possible to run a local script `weasis-distributions/script/package-weasis.sh` on most systems but without guarantee because the system must have a correct configuration of several tools (see [jpackage prerequisites](https://docs.oracle.com/en/java/javase/20/jpackage/packaging-overview.html)).
 
 - From the Weasis root folder, unzip the package built in the previous step:
 {{< tabs groupId="build-native" >}}

@@ -13,14 +13,14 @@ The DICOM attributes can be displayed either by:
 * clicking on the "Dicom Information" button in the toolbar to open a detached window (B)
 
 ![Tags](/tuto/dicom-attributes.jpg?classes=shadow&width=700px)
-
+<br>
 {{% notice note %}}
 Using the view in the layout (A) allows updating dynamically the DICOM attributes to the current image (e.g. scrolling into the series). The DICOM attributes won't change when opening the detached window (B).
 {{% /notice %}}
 
 When Weasis opens particular DICOM files (e.g. PDF and video) with an external viewer, the DICOM attributes can viewed from the thumbnail context menu (see image below).
 ![Open DICOM PDF tags](/tuto/dicom-attributes-pdf.png?classes=shadow)
-
+<br>
 ## How to find a specific DICOM attribute or value
 
 The Dicom Information window contains two tabs:
@@ -34,7 +34,7 @@ Data element with a [value representation (VR)](https://dicom.nema.org/medical/d
 {{% /notice %}}
 
 ![Search DICOM tags](/tuto/dicom-attributes-search.jpg?classes=shadow)
-
+<br>
 In the image above, we are looking for the word "date". Here are the steps:
 
 1. Select `All DICOM attributes` tab for having all the attributes. 

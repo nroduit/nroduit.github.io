@@ -2,7 +2,7 @@
 title: Get Involved!
 description: How to participate in the Weasis project
 keywords: [ "contribute", "weasis contribution", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
-tags: ["help", "contribute"]
+hidden: true
 ---
 
 ### Report Bugs and Enhancements

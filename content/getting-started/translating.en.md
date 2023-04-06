@@ -8,7 +8,7 @@ weight: 80
 Translation files are hosted and managed on the [Transifex](https://www.transifex.com/weasis/public/) website. Get an account at [Transifex](https://www.transifex.com/signin) and help to translate to your language! If your language is missing, just head over to Transifex and request a new language.
 
 {{% notice warning %}}
-**Text length**: The translations for many languages frequently exceed the length of the corresponding English source. It could be a problem for the layout of graphical components (e.g. buttons).
+**Text length**: The translations for many languages frequently exceed the length of the corresponding English source. It could be a problem for the layout of graphical components (e.g. buttons). Some elements have a character limit on the translation tool.
 {{% /notice %}}
 
 {{% notice tip %}}
@@ -23,7 +23,7 @@ For special words or particular contexts look at the "Instructions" text box (gi
 To obtain daily built packages, see this [page](https://github.com/nroduit/weasis-i18n).
 
 {{% notice note %}}
-That means the weasis-i18n.war file can be deployed at any time, it does not need to follow the Weasis life cycle. The plug-in translation will be updated by Weasis only if the timestamp number has changed. This timestamp is set during the build phase described below.
+That means the translation packages can be deployed at any time, it does not need to follow the Weasis life cycle. With remote packages, the plug-in translation will be updated by Weasis only if the timestamp number has changed. This timestamp is set during the build phase described below.
 {{% /notice %}}
 
 {{% notice info %}}

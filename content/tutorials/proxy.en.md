@@ -16,7 +16,7 @@ The default configuration is *Direct connection (no proxy)* and by clicking on *
 In order to fill in the fields, you must refer to the [Java documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/doc-files/net-properties.html).
 
 ![Proxy configuration](/tuto/proxy-prefs.png?classes=shadow)
-
+<br>
 {{% notice tip %}}
 In some cases it is necessary to restart Weasis.
 {{% /notice %}}

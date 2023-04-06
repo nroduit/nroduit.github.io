@@ -8,10 +8,14 @@
   <clipPath id="clipPath3">
    <path d="m-820-1033h1059v640h-1059z"/>
   </clipPath>
+  <clipPath id="clipPath3-3">
+   <path d="m-820-1033h1059v640h-1059z"/>
+  </clipPath>
  </defs>
+ <rect x="1.271" y="1.7025" width="288.09" height="176.96" fill="#fff" stroke="#59a869" stroke-width=".26458" style="paint-order:stroke fill markers"/>
  <g transform="translate(64.459 -23.229)" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
   <g transform="matrix(.26458 0 0 .26458 158.57 302.38)" fill="#b8b0a3" stroke="#b8b0a3">
-   <rect x="-571.24" y="-585.94" width="134" height="53" rx="4" ry="4" clip-path="url(#clipPath2)" stroke="none"/>
+   <rect x="-571.24" y="-585.94" width="134" height="53" rx="4" ry="4" clip-path="url(#clipPath2)" display="none" stroke="none"/>
   </g>
   <g transform="matrix(.26458 0 0 .26458 158.57 302.38)" fill="#9f9" stroke="#9f9">
    <rect x="-571.24" y="-585.94" width="134" height="53" rx="4" ry="4" clip-path="url(#clipPath3)" stroke="none"/>
@@ -50,25 +54,16 @@
   <g transform="matrix(.26458 0 0 .26458 158.57 302.38)" font-family="sans-serif" font-size="14px" stroke-miterlimit="1.45">
    <text x="-552.19202" y="-985.92139" clip-path="url(#clipPath3)" xml:space="preserve">DICOM SR viewer</text>
    <rect x="-567.24" y="-1017.3" width="152" height="53" rx="4" ry="4" clip-path="url(#clipPath3)" fill="none"/>
-  </g>
-  <g transform="matrix(.26458 0 0 .26458 158.57 302.38)" fill="#b8b0a3" stroke="#b8b0a3">
-   <rect x="-390.39" y="-466.09" width="134" height="53" rx="4" ry="4" clip-path="url(#clipPath2)" stroke="none"/>
-  </g>
-  <g transform="matrix(.26458 0 0 .26458 158.57 302.38)" fill="#7497ff" stroke="#7497ff">
-   <rect x="-390.39" y="-466.09" width="134" height="53" rx="4" ry="4" clip-path="url(#clipPath3)" stroke="none"/>
-  </g>
-  <g transform="matrix(.26458 0 0 .26458 158.57 302.38)" font-family="sans-serif" font-size="14px" stroke-miterlimit="1.45">
-   <text x="-349.15881" y="-434.74649" clip-path="url(#clipPath3)" xml:space="preserve">Core UI</text>
    <rect x="-390.39" y="-466.09" width="134" height="53" rx="4" ry="4" clip-path="url(#clipPath3)" fill="none"/>
   </g>
   <g transform="matrix(.26458 0 0 .26458 158.57 302.38)" fill="#b8b0a3" stroke="#b8b0a3">
    <rect x="-571.24" y="-466.09" width="134" height="53" rx="4" ry="4" clip-path="url(#clipPath2)" stroke="none"/>
   </g>
-  <g transform="matrix(.26458 0 0 .26458 158.57 302.38)" fill="#7497ff" stroke="#7497ff">
-   <rect x="-571.24" y="-466.09" width="134" height="53" rx="4" ry="4" clip-path="url(#clipPath3)" stroke="none"/>
+  <g transform="matrix(.27009 0 0 .26458 161.72 302.38)" fill="#7497ff" stroke="#7497ff">
+   <rect transform="matrix(1.4459 0 0 1 254.72 0)" x="-571.24" y="-466.09" width="134" height="53" rx="4" ry="4" clip-path="url(#clipPath3)" stroke="none"/>
   </g>
   <g transform="matrix(.26458 0 0 .26458 158.57 302.38)" font-family="sans-serif" font-size="14px" stroke-miterlimit="1.45">
-   <text x="-533.89368" y="-434.74649" clip-path="url(#clipPath3)" xml:space="preserve">Core API</text>
+   <text transform="translate(2)" x="-533.89368" y="-434.74649" clip-path="url(#clipPath3)" xml:space="preserve">Core (API and UI)</text>
    <rect x="-571.24" y="-466.09" width="134" height="53" rx="4" ry="4" clip-path="url(#clipPath3)" fill="none"/>
   </g>
   <g transform="matrix(.26458 0 0 .26458 158.57 302.38)" fill="#b8b0a3" stroke="#b8b0a3">
@@ -133,15 +128,19 @@
    <text x="75.048401" y="-898.8374" clip-path="url(#clipPath3)" xml:space="preserve">Custom Viewer</text>
    <rect x="37.541" y="-930.18" width="181" height="53" rx="4" ry="4" clip-path="url(#clipPath3)" fill="none"/>
   </g>
-  <g transform="matrix(.26458 0 0 .26458 158.57 302.38)" fill="#b8b0a3" stroke="#b8b0a3">
-   <rect x="-180.61" y="-934.27" width="145" height="53" rx="4" ry="4" clip-path="url(#clipPath2)" stroke="none"/>
+  <g transform="matrix(.26458 0 0 .26458 158.57 302.38)" fill="#fc9" stroke="#b8b0a3">
+   <rect x="-180.61" y="-934.27" width="145" height="53" rx="4" ry="4" clip-path="url(#clipPath2)" fill="#fc9" stroke="none"/>
   </g>
-  <g transform="matrix(.26458 0 0 .26458 158.57 302.38)" fill="#fc9" stroke="#fc9">
+  <g transform="matrix(.26458 0 0 .26458 158.47 280.41)" fill="#fc9" stroke="#fc9">
    <rect x="-180.61" y="-934.27" width="145" height="53" rx="4" ry="4" clip-path="url(#clipPath3)" stroke="none"/>
   </g>
   <g transform="matrix(.26458 0 0 .26458 158.57 302.38)" font-family="sans-serif" font-size="14px" stroke-miterlimit="1.45">
    <text x="-156.20441" y="-902.92139" clip-path="url(#clipPath3)" xml:space="preserve">Image Viewer</text>
    <rect x="-180.61" y="-934.27" width="145" height="53" rx="4" ry="4" clip-path="url(#clipPath3)" fill="none"/>
+  </g>
+  <g transform="matrix(.26458 0 0 .26458 158.37 280.62)" font-family="sans-serif" font-size="14px" stroke-miterlimit="1.45">
+   <text transform="translate(8.0001)" x="-156.20441" y="-902.92139" clip-path="url(#clipPath3-3)" xml:space="preserve">ECG Viewer</text>
+   <rect x="-180.61" y="-934.27" width="145" height="53" rx="4" ry="4" clip-path="url(#clipPath3-3)" fill="none"/>
   </g>
   <g transform="matrix(.26458 0 0 .26458 158.57 302.38)" fill="#b8b0a3" stroke="#b8b0a3">
    <rect x="-385.24" y="-1017.3" width="161.09" height="53" rx="4" ry="4" clip-path="url(#clipPath2)" stroke="none"/>
@@ -239,7 +238,7 @@
    <rect x="-385.24" y="-934.27" width="161.09" height="53" rx="4" ry="4" clip-path="url(#clipPath3)" stroke="none"/>
   </g>
   <g transform="matrix(.26458 0 0 .26458 158.57 302.38)" font-family="sans-serif" font-size="14px" stroke-miterlimit="1.45">
-   <text x="-345.99579" y="-902.92139" clip-path="url(#clipPath3)" xml:space="preserve">MPR Viewer</text>
+   <text x="-345.99579" y="-902.92139" clip-path="url(#clipPath3)" xml:space="preserve">3D Viewer</text>
    <rect x="-385.24" y="-934.27" width="161.09" height="53" rx="4" ry="4" clip-path="url(#clipPath3)" fill="none"/>
   </g>
   <g transform="matrix(.26458 0 0 .26458 158.57 302.38)" fill="none" stroke="#c0c0c0" stroke-dasharray="12, 9, 0, 9" stroke-linecap="round" stroke-miterlimit="1.45" stroke-width="3">
@@ -249,4 +248,5 @@
    <path d="m-792.69-612.84h999.76" clip-path="url(#clipPath3)"/>
   </g>
  </g>
+ <rect x="-126.87" y="-16.13" width=".94619" height=".37848" rx="1.0583" ry=".37848" fill="#fff" stroke="#59a869" stroke-width=".26458" style="paint-order:stroke fill markers"/>
 </svg>

@@ -1,7 +1,8 @@
 ---
 title: Launch Weasis
 description: Various DICOM samples for testing the viewer capabilities
-keywords: [ "weasis demo", "dicom sammples", "dicom examples", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
+keywords: [ "weasis demo", "dicom samples", "dicom examples", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
+hidden: true
 ---
 
 ## <center>Demo with multiple DICOM Samples</center>
@@ -78,6 +79,7 @@ $dicom:get -w "https://nroduit.github.io/samples/demo/compression3.xml"
 {{< /launch >}}
 </li>
 </ul>
+
 ------------------------------------------------------------------------
 
 #### Photometric Interpretation
@@ -289,6 +291,7 @@ $dicom:get -w "https://nroduit.github.io/samples/demo/pr-ge.xml"
   {{% /notice %}}
 </li>
 </ul>
+
 ------------------------------------------------------------------------
 
 #### DICOM Key Object Selection (KO)

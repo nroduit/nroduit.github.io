@@ -26,7 +26,7 @@ The values on the x-axis represent the modality values (e.g. Hounsfield for CT) 
 {{% /notice %}}
 
 ![Open Histogram](/tuto/histogram.jpg?classes=shadow&width=700px)
-
+<br>
 {{% notice tip %}}
 To display the LUT on the image, select it from the Display panel on the right.
 {{% /notice %}}
@@ -45,7 +45,7 @@ It is possible to display the histogram of a region with the measurement tools. 
 {{% /notice %}}
 
 ![Histogram parameters](/tuto/color-histogram.png?classes=shadow&width=700px)
-
+<br>
 {{% notice tip %}}
 Clicking on the histogram bin allows displying the number of occurences and the modality range values of the selected bin.
 {{% /notice %}}

@@ -14,7 +14,7 @@ The DICOM Explorer is the panel on the left that displays the [Patient/Study/Ser
 The data displayed in the DICOM Explorer can be [imported form different ways](../dicom-import).
 
 ![DICOM EXplorer](/tuto/dicom-explorer-level.jpg?classes=shadow&width=700px)
-
+<br>
 #### Patient Level
 
 * Weasis allows multi-patient display. By default, when images are imported a tab with the patient's name opens in the main area.
@@ -32,7 +32,7 @@ The data displayed in the DICOM Explorer can be [imported form different ways](.
 #### Series Level
 
 ![Thumbnails](/tuto/dicom-explorer-series.jpg?classes=shadow&width=700px)
-
+<br>
 * A series is represented by a thumbnail that contains a certain number of images (number displayed at the bottom left).
 * According to [predefined rules](https://github.com/nroduit/Weasis/blob/master/weasis-distributions/resources/series-splitting-rules.xml), some series are separated into sub-series also represented by a thumbnail with a number preceded by '#' in the upper right corner. Series splitting is necessary for the consistency of some tools such as the MPR, cross-lines and synchronization of series.
 * The sorting of the series is done by the serial number and if this last one is not present then in a chronological way by the date of the series or other dates.

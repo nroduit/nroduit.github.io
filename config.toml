@@ -37,7 +37,7 @@ title = "Weasis Documentation"
   disableNextPrev = false
   disableLandingPageButton = true
   titleSeparator = "::"
-  themeVariant = [ "relearn-light", "relearn-dark", "learn", "neon", "blue", "green", "red" ]
+  themeVariant = [ "relearn-dark", "relearn-light" ]
   disableSeoHiddenPages = true
   # this is for the stylesheet genertor to allow for interactivity in mermaid
   # graphs; you usually will not need it and you should remove this for
@@ -100,11 +100,6 @@ weight = 10
   name = "<i class='fa fa-user-circle'></i> Get Involved!"
   url = "get-involved"
   weight = 20
-
-[[Languages.en.menu.shortcuts]]
-  name = "<i class='fas fa-fw fa-tags'></i> Tags"
-  url = "tags/"
-  weight = 40
 
 [Languages.fr]
 title = "Documentation"

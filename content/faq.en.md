@@ -2,14 +2,15 @@
 title: FAQs
 description: Weasis Frequently Asked Questions
 keywords: [ "weasis faqs", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
-disableToc: true
+hidden: true
 ---
 
 ## <center>Frequently Asked Questions</center>
 
  - [What is Weasis?](#what-is-weasis)
- - [ I have questions, what can I do?](#i-have-questions-what-can-i-do)
+ - [I have questions, what can I do?](#i-have-questions-what-can-i-do)
  - [Can Weasis be used for commercial purposes?](#can-weasis-be-used-for-commercial-purposes)
+ - [How to Cite Weasis in a publication?](#how-to-cite-weasis-in-a-publication)
  - [Why is the Weasis license Eclipse Public License?](#why-is-the-weasis-license-eclipse-public-license)
  - [Can Weasis be incorporated in DICOM CDs or other removable media?](#can-weasis-be-incorporated-in-dicom-cds-or-other-removable-media)
  - [How to enable Weasis logging?](#how-to-enable-weasis-logging)
@@ -29,6 +30,16 @@ On this website you should find help if you are:
 
 ### Can Weasis be used for commercial purposes? ### 
 Weasis can be used for commercial purposes as long as the terms of [the license](https://github.com/nroduit/Weasis/blob/master/LICENSE) are respected.
+
+### How to Cite Weasis in a publication? ###
+Items to include in the citation:
+* Author: Nicolas Roduit
+* Title: Weasis DICOM viewer
+* Version of Weasis
+* URL: https://github.com/nroduit/Weasis
+* Access Date
+
+Example: Roduit, N. Weasis DICOM viewer. Version 4.1.0. https://github.com/nroduit/Weasis (accessed 5 April 2023).
 
 ### Why is the Weasis license Eclipse Public License? ###
 The [Eclipse Public License](https://www.eclipse.org/legal/epl-v20.html) is an [OSI approved](https://www.opensource.org) license and a commercially friendly copyleft license.

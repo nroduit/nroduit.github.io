@@ -53,6 +53,7 @@ Select a way to import DICOM
     * More options: allows to open the preferences to configure the DICOM nodes
   * On Search Criteria tab:
   ![Thumbnails](/tuto/dicom-import-search.png?classes=shadow&width=700px)
+  <br> 
     1. Fill in one or more search criteria. Criteria can be saved and reuse later.
     2. Adapt the limit of replies (optional)
     3. Click on Search

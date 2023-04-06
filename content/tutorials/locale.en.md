@@ -11,7 +11,7 @@ keywords: [ "languages", "locale", "region", "dicom viewer", "free dicom viewer"
 From the main menu, open File > Preferences (Alt + P) and select the desired language and the regional format. The languages available in the list can be partially translated. In this case you can participate in the [translation](../../getting-started/translating) directly from a web portal.
 
 ![Preferences](/tuto/language-prefs.png?classes=shadow)
-
+<br>
 {{% notice note %}}
 Anywhere in the user interface, date and number should be displayed with the selected regional format.
 {{% /notice %}}

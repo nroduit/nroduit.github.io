@@ -22,7 +22,7 @@ Anonymize: It allows you to remove identifying information in overlay
 Export the view according to the original image with some options.
 
 ![Export view](/tuto/dicom-export-view.png?classes=shadow&width=350)
-
+<br>
 * Size: Change the image size in percent
 * Preserve 16-bit per channel: Option to preserve the pixel depth (e.g. 16-bit in PNG/JPEG 2000/TIFF, double values in TIFF). When this option is applied, the pixel values will match with the Modality LUT values (e.g. Hounsfield values). Exporting in JPEG Lossy is only possible when unchecked for 8-bit image.
 * DICOM Pixel Padding: Apply the DICOM pixel padding when checked
@@ -34,6 +34,7 @@ Export the view according to the original image with some options.
 #### Local Device
 
 ![Export DICOM](/tuto/export-ko-pr.png?classes=shadow&width=500)
+<br>
 1. Select *Local Device* item
 2. Choose the exporting options
    ![Export options](/tuto/dicom-export-options.png?classes=shadow&width=350)
@@ -61,6 +62,7 @@ Multiframe images are exported by adding a number to the end of the file name.
 #### CD/DVD Image
 
 ![Export DICOM](/tuto/dicom-export-cd.png?classes=shadow&width=750)
+<br>
 1. Select the *CD/DVD Image* item
 2. Choose the exporting options
    * Transcoding: It allows to change the DICOM transfer syntax. Use this option only if you understand well what you are doing.

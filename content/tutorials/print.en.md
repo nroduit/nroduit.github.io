@@ -14,7 +14,7 @@ The image selection to print must be prepared before calling the print function.
 The layout list is built dynamically according to the window size. So changing the window size ratio will provide other layouts. For instance, with a panoramic screen, you can choose a horizontal layout and then print with a landscape orientation.
 {{% /notice %}}
 
-![Print Layout](/tuto/print/layout.jpg?height=400)
+![Print Layout](/tuto/print/layout.jpg?height=400&classes=shadow)
 
 To fill the layout with images you can change the synchronized mode of series (2):
 
@@ -26,7 +26,7 @@ To fill the layout with images you can change the synchronized mode of series (2
 ### Standard Printer
 From the main menu, open File > Print > Print 2D viewer layout (P).
 
-![standard](/tuto/print/standard.png)
+![standard](/tuto/print/standard.png?classes=shadow)
 
 The meaning of the standard print parameters:
 
@@ -41,8 +41,8 @@ From the main menu, open File > Print > DICOM Print.
 
 In the DICOM Print dialog, you can manage several configurations. For the options meaning, you can refer to the above parameters and <a target="_blank" href="http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.13.3.html">the DICOM print pages</a>.
 
-![DICOM](/tuto/print/dicom.png)
-
+![DICOM](/tuto/print/dicom.png?classes=shadow)
+<br>
 {{% notice note %}}
 The DICOM printer configurations can be distributed at the server side for all the clients, see [preferences](../../basics/customize/preferences/#how-to-add-dicom-nodes-or-dicom-printers-at-the-server-side).
 {{% /notice %}}
