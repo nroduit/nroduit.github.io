@@ -73,8 +73,8 @@ The translation package can be built manually as described below or it is automa
   * Pass the weasis.i18n location into the [launch command](../weasis-protocol/#modify-the-launch-parameters):
 {{< highlight bash >}}
 $weasis:config pro="weasis.i18n <your-uri>"
-$weasis:config pro="weasis.i18n file:/home/weasis-i18n-dist-3.0.0-SNAPSHOT"
-$weasis:config pro="weasis.i18n https://<your-domain>/weasis-i18n-dist-3.0.0"
+$weasis:config pro="weasis.i18n file:/home/weasis-i18n-dist-4.0.0-SNAPSHOT"
+$weasis:config pro="weasis.i18n https://<your-domain>/weasis-i18n-dist-4.0.0"
 {{< /highlight >}}
   * Replace the files in the "bundle-i18n" folder where Weasis is installed (not possible when Weasis is distributed from an application store or the Mac signed package).
 
