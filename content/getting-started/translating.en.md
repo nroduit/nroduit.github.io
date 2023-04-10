@@ -5,7 +5,7 @@ keywords: [ "internationalization", "weasis internationalization", "development"
 weight: 80
 ---
 
-Translation files are hosted and managed on the [Transifex](https://www.transifex.com/weasis/public/) website. Get an account at [Transifex](https://www.transifex.com/signin) and help to translate to your language! If your language is missing, just head over to Transifex and request a new language.
+Translation files are hosted and managed on the [Transifex](https://app.transifex.com/weasis/public/) website. Get an account and help to translate to your language! If your language is missing, just head over to Transifex and request a new language.
 
 {{% notice warning %}}
 **Text length**: The translations for many languages frequently exceed the length of the corresponding English source. It could be a problem for the layout of graphical components (e.g. buttons). Some elements have a character limit on the translation tool.
@@ -28,7 +28,7 @@ That means the translation packages can be deployed at any time, it does not nee
 
 {{% notice info %}}
 Additional projects to obtain a full translation of Weasis:<br>
-The [java-swing-dialogs](https://www.transifex.com/organization/weasis/dashboard/java-swing-dialogs) translations must be updated manually in the weasis-launcher module and [docking-frames](https://www.transifex.com/weasis/docking-frames) translations must be packaged witin the library.
+The [java-swing-dialogs](https://app.transifex.com/weasis/java-swing-dialogs) translations must be updated manually in the weasis-launcher module and [docking-frames](https://app.transifex.com/weasis/docking-frames) translations must be packaged witin the library.
 {{% /notice %}}
 
 ### Prerequisites

@@ -9,10 +9,10 @@ These instructions describe how to build Weasis directly from the Git repository
 
 **Prerequisites**
 
-1. JDK 17 or higher
+1. JDK 20 or higher
 2. Maven 3.5.3 or higher<br>
    If your computer is behind a proxy server, [configure maven](https://maven.apache.org/guides/mini/guide-proxies.html).
-3. Git or directly download source from [GitHub](https://github.com/nroduit/Weasis)
+3. Git
 
 ### Getting the Source
 
@@ -29,7 +29,7 @@ git clone https://github.com/nroduit/Weasis.git
 mvn clean install
 {{< /highlight >}}
 
-- Package the distribution (output files are located in `target/native-dist/`) {{< badge "v4.0.0" >}} :
+- Package `weasis-native.zip` (located in `target/native-dist/`) {{< badge "v4.0.0" >}} :
 {{< highlight shell >}}
 mvn -P compressXZ -f weasis-distributions clean package
 {{< /highlight >}}
@@ -57,40 +57,26 @@ Since {{< badge "v4.0.0" >}} , the native installer has completely replaced the 
 
 The [official build](https://github.com/nroduit/Weasis/blob/master/.github/workflows/build-installer.yml) is done by Github actions with [GitHub-hosted runners](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners) (Linux, Mac OS and Windows). 
 
-However, it is possible to run a local script `weasis-distributions/script/package-weasis.sh` on most systems but without guarantee because the system must have a correct configuration of several tools (see [jpackage prerequisites](https://docs.oracle.com/en/java/javase/20/jpackage/packaging-overview.html)).
+However, it is possible to run a local script `package-weasis.sh` on most systems but without guarantee because the system must have a correct configuration of several tools (see [jpackage prerequisites](https://docs.oracle.com/en/java/javase/20/jpackage/packaging-overview.html)).
 
-- From the Weasis root folder, unzip the package built in the previous step:
+- Get `weasis-native.zip`, unzip the archive and then go to the root folder with a bash prompt. 
+- Build the native binaries and the installer:
 {{< tabs groupId="build-native" >}}
 {{% tab name="Bash" %}}
 {{< highlight shell >}}
-unzip weasis-distributions/target/native-dist/weasis-native.zip -d weasis-distributions/target/native-dist/weasis-native/
-{{< /highlight >}}
-{{% /tab %}}
-{{< /tabs >}}
-- Build only the native binaries (without installer)
-{{< tabs groupId="build-native" >}}
-{{% tab name="Bash" %}}
-{{< highlight shell >}}
-weasis-distributions/script/package-weasis.sh --input ./weasis-distributions/target/native-dist/weasis-native --output build-dist --no-installer --jdk /home/.jdks/temurin-18.0.1
-{{< /highlight >}}
-{{% /tab %}}
-{{< /tabs >}}
-- Build the native binaries and the installer
-{{< tabs groupId="build-native" >}}
-{{% tab name="Bash" %}}
-{{< highlight shell >}}
-weasis-distributions/script/package-weasis.sh --input ./weasis-distributions/target/native-dist/weasis-native --output build-installer --jdk /home/.jdks/temurin-18.0.1
+./build/script/package-weasis.sh --jdk "/home/.jdks/openjdk-20"
 {{< /highlight >}}
 {{% /tab %}}
 {{< /tabs >}}
 
 {{% notice note %}}
-In the commands above, adapt the options `--output` and `--jdk` to your configuration.<br>
-In order to see the use of the script and its options, run:
-{{< highlight shell >}}
-weasis-distributions/script/package-weasis.sh --help
-{{< /highlight >}}
-{{% /notice %}}
+- In the commands above, adapt the `--jdk` value to your local JDK path.<br>
+- For building only the native binaries (without installer), add the parameter `--no-installer`<br>
+- In order to see the use of the script and its options, run:
+  {{< highlight shell >}}
+  ./build/script/package-weasis.sh --help
+  {{< /highlight >}}
+  {{% /notice %}}
 
 {{% notice tip %}}
 On Windows the bash script must be executed with Git Bash or Cygwin. Avoid having spaces in the input and output paths.

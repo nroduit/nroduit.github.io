@@ -13,8 +13,8 @@ This page describes the necessary configurations to be able to debug Weasis usin
 We recommend the use of [IntelliJ IDEA](https://www.jetbrains.com/idea/) because the following instructions are based on it. Nevertheless, it is possible to use other IDEs by configuring weasis-launcher with similar instructions described in [Add a launcher](#add-a-launcher).
 ### Prerequisites
 
-1. Install [IntelliJ IDEA](https://www.jetbrains.com/idea/) (Community or Ultimate Edition)
-2. Use JDK 17 or higher and set the language level to 17.
+1. Install [IntelliJ IDEA](https://www.jetbrains.com/idea/) (Community or Ultimate Edition 2023.1 or higher)
+2. Use JDK 20 or higher and set the language level to `20 Preview`.
 ![Project Structure](/images/conf/project-structure.png)
 3. In *File > Settings... > Plugins* install google-java-format plugin from Marketplace and enable it from *google-java-format Settings*
 
@@ -37,7 +37,7 @@ Weasis uses [google-java-format](https://github.com/google/google-java-format) a
 
 {{% notice tip %}}
 * It is possible to use a JVM Option (e.g. `--Dweasis.arch=linux-x86-64`) to limit the build of native plugins only to the architecture of the current system (do not use this option when building the distribution).
-* See also building the final [Weasis Distributions]((../building-weasis#building-native-binaries-and-installers))
+* See also building the final [Weasis Distributions](../building-weasis#building-native-binaries-and-installers)
 {{% /notice %}}  
 
 ### Add a launcher
@@ -51,7 +51,7 @@ For running or debugging Weasis, you need to create a launcher:
   - Click on *Modify Options*
     - Select *Add dependencies with "Provided" scope to classpath*
     - Select *Do not build before run*
-    - Select *Add VM Options* and enter `-Xms64m -Xmx768m -Dgosh.port=17179`
+    - Select *Add VM Options* and enter `-Xms64m -Xmx768m -Dgosh.port=17179 --enable-preview`
   - Working Directory: remove the current value and add *%MODULE_WORKING_DIR%* from the Insert Macros button
 ![Launcher Configuration](/images/conf/launcher.png)
 {{% notice note %}}
