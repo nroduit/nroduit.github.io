@@ -26,20 +26,23 @@ From the main menu, open File > Import > DICOM or from the first import button i
 
 In order to import DICOM CD/DVD go the main menu, open File > Import > DICOM CD or from the second import button in the toolbar.
 
-Select a way to import DICOM
-
-* Local Device:
+#### Local Device
   * Files and/or folders: list of selected items or unique path
   * Search recursively: when this option is activated the import takes into account the subdirectories
   * Open in new tab: it allows to manage the way new tabs are opened
-* DICOM ZIP:
+
+#### DICOM ZIP
   * Select: browse a DICOM zip file. When the archive file is encrypted, a password prompt is displayed.
   * Open in new tab: it allows to manage the way new tabs are opened.
-* DICOMDIR: from a DICOM CD/DVD or a folder containing a DICOMDIR
+
+#### DICOMDIR
+
+It may be from a DICOM CD/DVD or a folder containing a DICOMDIR
   * Path: browse a folder containing a DICOMDIR
   * Detect CD-ROM: try to load a DICOM CD/DVD
   * Copy images into the local temporary directory: useful for slow reading device like CD-ROM
-* DICOM Query/Retrieve:
+
+#### DICOM Query/Retrieve
   * On DICOM Source tab:
     ![DICOM import archive](/tuto/dicom-import-archive.png?classes=shadow)
     * Archive: select the archive to query
@@ -47,7 +50,7 @@ Select a way to import DICOM
       * With DICOMWeb nodes: QIDO and WADO-RS for retrieving DICOM files (no other options are required)
     * Retrieve (only with DICOM archive): the protocol to retrieve the images
       * C-MOVE: the classic DIMSE protocol (accepts all sop classes, not recommended for WEB)
-      * C-GET: transfer syntaxes are negotiated by each sop classes according a configuration file
+      * C-GET: transfer syntaxes are negotiated by each sop classes according to a configuration file
       * WADO-URI: required a WADO server (C-Find + WADO retrieve)
     * Calling Node (only with DICOM archive): select the adapted calling DICOM node
     * More options: allows to open the preferences to configure the DICOM nodes
@@ -55,7 +58,7 @@ Select a way to import DICOM
   ![Thumbnails](/tuto/dicom-import-search.png?classes=shadow&width=700px)
   <br> 
     1. Fill in one or more search criteria. Criteria can be saved and reuse later.
-    2. Adapt the limit of replies (optional)
+    2. Adjust the limit to the maximum number of exams in the response. Set the limit to 0 to avoid this constraint. For DICOMWeb the limit is the number of elements on a page, and you can go to the next page with the spinner buttons.
     3. Click on Search
     4. Select the exams you want to import
     5. Start importing and close the window

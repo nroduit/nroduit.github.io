@@ -29,7 +29,7 @@ start weasis://%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fsamples%2F
 xdg-open weasis://%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml%22
 {{< /highlight >}}
 {{% /tab %}}
-{{% tab name="Mac OS" %}}
+{{% tab name="macOS" %}}
 {{< highlight shell >}}
 open weasis://%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml%22
 {{< /highlight >}}

@@ -17,13 +17,14 @@
         <td align="left" colspan="6"><b style='font-size:larger;'>&nbsp;</b></td>
       </tr>
       <tr>
-        <th align="left" colspan="6"><b style='font-size:larger;'><a target="_blank" href="https://github.com/nroduit/Weasis/releases/tag/{{$elem_val.tag_name}}">{{$elem_val.tag_name}}</a></b> {{ printf " publised on %s" (dateFormat "Jan 2, 2006" $elem_val.published_at) }}</th>
+        <th align="left" colspan="5"><b style='font-size:larger;'><a target="_blank" href="https://github.com/nroduit/Weasis/releases/tag/{{$elem_val.tag_name}}">{{$elem_val.tag_name}}</a></b> {{ printf " publised on %s" (dateFormat "Jan 2, 2006" $elem_val.published_at) }} </th>
+        <th align="left"><img alt="Github {{$elem_val.tag_name}} downloads" src="https://img.shields.io/github/downloads/nroduit/weasis/{{$elem_val.tag_name}}/total?classes=inline"></th>
       </tr>
       {{ range $burl, $val := sort $rval "content_type" }}
       {{ $package := path.Ext $val.name }}
       {{ if or (eq $package ".msi") (eq $package ".deb") (eq $package ".rpm") (eq $package ".pkg") }}
         {{ $arch := printf "%s %s-bit" (cond (or (in $val.name "aarch") (in $val.name "arm")) "arm" "x86") (cond (or (in $val.name "64") (eq $package ".pkg") ) "64" "32") }}
-        {{ $system := cond (eq $package ".msi") "Windows" (cond (eq $package ".pkg") "Mac OS" "Linux") }}
+        {{ $system := cond (eq $package ".msi") "Windows" (cond (eq $package ".pkg") "macOS" "Linux") }}
         {{ $icon := cond (eq $package ".msi") "microsoft" (cond (eq $package ".pkg") "apple" "linux") }}
         <tr>
           <td align="left"><i class='fab fa-{{ $icon }}' style='font-size:24px'></i> {{ $system }}</td>
@@ -36,7 +37,7 @@
           </span>
           </td>
           <td align="left">{{ cond ( ge $elem_index 1) "" (cond (eq $package ".msi") "Requires Windows 7, 8 10 or 11"
-            (cond (eq $package ".pkg") (cond (eq $arch "arm 64-bit") "Requires Mac OS 11 or higher" "Requires Mac OS 10.11 or higher" )
+            (cond (eq $package ".pkg") (cond (eq $arch "arm 64-bit") "Requires macOS 11 or higher" "Requires macOS 10.11 or higher" )
             (cond (eq $arch "arm 32-bit") "Requires GLIBC_2.7. Only tested with Raspberry Pi 4"
             (cond (eq $arch "arm 64-bit") "Requires GLIBC_2.27" "Requires GLIBC_2.14" ))))
             }}</td>

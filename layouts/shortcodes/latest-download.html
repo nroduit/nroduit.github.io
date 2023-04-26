@@ -16,7 +16,7 @@
     {{ $package := path.Ext $val.name }}
     {{ if or (eq $package ".msi") (eq $package ".deb") (eq $package ".rpm") (eq $package ".pkg") }}
       {{ $arch := printf "%s %s-bit" (cond (or (in $val.name "aarch") (in $val.name "arm")) "arm" "x86") (cond (or (in $val.name "64") (eq $package ".pkg") ) "64" "32") }}
-      {{ $system := cond (eq $package ".msi") "Windows" (cond (eq $package ".pkg") "Mac OS" "Linux") }}
+      {{ $system := cond (eq $package ".msi") "Windows" (cond (eq $package ".pkg") "macOS" "Linux") }}
       {{ $icon := cond (eq $package ".msi") "microsoft" (cond (eq $package ".pkg") "apple" "linux") }}
       <tr>
         <td align="left"><i class='fab fa-{{ $icon }}' style='font-size:24px'></i> {{ $system }}</td>
@@ -29,7 +29,7 @@
         </span>
         </td>
         <td align="left">{{ cond (eq $package ".msi") "Requires Windows 7, 8 10 or 11"
-          (cond (eq $package ".pkg") (cond (eq $arch "arm 64-bit") "Requires Mac OS 11 or higher" "Requires Mac OS 10.11 or higher" )
+          (cond (eq $package ".pkg") (cond (eq $arch "arm 64-bit") "Requires macOS 11 or higher" "Requires macOS 10.11 or higher" )
           (cond (eq $arch "arm 32-bit") "Requires GLIBC_2.7. Only tested with Raspberry Pi 4"
           (cond (eq $arch "arm 64-bit") "Requires GLIBC_2.27" "Requires GLIBC_2.14" )))
           }}</td>

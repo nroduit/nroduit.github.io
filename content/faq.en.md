@@ -56,13 +56,8 @@ Yes, Weasis can be embedded in a DICOM CD but only on Windows. On other platform
 
 ### How to enable Weasis logging? ###
 
-Starting with Weasis 3.5, a boot log file is always written in <user.home>/.weasis/log/boot-x.log to trace the boot configuration. A default.log file in the same folder can trace all the Weasis activities; the latter must be activated:
-* From *File > Preferences > General* enable *Rolling log*, select a log level and a stacktrace limit (DEBUG and empty (unlimited stacktrace lines) are recommended for investigating problems).
-* The default logging configuration comes from config.properties or ext-config.properties, see [Weasis Preferences](../basics/customize/preferences).
+The rolling log system must be enabled in the preferences to trace all Weasis activities. For more details, see [How to configure and view log files](../tutorials/logging/).
 
-{{% notice tip %}}
-In order to determine the path of <user.home>/.weasis go to the *Help > About Weasis* menu and find the property weasis.path in the System Information tab.
-{{% /notice %}}
 
 ### Is it possible to download DICOM files without having a WADO server? ###
 

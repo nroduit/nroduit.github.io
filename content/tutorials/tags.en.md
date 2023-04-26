@@ -42,6 +42,8 @@ In the image above, we are looking for the word "date". Here are the steps:
 3. Use the arrows to navigate into the highlighted results. The button on the far right allows you to limit the results to positive ones.
 4. The navigation shows the current result in highlight mode.
 
+Using {{% icon icon="filter" %}} in the toolbar allows you to filter the results. This can be useful to keep the focus on certain elements when scrolling through a stack of images (only possible with layout (A)).
+
 {{% notice note %}}
 Some attributes can be into a sequence element (5). Note: the left arrow shows the depth level as a sequence can contain another sequence.
 {{% /notice %}}

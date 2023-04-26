@@ -1,8 +1,8 @@
 ---
 title: Styles and themes
-weight: 550
+weight: 555
 description: How to apply another style and theme
-keywords: [ "theme", "style", "substance", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "pacs viewer" ]
+keywords: [ "theme", "style", "flatlaf", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "pacs viewer" ]
 ---
 
 ## <center>Change the appearance of the user interface</center>

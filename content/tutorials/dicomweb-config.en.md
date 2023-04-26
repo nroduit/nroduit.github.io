@@ -7,7 +7,7 @@ keywords: [ "dicom import", "dicomweb", "dicom viewer", "free dicom viewer", "op
 
 ## <center>How to configure DICOMWeb node</center>
 
-This page explains how to configure a remote archive in DICOMWeb. However, it is also possible, without any prior configuration, to [launch Weasis from a web context](../../basics/customize/integration/#download-directly-with-dicomweb-restful-services) by passing it some parameters to retrieve images in DICOMWeb.
+This page explains how to configure a remote archive in DICOMWeb and then use this DICOMWeb node to [retrieve exams remotely](../dicom-import/#dicom-queryretrieve). However, it is also possible, without any prior configuration, to [launch Weasis from a web context](../../basics/customize/integration/#download-directly-with-dicomweb-restful-services) by passing it some parameters to retrieve images in DICOMWeb.
 
 From the main menu, open File > Preferences (Alt + P) and select DICOM node list.
 ![DICOMWeb nodes](/tuto/dicomweb-nodes.png?classes=shadow&width=750)

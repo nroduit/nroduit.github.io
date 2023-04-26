@@ -55,7 +55,7 @@ mvn -Dchangelist=-mybuild-beta -P compressXZ -f weasis-distributions clean packa
 
 Since {{< badge "v4.0.0" >}} , the native installer has completely replaced the portable and the Java Webstart distributions.
 
-The [official build](https://github.com/nroduit/Weasis/blob/master/.github/workflows/build-installer.yml) is done by Github actions with [GitHub-hosted runners](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners) (Linux, Mac OS and Windows). 
+The [official build](https://github.com/nroduit/Weasis/blob/master/.github/workflows/build-installer.yml) is done by Github actions with [GitHub-hosted runners](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners) (Linux, macOS and Windows). 
 
 However, it is possible to run a local script `package-weasis.sh` on most systems but without guarantee because the system must have a correct configuration of several tools (see [jpackage prerequisites](https://docs.oracle.com/en/java/javase/20/jpackage/packaging-overview.html)).
 
