@@ -25,9 +25,9 @@ Export the view according to the original image with some options.
 <br>
 * Size: Change the image size in percent
 * Preserve 16-bit per channel: Option to preserve the pixel depth (e.g. 16-bit in PNG/JPEG 2000/TIFF, double values in TIFF). When this option is applied, the pixel values will match with the Modality LUT values (e.g. Hounsfield values). Exporting in JPEG Lossy is only possible when unchecked for 8-bit image.
-* DICOM Pixel Padding: Apply the DICOM pixel padding when checked
-* DICOM Shutter: Apply the DICOM shutters when checked
-* DICOM Overlay: Apply the DICOM overlays when checked
+* DICOM Pixel Padding: Apply the [DICOM pixel padding](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.5.html#sect_C.7.5.1.1.2) when checked
+* DICOM Shutter: Apply the [DICOM shutters](https://dicom.nema.org/medical/Dicom/current/output/chtml/part03/sect_C.7.6.11.html) when checked
+* DICOM Overlay: Apply the [DICOM overlays](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.9.2.html) when checked
 
 ### DICOM Export
 
@@ -39,7 +39,7 @@ Export the view according to the original image with some options.
 2. Choose the exporting options
    ![Export options](/tuto/dicom-export-options.png?classes=shadow&width=350)
    * Transcoding: It allows to change the DICOM transfer syntax. Use this option only if you understand well what you are doing.
-   * Generate new unique identifiers: Create new UIDs for some attributes. For an export, the consistency between UIDs and their references is preserved.
+   * Generate new unique identifiers: Create new UIDs for some attributes. Within an export, the consistency between all the UIDs and their references is preserved.
    * Include DICOMDIR: Create DICOMDIR file
    * DICOM CD folders: Add a directory to be compliant with DICOM CD
    * Keep directory names: Preserve the name in the directory hierarchy (not compliant with DICOMDIR)

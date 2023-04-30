@@ -21,7 +21,7 @@ The data displayed in the DICOM Explorer can be [imported form different ways](.
 * A tab containing a multi-view layout can only display images from a single patient.
 * Changing patients can be done either through the first combobox in the DICOM Explorer (see image above) or by selecting a tab in the main area.
 * In the combobox the patients are sorted in alphabetical order regardless of case and according to the [regional setting](../locale).
-* Studies and Series are displayed within the same patient when the metadata Patient Name and Patient ID are the same. Otherwise new patients are displayed.
+* Studies and Series are displayed within the same patient when the metadata Patient Name and Patient ID are the same. Otherwise, new patients are displayed.
 
 #### Study Level
 
@@ -44,3 +44,12 @@ The data displayed in the DICOM Explorer can be [imported form different ways](.
     * Open in new tab: Opens the series in the most appropriate layout in a new tab.
     * Open in screen: Opens the series in the most appropriate layout in a specific screen.
     * Add: Adds the series to the current patient's layout if exists.
+
+#### Preferences
+
+From the menu "_File > Preferences > DICOM > DICOM Explorer_":
+
+* _Thumbnail size_: defines the width of the thumbnails and adjusts the panel accordingly (Default: 144). It is recommended to restart the application after this change.
+* _Study data sorting_: allows sorting the studies by chronological order or inversely chronological (Default: reverse chronology order). Since Weasis {{< badge "v4.1.0" >}}.
+* _Open in new tab_: behavior to automatically open the images of a patient when [using WADO or WADO-RS](../../basics/customize/integration/) (Default: All the patients)
+* _Download all series immediately_: allows starting the download of the series immediately when [using WADO or WADO-RS](../../basics/customize/integration/) (Default: true). If unchecked then you must click on the play button on each series or globally at the bottom of the thumbnail list.

@@ -9,6 +9,8 @@ hidden: true
 
 This page provides a list of DICOM samples to test the capabilities of the viewer.
 
+The datasets come mainly from the DICOM standard (ftp://medical.nema.org/MEDICAL/Dicom/DataSets/) and the data related to the publication [DICOM image display consistency: a test environment](https://www.researchgate.net/publication/239747992_DICOM_image_display_consistency_a_test_environment).
+
 {{% notice tip %}}
 **Naming convention**
 
