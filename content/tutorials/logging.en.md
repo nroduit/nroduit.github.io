@@ -7,7 +7,7 @@ keywords: [ "log", "logging", "dicom viewer", "free dicom viewer", "open source 
 
 ## <center>Configure and view log files</center>
 
-The log folder that can be opened from the menu "_Help > Open the logging folder_" (since Weasis {{< badge "v4.1.0" >}}) contains two types of log:
+The log folder that can be opened from the menu "_Help > Open the logging folder_" (since {{< badge "v4.1.0" >}}) contains two types of log:
 1. A boot log file (boot-x.log) is always written since Weasis {{< badge "v3.5.0" >}}
 2. Rolling log files (default.log.x) that need to be activated in the preferences dialog (see below _How to configure the rolling log files_)
 

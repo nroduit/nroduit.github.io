@@ -26,7 +26,7 @@ The data displayed in the DICOM Explorer can be [imported form different ways](.
 #### Study Level
 
 * A study contains one or more series (thumbnails) belonging to a patient. A line representing the study surrounds its series (see image above).
-* By default, the studies are sorted by reverse chronology order (since Weasis {{< badge "v4.1.0" >}} "_Study data sorting_" can be changed in the menu "_File > Preferences > DICOM > DICOM Explorer_"). If there is no study date then the studies are sorted alphabetically according to the Study Description.
+* By default, the studies are sorted by reverse chronology order (since {{< badge "v4.1.0" >}} "_Study data sorting_" can be changed in the menu "_File > Preferences > DICOM > DICOM Explorer_"). If there is no study date then the studies are sorted alphabetically according to the Study Description.
 * By default, all the studies are displayed, however you can choose to display only one of them from the study combobox.
 
 #### Series Level
@@ -50,6 +50,6 @@ The data displayed in the DICOM Explorer can be [imported form different ways](.
 From the menu "_File > Preferences > DICOM > DICOM Explorer_":
 
 * _Thumbnail size_: defines the width of the thumbnails and adjusts the panel accordingly (Default: 144). It is recommended to restart the application after this change.
-* _Study data sorting_: allows sorting the studies by chronological order or inversely chronological (Default: reverse chronology order). Since Weasis {{< badge "v4.1.0" >}}.
+* _Study data sorting_: allows sorting the studies by chronological order or inversely chronological (Default: reverse chronology order). Since {{< badge "v4.1.0" >}}.
 * _Open in new tab_: behavior to automatically open the images of a patient when [using WADO or WADO-RS](../../basics/customize/integration/) (Default: All the patients)
 * _Download all series immediately_: allows starting the download of the series immediately when [using WADO or WADO-RS](../../basics/customize/integration/) (Default: true). If unchecked then you must click on the play button on each series or globally at the bottom of the thumbnail list.
