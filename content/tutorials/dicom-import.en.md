@@ -47,7 +47,7 @@ It may be from a DICOM CD/DVD or a folder containing a DICOMDIR
     ![DICOM import archive](/tuto/dicom-import-archive.png?classes=shadow)
     * Archive: select the archive to query
       * With DICOM nodes: classic DIMSE C-Find with C-Move, C-Get or WADO-URI for retrieving DICOM files
-      * With DICOMWeb nodes: QIDO and WADO-RS for retrieving DICOM files (no other options are required)
+      * With [DICOMWeb nodes](../dicomweb-config): QIDO and WADO-RS for retrieving DICOM files (no other options are required)
     * Retrieve (only with DICOM archive): the protocol to retrieve the images
       * C-MOVE: the classic DIMSE protocol (accepts all sop classes, not recommended for WEB)
       * C-GET: transfer syntaxes are negotiated by each sop classes according to a configuration file
@@ -62,6 +62,12 @@ It may be from a DICOM CD/DVD or a folder containing a DICOMDIR
     3. Click on Search
     4. Select the exams you want to import
     5. Start importing and close the window
+
+{{% notice note %}}
+The progression of downloaded images for a series and the ability to pause the download of a series is only possible with [DICOMWeb nodes](../dicomweb-config) and with the combination (DICOM C-FIND + WADO-URI).
+![Download Manager](/images%2FDownloadManager.jpg?width=150px)
+Resuming the download of a series by clicking on the green play button or from the contextual menu.
+{{% /notice %}}
 
 {{% notice tip %}}
 When a query is too long, try to click on the *Clear* button in *Search Criteria* in order to cancel the request.

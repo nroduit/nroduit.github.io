@@ -68,6 +68,6 @@ Multiframe images are exported by adding a number to the end of the file name.
    * Transcoding: It allows to change the DICOM transfer syntax. Use this option only if you understand well what you are doing.
    * Generate new unique identifiers: Create new UIDs for some attributes. For an export, the consistency between UIDs and their references is preserved.
 3. *Add JPEG images* allows extracting the images and the encapsulated files (video, audio and PDF) into a JPEG folder
-4. *Add Weasis* allows embedding the viewer into the iso image. This option is only possible on Windows.
+4. *Add Weasis* allows embedding the viewer into the iso image. This option is only possible on Windows x86-64 (for exporting and running). Running the viewer directly on a CD/DVD ca be quite slow. To avoid that you can install the ISO on a USB stick or read the CD with a locally installed viewer as described in README.html.
 5. Select the patient/study/series/instance to export
 6. Export the selection and close the Window
