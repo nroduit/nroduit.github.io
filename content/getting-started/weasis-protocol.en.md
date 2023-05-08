@@ -5,7 +5,7 @@ keywords: [ "web", "launch", "dicom viewer", "free dicom viewer", "open source d
 weight: 15
 ---
 
-The web protocol allows to launch Weasis in a web context from a specific URI scheme: weasis://parameters
+The web protocol allows launching Weasis in a web context from a specific URI scheme: weasis://parameters
 
 {{% notice warning %}}
 Requires Weasis 3.5 (or superior) installed on the system with a [native installer](../).

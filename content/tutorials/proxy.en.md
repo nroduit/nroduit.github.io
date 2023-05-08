@@ -1,6 +1,6 @@
 ---
 title: Proxy server
-weight: 420
+weight: 600
 description: How to configure a proxy server
 keywords: [ "network", "porxy", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "pacs viewer" ]
 ---

@@ -5,7 +5,7 @@ keywords: [ "commands", "weasis commands", "dicom viewer", "free dicom viewer", 
 weight: 50
 ---
 
-The commands listed below can be applied at start-up or in a telnet session. All the commands starting with "dcmview2d:" allow to drive Weasis and are not adapted to be used at start-up.
+The commands listed below can be applied at start-up or in a telnet session. All the commands starting with "dcmview2d:" allow you to drive Weasis and are not adapted to be used at start-up.
 
 {{% notice info %}}
 This page matches to Weasis 3.5.1 or higher. The syntax of usage comes from [POSIX](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap12.html).

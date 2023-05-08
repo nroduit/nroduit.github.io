@@ -20,3 +20,7 @@ When the image does not contain a default spatial calibration and it contains a 
 {{% notice note %}}
 The calibration can be applied only to the current image or to all the images belonging to the series.
 {{% /notice %}}
+
+{{% notice info %}}
+Once calibrated, all measuring tools will produce results according to the calibration and the [real-world zoom](../zoom/#real-world-zoom) will display the images at the same size of the real objects.
+{{% /notice %}}

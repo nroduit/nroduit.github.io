@@ -11,7 +11,10 @@ keywords: [ "dicom import", "dicom viewer", "free dicom viewer", "open source di
 
 #### Drag and drop
 
-Files or folders selected from the system file explorer can be opened by dragging and dropping into the central area of Weasis (any files into empty area or specific files related to the view which is already open).
+Files or folders selected from the system file explorer can be opened by dragging and dropping into the central area of Weasis.
+
+* Empty central panel: Any files than ca be open by one of the viewers (e.g. standard images such as TIFF, PNG, JPEG...)
+* DICOM Explorer and DICOM viewers (SR, AU, MPR, 2D and 3D) in the central panel: Only DICOM files. Opens the default viewer according to the files.
 
 #### File association
 
@@ -53,7 +56,7 @@ It may be from a DICOM CD/DVD or a folder containing a DICOMDIR
       * C-GET: transfer syntaxes are negotiated by each sop classes according to a configuration file
       * WADO-URI: required a WADO server (C-Find + WADO retrieve)
     * Calling Node (only with DICOM archive): select the adapted calling DICOM node
-    * More options: allows to open the preferences to configure the DICOM nodes
+    * More options: allows you to open the preferences to configure the DICOM nodes
   * On Search Criteria tab:
   ![Thumbnails](/tuto/dicom-import-search.png?classes=shadow&width=700px)
   <br> 

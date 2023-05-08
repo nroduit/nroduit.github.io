@@ -91,7 +91,7 @@ felix.auto.start.85= \
  ${weasis.codebase.ext.url}/plugin2.jar
 {{< /highlight >}}
 {{% notice note %}}
-Using `${weasis.codebase.ext.url}` allows to keep the base URL abstract, so moving the package to another server won’t be a problem. Otherwise absolute URLs must be used. The default value of `${weasis.codebase.ext.url}` is ${weasis.codebase.url}-ext.
+Using `${weasis.codebase.ext.url}` allows you to keep the base URL abstract, so moving the package to another server won’t be a problem. Otherwise absolute URLs must be used. The default value of `${weasis.codebase.ext.url}` is ${weasis.codebase.url}-ext.
 {{% /notice %}}
 
 - weasis-ext is the default web context when launching Weasis, using another web context requires modifying the property weasis.ext.url, it can be done by:

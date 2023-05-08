@@ -1,6 +1,6 @@
 ---
 title: DICOM RT
-weight: 35
+weight: 90
 description: How to display radiotherapy information
 keywords: [ "dicom rt", "radiotherapy", "dicom viewer", "free dicom viewer", "open source dicom viewer" ]
 ---
@@ -13,7 +13,7 @@ The _RT Tool_ appears on the right panel when a CT exam (when linked with DICOM 
 
 In order to display the structures in overlay on the image, apply the following points (see in the image below):
 
-1. {{< badge "Optional" >}} When selected, it allows to force the DVH calculations. Otherwise, it is calculated only if some information is not available in the DICOM files.
+1. {{< badge "Optional" >}} When selected, it allows you to force the DVH calculations. Otherwise, it is calculated only if some information is not available in the DICOM files.
 2. Click on "_Load RT_" button to load DICOM STRUCT, PLAN and DOSE associated the CT images. Once loaded, the button becomes inactive.
 3. {{< badge "Optional" >}} Select a structure if there is more than one.
 4. {{< badge "Optional" >}} Select a plan if there is more than one.

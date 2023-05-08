@@ -1,6 +1,6 @@
 ---
 title: Styles and themes
-weight: 555
+weight: 530
 description: How to apply another style and theme
 keywords: [ "theme", "style", "flatlaf", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "pacs viewer" ]
 ---

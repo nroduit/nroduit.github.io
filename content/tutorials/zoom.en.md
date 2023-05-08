@@ -1,13 +1,13 @@
 ---
 title: Zoom
-weight: 100
+weight: 40
 description: How to manipulate zoom and lens
 keywords: [ "zoom", "lens", "dicom viewer",  "pacs viewer" ]
 ---
 
 ## Zoom tool
 
-The zoom tool can be associated with one of three mouse buttons or with the mouse scroll (top left toolbar). In the image below the zoom tool is associated with the left mouse button.
+The zoom tool can be associated with one of three mouse buttons or with the mouse scroll (top left toolbar). In the image below the zoom tool {{< svg "static/tuto/icon/zoom.svg" >}} is associated with the left mouse button.
 
 The zoom factor can be modified from different locations:
 
@@ -59,6 +59,6 @@ Parameters of the context menu:
 * *Synchronize to parent zoom:* When this option is activated, the zoom factor of the lens is permanently adjusted to the zoom factor of the main image (meaningful when using freeze parameters).
 * *Show Drawings:* Displays in the lens the visible drawings.
 * *Magnify:* Allows to select a zoom magnitude.
-* *Image:* `Freeze parameters` allows to keep the current image processing (c.f. Window/level, LUT or filter) and `Freeze image` allows to keep the current image and its parameters.
+* *Image:* `Freeze parameters` allows you to keep the current image processing (c.f. Window/level, LUT or filter) and `Freeze image` allows you to keep the current image and its parameters.
 
 ![Lens freeze](/tuto/lens-freeze.jpg?classes=shadow&width=700px)

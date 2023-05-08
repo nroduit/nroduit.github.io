@@ -42,7 +42,7 @@ The schema above shows that the queries to the PACS are made at the same time as
 
 ## Build your own connector
 
-This documentation describes how to create your own connector without weasis-pacs-connector and with different DICOM archive types. The [weasis protocol](../../../getting-started/weasis-protocol/#how-to-build-an-uri) allows to build URIs to launch Weasis according to different configurations and allows to load DICOM files locally or remotely.
+This documentation describes how to create your own connector without weasis-pacs-connector and with different DICOM archive types. The [weasis protocol](../../../getting-started/weasis-protocol/#how-to-build-an-uri) allows you to build URIs to launch Weasis according to different configurations and allows to load DICOM files locally or remotely.
 
 Here are examples with XML manifests or with DICOMWeb RESTful services.
 
@@ -85,11 +85,11 @@ Important Parameters (except mandatory parameters defined in xsd):
 
 - `PatientBirthDate` helps to identify a patient.
 - `StudyDate,` `StudyTime`, `Modality`, `SeriesNumber` and `InstanceNumber` help to sort data before downloading images.
-- `SeriesDescription` and `StudyDescription` allow to immediately display the descriptions before downloading the images.
+- `SeriesDescription` and `StudyDescription` allow immediately displaying the descriptions before downloading the images.
 {{% /notice %}}
 
 {{% notice tip %}}
-From Weasis 2.5 it is possible to have multiple archives (allows to have several arcQuery tags) and the [presentations](https://github.com/nroduit/Weasis/blob/master/weasis-dicom/weasis-dicom-explorer/src/main/resources/config/presentations.xsd) tag which contains the image annotations.
+From Weasis 2.5 it is possible to have multiple archives (allows several arcQuery tags) and the [presentations](https://github.com/nroduit/Weasis/blob/master/weasis-dicom/weasis-dicom-explorer/src/main/resources/config/presentations.xsd) tag which contains the image annotations.
 {{% /notice %}}
 
 ### Build an XML manifest (no WADO server)
