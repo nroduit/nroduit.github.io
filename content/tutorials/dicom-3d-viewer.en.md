@@ -32,7 +32,7 @@ The 3D view can be opened with {{< svg "static/tuto/icon/volume.svg" >}} in the 
 
 Try to load a volume dataset (Medical Demos from data.kitware.com)
 {{< launch >}}
-$dicom:get -w "http://localhost:1313/samples/3d/head-neck.xml"
+$dicom:get -w "https://nroduit.github.io/samples/3d/head-neck.xml"
 {{< /launch >}}
 
 ![3D Viewer](/tuto/view-3d.jpg?classes=shadow&width=780px)
