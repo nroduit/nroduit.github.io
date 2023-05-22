@@ -36,7 +36,7 @@ Weasis uses [google-java-format](https://github.com/google/google-java-format) a
   - In the maven panel, select clean/install in Lifecycle of *weasis-framework (root)* to compile and to install all the plug-ins in the local Maven repository.
 
 {{% notice tip %}}
-* It is possible to use a JVM Option (e.g. `--Dweasis.arch=linux-x86-64`) to limit the build of native plugins only to the architecture of the current system (do not use this option when building the distribution).
+* It is possible to use a JVM Option (e.g. `-Dweasis.arch=linux-x86-64`) to limit the build of native plugins only to the architecture of the current system (do not use this option when building the distribution).
 * See also building the final [Weasis Distributions](../building-weasis#building-native-binaries-and-installers)
 {{% /notice %}}  
 
