@@ -39,7 +39,7 @@ The meaning of the standard print parameters:
 ### DICOM Print
 From the main menu, open File > Print > DICOM Print.
 
-In the DICOM Print dialog, you can manage several configurations. For the options meaning, you can refer to the above parameters and <a target="_blank" href="http://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.13.3.html">the DICOM print pages</a>.
+In the DICOM Print dialog, you can manage several configurations. For the options meaning, you can refer to the above parameters and <a target="_blank" href="https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.13.3.html">the DICOM print pages</a>.
 
 ![DICOM](/tuto/print/dicom.png?classes=shadow)
 <br>

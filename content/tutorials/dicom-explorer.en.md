@@ -9,7 +9,7 @@ keywords: [ "dicom explorer", "patient", "study", "series", "dicom viewer", "fre
 
 ### DICOM Explorer
 
-The DICOM Explorer is the panel on the left that displays the [Patient/Study/Series representation](http://dicom.nema.org/medical/dicom/current/output/chtml/part03/chapter_A.html) defined in the DICOM standard.
+The DICOM Explorer is the panel on the left that displays the [Patient/Study/Series representation](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/chapter_A.html) defined in the DICOM standard.
 
 The data displayed in the DICOM Explorer can be [imported form different ways](../dicom-import).
 

@@ -35,7 +35,7 @@ The [java-swing-dialogs](https://app.transifex.com/weasis/java-swing-dialogs) tr
 
 1. JDK 11 or higher
 2. Maven 3 or higher<br>
-    If your computer is behind a proxy server, [configure maven](http://maven.apache.org/guides/mini/guide-proxies.html).
+    If your computer is behind a proxy server, [configure maven](https://maven.apache.org/guides/mini/guide-proxies.html).
 3. Git or directly download the source code from [GitHub](https://github.com/nroduit/weasis-i18n)
 
 ### Getting the Source

@@ -1,9 +1,0 @@
-
-<!-- prevent this shortcode from being loaded more than once per page -->
-{{ if not ($.Page.Scratch.Get "javawslauncher") }}
-  {{ $.Page.Scratch.Set "javawslauncher" 1 }}
-
-  <link href="/css/jquery.dropdown.css" rel="stylesheet">
-  <script defer src="/js/jquery.dropdown.js"></script>
-
-{{ end }}

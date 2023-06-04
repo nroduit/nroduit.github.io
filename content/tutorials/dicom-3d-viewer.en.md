@@ -1,5 +1,5 @@
 ---
-title: 3D Viewer
+title: DICOM 3D Viewer
 weight: 85
 description: How to display volume data
 keywords: [ "viewer 3D", "volume rendering", "ray casting", "3D rendering", "dicom viewer", "free dicom viewer", "open source dicom viewer" ]
@@ -16,7 +16,7 @@ required for the ray casting computations to be executed efficiently on the grap
 
 Some requirements related to the specifications of your graphic card are mandatory. They can be displayed in "_OpenGL Support_" from the menu "_File > Preferences > Viewer > 3D Viewer_":
 
-* _Driver version:_ The OpenGL version must be **at least 4.3** to support the Compute Shader
+* _Driver version:_ The OpenGL version must be **at least 4.3** to support the Compute Shader (not supported currently on macOS)
 * _Max 3D texture dimension length:_ The limit of any dimension (X,Y,Z) of the volume data
 * If you have other information in red, it means that the configuration is not optimal but in most cases can work (see [how to limit the size of 3D textures](#3d-viewer))
 
@@ -35,7 +35,7 @@ Try to load a volume dataset (Medical Demos from data.kitware.com)
 $dicom:get -w "https://nroduit.github.io/samples/3d/head-neck.xml"
 {{< /launch >}}
 
-![3D Viewer](/tuto/view-3d.jpg?classes=shadow&width=780px)
+![3D View](/tuto/view-3d.jpg?classes=shadow&width=780px)
 <br>
 
 ### Toolbar (A)

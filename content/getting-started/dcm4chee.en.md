@@ -99,7 +99,7 @@ deployment-overlay add --name=dcm4chee-arc --deployments=weasis-pacs-connector.w
 
 1. <a target="_blank" href="https://dcm4che.atlassian.net/wiki/spaces/ee2/pages/2555918/Installation">Install dcm4chee</a> (2.18.3 recommended), if not already done. For security see also how to limit the <a target="_blank" href="https://github.com/nroduit/openmediavault-dcm4chee/wiki/Configuration-of-dcm4chee#security">server access</a>.
 
-2. Go <a target="_blank" href="http://sourceforge.net/projects/dcm4che/files/Weasis/">here</a> and download these following files.
+2. Go <a target="_blank" href="https://sourceforge.net/projects/dcm4che/files/Weasis/">here</a> and download these following files.
 {{% notice warning %}}
 **Download issue**: Some browsers (like Internet Explorer) may rename war files to zip. If so, use the Save As option when downloading and change the name back to war.
 {{% /notice %}}
