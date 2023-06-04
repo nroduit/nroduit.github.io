@@ -1,6 +1,6 @@
 # this is a required setting for this theme to appear on https://themes.gohugo.io/
 # change this to a value appropriate for you
-baseurl = "https://nroduit.github.io/"
+baseurl = "https://weasis.org/"
 # as the official Hugo documentation recommends, we turn this off for this
 # showcase; this allows the published site to be served by both http and https
 canonifyURLs = false
