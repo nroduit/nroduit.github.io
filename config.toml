@@ -7,6 +7,8 @@ canonifyURLs = false
 # required for official documentation served from subfolder
 relativeURLs = false
 
+disableHugoGeneratorInject = true
+
 # the directory where Hugo reads the themes from; this is specific to your
 # installation and most certainly needs be deleted or changed
 #themesdir = "../.."
@@ -34,6 +36,7 @@ title = "Weasis Documentation"
   showVisitedLinks = true
   disableBreadcrumb = false
   disableTOC = false
+  disableGeneratorVersion = true
   disableNextPrev = false
   disableLandingPageButton = true
   titleSeparator = "::"
