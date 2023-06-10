@@ -38,6 +38,7 @@ title = "Weasis Documentation"
   disableLandingPageButton = true
   titleSeparator = "::"
   themeVariant = [ "relearn-dark", "relearn-light" ]
+  themeVariantAuto = [ "relearn-light", "relearn-dark" ]
   disableSeoHiddenPages = true
   # this is for the stylesheet genertor to allow for interactivity in mermaid
   # graphs; you usually will not need it and you should remove this for
@@ -53,7 +54,9 @@ title = "Weasis Documentation"
 [outputs]
   # add JSON to the home page to support lunr search; This is a mandatory setting
   # for the search functionality
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS", "SEARCH", "SEARCHPAGE"]
+  section = ["HTML", "RSS", "PRINT"]
+  page = ["HTML", "RSS", "PRINT"]
 
 [markup]
   [markup.highlight]
@@ -80,10 +83,9 @@ title = "Weasis Documentation"
 
 [Languages]
 [Languages.en]
-    title = "Weasis Documentation"
-    weight = 1
-    languageName = "English"
-    landingPageName = "<i class='fas fa-home'></i> Home"
+title = "Weasis Documentation"
+weight = 1
+languageName = "English"
 
 [[Languages.en.menu.shortcuts]]
 name = "<i class='fa fa-play-circle'></i> Live Demo"
@@ -92,14 +94,14 @@ url = "demo"
 weight = 10
 
 [[Languages.en.menu.shortcuts]]
-  name = "<i class='fa fa-question-circle'></i> FAQs"
-  url = "faq"
-  weight = 15
+name = "<i class='fa fa-question-circle'></i> FAQs"
+url = "faq"
+weight = 15
 
 [[Languages.en.menu.shortcuts]]
-  name = "<i class='fa fa-user-circle'></i> Get Involved!"
-  url = "get-involved"
-  weight = 20
+name = "<i class='fa fa-user-circle'></i> Get Involved!"
+url = "get-involved"
+weight = 20
 
 [Languages.fr]
 title = "Documentation"

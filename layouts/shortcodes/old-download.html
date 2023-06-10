@@ -1,24 +1,27 @@
 {{ $url := "https://api.github.com/repos/nroduit/Weasis/releases" }}
 {{ $jfile := getJSON $url }}
-<table border="0" cellpadding="3" cellspacing="0">
-<tr>
-  <th align="center" width="10%">System</th>
-  <th align="center" width="10%">Architecture</th>
-  <th align="center" width="5%">Package</th>
-  <th align="center" width="8%">Size</th>
-  <th align="center" width="15%">Weasis installer</th>
-  <th align="center">Comments</th>
-</tr>
+<table>
+  <caption>Download Weasis DICOM Viewer binaries</caption>
+  <thead>
+  <tr>
+    <th style="text-align: center; width: 10%;" scope="col">System</th>
+    <th style="text-align: center; width: 10%;" scope="col">Architecture</th>
+    <th style="text-align: center; width: 5%;" scope="col">Package</th>
+    <th style="text-align: center; width: 8%;" scope="col">Size</th>
+    <th style="text-align: center; width: 15%;" scope="col">Weasis installer</th>
+    <th style="text-align: center;" scope="col">Comments</th>
+  </tr>
+  </thead>
 {{ range $elem_index, $elem_val := $jfile }}
 {{ if ( not $elem_val.prerelease) }}
   {{ range $r_index, $rval := $elem_val }}
   {{ if (eq $r_index "assets") }}
       <tr>
-        <td align="left" colspan="6"><b style='font-size:larger;'>&nbsp;</b></td>
+        <td colspan="6" style="text-align: left;"><b style="font-size: larger;">&nbsp;</b></td>
       </tr>
       <tr>
-        <th align="left" colspan="5"><b style='font-size:larger;'><a target="_blank" href="https://github.com/nroduit/Weasis/releases/tag/{{$elem_val.tag_name}}">{{$elem_val.tag_name}}</a></b> {{ printf " publised on %s" (dateFormat "Jan 2, 2006" $elem_val.published_at) }} </th>
-        <th align="left"><img alt="Github {{$elem_val.tag_name}} downloads" src="https://img.shields.io/github/downloads/nroduit/weasis/{{$elem_val.tag_name}}/total?classes=inline"></th>
+        <th scope="row" colspan="5" style="text-align: left;"><b style='font-size:larger;'><a target="_blank" href="https://github.com/nroduit/Weasis/releases/tag/{{$elem_val.tag_name}}">{{$elem_val.tag_name}}</a></b> {{ printf " publised on %s" (dateFormat "Jan 2, 2006" $elem_val.published_at) }} </th>
+        <th scope="row" style="text-align: left;"><img alt="Github {{$elem_val.tag_name}} downloads" src="https://img.shields.io/github/downloads/nroduit/weasis/{{$elem_val.tag_name}}/total?classes=inline"></th>
       </tr>
       {{ range $burl, $val := sort $rval "content_type" }}
       {{ $package := path.Ext $val.name }}
@@ -27,16 +30,16 @@
         {{ $system := cond (eq $package ".msi") "Windows" (cond (eq $package ".pkg") "macOS" "Linux") }}
         {{ $icon := cond (eq $package ".msi") "microsoft" (cond (eq $package ".pkg") "apple" "linux") }}
         <tr>
-          <td align="left"><i class='fab fa-{{ $icon }}' style='font-size:24px'></i> {{ $system }}</td>
-          <td align="left">{{ $arch }}</td>
-          <td align="left">{{ upper ( substr $package 1 ) }}</td>
-          <td align="left">{{  printf "%.1f MB"  (div $val.size 1000000) }}</td>
-          <td align="left">
+          <td style="text-align: left;"><i class='fab fa-{{ $icon }}' style='font-size:24px'></i> {{ $system }}</td>
+          <td style="text-align: left;">{{ $arch }}</td>
+          <td style="text-align: left;">{{ upper ( substr $package 1 ) }}</td>
+          <td style="text-align: left;">{{  printf "%.1f MB"  (div $val.size 1000000) }}</td>
+          <td style="text-align: left;">
           <span class="btn cstyle transparent">
             <a href="{{ $val.browser_download_url }}" target="_blank">{{ $val.name }} <i class="fa-fw fas fa-download"></i></a>
           </span>
           </td>
-          <td align="left">{{ cond ( ge $elem_index 1) "" (cond (eq $package ".msi") "Requires Windows 7, 8 10 or 11"
+          <td style="text-align: left;">{{ cond ( ge $elem_index 1) "" (cond (eq $package ".msi") "Requires Windows 7, 8 10 or 11"
             (cond (eq $package ".pkg") (cond (eq $arch "arm 64-bit") "Requires macOS 11 or higher" "Requires macOS 10.11 or higher" )
             (cond (eq $arch "arm 32-bit") "Requires GLIBC_2.7. Only tested with Raspberry Pi 4"
             (cond (eq $arch "arm 64-bit") "Requires GLIBC_2.27" "Requires GLIBC_2.14" ))))

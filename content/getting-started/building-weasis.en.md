@@ -53,7 +53,7 @@ mvn -Dchangelist=-mybuild-beta -P compressXZ -f weasis-distributions clean packa
 
 ### Building native binaries and installers
 
-Since {{< badge "v4.0.0" >}} , the native installer has completely replaced the portable and the Java Webstart distributions.
+Since {{< badge "v4.0.0" >}} the native installer has completely replaced the portable and the Java Webstart distributions.
 
 The [official build](https://github.com/nroduit/Weasis/blob/master/.github/workflows/build-installer.yml) is done by Github actions with [GitHub-hosted runners](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners) (Linux, macOS and Windows). 
 
@@ -62,7 +62,7 @@ However, it is possible to run a local script `package-weasis.sh` on most system
 - Get `weasis-native.zip`, unzip the archive and then go to the root folder with a bash prompt. 
 - Build the native binaries and the installer:
 {{< tabs groupId="build-native" >}}
-{{% tab name="Bash" %}}
+{{% tab title="Bash" %}}
 {{< highlight shell >}}
 ./build/script/package-weasis.sh --jdk "/home/.jdks/openjdk-20"
 {{< /highlight >}}

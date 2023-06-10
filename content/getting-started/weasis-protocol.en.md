@@ -19,17 +19,17 @@ Some web frameworks such as the wiki or the URL field of some browsers only supp
 {{% /notice %}}
 * From the command line:
 {{< tabs groupid="launchWeasisProtocol">}}
-{{% tab name="Windows" %}}
+{{% tab title="Windows" %}}
 {{< highlight shell >}}
 start weasis://%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml%22
 {{< /highlight >}}
 {{% /tab %}}
-{{% tab name="Linux" %}}
+{{% tab title="Linux" %}}
 {{< highlight shell >}}
 xdg-open weasis://%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml%22
 {{< /highlight >}}
 {{% /tab %}}
-{{% tab name="macOS" %}}
+{{% tab title="macOS" %}}
 {{< highlight shell >}}
 open weasis://%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml%22
 {{< /highlight >}}
