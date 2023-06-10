@@ -25,8 +25,39 @@ defaultContentLanguageInSubdir= true
 # the site's title of this showcase; you should change this ;-)
 title = "Weasis Documentation"
 
+[minify]
+disableCSS = false
+disableHTML = true
+disableJS = false
+disableJSON = false
+disableSVG = false
+disableXML = false
+minifyOutput = false
+[minify.tdewolff]
+[minify.tdewolff.css]
+keepCSS2 = true
+precision = 0
 [minify.tdewolff.html]
+keepComments = false
+keepConditionalComments = true
+keepDefaultAttrVals = true
+keepDocumentTags = true
+keepEndTags = true
+keepQuotes = false
 keepWhitespace = true
+[minify.tdewolff.js]
+keepVarNames = false
+noNullishOperator = false
+precision = 0
+version = 0
+[minify.tdewolff.json]
+keepNumbers = false
+precision = 0
+[minify.tdewolff.svg]
+keepComments = false
+precision = 0
+[minify.tdewolff.xml]
+keepWhitespace = false
 
 # settings specific to this theme's features; choose to your likings and
 # consult this documentation for explanation
