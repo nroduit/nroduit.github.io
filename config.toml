@@ -25,6 +25,9 @@ defaultContentLanguageInSubdir= true
 # the site's title of this showcase; you should change this ;-)
 title = "Weasis Documentation"
 
+[minify.tdewolff.html]
+keepWhitespace = true
+
 # settings specific to this theme's features; choose to your likings and
 # consult this documentation for explanation
 [params]
