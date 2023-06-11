@@ -47,7 +47,7 @@ The data displayed in the DICOM Explorer can be [imported form different ways](.
 
 #### Preferences
 
-From the menu "_File > Preferences > DICOM > DICOM Explorer_":
+From the main menu "_File > Preferences > DICOM > DICOM Explorer_":
 
 * _Thumbnail size:_ defines the width of the thumbnails and adjusts the panel accordingly (Default: 144). It is recommended to restart the application after this change.
 * _Study data sorting:_ allows sorting the studies by chronological order or inversely chronological (Default: reverse chronology order). Since {{< badge "v4.1.0" >}}.

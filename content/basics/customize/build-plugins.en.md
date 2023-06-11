@@ -35,8 +35,8 @@ See the [Weasis Architecture](../../architecture) to understand the plug-in hier
     - weasis-plugin-dicom-viewer-archetype (example of a toolbar and a tool for the DICOM viewer)
 
 {{% notice note %}}
-From Eclipse: File > New > Maven Project and Search for weasis archetype in catalog filter.<br>
-From Intellij: File > New Project > Maven, check "Create from archetype" and select a Weasis archetype
+From Eclipse: _File > New > Maven Project_ and Search for weasis archetype in catalog filter.<br>
+From Intellij: _File > New Project > Maven_, check "Create from archetype" and select a Weasis archetype
 {{% /notice %}}
 
 {{% notice tip %}}

@@ -23,8 +23,8 @@ To fill the layout with images you can change the synchronized mode of series (2
 
 ## Select a print mode
 
-### Standard Printer
-From the main menu, open File > Print > Print 2D viewer layout (P).
+### Standard Printer {{< svg "static/tuto/icon/print.svg" >}}
+From the main menu, open _File > Print > Print 2D viewer layout (P)_.
 
 ![standard](/tuto/print/standard.png?classes=shadow)
 
@@ -37,7 +37,7 @@ The meaning of the standard print parameters:
 
 
 ### DICOM Print
-From the main menu, open File > Print > DICOM Print.
+From the main menu, open _File > Print > DICOM Print_.
 
 In the DICOM Print dialog, you can manage several configurations. For the options meaning, you can refer to the above parameters and <a target="_blank" href="https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.13.3.html">the DICOM print pages</a>.
 

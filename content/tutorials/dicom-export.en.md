@@ -7,15 +7,15 @@ keywords: [ "dicom export", "dicom viewer", "free dicom viewer", "open source di
 
 ## <center>How to export DICOM files</center>
 
-### Exporting the selected view
+### Exporting the selected view {{< svg "static/tuto/icon/exportImage.svg" >}}
 
-Export the selected view either to the clipboard or to image file (PNG, TIF, JPG, JPEG2000).
+From the toolbar icon {{< svg "static/tuto/icon/exportImage.svg" >}} or from the main menu _File > Export > Exporting view_ export the selected view either to the clipboard or to image file (PNG, TIF, JPG, JPEG2000).
 
 #### Current view
 
-Export the view as it is.
+Export the view as it is (size and overlay).
 
-Anonymize: It allows you to remove identifying information in overlay
+Anonymize: It allows you to remove identifying information in overlay.
 
 #### Original Image
 
@@ -29,7 +29,9 @@ Export the view according to the original image with some options.
 * DICOM Shutter: Apply the [DICOM shutters](https://dicom.nema.org/medical/Dicom/current/output/chtml/part03/sect_C.7.6.11.html) when checked
 * DICOM Overlay: Apply the [DICOM overlays](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.9.2.html) when checked
 
-### DICOM Export
+### DICOM Export {{< svg "static/tuto/icon/exportDicom.svg" >}}
+
+In order to open the DICOM export window click on toolbar icon {{< svg "static/tuto/icon/exportDicom.svg" >}} or from the main menu _File > Export > DICOM_
 
 #### Local Device
 

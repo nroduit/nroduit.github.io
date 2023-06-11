@@ -8,7 +8,7 @@ keywords: [ "theme", "style", "flatlaf", "dicom viewer", "free dicom viewer", "o
 ## <center>Change the appearance of the user interface</center>
 
 ### How to apply another theme
-From the main menu, open File > Preferences (Alt + P) and select the desired theme and click on "show" to see a partial preview (1).
+From the main menu, open _File > Preferences (Alt + P)_ and select the desired theme and click on "show" to see a partial preview (1).
 
 ![Preferences](/tuto/theme-prefs.png?classes=shadow)
 <br>

@@ -9,7 +9,7 @@ keywords: [ "dicom import", "dicomweb", "dicom viewer", "free dicom viewer", "op
 
 This page explains how to configure a remote archive in DICOMWeb and then use this DICOMWeb node to [retrieve exams remotely](../dicom-import/#dicom-queryretrieve). However, it is also possible, without any prior configuration, to [launch Weasis from a web context](../../basics/customize/integration/#download-directly-with-dicomweb-restful-services) by passing it some parameters to retrieve images in DICOMWeb.
 
-From the main menu, open File > Preferences (Alt + P) and select DICOM node list.
+From the main menu, open _File > Preferences (Alt + P)_ and select DICOM node list.
 ![DICOMWeb nodes](/tuto/dicomweb-nodes.png?classes=shadow&width=750)
 <br>
 ### Google Cloud Healthcare API

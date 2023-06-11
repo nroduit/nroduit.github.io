@@ -7,7 +7,7 @@ keywords: [ "DICOM attributes", "tags", "search attributes" ]
 
 ## How to display DICOM attributes
 
-The DICOM attributes can be displayed either by:
+The DICOM attributes {{< svg "static/tuto/icon/metadata.svg" >}} can be displayed either by:
 
 * selecting the "Dicom Information" layout from the layout dropdown button (A)
 * clicking on the "Dicom Information" button in the toolbar to open a detached window (B)

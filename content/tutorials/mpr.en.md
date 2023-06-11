@@ -44,7 +44,7 @@ The crosshair tool {{< svg "static/tuto/icon/crosshair.svg" >}} can be selected 
 
 ### Preferences
 
-From the menu "_File > Preferences > Viewer > MPR_" (Since {{< badge "v4.1.0" >}}):
+From the main menu "_File > Preferences > Viewer > MPR_" (Since {{< badge "v4.1.0" >}}):
 
 * _Auto center axes:_ Allows you to choose a behavior to recenter the cursor in the different views. The position can be returned to the center systematically with the "Always" option (see the image above) or with the 2nd option only when the position is almost no longer visible (the default value).
 * _Crosshair gap at the center:_ Defines the size of the empty space in the center of the crosshair

@@ -9,7 +9,7 @@ The WEB distribution (weasis.war) allows delivering preferences from the server-
 
 Local preferences can be changed by:
 
-- The Weasis user interface: File > Preferences
+- The Weasis user interface: _File > Preferences_
 - The weasis protocol with the command [weasis:config](../../../getting-started/weasis-protocol/#modify-the-launch-parameters) and the *pro* parameter
 
 Preferences on the server-side can be changed by:
@@ -125,8 +125,8 @@ The default resources are located:
 
 ### How to add DICOM nodes or DICOM printers at the server-side
 
-- From the graphical user interface, configure the DICOM printers (File > Print > DICOM Print) or DICOM nodes (File > Preferences > Dicom node list)
+- From the graphical user interface, configure the DICOM printers from _File > Print > DICOM Print_ or DICOM nodes from _File > Preferences > Dicom node list_
 - Go to the folder ${user.home}/.weasis/data/weasis-dicom-explorer
 - Copy the desired configuration files: dicomNodes.xml, dicomPrinterNodes.xml, dicomWebNodes.xml and dicomCallingNodes.xml
 - Paste at the root path of resources. For web distribution, unzip, place files and zip again.
-- The new configurations should appear for all the users as non-editable configurations in Weasis.
+- The new configurations should appear for all the users as non-editable configurations in Weasis

@@ -9,7 +9,7 @@ keywords: [ "network", "porxy", "dicom viewer", "free dicom viewer", "open sourc
 
 ### Manual configuration from the user interface
 
-From the main menu, open File > Preferences (Alt + P) and select *Proxy Server*.
+From the main menu, open _File > Preferences (Alt + P)_ and select *Proxy Server*.
 
 The default configuration is *Direct connection (no proxy)* and by clicking on *Manual proxy configuration* you can define a custom proxy server (in the image below, a local proxy like Squid).
 

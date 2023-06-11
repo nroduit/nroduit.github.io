@@ -5,7 +5,7 @@ description: How to manipulate zoom and lens
 keywords: [ "zoom", "lens", "dicom viewer",  "pacs viewer" ]
 ---
 
-## Zoom tool
+## Zoom tool {{< svg "static/tuto/icon/zoom.svg" >}}
 
 The zoom tool can be associated with one of three mouse buttons or with the mouse scroll (top left toolbar). In the image below the zoom tool {{< svg "static/tuto/icon/zoom.svg" >}} is associated with the left mouse button.
 
@@ -17,8 +17,14 @@ The zoom factor can be modified from different locations:
 * from the context menu: right-click on the image > Zoom
 * form the slider in the image tool panel
 
+The context menu and the toolbar button allows you to select different zoom factor:
+
+* Actual pixel size {{< svg "static/tuto/icon/zoomOriginal.svg" >}}: display the image at a 1:1 ratio, where each pixel in the image corresponds to one pixel on the screen
+* Real world (see [below](#real-world-zoom-hahahugoshortcodes7hbhb)) {{< svg "static/tuto/icon/zoomRealWorld.svg" >}}
+* Resize to best fit {{< svg "static/tuto/icon/zoomBestFit.svg" >}}: scaling the image to make it fit the view area as closely as possible
+
 {{% notice note %}}
-The zoom function always zooms in/out to the center of the screen regardless of where the cursor is.
+The zoom function always zooms in/out to the center of the screen regardless of where the cursor is. This mode provides greater positional accuracy in particular situations.
 
 Since "Resize to best fit" is the default mode for a view, the image will be centered when scrolling to the next image. You need to change the mode or the zoom factor to keep the image off center when scrolling.
 {{% /notice %}}
@@ -29,16 +35,16 @@ Since "Resize to best fit" is the default mode for a view, the image will be cen
 For selecting directly the zoom action of the mouse left button, enter "z" as a shortcut.
 {{% /notice %}}
 
-### Real-world zoom
+### Real-world zoom {{< svg "static/tuto/icon/zoomRealWorld.svg" >}}
 The real-world zoom allows displaying the content of the image at the same size of the real objects.
 
-The feature requires calibrating the screen where the image is displayed. From the main menu, open File > Preferences (Alt + P) > Monitors and click on "Spatial calibration". Then enter a value that matches to the line length or the diagonal length of the screen.
+The feature requires calibrating the screen where the image is displayed. From the main menu, open _File > Preferences (Alt + P) > Monitors_ and click on _Spatial calibration_. Then enter a value that matches to the line length or the diagonal length of the screen.
 
 {{% notice note %}}
 Several screens can be calibrated. Each one has its own spatial calibration factor.
 {{% /notice %}}
 
-## Magnifying lens
+## Magnifying lens {{< svg "static/tuto/icon/zoomPan.svg" >}}
 The magnifying lens can be activated from the toggle button of the zoom toolbar (see the image below). It has several parameters accessible from the context menu.
 
 This lens can be used in many situations, for instance:

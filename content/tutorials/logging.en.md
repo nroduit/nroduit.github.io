@@ -25,7 +25,7 @@ This type of logs is interesting if the application doesn't start, crash at star
 ![Preferences](/tuto/logging.png?classes=shadow)
 <br>
 
-* From "_File > Preferences > General_" enable "_Rolling log_" to activate writing to files
+* From the main menu "_File > Preferences > General_" enable "_Rolling log_" to activate writing to files
 * Enter the maximum of _File numbers_ for rolling log (by default 5)
 * Enter the maximum size of each rolling file (by default 10 MB)
 * Select a log level which defines the verbosity of the traces (by default DEBUG)

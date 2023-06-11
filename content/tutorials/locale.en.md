@@ -8,7 +8,7 @@ keywords: [ "languages", "locale", "region", "dicom viewer", "free dicom viewer"
 ## <center>How to change the language and regional settings</center>
 
 ### Switching from the user interface
-From the main menu, open File > Preferences (Alt + P) and select the desired language and the regional format. The languages available in the list can be partially translated. In this case you can participate in the [translation](../../getting-started/translating) directly from a web portal.
+From the main menu, open _File > Preferences (Alt + P)_ and select the desired language and the regional format. The languages available in the list can be partially translated. In this case you can participate in the [translation](../../getting-started/translating) directly from a web portal.
 
 ![Preferences](/tuto/language-prefs.png?classes=shadow)
 <br>
