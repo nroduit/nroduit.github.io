@@ -11,7 +11,7 @@ If you want to get automatic updates of the Weasis DICOM viewer then check these
 
 #### Windows
 - [Microsoft Windows store](https://www.microsoft.com/en-us/p/weasis/9nhtv46lg4nh)
-- [Windows Package Manager (winget)](https://github.com/microsoft/winget-pkgs/tree/master/manifests/w/WeasisTeam/Weasis/4.0.3)
+- [Windows Package Manager (winget)](https://github.com/microsoft/winget-pkgs/tree/master/manifests/w/WeasisTeam/Weasis/)
 - [Chocolatey Community Repository](https://community.chocolatey.org/packages/weasis) (Windows deployment with PowerShell, Ansible, CHEF, Puppet...)
 
 #### Linux
