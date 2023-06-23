@@ -62,7 +62,7 @@ keepWhitespace = false
 # settings specific to this theme's features; choose to your likings and
 # consult this documentation for explanation
 [params]
-  editURL = "https://github.com/nroduit/nroduit.github.io/edit/hugo/content/"
+  editURL = "https://github.com/nroduit/nroduit.github.io/edit/main/content/"
   # Author of the site, will be used in meta information
   author = "Nicolas Roduit"
   # Description of the site, will be used in meta information
