@@ -31,7 +31,7 @@ By clicking on the "Launch" button, Weasis starts and displays the related image
 
 #### Internationalized characters
 {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/international.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/international.xml"
 {{< /launch >}}
 
 {{% notice info %}}
@@ -50,12 +50,12 @@ Should always render the same image.
 <ul>
 <li style="margin-bottom:10px;">Unsigned data
 {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/pixel-depth-unsigned.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/pixel-depth-unsigned.xml"
 {{< /launch >}}
 </li>
 <li style="margin-bottom:10px;">Signed data
 {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/pixel-depth-signed.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/pixel-depth-signed.xml"
 {{< /launch >}}
 </li>
 </ul>
@@ -67,17 +67,17 @@ $dicom:get -w "https://nroduit.github.io/samples/demo/pixel-depth-signed.xml"
 <ul>
 <li style="margin-bottom:10px;">Different compression syntaxes (JPEG, JPEG-Lossless, JPEG-LS, J2K, RLE)
 {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/compression1.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/compression1.xml"
 {{< /launch >}}
 </li>
 <li style="margin-bottom:10px;">Compression and fragments (the file contains the encoded pixel data stream fragmented into several parts, see <a target="_blank" href="http://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_A.4.html">DICOM part5</a>)
 {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/compression2.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/compression2.xml"
 {{< /launch >}}
 </li>
 <li style="margin-bottom:10px;">Compression, multi-frame and fragments
 {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/compression3.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/compression3.xml"
 {{< /launch >}}
 </li>
 </ul>
@@ -86,14 +86,14 @@ $dicom:get -w "https://nroduit.github.io/samples/demo/compression3.xml"
 
 #### Photometric Interpretation
 {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/color.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/color.xml"
 {{< /launch >}}
 
 ------------------------------------------------------------------------
 
 #### Pixel Spacing
 {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/pixel-spacing.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/pixel-spacing.xml"
 {{< /launch >}}
 
 {{% notice info %}}
@@ -104,7 +104,7 @@ Select the view and press 'd' to draw a line.
 
 #### Pixel Padding Value
 {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/pixel-padding.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/pixel-padding.xml"
 {{< /launch >}}
 
 {{% notice info %}}
@@ -115,7 +115,7 @@ Show or hide pixel padding from the "Display" right pane.
 
 #### Non-square pixels
 {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/pixel-nonsquare.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/pixel-nonsquare.xml"
 {{< /launch >}}
 
 {{% notice info %}}
@@ -126,7 +126,7 @@ Stretch or shrink the image according to the "pixel spacing" or "pixel aspect ra
 
 #### Overlay
 {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/overlay.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/overlay.xml"
 {{< /launch >}}
 
 {{% notice info %}}
@@ -137,7 +137,7 @@ Show or hide from the "Display" right panel.
 
 #### Modality LUT
 {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/mlut.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/mlut.xml"
 {{< /launch >}}
 
 {{% notice info %}}
@@ -148,7 +148,7 @@ Should always render the same image.
 
 #### VOI LUT
 {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/vlut.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/vlut.xml"
 {{< /launch >}}
 
 {{% notice info %}}
@@ -159,7 +159,7 @@ VOI LUT can be changed in the "Image Tool" right panel.
 
 #### Combined LUT
 {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/clut.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/clut.xml"
 {{< /launch >}}
 
 {{% notice info %}}
@@ -170,7 +170,7 @@ Should always render the same image.
 
 #### Shutter
 {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/shutter.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/shutter.xml"
 {{< /launch >}}
 
 {{% notice info %}}
@@ -181,7 +181,7 @@ Show or hide from the "Display" right panel.
 
 #### DICOM PDF
 {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/pdf.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/pdf.xml"
 {{< /launch >}}
 
 {{% notice info %}}
@@ -192,7 +192,7 @@ Open the default PDF viewer of the operating system.
 
 #### DICOM video
 {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/video.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/video.xml"
 {{< /launch >}}
 
 {{% notice info %}}
@@ -203,7 +203,7 @@ Open the default viewer (associated to the video mime type) of the operating sys
 
 #### DICOM Audio (AU)
 {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/audio.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/audio.xml"
 {{< /launch >}}
 
 {{% notice info %}}
@@ -214,7 +214,7 @@ Open the embedded Java Audio Player.
 
 #### DICOM floating point pixel data
 {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/float.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/float.xml"
 {{< /launch >}}
 
 {{% notice info %}}
@@ -225,7 +225,7 @@ Specific dicom pixel data containing float or double. Floating values must be su
 
 #### DICOM Structured Report (SR)
 {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/sr.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/sr.xml"
 {{< /launch >}}
 
 {{% notice info %}}
@@ -242,51 +242,51 @@ Click on the right icon over the image to select the Presentation State. See [Ho
 
 <ul>
 <li style="margin-bottom:10px;">Shutter Test {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/pr-shutter.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/pr-shutter.xml"
 {{< /launch >}}
 </li>
 <li style="margin-bottom:10px;">Text Annotation {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/pr-text.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/pr-text.xml"
 {{< /launch >}}
 </li>
 <li style="margin-bottom:10px;">Displayed Area {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/pr-area.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/pr-area.xml"
 {{< /launch >}}
 </li>
 <li style="margin-bottom:10px;">Modality LUT PState {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/pr-mlut.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/pr-mlut.xml"
 {{< /launch >}}
 </li>
 <li style="margin-bottom:10px;">VOI LUT PState {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/pr-vlut.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/pr-vlut.xml"
 {{< /launch >}}
 </li>
 <li style="margin-bottom:10px;">Presentation LUT PState {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/pr-plut.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/pr-plut.xml"
 {{< /launch >}}
 </li>
 <li style="margin-bottom:10px;">Combined LUT PState {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/pr-clut.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/pr-clut.xml"
 {{< /launch >}}
 </li>
 <li style="margin-bottom:10px;">Spatial Transformation {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/pr-spatial.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/pr-spatial.xml"
 {{< /launch >}}
 </li>
 <li style="margin-bottom:10px;">Overlay {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/pr-overlay.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/pr-overlay.xml"
 {{< /launch >}}
 </li>
 <li style="margin-bottom:10px;">Graphics Annotation {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/pr-graphics.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/pr-graphics.xml"
 {{< /launch >}}
 </li>
 <li style="margin-bottom:10px;">Complex Combination {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/pr-commplex.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/pr-commplex.xml"
 {{< /launch >}}
 </li>
 <li style="margin-bottom:10px;">GE RA600 Test of CPI GSPS {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/pr-ge.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/pr-ge.xml"
 {{< /launch >}}
   {{% notice note %}}
   This sample is produced by a GE workstation and contains some proprietary items (so not all PRs can be applied)
@@ -298,7 +298,7 @@ $dicom:get -w "https://nroduit.github.io/samples/demo/pr-ge.xml"
 
 #### DICOM Key Object Selection (KO)
 {{< launch >}}
-$dicom:get -w "https://nroduit.github.io/samples/demo/ko.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/ko.xml"
 {{< /launch >}}
 
 {{% notice info %}}

@@ -95,9 +95,9 @@ From Weasis 2.5 it is possible to have multiple archives (allows several arcQuer
 ### Build an XML manifest (no WADO server)
 This example requires only a WEB server. Weasis will download DICOM files by URLs.
 
-Use [$dicom:get](../../commands/#dicom-get) to load a <a target="_blank" href="https://nroduit.github.io/samples/Lumbar/mf.xml">XML manifest</a> containing direct links {{< launch >}}$dicom:get -w "https://nroduit.github.io/samples/Lumbar/mf.xml"{{< /launch >}}
+Use [$dicom:get](../../commands/#dicom-get) to load a <a target="_blank" href="https://nroduit.github.io/demo-archive/Lumbar/mf.xml">XML manifest</a> containing direct links {{< launch >}}$dicom:get -w "https://nroduit.github.io/demo-archive/Lumbar/mf.xml"{{< /launch >}}
 {{< highlight text >}}
-$dicom:get -w "https://nroduit.github.io/samples/Lumbar/mf.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/Lumbar/mf.xml"
 {{< /highlight >}}
 
 {{% notice note %}}

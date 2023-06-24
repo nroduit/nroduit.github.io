@@ -21,17 +21,17 @@ Some web frameworks such as the wiki or the URL field of some browsers only supp
 {{< tabs groupid="launchWeasisProtocol">}}
 {{% tab title="Windows" %}}
 {{< highlight shell >}}
-start weasis://%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml%22
+start weasis://%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fdemo-archive%2FLumbar%2Fmf.xml%22
 {{< /highlight >}}
 {{% /tab %}}
 {{% tab title="Linux" %}}
 {{< highlight shell >}}
-xdg-open weasis://%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml%22
+xdg-open weasis://%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fdemo-archive%2FLumbar%2Fmf.xml%22
 {{< /highlight >}}
 {{% /tab %}}
 {{% tab title="macOS" %}}
 {{< highlight shell >}}
-open weasis://%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fsamples%2FLumbar%2Fmf.xml%22
+open weasis://%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fdemo-archive%2FLumbar%2Fmf.xml%22
 {{< /highlight >}}
 {{% /tab %}}
 {{< /tabs >}}
@@ -50,15 +50,15 @@ To build an URI (weasis://path) without weasis-pacs-connector, you must choose o
 
 1. Use [$dicom:get](../../basics/commands/#dicomget) to load an image from URL
 {{< highlight text >}}
-$dicom:get -r "https://nroduit.github.io/samples/us-palette.dcm"
+$dicom:get -r "https://nroduit.github.io/demo-archive/us-palette.dcm"
 {{< /highlight >}}
 2. Format the URI path with a URL encoder
 {{< highlight text >}}
-%24dicom%3Aget+-r+%22https%3A%2F%2Fnroduit.github.io%2Fsamples%2Fus-palette.dcm%22
+%24dicom%3Aget+-r+%22https%3A%2F%2Fnroduit.github.io%2Fdemo-archive%2Fus-palette.dcm%22
 {{< /highlight >}}
 3. Make a link by adding "weasis://" at the beginning
 {{< launch title="Open the remote image" >}}
-$dicom:get -r "https://nroduit.github.io/samples/us-palette.dcm"
+$dicom:get -r "https://nroduit.github.io/demo-archive/us-palette.dcm"
 {{< /launch >}}
 
 {{% notice tip %}}
@@ -69,21 +69,21 @@ To load multiple remote images, it is recommended to use a manifest listing the 
 
 If you use weasis-pacs-connector, please refer to <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis">Launch Weasis</a>.
 
-* Use [$dicom:get](../../basics/commands/#dicomget) to load a static XML manifest containing direct links (without WADO server) {{< launch >}}$dicom:get -w "https://nroduit.github.io/samples/Lumbar/mf.xml"{{< /launch >}}
+* Use [$dicom:get](../../basics/commands/#dicomget) to load a static XML manifest containing direct links (without WADO server) {{< launch >}}$dicom:get -w "https://nroduit.github.io/demo-archive/Lumbar/mf.xml"{{< /launch >}}
 {{< highlight shell >}}
-$dicom:get -w "https://nroduit.github.io/samples/Lumbar/mf.xml"
+$dicom:get -w "https://nroduit.github.io/demo-archive/Lumbar/mf.xml"
 {{< /highlight >}}
 * Use [$dicom:rs](../../basics/commands/#dicomrs) to load DICOM files with DICOMWeb RESTful services (see [other examples](../../basics/customize/integration/#download-directly-with-dicomweb-restful-services)) {{< launch >}}$dicom:rs --url "https://demo.orthanc-server.com/dicom-web" -r "patientID=5Yp0E"{{< /launch >}}
 {{< highlight shell >}}
 $dicom:rs --url "https://demo.orthanc-server.com/dicom-web" -r "patientID=5Yp0E"
 {{< /highlight >}}
-* Use [$dicom:get](../../basics/commands/#dicomget) to load an image from URL and [remove all](../../basics/commands/#dicomclose) the previous images if Weasis is already open {{< launch >}}$dicom:close --all $dicom:get -r "https://nroduit.github.io/samples/us-palette.dcm"{{< /launch >}}
+* Use [$dicom:get](../../basics/commands/#dicomget) to load an image from URL and [remove all](../../basics/commands/#dicomclose) the previous images if Weasis is already open {{< launch >}}$dicom:close --all $dicom:get -r "https://nroduit.github.io/demo-archive/us-palette.dcm"{{< /launch >}}
 {{< highlight shell >}}
-$dicom:close --all $dicom:get -r "https://nroduit.github.io/samples/us-palette.dcm"
+$dicom:close --all $dicom:get -r "https://nroduit.github.io/demo-archive/us-palette.dcm"
 {{< /highlight >}}
-* Use [$dicom:get](../../basics/commands/#dicomget) to load multiple local folders and a remote image {{< launch >}}$dicom:get -l "D:/DICOM/Overlay" -l "D:/DICOM/Shutter" -r "https://nroduit.github.io/samples/us-palette.dcm"{{< /launch >}}
+* Use [$dicom:get](../../basics/commands/#dicomget) to load multiple local folders and a remote image {{< launch >}}$dicom:get -l "D:/DICOM/Overlay" -l "D:/DICOM/Shutter" -r "https://nroduit.github.io/demo-archive/us-palette.dcm"{{< /launch >}}
 {{< highlight shell >}}
-$dicom:get -l "D:/DICOM/Overlay" -l "D:/DICOM/Shutter" -r "https://nroduit.github.io/samples/us-palette.dcm"
+$dicom:get -l "D:/DICOM/Overlay" -l "D:/DICOM/Shutter" -r "https://nroduit.github.io/demo-archive/us-palette.dcm"
 {{< /highlight >}}
 * Use [$image:get](../../basics/commands/#imageget) to load a non DICOM image {{< launch >}}$image:get -u "https://user-images.githubusercontent.com/993975/59107662-6c9ed300-8939-11e9-83ee-28f2725f4ae1.jpg"{{< /launch >}}
 {{< highlight shell >}}
