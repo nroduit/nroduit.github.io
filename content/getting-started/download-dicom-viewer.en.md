@@ -20,8 +20,8 @@ If you want to get automatic updates of the Weasis DICOM viewer then check these
 - [Arch Linux repository](https://aur.archlinux.org/packages/weasis-bin/)
 - [Gentoo repository](https://gpo.zugaina.org/media-gfx/weasis-bin)
 
-{{% notice note %}}
-The package management systems above can limit certain functionalities because they work in sandbox mode.
+{{% notice warning %}}
+The package management systems above can limit certain functionalities because they work in sandbox mode, especially for Flatpak and Snap. 
 
 The Snap package installation uses a `<user.home>/snap/weasis/current/.weasis` directory instead of the `<user.home>/.weasis` directory for all other installations.
 {{% /notice %}}

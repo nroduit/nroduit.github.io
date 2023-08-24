@@ -14,7 +14,7 @@ We recommend the use of [IntelliJ IDEA](https://www.jetbrains.com/idea/) because
 ### Prerequisites
 
 1. Install [IntelliJ IDEA](https://www.jetbrains.com/idea/) (Community or Ultimate Edition 2023.1 or higher)
-2. Use JDK 20 or higher and set the language level to `20 Preview`.
+2. Use JDK 21 or higher and set the language level to `20 Preview`.
 ![Project Structure](/images/conf/project-structure.png)
 3. In _File > Settings... > Plugins_ install google-java-format plugin from Marketplace and enable it from *google-java-format Settings*
 
