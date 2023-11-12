@@ -48,7 +48,7 @@ Here are examples with XML manifests or with DICOMWeb RESTful services.
 
 ### Build an XML manifest
 
-Use [$dicom:get](../../commands/#dicom-get) to load a XML manifest returned by your service.
+Use [$dicom:get](../../commands/#dicomget) to load a XML manifest returned by your service.
 {{< highlight text >}}
 $dicom:get -w "https://myservice/manifest?studyUID=2.16.756.5.5.100.397184556.14391.1373576413.1508"
 {{< /highlight >}}
@@ -95,7 +95,7 @@ From Weasis 2.5 it is possible to have multiple archives (allows several arcQuer
 ### Build an XML manifest (no WADO server)
 This example requires only a WEB server. Weasis will download DICOM files by URLs.
 
-Use [$dicom:get](../../commands/#dicom-get) to load a <a target="_blank" href="https://nroduit.github.io/demo-archive/Lumbar/mf.xml">XML manifest</a> containing direct links {{< launch >}}$dicom:get -w "https://nroduit.github.io/demo-archive/Lumbar/mf.xml"{{< /launch >}}
+Use [$dicom:get](../../commands/#dicomget) to load a <a target="_blank" href="https://nroduit.github.io/demo-archive/Lumbar/mf.xml">XML manifest</a> containing direct links {{< launch >}}$dicom:get -w "https://nroduit.github.io/demo-archive/Lumbar/mf.xml"{{< /launch >}}
 {{< highlight text >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/Lumbar/mf.xml"
 {{< /highlight >}}
@@ -119,7 +119,7 @@ This integration requires a PACS/VNA with [DICOMweb](https://www.dicomstandard.o
 
 The following configurations allow images to be loaded by initiating the request from a WEB context. However, it is possible to access DICOMWeb services by initiating the request directly from the [Weasis import](../../../tutorials/dicom-import).
 
-Use [$dicom:rs](../../commands/#dicom-rs) to load DICOM files. Here are some configuration examples of DICOMweb applications:
+Use [$dicom:rs](../../commands/#dicomrs) to load DICOM files. Here are some configuration examples of DICOMweb applications:
 
 ### dcm4chee-arc-light
 

@@ -24,3 +24,6 @@ The calibration can be applied only to the current image or to all the images be
 {{% notice info %}}
 Once calibrated, all measuring tools will produce results according to the calibration and the [real-world zoom](../zoom/#real-world-zoom) will display the images at the same size of the real objects.
 {{% /notice %}}
+
+### Changing spacial calibration with Weasis 1.1.3
+{{< youtube id="v8CgcpYT1r8" >}}

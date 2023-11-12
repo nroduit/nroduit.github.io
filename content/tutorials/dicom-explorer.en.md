@@ -15,6 +15,16 @@ The data displayed in the DICOM Explorer can be [imported form different ways](.
 
 ![DICOM EXplorer](/tuto/dicom-explorer-level.jpg?classes=shadow&width=700px)
 <br>
+
+{{% notice tip %}}
+You can navigate through the Patient/Study/Series/Image structure using only [keyboard shortcuts](../../basics/shortcuts). For example:
+- Open an image and, if necessary, select the view to focus on. If the layout has more than one view, you can move across the views with _Tab_ and _Shift + Tab_. The view surrounded by an orange line is the focused view.
+- Navigate through images within a series with _Up_ and _Down_
+- Navigate through series within a study with _Left_ and _Right_
+- Navigate through studies within a patient with _Ctrl + Left_ and _Ctrl + Right_
+- Navigate through patients with _Ctrl + Up_ and _Ctrl + Down_ (follow the order in the patient's combo box and select the last tab if a patient has several tabs already open). To navigate open tabs, use _Ctrl + Tab_ and _Ctrl + Shift + Tab_.
+{{% /notice %}}
+
 #### Patient Level
 
 * Weasis allows multi-patient display. By default, when images are imported a tab with the patient's name opens in the main area.

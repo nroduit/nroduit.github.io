@@ -96,3 +96,8 @@ The maximum values of the default 3D textures come from the graphics card. Howev
 * _Default orientation:_ The preferred orientation used when opening a volume rendering view. Default is Anterior position by turning 15 degrees to the right and 15 degrees downwards.
 * _Background color:_ Defines the background color of the rendering
 * _Light color:_ Defines the color of the light during the illumination of the rendering
+
+### Video tutorials
+
+* Display an MR scan with an angiography-specific protocol by creating a volume rendering. Then either use the MIP type or choose a 3D LUT and adjust the win/level values.
+{{< youtube id="waPx_-35zps" >}}
