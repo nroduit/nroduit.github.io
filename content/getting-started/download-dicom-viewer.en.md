@@ -21,7 +21,7 @@ If you want to get automatic updates of the Weasis DICOM viewer then check these
 - [Gentoo repository](https://gpo.zugaina.org/media-gfx/weasis-bin)
 
 {{% notice warning %}}
-The package management systems above can limit certain functionalities because they work in sandbox mode, especially for Flatpak and Snap. 
+The package management systems above can limit certain functionalities because they work in sandbox mode, especially for Flatpak (see [Fedora issue](https://github.com/nroduit/Weasis/issues/449#issuecomment-1763311969)) and Snap (see [removable media issue](https://github.com/nroduit/Weasis/issues/487#issuecomment-1826293187)). 
 
 The Snap package installation uses a `<user.home>/snap/weasis/current/.weasis` directory instead of the `<user.home>/.weasis` directory for all other installations.
 {{% /notice %}}

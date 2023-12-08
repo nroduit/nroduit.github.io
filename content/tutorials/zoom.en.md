@@ -11,11 +11,12 @@ The zoom tool can be associated with one of three mouse buttons or with the mous
 
 The zoom factor can be modified from different locations:
 
-* by dragging the cursor over the image with the configured mouse button
-* by scrolling the mouse wheel when configured
-* by selecting an item in the zoom dropdown button in the toolbar
-* from the context menu: right-click on the image > Zoom
-* form the slider in the image tool panel
+* By dragging the cursor over the image with the configured mouse button
+* By scrolling the mouse wheel when configured
+* By selecting an item in the zoom dropdown button in the toolbar
+* From the context menu: right-click on the image > Zoom
+* Form the slider in the image tool panel
+* Using [Keyboard Shortcuts](../../basics/shortcuts) (_Ctrl + Plus (+)_, _Ctrl + Minus (-)_ and _Ctrl + Enter_) on the selected view
 
 The context menu and the toolbar button allows you to select different zoom factor:
 
