@@ -44,7 +44,7 @@ You can navigate through the Patient/Study/Series/Image structure using only [ke
 ![Thumbnails](/tuto/dicom-explorer-series.jpg?classes=shadow&width=700px)
 <br>
 * A series is represented by a thumbnail that contains a certain number of images (number displayed at the bottom left).
-* According to [predefined rules](https://github.com/nroduit/Weasis/blob/master/weasis-distributions/resources/series-splitting-rules.xml), some series are separated into sub-series also represented by a thumbnail with a number preceded by '#' in the upper right corner. Series splitting is necessary for the consistency of some tools such as the MPR, cross-lines and synchronization of series.
+* According to [predefined rules](https://github.com/nroduit/Weasis/blob/master/weasis-distributions/resources/series-splitting-rules.xml), some series are separated into sub-series also represented by a thumbnail with a number preceded by '#' in the upper right corner. Series splitting is necessary for the consistency of some tools such as the MPR, cross-lines and synchronization of series. However, sometimes separation is not desired, and sub-series can be [re-merged using the context menu](https://www.youtube.com/watch?v=tttP__1Sbsc).
 * The sorting of the series is done by the serial number and if this last one is not present then in a chronological way by the date of the series or other dates.
 * To open new series:
   * Drag and drop a thumbnail in the main area (if the series is dropped in a view of the same patient then the series is replaced otherwise a new tab is created).

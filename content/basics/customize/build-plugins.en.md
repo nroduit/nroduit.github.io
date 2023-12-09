@@ -36,7 +36,7 @@ See the [Weasis Architecture](../../architecture) to understand the plug-in hier
 
 {{% notice note %}}
 From Eclipse: _File > New > Maven Project_ and Search for weasis archetype in catalog filter.<br>
-From Intellij: _File > New Project > Maven_, check "Create from archetype" and select a Weasis archetype
+From Intellij: _File > New Project > Maven_, select the "Maven Archetype" generators and select a Weasis archetype from Default local catalog.
 {{% /notice %}}
 
 {{% notice tip %}}
@@ -45,6 +45,12 @@ The default value is \<relativePath>../Weasis/weasis-parent/pom.xml\</relativePa
 {{% /notice %}}
 
 ### Install plug-ins
+
+{{% notice warning %}}
+This documentation has not been updated since version 4.2.0 where the properties configuration files have been replaced by json files.
+
+The way to add plugins will also evolve soon with the new weasis-manager component.
+{{% /notice %}}
 
 #### For the installed distribution
 
@@ -110,6 +116,7 @@ http://localhost:8080/weasis-pacs-connector/viewer?patientID=9702672&cdb-ext=htt
 {{% notice tip %}}
 **For debugging  a specific configuration**: add to the launcher the following VM argument:
 `-Dfelix.extended.config.properties="http://server:port/weasis-ext/conf/ext-config.properties`
+
 {{% /notice %}}
 
 [An example](https://github.com/nroduit/weasis-plugins-war-builder) that makes a package of [weasis-isowriter](https://github.com/nroduit/weasis-isowriter) plugin:
