@@ -1,7 +1,4 @@
-function isYoutubeLink(url) {
-    const p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
-    return url.match(p);
-}
+
 function isImageLink(url) {
     const p = /([a-z\-_0-9\/:.]*\.(jpg|jpeg|png|gif))/i;
     return url.match(p);
@@ -92,28 +89,6 @@ function createImageLightbox(element) {
     setGallery(element);
 }
 
-function createYouTubeLightbox(element) {
-    setupLightbox();
-
-    const lightbox = document.getElementById('lightbox');
-
-    const videoWrapperContainer = document.createElement('div');
-    videoWrapperContainer.classList.add('videoWrapperContainer');
-
-    const videoWrapper = document.createElement('div');
-    videoWrapper.classList.add('videoWrapper');
-
-    const iframe = document.createElement('iframe');
-    iframe.setAttribute('src', `https://www.youtube.com/embed/${element.getAttribute('data-id')}?autoplay=1&showinfo=0&rel=0`);
-    iframe.setAttribute('allowfullscreen', '');
-    videoWrapper.appendChild(iframe);
-
-    videoWrapperContainer.appendChild(videoWrapper);
-    lightbox.appendChild(videoWrapperContainer);
-
-    setGallery(element);
-}
-
 document.addEventListener("DOMContentLoaded", function() {
 
     //create lightbox div in the footer
@@ -126,10 +101,6 @@ document.addEventListener("DOMContentLoaded", function() {
     elements.forEach(element => {
         const url = element.getAttribute('href');
         if(url) {
-            if(isYoutubeLink(url) && !element.classList.contains('no-lightbox')) {
-                element.classList.add('lightbox-youtube');
-                element.setAttribute('data-id',isYoutubeLink(url));
-            }
             if(isImageLink(url) && !element.classList.contains('no-lightbox')) {
                 element.classList.add('lightbox-image');
                 // var href = element.getAttribute('href');
@@ -155,15 +126,6 @@ document.addEventListener("DOMContentLoaded", function() {
         element.addEventListener("click", function(event) {
             event.preventDefault();
             createImageLightbox(this);
-        });
-    });
-
-    // Event listener for YouTube videos in lightbox
-    const youtubeElements = document.querySelectorAll('a.lightbox-youtube');
-    youtubeElements.forEach(element => {
-        element.addEventListener("click", function(event) {
-            event.preventDefault();
-            createYouTubeLightbox(this);
         });
     });
 });
