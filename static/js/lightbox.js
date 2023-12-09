@@ -104,7 +104,7 @@ function createYouTubeLightbox(element) {
     videoWrapper.classList.add('videoWrapper');
 
     const iframe = document.createElement('iframe');
-    iframe.src = 'https://www.youtube.com/embed/' + element.getAttribute('data-id') + '?autoplay=1&showinfo=0&rel=0';
+    iframe.setAttribute('src', `https://www.youtube.com/embed/${element.getAttribute('data-id')}?autoplay=1&showinfo=0&rel=0`);
     iframe.setAttribute('allowfullscreen', '');
     videoWrapper.appendChild(iframe);
 
