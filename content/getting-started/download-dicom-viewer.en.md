@@ -33,5 +33,5 @@ The Snap package installation uses a `<user.home>/snap/weasis/current/.weasis` d
 
 ### List of all the installers
 
-For more information on GLIBC versions regarding the life cycle of the different Linux distributions, see this [page](https://gist.github.com/wagenet/35adca1a032cec2999d47b6c40aa45b1#file-glibc-md).
+For more information on GLIBC versions regarding the life cycle of the different Linux distributions, see this [page](https://repology.org/project/glibc/versions).
 {{< old-download >}}

@@ -49,5 +49,9 @@ Some attributes can be into a sequence element (5). Note: the left arrow shows t
 {{% /notice %}}
 
 {{% notice tip %}}
+If there isn't enough space to display the entire value, simply resize the column from the header (only persistent if the image doesn't change) or use tooltips by positioning the cursor over the elements (since v4.2.2).
+{{% /notice %}}
+
+{{% notice tip %}}
 The DICOM attributes can be copied into the clipboard with the copy shortcut of your system.
 {{% /notice %}}

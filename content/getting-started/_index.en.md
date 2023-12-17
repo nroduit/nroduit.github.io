@@ -13,7 +13,7 @@ Since version 4, only the distribution with a native installer is maintained to 
 
 {{< latest-download "deb" >}}
 
-For more information on GLIBC versions regarding the life cycle of the different Linux distributions, see this [page](https://gist.github.com/wagenet/35adca1a032cec2999d47b6c40aa45b1#file-glibc-md).
+For more information on GLIBC versions regarding the life cycle of the different Linux distributions, see this [page](https://repology.org/project/glibc/versions).
 
 {{% notice note %}}
 To manage Weasis version at the server side, it is possible to install the [Weasis web package](https://github.com/nroduit/weasis-pacs-connector#installation) which will upgrade the native installation at the client side (it works for minor releases by updating all the plug-ins except the launcher).<br>
