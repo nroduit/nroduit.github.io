@@ -1,11 +1,11 @@
 ---
-title: MPR and 3D cursor
-weight: 80
+title: MPR Viewer and 3D cursor
+weight: 50
 description: How to use Multiplanar reconstruction (MPR) and 3D cursor (crosshair)
 keywords: [ "mpr", "multiplanar reconstruction", "3d cursor", "open source dicom viewer" ]
 ---
 
-## <center>MPR and 3D cursor (crosshair)</center>
+## <center>MPR Viewer and 3D cursor (crosshair)</center>
 
 ### Orthogonal multiplanar reconstruction (MPR)
 

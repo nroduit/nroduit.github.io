@@ -1,6 +1,6 @@
 ---
 title: DICOM Attributes
-weight: 45
+weight: 300
 description: How to display and compare DICOM attributes
 keywords: [ "DICOM attributes", "tags", "search attributes" ]
 ---

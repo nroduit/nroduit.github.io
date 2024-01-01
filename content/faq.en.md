@@ -17,7 +17,7 @@ hidden: true
  - [Is it possible to download DICOM files without having a WADO server?](#is-it-possible-to-download-dicom-files-without-having-a-wado-server)
 
 ### What is Weasis? ###
-Weasis is a standalone and web-based software for visualizing images obtained from medical imaging devices, see [Weasis Medical Viewer](../).
+Weasis is a standalone and web-based software for visualizing and analyzing images obtained from medical imaging equipment according to the [DICOM standard](https://www.dicomstandard.org/), see [Weasis Medical Viewer](../).
 
 ### I have questions, what can I do? ###
 

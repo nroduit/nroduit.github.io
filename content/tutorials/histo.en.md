@@ -1,6 +1,6 @@
 ---
 title: Histogram
-weight: 200
+weight: 350
 description: How to display histogram of real values and output LUT
 keywords: [ "histogram", "LUT", "VOI LUT",  "Modality LUT" ]
 ---
@@ -22,15 +22,10 @@ General histogram parameters:
 * *Statistics:* Show the statistics of the histogram which allow you to analyze and to compare images or image regions in a quantitative way (Pixels, Min, Max, Median, Mean, StDev, Skewness, Kurtosis, Entropy).
 
 {{% notice note %}}
-The values on the x-axis represent the modality values (e.g. Hounsfield for CT) or the pixel values for some modalities such as XA or MR. If the unit of the pixel value of the modality exists, it is visible at the end of the histogram title.
+The values on the x-axis represent the modality values (e.g. Hounsfield for CT) or the pixel values for some imaging types. If the unit of the pixel value of the modality exists, it is visible at the end of the histogram title.
 {{% /notice %}}
 
 ![Open Histogram](/tuto/histogram.jpg?classes=shadow&width=700px)
-<br>
-{{% notice tip %}}
-To display the LUT on the image, select it from the Display panel on the right.
-{{% /notice %}}
-
 
 Display histogram parameters:
 

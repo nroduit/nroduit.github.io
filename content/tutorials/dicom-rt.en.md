@@ -1,6 +1,6 @@
 ---
-title: DICOM RT
-weight: 90
+title: DICOM RT Tools
+weight: 220
 description: How to display radiotherapy information
 keywords: [ "dicom rt", "radiotherapy", "dicom viewer", "free dicom viewer", "open source dicom viewer" ]
 ---

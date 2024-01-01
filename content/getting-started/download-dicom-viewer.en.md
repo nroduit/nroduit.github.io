@@ -12,10 +12,10 @@ If you want to get automatic updates of the Weasis DICOM viewer then check these
 #### Windows
 - [Microsoft Windows store](https://www.microsoft.com/en-us/p/weasis/9nhtv46lg4nh)
 - [Windows Package Manager (winget)](https://github.com/microsoft/winget-pkgs/tree/master/manifests/w/WeasisTeam/Weasis/)
-- [Chocolatey Community Repository](https://community.chocolatey.org/packages/weasis) (Windows deployment with PowerShell, Ansible, CHEF, Puppet...)
+- [Chocolatey Community Repository](https://community.chocolatey.org/packages/weasis) ![Chocolatey](https://img.shields.io/chocolatey/dt/weasis?classes=inline "Chocolatey release downloads") (Windows deployment with PowerShell, CHEF, Puppet...)
 
 #### Linux
-- [Flathub repository](https://flathub.org/apps/details/io.github.nroduit.Weasis) (Flatpak package management)
+- [Flathub repository](https://flathub.org/apps/details/io.github.nroduit.Weasis) ![Flathub](https://img.shields.io/flathub/downloads/io.github.nroduit.Weasis?classes=inline "Flathub release downloads") (Flatpak package management)
 - [Snapcraft: The app store for Linux](https://snapcraft.io/weasis) (Snap package management)
 - [Arch Linux repository](https://aur.archlinux.org/packages/weasis-bin/)
 - [Gentoo repository](https://gpo.zugaina.org/media-gfx/weasis-bin)
@@ -28,7 +28,8 @@ The Snap package installation uses a `<user.home>/snap/weasis/current/.weasis` d
 
 ### Number of downloads
 
-[Github](https://github.com/nroduit/Weasis/releases) ![Github](https://img.shields.io/github/downloads/nroduit/weasis/total?classes=inline "Github release downloads") - [Sourceforge](https://sourceforge.net/projects/dcm4che/files/Weasis/) ![Sourceforge](https://img.shields.io/sourceforge/dt/dcm4che/Weasis?classes=inline "Sourceforge release downloads") - [Flathub](https://flathub.org/apps/details/io.github.nroduit.Weasis) ![Flathub](https://img.shields.io/flathub/downloads/io.github.nroduit.Weasis?classes=inline "Flathub release downloads")
+* [Github](https://github.com/nroduit/Weasis/releases) ![Github](https://img.shields.io/github/downloads/nroduit/weasis/total?classes=inline "Github release downloads") 
+* [Sourceforge](https://sourceforge.net/projects/dcm4che/files/Weasis/) ![Sourceforge](https://img.shields.io/sourceforge/dt/dcm4che/Weasis?classes=inline "Sourceforge release downloads")
 
 
 ### List of all the installers

@@ -1,6 +1,6 @@
 ---
-title: DICOM ECG
-weight: 95
+title: DICOM ECG Viewer
+weight: 70
 description: How to display electrocardiography data
 keywords: [ "dicom ecg", "ecg", "electrocardiography", "dicom viewer", "open source dicom viewer" ]
 ---

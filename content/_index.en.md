@@ -16,7 +16,7 @@ keywords: [ "dicom viewer", "free dicom viewer", "open source dicom viewer", "we
 {{< image-gallery gallery_dir="gallery2" >}}
 
 ### Contribute to this documentation
-Feel free to update this content, just click the **Edit this page** link displayed on top right of each page, and pullrequest it
+Feel free to update this content, just click the Edit button displayed on top right of each page, and pullrequest it.
 
 {{% notice info %}}
 Your modification will be deployed automatically when merged.

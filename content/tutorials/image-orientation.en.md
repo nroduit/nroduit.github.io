@@ -1,6 +1,6 @@
 ---
 title: Image orientation
-weight: 50
+weight: 350
 description: How to interpret the orientation
 keywords: [ "orientation", "dicom viewer", "free dicom viewer", "open source dicom viewer" ]
 ---

@@ -6,3 +6,8 @@ pre: "<b>3. </b>"
 ---
 
 {{% children description="true" %}}
+
+{{% notice note %}}
+If you find any errors or inaccuracies, just click the Edit button displayed on top right of each page, and make a pull request to submit your changes.
+{{% /notice %}}
+

@@ -1,6 +1,6 @@
 ---
 title: DICOM 3D Viewer
-weight: 85
+weight: 60
 description: How to display volume data
 keywords: [ "viewer 3D", "volume rendering", "ray casting", "3D rendering", "dicom viewer", "free dicom viewer", "open source dicom viewer" ]
 ---
@@ -42,7 +42,7 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/3d/head-neck.xml"
 
 Actions in the toolbar are:
 * {{< svg "static/tuto/icon/loadVolume.svg" >}} Allows you to fully reload the volume
-* {{< svg "static/tuto/icon/Orthographic.svg" >}} The orthographic projection maintains parallel lines unlike the perspective projection that provides a perception of depth. The default mode is the perspective projection.
+* {{< svg "static/tuto/icon/orthographic.svg" >}} The orthographic projection maintains parallel lines unlike the perspective projection that provides a perception of depth. The default mode is the perspective projection.
 * {{< svg "static/tuto/icon/volumeSettings.svg" >}} Opens the [3D preferences](#preferences)
 
 ### 3D Rendering Tools
@@ -57,7 +57,7 @@ Some of the tools described below are also available in the toolbar and in the c
 * _Level:_ The center of the range defined by Window.
 * _Preset:_ Specific values of Window and level. _Auto Level [Image]_ is the default value when changing a LUT and provides the best visual appearance of a Volume LUT.
 * _LUT Shape:_ The mapping between the input values and the display values can be linear, sigmoid and logarithmic. Default value is linear.
-* _LUT (Volume LUT):_ A Volume Look-Up Table (LUT) is a 3D LUT used to map the grayscale values of a volume dataset to color, opacity and lighting values for visualization. Choosing a LUT from the toolbar or the contextual menu is easier because the LUTs are displayed in an order according to the modality and with a preview.
+* _LUT (Volume LUT):_ A Volume Lookup Table (LUT) is a 3D LUT used to map the grayscale values of a volume dataset to color, opacity and lighting values for visualization. Choosing a LUT from the toolbar or the contextual menu is easier because the LUTs are displayed in an order according to the modality and with a preview.
 
 
 #### Volume Rendering (C)

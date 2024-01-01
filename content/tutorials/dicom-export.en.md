@@ -48,6 +48,12 @@ In order to open the DICOM export window click on toolbar icon {{< svg "static/t
 3. Select the patient/study/series/instance to export. Note: [series created by Weasis](../build-ko-pr/) have a flag "NEW"
 4. Export the selection and close the Window
 
+{{% notice tip %}}
+When opening the Export DICOM window, the checkbox of the study selected in the viewer (surrounded by an orange line) is automatically checked and open series have a full-line selection.
+
+In order to help with series selection, place the cursor on a series line, and you'll see a tooltip displaying its thumbnail.
+{{% /notice %}}
+
 {{% notice note %}}
 When DICOM data is exported in a native image format (JPG, PNG, JPEG 2000 or TIFF), only the images are transformed (see [original image options](#original-image)) and the encapsulated files (video, audio and PDF) are extracted.
 

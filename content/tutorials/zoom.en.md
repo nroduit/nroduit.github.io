@@ -1,6 +1,6 @@
 ---
 title: Zoom
-weight: 40
+weight: 340
 description: How to manipulate zoom and lens
 keywords: [ "zoom", "lens", "dicom viewer",  "pacs viewer" ]
 ---
