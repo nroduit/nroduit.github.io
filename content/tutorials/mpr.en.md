@@ -7,11 +7,11 @@ keywords: [ "mpr", "multiplanar reconstruction", "3d cursor", "open source dicom
 
 ## <center>MPR Viewer and 3D cursor (crosshair)</center>
 
-### Orthogonal multiplanar reconstruction (MPR)
+### Orthogonal multiplanar reconstruction (MPR) {{< svg "static/tuto/icon/mpr.svg" >}}
 
 The orthogonal multiplanar reconstruction (MPR) allows you to create, from the original plane (usually axial), images in the two other planes of the Euclidean space. Only planes along the 3 axes (x,y,z) can be displayed, an oblique plane cannot be obtained with this tool.
 
-The MPR view can be opened with {{< svg "static/tuto/icon/mpr.svg" >}} in the toolbar or by right-clicking on the thumbnail in the [DICOM explorer](../dicom-explorer/).
+The MPR view inherits most of the [DICOM 2D viewer](../dicom-2d-viewer) properties. It can be opened with {{< svg "static/tuto/icon/mpr.svg" >}} in the toolbar or by right-clicking on the thumbnail in the [DICOM explorer](../dicom-explorer/).
 {{% notice note %}}
 The menu and the button are only active if the series contains at least 5 images.
 {{% /notice %}}

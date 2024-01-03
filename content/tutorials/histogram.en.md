@@ -5,7 +5,7 @@ description: How to display histogram of real values and output LUT
 keywords: [ "histogram", "LUT", "VOI LUT",  "Modality LUT" ]
 ---
 
-## Displaying Histogram
+## <center>Displaying Histogram {{< svg "static/tuto/icon/histogram.svg" >}}</center>
 
 Displaying the histogram allows you to view the distribution of the modality values.
 

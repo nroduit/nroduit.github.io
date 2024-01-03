@@ -7,7 +7,7 @@ weight: 20
 
 ## <center>Keyboard and Mouse Shortcuts</center>
 
-<i class="fa fa-star" style="color:green"></i> <a target="_blank" href="http://www.ihe.net">IHE</a> recommendations in <a target="_blank" href="http://wiki.ihe.net/index.php?title=Basic_Image_Review">Basic Image Review</a> profile.
+<i class="fa fa-star" style="color:green"></i> [IHE](https://www.ihe.net) recommendations in [Basic Image Review profile](https://wiki.ihe.net/index.php?title=Basic_Image_Review).
 
 ### Central panel containing viewers and editors
 

@@ -5,7 +5,7 @@ description: How to display electrocardiography data
 keywords: [ "dicom ecg", "ecg", "electrocardiography", "dicom viewer", "open source dicom viewer" ]
 ---
 
-## <center>Displaying electrocardiography data</center>
+## <center>Displaying electrocardiography data {{< svg "static/tuto/icon/ecg.svg" >}}</center>
 
 The ECG viewer is used to display and analyze electrocardiogram (ECG) data in DICOM format obtained from different modalities, such as resting ECGs, ambulatory ECGs, and stress tests.
 
@@ -13,14 +13,14 @@ The viewer can also provide tools for measuring ECG intervals and amplitudes in 
 
 ![ECG Viewer](/tuto/ecg.png?classes=shadow&width=780px)
 <br>
-### Toolbar (A)
+### Toolbar {{< badge "A" >}}
 
 Actions in the toolbar are:
 * {{< svg "static/tuto/icon/print.svg" >}} Allows you to print the ECG as it is displayed with some basic information (patient/study)
 * {{< svg "static/tuto/icon/metadata.svg" >}} Show the DICOM metadata of the ECG
 * {{< svg "static/tuto/icon/selectionDelete.svg" >}} Delete all the measurements (yellow areas in the image above), see [Markers](#markers-d)
 
-### Zoom and Display Format (B)
+### Zoom and Display Format {{< badge "B" >}}
 
 The zoom is on several graphic components. The first combo box represents the time, the second represents the voltage, and the slider allows you to zoom in both directions while preserving the aspect ratio.
 
@@ -29,14 +29,14 @@ The zoom is on several graphic components. The first combo box represents the ti
 
 The Display Format allows you to show the leads in different layouts.
 
-### Lead and Cursor information (C)
+### Lead and Cursor information {{< badge "C" >}}
 
 Moving the cursor over the ECG displays the following information:
 
 * Lead label: show the minimum and maximum voltage values of a lead
 * Cursor: show the current time and voltage values under the cursor 
 
-### Markers (D)
+### Markers {{< badge "D" >}}
 
 The markers are the result of the measurements made on the ECG (yellow areas in the image above). A measurement is done by defining a starting and ending point:
 
@@ -59,7 +59,7 @@ Deleting the measurement in a lead can be done by a middle-click or shift+click.
 Only one measurement is possible by lead.
 {{% /notice %}}
 
-### Annotations (E)
+### Annotations {{< badge "E" >}}
 
 The annotations come from 2 groups of DICOM metadata:
 * Acquisition context and Annotations: Attributes which describes the conditions present during data acquisition.

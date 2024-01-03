@@ -5,7 +5,7 @@ description: How to manipulate zoom and lens
 keywords: [ "zoom", "lens", "dicom viewer",  "pacs viewer" ]
 ---
 
-## Zoom tool {{< svg "static/tuto/icon/zoom.svg" >}}
+## <center>Zoom tool {{< svg "static/tuto/icon/zoom.svg" >}}</center>
 
 The zoom tool can be associated with one of three mouse buttons or with the mouse scroll (top left toolbar). In the image below the zoom tool {{< svg "static/tuto/icon/zoom.svg" >}} is associated with the left mouse button.
 

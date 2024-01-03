@@ -5,12 +5,12 @@ description: How to display and compare DICOM attributes
 keywords: [ "DICOM attributes", "tags", "search attributes" ]
 ---
 
-## How to display DICOM attributes
+## <center>How to display DICOM attributes {{< svg "static/tuto/icon/metadata.svg" >}}</center>
 
 The DICOM attributes {{< svg "static/tuto/icon/metadata.svg" >}} can be displayed either by:
 
-* selecting the "Dicom Information" layout from the layout dropdown button (A)
-* clicking on the "Dicom Information" button in the toolbar to open a detached window (B)
+* selecting the "Dicom Information" layout from the layout dropdown button {{< badge "A" >}}
+* clicking on the "Dicom Information" button in the toolbar to open a detached window {{< badge "B" >}}
 
 ![Tags](/tuto/dicom-attributes.jpg?classes=shadow&width=700px)
 <br>
@@ -42,7 +42,7 @@ In the image above, we are looking for the word "date". Here are the steps:
 3. Use the arrows to navigate into the highlighted results. The button on the far right allows you to limit the results to positive ones.
 4. The navigation shows the current result in highlight mode.
 
-Using {{% icon icon="filter" %}} in the toolbar allows you to filter the results. This can be useful to keep the focus on certain elements when scrolling through a stack of images (only possible with layout (A)).
+Using {{% icon icon="filter" %}} in the toolbar allows you to filter the results. This can be useful to keep the focus on certain elements when scrolling through a stack of images (only possible with layout {{< badge "A" >}}).
 
 {{% notice note %}}
 Some attributes can be into a sequence element (5). Note: the left arrow shows the depth level as a sequence can contain another sequence.

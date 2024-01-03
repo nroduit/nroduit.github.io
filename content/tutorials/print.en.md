@@ -6,7 +6,7 @@ keywords: [ "print", "view", "dicom viewer" ]
 ---
 
 
-## Build the image selection to print
+## <center>Build the image selection to print {{< svg "static/tuto/icon/print.svg" >}}</center>
 
 The image selection to print must be prepared before calling the print function. If you need to print more than one image per page, choose a layout from the dropdown button in the toolbar (1).
 

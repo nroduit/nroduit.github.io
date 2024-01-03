@@ -5,7 +5,7 @@ description: How to display volume data
 keywords: [ "viewer 3D", "volume rendering", "ray casting", "3D rendering", "dicom viewer", "free dicom viewer", "open source dicom viewer" ]
 ---
 
-## <center>Displaying volume data</center>
+## <center>Displaying volume data {{< svg "static/tuto/icon/volume.svg" >}}</center>
 
 Since Weasis {{< badge "v4.1.0" >}} the 3D viewer allows displaying volumetric renderings with different options for adjusting the pseudo colors, the transparency, the shadows and the lighting according to the type of exam.
 
@@ -38,29 +38,32 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/3d/head-neck.xml"
 ![3D View](/tuto/view-3d.jpg?classes=shadow&width=780px)
 <br>
 
-### Toolbar (A)
+### Toolbar {{< badge "A" >}}
 
 Actions in the toolbar are:
 * {{< svg "static/tuto/icon/loadVolume.svg" >}} Allows you to fully reload the volume
 * {{< svg "static/tuto/icon/orthographic.svg" >}} The orthographic projection maintains parallel lines unlike the perspective projection that provides a perception of depth. The default mode is the perspective projection.
 * {{< svg "static/tuto/icon/volumeSettings.svg" >}} Opens the [3D preferences](#preferences)
 
+For other buttons see below.
+
 ### 3D Rendering Tools
 
 This tab contains all the tools to modify the volume rendering. If you want to return to the original settings, just click on the toolbar button {{< svg "static/tuto/icon/reset.svg" >}} or from the context menu.
 
-#### Windowing and Rendering (B)
+#### Windowing and Rendering {{< badge "B" >}}
 
-Some of the tools described below are also available in the toolbar and in the contextual menus.
+Some of the options described below are also available in the toolbar and in the contextual menus.
 
 * _Window:_ The width of a range of voxels values mapped to a specific range of display values.
 * _Level:_ The center of the range defined by Window.
-* _Preset:_ Specific values of Window and level. _Auto Level [Image]_ is the default value when changing a LUT and provides the best visual appearance of a Volume LUT.
-* _LUT Shape:_ The mapping between the input values and the display values can be linear, sigmoid and logarithmic. Default value is linear.
-* _LUT (Volume LUT):_ A Volume Lookup Table (LUT) is a 3D LUT used to map the grayscale values of a volume dataset to color, opacity and lighting values for visualization. Choosing a LUT from the toolbar or the contextual menu is easier because the LUTs are displayed in an order according to the modality and with a preview.
+* {{< svg "static/tuto/icon/winLevel.svg" >}} _Preset:_ Specific values of Window and level. _Auto Level [Image]_ is the default value when changing a LUT and provides the best visual appearance of a Volume LUT.
+* _LUT Shape:_ The mapping (transfer function) between the input values and the display values can be linear, sigmoid and logarithmic. Default value is linear.
+* {{< svg "static/tuto/icon/lut.svg" >}} _LUT (Volume LUT):_ A Volume Lookup Table (LUT) is a 3D LUT used to map the grayscale values of a volume dataset to color, opacity and lighting values for visualization. Choosing a LUT from the toolbar or the contextual menu is easier because the LUTs are displayed in an order according to the modality and with a preview.
+* {{< svg "static/tuto/icon/inverseLut.svg" >}} allows you to invert the LUT.
 
 
-#### Volume Rendering (C)
+#### Volume Rendering {{< badge "C" >}}
 
 This panel contains options for the rendering type and its quality, transparency, lighting, and shading settings.
 
@@ -69,7 +72,7 @@ This panel contains options for the rendering type and its quality, transparency
 * _Opacity:_ The opacity factor of the voxels. Can be set to more than 100% to modify initial values (lower than 100%) transmitted by the Volume LUTs.
 * _Shading:_ Allows to activate the shading. Default value is defined in LUT. The additional options allow you to override the default lighting settings (comes from Volume LUT).
 
-#### Transform (D)
+#### Transform {{< badge "D" >}}
 
 Allows you to zoom and rotate along a specific axis
 
@@ -83,7 +86,7 @@ Information about the graphics card and OpenGL capabilities, see [Requirements](
 
 #### 3D Viewer
 
-* _Default layout:_ The preferred layout used when opening the 3D viewer
+* {{< svg "static/tuto/icon/layout.svg" >}} _Default layout:_ The preferred layout used when opening the 3D viewer
 * _Max 3D texture size:_ The maximum size of the volume according to X/Y (width and height of images) and according to Z (number of images in the stack composing the volume)
 
 {{% notice note %}}
