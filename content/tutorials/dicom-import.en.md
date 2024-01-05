@@ -10,21 +10,18 @@ keywords: [ "dicom import", "dicom viewer", "free dicom viewer", "open source di
 ### From the system file explorer
 
 #### Drag and drop
-
 Files or folders selected from the system file explorer can be opened by dragging and dropping into the central area of Weasis.
 
 * Empty central panel: Any files than ca be open by one of the viewers (e.g. standard images such as TIFF, PNG, JPEG...)
 * DICOM Explorer and DICOM viewers (SR, AU, MPR, 2D and 3D) in the central panel: Only DICOM files. Opens the default viewer according to the files.
 
 #### File association
-
 Dicom files can be opened by double-clicking them from the system file explorer.
 {{% notice note %}}
 On Windows only the files with the extension ".dcm" are associated with Weasis. With other systems DICOM without extension are associated with Weasis.
 {{% /notice %}}
 
 ### From Weasis menu or toolbar
-
 From the main menu, open _File > Import > DICOM_ or from the first import button in the toolbar. ![Open toolbar](/tuto/dicom-open-icon.png?classes=shadow)
 
 In order to import DICOM CD/DVD go the main menu, open _File > Import > DICOM CD_ or from the second import button in the toolbar.
@@ -39,7 +36,6 @@ In order to import DICOM CD/DVD go the main menu, open _File > Import > DICOM CD
   * Open in new tab: behavior to automatically open the images of a patient when loading DICOM files
 
 #### DICOMDIR
-
 It may be from a DICOM CD/DVD or a folder containing a DICOMDIR
   * Path: browse a folder containing a DICOMDIR
   * Detect CD-ROM: try to load a DICOM CD/DVD
@@ -79,5 +75,4 @@ With a DICOMWeb node, a login from a web browser can be required (e.g. login to 
 {{% /notice %}}
 
 ### From commands
-
 See this [page](../../getting-started/weasis-protocol/#examples-to-load-images)

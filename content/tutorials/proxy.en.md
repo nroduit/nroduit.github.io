@@ -8,7 +8,6 @@ keywords: [ "network", "porxy", "dicom viewer", "free dicom viewer", "open sourc
 ## <center>How to configure a proxy server</center>
 
 ### Manual configuration from the user interface
-
 From the main menu, open _File > Preferences (Alt + P)_ and select *Proxy Server*.
 
 The default configuration is *Direct connection (no proxy)* and by clicking on *Manual proxy configuration* you can define a custom proxy server (in the image below, a local proxy like Squid).
@@ -22,7 +21,6 @@ In some cases it is necessary to restart Weasis.
 {{% /notice %}}
 
 ### Configuration at launch
-
 For setting JVM properties at launch, the selection in user interface must be *Direct connection (no proxy) or configuration at launch*.
 
 {{% notice tip %}}

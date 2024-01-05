@@ -21,8 +21,8 @@ Using the view in the layout (A) allows updating dynamically the DICOM attribute
 When Weasis opens particular DICOM files (e.g. PDF and video) with an external viewer, the DICOM attributes can viewed from the thumbnail context menu (see image below).
 ![Open DICOM PDF tags](/tuto/dicom-attributes-pdf.png?classes=shadow)
 <br>
-## How to find a specific DICOM attribute or value
 
+## How to find a specific DICOM attribute or value
 The Dicom Information window contains two tabs:
 
 * `Limited DICOM attributes`: List of the main attributes assembled in several groups.

@@ -17,5 +17,4 @@ Anywhere in the user interface, date and number should be displayed with the sel
 {{% /notice %}}
 
 ### Changing the default locale settings
-
 If you need to change the default settings, please see the [preferences](../../basics/customize/preferences/#priority-order-for-loading-a-property).

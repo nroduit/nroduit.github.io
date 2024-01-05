@@ -8,7 +8,6 @@ keywords: [ "mpr", "multiplanar reconstruction", "3d cursor", "open source dicom
 ## <center>MPR Viewer and 3D cursor (crosshair)</center>
 
 ### Orthogonal multiplanar reconstruction (MPR) {{< svg "static/tuto/icon/mpr.svg" >}}
-
 The orthogonal multiplanar reconstruction (MPR) allows you to create, from the original plane (usually axial), images in the two other planes of the Euclidean space. Only planes along the 3 axes (x,y,z) can be displayed, an oblique plane cannot be obtained with this tool.
 
 The MPR view inherits most of the [DICOM 2D viewer](../dicom-2d-viewer) properties. It can be opened with {{< svg "static/tuto/icon/mpr.svg" >}} in the toolbar or by right-clicking on the thumbnail in the [DICOM explorer](../dicom-explorer/).
@@ -32,7 +31,6 @@ For more information on the elements related to the orientation of multiplanar v
 {{% /notice %}}
 
 ### 3D cursor (crosshair)
-
 The 3D cursor allows you to synchronize the position of several views sharing the same 3D coordinate system.
 
 In order to know which series sharing the same coordinate system, you can select more than one series from the DICOM explorer by right-clicking on a series and selecting "_Select related Series_". Then open the series selection by right-clicking again and selecting "_2D Viewer > Open_"
@@ -43,7 +41,6 @@ The crosshair tool {{< svg "static/tuto/icon/crosshair.svg" >}} can be selected 
 <br>
 
 ### Preferences
-
 From the main menu "_File > Preferences > Viewer > MPR_" (Since {{< badge "v4.1.0" >}}):
 
 * _Auto center axes:_ Allows you to choose a behavior to recenter the cursor in the different views. The position can be returned to the center systematically with the "Always" option (see the image above) or with the 2nd option only when the position is almost no longer visible (the default value).

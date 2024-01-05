@@ -8,11 +8,9 @@ keywords: [ "dicom export", "dicom viewer", "free dicom viewer", "open source di
 ## <center>How to export DICOM files</center>
 
 ### Exporting the selected view {{< svg "static/tuto/icon/exportImage.svg" >}}
-
 From the toolbar icon {{< svg "static/tuto/icon/exportImage.svg" >}} or from the main menu _File > Export > Exporting view_ export the selected view either to the clipboard or to image file (PNG, TIF, JPG, JPEG2000).
 
 #### Current view
-
 Export the view as it is (size and overlay).
 
 Anonymize: It allows you to remove identifying information in overlay.
@@ -34,7 +32,6 @@ Export the view according to the original image with some options.
 In order to open the DICOM export window click on toolbar icon {{< svg "static/tuto/icon/exportDicom.svg" >}} or from the main menu _File > Export > DICOM_
 
 #### Local Device
-
 ![Export DICOM](/tuto/export-ko-pr.png?classes=shadow&width=500)
 <br>
 1. Select *Local Device* item
@@ -61,14 +58,12 @@ Multiframe images are exported by adding a number to the end of the file name.
 {{% /notice %}}
 
 #### DICOM Send
-
 1. Select *DICOM Send* item
 2. Select the destination node (either a DICOM node or a DICOMWeb node)
 3. Select the patient/study/series/instance to export. Note: [series created by Weasis](../build-ko-pr/) have a flag "NEW"
 4. Send the selection to the destination and close the Window
 
 #### CD/DVD Image
-
 ![Export DICOM](/tuto/dicom-export-cd.png?classes=shadow&width=750)
 <br>
 1. Select the *CD/DVD Image* item

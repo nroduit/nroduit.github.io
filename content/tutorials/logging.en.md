@@ -21,7 +21,6 @@ The boot log file is used to trace the startup configuration to ensure that the 
 This type of logs is interesting if the application doesn't start, crash at startup, or if there is a problem with the startup preferences.
 
 ### How to configure the rolling log files
-
 ![Preferences](/tuto/logging.png?classes=shadow)
 <br>
 

@@ -44,7 +44,6 @@ The slice position is used to move around the series to apply the projection and
 The _Image Extension_ value represents the number of slices to use for the MIP calculation. If the images are calibrated and contains the 3D position, the thickness is also displayed in millimeters.
 
 #### Rebuild Series
-
 It allows you to build a new MIP series according to the MIP options. In this new series the slice position and thickness are modified. 
 
 The new MIP series is added to the [DICOM explorer](../dicom-explorer/) and can be [exported](../dicom-export/#dicom-export-hahahugoshortcodes2hbhb).

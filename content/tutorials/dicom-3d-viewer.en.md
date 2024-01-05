@@ -13,7 +13,6 @@ The volume rendering uses a [ray casting algorithm](https://en.wikipedia.org/wik
 required for the ray casting computations to be executed efficiently on the graphics card. Therefore, minimal graphic resources are required.
 
 ### Requirements
-
 Some requirements related to the specifications of your graphic card are mandatory. They can be displayed in "_OpenGL Support_" from the menu "_File > Preferences > Viewer > 3D Viewer_":
 
 * _Driver version:_ The OpenGL version must be **at least 4.3** to support the Compute Shader (not supported currently on macOS)
@@ -27,7 +26,6 @@ OpenGL does not include specific functionality for selecting a particular graphi
 {{% /notice %}}
 
 ### Open the 3D viewer
-
 The 3D view can be opened with {{< svg "static/tuto/icon/volume.svg" >}} in the toolbar or by right-clicking on the thumbnail in the [DICOM explorer](../dicom-explorer/).
 
 Try to load a volume dataset (Medical Demos from data.kitware.com)
@@ -39,7 +37,6 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/3d/head-neck.xml"
 <br>
 
 ### Toolbar {{< badge "A" >}}
-
 Actions in the toolbar are:
 * {{< svg "static/tuto/icon/loadVolume.svg" >}} Allows you to fully reload the volume
 * {{< svg "static/tuto/icon/orthographic.svg" >}} The orthographic projection maintains parallel lines unlike the perspective projection that provides a perception of depth. The default mode is the perspective projection.
@@ -48,11 +45,9 @@ Actions in the toolbar are:
 For other buttons see below.
 
 ### 3D Rendering Tools
-
 This tab contains all the tools to modify the volume rendering. If you want to return to the original settings, just click on the toolbar button {{< svg "static/tuto/icon/reset.svg" >}} or from the context menu.
 
 #### Windowing and Rendering {{< badge "B" >}}
-
 Some of the options described below are also available in the toolbar and in the contextual menus.
 
 * _Window:_ The width of a range of voxels values mapped to a specific range of display values.
@@ -64,7 +59,6 @@ Some of the options described below are also available in the toolbar and in the
 
 
 #### Volume Rendering {{< badge "C" >}}
-
 This panel contains options for the rendering type and its quality, transparency, lighting, and shading settings.
 
 * _Type:_ Composite is the classic type of volume rendering. The Maximum Intensity Projection (MIP) is the highest intensity voxels (3D pixels) along a ray path are projected onto a 2D plane. Iso surface is a technique to create a 3D representation on a specific intensity threshold.
@@ -73,19 +67,15 @@ This panel contains options for the rendering type and its quality, transparency
 * _Shading:_ Allows to activate the shading. Default value is defined in LUT. The additional options allow you to override the default lighting settings (comes from Volume LUT).
 
 #### Transform {{< badge "D" >}}
-
 Allows you to zoom and rotate along a specific axis
 
 ### Preferences
-
 From the menu "_File > Preferences > Viewer > 3D Viewer_":
 
 #### OpenGL Support
-
 Information about the graphics card and OpenGL capabilities, see [Requirements](#requirements).
 
 #### 3D Viewer
-
 * {{< svg "static/tuto/icon/layout.svg" >}} _Default layout:_ The preferred layout used when opening the 3D viewer
 * _Max 3D texture size:_ The maximum size of the volume according to X/Y (width and height of images) and according to Z (number of images in the stack composing the volume)
 
@@ -94,13 +84,11 @@ The maximum values of the default 3D textures come from the graphics card. Howev
 {{% /notice %}}
 
 #### Volume Rendering
-
 * _Dynamic quality:_ Allows you to make the render more fluid by reducing its quality (according to the z-axis) when it is rotating or being modified. When the slider is at maximum then there is no more quality reduction.
 * _Default orientation:_ The preferred orientation used when opening a volume rendering view. Default is Anterior position by turning 15 degrees to the right and 15 degrees downwards.
 * _Background color:_ Defines the background color of the rendering
 * _Light color:_ Defines the color of the light during the illumination of the rendering
 
 ### Video tutorials
-
 * Display an MR scan with an angiography-specific protocol by creating a volume rendering. Then either use the MIP type or choose a 3D LUT and adjust the win/level values.
 {{< youtube id="waPx_-35zps" >}}

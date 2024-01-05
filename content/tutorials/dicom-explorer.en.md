@@ -26,7 +26,6 @@ You can navigate through the Patient/Study/Series/Image structure using only [ke
 {{% /notice %}}
 
 #### Patient Level
-
 * Weasis allows multi-patient display. By default, when images are imported a tab with the patient's name opens in the main area.
 * A tab containing a multi-view layout can only display images from a single patient.
 * Changing patients can be done either through the first combobox in the DICOM Explorer (see image above) or by selecting a tab in the main area.
@@ -34,13 +33,11 @@ You can navigate through the Patient/Study/Series/Image structure using only [ke
 * Studies and Series are displayed within the same patient when the metadata Patient Name and Patient ID are the same. Otherwise, new patients are displayed.
 
 #### Study Level
-
 * A study contains one or more series (thumbnails) belonging to a patient. A line representing the study surrounds its series (see image above).
 * By default, the studies are sorted by reverse chronology order (since {{< badge "v4.1.0" >}} "_Study data sorting_" can be changed in the menu "_File > Preferences > DICOM > DICOM Explorer_"). If there is no study date then the studies are sorted alphabetically according to the Study Description.
 * By default, all the studies are displayed, however you can choose to display only one of them from the study combobox.
 
 #### Series Level
-
 ![Thumbnails](/tuto/dicom-explorer-series.jpg?classes=shadow&width=700px)
 <br>
 * A series is represented by a thumbnail that contains a certain number of images (number displayed at the bottom left).
@@ -56,7 +53,6 @@ You can navigate through the Patient/Study/Series/Image structure using only [ke
     * Add: Adds the series to the current patient's layout if exists.
 
 #### Preferences
-
 From the main menu "_File > Preferences > DICOM > DICOM Explorer_":
 
 * _Thumbnail size:_ defines the width of the thumbnails and adjusts the panel accordingly (Default: 144). It is recommended to restart the application after this change.

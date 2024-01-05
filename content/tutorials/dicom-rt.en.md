@@ -10,7 +10,6 @@ keywords: [ "dicom rt", "radiotherapy", "dicom viewer", "free dicom viewer", "op
 The _RT Tool_ appears on the right panel when a CT exam (when linked with DICOM STRUCT, PLAN and DOSE) is displayed. Since Weasis {{< badge "v4.1.0" >}} a specific configuration in config.properties is no longer required.
 
 ### How to display structure and iso-dose
-
 In order to display the structures in overlay on the image, apply the following points (see in the image below):
 
 1. {{< badge "Optional" >}} When selected, it allows you to force the DVH calculations. Otherwise, it is calculated only if some information is not available in the DICOM files.
@@ -36,8 +35,6 @@ The "Structures" and "Isodoses" root node can be used to show or hide all graphi
 
 
 ### How to display DVH
-
-
 * Select one or several structures. Note: the _Structures_ root node must be selected.
 * Click on the button "_Display DVH chart_"
 * Right-click on the chart to print or save as a PNG image or vector files such as SVG or EPS.

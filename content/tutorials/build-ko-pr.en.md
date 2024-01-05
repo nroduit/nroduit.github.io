@@ -8,7 +8,6 @@ keywords: [ "Key Object Selection", "Presentation State", "dicom viewer", "free 
 ## <center>How to build and export DICOM KO and PR</center>
 
 ### Key Object Selection (KO)
-
 - In order to display KO Toolbar, select in the main menu: View > Toolbars > Key Object Selection Toolbar
 - When a DICOM KO is loaded then it appears in the explorer menu (1) or it can be selected from the icon on the right of the view (6).
 - Click on the star icon (3) to add the key image or press 'k' to create in a new KO.

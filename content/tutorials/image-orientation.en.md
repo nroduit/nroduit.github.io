@@ -51,7 +51,6 @@ To display or hide the orientation on the image, select it from the _Display_ pa
 
 
 ### Orientation in 2D multiplanar reconstruction (MPR)
-
 The image below shows the 3 views of the orthogonal MPR. The uppercase letter at the left or at the top designates the orientation of each multiplanar view whose type (axial, coronal, sagittal) is defined at the bottom.
 
 ![MPR orientation](/tuto/mpr-orientation.jpg?classes=shadow)
