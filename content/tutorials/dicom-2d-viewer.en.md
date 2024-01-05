@@ -124,7 +124,7 @@ _Image Tools_ contains all the tools to modify the image rendering.
 ##### [Windowing and Rendering](../lut/) 
 
 ##### Transform
-Allows you to zoom, rotate and flip the image. [Zoom](../zoom) and rotation can also be configured with the [mini-tool](#mini-tool) or the [mouse actions](#toolbars-hahahugoshortcodes3hbhb).
+Allows you to zoom, rotate and flip the image. [Zoom](../zoom) and rotation can also be configured with the [mini-tool](#mini-tool) or the [mouse actions](#toolbars-hahahugoshortcodes4hbhb).
 
 ##### Cine
 The _Cine start_ button {{< svg "static/tuto/icon/execute.svg" >}} lets you scroll through the images in a series at a certain speed (frame per second). The speed values comes from the DICOM file if exists.

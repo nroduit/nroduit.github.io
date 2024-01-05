@@ -19,7 +19,7 @@ This panel allows you to draw and measure on DICOM and standard images. The resu
 When clicking on {{< svg "static/tuto/icon/normalize.svg" >}} of the vertical button {{< svg "static/tuto/icon/measure.svg" >}}, the panel is displayed on the right side of the viewer. This panel is divided into 4 parts.
 
 #### Measurement tools {{< badge "A" >}}
-Select a measurement tool by clicking on one of the buttons and then draw on the image. Note that the previous action will select automatically the drawing action in the [mouse left button](../dicom-2d-viewer/#toolbars-hahahugoshortcodes3hbhb).
+Select a measurement tool by clicking on one of the buttons and then draw on the image. Note that the previous action will select automatically the drawing action in the [mouse left button](../dicom-2d-viewer/#toolbars-hahahugoshortcodes4hbhb).
 
 The first button is the selection tool that allows you to select, resize and move the graphic objects.
 
@@ -52,7 +52,7 @@ The drawing buttons allow you to add text and graphic as annotations. These grap
 * More options: The preferences to change more display options (see [preferences](#preferences)).
 
 {{% notice tip %}}
-Show/hide all the graphic objects from the [_Display_ panel](../dicom-2d-viewer/#display-hahahugoshortcodes10hbhb) by checking/unchecking the _Drawings_ option.
+Show/hide all the graphic objects from the [_Display_ panel](../dicom-2d-viewer/#display-hahahugoshortcodes13hbhb) by checking/unchecking the _Drawings_ option.
 {{% /notice %}}
 
 #### Selected Measurement {{< badge "D" >}}

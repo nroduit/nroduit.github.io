@@ -10782,13 +10782,13 @@ EEIIIZ4QMlRfCCGEEEIIIYQQQgghiii1x2lqWurDKocQogKyYvZVdxGEEEIIIYQQQgghnkglNpza
 qRBCCCGEEEIIIYQQQhQhDadCCCGEEEIIIYQQQghRhAmAg71jdZdDCCGEEEIIIYQQQgghHhn/D998
 gukEf8YcAAAAAElFTkSuQmCC
 "/>
- <a transform="translate(-.24897 .68477)" target="new" xlink:href="/en/tutorials/dicom-2d-viewer/#display-hahahugoshortcodes10hbhb" xlink:title="Display Tool">
+ <a transform="translate(-.24897 .68477)" target="new" xlink:href="/en/tutorials/dicom-2d-viewer/#display-hahahugoshortcodes13hbhb" xlink:title="Display Tool">
   <rect x="1327.5" y="90.873" width="27.922" height="152.16" fill="#00cd00" fill-opacity=".14599" stroke="#00ce00" stroke-width="1.5" style="paint-order:stroke fill markers"/>
  </a>
- <a transform="translate(-.24897 157.36)" target="new" xlink:href="/en/tutorials/dicom-2d-viewer/#image-tools-hahahugoshortcodes11hbhb" xlink:title="Image Tools">
+ <a transform="translate(-.24897 157.36)" target="new" xlink:href="/en/tutorials/dicom-2d-viewer/#image-tools-hahahugoshortcodes25hbhb" xlink:title="Image Tools">
   <rect x="1327.5" y="90.873" width="27.922" height="182" fill="#00cd00" fill-opacity=".14599" stroke="#00ce00" stroke-width="1.5" style="paint-order:stroke fill markers"/>
  </a>
- <a transform="translate(-43.868 1.9585)" target="new" xlink:href="/en/tutorials/dicom-2d-viewer/#mini-tool-hahahugoshortcodes9hbhb" xlink:title="Mini-tool">
+ <a transform="translate(-43.868 1.9585)" target="new" xlink:href="/en/tutorials/dicom-2d-viewer/#mini-tool-hahahugoshortcodes12hbhb" xlink:title="Mini-tool">
   <rect x="1334.1" y="91.566" width="19.935" height="755.67" fill="#00cd00" fill-opacity=".14599" stroke="#00ce00" stroke-width="1.5" style="paint-order:stroke fill markers"/>
  </a>
  <a transform="translate(-146.19 -48.972)" target="new" xlink:href="/en/tutorials/dicom-3d-viewer/" xlink:title="3D Viewer (Volume Rendering)">
@@ -10824,7 +10824,7 @@ gukEf8YcAAAAAElFTkSuQmCC
   <rect transform="translate(756.54 393.94)" x="1327.5" y="90.873" width="27.922" height="226" style="paint-order:stroke fill markers"/>
   <rect x="1327.5" y="90.873" width="153.5" height="38.849" style="paint-order:stroke fill markers"/>
  </a>
- <a transform="translate(-1098 -48.972)" target="new" xlink:href="/en/tutorials/dicom-2d-viewer/#toolbars-hahahugoshortcodes3hbhb" xlink:title="Viewer Main Bar">
+ <a transform="translate(-1098 -48.972)" target="new" xlink:href="/en/tutorials/dicom-2d-viewer/#toolbars-hahahugoshortcodes4hbhb" xlink:title="Viewer Main Bar">
   <rect x="1327.5" y="90.873" width="329.45" height="38.849" fill="#00cd00" fill-opacity=".14599" stroke="#00ce00" stroke-width="1.5" style="paint-order:stroke fill markers"/>
  </a>
  <a transform="translate(-1154.6 -48.972)" target="new" xlink:href="/en/tutorials/dicom-export/" xlink:title="DICOM Export">
