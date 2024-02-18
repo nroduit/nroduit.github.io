@@ -7,6 +7,12 @@ keywords: [ "dicom import", "dicom viewer", "free dicom viewer", "open source di
 
 ## <center>How to import DICOM files</center>
 
+Weasis can open DICOM files from various ways and sources: drag and drop, local device, DICOM ZIP, DICOM CD/DVD, DICOM Query/Retrieve, and from commands locally or remotely.
+
+{{% notice note %}}
+An popup error message is displayed when DICOM files cannot be read (from v4.3.0) or when a network error occurs. In the latter case a message asking to download again the missing files.
+{{% /notice %}}
+
 ### From the system file explorer
 
 #### Drag and drop

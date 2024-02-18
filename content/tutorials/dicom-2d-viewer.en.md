@@ -17,7 +17,7 @@ The 2D view can be opened with {{< svg "static/tuto/icon/view2d.svg" >}} in the 
 
 The rulers{{< badge "K" >}} show a real size when it can be calculated from the DICOM file. When a text {{< badge "M" >}} above the calibration is displayed, it gives information about the calibration type. Here are some examples:
 * _At dector:_ The calibration of the projection radiographic image is done at the detector level 
-* _Magnified:_ The calibration of the projection radiographic image is corrected using the magnification factor (e.g. mammography)
+* _Magnified:_ The calibration of the projection radiographic image is corrected using the magnification factor (e.g. mammography, see the image above)
 * _Used fiducials:_ The calibration is based on fiducials (e.g. manual calibration with a ruler in the image)
 * _At scanner:_ The calibration comes from a media which has been digitized (e.g. film digitizer)
 
@@ -127,10 +127,18 @@ _Image Tools_ contains all the tools to modify the image rendering.
 Allows you to zoom, rotate and flip the image. [Zoom](../zoom) and rotation can also be configured with the [mini-tool](#mini-tool) or the [mouse actions](#toolbars-hahahugoshortcodes4hbhb).
 
 ##### Cine
-The _Cine start_ button {{< svg "static/tuto/icon/execute.svg" >}} lets you scroll through the images in a series at a certain speed (frame per second). The speed values comes from the DICOM file if exists.
-Click on _Cine stop_ button {{< svg "static/tuto/icon/suspend.svg" >}} to end the animation.
+The _Cine start_ button {{< svg "static/tuto/icon/execute.svg" >}} lets you scroll through the images in a series at a certain speed (frame per second). The speed values comes from the DICOM file if exists. The cine options can also be changed from the context menu.
+
+* Click on _Cine stop_ button {{< svg "static/tuto/icon/suspend.svg" >}} to end the animation.
+* Click on _Loop Sweep_ toggle button {{< svg "static/tuto/icon/loop.svg" >}} to change the cine mode: looping vs sweeping.
 
 {{% notice note %}}
+When the cine is active, the series which are synchronized are also animated. The cine is also applied to other series when they are selected until the _Cine stop_ button is clicked.
+
+When a series have a variable frame rate. The speed is changed automatically. So the speed value entered manually is not preserved.
+{{% /notice %}}
+
+{{% notice tip %}}
 A _Cine_ toolbar is also available. It is not visible by default, but can be displayed from the _View_ menu.
 {{% /notice %}}
 

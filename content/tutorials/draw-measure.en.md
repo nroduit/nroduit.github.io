@@ -84,7 +84,7 @@ The table can be exported by copy/paste. Note that the maximum precision values 
 From the menu “File > Preferences > Draw & Measure”:
 
 #### Drawings
-It lets you change the graphic properties when drawing new graphics, since {{< badge "v4.2.2" >}}.
+It lets you change the graphic properties when drawing new graphics, since {{< badge "v4.3.0" >}}.
 
 * Line color: The default line color. The default value is yellow. The opacity can be changed from the transparency or alpha slider of the different color models in the color picker.
 * Line width: The default line width.
