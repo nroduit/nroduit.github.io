@@ -33,7 +33,8 @@ This type of DICOM object is originally used to represent structures delineated 
 See [DICOM RT](../dicom-rt) for displaying DICOM RTSTRUCT objects in Weasis.
 {{% /notice %}}
 
-Displaying TotalSegmentator segmentation results in Weasis:
+[TotalSegmentator](https://github.com/wasserth/TotalSegmentator/) automatically segments over a hundred anatomical zones on CT images.
+When the result is saved in DICOM RTSTRUCT (since version 2), the segmentation result can be displayed directly in Weasis:
 {{< youtube id="W6MHc3hEqfk" >}}
 
 ### DICOM Structured Report (SR)

@@ -22,6 +22,9 @@ In order to display the structures in overlay on the image, apply the following 
 
 {{% notice note %}}
 The "Structures" tree has the same options as DICOM SEG regions, see [DICOM Segmentation](../dicom-segmentation/#how-to-display-dicom-seg).
+
+See also the use of DICOM RT as [artificial intelligence output](../dicom-artificial-intelligence/#dicom-rtstruct).
+
 {{% /notice %}}
 
 
