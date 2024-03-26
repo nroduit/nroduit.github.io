@@ -20,6 +20,11 @@ In order to display the structures in overlay on the image, apply the following 
 ![DICOM STRUCT](/tuto/dicom-rt-struct.jpg?classes=shadow)
 <br>
 
+{{% notice note %}}
+The "Structures" tree has the same options as DICOM SEG regions, see [DICOM Segmentation](../dicom-segmentation/#how-to-display-dicom-seg).
+{{% /notice %}}
+
+
 For displaying the iso-doses, apply the following points (see in the image below):
 
 1. Select the _Isodoses_ tab

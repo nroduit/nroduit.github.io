@@ -1,0 +1,39 @@
+---
+title: DICOM SEG
+weight: 337
+description: How to display the DICOM Segmentation file
+keywords: [ "dicom seg", "segmentation", "SEG", "dicom viewer", "free dicom viewer", "open source dicom viewer" ]
+---
+
+## <center>Displaying DICOM Segmentation {{< svg "static/tuto/icon/segmentation.svg" >}}</center>
+
+Since Weasis {{< badge "v4.3.0" >}}, this panel lets you display the contents of a DICOM SEG file superimposed on the image. It also lets you modify the transparency of specific regions (label defined by a color).
+
+### How to display DICOM SEG
+In order to display the DICOM SEG regions in overlay on the image, follow these steps (see in the image below):
+
+1. Open the DICOM series with a link to a DICOM SEG object. This link is visible by the segmentation icon {{< svg "static/tuto/icon/segmentation.svg" >}} in the lower right-hand corner of the thumbnail.
+2. Once the image is displayed, you can click on {{< svg "static/tuto/icon/normalize.svg" >}} of the vertical button {{< svg "static/tuto/icon/segmentation.svg" >}} to show the _Segmentation_ panel on the right side of the viewer.
+3. A DICOM SEG file is represented by a selected item in the combo box and its list of regions below. By default, all DICOM SEG files linked to an image are displayed.
+4. Select one or several regions to display for the selected DICOM SEG (3). Several regions are grouped together when they share the same first name. Note: the parent node must be selected to display the child regions.
+5. Adjust global graphic opacity (border and interior)
+
+![DICOM SEG](/tuto/dicom-seg.jpg?classes=shadow)
+<br>
+
+{{% notice note %}}
+The regions tree has context menus that allow you to:
+* _Fill opacity_ (all nodes): The opacity of the interior of the shape, relative to the opacity of the line color (_Graphic Opacity_). The default value is 20%. For example, if the line color has an opacity of 80% and the fill opacity is 20%, then the perceived opacity will be 16% (0.8 * 0.2).
+* _Select/Unselect all the child nodes_ (only for parent nodes)
+* _Show ih the images view_ (only for leaf nodes): The region with the highest surface area is displayed in the image overview.
+* _Pixel statistics from the selected view_ (only for leaf nodes): Show statistics of the pixel values within the region shape.
+{{% /notice %}}
+
+{{% notice tip %}}
+The regions tree has tooltips on leaf elements that show the region description and the region volume.
+{{% /notice %}}
+
+
+
+
+

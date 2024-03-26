@@ -18,7 +18,7 @@ The DICOM attributes {{< svg "static/tuto/icon/metadata.svg" >}} can be displaye
 Using the view in the layout (A) allows updating dynamically the DICOM attributes to the current image (e.g. scrolling into the series). The DICOM attributes won't change when opening the detached window (B).
 {{% /notice %}}
 
-When Weasis opens particular DICOM files (e.g. PDF and video) with an external viewer, the DICOM attributes can viewed from the thumbnail context menu (see image below).
+When Weasis opens particular DICOM files (e.g. PDF and video) with an external viewer, the DICOM attributes can be viewed from the thumbnail context menu (see image below).
 ![Open DICOM PDF tags](/tuto/dicom-attributes-pdf.png?classes=shadow)
 <br>
 

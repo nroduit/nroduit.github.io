@@ -7,5 +7,6 @@
 *.ipr
 .idea/
 
+/public
 /resources/_gen/images
 .hugo_build.lock
