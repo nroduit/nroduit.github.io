@@ -21,7 +21,11 @@ If the button is grayed out, it means that the current series has less than 5 im
 
 ### The MIP Options
 
-This dialog is a modal window that allows you to change the MIP settings and build a new MIP series.
+This dialog is a modal window that allows you to change the MIP settings and build a new MIP series. 
+
+Try to load a volume dataset and open the MIP viewer. {{< launch >}}
+$dicom:get -w "https://nroduit.github.io/demo-archive/3d/head-neck.xml"
+{{< /launch >}}
 
 ![MIP Options](/tuto/mip-options.png?classes=shadow)
 <br>

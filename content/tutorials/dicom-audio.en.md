@@ -9,6 +9,10 @@ keywords: [ "dicom au", "au", "audio", "dicom viewer", "open source dicom viewer
 
 This player is used to play audio data defined by the DICOM AU standard.
 
+Try to open DICOM AU {{< launch >}}
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/audio.xml"
+{{< /launch >}}
+
 ![Audio Player](/tuto/dicom-audio.png?classes=shadow&width=780px)
 <br>
 ### Toolbar {{< badge "A" >}}

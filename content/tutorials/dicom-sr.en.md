@@ -11,6 +11,11 @@ The DICOM Structured Report (SR) viewer is used to display and analyze DICOM SR 
 
 The viewer displays the content of the SR object in a structured way, allowing the user to navigate through the tree and visualize the content of each item.
 
+Try to open sample SR files {{< launch >}}
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/sr.xml"
+{{< /launch >}}
+
+
 ![SR Viewer](/tuto/dicom-sr.png?classes=shadow&width=780px)
 <br>
 

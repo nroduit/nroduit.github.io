@@ -26,6 +26,10 @@ Once the 2 new plans are created, they also appear in the [DICOM explorer](../di
 ![QuMPR](/tuto/mpr.jpg?classes=shadow)
 <br>
 
+Try to load a volume dataset and open the MPR viewer. {{< launch >}}
+$dicom:get -w "https://nroduit.github.io/demo-archive/3d/head-neck.xml"
+{{< /launch >}}
+
 {{% notice info %}}
 For more information on the elements related to the orientation of multiplanar views see [MPR orientation](../image-orientation/#orientation-in-2d-multiplanar-reconstruction-mpr).
 {{% /notice %}}
@@ -39,6 +43,10 @@ The crosshair tool {{< svg "static/tuto/icon/crosshair.svg" >}} can be selected 
 
 ![3D Cursor](/tuto/3d-cursor.jpg?classes=shadow)
 <br>
+
+Try to load several series and select the 3D cursor. {{< launch >}}
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/ko.xml"
+{{< /launch >}}
 
 ### Preferences
 From the main menu "_File > Preferences > Viewer > MPR_" (Since {{< badge "v4.1.0" >}}):
