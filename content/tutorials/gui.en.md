@@ -32,10 +32,10 @@ In the View menu at the top, toolbars and tools related to the selected viewer c
 * [Maximum Intensity Projection (MIP) viewer](../mip)
 * [DICOM 3D viewer](../dicom-3d-viewer)
 * [DICOM ECG viewer](../dicom-ecg)
-* DICOM Structured Report (SR) viewer
-* DICOM Audio player
-* DICOM PDF viewer (external)
-* DICOM Video player (external)
+* [DICOM Structured Report (SR) viewer](../dicom-sr)
+* [DICOM Audio player](../dicom-audio)
+* DICOM PDF viewer (default system application associated with pdf files). Same for other encapsulated documents.
+* DICOM Video player (default system player associated with mpg files)
 
 ### List of other workspaces
 * Dicomizer
