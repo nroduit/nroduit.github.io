@@ -62,7 +62,7 @@ It may be from a DICOM CD/DVD or a folder containing a DICOMDIR
   * On Search Criteria tab:
   ![Thumbnails](/tuto/dicom-import-search.png?classes=shadow&width=700px)
   <br> 
-    1. Select a pre-registered item (bottom right of the _Search Criteria_ panel) or Fill the search criteria. Criteria can be saved and reuse later, since {{< badge "v4.1.0" >}} the item selected in the combo box is automatically applied the next time this window is opened (the default value is _Empty_).
+    1. Select a pre-registered item (bottom right of the _Search Criteria_ panel) or Fill the search criteria. Criteria can be saved and reuse later, since {{% badge title="Version" %}}4.1.0{{% /badge %}} the item selected in the combo box is automatically applied the next time this window is opened (the default value is _Empty_).
     2. Adjust the limit to the maximum number of exams in the response. Set the limit to 0 to avoid this constraint. For DICOMWeb the limit is the number of elements on a page, and you can go to the next page with the spinner buttons.
     3. Click on Search
     4. Select the exams you want to import

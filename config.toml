@@ -115,7 +115,7 @@ keepWhitespace = false
     [markup.goldmark.renderer]
     # activated for this showcase to use HTML and JavaScript; decide on your own needs;
     # if in doubt, remove this line
-      unsafe = true
+    unsafe = true
 
 
 [Languages]

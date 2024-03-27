@@ -18,7 +18,7 @@ If _Anatomical Orientation Type (0010,2210)_ [attribute](../tags/) is absent or 
 * H: head
 * F: foot
 
-If _Anatomical Orientation Type (0010,2210)_ [attribute](../tags/) has a value of QUADRUPED (since Weasis {{< badge "v4.1.0" >}}), anatomical direction is designated by:
+If _Anatomical Orientation Type (0010,2210)_ [attribute](../tags/) has a value of QUADRUPED (since {{% badge title="Version" %}}4.1.0{{% /badge %}}), anatomical direction is designated by:
 * LE: Left
 * RT: Right
 * D: Dorsal

@@ -18,8 +18,8 @@ This panel allows you to draw and measure on DICOM and standard images. The resu
 ### Draw & Measure Panel
 When clicking on {{< svg "static/tuto/icon/normalize.svg" >}} of the vertical button {{< svg "static/tuto/icon/measure.svg" >}}, the panel is displayed on the right side of the viewer. This panel is divided into 4 parts.
 
-#### Measurement tools {{< badge "A" >}}
-Select a measurement tool by clicking on one of the buttons and then draw on the image. Note that the previous action will select automatically the drawing action in the [mouse left button](../dicom-2d-viewer/#toolbars-hahahugoshortcodes4hbhb).
+#### Measurement tools {{% badge style="red" %}}A{{% /badge %}} {#measurement-tools}
+Select a measurement tool by clicking on one of the buttons and then draw on the image. Note that the previous action will select automatically the drawing action in the [mouse left button](../dicom-2d-viewer/#toolbars).
 
 The first button is the selection tool that allows you to select, resize and move the graphic objects.
 
@@ -39,11 +39,11 @@ For a polyline or polygon, double-click to complete editing. You can also delete
 Rectangles and ellipses can be drawn in any direction. External control points can be used to rotate and resize the shape. With the single control point on the opposite side, you can only resize the shape.
 {{% /notice %}}
 
-#### Drawings {{< badge "B" >}}
-The drawing buttons allow you to add text and graphic as annotations. These graphics objects do not display measurement values and do not appear in _Selected Measurement_ {{< badge "D" >}}.
+#### Drawings {{% badge style="red" %}}B{{% /badge %}} {#drawings}
+The drawing buttons allow you to add text and graphic as annotations. These graphics objects do not display measurement values and do not appear in _Selected Measurement_ {{% badge style="red" %}}D{{% /badge %}}.
 
 
-#### Graphic Options {{< badge "C" >}}
+#### Graphic Options {{% badge style="red" %}}C{{% /badge %}} {#graphic-options}
 * Line color: The default line color when drawing new graphic object. The default value is yellow. The opacity can be changed from the transparency or alpha slider of the different color models in the color picker.
 * Line width: The default line width.
 * Draw only once: After drawing a graphic object, the tool is automatically set to the selection mode. If unchecked, the tool remains active for drawing a new graphic.
@@ -52,11 +52,11 @@ The drawing buttons allow you to add text and graphic as annotations. These grap
 * More options: The preferences to change more display options (see [preferences](#preferences)).
 
 {{% notice tip %}}
-Show/hide all the graphic objects from the [_Display_ panel](../dicom-2d-viewer/#display-hahahugoshortcodes13hbhb) by checking/unchecking the _Drawings_ option.
+Show/hide all the graphic objects from the [_Display_ panel](../dicom-2d-viewer/#display) by checking/unchecking the _Drawings_ option.
 {{% /notice %}}
 
-#### Selected Measurement {{< badge "D" >}}
-The selected graphic {{< badge "E" >}} created with a measurement tool is displayed in the table. The table shows the shape properties according to the measurement type (and its units in square brackets if exists). 
+#### Selected Measurement {{% badge style="red" %}}D{{% /badge %}} {#selected-measurement}
+The selected graphic {{% badge style="red" %}}E{{% /badge %}} created with a measurement tool is displayed in the table. The table shows the shape properties according to the measurement type (and its units in square brackets if exists). 
 
 {{% notice note %}}
 For polygon, the length, the width and the orientation are calculated with OMBB (Offset Minimum Bounding Box) method which provides a more accurate approximation of the actual length and width based on the bounding box of the polygon.
@@ -84,7 +84,7 @@ The table can be exported by copy/paste. Note that the maximum precision values 
 From the menu “File > Preferences > Draw & Measure”:
 
 #### Drawings
-It lets you change the graphic properties when drawing new graphics, since {{< badge "v4.3.0" >}}.
+It lets you change the graphic properties when drawing new graphics, since {{% badge title="Version" %}}4.3.0{{% /badge %}}.
 
 * Line color: The default line color. The default value is yellow. The opacity can be changed from the transparency or alpha slider of the different color models in the color picker.
 * Line width: The default line width.

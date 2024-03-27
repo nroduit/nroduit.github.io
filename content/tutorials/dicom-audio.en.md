@@ -15,15 +15,15 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/demo/audio.xml"
 
 ![Audio Player](/tuto/dicom-audio.png?classes=shadow&width=780px)
 <br>
-### Toolbar {{< badge "A" >}}
+### Toolbar {{% badge style="red" %}}A{{% /badge %}} {#toolbar}
 Actions in the toolbar are:
 * {{< svg "static/tuto/icon/metadata.svg" >}} Show the DICOM metadata of the DICOM AU
 
-### Play {{< badge "B" >}}
+### Play {{% badge style="red" %}}B{{% /badge %}} {#play}
 The _Play_ button allows you to play and pause. The slicer allows you to navigate through the audio file and display the position in seconds.
 
-### Volume {{< badge "C" >}}
+### Volume  {{% badge style="red" %}}C{{% /badge %}} {#volume}
 This slider allows you to adjust the volume of the audio file.
 
-### Export Audio File {{< badge "D" >}}
+### Export Audio File {{% badge style="red" %}}D{{% /badge %}} {#export-audio-file}
 The _Export Audio File_ button allows you to save the audio file in the format AU or WAVE.

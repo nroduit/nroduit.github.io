@@ -7,15 +7,15 @@ keywords: [ "dicom rt", "radiotherapy", "dicom viewer", "free dicom viewer", "op
 
 ## <center>Displaying radiotherapy information {{< svg "static/tuto/icon/rt.svg" >}}</center>
 
-The _RT Tool_ appears on the right panel when a CT exam (when linked with DICOM STRUCT, PLAN and DOSE) is displayed. Since Weasis {{< badge "v4.1.0" >}} a specific configuration in config.properties is no longer required.
+The _RT Tool_ appears on the right panel when a CT exam (when linked with DICOM STRUCT, PLAN and DOSE) is displayed. Since {{% badge title="Version" %}}4.1.0{{% /badge %}} a specific configuration in config.properties is no longer required.
 
 ### How to display structure and iso-dose
 In order to display the structures in overlay on the image, apply the following points (see in the image below):
 
-1. {{< badge "Optional" >}} When selected, it allows you to force the DVH calculations. Otherwise, it is calculated only if some information is not available in the DICOM files.
+1. {{% badge style="info" %}}Optional{{% /badge %}} When selected, it allows you to force the DVH calculations. Otherwise, it is calculated only if some information is not available in the DICOM files.
 2. Click on "_Load RT_" button to load DICOM STRUCT, PLAN and DOSE associated the CT images. Once loaded, the button becomes inactive.
-3. {{< badge "Optional" >}} Select a structure if there is more than one.
-4. {{< badge "Optional" >}} Select a plan if there is more than one.
+3. {{% badge style="info" %}}Optional{{% /badge %}} Select a structure if there is more than one.
+4. {{% badge style="info" %}}Optional{{% /badge %}} Select a plan if there is more than one.
 
 ![DICOM STRUCT](/tuto/dicom-rt-struct.jpg?classes=shadow)
 <br>
@@ -32,7 +32,7 @@ For displaying the iso-doses, apply the following points (see in the image below
 
 1. Select the _Isodoses_ tab
 2. Check the _Isodoses_ root node which is not activated by default
-3. {{< badge "Optional" >}} Adjust the graphic opacity
+3. {{% badge style="info" %}}Optional{{% /badge %}} Adjust the graphic opacity
 
 ![DICOM DOSE](/tuto/dicom-rt-dose.jpg?classes=shadow)
 <br>

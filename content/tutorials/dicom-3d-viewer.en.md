@@ -7,7 +7,7 @@ keywords: [ "viewer 3D", "volume rendering", "ray casting", "3D rendering", "dic
 
 ## <center>Displaying volume data {{< svg "static/tuto/icon/volume.svg" >}}</center>
 
-Since Weasis {{< badge "v4.1.0" >}} the 3D viewer allows displaying volumetric renderings with different options for adjusting the pseudo colors, the transparency, the shadows and the lighting according to the type of exam.
+Since Weasis {{% badge title="Version" %}}4.1.0{{% /badge %}} the 3D viewer allows displaying volumetric renderings with different options for adjusting the pseudo colors, the transparency, the shadows and the lighting according to the type of exam.
 
 The volume rendering uses a [ray casting algorithm](https://en.wikipedia.org/wiki/Volume_ray_casting) and the OpenGL Shading Language (GLSL). Shader programming is used to create the necessary algorithms and data structures 
 required for the ray casting computations to be executed efficiently on the graphics card. Therefore, minimal graphic resources are required.
@@ -36,7 +36,7 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/3d/head-neck.xml"
 ![3D View](/tuto/view-3d.jpg?classes=shadow&width=780px)
 <br>
 
-### Toolbar {{< badge "A" >}}
+### Toolbar {{% badge style="red" %}}A{{% /badge %}} {#toolbar}
 Actions in the toolbar are:
 * {{< svg "static/tuto/icon/loadVolume.svg" >}} Allows you to fully reload the volume
 * {{< svg "static/tuto/icon/orthographic.svg" >}} The orthographic projection maintains parallel lines unlike the perspective projection that provides a perception of depth. The default mode is the perspective projection.
@@ -47,7 +47,7 @@ For other buttons see below.
 ### 3D Rendering Tools
 This tab contains all the tools to modify the volume rendering. If you want to return to the original settings, just click on the toolbar button {{< svg "static/tuto/icon/reset.svg" >}} or from the context menu.
 
-#### Windowing and Rendering {{< badge "B" >}}
+#### Windowing and Rendering {{% badge style="red" %}}B{{% /badge %}} {#windowing}
 Some of the options described below are also available in the toolbar and in the contextual menus.
 
 * _Window:_ The width of a range of voxels values mapped to a specific range of display values.
@@ -58,7 +58,7 @@ Some of the options described below are also available in the toolbar and in the
 * {{< svg "static/tuto/icon/inverseLut.svg" >}} allows you to invert the LUT.
 
 
-#### Volume Rendering {{< badge "C" >}}
+#### Volume Rendering {{% badge style="red" %}}C{{% /badge %}} {#volume-rendering}
 This panel contains options for the rendering type and its quality, transparency, lighting, and shading settings.
 
 * _Type:_ Composite is the classic type of volume rendering. The Maximum Intensity Projection (MIP) is the highest intensity voxels (3D pixels) along a ray path are projected onto a 2D plane. Iso surface is a technique to create a 3D representation on a specific intensity threshold.
@@ -66,7 +66,7 @@ This panel contains options for the rendering type and its quality, transparency
 * _Opacity:_ The opacity factor of the voxels. Can be set to more than 100% to modify initial values (lower than 100%) transmitted by the Volume LUTs.
 * _Shading:_ Allows to activate the shading. Default value is defined in LUT. The additional options allow you to override the default lighting settings (comes from Volume LUT).
 
-#### Transform {{< badge "D" >}}
+#### Transform {{% badge style="red" %}}D{{% /badge %}} {#transform}
 Allows you to zoom and rotate along a specific axis
 
 ### Preferences

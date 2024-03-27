@@ -20,7 +20,7 @@ keywords: [ "Key Object Selection", "Presentation State", "dicom viewer", "free 
 
 
 ### Presentation State (PR or GSPS)
-- Apply PR loaded from a DICOM file (1) {{< svg "static/tuto/icon/imagePresentation.svg" >}}: Since Weasis {{< badge "v2.6.0" >}} PRs are not applied to the image by default (requires to select the right icon (2) over the image). In order to apply the most recent PR by default, change it from the main menu _File > Preferences (Alt + P)_ and check "Apply by default the most recent Presentation State", or in the [default preferences](../../basics/customize/preferences/).
+- Apply PR loaded from a DICOM file (1) {{< svg "static/tuto/icon/imagePresentation.svg" >}}: Since {{% badge title="Version" %}}2.6.0{{% /badge %}} PRs are not applied to the image by default (requires to select the right icon (2) over the image). In order to apply the most recent PR by default, change it from the main menu _File > Preferences (Alt + P)_ and check "Apply by default the most recent Presentation State", or in the [default preferences](../../basics/customize/preferences/).
 - Create a new PR: Any type of annotations (Drawings and Measurements) can be exported in a DICOM Presentation State. Image presentation actions (zoom, calibration, W/L, LUT...) are not yet possible to export into PR.
   ![Build PR](/tuto/pr-actions.jpg?classes=shadow&width=700px)
 <br>

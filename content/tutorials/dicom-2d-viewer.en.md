@@ -15,13 +15,13 @@ The 2D view can be opened with {{< svg "static/tuto/icon/view2d.svg" >}} in the 
 ![DICOM 2DViewer](/tuto/dicom-viewer2d.jpg?classes=shadow&width=780px)
 <br>
 
-The rulers{{< badge "K" >}} show a real size when it can be calculated from the DICOM file. When a text {{< badge "M" >}} above the calibration is displayed, it gives information about the calibration type. Here are some examples:
+The rulers {{% badge style="blue" %}}K{{% /badge %}} show a real size when it can be calculated from the DICOM file. When a text {{% badge style="blue" %}}M{{% /badge %}} above the calibration is displayed, it gives information about the calibration type. Here are some examples:
 * _At dector:_ The calibration of the projection radiographic image is done at the detector level 
 * _Magnified:_ The calibration of the projection radiographic image is corrected using the magnification factor (e.g. mammography, see the image above)
 * _Used fiducials:_ The calibration is based on fiducials (e.g. manual calibration with a ruler in the image)
 * _At scanner:_ The calibration comes from a media which has been digitized (e.g. film digitizer)
 
-### Toolbars {{< badge "A" >}}
+### Toolbars {{% badge style="red" %}}A{{% /badge %}} {#toolbars}
 
 #### Viewer Main Bar
 
@@ -29,7 +29,7 @@ The rulers{{< badge "K" >}} show a real size when it can be calculated from the 
 
 Select the preferred actions for the three mouse buttons and the mouse wheel:
 
-* Mouse left button: The default value is Window/Level. Action can also be changed from the context menu {{< badge "F" >}} and the [key shortcuts](../../basics/shortcuts).
+* Mouse left button: The default value is Window/Level. Action can also be changed from the context menu {{% badge style="blue" %}}F{{% /badge %}} and the [key shortcuts](../../basics/shortcuts).
 * Mouse right button: The default value is _Context Menu_
 * Mouse wheel: The default value is _Series Scroll_
 * Mouse middle button: The default value is _Pan_
@@ -40,8 +40,8 @@ Where the possible actions are:
 * Series Scroll: Scroll through the images of the current series. _S_ key to select the action.
 * [Zoom](../zoom): Zoom in/out the image. _Z_ key to select the action.
 * Rotation: Rotate the image with a free angle. _R_ key to select the action.
-* [Measure](../draw-measure/#measurement-tools-hahahugoshortcodes3hbhb): Draw a graphic for measuring something. _M_ key to select the action.
-* [Draw](../draw-measure/#drawings-hahahugoshortcodes7hbhb): Draw a graphic for annotating. _G_ key to select the action.
+* [Measure](../draw-measure/#measurement-tools): Draw a graphic for measuring something. _M_ key to select the action.
+* [Draw](../draw-measure/#drawings): Draw a graphic for annotating. _G_ key to select the action.
 * Context Menu: Display the context menu. _Q_ key to select the action.
 * [Crosshair](../mpr/#3d-cursor-crosshair): 3D cursor. _H_ key to select the action. _Ctrl + click_ or _Ctrl + Shift + click_ allows changing Window/Level.
 * No Action: Do nothing. _N_ key to select the action.
@@ -59,7 +59,7 @@ When dragging, accelerate the action by pressing the _Ctrl_ key and _Ctrl + Shif
 
 #### Toolbars available in the DICOM 2D viewer
 * [DICOM Import](../dicom-import/#from-weasis-menu-or-toolbar)
-* [DICOM Export](../dicom-export/#dicom-export-hahahugoshortcodes2hbhb)
+* [DICOM Export](../dicom-export/#dicom-exporting)
 * [Screenshot](../dicom-export/#dicom-export)
 * Viewer Main Bar (see above)
 * [Measurement](../draw-measure/)
@@ -81,10 +81,10 @@ Here is a list of the tools which are associated to the DICOM 2D viewer.
 
 The mini-tool is always visible and the other tools are displayed by clicking on the vertical button. The normalize button {{< svg "static/tuto/icon/normalize.svg" >}} allows you to insert the panel into the main layout. Otherwise, the panel is displayed as a popup window with the pin option {{< svg "static/tuto/icon/holdon.svg" >}} (which is not recommended, as it hides other panels).
 
-#### Mini-tool {{< badge "B" >}}
+#### Mini-tool {{% badge style="red" %}}B{{% /badge %}} {#mini-tool}
 Allows you by default to scroll through the images of the selected series (surrounded by an orange line). From the combobox at the top, the mini-tool can also be configured to change the zoom or the rotation of the image.  
 
-#### Display {{< badge "C" >}}
+#### Display {{% badge style="red" %}}C{{% /badge %}} {#display}
 
 It lets you control the display of the image and the graphic objects. 
 
@@ -100,31 +100,31 @@ Display options for the image. Unchecking the _Image_ option will hide the image
 Display transformation properties and DICOM information on the image.
 
 * Annotations: Display DICOM information on the image corners:
-  * {{< badge "G" >}} The top left: Patient information 
-  * {{< badge "H" >}} The top right: Study information
-  * {{< badge "I" >}} The bottom right: Series information (related to the modality type)
-  * {{< badge "J" >}} The bottom left: Image information and its position in the series
+  * {{% badge style="blue" %}}G{{% /badge %}} The top left: Patient information 
+  * {{% badge style="blue" %}}H{{% /badge %}} The top right: Study information
+  * {{% badge style="blue" %}}I{{% /badge %}} The bottom right: Series information (related to the modality type)
+  * {{% badge style="blue" %}}J{{% /badge %}} The bottom left: Image information and its position in the series
 * Minimal Annotations: Reduce the number of annotations. Use _space_ or _i_ key to toggle between the 3 states (minimal, none, all).
 * Anonymize: Hide identifying information only in the views not in other places of the GUI like the tab title. Must be used with the [screenshot tool](../dicom-export) when exporting image.
-* Scale: Display the rulers on the left and the bottom of the image {{< badge "K" >}}
+* Scale: Display the rulers on the left and the bottom of the image {{% badge style="blue" %}}K{{% /badge %}}
 * Lookup Table: Display the [LUT](../lut) on the image
-* Orientation: Display the [orientation of the image](../image-orientation) {{< badge "N" >}}
-* Window/Level: Display the [window and level](../lut/#windowing-and-rendering) values {{< badge "J" >}}
-* Zoom: Display the zoom value {{< badge "J" >}}
-* Rotation: Display the rotation value {{< badge "J" >}}
-* Frame Value: Display the frame number {{< badge "J" >}}
-* Pixel (Value/Position): Display the pixel value and the position of the cursor {{< badge "J" >}}
+* Orientation: Display the [orientation of the image](../image-orientation) {{% badge style="blue" %}}N{{% /badge %}}
+* Window/Level: Display the [window and level](../lut/#windowing-and-rendering) values {{% badge style="blue" %}}J{{% /badge %}}
+* Zoom: Display the zoom value {{% badge style="blue" %}}J{{% /badge %}}
+* Rotation: Display the rotation value {{% badge style="blue" %}}J{{% /badge %}}
+* Frame Value: Display the frame number {{% badge style="blue" %}}J{{% /badge %}}
+* Pixel (Value/Position): Display the pixel value and the position of the cursor {{% badge style="blue" %}}J{{% /badge %}}
 
 ##### Drawings
 Check/uncheck to show/hide the graphic objects (see [Draw & Measure](../draw-measure/)).
 
-#### Image Tools {{< badge "D" >}}
+#### Image Tools {{% badge style="red" %}}D{{% /badge %}} {#image-tools}
 _Image Tools_ contains all the tools to modify the image rendering.
 
 ##### [Windowing and Rendering](../lut/) 
 
 ##### Transform
-Allows you to zoom, rotate and flip the image. [Zoom](../zoom) and rotation can also be configured with the [mini-tool](#mini-tool) or the [mouse actions](#toolbars-hahahugoshortcodes4hbhb).
+Allows you to zoom, rotate and flip the image. [Zoom](../zoom) and rotation can also be configured with the [mini-tool](#mini-tool) or the [mouse actions](#toolbars).
 
 ##### Cine
 The _Cine start_ button {{< svg "static/tuto/icon/execute.svg" >}} lets you scroll through the images in a series at a certain speed (frame per second). The speed values comes from the DICOM file if exists. The cine options can also be changed from the context menu.
@@ -145,7 +145,7 @@ A _Cine_ toolbar is also available. It is not visible by default, but can be dis
 ##### Reset
 It allows you to return to the default image rendering for all or specific parameters. Also available from the toolbar button {{< svg "static/tuto/icon/reset.svg" >}} or from the context menu.
 
-#### [Draw & Measure](../draw-measure/) {{< badge "E" >}}
+#### [Draw & Measure](../draw-measure/) {{% badge style="red" %}}E{{% /badge %}} {#draw-measure}
 
 #### Other specific tools
 * [DICOM RT tools](../dicom-rt) (for radiotherapy studies)

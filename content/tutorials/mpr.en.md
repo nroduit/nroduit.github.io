@@ -7,7 +7,7 @@ keywords: [ "mpr", "multiplanar reconstruction", "3d cursor", "open source dicom
 
 ## <center>MPR Viewer and 3D cursor (crosshair)</center>
 
-### Orthogonal multiplanar reconstruction (MPR) {{< svg "static/tuto/icon/mpr.svg" >}}
+### Orthogonal multiplanar reconstruction (MPR) {{< svg "static/tuto/icon/mpr.svg" >}} {#mpr}
 The orthogonal multiplanar reconstruction (MPR) allows you to create, from the original plane (usually axial), images in the two other planes of the Euclidean space. Only planes along the 3 axes (x,y,z) can be displayed, an oblique plane cannot be obtained with this tool.
 
 The MPR view inherits most of the [DICOM 2D viewer](../dicom-2d-viewer) properties. It can be opened with {{< svg "static/tuto/icon/mpr.svg" >}} in the toolbar or by right-clicking on the thumbnail in the [DICOM explorer](../dicom-explorer/).
@@ -20,7 +20,7 @@ When the tab containing the MPR views is selected, the crosshair tool {{< svg "s
 By default, zoom and window/level are synchronized between the 3 views. The MRR views can be displayed in different layouts {{< svg "static/tuto/icon/layout.svg" >}}.
 
 {{% notice tip %}}
-Once the 2 new plans are created, they also appear in the [DICOM explorer](../dicom-explorer/) and can be [exported](../dicom-export/#dicom-export).
+Once the 2 new plans are created, they also appear in the [DICOM explorer](../dicom-explorer/) and can be [exported](../dicom-export/#dicom-exporting).
 {{% /notice %}}
 
 ![QuMPR](/tuto/mpr.jpg?classes=shadow)
@@ -49,7 +49,7 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/demo/ko.xml"
 {{< /launch >}}
 
 ### Preferences
-From the main menu "_File > Preferences > Viewer > MPR_" (Since {{< badge "v4.1.0" >}}):
+From the main menu "_File > Preferences > Viewer > MPR_" (Since {{% badge title="Version" %}}4.1.0{{% /badge %}}):
 
 * _Auto center axes:_ Allows you to choose a behavior to recenter the cursor in the different views. The position can be returned to the center systematically with the "Always" option (see the image above) or with the 2nd option only when the position is almost no longer visible (the default value).
 * _Crosshair gap at the center:_ Defines the size of the empty space in the center of the crosshair

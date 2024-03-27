@@ -302,5 +302,5 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/demo/ko.xml"
 {{< /launch >}}
 
 {{% notice info %}}
-Click on the right icon over the image to select the Key Object Selection. See [How to build and export DICOM KO](../tutorials/build-ko-pr).
+Click on the right icon over the image to select the Key Object Selection. See [How to build and export DICOM KO](../tutorials/build-ko-pr/#key-object-selection-ko).
 {{% /notice %}}

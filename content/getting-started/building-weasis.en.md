@@ -29,7 +29,7 @@ git clone https://github.com/nroduit/Weasis.git
 mvn clean install
 {{< /highlight >}}
 
-- Package `weasis-native.zip` (located in `target/native-dist/`) {{< badge "v4.0.0" >}} :
+- Package `weasis-native.zip` (located in `target/native-dist/`), since {{% badge title="Version" %}}4.0.0{{% /badge %}} :
 {{< highlight shell >}}
 mvn -P compressXZ -f weasis-distributions clean package
 {{< /highlight >}}
@@ -53,7 +53,7 @@ mvn -Dchangelist=-mybuild-beta -P compressXZ -f weasis-distributions clean packa
 
 ### Building native binaries and installers
 
-Since {{< badge "v4.0.0" >}} the native installer has completely replaced the portable and the Java Webstart distributions.
+Since {{% badge title="Version" %}}4.0.0{{% /badge %}} the native installer has completely replaced the portable and the Java Webstart distributions.
 
 The [official build](https://github.com/nroduit/Weasis/blob/master/.github/workflows/build-installer.yml) is done by Github actions with [GitHub-hosted runners](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners) (Linux, macOS and Windows). 
 

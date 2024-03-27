@@ -19,15 +19,15 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/demo/sr.xml"
 ![SR Viewer](/tuto/dicom-sr.png?classes=shadow&width=780px)
 <br>
 
-### Toolbar {{< badge "A" >}}
+### Toolbar {{% badge style="red" %}}A{{% /badge %}} {#toolbar}
 Actions in the toolbar are:
 * {{< svg "static/tuto/icon/print.svg" >}} Allows you to print the rendering of the SR
 * {{< svg "static/tuto/icon/metadata.svg" >}} Show the DICOM metadata of the SR
 
-### Display SR Header {{< badge "B" >}}
+### Display SR Header {{% badge style="red" %}}B{{% /badge %}} {#display-sr-header}
 The header of the SR object is displayed in a table format with 3 columns containing information about the patient, the study, and the report status.
 
-### DICOM SR Tree {{< badge "C" >}}
+### DICOM SR Tree {{% badge style="red" %}}C{{% /badge %}} {#dicom-sr-tree}
 The content of the SR object is displayed in a tree structure. Each node in the tree represents a content item with hierarchical numbering, and the tree structure reflects the relationships between the items.
 
 Some items can have a link to other content items, and the viewer provides a way to navigate through the tree by clicking on the links. 

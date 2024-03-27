@@ -23,8 +23,8 @@ For a simpler and faster installation without server components, please follow t
         - [weasis-pacs-connector.war] Requires at least the version 7.1.2
     - From the folder with the latest version number (Optional if you want to run only the [native version](../) installed on the client system):
         - [weasis.war] requires at least Weasis 3.5.3
-        - {{< badge "Optional" >}} [weasis-i18n.war] for [internationalization](../translating)
-        - {{< badge "Optional" >}} [weasis-ext.war] for [additional plug-ins](../../basics/customize/build-plugins/)
+        - {{% badge style="info" %}}Optional{{% /badge %}} [weasis-i18n.war] for [internationalization](../translating)
+        - {{% badge style="info" %}}Optional{{% /badge %}} [weasis-ext.war] for [additional plug-ins](../../basics/customize/build-plugins/)
     - From the folder with the latest version number:
 
 3. Open the <a target="_blank" href="http://localhost:9990/">wildfly management console</a> (at `http://<your-host>:9990`).
@@ -65,7 +65,7 @@ deployment-overlay add --name=dcm4chee-arc --deployments=weasis-pacs-connector.w
 {{% notice tip %}}
 **Absolute path**: The values above starting by "../" are the default relative path when weasis-pacs-connector is installed in the same JBoss as dcm4chee. Otherwise replace the relative URL by an absolute value, ex: `http://<your-host>:<port>/weasis-pacs-connector/...`
 {{% /notice %}}
-    - {{< badge "Optional" >}} Add <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis-with-other-parameters">other properties</a> in the URL.
+    - {{% badge style="info" %}}Optional{{% /badge %}} Add <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis-with-other-parameters">other properties</a> in the URL.
     - Refresh the web page and the view button should appear as in the screenshot above
     - To launch the viewer from the web portal, the client computer must have installed the [Weasis package](../).
 

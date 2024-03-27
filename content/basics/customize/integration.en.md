@@ -7,7 +7,7 @@ keywords: [ "workflow", "integration", "dicom viewer", "free dicom viewer", "ope
 
 ## <center>How to launch Weasis from any environments</center>
 
-Here we present how to launch Weasis with associated images from any context either [using weasis-pacs-connector](#use-weasis-pacs-connector) or by [building your own connector](#build-your-own-connector). The launch of the application is based on the [weasis protocol](../../../getting-started/weasis-protocol) available since {{< badge "v3.5.3" >}}.
+Here we present how to launch Weasis with associated images from any context either [using weasis-pacs-connector](#use-weasis-pacs-connector) or by [building your own connector](#build-your-own-connector). The launch of the application is based on the [weasis protocol](../../../getting-started/weasis-protocol) available since {{% badge title="Version" %}}3.5.3{{% /badge %}}.
 
 Using [weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector) allows a high degree of integration and facilitates connection to a PACS. Here are some of the advantages:
 

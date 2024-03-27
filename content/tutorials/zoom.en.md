@@ -21,7 +21,7 @@ The zoom factor can be modified from different locations:
 The context menu and the toolbar button allows you to select different zoom factor:
 
 * Actual pixel size {{< svg "static/tuto/icon/zoomOriginal.svg" >}}: display the image at a 1:1 ratio, where each pixel in the image corresponds to one pixel on the screen
-* Real world (see [below](#real-world-zoom-hahahugoshortcodes7hbhb)) {{< svg "static/tuto/icon/zoomRealWorld.svg" >}}
+* Real world (see [below](#real-world-zoom)) {{< svg "static/tuto/icon/zoomRealWorld.svg" >}}
 * Resize to best fit {{< svg "static/tuto/icon/zoomBestFit.svg" >}}: scaling the image to make it fit the view area as closely as possible
 
 {{% notice note %}}
@@ -36,7 +36,7 @@ Since "Resize to best fit" is the default mode for a view, the image will be cen
 For selecting directly the zoom action of the mouse left button, enter "z" as a shortcut.
 {{% /notice %}}
 
-### Real-world zoom {{< svg "static/tuto/icon/zoomRealWorld.svg" >}}
+### Real-world zoom {{< svg "static/tuto/icon/zoomRealWorld.svg" >}} {#real-world-zoom}
 The real-world zoom allows displaying the content of the image at the same size of the real objects.
 
 The feature requires calibrating the screen where the image is displayed. From the main menu, open _File > Preferences (Alt + P) > Monitors_ and click on _Spatial calibration_. Then enter a value that matches to the line length or the diagonal length of the screen.
@@ -45,7 +45,7 @@ The feature requires calibrating the screen where the image is displayed. From t
 Several screens can be calibrated. Each one has its own spatial calibration factor.
 {{% /notice %}}
 
-## Magnifying lens {{< svg "static/tuto/icon/zoomPan.svg" >}}
+## Magnifying lens {{< svg "static/tuto/icon/zoomPan.svg" >}} {#magnifying-lens}
 The magnifying lens can be activated from the toggle button of the zoom toolbar (see the image below). It has several parameters accessible from the context menu.
 
 This lens can be used in many situations, for instance:
