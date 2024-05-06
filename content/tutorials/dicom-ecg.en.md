@@ -11,6 +11,10 @@ The ECG viewer is used to display and analyze electrocardiogram (ECG) data in DI
 
 The viewer can also provide tools for measuring ECG intervals and amplitudes in various formats, such as 12-lead ECGs, 3-lead ECGs, and rhythm strips.
 
+Try to open an ECG sample {{< launch >}}
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/ecg.xml"
+{{< /launch >}}
+
 ![ECG Viewer](/tuto/ecg.png?classes=shadow&width=780px)
 <br>
 ### Toolbar {{% badge style="red" %}}A{{% /badge %}} {#toolbar}

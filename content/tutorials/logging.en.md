@@ -15,6 +15,7 @@ The log folder that can be opened from the menu "_Help > Open the logging folder
 In order to determine the path of <user.home>/.weasis/log for versions prior to v4.1.0, go to the "_Help > About Weasis_" menu and find the property `weasis.path` in the "_System Information_" tab.
 {{% /notice %}}
 
+Once the file has reached its maximum size, it is compressed into a zip archive, since {{% badge title="Version" %}}4.4.0{{% /badge %}}.
 
 ### Boot log files
 The boot log file is used to trace the startup configuration to ensure that the application starts with the correct input parameters and configuration.
@@ -25,13 +26,13 @@ This type of logs is interesting if the application doesn't start, crash at star
 <br>
 
 * From the main menu "_File > Preferences > General_" enable "_Rolling log_" to activate writing to files
-* Enter the maximum of _File numbers_ for rolling log (by default 5)
+* Enter the maximum of _File numbers_ for rolling log (by default 20)
 * Enter the maximum size of each rolling file (by default 10 MB)
-* Select a log level which defines the verbosity of the traces (by default DEBUG)
-* Select a stacktrace limit which represents the number of lines (by default no value). No value is recommended for investigating problems (it means unlimited stacktrace lines)
+* Select a log level which defines the verbosity of the traces (by default INFO)
+* Select a stacktrace limit which represents the number of lines (by default 3). No value is recommended for investigating problems (it means unlimited stacktrace lines)
 
 {{% notice info %}}
-The default logging configuration comes from config.properties or ext-config.properties, see [Weasis Preferences](../basics/customize/preferences).
+The default logging configuration comes from config.properties or ext-config.properties, see [Weasis Preferences](../basics/customize/preferences). Some default values has changed since {{% badge title="Version" %}}4.4.0{{% /badge %}}.
 {{% /notice %}}
 
 

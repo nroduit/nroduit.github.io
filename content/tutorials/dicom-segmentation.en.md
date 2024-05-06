@@ -20,6 +20,10 @@ In order to display the DICOM SEG regions in overlay on the image, follow these 
 4. Select one or several regions to display for the selected DICOM SEG (3). Several regions are grouped together when they share the same first name. Note: the parent node must be selected to display the child regions.
 5. Adjust global graphic opacity (border and interior)
 
+Try to open an SEG sample {{< launch >}}
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/seg.xml"
+{{< /launch >}}
+
 ![DICOM SEG](/tuto/dicom-seg.jpg?classes=shadow&width=780px)
 <br>
 

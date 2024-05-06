@@ -27,7 +27,7 @@ Try to load a volume dataset and open the MIP viewer. {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/3d/head-neck.xml"
 {{< /launch >}}
 
-![MIP Options](/tuto/mip-options.png?classes=shadow)
+![MIP Options](/tuto/mip.jpg?classes=shadow)
 <br>
 
 {{% notice note %}}
@@ -40,6 +40,8 @@ The projection type defines the way the MIP is calculated. The options are:
 * **Mean**: Mean Intensity Projection
 * **Max**: Maximum Intensity Projection (the default value)
 
+#### Windowing and Rendering
+The [Windowing and Rendering](../lut/) contains some of the tools found in _Image Tools_ to change the windowing or to select a preset, since {{% badge title="Version" %}}4.4.0{{% /badge %}}.
 
 #### Slice position
 The slice position is used to move around the series to apply the projection and display the result. The _Image_ value represents the position in the series stack.
@@ -48,6 +50,6 @@ The slice position is used to move around the series to apply the projection and
 The _Image Extension_ value represents the number of slices to use for the MIP calculation. If the images are calibrated and contains the 3D position, the thickness is also displayed in millimeters.
 
 #### Rebuild Series
-It allows you to build a new MIP series according to the MIP options. In this new series the slice position and thickness are modified. 
+It allows you to build a new MIP series according to the MIP options. In this new series the slice position and thickness are modified. If the windowing is custom, then it is added to the presets of the new series.
 
 The new MIP series is added to the [DICOM explorer](../dicom-explorer/) and can be [exported](../dicom-export/#dicom-exporting).

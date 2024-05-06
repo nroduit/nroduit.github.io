@@ -17,6 +17,10 @@ In order to display the structures in overlay on the image, apply the following 
 3. {{% badge style="info" %}}Optional{{% /badge %}} Select a structure if there is more than one.
 4. {{% badge style="info" %}}Optional{{% /badge %}} Select a plan if there is more than one.
 
+Try to open an RT sample {{< launch >}}
+$dicom:get -w "https://nroduit.github.io/demo-archive/demo/rt.xml"
+{{< /launch >}}
+
 ![DICOM STRUCT](/tuto/dicom-rt-struct.jpg?classes=shadow)
 <br>
 

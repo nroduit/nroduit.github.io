@@ -31,7 +31,7 @@ On this website you should find help if you are:
 ### Can Weasis be used for commercial purposes? ### 
 Weasis can be used for commercial purposes as long as the terms of [the license](https://github.com/nroduit/Weasis/blob/master/LICENSE) are respected.
 
-### How to Cite Weasis in a publication? ###
+### How to cite Weasis in a publication? ###
 Items to include in the citation:
 * Author: Nicolas Roduit
 * Title: Weasis DICOM viewer
