@@ -82,6 +82,11 @@ keepWhitespace = false
   # security reasons
   mermaidInitialize = "{ \"securityLevel\": \"loose\" }"
 
+[caches]
+  [caches.getjson]
+    dir = ":cacheDir/:project"
+    maxAge = "10s"
+
 [outputFormats]
   [outputFormats.API]
     mediaType= "application/json"

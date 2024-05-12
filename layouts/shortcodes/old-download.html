@@ -43,7 +43,11 @@
             (cond (eq $package ".pkg") (cond (eq $arch "arm 64-bit") "Requires macOS 11 or higher (Apple Silicon)" "Requires macOS 10.13 or higher" )
             (cond (eq $arch "arm 32-bit") "Requires GLIBC_2.17. Only tested with Raspberry Pi 4"
             (cond (eq $arch "arm 64-bit") "Requires GLIBC_2.27" (cond (eq $package ".rpm") "Requires GLIBC_2.17, libstdc++.so.6 and libgcc" "Requires GLIBC_2.17" )))))
-            }}</td>
+            }}
+            {{ if ( eq $elem_index 0) }}
+            .<br>Checksum <span class="btn cstyle transparent"> <a href="{{ printf "%s.sha256" $val.browser_download_url }}" target="_blank" rel="noopener noreferrer">sha256<i class="fa-fw fas fa-download"></i></a></span>
+            {{ end }}
+          </td>
         </tr>
         {{ end }}
       {{ end }}
