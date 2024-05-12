@@ -85,7 +85,7 @@ keepWhitespace = false
 [caches]
   [caches.getjson]
     dir = ":cacheDir/:project"
-    maxAge = "10s"
+    maxAge = "300s"
 
 [outputFormats]
   [outputFormats.API]

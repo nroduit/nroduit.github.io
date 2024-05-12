@@ -1,46 +1,46 @@
 {{$type := .Get 0}}
 {{ $url := "https://api.github.com/repos/nroduit/Weasis/releases/latest" }}
 {{ $jfile := getJSON $url }}
-<table>
-  <caption>Download Weasis DICOM Viewer binaries</caption>
-  <thead>
-  <tr>
-    <th style="text-align: center; width: 10%;" scope="col">System</th>
-    <th style="text-align: center; width: 10%;" scope="col">Architecture</th>
-    <th style="text-align: center; width: 5%;" scope="col">Package</th>
-    <th style="text-align: center; width: 8%;" scope="col">Size</th>
-    <th style="text-align: center; width: 15%;" scope="col">Weasis installer</th>
-    <th style="text-align: center;" scope="col">Comments</th>
-  </tr>
-  </thead>
-{{ range $elem_index, $elem_val := $jfile }}
-{{ if (eq $elem_index "assets") }}
-    {{ range $burl, $val := sort $elem_val "content_type" }}
-    {{ $package := path.Ext $val.name }}
-    {{ if or (eq $package ".msi") (eq $package ".deb") (eq $package ".rpm") (eq $package ".pkg") }}
-      {{ $arch := printf "%s %s-bit" (cond (or (in $val.name "aarch") (in $val.name "arm")) "arm" "x86") (cond (or (in $val.name "64") (eq $package ".pkg") ) "64" "32") }}
-      {{ $system := cond (eq $package ".msi") "Windows" (cond (eq $package ".pkg") "macOS" "Linux") }}
-      {{ $icon := cond (eq $package ".msi") "microsoft" (cond (eq $package ".pkg") "apple" "linux") }}
-      <tr>
-        <td style="text-align: left;"><i class='fab fa-{{ $icon }}' style='font-size:24px'></i> {{ $system }}</td>
-        <td style="text-align: left;">{{ $arch }}</td>
-        <td style="text-align: left;">{{ upper ( substr $package 1 ) }}</td>
-        <td style="text-align: left;">{{ printf "%.1f MB"  (div $val.size 1000000) }}</td>
-        <td style="text-align: left;">
-        <span class="btn cstyle transparent">
-          <a href="{{ $val.browser_download_url }}" target="_blank" rel="noopener noreferrer">{{ $val.name }} <i class="fa-fw fas fa-download"></i></a>
-        </span>
-        </td>
-        <td style="text-align: left;">{{ cond (eq $package ".msi") "Requires Windows 7 or higher"
-          (cond (eq $package ".pkg") (cond (eq $arch "arm 64-bit") "Requires macOS 11 or higher (Apple Silicon)" "Requires macOS 10.13 or higher" )
-          (cond (eq $arch "arm 32-bit") "Requires GLIBC_2.17. Only tested with Raspberry Pi 4"
-          (cond (eq $arch "arm 64-bit") "Requires GLIBC_2.27" (cond (eq $package ".rpm") "Requires GLIBC_2.17, libstdc++.so.6 and libgcc" "Requires GLIBC_2.17" ))))
-          }}
-          .<br>Checksum <span class="btn cstyle transparent"> <a href="{{ printf "%s.sha256" $val.browser_download_url }}" target="_blank" rel="noopener noreferrer">sha256<i class="fa-fw fas fa-download"></i></a></span>
-        </td>
-      </tr>
-      {{ end }}
+<table  style="font-size: 0.8em;">
+    <caption>Download Weasis DICOM Viewer binaries</caption>
+    <thead>
+    <tr>
+        <th style="text-align: center; width: 11%;" scope="col">System</th>
+        <th style="text-align: center; width: 7%;" scope="col">Arch.</th>
+        <th style="text-align: center; width: 5%;" scope="col">Pack.</th>
+        <th style="text-align: center; width: 8%;" scope="col">Size</th>
+        <th style="text-align: center; width: 30%;" scope="col">Weasis installer</th>
+        <th style="text-align: center;" scope="col">Comments</th>
+    </tr>
+    </thead>
+    {{ range $elem_index, $elem_val := $jfile }}
+    {{ if eq $elem_index "assets" }}
+        {{ range $burl, $val := sort $elem_val "content_type" }}
+        {{ $package := path.Ext $val.name }}
+        {{ if or (eq $package ".msi") (eq $package ".deb") (eq $package ".rpm") (eq $package ".pkg") }}
+            {{ $arch := printf "%s-%s" (cond (or (in $val.name "aarch") (in $val.name "arm")) "arm" "x86") (cond (or (in $val.name "64") (eq $package ".pkg") ) "64" "32") }}
+            {{ $system := cond (eq $package ".msi") "Windows" (cond (eq $package ".pkg") "macOS" "Linux") }}
+            {{ $icon := cond (eq $package ".msi") "microsoft" (cond (eq $package ".pkg") "apple" "linux") }}
+            <tr>
+                <td style="text-align: left;"><i class='fab fa-{{ $icon }}' style='font-size: 1.5em;'></i>&#160{{ $system }}</td>
+                <td style="text-align: left;">{{ $arch }}</td>
+                <td style="text-align: left;">{{ upper ( substr $package 1 ) }}</td>
+                <td style="text-align: left;">{{ printf "%.1f MB"  (div $val.size 1000000) }}</td>
+                <td style="text-align: left;">
+                  <span class="btn cstyle transparent">
+                  <a href="{{ $val.browser_download_url }}" target="_blank" rel="noopener noreferrer" style='font-size: 0.8em;'>{{ $val.name }} <i class="fa-fw fas fa-download" style='font-size: 0.8em;'></i></a>
+                  </span> <a href="{{ printf "%s.sha256" $val.browser_download_url }}" target="_blank" rel="noopener noreferrer">sha256</a>
+                </td>
+                <td style="text-align: left;">{{ cond (eq $package ".msi") "Requires Windows 7 or higher"
+                    (cond (eq $package ".pkg") (cond (eq $arch "arm-64") "Requires macOS 11 or higher (Apple Silicon)" "Requires macOS 10.13 or higher" )
+                    (cond (eq $arch "arm-32") "Requires GLIBC_2.17. Only tested with Raspberry Pi 4"
+                    (cond (eq $arch "arm-64") "Requires GLIBC_2.27" (cond (eq $package ".rpm") "Requires GLIBC_2.17, libstdc++.so.6 and libgcc" "Requires GLIBC_2.17" ))))
+                    }}
+                </td>
+            </tr>
+            {{ end }}
+        {{ end }}
     {{ end }}
-{{ end }}
-{{ end }}
+    {{ end }}
 </table>
+
