@@ -14,9 +14,12 @@ If you want to get automatic updates of the Weasis DICOM viewer then check these
 - [Windows Package Manager (winget)](https://github.com/microsoft/winget-pkgs/tree/master/manifests/w/WeasisTeam/Weasis/)
 - [Chocolatey Community Repository](https://community.chocolatey.org/packages/weasis) ![Chocolatey](https://img.shields.io/chocolatey/dt/weasis?classes=inline "Chocolatey release downloads") (Windows deployment with PowerShell, CHEF, Puppet...)
 
+#### macOS
+- [Homebrew Formulae](https://formulae.brew.sh/cask/weasis) (Homebrew Cask for Intel and Apple Silicon architectures)
+
 #### Linux
-- [Flathub repository](https://flathub.org/apps/details/io.github.nroduit.Weasis) ![Flathub](https://img.shields.io/flathub/downloads/io.github.nroduit.Weasis?classes=inline "Flathub release downloads") (Flatpak package management)
-- [Snapcraft: The app store for Linux](https://snapcraft.io/weasis) (Snap package management)
+- [Flathub repository](https://flathub.org/apps/details/io.github.nroduit.Weasis) ![Flathub](https://img.shields.io/flathub/downloads/io.github.nroduit.Weasis?classes=inline "Flathub release downloads") (Flatpak package management for x86_64 and arm64 architectures)
+- [Snapcraft: The app store for Linux](https://snapcraft.io/weasis) (Snap package management for x86_64 and arm64 architectures)
 - [Arch Linux repository](https://aur.archlinux.org/packages/weasis-bin/)
 - [Gentoo repository](https://gpo.zugaina.org/media-gfx/weasis-bin)
 
