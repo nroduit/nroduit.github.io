@@ -4,6 +4,12 @@
 </style>
 -->
 
+{{- if isset .Params "canonical" -}}
+<link rel="canonical" href="{{ .Params.baseURL }}" />
+{{- else -}}
+<link rel="canonical" href="{{ .Permalink }}" />
+{{- end }}
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3T9ZD6HC0Z"></script>
 <script>
