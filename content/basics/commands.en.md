@@ -141,6 +141,7 @@ g! dicom:close
 Close DICOM files
 Usage: dicom:close  (-a | ([-y UID]... [-s UID]...))
   -a --all           close all the patients
+  -p --patient=ID    close a patient from its patient ID (since v4.4.1)
   -y --study=UID     close a study, UID is Study Instance UID
   -s --series=UID    close a series, UID is Series Instance UID
   -? --help          show help
