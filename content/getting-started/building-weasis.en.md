@@ -9,7 +9,7 @@ These instructions describe how to build Weasis directly from the Git repository
 
 **Prerequisites**
 
-1. JDK 21 or higher
+1. JDK 22 or higher
 2. Maven 3.5.3 or higher<br>
    If your computer is behind a proxy server, [configure maven](https://maven.apache.org/guides/mini/guide-proxies.html).
 3. Git
@@ -64,7 +64,7 @@ However, it is possible to run a local script `package-weasis.sh` on most system
 {{< tabs groupId="build-native" >}}
 {{% tab title="Bash" %}}
 {{< highlight shell >}}
-./build/script/package-weasis.sh --jdk "/home/.jdks/openjdk-21"
+./build/script/package-weasis.sh --jdk "/home/.jdks/openjdk-22"
 {{< /highlight >}}
 {{% /tab %}}
 {{< /tabs >}}

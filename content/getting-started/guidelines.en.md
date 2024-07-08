@@ -13,9 +13,8 @@ This page describes the necessary configurations to be able to debug Weasis usin
 We recommend the use of [IntelliJ IDEA](https://www.jetbrains.com/idea/) because the following instructions are based on it. Nevertheless, it is possible to use other IDEs by configuring weasis-launcher with similar instructions described in [Add a launcher](#add-a-launcher).
 ### Prerequisites
 
-1. Install [IntelliJ IDEA](https://www.jetbrains.com/idea/) (Community or Ultimate Edition 2023.1 or higher)
-2. Use JDK 21 or higher and set the language level to `21 Preview`.
-![Project Structure](/images/conf/project-structure.png)
+1. Install [IntelliJ IDEA](https://www.jetbrains.com/idea/) (Community or Ultimate Edition 2024.1 or higher)
+2. Use JDK 22 or higher and set the language level to `22 - Unamed variables and patterns` in _File > Project Structure... > .
 3. In _File > Settings... > Plugins_ install google-java-format plugin from Marketplace and enable it from *google-java-format Settings*
 
 ### Code style and convention
@@ -51,7 +50,7 @@ For running or debugging Weasis, you need to create a launcher:
   - Click on *Modify Options*
     - Select *Add dependencies with "Provided" scope to classpath*
     - Select *Do not build before run*
-    - Select *Add VM Options* and enter `-Xms64m -Xmx768m -Dgosh.port=17179 --enable-preview`
+    - Select *Add VM Options* and enter `-Xms64m -Xmx768m -Dgosh.port=17179`
   - Working Directory: remove the current value and add *%MODULE_WORKING_DIR%* from the Insert Macros button
 ![Launcher Configuration](/images/conf/launcher.png)
 {{% notice note %}}
