@@ -1,0 +1,23 @@
+{{ $url := "https://api.github.com/repos/nroduit/Weasis/releases/latest" -}}
+{{ $jfile := getJSON $url -}}
+{
+{{ range $elem_index, $elem_val := $jfile -}}
+{{ if (eq $elem_index "created_at") -}}
+"date": "{{ $elem_val }}",
+{{ end -}}
+{{ if (eq $elem_index "tag_name") -}}
+"version": "{{ $elem_val }}",
+{{ end -}}
+{{ end -}}
+"url": "https://nroduit.github.io/en/getting-started/download-dicom-viewer/"
+}
+
+<script>
+  if (window.gtag) {
+    gtag('event', 'json_page_view', {
+      'event_category': 'page_view',
+      'event_label': 'single.api.json',
+      'non_interaction': true
+    });
+  }
+</script>
