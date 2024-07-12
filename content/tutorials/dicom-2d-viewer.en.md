@@ -16,7 +16,7 @@ The 2D view can be opened with {{< svg "static/tuto/icon/view2d.svg" >}} in the 
 <br>
 
 The rulers {{% badge style="blue" %}}K{{% /badge %}} show a real size when it can be calculated from the DICOM file. When a text {{% badge style="blue" %}}M{{% /badge %}} above the calibration is displayed, it gives information about the calibration type. Here are some examples:
-* _At dector:_ The calibration of the projection radiographic image is done at the detector level 
+* _At detector:_ The calibration of the projection radiographic image is done at the detector level 
 * _Magnified:_ The calibration of the projection radiographic image is corrected using the magnification factor (e.g. mammography, see the image above)
 * _Used fiducials:_ The calibration is based on fiducials (e.g. manual calibration with a ruler in the image)
 * _At scanner:_ The calibration comes from a media which has been digitized (e.g. film digitizer)
@@ -107,7 +107,7 @@ Display transformation properties and DICOM information on the image.
 * Minimal Annotations: Reduce the number of annotations. Use _space_ or _i_ key to toggle between the 3 states (minimal, none, all).
 * Anonymize: Hide identifying information only in the views not in other places of the GUI like the tab title. Must be used with the [screenshot tool](../dicom-export) when exporting image.
 * Scale: Display the rulers on the left and the bottom of the image {{% badge style="blue" %}}K{{% /badge %}}
-* Lookup Table: Display the [LUT](../lut) on the image
+* Lookup Table: Display the [LUT](../lut) on the image {{% badge style="blue" %}}L{{% /badge %}}
 * Orientation: Display the [orientation of the image](../image-orientation) {{% badge style="blue" %}}N{{% /badge %}}
 * Window/Level: Display the [window and level](../lut/#windowing-and-rendering) values {{% badge style="blue" %}}J{{% /badge %}}
 * Zoom: Display the zoom value {{% badge style="blue" %}}J{{% /badge %}}
