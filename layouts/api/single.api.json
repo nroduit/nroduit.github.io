@@ -1,0 +1,13 @@
+{{ $url := "https://api.github.com/repos/nroduit/Weasis/releases/latest" -}}
+{{ $jfile := getJSON $url -}}
+{{  printf "{" }}
+{{ range $elem_index, $elem_val := $jfile -}}
+{{ if (eq $elem_index "created_at") -}}
+{{  printf "\"date\": \"%s\"," $elem_val }}
+{{ end -}}
+{{ if (eq $elem_index "tag_name") -}}
+{{  printf "\"version\": \"%s\"," $elem_val }}
+{{ end -}}
+{{ end -}}
+{{  printf "\"url\": \"%s\"" "https://nroduit.github.io/en/getting-started/download-dicom-viewer/" }}
+{{  printf "}" }}
