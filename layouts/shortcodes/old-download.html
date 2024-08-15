@@ -39,7 +39,7 @@
                   <a href="{{ $val.browser_download_url }}" target="_blank" rel="noopener noreferrer" style='font-size: 0.8em;'>{{ $val.name }} <i class="fa-fw fas fa-download" style='font-size: 0.8em;'></i></a>
                   {{ $date := time "2024-05-01" }}
                   {{ if ge (time $elem_val.published_at) $date }}
-                  </span> <a href="{{ printf "%s.sha256" $val.browser_download_url }}" target="_blank" rel="noopener noreferrer">sha256</a>
+                  </span>
                   {{ end }}
           </td>
           <td style="text-align: left;">{{ cond ( ge $elem_index 1) "" (cond (eq $package ".msi") "Requires Windows 7 or higher"
