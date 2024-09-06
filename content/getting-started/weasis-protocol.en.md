@@ -103,9 +103,9 @@ The command for modifying the configuration at launch is `$weasis:config` which 
 
 Here are some examples that modify the launcher properties without using <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis">weasis-pacs-connector</a>:
 
-* Configuration for launching Weasis Dicomizer {{< launch >}}$weasis:config pro="felix.extended.config.properties file:conf/ext-dicomizer.properties" pro="gosh.port 17181"{{< /launch >}}
+* Configuration for launching Weasis Dicomizer {{< launch >}}$weasis:config pro="felix.extended.config.properties file:conf/dicomizer.json" pro="gosh.port 17181"{{< /launch >}}
 {{< highlight shell >}}
-$weasis:config pro="felix.extended.config.properties file:conf/ext-dicomizer.properties" pro="gosh.port 17181"
+$weasis:config pro="felix.extended.config.properties file:conf/dicomizer.json" pro="gosh.port 17181"
 {{< /highlight >}}
 * Change the user, by default is the one of the current system session. The local preferences are associated to a user. {{< launch >}}$weasis:config pro="weasis.user user2"{{< /launch >}}
 {{< highlight shell >}}

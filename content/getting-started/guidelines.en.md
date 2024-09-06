@@ -74,9 +74,9 @@ In Eclipse launcher parameters, '&' within URLs needs to be escaped with a backs
   - Removing the possibility of exporting DICOM: `-Dweasis.export.dicom=false`
   - Defines a new user (for getting specific preferences): `-Dweasis.user=user1`
   - Examples with specific configuration files:
-    - For launching Weasis Dicomizer: `-Dfelix.extended.config.properties=file:target/conf/ext-dicomizer.properties`
-    - Configuration from an URL: `-Dfelix.extended.config.properties=https://mysite.com/weasis/conf/ext-config.properties`
+    - For launching Weasis Dicomizer: `-Dfelix.extended.config.properties=file:target/conf/dicomizer.json`
+    - Configuration from an URL: `-Dfelix.extended.config.properties=https://mysite.com/weasis/conf/config.json`
 {{% notice note %}}
-**felix.config.properties** defines the location of config.properties (the OSGI configuration and the list of plug-ins to install/start)<br>
-**felix.extended.config.properties** defines the location of ext-config.properties (extends/overrides config.properties)
+**felix.config.properties** defines the location of base.json (the OSGI configuration and the list of plug-ins to install/start)<br>
+**felix.extended.config.properties** defines the location of a json file (extends/overrides base.json)
 {{% /notice %}}

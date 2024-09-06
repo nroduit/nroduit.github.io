@@ -30,7 +30,7 @@ How to modify ext-config.properties:
 Here is the priority order to set a property:
 
 1. Java System property providing from parameters of [weasis:config](../../../getting-started/weasis-protocol/#modify-the-launch-parameters) or the [launching URI](https://github.com/nroduit/weasis-pacs-connector#launch-weasis-with-other-parameters))
-2. Property defined in weasis/conf/ext-config.properties or in weasis/conf/config.properties
+2. Property defined in weasis/conf/xxx.json
 3. The default value of the property (see table below)
 
 Example to change language property (It will work only during the first launch of Weasis on a user session, otherwise delete ${user.home}/.weasis/preferences/).
@@ -39,7 +39,7 @@ Example to change language property (It will work only during the first launch o
 {{< highlight url >}}
 http://localhost:8080/weasis-pacs-connector/weasis?patientID=9702672&pro="locale.lang.code%20fr_CH"
 {{< /highlight >}}
-2. Add the property in weasis/conf/ext-config.properties:
+2. Add the property in weasis/conf/xxx.json:
 {{< highlight ini >}}
 locale.lang.code=fr_CH
 {{< /highlight >}}
