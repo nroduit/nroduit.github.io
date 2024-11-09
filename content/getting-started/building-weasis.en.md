@@ -61,7 +61,7 @@ However, it is possible to run a local script `package-weasis.sh` on most system
 
 - Get `weasis-native.zip`, unzip the archive and then go to the root folder with a bash prompt. 
 - Build the native binaries and the installer:
-{{< tabs groupId="build-native" >}}
+{{< tabs groupid="build-native" >}}
 {{% tab title="Bash" %}}
 {{< highlight shell >}}
 ./build/script/package-weasis.sh --jdk "/home/.jdks/openjdk-22"

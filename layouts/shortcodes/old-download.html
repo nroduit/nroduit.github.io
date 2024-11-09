@@ -1,5 +1,5 @@
 {{ $url := "https://api.github.com/repos/nroduit/Weasis/releases" }}
-{{ $jfile := getJSON $url }}
+{{ $jfile := resources.GetRemote $url | transform.Unmarshal }}
 <table style="font-size: 0.8em;">
     <caption>Download Weasis DICOM Viewer binaries</caption>
     <thead>
@@ -8,7 +8,7 @@
         <th style="text-align: center; width: 11%;" scope="col">System</th>
         <th style="text-align: center; width: 7%;" scope="col">Arch.</th>
         <th style="text-align: center; width: 8%;" scope="col">Size</th>
-        <th style="text-align: center; width: 30%;" scope="col">Weasis installer</th>
+        <th style="text-align: center; width: 25%;" scope="col">Weasis installer</th>
         <th style="text-align: center;" scope="col">Comments</th>
     </tr>
     </thead>

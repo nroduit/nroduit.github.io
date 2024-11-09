@@ -57,7 +57,7 @@ The image below shows the 3 views of the orthogonal MPR. The uppercase letter at
 <br>
 
 {{% notice info %}}
-The color of the axes used comes from the one defined in [DICOM Patient Orientation](https://dicom.nema.org/medical/dicom/current/output/chtml/part17/chapter_A.html). Blue corresponds to the left-right axis, the red axis to anterior-posterior, and the green axis to foot-head.
+The color of the axes used comes from the one defined in [DICOM Patient Orientation](https://dicom.nema.org/medical/dicom/current/output/chtml/part17/chapter_A.html) based on the anatomical direction. Blue corresponds to the left-right axis, the red axis to anterior-posterior, and the green axis to foot-head.
 
 The colored square in the MPR view above corresponds to the plane that is perpendicular to one of the axes.
 {{% /notice %}}

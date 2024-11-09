@@ -3,9 +3,10 @@
    - remove `markup.highlight.noClasses` from your config.toml
    - set `markup.highlight.style` to a predefined style name in your config.toml
    - remove the following `@import` of the self-defined chroma stylesheet */
-@import "chroma-relearn-dark.css";
+
 
 :root {
+    --CODE-theme: relearn-dark;
     --PRIMARY-color: #6D6D6D; /* brand primary color */
     --SECONDARY-color: #6c8ce3; /* brand secondary color */
     --ACCENT-color: #ff44ff; /* brand accent color, used for search highlights */

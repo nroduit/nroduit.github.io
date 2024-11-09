@@ -64,9 +64,8 @@ keepWhitespace = false
 [params]
   editURL = "https://github.com/nroduit/nroduit.github.io/edit/main/content/"
   # Author of the site, will be used in meta information
-  author = "Nicolas Roduit"
+  author.name = "Nicolas Roduit"
   # Description of the site, will be used in meta information
-  description = "Weasis: an open source DICOM viewer which is modular, multiplatform, web-based and multilingual. It can be easily integrated in any medical system"
   showVisitedLinks = true
   disableBreadcrumb = false
   disableTOC = false
@@ -96,9 +95,9 @@ keepWhitespace = false
 [outputs]
   # add JSON to the home page to support lunr search; This is a mandatory setting
   # for the search functionality
-  home = ["HTML", "RSS", "SEARCH", "SEARCHPAGE"]
-  section = ["HTML", "RSS", "PRINT"]
-  page = ["HTML", "RSS", "PRINT"]
+  home = ['html', 'rss', 'print']
+  section = ['html', 'rss', 'print']
+  page = ['html', 'rss', 'print']
 
 [markup]
   [markup.highlight]

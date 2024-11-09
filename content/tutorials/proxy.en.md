@@ -12,7 +12,7 @@ From the main menu, open _File > Preferences (Alt + P)_ and select *Proxy Server
 
 The default configuration is *Direct connection (no proxy)* and by clicking on *Manual proxy configuration* you can define a custom proxy server (in the image below, a local proxy like Squid).
 
-In order to fill in the fields, you must refer to the [Java documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/doc-files/net-properties.html).
+In order to fill in the fields, you must refer to the [Java documentation](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/net/doc-files/net-properties.html).
 
 ![Proxy configuration](/tuto/proxy-prefs.png?classes=shadow)
 <br>
