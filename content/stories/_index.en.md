@@ -1,7 +1,7 @@
 ---
 title: Stories
 weight: 50
-pre: "<b>4. </b>"
+pre: "<b>5. </b>"
 ---
 
 The latest software developed at the [University Hospital of Geneva (HUG)](https://www.hug.ch/en) for medical imaging is Weasis which is the clinical viewer in the home-made Electronic Medical Records. Weasis is [open source](https://github.com/nroduit/Weasis/) since 2010 and has become a reference DICOM viewer.

@@ -1,7 +1,7 @@
 ---
 title: Manager
 weight: 30
-pre: "<b>2. </b>"
+pre: "<b>4. </b>"
 keywords: [ "manager", "weasis-manager", "launcher", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", ]
 ---
 
