@@ -11,13 +11,15 @@ weasis-manager is the successor to [weasis-pacs-connector](https://github.com/nr
 
 In short, it simplifies the management of Weasis in an IT environment and its link with a DICOM archive.
 
-The main features are:
-- Itinerant management of user preferences
-- Launch context management (plugin configuration, menu and toolbar management) by user, group or host machine
-- Management of minor version updates based on this compatibility file and by importing weasis-native.zip (since weasis 3.6.0)
-- Management of the translation packages (built every day)
-- Several types of connectors for interfacing with a DICOM archive
-- Allows you to configure a client in Keycloack and transmit the token to Weasis for DICOMWeb or WADO URI calls (solves the problem of limiting URIs to 2048 characters under Windows, where the token is truncated when passed through the weasis:// uri)
-
+Here is a list of pages related to Weasis Manager documentation:
 {{% children %}}
+
+The main features of Weasis Manager are:
+- User preferences management
+- Launch context management by user, group, or host
+- Minor version updates management based on compatibility file and by importing weasis-native.zip
+- Translation packages management
+- Connectors for DICOM archive
+- Keycloak client configuration and token transmission for DICOMWeb or WADO URI calls
+
 
