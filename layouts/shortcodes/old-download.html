@@ -1,5 +1,7 @@
 {{ $url := "https://api.github.com/repos/nroduit/Weasis/releases" }}
-{{ $jfile := resources.GetRemote $url | transform.Unmarshal }}
+{{ $headers := dict "Authorization" (printf "Bearer %s" (getenv "HUGO_GH_TOKEN")) }}
+{{ $options := dict "headers" $headers }}
+{{ $jfile := resources.GetRemote $url $options | transform.Unmarshal }}
 <table style="font-size: 0.8em;">
     <caption>Download Weasis DICOM Viewer binaries</caption>
     <thead>
