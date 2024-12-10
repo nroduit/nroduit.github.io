@@ -1,5 +1,7 @@
 {{ $url := "https://api.github.com/repos/nroduit/Weasis/releases/latest" -}}
-{{ $jfile := resources.GetRemote $url | transform.Unmarshal }}
+{{ $headers := dict "Authorization" (printf "Bearer %s" (getenv "HUGO_GH_TOKEN")) }}
+{{ $options := dict "headers" $headers }}
+{{ $jfile := resources.GetRemote $url $options | transform.Unmarshal }}
 {{  printf "{" }}
 {{ range $elem_index, $elem_val := $jfile -}}
 {{ if (eq $elem_index "created_at") -}}
