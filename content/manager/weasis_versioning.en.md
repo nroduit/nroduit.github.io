@@ -42,3 +42,35 @@ Deleting a version whose "launch config" is "default" will result in the deletio
 
 ![delete_default_version_propagation.png](/manager/weasis_versioning/delete_default_version_propagation.png)
 
+## Group-specific versions
+
+It is possible to create a version of Weasis that will only be launched for certain groups of users or hosts.
+
+In the "package" view, click on "Create new group config".
+
+![create_new_package_version_location.png](/manager/weasis_versioning/create_new_package_version_location.png)
+
+Then select the desired Weasis version (package version + launch config) and the new group to associate then press "Create".
+
+![create_new_package_version.png](/manager/weasis_versioning/create_new_package_version.png)
+
+The new version will thus be displayed in the list of versions already present.
+
+If the user or host belongs to the group, the previously created configuration will be used to launch Weasis.
+
+## Configuring version properties
+
+The manager allows to modify the properties of versions on-the-fly.
+
+To modify a property, it is necessary to open a version and double-click on the property to modify.
+
+For example to modify the name of the viewer for a package/launch config/group:
+
+- modification of the property "weasis.name"
+
+![rename_weasis_name_property.png](/manager/weasis_versioning/rename_weasis_name_property.png)
+
+- launching the viewer after modification: the label corresponds to the modified property
+
+![result_rename_property.png](/manager/weasis_versioning/result_rename_property.png)
+
