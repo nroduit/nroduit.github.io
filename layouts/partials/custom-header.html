@@ -10,6 +10,14 @@
 <link rel="canonical" href="{{ .Permalink }}" />
 {{- end }}
 
+<!-- Google Consent Mode with minimal data collection that minimize the need for user consent -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+        'ad_storage': 'denied',
+    });
+</script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3T9ZD6HC0Z"></script>
 <script>
@@ -17,7 +25,11 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-3T9ZD6HC0Z');
+  gtag('config', 'G-3T9ZD6HC0Z', {
+    'anonymize_ip': true,
+    'allow_ad_personalization_signals': false,
+    'allow_google_signals': false
+  });
 </script>
 
 
