@@ -7,7 +7,7 @@ weight: 20
 
 ## <center>Keyboard and Mouse Shortcuts</center>
 
-<i class="fa fa-star" style="color:green"></i> [IHE](https://www.ihe.net) recommendations in [Basic Image Review profile](https://wiki.ihe.net/index.php?title=Basic_Image_Review).
+Here is a list of the most common keyboard and mouse shortcuts in Weasis. The shortcuts are divided into different categories for better understanding.
 
 ### Central panel containing viewers and editors
 
@@ -20,64 +20,75 @@ weight: 20
 | **Ctrl + W**           | Close the tab                                              |
 | Tab **Right-click**    | Open the contextual menu for more options                  |
 
-### Selected view of the 2D DICOM Viewer
+### Selected view in the 2D DICOM Viewer
 
-| Shortcut                                                 | Action                                                                                                                                                                   |
-|----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Left Arrow**                                           | Display previous series (since {{< badgeC "v4.2.1" >}})                                                                                                                   |
-| **Right Arrow**                                          | Display next series (since {{< badgeC "v4.2.1" >}})                                                                                                                       |
-| **Page Up**                                              | Display first series (since {{< badgeC "v4.2.1" >}})                                                                                                                      |
-| **Page Down**                                            | Display last series (since {{< badgeC "v4.2.1" >}})                                                                                                                       |
-| **Ctrl + Left Arrow**                                    | Display previous study (since {{< badgeC "v4.2.1" >}})                                                                                                                    |
-| **Ctrl + Right Arrow**                                   | Display next study (since {{< badgeC "v4.2.1" >}})                                                                                                                        |
-| **Ctrl + Page Up**                                       | Display first study (since {{< badgeC "v4.2.1" >}})                                                                                                                       |
-| **Ctrl + Page Down**                                     | Display last study (since {{< badgeC "v4.2.1" >}})                                                                                                                        |
-| **Up Arrow**                                             | Display previous image (since {{< badgeC "v4.2.1" >}})                                                                                                                    |
-| **Down Arrow**                                           | Display next image (since {{< badgeC "v4.2.1" >}})                                                                                                                        |
-| **Home**                                                 | Display first image (since {{< badgeC "v4.2.1" >}})                                                                                                                       |
-| **End**                                                  | Display last image (since {{< badgeC "v4.2.1" >}})                                                                                                                        |
-| **Shift + Up Arrow**                                     | Go 10 images back (since {{< badgeC "v4.2.1" >}})                                                                                                                         |
-| **Shift + Down Arrow**                                   | Go 10 images forward (since {{< badgeC "v4.2.1" >}})                                                                                                                      |
-| **Ctrl + Up Arrow**                                      | Display previous patient (since {{< badgeC "v4.2.1" >}})                                                                                                                  |
-| **Ctrl + Down Arrow**                                    | Display next patient (since {{< badgeC "v4.2.1" >}})                                                                                                                      |
-| **Ctrl + Home**                                          | Display first patient (since {{< badgeC "v4.2.1" >}})                                                                                                                     |
-| **Ctrl + End**                                           | Display last patient (since {{< badgeC "v4.2.1" >}})                                                                                                                      |
-| **Tab**                                                  | Go the next view when layout has more than one view                                                                                                                      |
-| **Shift + Tab**                                          | Go the previous view when layout has more than one view                                                                                                                  |
-| **Alt + Arrows**                                         | Move image of 5 pixels (since {{< badgeC "v4.2.1" >}})                                                                                                                    |
-| **Alt + Shift + Arrows**                                 | Move image of 10 pixels (since {{< badgeC "v4.2.1" >}})                                                                                                                   |
-| **Ctrl + Plus (+)**                                      | Zoom in (since {{< badgeC "v4.2.1" >}})                                                                                                                                   |
-| **Ctrl + Minus (-)**                                     | Zoom out (since {{< badgeC "v4.2.1" >}})                                                                                                                                  |
-| **Ctrl + Enter**                                         | Set zoom to best fit (since {{< badgeC "v4.2.1" >}})                                                                                                                      |
-| **T**                                                    | Translate (pan) the image canvas <i class="fa fa-star" style="color:green"></i>                                                                                          |
-| **W**                                                    | Window / Level <i class="fa fa-star" style="color:green"></i>                                                                                                            |
-| **S**                                                    | Series scroll <i class="fa fa-star" style="color:green"></i>                                                                                                             |
-| **Z**                                                    | Zoom <i class="fa fa-star" style="color:green"></i>                                                                                                                      |
-| **R**                                                    | Rotation                                                                                                                                                                 |
-| **H**                                                    | Crosshair: in multiview mode synchronizes the crosshair position to all the views (Note: Ctrl + click or Ctrl + Shift + click allows changing the Window / Level values) |
-| **C**                                                    | Cine Start / Stop                                                                                                                                                        |
-| **M**                                                    | Measure                                                                                                                                                                  |
-| **D**                                                    | Distance measurement <i class="fa fa-star" style="color:green"></i>                                                                                                      |
-| **A**                                                    | Angle measurement <i class="fa fa-star" style="color:green"></i>                                                                                                         |
-| **Y**                                                    | Polyline measurement                                                                                                                                                     |
-| **B**                                                    | Textbox                                                                                                                                                                  |
-| **Q**                                                    | Context menu                                                                                                                                                             |
-| **Ctrl + Spacebar**                                      | Change to the next action                                                                                                                                                |
-| **Ctrl + mouse drag**                                    | Accelerate the current action <i class="fa fa-star" style="color:green"></i>                                                                                             |
-| **Ctrl + Shift + mouse drag**                            | Accelerate more the current action                                                                                                                                       |
-| **Alt + R**                                              | 90° rotation (clockwise)                                                                                                                                                 |
-| **Alt + L**                                              | 90° rotation (counterclockwise)                                                                                                                                          |
-| **Alt + F**                                              | Flip horizontally (after rotation action)                                                                                                                                |
-| **0 1 2 3**...                                           | DICOM presets                                                                                                                                                            |
-| **K**                                                    | Toggle key image state                                                                                                                                                   |
-| **Spacebar**                                             | Show/Hide all the annotations (three states)                                                                                                                             |
-| **I**                                                    | Show/Hide all the annotations (three states) <i class="fa fa-star" style="color:green"></i>                                                                              |
-| **Escape**                                               | Reset the selected view <i class="fa fa-star" style="color:green"></i>                                                                                                   |
-| **P**                                                    | Print view(s) with the operating system printer <i class="fa fa-star" style="color:green"></i>                                                                           |
-| **Right-click**                                          | Open the contextual menu for more options                                                                                                                                |
-| **Double click**                                         | Toggle fullscreen                                                                                                                                                        |
-| **Drag files/directories**<br>(from the OS file manager) | Open DICOMs files                                                                                                                                                        |
+| Shortcut                                                 | Action                                                                                                                                                                |
+|----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Left Arrow**                                           | Display previous series (since {{< badgeC "v4.2.1" >}})                                                                                                               |
+| **Right Arrow**                                          | Display next series (since {{< badgeC "v4.2.1" >}})                                                                                                                   |
+| **Page Up**                                              | Display first series (since {{< badgeC "v4.2.1" >}})                                                                                                                  |
+| **Page Down**                                            | Display last series (since {{< badgeC "v4.2.1" >}})                                                                                                                   |
+| **Ctrl + Left Arrow**                                    | Display previous study (since {{< badgeC "v4.2.1" >}})                                                                                                                |
+| **Ctrl + Right Arrow**                                   | Display next study (since {{< badgeC "v4.2.1" >}})                                                                                                                    |
+| **Ctrl + Page Up**                                       | Display first study (since {{< badgeC "v4.2.1" >}})                                                                                                                   |
+| **Ctrl + Page Down**                                     | Display last study (since {{< badgeC "v4.2.1" >}})                                                                                                                    |
+| **Up Arrow**                                             | Display previous image (since {{< badgeC "v4.2.1" >}})                                                                                                                |
+| **Down Arrow**                                           | Display next image (since {{< badgeC "v4.2.1" >}})                                                                                                                    |
+| **Home**                                                 | Display first image (since {{< badgeC "v4.2.1" >}})                                                                                                                   |
+| **End**                                                  | Display last image (since {{< badgeC "v4.2.1" >}})                                                                                                                    |
+| **Shift + Up Arrow**                                     | Go 10 images back (since {{< badgeC "v4.2.1" >}})                                                                                                                     |
+| **Shift + Down Arrow**                                   | Go 10 images forward (since {{< badgeC "v4.2.1" >}})                                                                                                                  |
+| **Ctrl + Up Arrow**                                      | Display previous patient (since {{< badgeC "v4.2.1" >}})                                                                                                              |
+| **Ctrl + Down Arrow**                                    | Display next patient (since {{< badgeC "v4.2.1" >}})                                                                                                                  |
+| **Ctrl + Home**                                          | Display first patient (since {{< badgeC "v4.2.1" >}})                                                                                                                 |
+| **Ctrl + End**                                           | Display last patient (since {{< badgeC "v4.2.1" >}})                                                                                                                  |
+| **Tab**                                                  | Go the next view when layout has more than one view                                                                                                                   |
+| **Shift + Tab**                                          | Go the previous view when layout has more than one view                                                                                                               |
+| **Alt + Arrows**                                         | Move image of 5 pixels (since {{< badgeC "v4.2.1" >}})                                                                                                                |
+| **Alt + Shift + Arrows**                                 | Move image of 10 pixels (since {{< badgeC "v4.2.1" >}})                                                                                                               |
+| **Ctrl + Plus (+)**                                      | Zoom in (since {{< badgeC "v4.2.1" >}})                                                                                                                               |
+| **Ctrl + Minus (-)**                                     | Zoom out (since {{< badgeC "v4.2.1" >}})                                                                                                                              |
+| **Ctrl + Enter**                                         | Set zoom to best fit (since {{< badgeC "v4.2.1" >}})                                                                                                                  |
+| **T**                                                    | Translate (pan) the image canvas                                                                                        |
+| **W**                                                    | Window / Level                                                                                                          |
+| **S**                                                    | Series scroll                                                                                                           |
+| **Z**                                                    | Zoom                                                                                                                    |
+| **R**                                                    | Rotation                                                                                                                                                              |
+| **H**                                                    | Crosshair: in multiview mode synchronizes the crosshair position to all the views (Note: Ctrl + click or Ctrl + Shift + click allows changing the Window/Level values)|
+| **C**                                                    | Cine Start / Stop                                                                                                                                                     |
+| **M**                                                    | Measure                                                                                                                                                               |
+| **D**                                                    | Distance measurement                                                                                                    |
+| **A**                                                    | Angle measurement                                                                                                       |
+| **Y**                                                    | Polyline measurement                                                                                                                                                  |
+| **B**                                                    | Textbox                                                                                                                                                               |
+| **Q**                                                    | Context menu                                                                                                                                                          |
+| **Ctrl + Spacebar**                                      | Change to the next action                                                                                                                                             |
+| **Ctrl + mouse drag**                                    | Accelerate the current action                                                                                           |
+| **Ctrl + Shift + mouse drag**                            | Accelerate more the current action                                                                                                                                    |
+| **Alt + R**                                              | 90° rotation (clockwise)                                                                                                                                              |
+| **Alt + L**                                              | 90° rotation (counterclockwise)                                                                                                                                       |
+| **Alt + F**                                              | Flip horizontally (after rotation action)                                                                                                                             |
+| **0 1 2 3**...                                           | DICOM presets                                                                                                                                                         |
+| **K**                                                    | Toggle key image state                                                                                                                                                |
+| **Spacebar**                                             | Show/Hide all the annotations (three states)                                                                                                                          |
+| **I**                                                    | Show/Hide all the annotations (three states)                                                                            |
+| **Escape**                                               | Reset the selected view                                                                                                 |
+| **P**                                                    | Print view(s) with the operating system printer                                                                         |
+| **Right-click**                                          | Open the contextual menu for more options                                                                                                                             |
+| **Double click**  or **F11**                             | Toggle fullscreen (F11 since {{< badgeC "v4.5.2" >}})                                                                                                                 |
+| **Drag files/directories**<br>(from the OS file manager) | Open DICOMs files                                                                                                                                                     |
 
+### Selected view in the MPR Viewer
+MPR view inherits the same shortcuts as the 2D viewer, with the following additional shortcuts since {{< badgeC "v4.5.2" >}} :
+
+| Shortcut    | Action                                              |
+|-------------|-----------------------------------------------------|
+| **Alt + A** | Center crosshair of the selected view               |
+| **Alt + S** | Show/Hide the crosshair center of the selected view |
+| **Alt + D** | Show/Hide the crosshair of the selected view        |
+| **Alt + C** | Center crosshair of all views                       |
+| **Alt + V** | Show/Hide the crosshair center of all views         |
+| **Alt + B** | Show/Hide the crosshair of all views                |
 
 ### DICOM explorer
 
@@ -116,12 +127,13 @@ weight: 20
 
 ### Tips and Tricks
 
-Window / Level: <i class="fa fa-star" style="color:green"></i>
+#### Window / Level Adjustment
+- Move the mouse **horizontally to the right** to increase the window width (reduce the perceived contrast).
+- Move the mouse **vertically upwards** to lower the window center (increase the perceived brightness).<br>
+Tip: Use [Preferences](../customize/preferences)  to reverse the direction of level adjustments.
 
--   Horizontal movement of the mouse to the right will widen the window width (flatten the perceived contrast)
--   Vertical movement of the mouse upwards will lower the window center (increase the perceived brightness). See [Preferences](../customize/preferences) to inverse level direction.
 
-Two ways to draw a segment:
-
--   Click + drag > release
--   Click > release > drag > release
+#### Drawing a Segment
+You can draw a segment in two ways:<br>
+1. **Click + Drag**: Click, drag to draw, then release.
+2. **Click > Release > Drag**: Click to start, release, drag to draw, and release again.

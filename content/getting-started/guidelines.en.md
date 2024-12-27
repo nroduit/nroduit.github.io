@@ -13,8 +13,8 @@ This page describes the necessary configurations to be able to debug Weasis usin
 We recommend the use of [IntelliJ IDEA](https://www.jetbrains.com/idea/) because the following instructions are based on it. Nevertheless, it is possible to use other IDEs by configuring weasis-launcher with similar instructions described in [Add a launcher](#add-a-launcher).
 ### Prerequisites
 
-1. Install [IntelliJ IDEA](https://www.jetbrains.com/idea/) (Community or Ultimate Edition 2024.1 or higher)
-2. Use JDK 23 or higher and set the language level to `SDK Default` in _File > Project Structure... > .
+1. Install [IntelliJ IDEA](https://www.jetbrains.com/idea/) (Community or Ultimate Edition 2024.3 or higher)
+2. Use JDK {{< param jdkVersion >}} or higher and set the language level to `SDK Default` in *File > Project Structure... >*.<br>Required Maven version is {{< param mavenVersion >}} or higher.
 3. In _File > Settings... > Plugins_ install google-java-format plugin from Marketplace and enable it from *google-java-format Settings*
 
 ### Code style and convention

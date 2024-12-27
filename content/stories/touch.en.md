@@ -8,5 +8,3 @@ keywords: [ "javafx", "multi-touch", "touch", "dicom viewer", "free dicom viewer
 ## <center>Master Thesis of Gérôme Pasquier</center>
 
 {{< youtube id="0dGVDDlD0sQ" >}}
-
-Try it from [the demo server](../../demo)
