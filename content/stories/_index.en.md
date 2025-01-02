@@ -17,12 +17,12 @@ The University Hospital of Geneva has a remarkable legacy in developing medical 
   _Weasis was featured in the Ask Noah Show, a podcast that discusses open-source software and technology. The episode highlighted Weasis as a free, open-source DICOM viewer that is easy to use and suitable for various medical imaging applications._
 
 - **Evaluating Open-Source DICOM Viewers for Resource-Constrained Hospitals**<br>
-  Read: [Evaluating Open-Source DICOM Viewers for Resource-Constrained Hospitals](https://www.researchgate.net/publication/360000000_Evaluating_Open-Source_DICOM_Viewers_for_Resource-Constrained_Hospitals)<br>
+  Read: [Evaluating Open-Source DICOM Viewers for Resource-Constrained Hospitals](https://www.diva-portal.org/smash/get/diva2:1904307/FULLTEXT01.pdf)<br>
   _A case study evaluating open-source DICOM viewers for resource-constrained hospitals. The study concluded that Weasis is the most suitable software due to its advanced tools for multiple modalities, user-friendliness, and detailed documentation._
 
 #### 2021
 - **Simulation training in diagnostic radiology education**<br>
-  Read: [The Time Has Come: a Paradigm Shift in Diagnostic Radiology Education via Simulation Training](https://pubmed.ncbi.nlm.nih.gov/33725494/)<br>
+  Read: [The Time Has Come: a Paradigm Shift in Diagnostic Radiology Education via Simulation Training](https://pmc.ncbi.nlm.nih.gov/articles/PMC7886946/)<br>
   _Highlights the role of simulation training in diagnostic radiology education, where tools like Weasis can contribute significantly to improving education and training._
 
 #### 2018
