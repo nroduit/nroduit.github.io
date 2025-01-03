@@ -1,32 +1,48 @@
-Elle a été conçue pour répondre à plusieurs attentes des systèmes d'information clinique et à leur évolution future en lien avec l'imagerie médicale : fournir un accès en ligne aux images radiologiques, couvrir un nombre considérable de types DICOM et offrir des capacités multimédias.
+### Fonctionnalités principales (voir aussi [Tutoriels](tutorials))
 
-Voici les principales caractéristiques :
-* Affichage de tous les types de fichiers DICOM (y compris les fichiers multi-frame, enhanced, MPEG-2, MPEG-4, MIME Encapsulation, SR, PR, KO, AU, RT et ECG).
-* Visualisation des formats d'image courants (TIFF, BMP, GIF, JPEG, PNG, RAS, HDR et PNM)
-* Manipulation d'images (déplacement, zoom, fenêtrage, préréglages, rotation, retournement, défilement, curseur 3D, filtrage...)
-* Dispositions pour la comparaison de séries ou d'études
-* Options avancées de synchronisation des séries
-* Affichage des Presentation States (GSPS) et Key Object Selection
-* Création d'images clés (Key Object Selection) par sélection
-* Support des Modality LUTs, VOI LUTs, et Presentation LUTs (même non-linéaire)
-* Prise en charge de plusieurs écrans avec des calibrages différents, prise en charge des moniteurs HiDPI (High Dots Per Inch), mode plein écran
-* Reconstructions multiplanaires et projection à intensité maximale
-* Affichage de rapports structurés (DICOM SR)
-* Affichage et recherche dans tous les attributs DICOM
-* Affichage des lignes de croisement
-* Outils de mesure et d'annotation
-* Statistiques régionales des pixels (Min, Max, Moyenne, StDev, Skewness, Kurtosis, Entropie)
-* Histogramme des valeurs selon la modalité
-* Mesure des SUV
-* Envoi DICOM (storeSCU et STOW-RS)
-* Requête/récupération DICOM (C-GET, C-MOVE et WADO-URI) et DICOMWeb (QUERY et RETRIEVE)
-* Sauvegarde des mesures et des annotations dans un fichier DICOM PR ou XML
-* Importation de CD/DVD et de fichiers DICOM locaux
-* Exportation DICOM avec plusieurs options (DICOMDIR, ZIP, fichier image ISO avec Weasis, génération de nouveaux UID, transcodage, TIFF, JPEG, PNG...)
-* Loupe avec options d'affichage avancées
-* Impression native et DICOM
-* Lecture d'images DICOM contenant des données avec décimales (Parametric Map)
-* Visionneuse DICOM ECG
-* Module Dicomizer pour convertir les images standard en DICOM
+- **Support des types de données**
+    - Weasis fournit une implémentation très détaillée de la norme DICOM, permettant une visualisation et une interaction faciles avec la plupart des types de fichiers DICOM.
+    - Affichage de la plupart des fichiers DICOM, y compris multi-trame, enhanced, MPEG-2, MPEG-4, MIME Encapsulation, DOC, SR, PR, KOS, SEG, AU, RT et ECG
+    - Affichage des images DICOM contenant des données float ou double (Carte paramétrique)
+    - Import de fichiers DICOM avec DICOM Query/Retrieve (C-GET, C-MOVE et WADO-URI) et DICOMWeb (QUERY et RETRIEVE)
+    - Importation et exportation de CD/DVD DICOM avec DICOMDIR
+    - Importation et exportation de fichiers DICOM ZIP
+    - Support des formats d'image courants (TIFF, BMP, GIF, JPEG, PNG, RAS, HDR et PNM)
 
-Weasis peut afficher le contenu de la plupart des fichiers DICOM avec un haut niveau d'implémentation de la norme DICOM.
+- **Exportation des données**
+    - Exportation de fichiers DICOM localement avec plusieurs options (DICOMDIR, ZIP, fichier image ISO avec Weasis, TIFF, JPEG, PNG...)
+    - Envoi de fichiers DICOM à un PACS distant ou serveur DICOMWeb (C-STORE ou STOW-RS)
+    - Sauvegarde des mesures et annotations dans des DICOM Presentation States ou fichier XML
+
+- **Affichage et rendu d'images**
+    - Support de plusieurs écrans avec des calibrations différentes, support des écrans HiDPI (Haute Densité de Pixels), mode plein écran
+    - Manipulation des images avec les boutons de la souris (déplacement, zoom, fenêtrage, rotation, défilement, réticule)
+    - Support des Modality LUT, des VOI LUT, et des Presentation State LUT (même non linéaires)
+    - Application des DICOM Presentation State (GSPS) et affichage des graphiques en superpositions
+    - Support des superpositions DICOM, Shutter et DICOM Pixel Padding
+    - Rendu volumétrique en 3D
+    - Dispositions pour comparer des séries ou des études
+    - Options avancées de synchronisation des séries
+    - Affichage des lignes de coupe
+    - Curseur 3D
+    - Reconstruction multi-planaire oblique (MPR)
+    - Projection d'Intensité Maximale
+    - Loupe persistante
+
+- **Outils de mesure et d'annotation**
+    - Mesure de longueur, aire et angle
+    - Statistiques régionales des pixels (Min, Max, Moyenne, Écart-type, Asymétrie, Kurtosis, Entropie)
+    - Histogramme des valeurs de modalité
+    - Mesure SUV
+
+- **Visionneuses spécifiques**
+    - DICOM ECG : affichage de toutes les formes d'onde DICOM et réalisation de certaines mesures
+    - DICOM SR : visionneuse de rapports structurés avec des hyperliens vers des images et graphiques associés
+    - DICOM AU : lecteur audio (permet l'exportation en fichiers WAV)
+
+- **Autres outils**
+    - Module Dicomizer pour convertir des images standards en DICOM
+    - Impression de vues au format DICOM et sur imprimantes système
+    - Application et création de Sélection d’images clés en sélectionnant des images avec le bouton étoile
+    - Affichage et recherche dans tous les attributs DICOM
+    - Outils DICOM RT pour la radiothérapie : affichage des ensembles de structure RT, des doses et graphiques DVH

@@ -69,7 +69,7 @@ deployment-overlay add --name=dcm4chee-arc --deployments=weasis-pacs-connector.w
     - Refresh the web page and the view button should appear as in the screenshot above
     - To launch the viewer from the web portal, the client computer must have installed the [Weasis package](../).
 
-<font size="2">
+<font size="-1">
 
 | Mode | dcm4chee version | Configuration |
 | ---- | ---------------- | --------------|
