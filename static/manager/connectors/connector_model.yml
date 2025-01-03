@@ -1,0 +1,63 @@
+connector:
+  default:
+    config:
+      connector-id:
+        # DB,DICOM,DICOM_WEB
+        type:
+
+        # ------- Search Criteria ----
+        search-criteria:
+          deactivated:
+
+        # ---------- Wado -------------
+        # Used to retrieve images from manifest
+        wado:
+          authentication:
+            force-basic:
+            oauth2:
+              url:
+            basic:
+              url:
+              login:
+              password:
+            transfer-syntax-uid:
+            compression-rate:
+            requireOnlySOPInstanceUID:
+            additionnalParameters:
+            overrideDicomTags:
+            httpTags:
+              X-Time:
+              X-Value:
+
+        # -------- For database --------
+        db-connector:
+          user:
+          password:
+          uri:
+          driver:
+          query:
+            select:
+            accession-number-column:
+            patient-id-column:
+            study-instance-uid-column:
+            serie-instance-uid-column:
+            sop-instance-uid-column:
+
+        # -------- For dicom ----------
+        dicom-connector:
+          calling-aet:
+          aet:
+          host:
+          port:
+          tls:
+            mode:
+            need-client-authentication:
+          key-store:
+            url:
+            type:
+            password:
+            key-store-password:
+          truststore:
+            url:
+            type:
+            password:

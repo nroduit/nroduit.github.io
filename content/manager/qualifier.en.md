@@ -25,8 +25,8 @@ In order to use this feature:
 
 ![launch_preferred_qualifier.png](/manager/qualifier/launch_preferred_qualifier.png)
 
-- the mapping of the qualifier to use this version must be done at the launch table level for the target/launch_config/launch_preferred association.
-If this mapping is not done, the default qualifier defined in the manager configuration will be taken into account (see previous paragraph).
+- the mapping of the qualifier to use this version must be done at the launch table level for the target/launch_config/launch_preferred association. <br/>
+If this mapping is not done, the default qualifier defined in the manager configuration will be taken into account (see previous paragraph). <br/>
 In order to do this mapping, you must define a configuration in the launch table associating the desired group/launch_config, the previous launch_preferred "qualifier" and for the "selection" column specify the qualifier to launch.
 
 ![launch_qualifier.png](/manager/qualifier/launch_qualifier.png)

@@ -7,7 +7,7 @@ weight: 40
 
 ## Compatibility file
 
-A compatibility file named "version-compatibility.json" is present in each Weasis release (in the weasis-native.zip file -> bin-dist -> weasis -> conf).
+A compatibility file named "version-compatibility.json" is present in each Weasis release <br/> (in the weasis-native.zip file => bin-dist => weasis => conf).
 
 This file contains the mapping between the release version ("release-version") and the minimum version of Weasis that should be installed on the client workstation ("minimal-version").
 

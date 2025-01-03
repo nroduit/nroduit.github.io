@@ -5,8 +5,7 @@ keywords: [ "cryptography" ]
 weight: 40
 ---
 
-
-In Weasis Manager to launch the Weasis viewer, an url containing search criteria in "query parameters" is used.
+When launching the Weasis viewer with the manager, an url containing search criteria in "query parameters" is used.
 
 It is possible to encrypt these search parameters when launching the Weasis viewer in order to not transmit certain sensitive data in plain text (e.g. patient identifier).
 

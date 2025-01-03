@@ -33,7 +33,7 @@ Once the manifest built, it will be stored in a Redis cache for a defined period
 
 This mechanism allows multiple instances of the Manager, as the retrieval of the manifest by Weasis is asynchronous.
 
-It is also useful when the user requests the visualization of the same exam within the TTL period: the manifest will be retrieved directly from the Redis cache.
+It is also useful when the user requests the visualization of the same study within the TTL period: the manifest will be retrieved directly from the Redis cache.
 
 The key for retrieving the manifest corresponds to the hash of the search criteria.
 
