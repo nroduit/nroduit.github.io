@@ -5,7 +5,7 @@ keywords: [ "building", "sources", "dicom viewer", "free dicom viewer", "open so
 weight: 30
 ---
 
-These instructions guide you through building Weasis directly from its GitHub repository. For IDE-based builds, refer to the [Weasis plug-in development guidelines](../guidelines).
+These instructions guide you through building Weasis directly from its GitHub repository. For IDE-based builds, refer to the [Weasis plugin development guidelines](../guidelines).
 
 **Prerequisites**
 
@@ -22,8 +22,8 @@ In order to clone the repository, install Git and either use a graphical client 
 git clone https://github.com/nroduit/Weasis.git
 {{< /highlight >}}
 
-### Building All Plug-ins
-- Navigate to the root directory of the cloned `Weasis` repository, compile and install all plug-ins into the local Maven repository:
+### Building All Plugins
+- Navigate to the root directory of the cloned `Weasis` repository, compile and install all plugins into the local Maven repository:
 {{< highlight shell >}}
 mvn clean install
 {{< /highlight >}}

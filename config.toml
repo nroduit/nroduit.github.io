@@ -25,6 +25,9 @@ defaultContentLanguageInSubdir= true
 # the site's title of this showcase; you should change this ;-)
 title = "Weasis Documentation"
 
+# Robots.txt for web crawlers
+enableRobotsTXT = true
+
 [minify]
 disableCSS = false
 disableHTML = true

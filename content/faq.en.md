@@ -45,7 +45,7 @@ When citing Weasis in a publication, include the following details:
 The [Eclipse Public License (EPL)](https://www.eclipse.org/legal/epl-v20.html) is a commercially friendly open-source license approved by the [Open Source Initiative (OSI)](https://www.opensource.org). It offers several benefits, including:
 1. **Business-friendly clauses**: Compared to LGPL, EPL includes advantageous terms for patent retaliation and reverse engineering.
 2. **Flexibility for derivative works**: Plugins and other extensions to Weasis can be distributed under any license (e.g., open source, freeware, or commercial).  
-   However, modifications to the existing source code of Weasis plug-ins must be made available to others if distributed.
+   However, modifications to the existing source code of Weasis plugins must be made available to others if distributed.
 
 Since version 3.7.0, Weasis' source code is distributed under a dual license mode: [EPL-2.0 OR Apache-2.0](https://github.com/nroduit/Weasis/blob/master/LICENSE). This allows users to choose the license that best suits their needs.
 

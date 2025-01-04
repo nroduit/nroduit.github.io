@@ -16,7 +16,7 @@ Since version 4, only the distribution with a native installer is maintained to 
 For details about GLIBC versions and Linux distribution compatibility, see this [page](https://repology.org/project/glibc/versions).
 
 {{% notice note %}}
-To manage Weasis version at the server side, it is possible to install the [Weasis web package](https://github.com/nroduit/weasis-pacs-connector#installation) which will upgrade the native installation at the client side (it works for minor releases by updating all the plug-ins except the launcher).<br>
+To manage Weasis version at the server side, it is possible to install the [Weasis web package](https://github.com/nroduit/weasis-pacs-connector#installation) which will upgrade the native installation at the client side (it works for minor releases by updating all the plugins except the launcher).<br>
 Explore more integration possibilities with other systems [here](../basics/customize/integration).
 {{% /notice %}}
 
@@ -40,10 +40,10 @@ Get started with these links to learn more about Weasis and its features:
 Dive into advanced topics and technical resources for developers:
 - **[Building Weasis from source](building-weasis)**
 - **[Weasis Architecture](../basics/architecture)**
-- **[Weasis Plug-in Development Guidelines](guidelines)**
-- **[How to build and install a plug-in](../basics/customize/build-plugins)**
+- **[Weasis Plugin Development Guidelines](guidelines)**
+- **[How to build and install a plugin](../basics/customize/build-plugins)**
 - **[How to launch Weasis from any environments](../basics/customize/integration)**
-- **[Translating Weasis Plug-ins](translating)**
+- **[Translating Weasis Plugins](translating)**
 - **[Weasis Preferences](../basics/customize/preferences)**
 - **[Building weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector#build-weasis-pacs-connector)**
 - **[Report Issues on GitHub](https://github.com/nroduit/Weasis/issues)**

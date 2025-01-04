@@ -42,7 +42,7 @@ The schema above shows that the queries to the PACS are made at the same time as
 
 ## Build your own connector
 
-This documentation describes how to create your own connector without weasis-pacs-connector and with different DICOM archive types. The [weasis protocol](../../../getting-started/weasis-protocol/#how-to-build-an-uri) allows you to build URIs to launch Weasis according to different configurations and allows to load DICOM files locally or remotely.
+This documentation describes how to create your own connector without weasis-pacs-connector and with different DICOM archive types. The [weasis protocol](../../../getting-started/weasis-protocol/#how-to-build-a-uri) allows you to build URIs to launch Weasis according to different configurations and allows to load DICOM files locally or remotely.
 
 Here are examples with XML manifests or with DICOMWeb RESTful services.
 

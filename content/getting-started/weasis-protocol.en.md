@@ -11,9 +11,9 @@ The web protocol allows launching Weasis in a web context from a specific URI sc
 Requires Weasis 3.5 (or superior) installed on the system with a [native installer](../).
 {{% /notice %}}
 
-### How to use the weasis protocol
+### How to Use the Weasis Protocol
 
-* From a web page, just make a link starting with weasis:// (see below [How to build an URI](#how-to-build-an-uri))
+* From a web page, just make a link starting with weasis:// (see below [How to build an URI](#how-to-build-a-uri))
 {{% notice note %}}
 Some web frameworks such as the wiki or the URL field of some browsers only support the standard protocols (http, ftp...). To solve this problem, it is necessary to use a URL redirection starting with http like the one proposed in <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector</a>: `http://<your-host>:8080/weasis-pacs-connector/weasis?patientID=TESTS`
 {{% /notice %}}
@@ -40,7 +40,7 @@ open weasis://%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fdemo-archiv
 When first used in a browser, a popup appears to confirm the opening of the weasis protocol. On Windows, it is possible to make sure that this message never appears by adding a browser policy which allows the URI weasis://\*<br>- With IE/Edge the policy is applied by the native installer.<br>- With Chrome the policy is applied by the native installer (Windows and Linux), see how to manage <a target="_blank" href="https://support.google.com/chrome/a/answer/7532419?hl=en">URLWhitelist</a> (d).
 {{% /notice %}}
 
-### How to build an URI
+### How to Build a URI
 
 The URI scheme "weasis://" allows you to launch Weasis from the system's URI handler while the URI path allows you to build [Weasis commands](../../basics/commands).
 
@@ -65,7 +65,7 @@ $dicom:get -r "https://nroduit.github.io/demo-archive/us-palette.dcm"
 To load multiple remote images, it is recommended to use a manifest listing the references of the images to be loaded. The easiest way to dynamically build this manifest is to use <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector</a>. However, it is possible to build it differently with the [following instructions](../../basics/customize/integration/#build-an-xml-manifest).
 {{% /notice %}}
 
-#### Examples to load images
+#### Examples to Load Images
 
 If you use weasis-pacs-connector, please refer to <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis">Launch Weasis</a>.
 
@@ -90,7 +90,7 @@ $dicom:get -l "D:/DICOM/Overlay" -l "D:/DICOM/Shutter" -r "https://nroduit.githu
 $image:get -u "https://user-images.githubusercontent.com/993975/59107662-6c9ed300-8939-11e9-83ee-28f2725f4ae1.jpg"
 {{< /highlight >}}
 
-#### Modify the launch parameters
+#### Modify the Launch Parameters
 
 The command for modifying the configuration at launch is `$weasis:config` which can have different arguments:
 
