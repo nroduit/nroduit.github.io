@@ -1,7 +1,7 @@
 ---
 archetype: "home"
-title: "Weasis DICOM medical viewer"
-Description: "General presentation"
+title: "Weasis: Free DICOM viewer"
+Description: "Weasis is a powerful, multifunctional, and open-source DICOM viewer (standalone and web-based). It excels in medical image visualization."
 keywords: [ "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer", "clinical viewer", "radiological viewer", "linux dicom viewer",  "mac dicom viewer" ]
 ---
 

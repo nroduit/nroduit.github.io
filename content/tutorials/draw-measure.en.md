@@ -26,9 +26,9 @@ The first button is the selection tool that allows you to select, resize and mov
 By selecting one or several graphic objects, you can change properties (e.g. color, line width) or copy/paste with the contextual menu. You can also delete the selection with the delete key or {{< svg "static/tuto/icon/selectionDelete.svg" >}}. See other [shortcuts for graphics](../../basics/shortcuts/index.html#graphics).
 
 {{% notice note %}}
-There are two ways to draw a segment:
-* Click + drag > release
-* Click > release > drag > release
+You can draw a segment in two ways:<br>
+1. **Click + Drag**: Click, drag to draw, then release.
+2. **Click > Release > Drag**: Click to start, release, drag to draw, and release again.
 
 In order to continue drawing with the same tool, you can uncheck the _Draw only once_ option (see below).
 {{% /notice %}}
@@ -56,7 +56,7 @@ Show/hide all the graphic objects from the [_Display_ panel](../dicom-2d-viewer/
 {{% /notice %}}
 
 #### Selected Measurement {{% badge style="red" %}}D{{% /badge %}} {#selected-measurement}
-The selected graphic {{% badge style="red" %}}E{{% /badge %}} created with a measurement tool is displayed in the table. The table shows the shape properties according to the measurement type (and its units in square brackets if exists). 
+The selected graphic {{% badge style="red" %}}E{{% /badge %}} created with a measurement tool is displayed in the table. The table shows the shape properties according to the measurement type (and its units in square brackets if exists, see also the [calibration type](../dicom-2d-viewer/#open-the-2d-viewer) located at {{% badge style="blue" %}}M{{% /badge %}}).
 
 {{% notice note %}}
 For polygon, the length, the width and the orientation are calculated with OMBB (Offset Minimum Bounding Box) method which provides a more accurate approximation of the actual length and width based on the bounding box of the polygon.
