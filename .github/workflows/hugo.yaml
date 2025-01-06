@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.139.3
-      GH_TOKEN: ${{ secrets.HUGO_GH_TOKEN }}
+      HUGO_GH_TOKEN: ${{ secrets.HUGO_GH_TOKEN }}
     steps:
       - name: Install Hugo CLI
         run: |

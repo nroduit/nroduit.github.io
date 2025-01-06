@@ -9,8 +9,8 @@ These instructions describe how to build Weasis directly from the Git repository
 
 **Prerequisites**
 
-1. JDK 22 or higher
-2. Maven 3.5.3 or higher<br>
+1. JDK 23 or higher
+2. Maven 3.6.3 or higher<br>
    If your computer is behind a proxy server, [configure maven](https://maven.apache.org/guides/mini/guide-proxies.html).
 3. Git
 
