@@ -1,9 +1,3 @@
-/* here in this showcase we use our own modified chroma syntax highlightning style;
-   if you want to use a predefined style instead:
-   - remove `markup.highlight.noClasses` from your config.toml
-   - set `markup.highlight.style` to a predefined style name in your config.toml
-   - remove the following `@import` of the self-defined chroma stylesheet */
-
 :root {
     --CODE-theme: relearn-light;
     --PRIMARY-color: #6D6D6D; /* brand primary color */
@@ -19,7 +13,6 @@
     --CODE-BLOCK-color: #000000; /* fallback text color of block code; should be adjusted to your selected chroma style */
     --CODE-BLOCK-BG-color: #f8f8f8; /* fallback background color of block code; should be adjusted to your selected chroma style */
     --CODE-BLOCK-BORDER-color: #d8d8d8; /* border color of block code */
-
     --CODE-INLINE-color: #5e5e5e; /* text color of inline code */
     --CODE-INLINE-BG-color: #fffae9; /* background color of inline code */
     --CODE-INLINE-BORDER-color: #f8e8c8; /* border color of inline code */

@@ -18,12 +18,12 @@ For special words or particular contexts look at the "Instructions" text box (gi
 
 ## Building Weasis-i18n
 
-[weasis-i18n](https://github.com/nroduit/weasis-i18n) is the internationalization project (i18n) of Weasis. As a separate project, it can have its own release cycle. The [OSGi](https://www.osgi.org) fragments of plug-ins contain only the translation files which are merged during runtime to the matching module of the application.
+[weasis-i18n](https://github.com/nroduit/weasis-i18n) is the internationalization project (i18n) of Weasis. As a separate project, it can have its own release cycle. The [OSGi](https://www.osgi.org) fragments of plugins contain only the translation files which are merged during runtime to the matching module of the application.
 
 To obtain daily built packages, see this [page](https://github.com/nroduit/weasis-i18n).
 
 {{% notice note %}}
-That means the translation packages can be deployed at any time, it does not need to follow the Weasis life cycle. With remote packages, the plug-in translation will be updated by Weasis only if the timestamp number has changed. This timestamp is set during the build phase described below.
+That means the translation packages can be deployed at any time, it does not need to follow the Weasis life cycle. With remote packages, the plugin translation will be updated by Weasis only if the timestamp number has changed. This timestamp is set during the build phase described below.
 {{% /notice %}}
 
 {{% notice info %}}
@@ -48,7 +48,7 @@ $ git clone https://github.com/nroduit/weasis-i18n.git
 
 ### Build the distribution
 
-Go in the *weasis-i18n* directory, Compile and install all the plug-ins in the local Maven repository
+Go in the *weasis-i18n* directory, Compile and install all the plugins in the local Maven repository
 
 {{< highlight bash >}}
 $ mvn clean install -Dtransifex.token="<your-token>"

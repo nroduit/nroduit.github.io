@@ -5,19 +5,14 @@ keywords: [ "web", "launch", "dicom viewer", "free dicom viewer", "open source d
 weight: 15
 ---
 
-The web protocol allows launching Weasis in a web context from a specific URI scheme: weasis://parameters
+The **Weasis Protocol** enables the launch of Weasis (starting from {{< badgeC "v3.6.0" >}}) in a web context using a specific URI scheme: `weasis://commands`.
 
-{{% notice warning %}}
-Requires Weasis 3.5 (or superior) installed on the system with a [native installer](../).
-{{% /notice %}}
+### How to Use the Weasis Protocol
 
-### How to use the weasis protocol
-
-* From a web page, just make a link starting with weasis:// (see below [How to build an URI](#how-to-build-an-uri))
-{{% notice note %}}
-Some web frameworks such as the wiki or the URL field of some browsers only support the standard protocols (http, ftp...). To solve this problem, it is necessary to use a URL redirection starting with http like the one proposed in <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector</a>: `http://<your-host>:8080/weasis-pacs-connector/weasis?patientID=TESTS`
-{{% /notice %}}
-* From the command line:
+To launch Weasis from various contexts:
+1. **From a Web Page**: Create a link that begins with `weasis://` (see below [How to build an URI](#how-to-build-a-uri)).<br>
+   If certain web frameworks (e.g. WIKI) or contexts only support HTTP protocols, you can use a URL redirection starting with `https://`. A tool such as [Weasis PACS Connector](https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector) can assist with this.
+2. **From the Command Line**: Utilize the appropriate Weasis command from the terminal:
 {{< tabs groupid="launchWeasisProtocol">}}
 {{% tab title="Windows" %}}
 {{< highlight shell >}}
@@ -36,18 +31,17 @@ open weasis://%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fdemo-archiv
 {{% /tab %}}
 {{< /tabs >}}
 
-{{% notice tip %}}
-When first used in a browser, a popup appears to confirm the opening of the weasis protocol. On Windows, it is possible to make sure that this message never appears by adding a browser policy which allows the URI weasis://\*<br>- With IE/Edge the policy is applied by the native installer.<br>- With Chrome the policy is applied by the native installer (Windows and Linux), see how to manage <a target="_blank" href="https://support.google.com/chrome/a/answer/7532419?hl=en">URLWhitelist</a> (d).
-{{% /notice %}}
+### How to Build a URI
+The `weasis://` URI scheme allows you to launch Weasis directly from the system's URI handler. By constructing the correct URI path, you can execute [Weasis commands](../../basics/commands) to load images or perform other actions.
 
-### How to build an URI
+[Weasis PACS Connector](https://github.com/nroduit/weasis-pacs-connector#launch-weasis) can dynamically generate manifests (listing references for images to load) and build the required URI through an API. This tool also manages user preferences and other launch parameters.
 
-The URI scheme "weasis://" allows you to launch Weasis from the system's URI handler while the URI path allows you to build [Weasis commands](../../basics/commands).
+If you're not using the Weasis PACS Connector, you can build a URI manually by following these steps:
+1. **Choose Commands**: Select one or more [commands](../../basics/commands) to execute.
+2. **Encode the Commands**: Use a URL encoder to format the commands correctly for URI inclusion.
+3. **Prefix the Commands**: Add the `weasis://` scheme at the beginning of the encoded command string to create the final URI.
 
-<a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis">weasis-pacs-connector</a> will help to build dynamically the manifest (the references of the images to be loaded) and the launch parameters (user, profile, plugins...). It will also manage user preferences.
-
-To build an URI (weasis://path) without weasis-pacs-connector, you must choose one or more commands, encode the commands, and add the scheme `weasis://` as prefix. Here is an example of loading an image:
-
+##### Example: Loading a Remote Image
 1. Use [$dicom:get](../../basics/commands/#dicomget) to load an image from URL
 {{< highlight text >}}
 $dicom:get -r "https://nroduit.github.io/demo-archive/us-palette.dcm"
@@ -56,16 +50,16 @@ $dicom:get -r "https://nroduit.github.io/demo-archive/us-palette.dcm"
 {{< highlight text >}}
 %24dicom%3Aget+-r+%22https%3A%2F%2Fnroduit.github.io%2Fdemo-archive%2Fus-palette.dcm%22
 {{< /highlight >}}
-3. Make a link by adding "weasis://" at the beginning
+3. Make the final URI by adding "weasis://" at the beginning
 {{< launch title="Open the remote image" >}}
 $dicom:get -r "https://nroduit.github.io/demo-archive/us-palette.dcm"
 {{< /launch >}}
 
 {{% notice tip %}}
-To load multiple remote images, it is recommended to use a manifest listing the references of the images to be loaded. The easiest way to dynamically build this manifest is to use <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector</a>. However, it is possible to build it differently with the [following instructions](../../basics/customize/integration/#build-an-xml-manifest).
+For loading multiple images, it's recommended to use a manifest file that references all desired images instead of including each image individually in the URI. The easiest way to build this manifest dynamically is by using the [Weasis PACS Connector](https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector). Alternatively, you can create the manifest manually following the [provided instructions](../../basics/customize/integration/#build-an-xml-manifest).
 {{% /notice %}}
 
-#### Examples to load images
+### Examples to Load Images
 
 If you use weasis-pacs-connector, please refer to <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis">Launch Weasis</a>.
 
@@ -90,7 +84,7 @@ $dicom:get -l "D:/DICOM/Overlay" -l "D:/DICOM/Shutter" -r "https://nroduit.githu
 $image:get -u "https://user-images.githubusercontent.com/993975/59107662-6c9ed300-8939-11e9-83ee-28f2725f4ae1.jpg"
 {{< /highlight >}}
 
-#### Modify the launch parameters
+### Modify the Launch Parameters
 
 The command for modifying the configuration at launch is `$weasis:config` which can have different arguments:
 

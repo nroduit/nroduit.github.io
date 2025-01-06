@@ -5,26 +5,25 @@ keywords: [ "building", "sources", "dicom viewer", "free dicom viewer", "open so
 weight: 30
 ---
 
-These instructions describe how to build Weasis directly from the Git repository on any platform. For building Weasis from an IDE, see [Weasis plug-in development guidelines](../guidelines).
+These instructions guide you through building Weasis directly from its GitHub repository. For IDE-based builds, refer to the [Weasis plugin development guidelines](../guidelines).
 
 **Prerequisites**
 
-1. JDK 23 or higher
-2. Maven 3.6.3 or higher<br>
-   If your computer is behind a proxy server, [configure maven](https://maven.apache.org/guides/mini/guide-proxies.html).
+1. JDK {{< param jdkVersion >}} or higher
+2. Maven {{< param mavenVersion >}} or higher<br>
+   If your computer is behind a proxy server, refer to the [Maven proxy configuration guide](https://maven.apache.org/guides/mini/guide-proxies.html).
 3. Git
 
-### Getting the Source
+### Getting the Source Code
 
-In order to clone the repository, first install GIT and either clone using a graphical GIT client or directly from the command line using the command:
+In order to clone the repository, install Git and either use a graphical client or run the following command in a terminal:
 
 {{< highlight shell >}}
 git clone https://github.com/nroduit/Weasis.git
 {{< /highlight >}}
 
-### Building all Plug-ins
-
-- Go in the *Weasis* directory, compile and install all the plug-ins in the local Maven repository:
+### Building All Plugins
+- Navigate to the root directory of the cloned `Weasis` repository, compile and install all plugins into the local Maven repository:
 {{< highlight shell >}}
 mvn clean install
 {{< /highlight >}}
@@ -43,7 +42,7 @@ mvn -P compressXZ,-purgeI18nPackage -f weasis-distributions clean package
 {{< /highlight >}}
 {{% /notice %}}
 {{% notice warning %}}
-For production, version must not be SNAPSHOT (otherwise packages will not be kept in cache). So to remove SNAPASHOT or to make your own release (for avoiding package mix-up in cache), modify the changelist property. From the Weasis root folder, execute:
+For production, the version must not include SNAPSHOT (as packages with a SNAPSHOT are always downloaded, not cached). To remove SNAPASHOT or create your own release (use a specific name to prevent package conflicts in the cache), update the changelist property. From the Weasis root folder, execute:
 {{< highlight shell >}}
 mvn -Dchangelist=-mybuild-beta clean install
 mvn -Dchangelist=-mybuild-beta -P compressXZ -f weasis-distributions clean package
@@ -53,26 +52,27 @@ mvn -Dchangelist=-mybuild-beta -P compressXZ -f weasis-distributions clean packa
 
 ### Building native binaries and installers
 
-Since {{% badge title="Version" %}}4.0.0{{% /badge %}} the native installer has completely replaced the portable and the Java Webstart distributions.
+Starting with {{% badge title="Version" %}}4.0.0{{% /badge %}}, the native installer has fully replaced the portable and Java WebStart distributions.
 
-The [official build](https://github.com/nroduit/Weasis/blob/master/.github/workflows/build-installer.yml) is done by Github actions with [GitHub-hosted runners](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners) (Linux, macOS and Windows). 
+The [official build process](https://github.com/nroduit/Weasis/blob/master/.github/workflows/build-installer.yml) is executed via GitHub Actions using [GitHub-hosted runners](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners) across Linux, macOS, and Windows.
 
-However, it is possible to run a local script `package-weasis.sh` on most systems but without guarantee because the system must have a correct configuration of several tools (see [jpackage prerequisites](https://docs.oracle.com/en/java/javase/20/jpackage/packaging-overview.html)).
+However, you can also build the native binaries and installer locally using the `package-weasis.sh` script. This process is not guaranteed to work on all systems, as it requires proper configuration of multiple tools. Refer to the [jpackage prerequisites](https://docs.oracle.com/en/java/javase/20/jpackage/packaging-overview.html) for more details.
 
-- Get `weasis-native.zip`, unzip the archive and then go to the root folder with a bash prompt. 
-- Build the native binaries and the installer:
+
+- Obtain the `weasis-native.zip` file, extract the archive, and navigate to the root folder in a Bash prompt.
+- Run the following command to build the native binaries and installer:
 {{< tabs groupid="build-native" >}}
 {{% tab title="Bash" %}}
 {{< highlight shell >}}
-./build/script/package-weasis.sh --jdk "/home/.jdks/openjdk-22"
+./build/script/package-weasis.sh --jdk "/home/.jdks/openjdk-{{< param jdkVersion >}}"
 {{< /highlight >}}
 {{% /tab %}}
 {{< /tabs >}}
 
 {{% notice note %}}
-- In the commands above, adapt the `--jdk` value to your local JDK path.<br>
-- For building only the native binaries (without installer), add the parameter `--no-installer`<br>
-- In order to see the use of the script and its options, run:
+- Replace `--jdk` with the path to your local JDK installation.<br>
+- To generate only the native binaries (without creating an installer), include the `--no-installer` flag.<br>
+- For additional command options, run:
   {{< highlight shell >}}
   ./build/script/package-weasis.sh --help
   {{< /highlight >}}

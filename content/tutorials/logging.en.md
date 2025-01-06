@@ -32,7 +32,7 @@ This type of logs is interesting if the application doesn't start, crash at star
 * Select a stacktrace limit which represents the number of lines (by default 3). No value is recommended for investigating problems (it means unlimited stacktrace lines)
 
 {{% notice info %}}
-The default logging configuration comes from base.json, see [Weasis Preferences](../basics/customize/preferences). Some default values has changed since {{% badge title="Version" %}}4.4.0{{% /badge %}}.
+The default logging configuration comes from base.json, see [Weasis Preferences](../../basics/customize/preferences). Some default values has changed since {{% badge title="Version" %}}4.4.0{{% /badge %}}.
 {{% /notice %}}
 
 

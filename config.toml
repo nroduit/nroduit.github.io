@@ -25,6 +25,9 @@ defaultContentLanguageInSubdir= true
 # the site's title of this showcase; you should change this ;-)
 title = "Weasis Documentation"
 
+# Robots.txt for web crawlers
+enableRobotsTXT = true
+
 [minify]
 disableCSS = false
 disableHTML = true
@@ -80,6 +83,8 @@ keepWhitespace = false
   # graphs; you usually will not need it and you should remove this for
   # security reasons
   mermaidInitialize = "{ \"securityLevel\": \"loose\" }"
+  jdkVersion = "23"
+  mavenVersion = "3.6.3"
 
 [caches]
   [caches.getjson]

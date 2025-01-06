@@ -1,0 +1,84 @@
+{{ $url := .Get "url" }}
+{{ $categories := split (.Get "categories") "," }}
+<!-- Fetch the remote JSON file -->
+{{ $resource := resources.GetRemote $url }}
+{{ if $resource }}
+  {{ $data := transform.Unmarshal $resource }}
+
+  {{ if and ($data.weasisPreferences) (apply $data.weasisPreferences "slice") }}
+    <!-- Initialize an empty dict for manual grouping -->
+    {{ $grouped := dict }}
+
+    {{ range $entry := where $data.weasisPreferences "category" "!=" nil }}
+      {{ if $entry.category }}
+        <!-- Check if the category already exists -->
+        {{ $existing := index $grouped $entry.category }}
+
+        <!-- Safely handle the grouping -->
+        {{ if $existing }}
+          <!-- Append to the existing slice for this category -->
+          {{ $newSlice := slice }}
+          {{ range $existing }}
+            {{ $newSlice = $newSlice | append . }}
+          {{ end }}
+          {{ $newSlice = $newSlice | append $entry }}
+          {{ $grouped = merge $grouped (dict $entry.category $newSlice) }}
+        {{ else }}
+          <!-- Create a new slice if it doesn't exist -->
+          {{ $grouped = merge $grouped (dict $entry.category (slice $entry)) }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    <!-- Iterate through grouped categories -->
+    {{ range $categoryKey, $entries := $grouped }}
+      <!-- Convert $category to camel case by capitalizing the first letter -->
+      {{ $category := printf "%s%s" (upper (substr $categoryKey 0 1)) (lower (substr $categoryKey 1)) }}
+      {{ if in $categories $categoryKey }}
+        <h3>{{ $category }} Category</h3>
+        <ul>
+          {{ range $entries }}
+            <li>
+              <strong style="font-weight: 600;">{{ .code }}</strong>
+              &ensp;<i class="fas fa-arrow-right"></i>&ensp;<strong style="font-weight: 600;">{{ .value | default "Null" }}</strong>
+              <span style="
+              background-color: darkslategray;
+              color: white;
+              padding: 0.1em 0.3em;
+              font-size: 0.9em;
+              font-weight: 600;
+              margin-left: 0.3em;
+              text-align: center;
+              white-space: nowrap;
+              vertical-align: baseline;
+              border-radius: 0.25rem;
+              border: 1px solid rgba(0, 0, 0, 0.2);">
+              {{ lower (default "string" .javaType) }}
+              </span>
+              <span style="
+              background-color: darkolivegreen;
+              color: white;
+              padding: 0.1em 0.3em;
+              font-size: 0.9em;
+              font-weight: 600;
+              margin-left: 0.7em;
+              text-align: center;
+              white-space: nowrap;
+              vertical-align: baseline;
+              border-radius: 0.25rem;
+              border: 1px solid rgba(0, 0, 0, 0.2);">
+              {{ (default " " .type) }}
+              </span>
+              <br>
+              {{ .description }}
+            </li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    <p>Error: `weasisPreferences` is missing or is not a valid array in the JSON data!</p>
+  {{ end }}
+{{ else }}
+  <p>Error: Unable to fetch JSON from the provided URL: {{ $url }}</p>
+{{ end }}

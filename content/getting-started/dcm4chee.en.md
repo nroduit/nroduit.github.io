@@ -24,7 +24,7 @@ For a simpler and faster installation without server components, please follow t
     - From the folder with the latest version number (Optional if you want to run only the [native version](../) installed on the client system):
         - [weasis.war] requires at least Weasis 3.5.3
         - {{% badge style="info" %}}Optional{{% /badge %}} [weasis-i18n.war] for [internationalization](../translating)
-        - {{% badge style="info" %}}Optional{{% /badge %}} [weasis-ext.war] for [additional plug-ins](../../basics/customize/build-plugins/)
+        - {{% badge style="info" %}}Optional{{% /badge %}} [weasis-ext.war] for [additional plugins](../../basics/customize/build-plugins/)
     - From the folder with the latest version number:
 
 3. Open the <a target="_blank" href="http://localhost:9990/">wildfly management console</a> (at `http://<your-host>:9990`).
@@ -69,7 +69,7 @@ deployment-overlay add --name=dcm4chee-arc --deployments=weasis-pacs-connector.w
     - Refresh the web page and the view button should appear as in the screenshot above
     - To launch the viewer from the web portal, the client computer must have installed the [Weasis package](../).
 
-<font size="2">
+<font size="-1">
 
 | Mode | dcm4chee version | Configuration |
 | ---- | ---------------- | --------------|

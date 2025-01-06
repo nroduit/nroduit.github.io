@@ -5,7 +5,9 @@ keywords: [ "DICOM Conformance Statements", "IHE", "dicom viewer", "free dicom v
 weight: 70
 ---
 
-### Compatibility of [DICOM Transfer Syntax](https://dicom.nema.org/medical/dicom/current/output/chtml/part06/chapter_A.html)
+### Compatibility of DICOM Transfer Syntax
+
+This table lists the [DICOM Transfer Syntaxes](https://dicom.nema.org/medical/dicom/current/output/chtml/part06/chapter_A.html) supported by Weasis.
 
 | Transfer Syntax UID     | Media Type | Description                                                                                                         | Read  | Write |
 |-------------------------|------------|---------------------------------------------------------------------------------------------------------------------|-------|-------|
@@ -50,6 +52,8 @@ The latter groups of TSUIDs are opened by the default system application associa
 {{% /notice %}}
 
 ### Supported "Photometric Interpretation" pixel format
+
+This table lists the [Photometric Interpretation](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.3.html#sect_C.7.6.3.1.2) supported by Weasis.
 
 | Photometric Interpretation | Description                                                        | Supported |
 |----------------------------|--------------------------------------------------------------------|-----------|

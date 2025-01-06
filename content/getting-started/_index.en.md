@@ -7,44 +7,45 @@ pre: "<b>1. </b>"
 
 ### Try Weasis now
 
-Please see this [page](download-dicom-viewer) for a complete list of downloads and if you would like an automatic update of Weasis according to your system.<br>
+Visit the [Download Page](download-dicom-viewer) for a comprehensive list of installation options adapted to your system.<br>
 
-Since version 4, only the distribution with a native installer is maintained to ensure a better user experience in terms of installation, configuration and compatibility. This distribution also allows launching Weasis from a web context using the [weasis protocol](weasis-protocol).
+Since version 4, only the distribution with a native installer is maintained to ensure a better user experience in terms of installation, configuration and compatibility. This distribution also supports launching **Weasis from a web context** via the [weasis protocol](weasis-protocol).
 
 {{< latest-download "deb" >}}
 
-For more information on GLIBC versions regarding the life cycle of the different Linux distributions, see this [page](https://repology.org/project/glibc/versions).
+For details about GLIBC versions and Linux distribution compatibility, see this [page](https://repology.org/project/glibc/versions).
 
 {{% notice note %}}
-To manage Weasis version at the server side, it is possible to install the [Weasis web package](https://github.com/nroduit/weasis-pacs-connector#installation) which will upgrade the native installation at the client side (it works for minor releases by updating all the plug-ins except the launcher).<br>
-The different possibilities for integrating Weasis with other systems are described [here](../basics/customize/integration).
+To manage Weasis version at the server side, it is possible to install the [Weasis web package](https://github.com/nroduit/weasis-pacs-connector#installation) which will upgrade the native installation at the client side (it works for minor releases by updating all the plugins except the launcher).<br>
+Explore more integration possibilities with other systems [here](../basics/customize/integration).
 {{% /notice %}}
 
 {{% notice tip %}}
-Join the [google group](http://groups.google.com/forum/#!forum/weasis) (Choose Email to read this group) to stay informed about new releases and updates.
+Stay informed about new releases and updates by joining our [Google Group](https://groups.google.com/forum/#!forum/weasis). Choose "Email" to get updates directly to your inbox.
 {{% /notice %}}
 
 ### General Topics
 
-- [Live demo](../demo) with different DICOM dataset.
-- [Weasis Web Protocol](weasis-protocol)
-- [Installing Weasis in DCM4CHEE](dcm4chee)
-- [Tutorials](../tutorials)
-- [Weasis Forum](http://groups.google.com/group/dcm4che)
-- [Frequently Asked Questions (FAQs)](../faq)
-- [Dicom Conformance and IHE](../basics/dicom)
-- [Get Involved!](../get-involved)
+Get started with these links to learn more about Weasis and its features:
+- **[Live Demo](../demo):** Explore Weasis with a variety of DICOM datasets.
+- **[Weasis Web Protocol](weasis-protocol):** Learn how to launch Weasis directly from web links or network-based workflows.
+- **[Installing Weasis in DCM4CHEE](dcm4chee):** Step-by-step guide to integrating Weasis with DCM4CHEE PACS.
+- **[Tutorials](../tutorials):** Comprehensive tutorials to help you get the most out of Weasis.
+- **[Weasis Forum](https://groups.google.com/group/dcm4che):** Join discussions and get support directly from the community.
+- **[Frequently Asked Questions (FAQs)](../faq):** Find quick answers to common questions about using Weasis.
+- **[Dicom Conformance and IHE](../basics/dicom):** Understand how Weasis aligns with DICOM standards and IHE integration.
+- **[Get Involved!](../get-involved):** Learn how to contribute to the Weasis project.
 
 ### Developer Documentation
-
-- [Building Weasis from source](building-weasis)
-- [Weasis Architecture](../basics/architecture)
-- [Weasis Plug-in Development Guidelines](guidelines)
-- [How to build and install a plug-in](../basics/customize/build-plugins)
-- [How to launch Weasis from any environments](../basics/customize/integration)
-- [Translating Weasis Plug-ins](translating)
-- [Weasis Preferences](../basics/customize/preferences)
-- [Building weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector#build-weasis-pacs-connector) 
-- [Issues on Github](https://github.com/nroduit/Weasis/issues)
+Dive into advanced topics and technical resources for developers:
+- **[Building Weasis from source](building-weasis)**
+- **[Weasis Architecture](../basics/architecture)**
+- **[Weasis Plugin Development Guidelines](guidelines)**
+- **[How to build and install a plugin](../basics/customize/build-plugins)**
+- **[How to launch Weasis from any environments](../basics/customize/integration)**
+- **[Translating Weasis Plugins](translating)**
+- **[Weasis Preferences](../basics/customize/preferences)**
+- **[Building weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector#build-weasis-pacs-connector)**
+- **[Report Issues on GitHub](https://github.com/nroduit/Weasis/issues)**
 
 

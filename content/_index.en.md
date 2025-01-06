@@ -1,7 +1,7 @@
 ---
 archetype: "home"
-title: "Weasis DICOM medical viewer"
-Description: "General presentation"
+title: "Weasis: Free DICOM viewer"
+Description: "Weasis is a powerful, multifunctional, and open-source DICOM viewer (standalone and web-based). It excels in medical image visualization."
 keywords: [ "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer", "clinical viewer", "radiological viewer", "linux dicom viewer",  "mac dicom viewer" ]
 ---
 
@@ -15,12 +15,3 @@ keywords: [ "dicom viewer", "free dicom viewer", "open source dicom viewer", "we
 
 {{< image-gallery gallery_dir="gallery2" >}}
 
-### Contribute to this documentation
-Feel free to update this content, just click the Edit button displayed on top right of each page, and pullrequest it.
-
-{{% notice info %}}
-Your modification will be deployed automatically when merged.
-{{% /notice %}}
-
-### Documentation website
-This current documentation has been statically generated with [Hugo](https://gohugo.io) with a simple command: `hugo` -- source code is [available at GitHub](https://github.com/nroduit/nroduit.github.io).

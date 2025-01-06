@@ -1,34 +1,50 @@
+Weasis has been designed to meet the evolving needs of clinical information systems in medical imaging. Its features focus on providing web-based access to radiological images, supporting a wide range of DICOM types, and offering multimedia capabilities.
 
+### Key Viewer Features (see also [Tutorials](tutorials))
 
-It has been designed to meet several expectations of clinical information systems and their future evolution regarding medical imaging: providing web-based access to radiological images, as well as covering a considerable number of DICOM types and offering multimedia capabilities.
+- **Data type support**
+  - Weasis provides a highly detailed implementation of the DICOM standard, enabling effortless display and interaction with most types of DICOM files.
+  - Display most DICOM files including multi-frame, enhanced, MPEG-2, MPEG-4, MIME Encapsulation, DOC, SR, PR, KOS, SEG, AU, RT, and ECG
+  - Display DICOM image containing float or double data (Parametric Map)
+  - Import DICOM files with DICOM Query/Retrieve (C-GET, C-MOVE and WADO-URI) and DICOMWeb (QUERY and RETRIEVE)
+  - Import and export DICOM CD/DVD with DICOMDIR
+  - Import and export DICOM ZIP files
+  - Viewer for common image formats (TIFF, BMP, GIF, JPEG, PNG, RAS, HDR, and PNM)
 
-Here are the main features:
-* Display all kinds of DICOM files (including multi-frame, enhanced, MPEG-2, MPEG-4, MIME Encapsulation, SR, PR, KOS, AU, RT and ECG)
-* Viewer for common image formats (TIFF, BMP, GIF, JPEG, PNG, RAS, HDR, and PNM)
-* Image manipulation (pan, zoom, windowing, presets, rotation, flip, scroll, crosshair, filtering...)
-* Layouts for comparing series or studies
-* Advanced series synchronization options
-* Display Presentation States (GSPS) and Key Object Selection
-* Create key images (Key Object Selection object) by selection
-* Support of Modality LUTs, VOI LUTs, and Presentation LUTs (even non-linear)
-* Support of several screens with different calibration, support of HiDPI (High Dots Per Inch) monitors, full-screen mode
-* Multiplanar reconstructions and Maximum Intensity Projection
-* Display Structured Reports
-* Display and search into all DICOM attributes
-* Display cross-lines
-* Measurement and annotation tools
-* Region statistics of pixels (Min, Max, Mean, StDev, Skewness, Kurtosis, Entropy)
-* Histogram of modality values
-* SUV measurement
-* DICOM Send (storeSCU and STOW-RS)
-* DICOM Query/Retrieve (C-GET, C-MOVE and WADO-URI) and DICOMWeb (QUERY and RETRIEVE)
-* Save measurements and annotations in DICOM PR or XML file
-* Import CD/DVD and local DICOM files
-* Export DICOM with several options (DICOMDIR, ZIP, ISO image file with Weasis, generate new UIDs, transcoding, TIFF, JPEG, PNG...)
-* Magnifier glass with advanced display options
-* Native and DICOM printing
-* Read DICOM image containing float or double data (Parametric Map)
-* DICOM ECG Viewer
-* Dicomizer module to convert standard images into DICOM
+- **Exporting data**
+  - Export DICOM files locally with several options (DICOMDIR, ZIP, ISO image file with Weasis, TIFF, JPEG, PNG...)
+  - Send DICOM files to a remote PACS or DICOMWeb server (C-STORE or STOW-RS)
+  - Save measurements and annotations in DICOM Presentation States or XML file
 
-Weasis can display the content of most DICOM files with a high level of implementation of the DICOM standard.
+- **Viewing and image rendering**
+  - Support of several screens with different calibration, support of HiDPI (High Dots Per Inch) monitors, full-screen mode
+  - Image manipulation with mouse buttons  (pan, zoom, windowing, rotation, scroll, crosshair)
+  - Support of DICOM Modality LUTs, VOI LUTs, LUT Shapes, and Presentation LUTs (even non-linear)
+  - Apply DICOM Presentation States (GSPS) and display graphics as overlays
+  - Support DICOM Overlays, Shutters, and DICOM Pixel Padding
+  - Volume rendering with 3D presets
+  - Layouts for comparing series or studies
+  - Advanced series synchronization options
+  - Display cross-lines
+  - 3D cursor
+  - Oblique Multi-planar Reconstruction (MPR)
+  - Maximum Intensity Projection
+  - Persistent magnifier glass
+
+- **Measurement and annotation tools**
+  - Length, area, and angle measurement
+  - Region statistics of pixels (Min, Max, Mean, StDev, Skewness, Kurtosis, Entropy)
+  - Histogram of modality values
+  - SUV measurement
+
+- **Specific viewers**
+  - DICOM ECG: display all the DICOM waveforms and allow to make some measurements
+  - DICOM SR: structured report viewer with hyperlinks to images and associated graphics
+  - DICOM AU: audio player (allow to export to WAV files)
+
+- **Other tools**
+  - Dicomizer module to convert standard images into DICOM
+  - Printing views to DICOM and system printers
+  - Apply and Create DICOM Key Object Selection by selecting images with the star button
+  - Display and search into all DICOM attributes
+  - DICOM RT tools for radiotherapy: display RT structure set, dose, and DVH chart

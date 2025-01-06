@@ -11,7 +11,7 @@
    <rect x="-468.17" y="-532.09" width="436.06" height="29.609" clip-path="url(#clipPath3)" fill="#b7b69e"/>
   </g>
   <g transform="translate(490,548)" font-family="sans-serif" font-size="22px" stroke-linecap="butt" stroke-miterlimit="1.45">
-   <text x="-324.7702" y="-509.66849" clip-path="url(#clipPath3)" stroke="none" xml:space="preserve">OSGI plug-ins</text>
+   <text x="-324.7702" y="-509.66849" clip-path="url(#clipPath3)" stroke="none" xml:space="preserve">OSGI plugins</text>
    <rect x="-468.17" y="-532.09" width="436.06" height="851" clip-path="url(#clipPath3)" fill="none"/>
   </g>
   <g transform="translate(495,553)" fill="#b8b0a3" stroke="#b8b0a3">
@@ -65,7 +65,7 @@
   </g>
   <g transform="translate(490,548)" font-family="sans-serif" font-size="14px" stroke-linecap="butt" stroke-miterlimit="1.45">
    <text x="-375.60709" y="-200.04401" clip-path="url(#clipPath3)" stroke="none" xml:space="preserve">Weasis Base UI</text>
-   <text x="-406.08859" y="-183.7471" clip-path="url(#clipPath3)" stroke="none" xml:space="preserve">(UI plug-ins aggregator)</text>
+   <text x="-406.08859" y="-183.7471" clip-path="url(#clipPath3)" stroke="none" xml:space="preserve">(UI plugins aggregator)</text>
    <rect x="-412.67" y="-223.24" width="181" height="53" rx="4" ry="4" clip-path="url(#clipPath3)" fill="none"/>
   </g>
   <g transform="translate(495,553)" fill="#b8b0a3" stroke="#b8b0a3">

@@ -1,20 +1,20 @@
 ---
 title: Guidelines
-description: Guidelines for Weasis plug-in development
+description: Guidelines for Weasis plugin development
 keywords: [ "guidelines", "weasis guidelines", "development", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
 weight: 50
 ---
 
 
-## <center>Weasis Plug-in Development</center>
+## <center>Weasis Plugin Development</center>
 
-This page describes the necessary configurations to be able to debug Weasis using an IDE. For developers who want to create new plug-ins, you can visit [How to build and install a plug-in](../../basics/customize/build-plugins).
+This page describes the necessary configurations to be able to debug Weasis using an IDE. For developers who want to create new plugins, you can visit [How to build and install a plugin](../../basics/customize/build-plugins).
 
 We recommend the use of [IntelliJ IDEA](https://www.jetbrains.com/idea/) because the following instructions are based on it. Nevertheless, it is possible to use other IDEs by configuring weasis-launcher with similar instructions described in [Add a launcher](#add-a-launcher).
 ### Prerequisites
 
-1. Install [IntelliJ IDEA](https://www.jetbrains.com/idea/) (Community or Ultimate Edition 2024.1 or higher)
-2. Use JDK 23 or higher and set the language level to `SDK Default` in _File > Project Structure... > .
+1. Install [IntelliJ IDEA](https://www.jetbrains.com/idea/) (Community or Ultimate Edition 2024.3 or higher)
+2. Use JDK {{< param jdkVersion >}} or higher and set the language level to `SDK Default` in *File > Project Structure... >*.<br>Required Maven version is {{< param mavenVersion >}} or higher.
 3. In _File > Settings... > Plugins_ install google-java-format plugin from Marketplace and enable it from *google-java-format Settings*
 
 ### Code style and convention
@@ -31,8 +31,8 @@ Weasis uses [google-java-format](https://github.com/google/google-java-format) a
   - For external Git client, see [Building Weasis](../building-weasis).
   - From IntelliJ IDEA: *New > Project from Version Control...*
     - In the *Get from Version Control* dialog, select the menu *Repository URL* and enter the following URL: `https://github.com/nroduit/Weasis.git` (public repository)
-- Building Weasis plug-ins
-  - In the maven panel, select clean/install in Lifecycle of *weasis-framework (root)* to compile and to install all the plug-ins in the local Maven repository.
+- Building Weasis plugins
+  - In the maven panel, select clean/install in Lifecycle of *weasis-framework (root)* to compile and to install all the plugins in the local Maven repository.
 
 {{% notice tip %}}
 * It is possible to use a JVM Option (e.g. `-Dweasis.arch=linux-x86-64`) to limit the build of native plugins only to the architecture of the current system (do not use this option when building the distribution).
@@ -77,6 +77,6 @@ In Eclipse launcher parameters, '&' within URLs needs to be escaped with a backs
     - For launching Weasis Dicomizer: `-Dfelix.extended.config.properties=file:target/conf/dicomizer.json`
     - Configuration from an URL: `-Dfelix.extended.config.properties=https://mysite.com/weasis/conf/config.json`
 {{% notice note %}}
-**felix.config.properties** defines the location of base.json (the OSGI configuration and the list of plug-ins to install/start)<br>
+**felix.config.properties** defines the location of base.json (the OSGI configuration and the list of plugins to install/start)<br>
 **felix.extended.config.properties** defines the location of a json file (extends/overrides base.json)
 {{% /notice %}}

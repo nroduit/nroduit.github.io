@@ -1,6 +1,8 @@
 
-Weasis is a multipurpose standalone and web-based DICOM viewer with a highly [modular architecture](basics/architecture). It is a very popular clinical viewer used in healthcare by hospitals, health networks, multicenter research trials, and patients.
+Weasis is a multipurpose standalone and web-based DICOM viewer designed with a highly [modular architecture](basics/architecture). It is a very popular clinical viewer used in healthcare by hospitals, health networks, multicenter research trials, and by patients.
 
-Weasis DICOM viewer is cross-platform, free/libre and open source software ([FLOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software)), [multi-language](https://explore.transifex.com/weasis/weasis/) and allows [a flexible integration to PACS, RIS, HIS or PHR](basics/customize/integration). This multi-platform DICOM viewer runs with several processor architectures on Windows, Linux, and macOS (see the [packages available for download](getting-started/download-dicom-viewer)). It allows high-quality renderings with high performance through the [OpenCV](https://opencv.org) library. 
+As free/libre and open source software ([FLOSS](https://en.wikipedia.org/wiki/Free_and_open-source_software)), Weasis is cross-platform, [multi-language](https://explore.transifex.com/weasis/weasis/), and supports [flexible integration with PACS, RIS, HIS, or EHR systems](basics/customize/integration). The viewer is compatible with Windows, Linux, and macOS across various processor architectures (see the [available download packages](getting-started/download-dicom-viewer)). 
 
-Since version 4, it has a responsive user interface linked to the operating system options and works well on high-resolution screens.
+Leveraging the [OpenCV](https://opencv.org) library, Weasis delivers high-performance and high-quality medical imaging renderings.
+
+From version 4 onwards, Weasis features [a responsive user interface](tutorials/theme/#how-to-scale-the-user-interface) aligned with operating system options, offering an enhanced experience on high-resolution screens.
