@@ -1,13 +1,13 @@
 ---
-title: Versioning
-description: 
+title: Weasis Package Versioning
+description: How to manage Weasis versions in ViewerHub
 keywords: [ "version" , "versioning" , "package", "bundle", "plugin", "minio", "s3", "release"]
 weight: 40
 ---
 
 ## Manual Import
 
-A version of Weasis can be manually imported into Weasis Manager in the tab "Package".
+A version of Weasis can be manually imported into ViewerHub in the tab "Package".
 
 ![manual_import.png](/manager/weasis_versioning/manual_import.png)
 

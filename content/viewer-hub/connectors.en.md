@@ -1,6 +1,6 @@
 ---
 title: Connectors
-description: Configuration of the connectors
+description: Configuration of the connectors used by Weasis to connect to the different PACS
 keywords: [ "connector" ]
 weight: 40
 ---
@@ -14,7 +14,7 @@ These connectors are defined according to this model: [connector_model.yml](/man
 
 ## Global connector configuration
 
-The global connector configuration is defined as follow:
+The global connector configuration is defined as follows:
 
 {{< highlight yaml >}}
 connector:

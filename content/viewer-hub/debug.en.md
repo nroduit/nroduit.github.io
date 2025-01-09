@@ -1,6 +1,6 @@
 ---
 title: Guidelines for development
-description: How to develop and debug Weasis Manager
+description: How to develop and debug ViewerHub
 keywords: [ "develop", "debug",  "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer" ]
 weight: 30
 ---
@@ -31,9 +31,9 @@ weight: 30
 ```
 - Then clean/install + run...
 
-## Weasis-manager
+## ViewerHub
 
-In order to access to weasis-manager:
+In order to access to ViewerHub:
 ```
 http://localhost:8081
 ```

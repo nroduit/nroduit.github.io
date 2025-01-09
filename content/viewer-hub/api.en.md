@@ -1,6 +1,6 @@
 ---
 title: Launch APIs
-description: 
+description: The launch APIs allow you to launch Weasis from your own web application with specific parameters.
 keywords: [ "api",  "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer" ]
 weight: 40
 ---

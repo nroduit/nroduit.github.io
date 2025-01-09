@@ -1,6 +1,6 @@
 ---
-title: Translation
-description: Management of Weasis Translation package
+title: Internationalization Packages (i18n)
+description: How to manage translation packages in ViewerHub
 keywords: [ "translation" , "i18n" ]
 weight: 40
 ---
@@ -13,7 +13,7 @@ The name of the file to import must have the format "weasis-i18n-dist-X.X.X-SNAP
 
 The translation zip files to import are present at this address: https://github.com/nroduit/weasis-i18n
 
-In Weasis Manager, management of translation packages is located in the "Translation" tab.
+In ViewerHub, management of translation packages is located in the "Translation" tab.
 
 ![manual_import.png](/manager/translation/manual_import.png)
 

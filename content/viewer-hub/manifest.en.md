@@ -1,6 +1,6 @@
 ---
 title: Manifest
-description: Creation of manifest
+description: Creation of manifest for Weasis
 keywords: [ "manifest" , "cache" , "redis"]
 weight: 40
 ---
@@ -12,11 +12,11 @@ The manifest contains the list of exams, series, and instances to retrieve when 
 
 It is represented in this format: https://weasis.org/en/basics/customize/integration/index.html#build-an-xml-manifest
 
-The creation of the manifest occurs when a client calls Weasis Manager to launch Weasis through the launch URL using the Weasis protocol "weasis://": https://weasis.org/en/getting-started/weasis-protocol/ 
+The creation of the manifest occurs when a client calls ViewerHub to launch Weasis through the launch URL using the Weasis protocol "weasis://": https://weasis.org/en/getting-started/weasis-protocol/ 
 
 ## Construction
 
-According to the search criteria of the request, Weasis Manager constructs the manifest through connectors.
+According to the search criteria of the request, ViewerHub constructs the manifest through connectors.
 
 There are 3 types of connectors:
 - DB (database)

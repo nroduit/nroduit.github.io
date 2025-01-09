@@ -4,7 +4,7 @@ description: Creation of groups and user/host association to groups
 keywords: [ "groups", "association" ]
 weight: 40
 ---
-To easily manage your computer network, Weasis Manager allows the creation and association of user or host groups.
+To easily manage your computer network, ViewerHub allows the creation and association of user or host groups.
 
 ## Creation
 
