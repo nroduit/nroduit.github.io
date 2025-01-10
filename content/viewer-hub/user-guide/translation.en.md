@@ -1,8 +1,8 @@
 ---
-title: Internationalization Packages (i18n)
+title: Internationalization
 description: How to manage translation packages in ViewerHub
 keywords: [ "translation" , "i18n" ]
-weight: 40
+weight: 30
 ---
 
 ## Import
@@ -15,14 +15,14 @@ The translation zip files to import are present at this address: https://github.
 
 In ViewerHub, management of translation packages is located in the "Translation" tab.
 
-![manual_import.png](/manager/translation/manual_import.png)
+![manual_import.png](/viewer-hub/translation/manual_import.png)
 
-The import will decompress the zip file and load the translation resources into the minio S3.
+The import will decompress the zip file and load the translation resources into the MinIO S3.
 
-![s3_i18n_package.png](/manager/translation/s3_i18n_package.png)
+![s3_i18n_package.png](/viewer-hub/translation/s3_i18n_package.png)
 
 ## Removal
 
 Deleting a translation version is done by selecting the version and right-clicking on this version and then confirming the deletion.
 
-![delete_i18n_package.png](/manager/translation/delete_i18n_package.png)
+![delete_i18n_package.png](/viewer-hub/translation/delete_i18n_package.png)

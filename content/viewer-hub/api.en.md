@@ -1,7 +1,7 @@
 ---
 title: Launch APIs
 description: The launch APIs allow you to launch Weasis from your own web application with specific parameters.
-keywords: [ "api",  "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer" ]
+keywords: [ "api",  "dicom viewer", "launch"]
 weight: 40
 ---
 
@@ -37,14 +37,14 @@ To launch Weasis from your own web application, you need to build the URL with t
 - `upperDateTime`: Filter the studies which are more recent than the specified date.     
   - Ex CT more recent than 01.01.2010 12:00:00: http://localhost:8081/display/weasis?patientID=1168514&modalitiesInStudy=CT&upperDateTime=2010-01-01T12:00:00Z&archive=dcm4chee-local
 
-
-Note: it is possible to limit the type of UIDs (patientID, studyUID, accessionNumber, seriesUID, objectUID) that can be called from services.
-See "request.ids" in this configuration file which enables to set which ID is allowed, by default all are allowed.
+  
+{{% notice note %}}
+You can restrict the types of UIDs (patientID, studyUID, accessionNumber, seriesUID, objectUID) that services can access. Refer to the "request.ids" section in the configuration file to specify which UIDs are permitted. By default, all UIDs are allowed.
+{{% /notice %}}
 
 ## Launch Weasis with IHE IID profile
 
-The Invoke Image Display Profile allows the user of an Image Display Invoker, typically a non-image-aware system like an EHR, PHR or RIS, to request the display of studies for a patient, and have the display performed by an image-aware system like an Image Display (PACS).
-
+he Invoke Image Display Profile enables an Image Display Invoker, typically a non-image-aware system such as an EHR, PHR, or RIS, to request the display of patient studies, which are then presented by an image-aware system like an Image Display (PACS).
 The display service is available at the URL: http://localhost:8081/display/IHEInvokeImageDisplay
 
 To launch Weasis with IHE IID profile, you need to build the URL with the following parameters:

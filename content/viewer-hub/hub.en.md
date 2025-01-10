@@ -1,25 +1,17 @@
 ﻿---
 title: Imaging Hub
 description: Install all the required components for testing or debugging
-keywords: [ "install",  "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer" ]
+keywords: [ "install",  "dicom viewer" ]
 weight: 20
 ---
 
-### Imaging Hub: Installation Guide
-A **Docker Compose stack** for managing dcm4chee PACS, ViewerHub, and related services.
+This page describes how to install the Imaging Hub, a Docker Compose stack for managing dcm4chee PACS, ViewerHub, and related services.
 
 {{% notice warning %}}
-This stack is designed for development and testing purposes only. It enables debugging ViewerHub and testing integration with dcm4chee PACS. It is _not suitable for production use_.
+This stack is designed for development and testing purposes only. It enables debugging ViewerHub and testing integration with dcm4chee PACS. It is **not suitable for production use**.
 {{% /notice %}}
 
-
-### Included Services
-
-
-## Overview
-A Docker Compose stack for managing dcm4chee PACS, ViewerHub, and all the related services.
-
-Note: This stack is intended for development and testing purposes only. It allows debugging ViewerHub and testing the integration with dcm4chee PACS. It is not intended for production use.
+## Included Services
 
 This stack comprises the following components:
 - **dcm4chee**: PACS server for storing and retrieving medical images.
@@ -31,9 +23,8 @@ This stack comprises the following components:
 - **Config-server**: Manages configuration of all services.
 - **Eureka**: Provides service discovery for stack components.
 
-
 ## Prerequisites
-- Docker (20.10+)
+- Docker
 - Docker Compose CLI
 
 ## Configurations
@@ -51,7 +42,6 @@ Run the following commands based on the environment:
   ./scripts/start.sh local
   ```
   And then run ViewerHub from your IDE
- 
 
 ## Minio
 

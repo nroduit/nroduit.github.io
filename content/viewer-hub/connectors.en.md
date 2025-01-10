@@ -1,16 +1,18 @@
 ---
 title: Connectors
 description: Configuration of the connectors used by Weasis to connect to the different PACS
-keywords: [ "connector" ]
+keywords: [ "connector", "pacs"]
 weight: 40
 ---
 
+This page outlines the configuration of connectors used by ViewerHub to connect to DICOM archives.
+
 ## Model
 
-In order to create the Weasis manifest, connectors are defined to be able to connect to the different PACS. <br/>
-3 types of connectors are defined in the config server: DB, DICOM, DICOM_WEB.
+In order to create the Weasis manifest, connectors are configured to enable connections to various PACS or VNA systems. <br/>
+Three types of connectors are defined in the configuration server: DB, DICOM, and DICOM_WEB.
 
-These connectors are defined according to this model: [connector_model.yml](/manager/connectors/connector_model.yml)
+These connectors are defined according to this model: [connector_model.yml](/viewer-hub/connectors/connector_model.yml)
 
 ## Global connector configuration
 
@@ -30,12 +32,12 @@ connector:
                 deactivated: # If a search criteria needs to be deactivated=> SOP_INSTANCE_UID, SERIE_INSTANCE_UID, STUDY_INSTANCE_UID, STUDY_ACCESSION_NUMBER, PATIENT_ID
 {{< /highlight >}}
 
-## Wado configuration
+## WADO configuration
 
-Wado configuration is used by Weasis to retrieve images from manifest
+WADO configuration is used by Weasis to retrieve images from manifest
 
 {{< highlight yaml >}}
-wado:
+WADO:
     authentication:
         # Used to force usage of basic authentication parameters to retrieve images (even if request is authenticated)
         force-basic: # true/false
@@ -70,9 +72,9 @@ db-connector:
         sop-instance-uid-column: # Sop instance uid column used in the SQL query above
 {{< /highlight >}}
 
-## Dicom connector
+## DICOM connector
 
-This connector is used to be able to connect to the pacs in dicom in order to find the studies, series, instances of images for the construction of the manifest.
+This connector is used to be able to connect to the pacs in DICOM in order to find the studies, series, instances of images for the construction of the manifest.
 
 {{< highlight yaml >}}
 dicom-connector:
@@ -83,6 +85,6 @@ dicom-connector:
 {{< /highlight >}}
 
 
-## Dicom Web connector
+## DICOM Web connector
 
 Not implemented yet
