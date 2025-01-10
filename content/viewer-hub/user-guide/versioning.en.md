@@ -1,5 +1,5 @@
 ---
-title: Weasis Package Versioning
+title: Package Versioning
 description: How to manage Weasis versions in ViewerHub
 keywords: [ "version" , "versioning" , "package", "bundle", "plugin", "minio", "s3", "release"]
 weight: 20

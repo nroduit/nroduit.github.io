@@ -1,5 +1,5 @@
 ---
-title: Qualifier
+title: Package Qualifier
 description: Qualifier usage
 keywords: [ "qualifier" ]
 weight: 40
