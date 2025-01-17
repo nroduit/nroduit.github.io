@@ -1,0 +1,20 @@
+{{ $jsonFile := readFile "/static/viewer-hub/compatibility/version-compatibility.json" }}
+{{ $data := unmarshal $jsonFile }}
+<table>
+    <thead>
+        <tr>
+            <th>Release Version</th>
+            <th>Minimal Version</th>
+            <th>i18n Version</th>
+        </tr>
+    </thead>
+    <tbody>
+    {{ range $index, $element := $data }}
+    <tr>
+        <td>{{ index $element "release-version" }}</td>
+        <td>{{ index $element "minimal-version" }}</td>
+        <td>{{ index $element "i18n-version" }}</td>
+    </tr>
+    {{ end }}
+    </tbody>
+</table>

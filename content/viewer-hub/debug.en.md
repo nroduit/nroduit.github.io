@@ -12,7 +12,7 @@ We recommend the use of [IntelliJ IDEA](https://www.jetbrains.com/idea/) because
 ## Add a Launcher
 
 - Open _Run > Edit Configurations..._
-- Aad in _VM options_ the following properties:
+- Add in _VM options_ the following properties:
 ```
   -Duser.timezone=UTC
   -DENVIRONMENT=local
@@ -24,14 +24,14 @@ We recommend the use of [IntelliJ IDEA](https://www.jetbrains.com/idea/) because
   -DBACKEND_URI=http://localhost:8081
   -DDB_HOST=localhost
   -DDB_PORT=45101
-  -DDB_NAME=weasis-manager
-  -DDB_USER=weasis-manager
-  -DDB_PASSWORD=weasis-manager
-  -DCONFIGSERVER_URI=http://configdecrypt:987654321@localhost:8888
+  -DDB_NAME=viewer-hub
+  -DDB_USER=viewer-hub
+  -DDB_PASSWORD=viewer-hub
+  -DCONFIGSERVER_URI=http://localhost:8888
   -DS3_ACCESS_KEY=access-key
   -DS3_SECRET_KEY=secret-key
   -DS3_ENDPOINT=http://localhost:9080
-  -DS3_BUCKET_NAME=weasis-manager-bucket
+  -DS3_BUCKET_NAME=viewer-hub-bucket
   -DBACKEND_URI=http://localhost:8081
 ```
 - Then clean/install + Run...
@@ -45,8 +45,8 @@ http://localhost:8081
 with
 
 ```
-User: weasis-manager-user
-Password: weasis-manager-password
+User: viewer-hub-user
+Password: password
 ```
 
 ## Launch Weasis

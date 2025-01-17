@@ -7,13 +7,21 @@ weight: 60
 
 ## Compatibility file
 
-A compatibility file named "version-compatibility.json" is present in each Weasis release <br/> (in the weasis-native.zip file => bin-dist => weasis => conf).
+A compatibility file named "version-compatibility.json" is present in each Weasis release. <br/>
+
+{{< highlight text >}}
+weasis-native.zip
+    └── bin-dist/
+        └── weasis/
+            └── conf/
+                └── version-compatibility.json
+{{< /highlight >}}
 
 This file contains the mapping between the release version ("release-version") and the minimum version of Weasis that should be installed on the client workstation ("minimal-version").
 
 This file also indicates which translation version should be used ("i18n-version").
 
-![version_compatibility_file.png](/viewer-hub/compatibility/version_compatibility_file.png)
+{{< version-compatibility >}}
 
 ## Cache
 
@@ -25,8 +33,8 @@ So when a client will launch Weasis via ViewerHub, it will directly know which v
 
 ## Minio/S3
 
-By importing a new version of Weasis into ViewerHub, if the compatibility file is more recent, ViewerHub will replace the compatibility file present on the S3. This compatibility file will be renamed on S3 "mapping-minimal-version.json"
+By importing a new version of Weasis into ViewerHub, if the compatibility file is more recent, ViewerHub will replace the compatibility file present on the S3. 
 
-![s3_compatibility_file.png](/viewer-hub/compatibility/s3_compatibility_file.png)
+This compatibility file will be renamed in the S3 bucket "mapping-minimal-version.json"
 
 In order to compare if this mapping file is more recent, ViewerHub will compare the version number of the latest release.
