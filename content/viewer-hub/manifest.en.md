@@ -8,7 +8,9 @@ weight: 80
 
 ## Manifest
 
-The manifest contains the list of exams, series, and instances to retrieve when loading images by Weasis. It is represented in this [format](../../basics/customize/integration/#build-an-xml-manifest).
+The manifest contains the list of exams, series, and instances to retrieve when loading images by Weasis. 
+
+The manifest is represented in this [format](../../basics/customize/integration/#build-an-xml-manifest).
 
 The creation of the manifest occurs when a client calls ViewerHub to launch Weasis through the launch URL using the [Launch APIs](../api).  
 

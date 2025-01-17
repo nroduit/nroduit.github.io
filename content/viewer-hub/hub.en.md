@@ -50,8 +50,8 @@ Minio is an open-source object storage server compatible with Amazon S3 APIs. It
 Access the Minio console at: http://localhost:9090
 
 Use the following credentials:
-- User: `weasis-manager`
-- Password: `weasis-manager`
+- User: `viewer-hub`
+- Password: `viewer-hub`
 
 ## Keycloak
 
@@ -81,7 +81,7 @@ ViewerHub is a web application that manages the resources required by the differ
 Access the ViewerHub console at: http://localhost:8081
 
 Use the following credentials:
-- User: `weasis-manager-user`
-- Password: `weasis-manager-password`
+- User: `viewer-hub-user`
+- Password: `password`
 
 
