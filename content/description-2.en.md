@@ -28,6 +28,7 @@ Weasis has been designed to meet the evolving needs of clinical information syst
   - Display cross-lines
   - 3D cursor
   - Oblique Multi-planar Reconstruction (MPR)
+  - Volume rendering: Display 3D rendering
   - Maximum Intensity Projection
   - Persistent magnifier glass
 
