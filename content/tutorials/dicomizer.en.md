@@ -68,7 +68,7 @@ If an item's dashed outline in the table is red, it indicates that the value is 
 {{% /notice %}}
 
 If you don't want to fill in the Global tags manually, they can be populated:
-- From a work list (configuration by the [items](../../basics/customize/preferences) starting by `weasis.acquire.wkl`). Here is an example to modify the [configuration at launch](../../getting-started/weasis-protocol/#modify-the-launch-parameters):<br>
+- From a DICOM Worklist (configuration by the [items](../../basics/customize/preferences) starting by `weasis.acquire.wkl`). Here is an example to modify the [configuration at launch](../../getting-started/weasis-protocol/#modify-the-launch-parameters):<br>
   {{< highlight shell >}}
   $weasis:config pro="felix.extended.config.properties file:conf/ext-dicomizer.properties" pro="gosh.port 17181" pro="weasis.acquire.wkl.host localhost" pro="weasis.acquire.wkl.aet DCM4CHEE" pro="weasis.acquire.wkl.port 11112" pro="weasis.acquire.wkl.station.aet WEASIS-MWL"
   {{< /highlight >}}

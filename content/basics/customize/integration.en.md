@@ -7,18 +7,28 @@ keywords: [ "workflow", "integration", "dicom viewer", "free dicom viewer", "ope
 
 ## <center>How to launch Weasis from any environments</center>
 
-Here we present how to launch Weasis with associated images from any context either [using weasis-pacs-connector](#use-weasis-pacs-connector) or by [building your own connector](#build-your-own-connector). The launch of the application is based on the [weasis protocol](../../../getting-started/weasis-protocol) available since {{% badge title="Version" %}}3.5.3{{% /badge %}}.
+Here we present how to launch Weasis with associated images from any context either [using weasis-pacs-connector](#use-weasis-pacs-connector) or [ViewerHub](../../../viewer-hub) as its successor,
+or by [building your own connector](#build-your-own-connector). The launch of the application is based on the [weasis protocol](../../../getting-started/weasis-protocol) available since {{% badge title="Version" %}}3.5.3{{% /badge %}}.
 
-Using [weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector) allows a high degree of integration and facilitates connection to a PACS. Here are some of the advantages:
+Using [weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector) or [ViewerHub](../../../viewer-hub) allows a high degree of integration and facilitates connection to a PACS. Here are some of the advantages:
 
 - Automatically build a manifest according to a configuration with a PACS
-- The initial URL starts with HTTP and is then redirected to weasis:// (as weasis:// is not allowed by wiki, blog…)
-- Manages to build the manifest simultaneously with the start of Weasis (Loading time optimization)
-- The URL returns a manifest ID which can be requested only once (and must be [consumed within 5 min](https://github.com/nroduit/weasis-pacs-connector/blob/master/src/main/resources/weasis-pacs-connector.properties#L17))
+- The initial URL starts with HTTP and is then redirected to weasis:// (useful when custom URI scheme is not allowed by wiki, blog platforms, etc.)
+- Efficiently manages to build the manifest simultaneously with the start of Weasis, optimizing loading time
+- Easily handles secure manifest requests and manages tokens for the DICOMWeb services
 
 However, it is also possible 
-- To [build your own connector](#build-your-own-connector) for particular integrations
-- To let Weasis [querying DICOMWeb services](#download-directly-with-dicomweb-restful-services) directly.
+- To [build your own connector](#build-your-own-connector) for custom integrations
+- To let Weasis [querying DICOMWeb services](#download-directly-with-dicomweb-restful-services) directly, bypassing any connector when supported like
+    - [dcm4chee-arc-light](#dcm4chee-arc-light)
+    - [Orthanc WEB Server](#orthanc-web-server)
+    - [Google Cloud Healthcare API](#google-cloud-healthcare-api)
+    - [DICOMcloud (for Azure cloud)](#dicomcloud-for-azure-cloud)
+    - [Kheops](#kheops)
+    - [Amazon HealthImaging](#amazon-healthimaging)
+- To configure the DICOM archive in Weasis with Dicom [Query/Retrieve](../../../tutorials/dicom-import/#dicom-queryretrieve) and [DICOMWeb](../../../tutorials/dicomweb-config) configurations
+
+These integrations provide flexibility to meet the specific needs of healthcare environments, ensuring seamless integration.
 
 {{% notice note %}}
 Requires Weasis installed on the system with the [native installer](../../../getting-started/).
@@ -202,3 +212,22 @@ The demo server is no longer accessible.
 Currently, the DICOMWeb service of DICOMcloud doesn't support:
 
 - Thumbnail service is not implemented.
+
+### Kheops
+
+https://kheops.online
+
+{{< highlight text >}}
+$dicom:rs --url "https://demo.kheops.online/api" -r "studyUID=1.3.6.1.4.1.14519.5.2.1.4429.7055.198257099234774234268879426857" -H "Authorization: Bearer <your-token>"
+{{< /highlight >}}
+
+{{% notice note %}}
+`<your-token>` must be replaced by a valid token.
+{{% /notice %}}
+
+### Amazon HealthImaging
+
+https://aws.amazon.com/health/health-imaging/
+
+Prefer to use dicomweb-proxy to manage the token and the URL of the DICOMWeb service. See Weasis configuration at the end of this [page](
+https://github.com/aws-samples/aws-healthimaging-samples/tree/main/dicomweb-proxy#usage).
