@@ -17,7 +17,7 @@ Using [weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector) 
 - Efficiently manages to build the manifest simultaneously with the start of Weasis, optimizing loading time
 - Easily handles secure manifest requests and manages tokens for the DICOMWeb services
 
-However, it is also possible 
+However, it is also possible: 
 - To [build your own connector](#build-your-own-connector) for custom integrations
 - To let Weasis [querying DICOMWeb services](#download-directly-with-dicomweb-restful-services) directly, bypassing any connector when supported like
     - [dcm4chee-arc-light](#dcm4chee-arc-light)
@@ -26,7 +26,7 @@ However, it is also possible
     - [DICOMcloud (for Azure cloud)](#dicomcloud-for-azure-cloud)
     - [Kheops](#kheops)
     - [Amazon HealthImaging](#amazon-healthimaging)
-- To configure the DICOM archive in Weasis with Dicom [Query/Retrieve](../../../tutorials/dicom-import/#dicom-queryretrieve) and [DICOMWeb](../../../tutorials/dicomweb-config) configurations
+- To configure the DICOM archive in Weasis with Dicom [Query/Retrieve](../../../tutorials/dicom-import/#dicom-queryretrieve) or [DICOMWeb](../../../tutorials/dicomweb-config)
 
 These integrations provide flexibility to meet the specific needs of healthcare environments, ensuring seamless integration.
 
