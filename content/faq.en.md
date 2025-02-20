@@ -21,7 +21,7 @@ hidden: true
 Weasis is a standalone and web-based application designed for visualizing and analyzing images obtained from medical imaging equipment according to the [DICOM standard](https://www.dicomstandard.org/). To learn more, visit the [Weasis Medical Viewer](../) page.
 
 ### Where can I ask questions about Weasis?
-For general questions, you can use the [forum](https://groups.google.com/group/dcm4che) or the [GitHub discussions]().
+For general questions, you can use the [forum](https://groups.google.com/group/dcm4che) or the [GitHub discussions](https://github.com/nroduit/Weasis/discussions).
 
 On this website you should find help if you are:
 * a person who [integrate Weasis with another system like PACS](../basics/customize/integration/)
