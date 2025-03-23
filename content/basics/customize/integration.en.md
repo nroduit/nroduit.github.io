@@ -13,7 +13,7 @@ or by [building your own connector](#build-your-own-connector). The launch of th
 Using [weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector) or [ViewerHub](../../../viewer-hub) allows a high degree of integration and facilitates connection to a PACS. Here are some of the advantages:
 
 - Automatically build a manifest according to a configuration with a PACS
-- The initial URL starts with HTTP and is then redirected to weasis:// (useful when custom URI scheme is not allowed by wiki, blog platforms, etc.)
+- The initial URL starts with HTTP and is then redirected to weasis://? (useful when custom URI scheme is not allowed by wiki, blog platforms, etc.)
 - Efficiently manages to build the manifest simultaneously with the start of Weasis, optimizing loading time
 - Easily handles secure manifest requests and manages tokens for the DICOMWeb services
 
@@ -135,15 +135,15 @@ Use [$dicom:rs](../../commands/#dicomrs) to load DICOM files. Here are some conf
 
 This configuration requires at least dcm4chee-arc-light 5.22.2 and Weasis 3.6.0. To activate Weasis in dcm4chee-arc-light user interface, you need to add the four following properties in the web portal from the left menu *Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE*
 {{< highlight text >}}
-IID_PATIENT_URL=weasis://$dicom:rs --url "{{qidoBaseURL}}{{qidoBasePath}}" -r "patientID={{patientID}}" --query-ext "&includedefaults=false" -H "Authorization: Bearer {{access_token}}"
-IID_STUDY_URL=weasis://$dicom:rs --url "{{qidoBaseURL}}{{qidoBasePath}}" -r "studyUID={{studyUID}}" --query-ext "&includedefaults=false" -H "Authorization: Bearer {{access_token}}"
+IID_PATIENT_URL=weasis://?$dicom:rs --url "{{qidoBaseURL}}{{qidoBasePath}}" -r "patientID={{patientID}}" --query-ext "&includedefaults=false" -H "Authorization: Bearer {{access_token}}"
+IID_STUDY_URL=weasis://?$dicom:rs --url "{{qidoBaseURL}}{{qidoBasePath}}" -r "studyUID={{studyUID}}" --query-ext "&includedefaults=false" -H "Authorization: Bearer {{access_token}}"
 IID_URL_TARGET=_self
 {{< /highlight >}}
 
 The properties can also be passed directly to the docker-compose.env file:
 {{< highlight text >}}
-IID_PATIENT_URL=weasis://$dicom:rs --url "{{qidoBaseURL}}{{qidoBasePath}}" -r "patientID={{patientID}}" --query-ext "\&includedefaults=false" -H "Authorization: Bearer {{access_token}}"
-IID_STUDY_URL=weasis://$dicom:rs --url "{{qidoBaseURL}}{{qidoBasePath}}" -r "studyUID={{studyUID}}" --query-ext "\&includedefaults=false" -H "Authorization: Bearer {{access_token}}"
+IID_PATIENT_URL=weasis://?$dicom:rs --url "{{qidoBaseURL}}{{qidoBasePath}}" -r "patientID={{patientID}}" --query-ext "\&includedefaults=false" -H "Authorization: Bearer {{access_token}}"
+IID_STUDY_URL=weasis://?$dicom:rs --url "{{qidoBaseURL}}{{qidoBasePath}}" -r "studyUID={{studyUID}}" --query-ext "\&includedefaults=false" -H "Authorization: Bearer {{access_token}}"
 IID_URL_TARGET=_self
 {{< /highlight >}}
 

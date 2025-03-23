@@ -5,41 +5,41 @@ keywords: [ "web", "launch", "dicom viewer", "free dicom viewer", "open source d
 weight: 15
 ---
 
-The **Weasis Protocol** enables the launch of Weasis (starting from {{< badgeC "v3.6.0" >}}) in a web context using a specific URI scheme: `weasis://commands`.
+The **Weasis Protocol** enables the launch of Weasis (starting from {{< badgeC "v3.6.0" >}}) in a web context using a specific URI scheme: `weasis://?commands`.
 
 ### How to Use the Weasis Protocol
 
 To launch Weasis from various contexts:
-1. **From a Web Page**: Create a link that begins with `weasis://` (see below [How to build an URI](#how-to-build-a-uri)).<br>
+1. **From a Web Page**: Create a link that begins with `weasis://?` (see below [How to build an URI](#how-to-build-a-uri)).<br>
    If certain web frameworks (e.g. WIKI) or contexts only support HTTP protocols, you can use a URL redirection starting with `https://`. A tool such as [Weasis PACS Connector](https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector) can assist with this.
 2. **From the Command Line**: Utilize the appropriate Weasis command from the terminal:
 {{< tabs groupid="launchWeasisProtocol">}}
 {{% tab title="Windows" %}}
 {{< highlight shell >}}
-start weasis://%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fdemo-archive%2FLumbar%2Fmf.xml%22
+start weasis://?%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fdemo-archive%2FLumbar%2Fmf.xml%22
 {{< /highlight >}}
 {{% /tab %}}
 {{% tab title="Linux" %}}
 {{< highlight shell >}}
-xdg-open weasis://%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fdemo-archive%2FLumbar%2Fmf.xml%22
+xdg-open weasis://?%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fdemo-archive%2FLumbar%2Fmf.xml%22
 {{< /highlight >}}
 {{% /tab %}}
 {{% tab title="macOS" %}}
 {{< highlight shell >}}
-open weasis://%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fdemo-archive%2FLumbar%2Fmf.xml%22
+open weasis://?%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fdemo-archive%2FLumbar%2Fmf.xml%22
 {{< /highlight >}}
 {{% /tab %}}
 {{< /tabs >}}
 
 ### How to Build a URI
-The `weasis://` URI scheme allows you to launch Weasis directly from the system's URI handler. By constructing the correct URI path, you can execute [Weasis commands](../../basics/commands) to load images or perform other actions.
+The `weasis://?` URI scheme allows you to launch Weasis directly from the system's URI handler. By constructing the correct URI path, you can execute [Weasis commands](../../basics/commands) to load images or perform other actions.
 
 [Weasis PACS Connector](https://github.com/nroduit/weasis-pacs-connector#launch-weasis) can dynamically generate manifests (listing references for images to load) and build the required URI through an API. This tool also manages user preferences and other launch parameters.
 
 If you're not using the Weasis PACS Connector, you can build a URI manually by following these steps:
 1. **Choose Commands**: Select one or more [commands](../../basics/commands) to execute.
 2. **Encode the Commands**: Use a URL encoder to format the commands correctly for URI inclusion.
-3. **Prefix the Commands**: Add the `weasis://` scheme at the beginning of the encoded command string to create the final URI.
+3. **Prefix the Commands**: Add the `weasis://?` scheme at the beginning of the encoded command string to create the final URI.
 
 ##### Example: Loading a Remote Image
 1. Use [$dicom:get](../../basics/commands/#dicomget) to load an image from URL
@@ -50,7 +50,7 @@ $dicom:get -r "https://nroduit.github.io/demo-archive/us-palette.dcm"
 {{< highlight text >}}
 %24dicom%3Aget+-r+%22https%3A%2F%2Fnroduit.github.io%2Fdemo-archive%2Fus-palette.dcm%22
 {{< /highlight >}}
-3. Make the final URI by adding "weasis://" at the beginning
+3. Make the final URI by adding "weasis://?" at the beginning
 {{< launch title="Open the remote image" >}}
 $dicom:get -r "https://nroduit.github.io/demo-archive/us-palette.dcm"
 {{< /launch >}}

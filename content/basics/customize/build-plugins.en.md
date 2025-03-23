@@ -130,13 +130,13 @@ To test the plugin with an installed version of Weasis without making any change
     - Build a valid URI with the above parameter (see [How to build an URI](../../../getting-started/weasis-protocol/#how-to-build-a-uri)) and launch Weasis from the command on a terminal:Construct a valid URI using the parameter mentioned above (refer to [How to build a URI](../../../getting-started/weasis-protocol/#how-to-build-a-uri))) and launch Weasis from the terminal using a command:
       {{< tabs groupid="launchPlugin">}}
       {{% tab title="Windows" %}}
-      start weasis://%24weasis%3Aconfig%20pro%3D%22felix.extended.config.properties%20file%3A%2F%2F%2FD%3A%2Fgit%2Fmyplugin%2Fmyplugin.json%22
+      start weasis://?%24weasis%3Aconfig%20pro%3D%22felix.extended.config.properties%20file%3A%2F%2F%2FD%3A%2Fgit%2Fmyplugin%2Fmyplugin.json%22
       {{% /tab %}}
       {{% tab title="Linux" %}}
-      xdg-open weasis://%24weasis%3Aconfig%20pro%3D%22felix.extended.config.properties%20file%3A%2F%2F%2Fgit%2Fmyplugin%2Fmyplugin.json%22
+      xdg-open weasis://?%24weasis%3Aconfig%20pro%3D%22felix.extended.config.properties%20file%3A%2F%2F%2Fgit%2Fmyplugin%2Fmyplugin.json%22
       {{% /tab %}}
       {{% tab title="macOS" %}}
-      open weasis://%24weasis%3Aconfig%20pro%3D%22felix.extended.config.properties%20file%3A%2F%2F%2Fgit%2Fmyplugin%2Fmyplugin.json%22
+      open weasis://?%24weasis%3Aconfig%20pro%3D%22felix.extended.config.properties%20file%3A%2F%2F%2Fgit%2Fmyplugin%2Fmyplugin.json%22
       {{% /tab %}}
       {{< /tabs >}}
 
