@@ -79,16 +79,17 @@ Here is a list of the most common keyboard and mouse shortcuts in Weasis. The sh
 | **Drag files/directories**<br>(from the OS file manager) | Open DICOMs files                                                                                                                                                      |
 
 ### Selected view in the MPR Viewer
-MPR view inherits the same shortcuts as the 2D viewer, with the following additional shortcuts since {{< badgeC "v4.5.2" >}} :
+MPR view inherits the same shortcuts as the 2D viewer, with the following additional shortcuts since {{< badgeC "v4.6.0" >}} :
 
-| Shortcut    | Action                                              |
-|-------------|-----------------------------------------------------|
-| **Alt + A** | Center crosshair of the selected view               |
-| **Alt + S** | Show/Hide the crosshair center of the selected view |
-| **Alt + D** | Show/Hide the crosshair of the selected view        |
-| **Alt + C** | Center crosshair of all views                       |
-| **Alt + V** | Show/Hide the crosshair center of all views         |
-| **Alt + B** | Show/Hide the crosshair of all views                |
+| Shortcut           | Action                                              |
+|--------------------|-----------------------------------------------------|
+| **Alt + X**        | Center crosshair of the selected view               |
+| **Alt + C**        | Show/Hide the crosshair center of the selected view |
+| **Alt + V**        | Show/Hide the crosshair of the selected view        |
+| **Ctrl + Alt + X** | Center crosshair of all views                       |
+| **Ctrl + Alt + C** | Show/Hide the crosshair center of all views         |
+| **Ctrl + Alt + V** | Show/Hide the crosshair of all views                |
+| **Ctrl + Alt + B** | Change the MIP type (None/Min/Mean/Max)             |
 
 ### DICOM explorer
 

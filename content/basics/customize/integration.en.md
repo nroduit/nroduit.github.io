@@ -41,7 +41,7 @@ For connecting to dcm4chee web interface, follow the instructions in [Installing
 
 Standard workflow when connecting Weasis to a PACS, RIS, EMR, EPR or any web interface:
 
-{{< svg-inline "static/images/weasis-pacs-connector.svg" >}}
+{{< svg "static/images/weasis-pacs-connector.svg" >}}
 {{% notice note %}}
 The schema above shows that the queries to the PACS are made at the same time as the viewer starts. This makes it possible to optimize the launch by simultaneously launching weasis and building the manifest.
 {{% /notice %}}
