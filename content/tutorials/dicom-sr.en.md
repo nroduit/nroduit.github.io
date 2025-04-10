@@ -5,7 +5,7 @@ description: How to display DICOM Structured Report
 keywords: [ "dicom sr", "sr", " structured report", "dicom viewer", "open source dicom viewer" ]
 ---
 
-## <center>Displaying DICOM Structured Report {{< svg "static/tuto/icon/text.svg" >}} </center>
+## <center>Displaying DICOM Structured Report {{< svg-inline "static/tuto/icon/text.svg" >}} </center>
 
 The DICOM Structured Report (SR) viewer is used to display and analyze DICOM SR data. The SR object is a structured collection of content items that represent a report of a diagnostic or therapeutic procedure. The content items are organized in a tree structure, and each item has a relationship with other items. 
 
@@ -21,8 +21,8 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/demo/sr.xml"
 
 ### Toolbar {{% badge style="red" %}}A{{% /badge %}} {#toolbar}
 Actions in the toolbar are:
-* {{< svg "static/tuto/icon/print.svg" >}} Allows you to print the rendering of the SR
-* {{< svg "static/tuto/icon/metadata.svg" >}} Show the DICOM metadata of the SR
+* {{< svg-inline "static/tuto/icon/print.svg" >}} Allows you to print the rendering of the SR
+* {{< svg-inline "static/tuto/icon/metadata.svg" >}} Show the DICOM metadata of the SR
 
 ### Display SR Header {{% badge style="red" %}}B{{% /badge %}} {#display-sr-header}
 The header of the SR object is displayed in a table format with 3 columns containing information about the patient, the study, and the report status.

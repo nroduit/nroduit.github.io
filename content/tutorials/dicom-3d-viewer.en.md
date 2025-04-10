@@ -5,7 +5,7 @@ description: How to display volume data
 keywords: [ "viewer 3D", "volume rendering", "ray casting", "3D rendering", "dicom viewer", "free dicom viewer", "open source dicom viewer" ]
 ---
 
-## <center>Displaying volume data {{< svg "static/tuto/icon/volume.svg" >}}</center>
+## <center>Displaying volume data {{< svg-inline "static/tuto/icon/volume.svg" >}}</center>
 
 Since Weasis {{% badge title="Version" %}}4.1.0{{% /badge %}} the 3D viewer allows displaying volumetric renderings with different options for adjusting the pseudo colors, the transparency, the shadows and the lighting according to the type of exam.
 
@@ -26,7 +26,7 @@ OpenGL does not include specific functionality for selecting a particular graphi
 {{% /notice %}}
 
 ### Open the 3D viewer
-The 3D view can be opened with {{< svg "static/tuto/icon/volume.svg" >}} in the toolbar or by right-clicking on the thumbnail in the [DICOM explorer](../dicom-explorer/).
+The 3D view can be opened with {{< svg-inline "static/tuto/icon/volume.svg" >}} in the toolbar or by right-clicking on the thumbnail in the [DICOM explorer](../dicom-explorer/).
 
 Try to load a volume dataset (Medical Demos from data.kitware.com)
 {{< launch >}}
@@ -38,24 +38,24 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/3d/head-neck.xml"
 
 ### Toolbar {{% badge style="red" %}}A{{% /badge %}} {#toolbar}
 Actions in the toolbar are:
-* {{< svg "static/tuto/icon/loadVolume.svg" >}} Allows you to fully reload the volume
-* {{< svg "static/tuto/icon/orthographic.svg" >}} The orthographic projection maintains parallel lines unlike the perspective projection that provides a perception of depth. The default mode is the perspective projection.
-* {{< svg "static/tuto/icon/volumeSettings.svg" >}} Opens the [3D preferences](#preferences)
+* {{< svg-inline "static/tuto/icon/loadVolume.svg" >}} Allows you to fully reload the volume
+* {{< svg-inline "static/tuto/icon/orthographic.svg" >}} The orthographic projection maintains parallel lines unlike the perspective projection that provides a perception of depth. The default mode is the perspective projection.
+* {{< svg-inline "static/tuto/icon/volumeSettings.svg" >}} Opens the [3D preferences](#preferences)
 
 For other buttons see below.
 
 ### 3D Rendering Tools
-This tab contains all the tools to modify the volume rendering. If you want to return to the original settings, just click on the toolbar button {{< svg "static/tuto/icon/reset.svg" >}} or from the context menu.
+This tab contains all the tools to modify the volume rendering. If you want to return to the original settings, just click on the toolbar button {{< svg-inline "static/tuto/icon/reset.svg" >}} or from the context menu.
 
 #### Windowing and Rendering {{% badge style="red" %}}B{{% /badge %}} {#windowing}
 Some of the options described below are also available in the toolbar and in the contextual menus.
 
 * _Window:_ The width of a range of voxels values mapped to a specific range of display values.
 * _Level:_ The center of the range defined by Window.
-* {{< svg "static/tuto/icon/winLevel.svg" >}} _Preset:_ Specific values of Window and level. _Auto Level [Image]_ is the default value when changing a LUT and provides the best visual appearance of a Volume LUT.
+* {{< svg-inline "static/tuto/icon/winLevel.svg" >}} _Preset:_ Specific values of Window and level. _Auto Level [Image]_ is the default value when changing a LUT and provides the best visual appearance of a Volume LUT.
 * _LUT Shape:_ The mapping (transfer function) between the input values and the display values can be linear, sigmoid and logarithmic. Default value is linear.
-* {{< svg "static/tuto/icon/lut.svg" >}} _LUT (Volume LUT):_ A Volume Lookup Table (LUT) is a 3D LUT used to map the grayscale values of a volume dataset to color, opacity and lighting values for visualization. Choosing a LUT from the toolbar or the contextual menu is easier because the LUTs are displayed in an order according to the modality and with a preview.
-* {{< svg "static/tuto/icon/inverseLut.svg" >}} allows you to invert the LUT.
+* {{< svg-inline "static/tuto/icon/lut.svg" >}} _LUT (Volume LUT):_ A Volume Lookup Table (LUT) is a 3D LUT used to map the grayscale values of a volume dataset to color, opacity and lighting values for visualization. Choosing a LUT from the toolbar or the contextual menu is easier because the LUTs are displayed in an order according to the modality and with a preview.
+* {{< svg-inline "static/tuto/icon/inverseLut.svg" >}} allows you to invert the LUT.
 
 
 #### Volume Rendering {{% badge style="red" %}}C{{% /badge %}} {#volume-rendering}
@@ -76,7 +76,7 @@ From the menu "_File > Preferences > Viewer > 3D Viewer_":
 Information about the graphics card and OpenGL capabilities, see [Requirements](#requirements).
 
 #### 3D Viewer
-* {{< svg "static/tuto/icon/layout.svg" >}} _Default layout:_ The preferred layout used when opening the 3D viewer
+* {{< svg-inline "static/tuto/icon/layout.svg" >}} _Default layout:_ The preferred layout used when opening the 3D viewer
 * _Max 3D texture size:_ The maximum size of the volume according to X/Y (width and height of images) and according to Z (number of images in the stack composing the volume)
 
 {{% notice note %}}

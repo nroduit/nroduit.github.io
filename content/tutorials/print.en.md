@@ -6,7 +6,7 @@ keywords: [ "print", "view", "dicom viewer" ]
 ---
 
 
-## <center>Build the image selection to print {{< svg "static/tuto/icon/print.svg" >}}</center>
+## <center>Build the image selection to print {{< svg-inline "static/tuto/icon/print.svg" >}}</center>
 
 The image selection to print must be prepared before calling the print function. If you need to print more than one image per page, choose a layout from the dropdown button in the toolbar (1).
 
@@ -23,7 +23,7 @@ To fill the layout with images you can change the synchronized mode of series (2
 
 ## Select a print mode
 
-### Standard Printer {{< svg "static/tuto/icon/print.svg" >}}
+### Standard Printer {{< svg-inline "static/tuto/icon/print.svg" >}} {#standard-printer}
 From the main menu, open _File > Print > Print 2D viewer layout (P)_.
 
 ![standard](/tuto/print/standard.png?classes=shadow)

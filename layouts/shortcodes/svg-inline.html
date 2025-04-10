@@ -1,0 +1,3 @@
+{{ $svg := .Get 0 }}
+{{ $rawSvg := $svg | readFile | safeHTML }}
+{{ $rawSvg | replaceRE "(<svg)(\\s|>)" "${1} class=\"inline\" style=\"vertical-align: middle;\"${2}" | safeHTML }}

@@ -5,9 +5,9 @@ description: How to display and compare DICOM attributes
 keywords: [ "DICOM attributes", "tags", "search attributes" ]
 ---
 
-## <center>How to display DICOM attributes {{< svg "static/tuto/icon/metadata.svg" >}}</center>
+## <center>How to display DICOM attributes {{< svg-inline "static/tuto/icon/metadata.svg" >}}</center>
 
-The DICOM attributes {{< svg "static/tuto/icon/metadata.svg" >}} can be displayed either by:
+The DICOM attributes {{< svg-inline "static/tuto/icon/metadata.svg" >}} can be displayed either by:
 
 * selecting the "Dicom Information" layout from the layout dropdown button {{% badge style="red" %}}A{{% /badge %}}
 * clicking on the "Dicom Information" button in the toolbar to open a detached window {{% badge style="red" %}}B{{% /badge %}}

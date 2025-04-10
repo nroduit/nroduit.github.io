@@ -5,7 +5,7 @@ description: How to display radiotherapy information
 keywords: [ "dicom rt", "radiotherapy", "dicom viewer", "free dicom viewer", "open source dicom viewer" ]
 ---
 
-## <center>Displaying radiotherapy information {{< svg "static/tuto/icon/rt.svg" >}}</center>
+## <center>Displaying radiotherapy information {{< svg-inline "static/tuto/icon/rt.svg" >}}</center>
 
 The _RT Tool_ appears on the right panel when a CT exam (when linked with DICOM STRUCT, PLAN and DOSE) is displayed. Since {{% badge title="Version" %}}4.1.0{{% /badge %}} a specific configuration in config.properties is no longer required.
 

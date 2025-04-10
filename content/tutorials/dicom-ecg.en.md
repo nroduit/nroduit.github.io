@@ -5,7 +5,7 @@ description: How to display electrocardiography data
 keywords: [ "dicom ecg", "ecg", "electrocardiography", "dicom viewer", "open source dicom viewer" ]
 ---
 
-## <center>Displaying electrocardiography data {{< svg "static/tuto/icon/ecg.svg" >}}</center>
+## <center>Displaying electrocardiography data {{< svg-inline "static/tuto/icon/ecg.svg" >}}</center>
 
 The ECG viewer is used to display and analyze electrocardiogram (ECG) data in DICOM format obtained from different modalities, such as resting ECGs, ambulatory ECGs, and stress tests.
 
@@ -19,9 +19,9 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/demo/ecg.xml"
 <br>
 ### Toolbar {{% badge style="red" %}}A{{% /badge %}} {#toolbar}
 Actions in the toolbar are:
-* {{< svg "static/tuto/icon/print.svg" >}} Allows you to print the ECG as it is displayed with some basic information (patient/study)
-* {{< svg "static/tuto/icon/metadata.svg" >}} Show the DICOM metadata of the ECG
-* {{< svg "static/tuto/icon/selectionDelete.svg" >}} Delete all the measurements (yellow areas in the image above), see [Markers](#markers)
+* {{< svg-inline "static/tuto/icon/print.svg" >}} Allows you to print the ECG as it is displayed with some basic information (patient/study)
+* {{< svg-inline "static/tuto/icon/metadata.svg" >}} Show the DICOM metadata of the ECG
+* {{< svg-inline "static/tuto/icon/selectionDelete.svg" >}} Delete all the measurements (yellow areas in the image above), see [Markers](#markers)
 
 ### Zoom and Display Format {{% badge style="red" %}}B{{% /badge %}} {#zoom-and-display-format}
 The zoom is on several graphic components. The first combo box represents the time, the second represents the voltage, and the slider allows you to zoom in both directions while preserving the aspect ratio.

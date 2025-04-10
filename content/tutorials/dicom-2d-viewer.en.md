@@ -5,12 +5,12 @@ description: How to display an image or a stack of images
 keywords: [ "viewer 2D", "dicom data", "dicom viewer", "free dicom viewer", "open source dicom viewer" ]
 ---
 
-## <center>Displaying DICOM images {{< svg "static/tuto/icon/view2d.svg" >}}</center>
+## <center>Displaying DICOM images {{< svg-inline "static/tuto/icon/view2d.svg" >}}</center>
 
 The 2D viewer is the default viewer when opening a DICOM series containing images.
 
 ### Open the 2D viewer
-The 2D view can be opened with {{< svg "static/tuto/icon/view2d.svg" >}} in the toolbar or by right-clicking on the thumbnail in the [DICOM explorer](../dicom-explorer/).
+The 2D view can be opened with {{< svg-inline "static/tuto/icon/view2d.svg" >}} in the toolbar or by right-clicking on the thumbnail in the [DICOM explorer](../dicom-explorer/).
 
 ![DICOM 2DViewer](/tuto/dicom-viewer2d.jpg?classes=shadow&width=780px)
 <br>
@@ -50,12 +50,12 @@ Where the possible actions are:
 When dragging, accelerate the action by pressing the _Ctrl_ key and _Ctrl + Shift_ to accelerate more.
 {{% /notice %}}
 
-* {{< svg "static/tuto/icon/layout.svg" >}} _Default layout:_ Change the layout of the view. [DICOM Information](../tags) and [Histogram](../histogram) are specific layouts where information is automatically updated when scrolling through the series.
+* {{< svg-inline "static/tuto/icon/layout.svg" >}} _Default layout:_ Change the layout of the view. [DICOM Information](../tags) and [Histogram](../histogram) are specific layouts where information is automatically updated when scrolling through the series.
 * Synchronize: The synchronization feature lets you apply the same settings to other images.
   * _None:_ No synchronization is applied between series.
   * _Default Stack:_ When selected, the layout is synchronized (window/level, scrolling, zoom) only with the series sharing the same Frame of Reference UID (0020,0052). This is the default behavior.
   * _Default Tile:_ When selected, the layout is applied in tiled mode (image mosaic of the current series) and is synchronized (window/level, scrolling, zoom) with the image of the same series.
-* {{< svg "static/tuto/icon/reset.svg" >}} _Reset:_ Reset the image rendering (see [below](#reset)). _Escape_ key to select the action.
+* {{< svg-inline "static/tuto/icon/reset.svg" >}} _Reset:_ Reset the image rendering (see [below](#reset)). _Escape_ key to select the action.
 
 #### Toolbars available in the DICOM 2D viewer
 * [DICOM Import](../dicom-import/#from-weasis-menu-or-toolbar)
@@ -79,7 +79,7 @@ Toolbars can be shown or hidden from the _View_ top menu.
 ### Viewer's tools
 Here is a list of the tools which are associated to the DICOM 2D viewer.
 
-The mini-tool is always visible and the other tools are displayed by clicking on the vertical button. The normalize button {{< svg "static/tuto/icon/normalize.svg" >}} allows you to insert the panel into the main layout. Otherwise, the panel is displayed as a popup window with the pin option {{< svg "static/tuto/icon/holdon.svg" >}} (which is not recommended, as it hides other panels).
+The mini-tool is always visible and the other tools are displayed by clicking on the vertical button. The normalize button {{< svg-inline "static/tuto/icon/normalize.svg" >}} allows you to insert the panel into the main layout. Otherwise, the panel is displayed as a popup window with the pin option {{< svg-inline "static/tuto/icon/holdon.svg" >}} (which is not recommended, as it hides other panels).
 
 #### Mini-tool {{% badge style="red" %}}B{{% /badge %}} {#mini-tool}
 Allows you by default to scroll through the images of the selected series (surrounded by an orange line). From the combobox at the top, the mini-tool can also be configured to change the zoom or the rotation of the image.  
@@ -127,10 +127,10 @@ _Image Tools_ contains all the tools to modify the image rendering.
 Allows you to zoom, rotate and flip the image. [Zoom](../zoom) and rotation can also be configured with the [mini-tool](#mini-tool) or the [mouse actions](#toolbars).
 
 ##### Cine
-The _Cine start_ button {{< svg "static/tuto/icon/execute.svg" >}} lets you scroll through the images in a series at a certain speed (frame per second). The speed values comes from the DICOM file if exists. The cine options can also be changed from the context menu.
+The _Cine start_ button {{< svg-inline "static/tuto/icon/execute.svg" >}} lets you scroll through the images in a series at a certain speed (frame per second). The speed values comes from the DICOM file if exists. The cine options can also be changed from the context menu.
 
-* Click on _Cine stop_ button {{< svg "static/tuto/icon/suspend.svg" >}} to end the animation.
-* Click on _Loop Sweep_ toggle button {{< svg "static/tuto/icon/loop.svg" >}} to change the cine mode: looping vs sweeping.
+* Click on _Cine stop_ button {{< svg-inline "static/tuto/icon/suspend.svg" >}} to end the animation.
+* Click on _Loop Sweep_ toggle button {{< svg-inline "static/tuto/icon/loop.svg" >}} to change the cine mode: looping vs sweeping.
 
 {{% notice note %}}
 When the cine is active, the series which are synchronized are also animated. The cine is also applied to other series when they are selected until the _Cine stop_ button is clicked.
@@ -143,7 +143,7 @@ A _Cine_ toolbar is also available. It is not visible by default, but can be dis
 {{% /notice %}}
 
 ##### Reset
-It allows you to return to the default image rendering for all or specific parameters. Also available from the toolbar button {{< svg "static/tuto/icon/reset.svg" >}} or from the context menu.
+It allows you to return to the default image rendering for all or specific parameters. Also available from the toolbar button {{< svg-inline "static/tuto/icon/reset.svg" >}} or from the context menu.
 
 #### [Draw & Measure](../draw-measure/) {{% badge style="red" %}}E{{% /badge %}} {#draw-measure}
 
@@ -170,5 +170,5 @@ The default value is _Bilinear_. The _Nearest neighbor_ interpolation is faster 
 #### Other
 * _Apply Window/Level on color images:_ When checked, the window/level is applied on the RGB channels of the image. Otherwise, the window/level has no effect when unchecked.
 * _Inverse level direction:_ When checked, the level direction with mouse actions is inverted (dragging down will increase the brightness) according to the [Basic Image Review profile](https://wiki.ihe.net/index.php?title=Basic_Image_Review). Otherwise, dragging down will decrease the brightness when unchecked.
-* _Apply by default the most recent Presentation State:_ When checked, the most recent [Presentation State](../build-ko-pr/#presentation-state-pr-or-gsps) Object is applied on the related image. Otherwise, it is required to select it from {{< svg "static/tuto/icon/imagePresentation.svg" >}}.
+* _Apply by default the most recent Presentation State:_ When checked, the most recent [Presentation State](../build-ko-pr/#presentation-state-pr-or-gsps) Object is applied on the related image. Otherwise, it is required to select it from {{< svg-inline "static/tuto/icon/imagePresentation.svg" >}}.
 * _Overlay color:_ change the color and the opacity of DICOM overlay. The default color is white. The opacity can be changed from the transparency or alpha slider of the different color models in the color picker.

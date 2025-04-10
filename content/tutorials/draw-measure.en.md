@@ -5,7 +5,7 @@ description: How to draw and measure on images
 keywords: [ "Draw", "Measure", "Measurements", "viewer 2D", "dicom viewer", "free dicom viewer", "open source dicom viewer" ]
 ---
 
-## <center>How to draw and measure on images {{< svg "static/tuto/icon/measure.svg" >}}</center>
+## <center>How to draw and measure on images {{< svg-inline "static/tuto/icon/measure.svg" >}}</center>
 
 This panel allows you to draw and measure on DICOM and standard images. The results can be exported:
 
@@ -16,14 +16,14 @@ This panel allows you to draw and measure on DICOM and standard images. The resu
 <br>
 
 ### Draw & Measure Panel
-When clicking on {{< svg "static/tuto/icon/normalize.svg" >}} of the vertical button {{< svg "static/tuto/icon/measure.svg" >}}, the panel is displayed on the right side of the viewer. This panel is divided into 4 parts.
+When clicking on {{< svg-inline "static/tuto/icon/normalize.svg" >}} of the vertical button {{< svg-inline "static/tuto/icon/measure.svg" >}}, the panel is displayed on the right side of the viewer. This panel is divided into 4 parts.
 
 #### Measurement tools {{% badge style="red" %}}A{{% /badge %}} {#measurement-tools}
 Select a measurement tool by clicking on one of the buttons and then draw on the image. Note that the previous action will select automatically the drawing action in the [mouse left button](../dicom-2d-viewer/#toolbars).
 
 The first button is the selection tool that allows you to select, resize and move the graphic objects.
 
-By selecting one or several graphic objects, you can change properties (e.g. color, line width) or copy/paste with the contextual menu. You can also delete the selection with the delete key or {{< svg "static/tuto/icon/selectionDelete.svg" >}}. See other [shortcuts for graphics](../../basics/shortcuts/index.html#graphics).
+By selecting one or several graphic objects, you can change properties (e.g. color, line width) or copy/paste with the contextual menu. You can also delete the selection with the delete key or {{< svg-inline "static/tuto/icon/selectionDelete.svg" >}}. See other [shortcuts for graphics](../../basics/shortcuts/index.html#graphics).
 
 {{% notice note %}}
 You can draw a segment in two ways:<br>

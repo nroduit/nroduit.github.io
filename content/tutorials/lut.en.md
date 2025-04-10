@@ -22,14 +22,14 @@ The Windowing and Rendering is a panel in the [_Image Tools_ of the DICOM 2D vie
 
 * _Window:_ The range of pixel intensity values. The value can be changed when Window/Level is selected in [mouse actions](../dicom-2d-viewer/#toolbars) or by using the slider.
 * _Level:_ The center of the range defined by Window. The value can be changed when Window/Level is selected in [mouse actions](../dicom-2d-viewer/#toolbars) or by using the slider.
-* {{< svg "static/tuto/icon/winLevel.svg" >}} _Preset:_ The possible items ordered according to the following list:
+* {{< svg-inline "static/tuto/icon/winLevel.svg" >}} _Preset:_ The possible items ordered according to the following list:
   * Empty item when the Window and level values are changed manually from slider or mouse actions. 
   * Window and level values or VOI LUT data from the DICOM file (ending with _[DICOM]_). The default value is the first _[DICOM]_ item if exists, otherwise _Auto Level [Image]_.
   * _Auto Level [Image]_  (always visible) which is the Window and level related to the full range of the pixel values
   * Specific values of Window and level for a modality type  (e.g. Lung for CT)
 * _LUT Shape:_ The mapping ([transfer function](https://dicom.nema.org/medical/dicom/current/output/chtml/part17/chapter_Y.html)) between the input values and the display values can be linear, sigmoid and logarithmic. Default value is linear.
-* {{< svg "static/tuto/icon/lut.svg" >}} _LUT:_ A pseudo color LUT used to map the grayscale values to color. _Default (image)_ is the original image color model. Choosing a LUT from the toolbar or the menus is easier because the LUTs are displayed with a preview.
-* {{< svg "static/tuto/icon/inverseLut.svg" >}} allows you to invert the LUT.
+* {{< svg-inline "static/tuto/icon/lut.svg" >}} _LUT:_ A pseudo color LUT used to map the grayscale values to color. _Default (image)_ is the original image color model. Choosing a LUT from the toolbar or the menus is easier because the LUTs are displayed with a preview.
+* {{< svg-inline "static/tuto/icon/inverseLut.svg" >}} allows you to invert the LUT.
 * _Filter:_ The 2D filter is applied to the image before the LUT. The filter can be used to enhance the image quality or to highlight specific structures. The default value is _None_.
 
 {{% notice tip %}}

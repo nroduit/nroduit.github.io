@@ -5,7 +5,7 @@ description: How to convert standard images into DICOM files
 keywords: [ "convert to dicom", "dicomizer", "dicom worklist", "jpg to dicom" ]
 ---
 
-## <center>How to convert images into DICOM files {{< svg "static/tuto/icon/Dicomizer.svg" >}}</center>
+## <center>How to convert images into DICOM files {{< svg-inline "static/tuto/icon/Dicomizer.svg" >}}</center>
 
 The Dicomizer tool allows you to convert standard images into DICOM files. This will facilitate the integration of these images into a DICOM archive. 
 
@@ -17,7 +17,7 @@ Dicomizer will help you to manage the DICOM tags at the patient, study, and imag
 ### How to Launch Dicomizer
 
 #### As a Standalone Application
-When installing Weasis, `Dicomizer` is available as a standalone application with this shortcut {{< svg "static/tuto/icon/Dicomizer.svg" >}} (only on Windows and Linux). 
+When installing Weasis, `Dicomizer` is available as a standalone application with this shortcut {{< svg-inline "static/tuto/icon/Dicomizer.svg" >}} (only on Windows and Linux). 
 
 On macOS, you need to run the `Dicomizer` command from the terminal:
 {{< highlight shell >}}

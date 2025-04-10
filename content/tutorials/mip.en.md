@@ -5,7 +5,7 @@ description: How to use the Maximum Intensity Projection (MIP) viewer
 keywords: [ "MIP", "Maximum Intensity Projection", "dicom", "free dicom viewer" ]
 ---
 
-## <center>Maximum Intensity Projection (MIP) {{< svg "static/tuto/icon/mip.svg" >}}</center>
+## <center>Maximum Intensity Projection (MIP) {{< svg-inline "static/tuto/icon/mip.svg" >}}</center>
 
 The MIP viewer is a simple 3D viewer that allows to display the maximum intensity projection of a volume defined by a number of slice of the image stack. 
 
@@ -13,7 +13,7 @@ The MIP viewer is also available in the [3D viewer](../dicom-3d-viewer) with mor
 
 
 ### Open the MIP viewer
-The MIP viewer can be opened with {{< svg "static/tuto/icon/mip.svg" >}} in the Basic 3D toolbar of the [DICOM 2D viewer](../dicom-2d-viewer).
+The MIP viewer can be opened with {{< svg-inline "static/tuto/icon/mip.svg" >}} in the Basic 3D toolbar of the [DICOM 2D viewer](../dicom-2d-viewer).
 
 {{% notice note %}}
 If the button is grayed out, it means that the current series has less than 5 images which the minimal number of images for using the MIP viewer. 

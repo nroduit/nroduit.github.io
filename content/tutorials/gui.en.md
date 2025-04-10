@@ -5,7 +5,7 @@ description: Essential aspects of the graphical user interface (GUI)
 keywords: [ "GUI", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "pacs viewer" ]
 ---
 
-## <center>Essential aspects of the interface{{< svg "static/tuto/icon/Weasis.svg" >}}</center>
+## <center>Essential aspects of the interface{{< svg-inline "static/tuto/icon/Weasis.svg" >}}</center>
 
 The following image shows the main elements of the graphical user interface (GUI). For more detailed documentation on the various elements of the interface, click on the green or blue areas of the image.
 
@@ -14,7 +14,7 @@ The following image shows the main elements of the graphical user interface (GUI
 The interface of the default DICOM workspace consists mainly of 2 parts:
 1. The [DICOM Explorer](../dicom-explorer) on the left (in blue). It allows you to import and export data, as well as select the series to be visualized.
 2. Depending on the data imported, different viewer/player types (represented by a tab) are displayed in the main section (green). Menus , toolbars and tools change according to the type of viewer selected. 
-   * The selected viewer is the image above is the [DICOM 2D viewer](../dicom-2d-viewer) {{< svg "static/tuto/icon/view2d.svg" >}} which is the viewer opened by default. 
+   * The selected viewer is the image above is the [DICOM 2D viewer](../dicom-2d-viewer) {{< svg-inline "static/tuto/icon/view2d.svg" >}} which is the viewer opened by default. 
    * A tab containing a multi-view layout can display images from only one patient. However, one patient can appear in several tabs.
    * A tab is also docked panel that can be arranged by dragging and dropping it to the desired location. This makes it possible to display 2 tabs side by side.
    * See also [DICOM Explorer](../dicom-explorer/) to understand how to navigate through the Patient/Study/Series/Image.

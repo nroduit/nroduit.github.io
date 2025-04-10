@@ -14,13 +14,13 @@ keywords: [ "Key Object Selection", "Presentation State", "dicom viewer", "free 
   ![Build KO](/tuto/ko-actions.jpg?classes=shadow&width=700px)
 - Other actions:
  
-  - Apply a KO (2) {{< svg "static/tuto/icon/keyImage.svg" >}}
+  - Apply a KO (2) {{< svg-inline "static/tuto/icon/keyImage.svg" >}}
   - Filter to obtain only the key images defined in the selected KO (4). This means only key images will be visible when scrolling into a series.
   - Create a new KO (or based on another one) or delete KO (only the ones created by Weasis) (5)
 
 
 ### Presentation State (PR or GSPS)
-- Apply PR loaded from a DICOM file (1) {{< svg "static/tuto/icon/imagePresentation.svg" >}}: Since {{% badge title="Version" %}}2.6.0{{% /badge %}} PRs are not applied to the image by default (requires to select the right icon (2) over the image). In order to apply the most recent PR by default, change it from the main menu _File > Preferences (Alt + P)_ and check "Apply by default the most recent Presentation State", or in the [default preferences](../../basics/customize/preferences/).
+- Apply PR loaded from a DICOM file (1) {{< svg-inline "static/tuto/icon/imagePresentation.svg" >}}: Since {{% badge title="Version" %}}2.6.0{{% /badge %}} PRs are not applied to the image by default (requires to select the right icon (2) over the image). In order to apply the most recent PR by default, change it from the main menu _File > Preferences (Alt + P)_ and check "Apply by default the most recent Presentation State", or in the [default preferences](../../basics/customize/preferences/).
 - Create a new PR: Any type of annotations (Drawings and Measurements) can be exported in a DICOM Presentation State. Image presentation actions (zoom, calibration, W/L, LUT...) are not yet possible to export into PR.
   ![Build PR](/tuto/pr-actions.jpg?classes=shadow&width=700px)
 <br>
