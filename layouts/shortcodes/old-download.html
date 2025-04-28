@@ -57,7 +57,7 @@
                           {{ end }}
                     </td>
                     <td style="text-align: left;">{{ cond ( ge $elem_index 1) "" (cond (eq $package ".msi") "Requires Windows 10 or higher"
-                        (cond (eq $package ".pkg") (cond (eq $arch "arm-64") "Requires macOS 12 or higher (Apple Silicon)" "Requires macOS 11 or higher" )
+                        (cond (eq $package ".pkg") (cond (eq $arch "arm-64") "Requires macOS 12 or higher (Apple Silicon)" "Requires macOS 11 or higher (Intel)")
                         (cond (eq $arch "arm-32") "Requires GLIBC_2.17. Only tested with Raspberry Pi 4"
                         (cond (eq $arch "arm-64") "Requires GLIBC_2.27" (cond (eq $package ".rpm") "Requires GLIBC_2.17, libstdc++.so.6 and libgcc" "Requires GLIBC_2.17" )))))
                         }}

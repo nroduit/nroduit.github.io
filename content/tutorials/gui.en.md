@@ -38,7 +38,7 @@ In the View menu at the top, toolbars and tools related to the selected viewer c
 * DICOM Video player (default system player associated with mpg files)
 
 ### List of other workspaces
-* Dicomizer
+* [Dicomizer](../dicomizer) - Dicomizer workspace
 * Explorer of standard images (based on the non-dicom-explorer.json configuration profile)
 
 
