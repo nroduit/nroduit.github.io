@@ -39,6 +39,11 @@ Then open the [DICOM Import](../dicom-import/#from-weasis-menu-or-toolbar) dialo
 
 ### Supported DICOMWeb Providers (non-exhaustive list)
 
+- [Google Cloud Healthcare API](#google-cloud-healthcare-api)
+- [Orthanc WEB Server](#orthanc-web-server)
+- [dcm4chee-arc-light](#dcm4chee-arc-light)
+- [Amazon HealthLake](#amazon-healthlake)
+
 #### Google Cloud Healthcare API
 
 Google Cloud provides a comprehensive [DICOMWeb implementation](https://cloud.google.com/healthcare/docs/how-tos/dicomweb) through their Healthcare API.
