@@ -50,7 +50,7 @@ In the "package" view, click on "Create new group config".
 
 ![create_new_package_version_location.png](/viewer-hub/weasis_versioning/create_new_package_version_location.png)
 
-Then select the desired Weasis version (package version + launch config) and the new group to associate then press "Create".
+Then select the desired Weasis version (package version + launch config) and the new group to associate, then press "Create".
 
 ![create_new_package_version.png](/viewer-hub/weasis_versioning/create_new_package_version.png)
 

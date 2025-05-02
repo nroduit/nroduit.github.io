@@ -7,7 +7,7 @@ keywords: [ "viewer 3D", "volume rendering", "ray casting", "3D rendering", "dic
 
 ## <center>Displaying volume data {{< svg-inline "static/tuto/icon/volume.svg" >}}</center>
 
-Since Weasis {{% badge title="Version" %}}4.1.0{{% /badge %}} the 3D viewer allows displaying volumetric renderings with different options for adjusting the pseudo colors, the transparency, the shadows and the lighting according to the type of exam.
+Since Weasis {{% badge title="Version" %}}4.1.0{{% /badge %}} the 3D viewer allows displaying volumetric renderings with different options for adjusting the pseudo colors, the transparency, the shadows, and the lighting according to the type of exam.
 
 The volume rendering uses a [ray casting algorithm](https://en.wikipedia.org/wiki/Volume_ray_casting) and the OpenGL Shading Language (GLSL). Shader programming is used to create the necessary algorithms and data structures 
 required for the ray casting computations to be executed efficiently on the graphics card. Therefore, minimal graphic resources are required.
@@ -53,8 +53,8 @@ Some of the options described below are also available in the toolbar and in the
 * _Window:_ The width of a range of voxels values mapped to a specific range of display values.
 * _Level:_ The center of the range defined by Window.
 * {{< svg-inline "static/tuto/icon/winLevel.svg" >}} _Preset:_ Specific values of Window and level. _Auto Level [Image]_ is the default value when changing a LUT and provides the best visual appearance of a Volume LUT.
-* _LUT Shape:_ The mapping (transfer function) between the input values and the display values can be linear, sigmoid and logarithmic. Default value is linear.
-* {{< svg-inline "static/tuto/icon/lut.svg" >}} _LUT (Volume LUT):_ A Volume Lookup Table (LUT) is a 3D LUT used to map the grayscale values of a volume dataset to color, opacity and lighting values for visualization. Choosing a LUT from the toolbar or the contextual menu is easier because the LUTs are displayed in an order according to the modality and with a preview.
+* _LUT Shape:_ The mapping (transfer function) between the input values and the display values can be linear, sigmoid, and logarithmic. Default value is linear.
+* {{< svg-inline "static/tuto/icon/lut.svg" >}} _LUT (Volume LUT):_ A Volume Lookup Table (LUT) is a 3D LUT used to map the grayscale values of a volume dataset to color, opacity, and lighting values for visualization. Choosing a LUT from the toolbar or the contextual menu is easier because the LUTs are displayed in an order according to the modality and with a preview.
 * {{< svg-inline "static/tuto/icon/inverseLut.svg" >}} allows you to invert the LUT.
 
 
@@ -80,11 +80,11 @@ Information about the graphics card and OpenGL capabilities, see [Requirements](
 * _Max 3D texture size:_ The maximum size of the volume according to X/Y (width and height of images) and according to Z (number of images in the stack composing the volume)
 
 {{% notice note %}}
-The maximum values of the default 3D textures come from the graphics card. However, it may be wise to decrease these values (e.g. 512) in order to allow a more efficient display of volumetric renderings for which the hardware resources are not sufficient.
+The maximum values of the default 3D textures come from the graphics card. However, it may be wise to decrease these values (e.g., 512) in order to allow a more efficient display of volumetric renderings for which the hardware resources are not enough.
 {{% /notice %}}
 
 #### Volume Rendering
-* _Dynamic quality:_ Allows you to make the render more fluid by reducing its quality (according to the z-axis) when it is rotating or being modified. When the slider is at maximum then there is no more quality reduction.
+* _Dynamic quality:_ Allows you to make the render more fluid by reducing its quality (according to the z-axis) when it is rotating or being modified. When the slider is at maximum, then there is no more quality reduction.
 * _Default orientation:_ The preferred orientation used when opening a volume rendering view. Default is Anterior position by turning 15 degrees to the right and 15 degrees downwards.
 * _Background color:_ Defines the background color of the rendering
 * _Light color:_ Defines the color of the light during the illumination of the rendering

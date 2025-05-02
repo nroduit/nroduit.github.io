@@ -27,7 +27,7 @@ Actions in the toolbar are:
 The zoom is on several graphic components. The first combo box represents the time, the second represents the voltage, and the slider allows you to zoom in both directions while preserving the aspect ratio.
 
 * Time (X-axis): The number of millimeters per second (by default is "_auto mm/s_")
-* Voltage (Y-axis): The number of millimeters per milli-volt (by default is "_auto mm/mV_")
+* Voltage (Y-axis): The number of millimeters per millivolt (by default is "_auto mm/mV_")
 
 The Display Format allows you to show the leads in different layouts.
 
@@ -41,12 +41,12 @@ Moving the cursor over the ECG displays the following information:
 The markers are the result of the measurements made on the ECG (yellow areas in the image above). A measurement is done by defining a starting and ending point:
 
 * _Start Time:_ The time in seconds according to the position of the first point
-* _Start Value:_ The voltage in milli-volt according to the position of the first point
+* _Start Value:_ The voltage in millivolt according to the position of the first point
 * _Stop Time:_ The time in seconds according to the position of the second point
-* _Stop Value:_ The voltage in milli-volt according to the position of the second point
+* _Stop Value:_ The voltage in millivolt according to the position of the second point
 * _Duration:_ The time elapsed between the 2 points
-* _Difference:_ The difference  in milli-volt between the start value and the end value
-* _Amplitude:_ The maximum variation in milli-volts from the start value to the end value
+* _Difference:_ The difference  in millivolt between the start value and the end value
+* _Amplitude:_ The maximum variation in millivolts from the start value to the end value
 
 The actions for making measurements are:
 

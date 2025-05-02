@@ -7,13 +7,13 @@ keywords: [ "workflow", "integration", "dicom viewer", "free dicom viewer", "ope
 
 ## <center>How to launch Weasis from any environments</center>
 
-Here we present how to launch Weasis with associated images from any context either [using weasis-pacs-connector](#use-weasis-pacs-connector) or [ViewerHub](../../../viewer-hub) as its successor,
+Here we present how to launch Weasis with associated images from any context either [using weasis-pacs-connector](#use-weasis-pacs-connector) or [ViewerHub](../../../viewer-hub) as its successor
 or by [building your own connector](#build-your-own-connector). The launch of the application is based on the [weasis protocol](../../../getting-started/weasis-protocol) available since {{% badge title="Version" %}}3.5.3{{% /badge %}}.
 
 Using [weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector) or [ViewerHub](../../../viewer-hub) allows a high degree of integration and facilitates connection to a PACS. Here are some of the advantages:
 
 - Automatically build a manifest according to a configuration with a PACS
-- The initial URL starts with HTTP and is then redirected to weasis://? (useful when custom URI scheme is not allowed by wiki, blog platforms, etc.)
+- The initial URL starts with HTTP and is then redirected to weasis://? (useful when a custom URI scheme is not allowed by wiki, blog platforms, etc.)
 - Efficiently manages to build the manifest simultaneously with the start of Weasis, optimizing loading time
 - Easily handles secure manifest requests and manages tokens for the DICOMWeb services
 

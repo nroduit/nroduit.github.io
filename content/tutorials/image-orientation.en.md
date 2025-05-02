@@ -9,7 +9,7 @@ keywords: [ "orientation", "dicom viewer", "free dicom viewer", "open source dic
 
 The orientation of the DICOM images is displayed by one or more uppercase letters in the middle on the top and left of the view.
 
-If _Anatomical Orientation Type (0010,2210)_ [attribute](../tags/) is absent or has a value of BIPED, anatomical direction is:
+If _Anatomical Orientation Type (0010,2210)_ [attribute](../tags/) is absent or has a value of BIPED, the anatomical direction is:
 
 * A: anterior
 * P: posterior
@@ -18,7 +18,7 @@ If _Anatomical Orientation Type (0010,2210)_ [attribute](../tags/) is absent or 
 * H: head
 * F: foot
 
-If _Anatomical Orientation Type (0010,2210)_ [attribute](../tags/) has a value of QUADRUPED (since {{% badge title="Version" %}}4.1.0{{% /badge %}}), anatomical direction is designated by:
+If _Anatomical Orientation Type (0010,2210)_ [attribute](../tags/) has a value of QUADRUPED (since {{% badge title="Version" %}}4.1.0{{% /badge %}}), the anatomical direction is designated by:
 * LE: Left
 * RT: Right
 * D: Dorsal
@@ -36,11 +36,11 @@ If _Anatomical Orientation Type (0010,2210)_ [attribute](../tags/) has a value o
 <br>
 
 {{% notice info %}}
-If the orientation is not perfectly aligned according to the 3 axes of the referential then there can be a secondary and tertiary orientation (in subscript) separated by "-".
+If the orientation is not perfectly aligned according to the three axes of the referential, then there can be a secondary and tertiary orientation (in subscript) separated by "-".
 {{% /notice %}}
 
 {{% notice info %}}
-For some modalities such as CR or DX, the orientation comes from the _Patient Orientation (0020,0020)_ attribute and is not displayed when using the rotation tools because it cannot be recalculated dynamically.
+For some modalities, such as CR or DX, the orientation comes from the _Patient Orientation (0020,0020)_ attribute and is not displayed when using the rotation tools because it cannot be recalculated dynamically.
 
 For other modalities such as CT and MRI, the orientation is always displayed because it is dynamically calculated.
 {{% /notice %}}

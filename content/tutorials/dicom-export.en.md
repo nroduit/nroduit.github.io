@@ -22,7 +22,7 @@ Export the view according to the original image with some options.
 ![Export view](/tuto/dicom-export-view.png?classes=shadow&width=350)
 <br>
 * Size: Change the image size in percent
-* Preserve 16-bit per channel: Option to preserve the pixel depth (e.g. 16-bit in PNG/JPEG 2000/TIFF, double values in TIFF). When this option is applied, the pixel values will match with the Modality LUT values (e.g. Hounsfield values). Exporting in JPEG Lossy is only possible when unchecked for 8-bit image.
+* Preserve 16-bit per channel: Option to preserve the pixel depth (e.g., 16-bit in PNG/JPEG 2000/TIFF, double values in TIFF). When this option is applied, the pixel values will match with the Modality LUT values (e.g., Hounsfield values). Exporting in JPEG Lossy is only possible when unchecked for an 8-bit image.
 * DICOM Pixel Padding: Apply the [DICOM pixel padding](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.5.html#sect_C.7.5.1.1.2) when checked
 * DICOM Shutter: Apply the [DICOM shutters](https://dicom.nema.org/medical/Dicom/current/output/chtml/part03/sect_C.7.6.11.html) when checked
 * DICOM Overlay: Apply the [DICOM overlays](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.9.2.html) when checked
@@ -46,13 +46,13 @@ In order to open the DICOM export window click on toolbar icon {{< svg-inline "s
 4. Export the selection and close the Window
 
 {{% notice tip %}}
-When opening the Export DICOM window, the checkbox of the study selected in the viewer (surrounded by an orange line) is automatically checked and open series have a full-line selection.
+When opening the Export DICOM window, the checkbox of the study selected in the viewer (surrounded by an orange line) is automatically checked, and open series have a full-line selection.
 
 In order to help with series selection, place the cursor on a series line, and you'll see a tooltip displaying its thumbnail.
 {{% /notice %}}
 
 {{% notice note %}}
-When DICOM data is exported in a native image format (JPG, PNG, JPEG 2000 or TIFF), only the images are transformed (see [original image options](#original-image)) and the encapsulated files (video, audio and PDF) are extracted.
+When DICOM data is exported in a native image format (JPG, PNG, JPEG 2000 or TIFF), only the images are transformed (see [original image options](#original-image)), and the encapsulated files (video, audio and PDF) are extracted.
 
 Multiframe images are exported by adding a number to the end of the file name.
 {{% /notice %}}
@@ -71,6 +71,6 @@ Multiframe images are exported by adding a number to the end of the file name.
    * Transcoding: It allows you to change the DICOM transfer syntax. Use this option only if you understand well what you are doing.
    * Generate new unique identifiers: Create new UIDs for some attributes. For an export, the consistency between UIDs and their references is preserved.
 3. *Add JPEG images* allows extracting the images and the encapsulated files (video, audio and PDF) into a JPEG folder
-4. *Add Weasis* allows embedding the viewer into the iso image. This option is only possible on Windows x86-64 (for exporting and running). Running the viewer directly on a CD/DVD ca be quite slow. To avoid that you can install the ISO on a USB stick or read the CD with a locally installed viewer as described in README.html.
+4. *Add Weasis* allows embedding the viewer into the iso image. This option is only possible on Windows x86-64 (for exporting and running). Running the viewer directly on a CD/DVD ca be quite slow. To avoid that, you can install the ISO on a USB stick or read the CD with a locally installed viewer as described in README.html.
 5. Select the patient/study/series/instance to export
 6. Export the selection and close the Window

@@ -29,14 +29,14 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/demo/seg.xml"
 
 {{% notice note %}}
 The regions tree has context menus that allow you to:
-* _Fill opacity_ (all nodes): The opacity of the interior of the shape, relative to the opacity of the line color (_Graphic Opacity_). The default value is 20%. For example, if the line color has an opacity of 80% and the fill opacity is 20%, then the perceived opacity will be 16% (0.8 * 0.2).
+* _Fill opacity_ (all nodes): The opacity of the interior of the shape, relative to the opacity of the line color (_Graphic Opacity_). The default value is 20%. For example, if the line color has opacity of 80% and the fill opacity is 20%, then the perceived opacity will be 16% (0.8 * 0.2).
 * _Select/Unselect all the child nodes_ (only for parent nodes)
 * _Show ih the images view_ (only for leaf nodes): The region with the highest surface area is displayed in the image overview.
 * _Pixel statistics from the selected view_ (only for leaf nodes): Show statistics of the pixel values within the region shape. For the definition of the statistics parameters, see graphic [Pixel Statistics](../draw-measure/#selected-measurement).
 {{% /notice %}}
 
 {{% notice tip %}}
-The regions tree has tooltips on leaf elements that show the region description and the region volume.
+The region tree has tooltips on leaf elements that show the region description and the region volume.
 {{% /notice %}}
 
 

@@ -28,7 +28,7 @@ Weasis uses [google-java-format](https://github.com/google/google-java-format) a
 ### Getting the source and building Weasis
 
 - Getting the Source
-  - For external Git client, see [Building Weasis](../building-weasis).
+  - For an external Git client, see [Building Weasis](../building-weasis).
   - From IntelliJ IDEA: *New > Project from Version Control...*
     - In the *Get from Version Control* dialog, select the menu *Repository URL* and enter the following URL: `https://github.com/nroduit/Weasis.git` (public repository)
 - Building Weasis plugins
@@ -75,7 +75,7 @@ In Eclipse launcher parameters, '&' within URLs needs to be escaped with a backs
   - Defines a new user (for getting specific preferences): `-Dweasis.user=user1`
   - Examples with specific configuration files:
     - For launching Weasis Dicomizer: `-Dfelix.extended.config.properties=file:target/conf/dicomizer.json`
-    - Configuration from an URL: `-Dfelix.extended.config.properties=https://mysite.com/weasis/conf/config.json`
+    - Configuration from a URL: `-Dfelix.extended.config.properties=https://mysite.com/weasis/conf/config.json`
 {{% notice note %}}
 **felix.config.properties** defines the location of base.json (the OSGI configuration and the list of plugins to install/start)<br>
 **felix.extended.config.properties** defines the location of a json file (extends/overrides base.json)

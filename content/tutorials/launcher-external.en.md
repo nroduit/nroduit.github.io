@@ -17,7 +17,7 @@ In the example above, we add a button to launch the Horos software on the Mac, i
 
 1. From the main menu, open _File > Preferences (Alt + P)_ and select the _Launcher_ item.
 2. Click on the _Add New_ button to create a new DICOM launcher.
-3. In DICOM launcher dialog, fill in the fields:
+3. In the DICOM launcher dialog, fill in the fields:
    * Name: the name of the launcher
    * Icon path: the icon to display in the menu and toolbar. The path can be absolute or relative to the Weasis resources folder. When the icon is not found, the default icon is displayed.
    * Enable: to display the launcher in the menu and toolbar

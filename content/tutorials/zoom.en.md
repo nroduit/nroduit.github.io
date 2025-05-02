@@ -7,7 +7,7 @@ keywords: [ "zoom", "lens", "dicom viewer",  "pacs viewer" ]
 
 ## <center>Zoom tool {{< svg-inline "static/tuto/icon/zoom.svg" >}}</center>
 
-The zoom tool can be associated with one of three mouse actions  . In the image below the zoom tool {{< svg-inline "static/tuto/icon/zoom.svg" >}} is associated with the middle mouse button. See also [zoom preferences](../dicom-2d-viewer/#preferences).
+The zoom tool can be associated with one of three mouse actions. In the image below, the zoom tool {{< svg-inline "static/tuto/icon/zoom.svg" >}} is associated with the middle mouse button. See also [zoom preferences](../dicom-2d-viewer/#preferences).
 
 The zoom factor can be modified from different locations:
 
@@ -18,7 +18,7 @@ The zoom factor can be modified from different locations:
 * Form the slider in the image tool panel
 * Using [Keyboard Shortcuts](../../basics/shortcuts) (_Ctrl + Plus (+)_, _Ctrl + Minus (-)_ and _Ctrl + Enter_) on the selected view
 
-The context menu and the toolbar button allows you to select different zoom factor:
+The context menu and the toolbar button allow you to select different zoom factors:
 
 * Actual pixel size {{< svg-inline "static/tuto/icon/zoomOriginal.svg" >}}: display the image at a 1:1 ratio, where each pixel in the image corresponds to one pixel on the screen
 * Real world (see [below](#real-world-zoom)) {{< svg-inline "static/tuto/icon/zoomRealWorld.svg" >}}
@@ -27,7 +27,7 @@ The context menu and the toolbar button allows you to select different zoom fact
 {{% notice note %}}
 The zoom function always zooms in/out to the center of the screen regardless of where the cursor is. This mode provides greater positional accuracy in particular situations.
 
-Since "Resize to best fit" is the default mode for a view, the image will be centered when scrolling to the next image. You need to change the mode or the zoom factor to keep the image off center when scrolling.
+Since "Resize to best fit" is the default mode for a view, the image will be centered when scrolling to the next image. You need to change the mode or the zoom factor to keep the image off the center when scrolling.
 {{% /notice %}}
 
 ![Zoom tool](/tuto/zoom-actions.jpg?classes=shadow&width=700px)
@@ -65,7 +65,7 @@ Parameters of the context menu:
 
 * *Synchronize to parent zoom:* When this option is activated, the zoom factor of the lens is permanently adjusted to the zoom factor of the main image (meaningful when using freeze parameters).
 * *Show Drawings:* Displays in the lens the visible drawings.
-* *Magnify:* Allows to select a zoom magnitude.
+* *Magnify:* Allows selecting a zoom magnitude.
 * *Image:* `Freeze parameters` allows you to keep the current image processing (c.f. Window/level, LUT or filter) and `Freeze image` allows you to keep the current image and its parameters.
 
 ![Lens freeze](/tuto/lens-freeze.jpg?classes=shadow&width=700px)

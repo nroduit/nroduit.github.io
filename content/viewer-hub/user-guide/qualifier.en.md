@@ -21,7 +21,7 @@ In order to be able to test specific versions or to be able to launch a version 
 
 In order to use this feature:
 - the weasis-native.zip file containing the specific version must be loaded into ViewerHub and associated with a group.
-- the "qualifier" property must be defined in the launch_prefered table and must be of type "qualifier".
+- the "qualifier" property must be defined in the launch_preferred table and must be of type "qualifier".
 
 ![launch_preferred_qualifier.png](/viewer-hub/qualifier/launch_preferred_qualifier.png)
 

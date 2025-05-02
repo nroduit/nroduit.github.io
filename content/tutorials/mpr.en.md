@@ -26,7 +26,7 @@ By default, zoom and window/level are also synchronized between the 3 views. The
 To configure the MPR view, you can access settings by clicking the settings icon {{< svg-inline "static/tuto/icon/viewSettings.svg" >}} in the top-right corner. The available options include:
 - **Center**: Center the crosshair in the view.
 - **Show Center of Crosshair**: Show or hide the center point of the crosshair.
-- **Show Crosshair**: Show or hide the crosshair lines. When hidden, the crosshair actions becomes inactive.
+- **Show Crosshair**: Show or hide the crosshair lines. When hidden, the crosshair actions become inactive.
 - **MIP Thickness**: Modify the thickness of the MIP in terms of pixel extension. You can also adjust it using _Alt + mouse scroll_ on an axis. Please note that the change in thickness may be delayed, as the MIP is computed in the background and doesn’t utilize 3D acceleration.
 - **MIP Type**:
   - **None**: No MIP applied.

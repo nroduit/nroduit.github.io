@@ -10,7 +10,7 @@ keywords: [ "histogram", "LUT", "VOI LUT",  "Modality LUT" ]
 Displaying the histogram allows you to view the distribution of the modality values.
 
 {{% notice note %}}
-Displaying the histogram allow you to better understand the effect on the pixel distribution wen changing all the LUT parameters from the Image Tool right panel.
+Displaying the histogram allows you to better understand the effect on the pixel distribution when changing all the LUT parameters from the Image Tool right panel.
 {{% /notice %}}
 
 To open the histogram, select the "Histogram" layout from the Layouts dropdown button (see the image below).
@@ -18,11 +18,11 @@ To open the histogram, select the "Histogram" layout from the Layouts dropdown b
 General histogram parameters:
 
 * *Channel:* With gray images only the Luminance channel is available. With color images, you can choose one of the following color models: RGB, HSV and HLS.
-* *Bins:* The bins are the intervals values of pixels. By default, this number is calculated by the max value minus the min value and cannot exceed 512. The value entered must be between 64 and 4096.
-* *Statistics:* Show the statistics of the histogram which allow you to analyze and to compare images or image regions in a quantitative way. For the definition of the statistics parameters, see graphic [Pixel Statistics](../draw-measure/#selected-measurement).
+* *Bins:* The bins are the interval values of pixels. By default, this number is calculated by the max value minus the min value and cannot exceed 512. The value entered must be between 64 and 4096.
+* *Statistics:* Show the statistics of the histogram which allow you to analyze and to compare images or image regions quantitatively. For the definition of the statistics parameters, see graphic [Pixel Statistics](../draw-measure/#selected-measurement).
 
 {{% notice note %}}
-The values on the x-axis represent the modality values (e.g. Hounsfield for CT) or the pixel values for some imaging types. If the unit of the pixel value of the modality exists, it is visible at the end of the histogram title.
+The values on the x-axis represent the modality values (e.g., Hounsfield for CT) or the pixel values for some imaging types. If the unit of the pixel value of the modality exists, it is visible at the end of the histogram title.
 {{% /notice %}}
 
 ![Open Histogram](/tuto/histogram.jpg?classes=shadow&width=700px)

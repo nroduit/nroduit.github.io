@@ -69,7 +69,7 @@ Expected Output:
 
 #### Pixel Depth (9-bit to 16-bit)
 
-Tests with different pixel depths to ensure correct image rendering.
+Tests with different pixel depths to ensure the correct image rendering.
 
 {{% notice info %}}
 **Expected Output**: Images rendered identically regardless of pixel depth.
@@ -247,7 +247,7 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/demo/video.xml"
 {{< /launch >}}
 
 {{% notice info %}}
-Open the default viewer (associated to the video mime type) of the operating system.
+Open the default viewer (associated with the video mime type) of the operating system. On Windows, it uses the Windows Media Player, which does not have an MPEG-2 codec installed by default. You can use VLC or any other video player.
 {{% /notice %}}
 
 ------------------------------------------------------------------------

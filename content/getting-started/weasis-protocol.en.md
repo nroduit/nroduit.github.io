@@ -11,7 +11,7 @@ The **Weasis Protocol** enables the launch of Weasis (starting from {{< badgeC "
 
 To launch Weasis from various contexts:
 1. **From a Web Page**: Create a link that begins with `weasis://?` (see below [How to build an URI](#how-to-build-a-uri)).<br>
-   If certain web frameworks (e.g. WIKI) or contexts only support HTTP protocols, you can use a URL redirection starting with `https://`. A tool such as [Weasis PACS Connector](https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector) can assist with this.
+   If certain web frameworks (e.g., WIKI) or contexts only support HTTP protocols, you can use a URL redirection starting with `https://`. A tool such as [Weasis PACS Connector](https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector) can help with this.
 2. **From the Command Line**: Utilize the appropriate Weasis command from the terminal:
 {{< tabs groupid="launchWeasisProtocol">}}
 {{% tab title="Windows" %}}
@@ -89,7 +89,7 @@ $image:get -u "https://user-images.githubusercontent.com/993975/59107662-6c9ed30
 The command for modifying the configuration at launch is `$weasis:config` which can have different arguments:
 
 * **cdb** is the Weasis web context (The URL of weasis.war). If the value is null, the weasis version installed from the [native installer](../) is used. In the weasis-pacs-connector <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector/blob/master/src/main/resources/weasis-pacs-connector.properties">configuration</a>, the default value is defined by `weasis.base.url`.
-* **cdb-ext** is the extension web context of Weasis (The URL of weasis-ext.war containing additionnal plugins). In the weasis-pacs-connector <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector/blob/master/src/main/resources/weasis-pacs-connector.properties">configuration</a>, the default value is defined by `weasis.ext.url`.
+* **cdb-ext** is the extension web context of Weasis (The URL of weasis-ext.war containing additional plugins). In the weasis-pacs-connector <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector/blob/master/src/main/resources/weasis-pacs-connector.properties">configuration</a>, the default value is defined by `weasis.ext.url`.
 * **arg** is an argument for the launcher. The value must start by $, like arg="$dicom:close --all" (Note: the value can also be directly in the base URI, outside $weasis:config). Single-valued argument but can be specified multiple times.
 * **pro** is a property for the launcher containing a key and a value separate by a space. Single-valued property but can be specified multiple times.
 * **auth** is the web authorization parameter
@@ -101,7 +101,7 @@ Here are some examples that modify the launcher properties without using <a targ
 {{< highlight shell >}}
 $weasis:config pro="felix.extended.config.properties file:conf/dicomizer.json" pro="gosh.port 17181"
 {{< /highlight >}}
-* Change the user, by default is the one of the current system session. The local preferences are associated to a user. {{< launch >}}$weasis:config pro="weasis.user user2"{{< /launch >}}
+* Change the user, by default, is the one of the current system session. The local preferences are associated to a user. {{< launch >}}$weasis:config pro="weasis.user user2"{{< /launch >}}
 {{< highlight shell >}}
 $weasis:config pro="weasis.user user2"
 {{< /highlight >}}

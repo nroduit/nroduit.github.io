@@ -8,7 +8,7 @@ weight: 80
 Translation files are hosted and managed on the [Transifex](https://app.transifex.com/weasis/public/) website. Get an account and help to translate to your language! If your language is missing, just head over to Transifex and request a new language.
 
 {{% notice warning %}}
-**Text length**: The translations for many languages frequently exceed the length of the corresponding English source. It could be a problem for the layout of graphical components (e.g. buttons). Some elements have a character limit on the translation tool.
+**Text length**: The translations for many languages frequently exceed the length of the corresponding English source. It could be a problem for the layout of graphical components (e.g., buttons). Some elements have a character limit on the translation tool.
 {{% /notice %}}
 
 {{% notice tip %}}
@@ -23,7 +23,7 @@ For special words or particular contexts look at the "Instructions" text box (gi
 To obtain daily built packages, see this [page](https://github.com/nroduit/weasis-i18n).
 
 {{% notice note %}}
-That means the translation packages can be deployed at any time, it does not need to follow the Weasis life cycle. With remote packages, the plugin translation will be updated by Weasis only if the timestamp number has changed. This timestamp is set during the build phase described below.
+That means the translation packages can be deployed at any time; it does not need to follow the Weasis life cycle. With remote packages, the plugin translation will be updated by Weasis only if the timestamp number has changed. This timestamp is set during the build phase described below.
 {{% /notice %}}
 
 {{% notice info %}}
@@ -54,7 +54,7 @@ Go in the *weasis-i18n* directory, Compile and install all the plugins in the lo
 $ mvn clean install -Dtransifex.token="<your-token>"
 {{< /highlight >}}
 
-All the APIs require to be authenticated. So the value "your-token" must be replaced by your generate token, see how to [get this token](https://docs.transifex.com/account/authentication) on Transifex.
+All the APIs require to be authenticated. So the value "your-token" must be replaced by your generated token, see how to [get this token](https://docs.transifex.com/account/authentication) on Transifex.
 
 Command if you are behind a proxy server:
 {{< highlight bash >}}
@@ -67,7 +67,7 @@ The distribution files are located in the *weasis-i18n-dist/target/dist* folder.
 
 ### Apply the translations
 
-The translation package can be built manually as described below or it is automatically built every 24 hours and can be downloaded from [here](https://github.com/nroduit/weasis-i18n#download-the-binary-package). When [Building Weasis](../building-weasis), the last package is downloaded automatically.
+The translation package can be built manually as described below, or it is automatically built every 24 hours and can be downloaded from [here](https://github.com/nroduit/weasis-i18n#download-the-binary-package). When [Building Weasis](../building-weasis), the last package is downloaded automatically.
 
 * In order to update Weasis with new translations, unzip weasis-i18n.zip and either:
   * Pass the weasis.i18n location into the [launch command](../weasis-protocol/#modify-the-launch-parameters):

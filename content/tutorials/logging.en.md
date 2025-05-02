@@ -9,7 +9,7 @@ keywords: [ "log", "logging", "dicom viewer", "free dicom viewer", "open source 
 
 The log folder that can be opened from the menu "_Help > Open the logging folder_" (since {{% badge title="Version" %}}4.1.0{{% /badge %}}) contains two types of log:
 1. A boot log file (boot.log) is always written since {{% badge title="Version" %}}3.5.0{{% /badge %}}
-2. Rolling log files (default.log) that need to be activated in the preferences dialog (see below _How to configure the rolling log files_)
+2. Rolling log files (default.log) that need to be activated in the preference dialog (see below _How to configure the rolling log files_)
 
 {{% notice tip %}}
 In order to determine the path of <user.home>/.weasis/log for versions prior to v4.1.0, go to the "_Help > About Weasis_" menu and find the property `weasis.path` in the "_System Information_" tab.
@@ -19,7 +19,7 @@ Once the file has reached its maximum size, it is compressed into a zip archive,
 
 ### Boot log files
 The boot log file is used to trace the startup configuration to ensure that the application starts with the correct input parameters and configuration.
-This type of logs is interesting if the application doesn't start, crash at startup, or if there is a problem with the startup preferences.
+This type of logs is interesting if the application doesn't start, crashes at startup, or if there is a problem with the startup preferences.
 
 ### How to configure the rolling log files
 ![Preferences](/tuto/logging.png?classes=shadow)
@@ -32,7 +32,7 @@ This type of logs is interesting if the application doesn't start, crash at star
 * Select a stacktrace limit which represents the number of lines (by default 3). No value is recommended for investigating problems (it means unlimited stacktrace lines)
 
 {{% notice info %}}
-The default logging configuration comes from base.json, see [Weasis Preferences](../../basics/customize/preferences). Some default values has changed since {{% badge title="Version" %}}4.4.0{{% /badge %}}.
+The default logging configuration comes from base.json, see [Weasis Preferences](../../basics/customize/preferences). Some default values have changed since {{% badge title="Version" %}}4.4.0{{% /badge %}}.
 {{% /notice %}}
 
 

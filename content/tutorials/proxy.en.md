@@ -21,7 +21,7 @@ In some cases it is necessary to restart Weasis.
 {{% /notice %}}
 
 ### Configuration at launch
-For setting JVM properties at launch, the selection in user interface must be *Direct connection (no proxy) or configuration at launch*.
+For setting JVM properties at launch, the selection in the user interface must be *Direct connection (no proxy) or configuration at launch*.
 
 {{% notice tip %}}
 The Java options can be manually set in the section "[JavaOptions]" of Weasis.cfg (in the installed path).

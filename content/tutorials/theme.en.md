@@ -14,7 +14,7 @@ From the main menu, open _File > Preferences (Alt + P)_ and select the desired t
 <br>
 
 ### How to scale the user interface
-It is recommended to adapt the scale factor to the one of the system (2). In this way, Weasis will scale on HiDPI displays as the operating system. On Windows it is the *Display Scaling* preference and on  Linux it is either the display scaling factor or the text scaling factor.
+It is recommended to adapt the scale factor to the one of the system (2). In this way, Weasis will scale on HiDPI displays as the operating system. On Windows it is the *Display Scaling* preference, and on  Linux it is either the display scaling factor or the text scaling factor.
 
 However, the scaling factor can be increased (or even decreased) independently of the system. That means all the elements of the graphical interface will be adapted (fonts, icons, graphic components...).
 

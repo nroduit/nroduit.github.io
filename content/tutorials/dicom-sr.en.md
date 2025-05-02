@@ -32,4 +32,4 @@ The content of the SR object is displayed in a tree structure. Each node in the 
 
 Some items can have a link to other content items, and the viewer provides a way to navigate through the tree by clicking on the links. 
 
-This link can also open a related image which can contain measurements defined in the SR object (e.g. in the image above, clicking on _POLYLINE_ will open the image and display the polyline).
+This link can also open a related image which can contain measurements defined in the SR object (e.g., in the image above, clicking on _POLYLINE_ will open the image and display the polyline).

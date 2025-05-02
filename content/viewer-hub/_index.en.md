@@ -5,7 +5,7 @@ pre: "<b>3. </b>"
 keywords: [ "viewer-hub", "weasis-viewer-hub", "launcher", "dicom viewer", "pacs", "dicom", ]
 ---
 
-[**ViewerHub**](https://github.com/nroduit/viewer-hub) is the successor to [weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector). This is a server component with an administration interface for managing preferences, plugins and versions of Weasis with DICOM archives.
+[**ViewerHub**](https://github.com/nroduit/viewer-hub) is the successor to [weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector). This is a server component with an administration interface for managing preferences, plugins, and versions of Weasis with DICOM archives.
 
 Essentially, it simplifies the management of Weasis in IT environments and facilitates connections to DICOM archives.
 

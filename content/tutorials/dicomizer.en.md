@@ -51,7 +51,7 @@ The combo box contains the list of the last folders used. Connecting a USB devic
 The **Album** panel allows you to manage the DICOM tags at the patient, study, and instance levels.
 
 - The left panel shows the group list representing DICOM series.
-- The main panel displays the thumbnails of the imported media files and allows you to select the images to edit the DICOM tags or by double click to open the image in the Photo Editor.
+- The main panel displays the thumbnails of the imported media files and allows you to select the images to edit the DICOM tags or by double-click to open the image in the Photo Editor.
 - The bottom panel shows the DICOM tags of the selected images. Note that the image level tags are displayed only when a single image is selected.
 
 The bottom panel organizes DICOM tags into categorized tree structures:
@@ -103,7 +103,7 @@ Various actions are accessible from the contextual menu of a thumbnail:
 
 ### Edit the Images
 
-The **Photo Editor** provides tools to crop, rotate, and adjust the image contrast. You can also add annotations to highlight specific areas and use measurement tools to indicate distances, angles, or areas. Additionally, the image can be calibrated using a known distance for obtaining real-world measurements.
+The **Photo Editor** provides tools to crop, rotate, and adjust the image contrast. You can also add annotations to highlight specific areas and use measurement tools to indicate distances, angles, or areas. Additionally, the image can be calibrated using a known distance for getting real-world measurements.
 
 ### Publish DICOM Files
 
@@ -113,12 +113,12 @@ Click the **Publish** button to send the DICOM files to a remote DICOM archive. 
 - Specify the destination of the DICOM files from the list of DICOM remote nodes.
 
 {{% notice note %}}
-The destination can be a specific remote node or a list of remote nodes available from the main menu, open _File > Preferences (Alt + P)_ and select DICOM node list and edit ar add a new DICOM node.
+The destination can be a specific remote node or a list of remote nodes available from the main menu, open _File > Preferences (Alt + P)_ and select "DICOM node list" and edit ar add a new DICOM node.
 
 When the Dicomizer destination is specified in the [preferences](../../basics/customize/preferences), the list is not selectable in the publication panel. The preference items are the ones starting with `weasis.acquire.dest`.
 {{% /notice %}}
 
 
 {{% notice tip %}}
-A green checked icon on the thumbnail indicates that the image has been successfully published.
+A green-checked icon on the thumbnail indicates that the image has been successfully published.
 {{% /notice %}}

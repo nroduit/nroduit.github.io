@@ -16,7 +16,7 @@ Since version 4, only the distribution with a native installer is maintained to 
 For details about GLIBC versions and Linux distribution compatibility, see this [page](https://repology.org/project/glibc/versions).
 
 {{% notice note %}}
-To manage Weasis version at the server side, it is possible to install the [Weasis web package](https://github.com/nroduit/weasis-pacs-connector#installation) which will upgrade the native installation at the client side (it works for minor releases by updating all the plugins except the launcher).<br>
+To manage a Weasis version at the server side, it is possible to install the [Weasis web package](https://github.com/nroduit/weasis-pacs-connector#installation) which will upgrade the native installation at the client side (it works for minor releases by updating all the plugins except the launcher).<br>
 Explore more integration possibilities with other systems [here](../basics/customize/integration).
 {{% /notice %}}
 

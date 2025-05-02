@@ -35,17 +35,17 @@ You can navigate through the Patient/Study/Series/Image structure using only [ke
 #### Study Level
 * A study contains one or more series (thumbnails) belonging to a patient. A line representing the study surrounds its series (see image above).
 * By default, the studies are sorted by reverse chronology order (since {{% badge title="Version" %}}4.1.0{{% /badge %}} "_Study data sorting_" can be changed in the menu "_File > Preferences > DICOM > DICOM Explorer_"). If there is no study date then the studies are sorted alphabetically according to the Study Description.
-* By default, all the studies are displayed, however you can choose to display only one of them from the study combobox.
+* By default, all the studies are displayed, however, you can choose to display only one of them from the study combobox.
 
 #### Series Level
 ![Thumbnails](/tuto/dicom-explorer-series.jpg?classes=shadow&width=700px)
 <br>
 * A series is represented by a thumbnail that contains a certain number of images (number displayed at the bottom left).
-* According to [predefined rules](https://github.com/nroduit/Weasis/blob/master/weasis-distributions/resources/series-splitting-rules.xml), some series are separated into sub-series also represented by a thumbnail with a number preceded by '#' in the upper right corner. Series splitting is necessary for the consistency of some tools such as the MPR, cross-lines and synchronization of series. However, sometimes separation is not desired, and sub-series can be [re-merged using the context menu](https://www.youtube.com/watch?v=tttP__1Sbsc).
-* The sorting of the series is done by the serial number and if this last one is not present then in a chronological way by the date of the series or other dates.
+* According to [predefined rules](https://github.com/nroduit/Weasis/blob/master/weasis-distributions/resources/series-splitting-rules.xml), some series are separated into subseries also represented by a thumbnail with a number preceded by '#' in the upper right corner. Series splitting is necessary for the consistency of some tools such as the MPR, cross-lines and synchronization of series. However, sometimes separation is not desired, and sub-series can be [re-merged using the context menu](https://www.youtube.com/watch?v=tttP__1Sbsc).
+* The sorting of the series is done by the serial number and if this last one is not present, then in a chronological way by the date of the series or other dates.
 * To open new series:
-  * Drag and drop a thumbnail in the main area (if the series is dropped in a view of the same patient then the series is replaced otherwise a new tab is created).
-  * Double click or navigate with the `up/down arrow` key and press `return` on a selected thumbnail (if a view of the same patient exists then the series in the view surrounded by an orange line is replaced)
+  * Drag and drop a thumbnail in the main area (if the series is dropped in a view of the same patient, then the series is replaced, otherwise a new tab is created).
+  * Double click or navigate with the `up/down arrow` key and press `return` on a selected thumbnail (if a view of the same patient exists, then the series in the view surrounded by an orange line is replaced)
   * Select one or more thumbnails and choose an action from the "2D DICOM Viewer" context menu:
     * Open: Opens the series in the most appropriate layout (replaces the series if the patient's tab already exists)
     * Open in new tab: Opens the series in the most appropriate layout in a new tab.

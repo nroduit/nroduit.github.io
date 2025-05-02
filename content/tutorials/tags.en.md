@@ -30,7 +30,7 @@ The Dicom Information window contains two tabs:
 
 {{% notice note %}}
 When the data element contains several values, each value is separated by '\\'.<br><br>
-Data element with a [value representation (VR)](https://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_6.2.html) OB, OD, OL, OF, OW and UN shows "binary data" as value.
+Data element with a [value representation (VR)](https://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_6.2.html) OB, OD, OL, OF, OW and UN shows "binary data" as a value.
 {{% /notice %}}
 
 ![Search DICOM tags](/tuto/dicom-attributes-search.jpg?classes=shadow)

@@ -16,7 +16,7 @@ The following list describes the types of plugins, the interfaces they implement
 1. **Media Viewer or Editor**
     - Represents the main central panel and implements either `ViewerPlugin` or `ImageViewerPlugin`.
     - The factory for this type implements `SeriesViewerFactory`.
-    - For DICOM special modalities, you can use `DicomSpecialElementFactory` to associate a viewer to a specific DICOM object.
+    - For DICOM special modalities, you can use `DicomSpecialElementFactory` to associate a viewer with a specific DICOM object.
 2. **Toolbar Associated with a Viewer**
     - Implements the `Toolbar` or `DynamicToolbar` interface.
     - The factory for this type implements `InsertableFactory`
@@ -147,7 +147,7 @@ This feature will be available soon. It will allow you to manage the plugins and
 ### Build OSGi Services
 
 All the plugin type described in the list above are OSGi services that are registered and aggregated in the GUI. Building the plugin from the Maven archetype will configure the OSGi service automatically. For adding new OSGi services, here is the procedure:
-1. Create a class that implements the `Insertable` interface and represents a visual component. For example:
+1. Create a class that implements the `Insertable` interface and represents a visual component. For example,
     {{< highlight java >}}
     public class MyPrefView extends AbstractItemDialogPage {
     
@@ -173,7 +173,7 @@ All the plugin type described in the list above are OSGi services that are regis
     }
     {{< /highlight >}}
 
-2. Create a class that implements one of the plugin factories and include the annotations `@Component` and the `@Service` parameter. For example:
+2. Create a class that implements one of the plugin factories and include the annotations `@Component` and the `@Service` parameter. For example,
 {{< highlight java >}}
 @org.osgi.service.component.annotations.Component(service = PreferencesPageFactory.class)
 public class MyViewerPrefFactory implements PreferencesPageFactory {

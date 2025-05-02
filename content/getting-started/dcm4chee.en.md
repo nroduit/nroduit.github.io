@@ -11,7 +11,7 @@ Weasis is launched from the dcm4chee administrative web interface with the [weas
 
 ![dcm4chee-arc-light](/gallery-dcm4chee/1Weasis%20in%20dcm4chee-arc-light.png?classes=border "dcm4chee-arc-light")
 
-For a simpler and faster installation without server components, please follow these [instructions](../../basics/customize/integration/#download-directly-with-dicomweb-restful-services); no need to consider the following points on this page. Otherwise if you need more advanced configurations then follow these steps:
+For a simpler and faster installation without server components, please follow these [instructions](../../basics/customize/integration/#download-directly-with-dicomweb-restful-services); no need to consider the following points on this page. Otherwise, if you need more advanced configurations, then follow these steps:
 
 1. [Install dcm4chee](https://github.com/dcm4che/dcm4chee-arc-light/wiki), if not already done (Installation with Docker is straightforward).
 
@@ -51,9 +51,9 @@ deployment-overlay add --name=dcm4chee-arc --deployments=weasis-pacs-connector.w
 5. To activate Weasis in the dcm4chee-arc-light user interface (see the matrix of the required versions in the table below):
  you need to add attributes by either editing docker-compose.env (from 5.22.0) or from the left menu Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE (add `&cdb` to the URL if weasis.war has not been deployed on the server-side):
      - Configure the URL for having a view button for the patient or study level.
-        - From dcm4chee-arc-light 5.10.2 to 5.19.0 the left menu Configuration > Devices > dcm4chee-arc > Extensions > Archive Device
+        - From dcm4chee-arc-light 5.10.2 to 5.19.0, the left menu Configuration > Devices > dcm4chee-arc > Extensions > Archive Device
         - From dcm4chee-arc-light 5.19.1 the left menu Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE
-        - From dcm4chee-arc-light 5.22.0 by editing docker-compose.env (It allows you to directly apply the properties when deploying, then the can be edited in the web portal). Note: the character ‘&’ must be escaped (e.g. IID_STUDY_URL=../../weasis-pacs-connector/weasis?studyUID={{studyUID}}\\&access_token={{access_token}})
+        - From dcm4chee-arc-light 5.22.0 by editing docker-compose.env (It allows you to directly apply the properties when deploying, then they can be edited in the web portal). Note: the character ‘&’ must be escaped (e.g., IID_STUDY_URL=../../weasis-pacs-connector/weasis?studyUID={{studyUID}}\\&access_token={{access_token}})
 {{% notice note %}}
 **URL parameters**
 

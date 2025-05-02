@@ -32,14 +32,14 @@ The meaning of the standard print parameters:
 
 * *Image position:* the position of the image in the print area.
 * *Image DPI:* the print resolution in dot per inch (Default value is 150). Higher DPI means higher resolution.
-* *Print image with annotations:* Allows to print the annotations defined in the [Display]() panel.
+* *Print image with annotations:* Allows printing the annotations defined in the [Display]() panel.
 * *Print only the selected view:* When this option is checked, only the selected view is printed (view with an orange border). Otherwise, all the views of the layout are printed.
 
 
 ### DICOM Print
 From the main menu, open _File > Print > DICOM Print_.
 
-In the DICOM Print dialog, you can manage several configurations. For the options meaning, you can refer to the above parameters and <a target="_blank" href="https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.13.3.html">the DICOM print pages</a>.
+In the DICOM Print dialog, you can manage several configurations. For meaning of the options, you can refer to the above parameters and <a target="_blank" href="https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.13.3.html">the DICOM print pages</a>.
 
 ![DICOM](/tuto/print/dicom.png?classes=shadow)
 <br>

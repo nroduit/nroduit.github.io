@@ -58,7 +58,7 @@ COMMAND is (sequence|winLevel|zoom|pan|rotation|crosshair|measure|draw|contextMe
 g! dcmview2d:move
 Pan the selected image
 Usage: dcmview2d:move -- X Y
-X and Y are Integer. It is mandatory to have '--' (end of options) for negative values
+X and Y are Integer. It is mandatory to have '--' (the end of options) for negative values
   -? --help       show help
 {{< /highlight >}}
 
@@ -102,7 +102,7 @@ VALUE is (None|Stack|Tile)
 g! dcmview2d:wl
 Change the window/level values of the selected image (increase or decrease into a normalized range of 4096)
 Usage: dcmview2d:wl -- WIN LEVEL
-WIN and LEVEL are Integer. It is mandatory to have '--' (end of options) for negative values
+WIN and LEVEL are Integer. It is mandatory to have '--' (the end of options) for negative values
   -? --help       show help
 {{< /highlight >}}
 
@@ -126,9 +126,9 @@ Load DICOM files remotely or locally
 Usage: dicom:get ([-l PATH]... [-w URI]... [-r URI]... [-p] [-i DATA]... [-z URI]...)
 PATH is either a directory(recursive) or a file
   -l --local=PATH   open DICOMs from local disk
-  -r --remote=URI   open DICOMs from an URI
+  -r --remote=URI   open DICOMs from a URI
   -w --wado=URI     open DICOMs from an XML manifest
-  -z --zip=URI      open DICOM ZIP from an URI
+  -z --zip=URI      open DICOM ZIP from a URI
   -p --portable     open DICOMs from configured directories at the same level of the executable
   -i --iwado=DATA   open DICOMs from an XML manifest (GZIP-Base64)
   -? --help         show help
@@ -172,7 +172,7 @@ g! image:get
 Load images remotely or locally
 Usage: image:get ([-f file]... [-u url]...)
   -f --file=FILE     open an image from a file
-  -u --url=URL       open an image from an URL
+  -u --url=URL       open an image from a URL
   -? --help          show help
 {{< /highlight >}}
 
@@ -220,7 +220,7 @@ arg is an XML text in UTF8 or an url with the option '--url'
   -x --xml         open Patient Context from an XML data containing all DICOM Tags
   -i --inbound     open Patient Context from an XML data containing all DICOM Tags, decoding syntax is [Base64/GZip]
   -s --iurlsafe    open Patient Context from an XML data containing all DICOM Tags, decoding syntax is [Base64_URL_SAFE/GZip]
-  -u --url         open Patient Context from an URL (XML file containing all DICOM TAGs)
+  -u --url         open Patient Context from a URL (XML file containing all DICOM TAGs)
   -? --help        show help
 {{< /highlight >}}
 
@@ -239,6 +239,6 @@ A command containing special characters like '&' or space must be within quotes 
 {{< highlight text >}}
 dicom:get -w "http://localhost/weasis-pacs-connector/manifest?patientID=97026728&modalitiesInStudy=MR"
 {{< /highlight >}}
-Depending the command line system, quotes or double quote needs to be escaped with a backslash. Ex. simple quote must be escaped in Eclipse but not in Intellij.
+Depending on the command line system, quotes or double quote needs to be escaped with a backslash. With IDE, a simple quote must be escaped in Eclipse but not in Intellij.
 {{% /notice %}}
 

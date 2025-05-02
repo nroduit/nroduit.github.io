@@ -29,7 +29,7 @@ When uploading a new version in ViewerHub or when starting the application (in c
 
 These combinations will be stored in a redis cache. This cache is currently refreshed every 24 hours.
 
-So when a client will launch Weasis via ViewerHub, it will directly know which version, i18n, resources to use when launching Weasis on the user computer.
+So when a client launches Weasis via ViewerHub, it will directly know which version, i18n, resources to use when launching Weasis on the user computer.
 
 ## Minio/S3
 
