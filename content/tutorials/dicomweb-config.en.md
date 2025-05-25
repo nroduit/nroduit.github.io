@@ -98,13 +98,45 @@ To configure a dcm4chee-arc-light node:
 3. Select DICOMWeb service
 4. Enter the URL of your dcm4chee-arc-light server. The default endpoint typically follows this pattern:
     {{< highlight text >}}
-    http(s)://[server-address]:8080/dcm4chee-arc/aets/[AE_TITLE]/rs
+    http(s)://[server-address]:[8080|8443]/dcm4chee-arc/aets/[AE_TITLE]/rs (e.g., http://localhost:8080/dcm4chee-arc/aets/DCM4CHEE/rs)
     {{< /highlight >}}
 
-If authentication is required:
+If authentication is required in dcm4chee-arc-light, here are the steps to configure it for client access in Weasis:
+
+**In Weasis:**
 1. Click on the *Manager* button
 2. Click *Add* to create a new authentication
-3. Select "Default Keycloak" from the templates and fill in the other required fields
+3. Select "Default Keycloak" from the templates and fill in the other required fields: 
+   - Name: `dcm4chee-arc-light`
+   - Base URL: `https://[server-address]:8843`
+   - Realm: `dcm4che`
+   - Client ID: `weasis`
+   - Client Secret: the secret you copied from Keycloak, see below
+   - Scope: `openid`
+   - Audience: leave empty
+
+**In Keycloak: Add the Weasis client for DICOMWeb access:**
+1. Log in to the Keycloak Admin Console (typically for secure at `https://[server-address]:8843/admin/dcm4che/console`)
+2. To add the Weasis client:
+   - Click on "Clients" in the left menu
+   - Click the "Create" button
+
+3. Configure the new client in general settings:
+   - Client Type: select "OpenID Connect"
+   - Client ID: `weasis`
+
+4. Capability config:
+   - Client authentication: ON
+   - Standard flow: ON
+   - Direct access grants: ON
+
+5. Login settings:
+   - Root URL: leave empty
+   - Valid Redirect URIs: add `http://127.0.0.1*`
+   - Web Origins: add `+` to allow any origin that matches a Valid Redirect URI
+   - Click "Save"
+   - Copy the Client Secret from the "Credentials" tab
+
 
 #### Amazon HealthLake
 
