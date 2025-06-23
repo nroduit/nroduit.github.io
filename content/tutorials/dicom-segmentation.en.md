@@ -28,11 +28,16 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/demo/seg.xml"
 <br>
 
 {{% notice note %}}
-The regions tree has context menus that allow you to:
-* _Fill opacity_ (all nodes): The opacity of the interior of the shape, relative to the opacity of the line color (_Graphic Opacity_). The default value is 20%. For example, if the line color has opacity of 80% and the fill opacity is 20%, then the perceived opacity will be 16% (0.8 * 0.2).
-* _Select/Unselect all the child nodes_ (only for parent nodes)
-* _Show ih the images view_ (only for leaf nodes): The region with the highest surface area is displayed in the image overview.
-* _Pixel statistics from the selected view_ (only for leaf nodes): Show statistics of the pixel values within the region shape. For the definition of the statistics parameters, see graphic [Pixel Statistics](../draw-measure/#selected-measurement).
+The region tree has context menus that allow you to:
+* **Select/Unselect all the child nodes** (only for parent): Quickly toggles visibility for all subregions within a parent category. Unchecking only the parent makes all children invisible.
+* **Fill opacity**: Controls the transparency of the region's interior relative to its border
+    - Default value: 20%
+    - Calculation: Final opacity = Line opacity × Fill opacity
+    - Example: 80% line opacity + 20% fill opacity = 16% perceived interior opacity
+* **Show in the image view** (only for leaf): Displays the region with the largest surface area in the image view
+* **Pixel statistics from the selected view** (only for leaf): Analyzes pixel values within the region boundaries
+    - Provides comprehensive statistical data for the enclosed area
+    - For detailed parameter definitions, refer to [Pixel Statistics](../draw-measure/#selected-measurement)
 {{% /notice %}}
 
 {{% notice tip %}}
