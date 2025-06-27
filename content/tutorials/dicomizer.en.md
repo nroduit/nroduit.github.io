@@ -34,16 +34,31 @@ An example for launching Weasis Dicomizer {{< launch >}}$weasis:config pro="feli
 $weasis:config pro="felix.extended.config.properties file:conf/dicomizer.json" pro="gosh.port 17181"
 {{< /highlight >}}
 
-### Import Images
+### Import Media Files
+
+The Dicomizer tool supports encapsulating the following file types into DICOM objects:
+
+- **Standard images**: Includes formats such as TIFF, BMP, GIF, JPEG, PNG, RAS, HDR, and PNM. These are converted to JPEG lossy to ensure compatibility with the DICOM standard.
+- **PDF documents (application/pdf)** {{% badge title="Version" %}}4.6.2{{% /badge %}}: Ideal for integrating reports, forms, or scanned documents into DICOM archives.
+- **STL files (model/stl)** {{% badge title="Version" %}}4.6.2{{% /badge %}}: Used for 3D printing and surgical planning.
+- **MPEG-2 video files (video/mpeg)** {{% badge title="Version" %}}4.6.2{{% /badge %}}: Maintains compatibility with legacy medical imaging systems.
+- **MPEG-4 video files (video/mp4)** {{% badge title="Version" %}}4.6.2{{% /badge %}}: A modern format for high-quality medical videos, such as endoscopy, ultrasound, or surgical recordings. _Note: Not all MPEG-4 profiles are supported by the DICOM standard._
+
 1. Using the left panel, navigate through the file system to locate the images you want to convert. Click the button next to the combo box on the right to choose the folder containing the media files eligible for DICOM conversion.
 
-2. Drag and drop images into the central panel. By default, the images are grouped into a single series. Alternatively, you can split the images into different series by selecting the thumbnails and clicking the `Import` button. The dialog offers three options:
-   - **Do not group**: All images are imported into a single series (same as drag-and-drop).
-   - **Group by date**: Images are split into different series based on the acquisition date. You can specify the maximum time difference between two images to include them in the same series.
-   - **Group by name**: All images are imported into a single series with a custom name.
+2. you can organize images into separate series by selecting thumbnails from the left panel and clicking the **Import** button. The resulting dialog offers three grouping options:
+   - **Do not group**: All images are imported into a single series (same behavior as drag-and-drop).
+   - **Group by date**: Images are divided into separate series based on their acquisition date, with an option to set the maximum time difference between images to group them together.
+   - **Group by name**: All images are imported into a single series and assigned a custom name.
+
+3. Alternatively, you can drag and drop files from the system file explorer into the central panel. Images will either be grouped into the current series if applicable, or assigned to a default series based on their media type.
+
+{{% notice note %}}
+Buttons that group series cannot be deleted directly. To remove a button, you must first remove all associated elements (thumbnails in the central panel).
+{{% /notice %}}
 
 {{% notice tip %}}
-The combo box contains the list of the last folders used. Connecting a USB device  will automatically add the device path to the list.
+The combo box contains the list of the last folders used. Connecting a USB device will automatically add the device path to the list.
 {{% /notice %}}
 
 ### Edit DICOM Tags
@@ -96,7 +111,7 @@ Person name fields (PatientName, OperatorsName, etc.) should be formatted as `La
 
 {{% notice tip %}}
 Various actions are accessible from the contextual menu of a thumbnail:
-- **Edit**: Opens the Photo Editor to crop, rotate, or adjust the image. Double-clicking on the thumbnail has the same effect.
+- **Edit** (only for image): Opens the Photo Editor to crop, rotate, or adjust the image. Double-clicking on the thumbnail has the same effect.
 - **Remove**: Deletes the image from the series without affecting the original file.
 - **Move to...**: Moves the image to a different series.  
 {{% /notice %}}
@@ -107,17 +122,17 @@ The **Photo Editor** provides tools to crop, rotate, and adjust the image contra
 
 ### Publish DICOM Files
 
-Click the **Publish** button to send the DICOM files to a remote DICOM archive. The **Publication** panel allows you to:
-- Select the images to be published (all by default).
-- Handle the resolution of the images.
-- Specify the destination of the DICOM files from the list of DICOM remote nodes.
+Click the **Publish** button to send DICOM files to a remote DICOM archive, or the **Export locally** button to save the files to your local system. The **Publication** panel provides the following options:
+- Select specific DICOM items for publication (all items are selected by default).
+- Adjust the resolution for images with high resolution.
+- Choose the target destination for the DICOM files from a list of remote DICOM nodes.
+- Choose a calling node (Sender AET Title) that complies with your archive’s restrictions, if applicable.
 
 {{% notice note %}}
 The destination can be a specific remote node or a list of remote nodes available from the main menu, open _File > Preferences (Alt + P)_ and select "DICOM node list" and edit ar add a new DICOM node.
 
 When the Dicomizer destination is specified in the [preferences](../../basics/customize/preferences), the list is not selectable in the publication panel. The preference items are the ones starting with `weasis.acquire.dest`.
 {{% /notice %}}
-
 
 {{% notice tip %}}
 A green-checked icon on the thumbnail indicates that the image has been successfully published.
