@@ -83,8 +83,8 @@ keepWhitespace = false
   # graphs; you usually will not need it and you should remove this for
   # security reasons
   mermaidInitialize = "{ \"securityLevel\": \"loose\" }"
-  jdkVersion = "23"
-  mavenVersion = "3.6.3"
+  jdkVersion = "24"
+  mavenVersion = "3.8.1"
 
 [caches]
   [caches.getjson]
