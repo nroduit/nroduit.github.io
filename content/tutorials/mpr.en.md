@@ -11,7 +11,6 @@ The multiplanar reconstruction (MPR) allows you to create, from the original pla
 
 The MPR view inherits most properties and actions of the [DICOM 2D viewer](../dicom-2d-viewer), except for the crosshair tool, which remains active regardless of the selected action (from {{% badge title="Version" %}}4.6.0{{% /badge %}}). You can open the MPR view by clicking the {{< svg-inline "static/tuto/icon/mpr.svg" >}} icon in the toolbar or by right-clicking a thumbnail in the [DICOM explorer](../dicom-explorer/).
 
-
 {{% notice note %}}
 The menu and the toolbar button will only be active if the series contains at least **5 images**.
 {{% /notice %}}
@@ -21,7 +20,8 @@ The crosshair actions in the MPR are synchronized with the other views and inclu
 - {{< svg-inline "static/tuto/icon/mpr-hand.svg" >}} **Move Axis**: Adjust the crosshair along the axes by selecting and dragging one of the lines.
 - {{< svg-inline "static/tuto/icon/mpr-rotate.svg" >}} **Rotate**: Rotate the crosshair around its center by dragging the points along the axes.
 
-By default, zoom and window/level are also synchronized between the 3 views. The MRR views can be displayed in different layouts {{< svg-inline "static/tuto/icon/layout.svg" >}}.
+By default, zoom and window/level are also synchronized between the three views. The synchronization of these actions can be deactivated by setting the synchronization drop-down button {{< svg-inline "static/tuto/icon/synch.svg" >}} (on the right of the layout button) to **None**.
+The MRR views can be displayed in different layouts {{< svg-inline "static/tuto/icon/layout.svg" >}}.
 
 To configure the MPR view, you can access settings by clicking the settings icon {{< svg-inline "static/tuto/icon/viewSettings.svg" >}} in the top-right corner. The available options include:
 - **Center**: Center the crosshair in the view.
