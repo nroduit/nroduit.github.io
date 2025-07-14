@@ -39,7 +39,7 @@ locale.lang.code=fr_CH
 {{< /highlight >}}
 3. The default value is "en\_US"
 
-## List of Preferences
+## List of preferences
 The preferences listed below are extracted from the `base.json` file, which is located in [the source code](https://github.com/nroduit/Weasis/tree/master/weasis-distributions/etc/config).
 
 The properties are grouped into categories (note: not all categories are shown in the list below), and each property includes the following details:
@@ -52,7 +52,13 @@ The properties are grouped into categories (note: not all categories are shown i
    - **AP**: Always processed by the viewer but only from `base.json` or other `.json` files.
 5. **Description**: A brief explanation of the property, provided on the second line.
 
+### Base preferences
+
 {{< render-preferences url="https://raw.githubusercontent.com/nroduit/Weasis/refs/heads/master/weasis-distributions/etc/config/base.json" categories="LOG,LAUNCH,GENERAL,DICOM,VIEWER,UI" >}}
+
+### Dicomizer preferences
+
+{{< render-preferences url="https://raw.githubusercontent.com/nroduit/Weasis/refs/heads/master/weasis-distributions/etc/config/dicomizer.json" categories="LOG,LAUNCH,GENERAL,DICOM,VIEWER,UI,METADATA" >}}
 
 
 ### Customize resources

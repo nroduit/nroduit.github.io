@@ -35,7 +35,7 @@
       <!-- Convert $category to camel case by capitalizing the first letter -->
       {{ $category := printf "%s%s" (upper (substr $categoryKey 0 1)) (lower (substr $categoryKey 1)) }}
       {{ if in $categories $categoryKey }}
-        <h3>{{ $category }} Category</h3>
+        <h5>{{ $category }} Category</h5>
         <ul>
           {{ range $entries }}
             <li>

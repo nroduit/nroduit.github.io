@@ -54,6 +54,15 @@ The Dicomizer tool supports encapsulating the following file types into DICOM ob
 3. Alternatively, you can drag and drop files from the system file explorer into the central panel. Images will either be grouped into the current series if applicable, or assigned to a default series based on their media type.
 
 {{% notice note %}}
+For image types containing EXIF tags, the following values are automatically mapped to DICOM tags:
+- **Image Orientation** → Adjust image orientation based on this value
+- **Image Description** → Maps to "Image Comments"
+- **Manufacturer Description** → Maps to "Manufacturer"
+- **Camera Model Description** → Maps to "Manufacturer Model Name"
+- **Date/Time (Original)** or, if absent, **Date/Time** → Maps to "ContentDate" and "ContentTime"
+{{% /notice %}}
+
+{{% notice note %}}
 Buttons that group series cannot be deleted directly. To remove a button, you must first remove all associated elements (thumbnails in the central panel).
 {{% /notice %}}
 
