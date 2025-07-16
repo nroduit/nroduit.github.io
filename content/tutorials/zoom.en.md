@@ -1,71 +1,86 @@
 ---
 title: Zoom
 weight: 340
-description: How to manipulate zoom and lens
-keywords: [ "zoom", "lens", "dicom viewer",  "pacs viewer" ]
+description: How to use zoom controls and magnifying lens
+keywords: ["zoom", "lens", "dicom viewer", "pacs viewer"]
 ---
 
-## <center>Zoom tool {{< svg-inline "static/tuto/icon/zoom.svg" >}}</center>
+## Zoom Tool {{< svg-inline "static/tuto/icon/zoom.svg" >}}
 
-The zoom tool can be associated with one of three mouse actions. In the image below, the zoom tool {{< svg-inline "static/tuto/icon/zoom.svg" >}} is associated with the middle mouse button. See also [zoom preferences](../dicom-2d-viewer/#preferences).
+### Basic Zoom Controls
 
-The zoom factor can be modified from different locations:
+The zoom tool {{< svg-inline "static/tuto/icon/zoom.svg" >}} provides multiple ways to adjust image magnification:
 
-* By dragging the cursor over the image with the configured mouse button
-* By scrolling the mouse wheel when configured
-* By selecting an item in the zoom dropdown button in the toolbar
-* From the context menu: right-click on the image > Zoom
-* Form the slider in the image tool panel
-* Using [Keyboard Shortcuts](../../basics/shortcuts) (_Ctrl + Plus (+)_, _Ctrl + Minus (-)_ and _Ctrl + Enter_) on the selected view
+* **Mouse Drag**: Drag with the configured mouse button (middle button by default)
+* **Mouse Wheel**: When enabled in preferences
+* **Toolbar Dropdown**: Select preset zoom levels
+* **Context Menu**: Right-click > Zoom
+* **Image Tool Panel**: Use the zoom slider
+* **Keyboard Shortcuts**:
+  * `Ctrl + Plus (+)`: Zoom in
+  * `Ctrl + Minus (-)`: Zoom out
+  * `Ctrl + Enter`: Reset zoom
 
-The context menu and the toolbar button allow you to select different zoom factors:
-
-* Actual pixel size {{< svg-inline "static/tuto/icon/zoomOriginal.svg" >}}: display the image at a 1:1 ratio, where each pixel in the image corresponds to one pixel on the screen
-* Real world (see [below](#real-world-zoom)) {{< svg-inline "static/tuto/icon/zoomRealWorld.svg" >}}
-* Resize to best fit {{< svg-inline "static/tuto/icon/zoomBestFit.svg" >}}: scaling the image to make it fit the view area as closely as possible
-
-{{% notice note %}}
-The zoom function always zooms in/out to the center of the screen regardless of where the cursor is. This mode provides greater positional accuracy in particular situations.
-
-Since "Resize to best fit" is the default mode for a view, the image will be centered when scrolling to the next image. You need to change the mode or the zoom factor to keep the image off the center when scrolling.
-{{% /notice %}}
-
-![Zoom tool](/tuto/zoom-actions.jpg?classes=shadow&width=700px)
-<br>
 {{% notice tip %}}
-For selecting directly the zoom action of the mouse left button, enter "z" as a shortcut.
+Quick Access: Press `z` to instantly set zoom as the left mouse button action
 {{% /notice %}}
 
-### Real-world zoom {{< svg-inline "static/tuto/icon/zoomRealWorld.svg" >}} {#real-world-zoom}
-The real-world zoom allows displaying the content of the image at the same size of the real objects.
+### Zoom Presets
 
-The feature requires calibrating the screen where the image is displayed. From the main menu, open _File > Preferences (Alt + P) > Monitors_ and click on _Spatial calibration_. Then enter a value that matches to the line length or the diagonal length of the screen.
+The toolbar and context menu offer three preset zoom options:
+
+* **Actual Pixels** {{< svg-inline "static/tuto/icon/zoomOriginal.svg" >}}: 1:1 ratio display
+* **Real-world Size** {{< svg-inline "static/tuto/icon/zoomRealWorld.svg" >}}: Physical size display
+* **Best Fit** {{< svg-inline "static/tuto/icon/zoomBestFit.svg" >}}: Scale to fit view area
 
 {{% notice note %}}
-Several screens can be calibrated. Each one has its own spatial calibration factor.
+* Zoom operations always center on the screen, regardless of cursor position
+* Best Fit (default mode) recenters images when scrolling through a series
+* To maintain off-center positioning while scrolling, change the zoom mode or factor
+* To change the zoom interpolation method, see the [Preferences](../dicom-2d-viewer/#preferences) section
 {{% /notice %}}
 
-## Magnifying lens {{< svg-inline "static/tuto/icon/zoomPan.svg" >}} {#magnifying-lens}
-The magnifying lens can be activated from the toggle button of the zoom toolbar (see the image below). It has several parameters accessible from the context menu.
-
-This lens can be used in many situations, for instance:
-
-* to magnify a specific area
-* to compare two images from the same series (select `Freeze image`)
-* to display a specific area without the drawings (Unselect `Show Drawings`)
-* to compare different values of Window/Level (select `Freeze parameters` - see image below)
-
-{{% notice note %}}
-Using the mouse wheel on the lens changes the zoom factor. Double-clicking on the lens adjusts the zoom factor of the lens to the one of the main image.
-{{% /notice %}}
-
-![Lens](/tuto/lens-drawing.jpg?classes=shadow&width=700px)
+![Zoom tool controls](/tuto/zoom-actions.jpg?classes=shadow&width=700px)
 <br>
-Parameters of the context menu:
 
-* *Synchronize to parent zoom:* When this option is activated, the zoom factor of the lens is permanently adjusted to the zoom factor of the main image (meaningful when using freeze parameters).
-* *Show Drawings:* Displays in the lens the visible drawings.
-* *Magnify:* Allows selecting a zoom magnitude.
-* *Image:* `Freeze parameters` allows you to keep the current image processing (c.f. Window/level, LUT or filter) and `Freeze image` allows you to keep the current image and its parameters.
+### Real-world Size Display {{< svg-inline "static/tuto/icon/zoomRealWorld.svg" >}}
 
-![Lens freeze](/tuto/lens-freeze.jpg?classes=shadow&width=700px)
+To display images at their actual physical size:
+
+1. Open Preferences: _File > Preferences (Alt + P) > Monitors_
+2. Click _Spatial calibration_
+3. Enter your screen's line length or diagonal length
+
+{{% notice note %}}
+Each monitor can have its own calibration setting
+{{% /notice %}}
+
+## Magnifying Lens {{< svg-inline "static/tuto/icon/zoomPan.svg" >}}
+
+The magnifying lens provides detailed inspection of specific image areas. Access it through the zoom toolbar's toggle button.
+
+![Lens example](/tuto/lens-drawing.jpg?classes=shadow&width=700px)
+<br>
+
+### Key Features
+
+* Magnify specific regions
+* View areas without drawings (`Show Drawings` toggle)
+* Compare different Window/Level settings (`Freeze parameters`)
+* Compare images from the same series (using `Freeze image`)
+
+### Lens Controls
+
+* **Mouse Wheel**: Adjust lens zoom
+* **Double-click**: Match lens zoom to main image
+* **Context Menu Options**:
+  * *Hide Lens*: disable the lens
+  * *Synchronize to parent zoom*: Match lens zoom to main image
+  * *Show Drawings*: Toggle overlay visibility
+  * *Magnify*: Select zoom level
+  * *Image*: Control image and parameter freezing
+    * **Freeze Parameters**: Maintains the current image processing settings (like Window/Level, LUT, or filters) while allowing you to scroll through different images. This is useful for comparing the same anatomical area with different processing settings.
+    * **Freeze Image**: Captures and holds the current image and its processing parameters, letting you use it as a reference while viewing other images. This is particularly helpful when comparing different slices or time points of a study.
+    * **Reset Freeze**: Clears any frozen parameters or images, allowing you to return to the default behavior where the lens reflects the current image and its processing settings.
+
+![Lens with frozen parameters](/tuto/lens-freeze.jpg?classes=shadow&width=700px)
