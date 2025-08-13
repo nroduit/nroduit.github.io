@@ -44,6 +44,11 @@ The Dicomizer tool supports encapsulating the following file types into DICOM ob
 - **MPEG-2 video files (video/mpeg)** {{% badge title="Version" %}}4.6.2{{% /badge %}}: Maintains compatibility with legacy medical imaging systems.
 - **MPEG-4 video files (video/mp4)** {{% badge title="Version" %}}4.6.2{{% /badge %}}: A modern format for high-quality medical videos, such as endoscopy, ultrasound, or surgical recordings. _Note: Not all MPEG-4 profiles are supported by the DICOM standard._
 
+{{% notice warning %}}
+Only MPEG-4 video files that are [compatible with the DICOM standard](https://dicom.nema.org/medical/dicom/current/output/chtml/part18/sect_8.7.3.html) are supported. Other MPEG-4 profiles are not imported in the central panel. 
+{{% /notice %}}
+
+
 1. Using the left panel, navigate through the file system to locate the images you want to convert. Click the button next to the combo box on the right to choose the folder containing the media files eligible for DICOM conversion.
 
 2. you can organize images into separate series by selecting thumbnails from the left panel and clicking the **Import** button. The resulting dialog offers three grouping options:
