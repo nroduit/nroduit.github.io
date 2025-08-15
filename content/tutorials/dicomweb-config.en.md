@@ -48,7 +48,7 @@ Then open the [DICOM Import](../dicom-import/#dicom-queryretrieve) dialog and se
 
 Google Cloud provides a comprehensive [DICOMWeb implementation](https://cloud.google.com/healthcare/docs/how-tos/dicomweb) through their Healthcare API.
 
-Configuration steps:
+Configuration steps (see also the general steps [above](#general-configuration-steps)):
 1. Create a new DICOMWeb node with a descriptive name
 2. Select `DICOMWeb (all RESTful services)`
 3. Enter the Google repository URL (must end with `/dicomWeb`)
@@ -92,7 +92,7 @@ Currently, the DICOMWeb service of Orthanc doesn't support the [thumbnail servic
 
 [dcm4chee-arc-light](https://github.com/dcm4che/dcm4chee-arc-light) is a robust open-source Picture Archiving and Communication System (PACS) that supports DICOMWeb services.
 
-To configure a dcm4chee-arc-light node:
+To configure a dcm4chee-arc-light node (see also the general steps [above](#general-configuration-steps)):
 1. Add a new DICOMWeb node
 2. Enter a description (e.g., "DCM4CHEE Archive")
 3. Select DICOMWeb service
@@ -142,7 +142,7 @@ If authentication is required in dcm4chee-arc-light, here are the steps to confi
 
 [Amazon HealthLake](https://aws.amazon.com/healthlake/) is a fully managed service that enables healthcare organizations to store, transform, query, and analyze health data at scale.
 
-With AHI DICOMWeb Proxy you can use the DICOMWeb API to access your data in Amazon HealthLake. Simply create a DICOMWeb node in Weasis with the following URL:
+With AHI DICOMWeb Proxy you can use the DICOMWeb API to access your data in Amazon HealthLake. Simply create a [DICOMWeb node](#general-configuration-steps) in Weasis with the following URL:
     {{< highlight text >}}
     http://[EC2 instance IP or EC2/ALB DNS]:8080/aetitle
     {{< /highlight >}}
