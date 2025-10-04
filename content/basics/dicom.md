@@ -12,22 +12,25 @@ This table lists the [DICOM Transfer Syntaxes](https://dicom.nema.org/medical/di
 | Transfer Syntax UID     | Media Type | Description                                                                                                         | Read  | Write |
 |-------------------------|------------|---------------------------------------------------------------------------------------------------------------------|-------|-------|
 | 1.2.840.10008.1.2       |            | Implicit VR - Little Endian                                                                                         | yes   | No    |
-| 1.2.840.10008.1.2.1     |            | Explicit VR - Little Endian                                                                                         | yes   | Yes   |
+| 1.2.840.10008.1.2.1     |            | Explicit VR - Little Endian                                                                                         | yes   | yes   |
 | 1.2.840.10008.1.2.1.99  |            | Deflated Explicit VR Little Endian                                                                                  | yes   | No    |
 | 1.2.840.10008.1.2.2     |            | Explicit VR Big Endian (Retired)                                                                                    | yes   | No    |
 | 1.2.840.10008.1.2.5     |            | RLE (Run Length Encoding) Lossless                                                                                  | yes   | No    |
-| 1.2.840.10008.1.2.4.50  | image/jpeg | JPEG Baseline (Process 1): Default Transfer Syntax for Lossy JPEG 8 Bit Image Compression                           | yes   | Yes   |
-| 1.2.840.10008.1.2.4.51  | image/jpeg | JPEG Extended (Process 2 &amp; 4): Default Transfer Syntax for Lossy JPEG 12 Bit Image Compression (Process 4 only) | yes   | Yes   |
+| 1.2.840.10008.1.2.4.50  | image/jpeg | JPEG Baseline (Process 1): Default Transfer Syntax for Lossy JPEG 8 Bit Image Compression                           | yes   | yes   |
+| 1.2.840.10008.1.2.4.51  | image/jpeg | JPEG Extended (Process 2 &amp; 4): Default Transfer Syntax for Lossy JPEG 12 Bit Image Compression (Process 4 only) | yes   | yes   |
 | 1.2.840.10008.1.2.4.53  | image/jpeg | JPEG Spectral Selection, Non-Hierarchical (Process 6 & 8) (Retired)                                                 | yes   | No    |
 | 1.2.840.10008.1.2.4.55  | image/jpeg | JPEG Full Progression, Non-Hierarchical (Process 10 & 12) (Retired)                                                 | yes   | No    |
-| 1.2.840.10008.1.2.4.57  | image/jpeg | JPEG Lossless, Non-Hierarchical (Process 14)                                                                        | yes   | Yes   |
-| 1.2.840.10008.1.2.4.70  | image/jpeg | JPEG Lossless, Non-Hierarchical, First-Order Prediction (Process 14 [Selection Value 1])                            | yes   | Yes   |
-| 1.2.840.10008.1.2.4.80  | image/jls  | JPEG-LS Lossless Image Compression                                                                                  | yes   | Yes   |
-| 1.2.840.10008.1.2.4.81  | image/jls  | JPEG-LS Lossy (Near-Lossless) Image Compression                                                                     | yes   | Yes   |
-| 1.2.840.10008.1.2.4.90  | image/jp2  | JPEG 2000 Image Compression (Lossless Only)                                                                         | yes   | Yes   |
-| 1.2.840.10008.1.2.4.91  | image/jp2  | JPEG 2000 Image Compression                                                                                         | yes   | Yes   |
+| 1.2.840.10008.1.2.4.57  | image/jpeg | JPEG Lossless, Non-Hierarchical (Process 14)                                                                        | yes   | yes   |
+| 1.2.840.10008.1.2.4.70  | image/jpeg | JPEG Lossless, Non-Hierarchical, First-Order Prediction (Process 14 [Selection Value 1])                            | yes   | yes   |
+| 1.2.840.10008.1.2.4.80  | image/jls  | JPEG-LS Lossless Image Compression                                                                                  | yes   | yes   |
+| 1.2.840.10008.1.2.4.81  | image/jls  | JPEG-LS Lossy (Near-Lossless) Image Compression                                                                     | yes   | yes   |
+| 1.2.840.10008.1.2.4.90  | image/jp2  | JPEG 2000 Image Compression (Lossless Only)                                                                         | yes   | yes   |
+| 1.2.840.10008.1.2.4.91  | image/jp2  | JPEG 2000 Image Compression                                                                                         | yes   | yes   |
 | 1.2.840.10008.1.2.4.92  | image/jpx  | JPEG 2000 Part 2 Multi-component Image Compression (Lossless Only)                                                  | yes   | No    |
 | 1.2.840.10008.1.2.4.93  | image/jpx  | JPEG 2000 Part 2 Multi-component Image Compression                                                                  | yes   | No    |
+| 1.2.840.10008.1.2.4.110 | image/jxl  | JPEG XL Lossless                                                                                                    | yes   | yes   |
+| 1.2.840.10008.1.2.4.111 | image/jxl  | JPEG XL JPEG Recompression                                                                                          | yes   | yes   |
+| 1.2.840.10008.1.2.4.112 | image/jxl  | JPEG XL                                                                                                             | yes   | yes   |
 | 1.2.840.10008.1.2.4.201 | image/jphc | High-Throughput JPEG 2000 Image Compression (Lossless Only)                                                         | yes   | No    |
 | 1.2.840.10008.1.2.4.202 | image/jphc | High-Throughput JPEG 2000 with RPCL Options Image Compression (Lossless Only)                                       | yes   | No    |
 | 1.2.840.10008.1.2.4.203 | image/jphc | High-Throughput JPEG 2000 Image Compression                                                                         | yes   | No    |

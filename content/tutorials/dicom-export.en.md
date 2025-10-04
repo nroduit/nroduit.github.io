@@ -22,7 +22,7 @@ Export the view according to the original image with some options.
 ![Export view](/tuto/dicom-export-view.png?classes=shadow&width=350)
 <br>
 * Size: Change the image size in percent
-* Preserve 16-bit per channel: Option to preserve the pixel depth (e.g., 16-bit in PNG/JPEG 2000/TIFF, double values in TIFF). When this option is applied, the pixel values will match with the Modality LUT values (e.g., Hounsfield values). Exporting in JPEG Lossy is only possible when unchecked for an 8-bit image.
+* Preserve 16-bit per channel: Option to preserve the pixel depth (e.g., 16-bit in PNG/JPEG 2000/JPEG-XL/TIFF, double values in TIFF). When this option is applied, the pixel values will match with the Modality LUT values (e.g., Hounsfield values). Exporting in JPEG Lossy is only possible when unchecked for an 8-bit image.
 * DICOM Pixel Padding: Apply the [DICOM pixel padding](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.5.html#sect_C.7.5.1.1.2) when checked
 * DICOM Shutter: Apply the [DICOM shutters](https://dicom.nema.org/medical/Dicom/current/output/chtml/part03/sect_C.7.6.11.html) when checked
 * DICOM Overlay: Apply the [DICOM overlays](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.9.2.html) when checked
@@ -52,7 +52,7 @@ In order to help with series selection, place the cursor on a series line, and y
 {{% /notice %}}
 
 {{% notice note %}}
-When DICOM data is exported in a native image format (JPG, PNG, JPEG 2000 or TIFF), only the images are transformed (see [original image options](#original-image)), and the encapsulated files (video, audio and PDF) are extracted.
+When DICOM data is exported in a native image format (JPG, PNG, JPEG 2000, JPEG-XL or TIFF), only the images are transformed (see [original image options](#original-image)), and the encapsulated files (video, audio and PDF) are extracted.
 
 Multiframe images are exported by adding a number to the end of the file name.
 {{% /notice %}}

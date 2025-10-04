@@ -28,7 +28,7 @@ Weasis has been designed to meet the evolving needs of clinical information syst
     - Import DICOM files with DICOM Query/Retrieve (C-GET, C-MOVE, and WADO-URI) and DICOMWeb (QUERY and RETRIEVE)
     - Import and export DICOM CD/DVD with DICOMDIR
     - Import and export DICOM ZIP files
-    - Viewer for common image formats (TIFF, BMP, GIF, JPEG, PNG, RAS, HDR, and PNM)
+    - Viewer for common image formats (TIFF, BMP, GIF, JPEG, JPEG2000, JPEG-XL, PNG, RAS, HDR, and PNM)
 
 - **Exporting data**
     - Export DICOM files locally with several options (DICOMDIR, ZIP, ISO image file with Weasis, TIFF, JPEG, PNG...)

@@ -7,7 +7,7 @@
     - Import de fichiers DICOM avec DICOM Query/Retrieve (C-GET, C-MOVE et WADO-URI) et DICOMWeb (QUERY et RETRIEVE)
     - Importation et exportation de CD/DVD DICOM avec DICOMDIR
     - Importation et exportation de fichiers DICOM ZIP
-    - Support des formats d'image courants (TIFF, BMP, GIF, JPEG, PNG, RAS, HDR et PNM)
+    - Support des formats d'image courants (TIFF, BMP, GIF, JPEG, JPEG2000, JPEG-XL, PNG, RAS, HDR et PNM)
 
 - **Exportation des données**
     - Exportation de fichiers DICOM localement avec plusieurs options (DICOMDIR, ZIP, fichier image ISO avec Weasis, TIFF, JPEG, PNG...)
