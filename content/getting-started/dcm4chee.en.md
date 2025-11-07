@@ -1,40 +1,30 @@
 ---
 title: Embedding in dcm4chee
-description: How installing Weasis to be the default web viewer of dcm4chee web interface
+description: How to install and configure Weasis as the default web viewer in the dcm4chee web interface
 keywords: [ "dcm4chee", "dcm4chee web" , "dcm4chee integration", "dcm4chee viewer", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
 weight: 10
 ---
 
-This page describes how installing Weasis to be the default web viewer of dcm4chee-arc-light web interface. See [How to launch Weasis from any environments](../../basics/customize/integration) to integrate Weasis into your own user interface.
+This page explains how to integrate Weasis with dcm4chee-arc-light using weasis-pacs-connector. To launch Weasis without the connector, follow the alternative [instructions](../../basics/customize/integration/#download-directly-with-dicomweb-restful-services).
 
-Weasis is launched from the dcm4chee administrative web interface with the [weasis protocol](../weasis-protocol), as shown in the pictures below.
 
 ![dcm4chee-arc-light](/gallery-dcm4chee/1Weasis%20in%20dcm4chee-arc-light.png?classes=border "dcm4chee-arc-light")
 
-For a simpler and faster installation without server components, please follow these [instructions](../../basics/customize/integration/#download-directly-with-dicomweb-restful-services); no need to consider the following points on this page. Otherwise, if you need more advanced configurations, then follow these steps:
+Follow these steps for the integration with `weasis-pacs-connector`:
+
 
 1. [Install dcm4chee](https://github.com/dcm4che/dcm4chee-arc-light/wiki), if not already done (Installation with Docker is straightforward).
 
-2. Go [here](https://sourceforge.net/projects/dcm4che/files/Weasis/) and download these following files:
-{{% notice warning %}}
-**Download issue**: Some browsers (like Internet Explorer) may rename war files to zip. If so, use the Save As option when downloading and change the name back to war.
-{{% /notice %}}
-    - From weasis-pacs-connector folder:
-        - [weasis-pacs-connector.war] Requires at least the version 7.1.2
-    - From the folder with the latest version number (Optional if you want to run only the [native version](../) installed on the client system):
-        - [weasis.war] requires at least Weasis 3.5.3
-        - {{% badge style="info" %}}Optional{{% /badge %}} [weasis-i18n.war] for [internationalization](../translating)
-        - {{% badge style="info" %}}Optional{{% /badge %}} [weasis-ext.war] for [additional plugins](../../basics/customize/build-plugins/)
-    - From the folder with the latest version number:
+2. Go [here](https://sourceforge.net/projects/dcm4che/files/Weasis/) and download `weasis-pacs-connector.war` — See [Configuration Matrix](#configuration-matrix) below for the recommended version according to your dcm4chee-arc-light version.
 
-3. Open the <a target="_blank" href="http://localhost:9990/">wildfly management console</a> (at `http://<your-host>:9990`).
+3. Open the <a target="_blank" href="http://localhost:9990/">WildFly management console</a> (at `http://<your-host>:9990`). Note: with some Keycloak versions, the [management console may not be accessible](https://groups.google.com/g/dcm4che/c/UeNKzgijfqo).
     - Select the “Deployments” tab
-    - Add the .war files using the “Add” button (Choose Upload a new deployment or select Replace when the file already exists)
+    - Add `weasis-pacs-connector.war` using the “Add” button (Choose Upload a new deployment or select Replace when the file already exists)
 {{% notice note %}}
-Alternatively one may deploy .war files using JBoss Command Line Interface Console.
+Alternatively one may deploy the `.war` using JBoss Command Line Interface Console.
 {{% /notice %}}
 
-4. Configure weasis-pacs-connector (This step is optional if you just want to keep the default configuration).<br>
+4. Configure weasis-pacs-connector (optional if default settings are sufficient).<br>
 The default configuration is stored in two files inside weasis-pacs-connector.war. To override the default configuration:
     - Download the current [download>weasis-pacs-connector.properties](https://raw.githubusercontent.com/nroduit/weasis-pacs-connector/master/src/main/resources/weasis-pacs-connector.properties) and [download>dicom-dcm4chee-arc.properties](https://raw.githubusercontent.com/nroduit/weasis-pacs-connector/master/src/main/resources/dicom-dcm4chee-arc.properties) (configuration of the dcm4chee archive)
     - Edit the configuration as needed. For example, dcm4chee may be running on a different computer than Weasis, or the AE Title of dcm4chee may have been changed. If so, edit `weasis-pacs-connector.properties` or `dicom-dcm4chee-arc.properties` (Change pacs.host, pacs.port, and pacs.aet).
@@ -46,45 +36,127 @@ Instead of copying the files into $WILDFLY_HOME/standalone/configuration, JBoss 
 {{< highlight bash >}}
 deployment-overlay add --name=dcm4chee-arc --deployments=weasis-pacs-connector.war --content=WEB-INF/classes/weasis-pacs-connector.properties=/tmp/weasis-pacs-connector.properties,WEB-INF/classes/dicom-dcm4chee-arc.properties=/tmp/dicom-dcm4chee-arc.properties --redeploy-affected
 {{< /highlight >}}
-    - For applying the new configuration, from the management console "Disable" weasis-pacs-connector.war and then "Enable"
+    - To apply the new configuration, from the management console "Disable" `weasis-pacs-connector.war` then "Enable"
 
-5. To activate Weasis in the dcm4chee-arc-light user interface (see the matrix of the required versions in the table below):
- you need to add attributes by either editing docker-compose.env (from 5.22.0) or from the left menu Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE (add `&cdb` to the URL if weasis.war has not been deployed on the server-side):
-     - Configure the URL for having a view button for the patient or study level.
-        - From dcm4chee-arc-light 5.10.2 to 5.19.0, the left menu Configuration > Devices > dcm4chee-arc > Extensions > Archive Device
-        - From dcm4chee-arc-light 5.19.1 the left menu Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE
-        - From dcm4chee-arc-light 5.22.0 by editing docker-compose.env (It allows you to directly apply the properties when deploying, then they can be edited in the web portal). Note: the character ‘&’ must be escaped (e.g., IID_STUDY_URL=../../weasis-pacs-connector/weasis?studyUID={{studyUID}}\\&access_token={{access_token}})
+5. To activate Weasis in the dcm4chee-arc-light user interface (See also [Invoke Image Display in dcm4chee](https://github.com/dcm4che/dcm4chee-arc-light/wiki/Invoke-Image-Display)):
+ you need to add attributes by either editing `docker-compose.env` (from 5.22.0) or from the left menu Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE:
+     - Configure the URL for a view button at patient or study level and then copy the properties from [Configuration Matrix](#configuration-matrix).
+        - From dcm4chee-arc-light 5.10.2 to 5.19.0, the left menu: Configuration > Devices > dcm4chee-arc > Extensions > Archive Device
+        - From dcm4chee-arc-light 5.19.1 the left menu: Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE
+        - From dcm4chee-arc-light 5.22.0 by editing `docker-compose.env` (allows applying properties at deploy time). Note: the character `&` must be escaped (e.g., `IID_STUDY_URL=../../weasis-pacs-connector/weasis?studyUID={{studyUID}}\\&access_token={{access_token}}`)
 {{% notice note %}}
 **URL parameters**
 
 - `access_token` is necessary in secure mode (secured RESTful services) from dcm4chee-arc-light 5.15.1
-- `_self` avoids to open a new empty window in the web browser<br>
-- `cdb` [cdb parameter](https://nroduit.github.io/en/getting-started/weasis-protocol/#modify-the-launch-parameters) to override the URL of the Weasis web context to null (when you want only the native local version or when weasis.war has not be deployed with weasis-pacs-connector)<br>
-- See also <a target="_blank" href="https://github.com/dcm4che/dcm4chee-arc-light/wiki/Invoke-Image-Display">Invoke Image Display in dcm4chee</a>
-{{% /notice %}}
-{{% notice tip %}}
-**Absolute path**: The values above starting by "../" are the default relative path when weasis-pacs-connector is installed in the same JBoss as dcm4chee. Otherwise replace the relative URL by an absolute value, ex: `http://<your-host>:<port>/weasis-pacs-connector/...`
+- `_self` avoids opening a new empty window in the browser<br>
 {{% /notice %}}
     - {{% badge style="info" %}}Optional{{% /badge %}} Add <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis-with-other-parameters">other properties</a> in the URL.
     - Refresh the web page and the view button should appear as in the screenshot above
     - To launch the viewer from the web portal, the client computer must have installed the [Weasis package](../).
 
-<font size="-1">
+## Configuration Matrix
 
-| Mode | dcm4chee version | Configuration |
-| ---- | ---------------- | --------------|
-| Unsecured | from 5.10.2 to 5.19.0 | ../../weasis-pacs-connector/weasis?&patientID={}&target=_self<br>../../weasis-pacs-connector/weasis?&studyUID={}&target=_self |
-| Unsecured* | from 5.10.2 to 5.19.0 | ../../weasis-pacs-connector/weasis?&patientID={}&cdb&target=_self<br>../../weasis-pacs-connector/weasis?&studyUID={}&cdb&target=_self |
-| Secured | from  5.15.1 to 5.19.0 | ../../weasis-pacs-connector/weasis?&patientID={}&target=_self&access_token={}<br>../../weasis-pacs-connector/weasis?&studyUID={}&target=_self&access_token={} |
-| Secured* | from  5.15.1 to 5.19.0 | ../../weasis-pacs-connector/weasis?&patientID={}&cdb&target=_self&access_token={}<br>../../weasis-pacs-connector/weasis?&studyUID={}&cdb&target=_self&access_token={} |
-| Unsecured | from 5.19.1 to 5.22.1 | IID_PATIENT_URL=../../weasis-pacs-connector/weasis?&patientID={}&target=_self<br>IID_STUDY_URL=../../weasis-pacs-connector/weasis?&studyUID={}&target=_self |
-| Unsecured* | from 5.19.1 to 5.22.1 | IID_PATIENT_URL=../../weasis-pacs-connector/weasis?&patientID={}&cdb&target=_self<br>IID_STUDY_URL=../../weasis-pacs-connector/weasis?&studyUID={}&cdb&target=_self |
-| Secured | from 5.19.1 to 5.22.1 | IID_PATIENT_URL=../../weasis-pacs-connector/weasis?&patientID={}&target=_self&access_token={}<br>IID_STUDY_URL=../../weasis-pacs-connector/weasis?&studyUID={}&target=_self&access_token={} |
-| Secured* | from 5.19.1 to 5.22.1 | IID_PATIENT_URL=../../weasis-pacs-connector/weasis?&patientID={}&cdb&target=_self&access_token={}<br>IID_STUDY_URL=../../weasis-pacs-connector/weasis?&studyUID={}&cdb&target=_self&access_token={} |
-| Secured | from 5.22.2 | IID_PATIENT_URL=../../weasis-pacs-connector/weasis?patientID={{patientID}}&access_token={{access_token}}<br>IID_STUDY_URL=../../weasis-pacs-connector/weasis?studyUID={{studyUID}}&access_token={{access_token}} <br>IID_URL_TARGET=_self |
-| Secured* | from 5.22.2 | IID_PATIENT_URL=../../weasis-pacs-connector/weasis?patientID={{patientID}}&cdb&access_token={{access_token}}<br>IID_STUDY_URL=../../weasis-pacs-connector/weasis?studyUID={{studyUID}}&cdb&access_token={{access_token}} <br>IID_URL_TARGET=_self |
+{{% notice note %}}
+The list below maps dcm4chee-arc-light versions to the recommended `weasis-pacs-connector`, and gives the properties to add in dcm4chee-arc-light configuration to enable Weasis launching.
 
-</font>
+Older versions pass _self via query parameter (target=_self); newer versions (5.22.2+) use the dedicated property IID_URL_TARGET=_self.
+{{% /notice %}}
 
-\* Running only the local native version of Weasis (when not connected to a remote version - weasis.war -)
+### dcm4chee-arc-light 5.10.2 to 5.19.0
+
+{{% badge style="info" title="weasis-pacs-connector" %}}7.x{{% /badge %}}
+
+#### Unsecured Mode
+<div style="font-size: 0.80em;">
+
+* `../../weasis-pacs-connector/weasis?&patientID={}&cdb&target=_self`
+* `../../weasis-pacs-connector/weasis?&studyUID={}&cdb&target=_self`
+
+</div>
+
+#### Secured Mode (from 5.15.1)
+<div style="font-size: 0.80em;">
+
+* `../../weasis-pacs-connector/weasis?&patientID={}&cdb&target=_self&access_token={}`
+* `../../weasis-pacs-connector/weasis?&studyUID={}&cdb&target=_self&access_token={}`
+
+</div>
+
+---
+
+### dcm4chee-arc-light 5.19.1 to 5.22.1
+
+{{% badge style="info" title="weasis-pacs-connector" %}}7.x{{% /badge %}}
+
+#### Unsecured Mode
+<div style="font-size: 0.80em;">
+
+* `IID_PATIENT_URL=../../weasis-pacs-connector/weasis?&patientID={}&cdb&target=_self`
+* `IID_STUDY_URL=../../weasis-pacs-connector/weasis?&studyUID={}&cdb&target=_self`
+
+</div>
+
+#### Secured Mode
+<div style="font-size: 0.80em;">
+
+* `IID_PATIENT_URL=../../weasis-pacs-connector/weasis?&patientID={}&cdb&target=_self&access_token={}`
+* `IID_STUDY_URL=../../weasis-pacs-connector/weasis?&studyUID={}&cdb&target=_self&access_token={}`
+
+</div>
+
+---
+
+### dcm4chee-arc-light 5.22.2 to 5.30.x
+
+{{% badge style="info" title="weasis-pacs-connector" %}}7.x{{% /badge %}}
+
+#### Unsecured Mode
+<div style="font-size: 0.80em;">
+
+* `IID_PATIENT_URL=../../weasis-pacs-connector/weasis?patientID={{patientID}}&cdb`
+* `IID_STUDY_URL=../../weasis-pacs-connector/weasis?studyUID={{studyUID}}&cdb`
+* `IID_URL_TARGET=_self`
+
+</div>
+
+#### Secured Mode
+<div style="font-size: 0.80em;">
+
+* `IID_PATIENT_URL=../../weasis-pacs-connector/weasis?patientID={{patientID}}&cdb&access_token={{access_token}}`
+* `IID_STUDY_URL=../../weasis-pacs-connector/weasis?studyUID={{studyUID}}&cdb&access_token={{access_token}}`
+* `IID_URL_TARGET=_self`
+
+</div>
+
+---
+
+### dcm4chee-arc-light 5.31.0+
+
+{{% badge style="info" title="weasis-pacs-connector" %}}8.x{{% /badge %}}
+
+{{% notice warning %}}
+**Requirements**: Java 17+ and Jakarta EE 10 (WildFly 29.0.1.Final or later)<br>
+**Note**:the context path has changed from ../../ to ../../../
+{{% /notice %}}
+
+#### Unsecured Mode
+<div style="font-size: 0.80em;">
+
+* `IID_PATIENT_URL=../../../weasis-pacs-connector/weasis?patientID={{patientID}}&cdb`
+* `IID_STUDY_URL=../../../weasis-pacs-connector/weasis?studyUID={{studyUID}}&cdb`
+* `IID_URL_TARGET=_self`
+
+</div>
+
+#### Secured Mode
+
+<div style="font-size: 0.80em;">
+
+* `IID_PATIENT_URL=../../../weasis-pacs-connector/weasis?patientID={{patientID}}&cdb&access_token={{access_token}}`
+* `IID_STUDY_URL=../../../weasis-pacs-connector/weasis?studyUID={{studyUID}}&cdb&access_token={{access_token}}`
+* `IID_URL_TARGET=_self`
+
+</div>
+
+---
 

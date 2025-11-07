@@ -61,7 +61,7 @@ For loading multiple images, it's recommended to use a manifest file that refere
 
 ### Examples to Load Images
 
-If you use weasis-pacs-connector, please refer to <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis">Launch Weasis</a>.
+If you use weasis-pacs-connector, please refer to [Launch Weasis](https://github.com/nroduit/weasis-pacs-connector#launch-weasis).
 
 * Use [$dicom:get](../../basics/commands/#dicomget) to load a static XML manifest containing direct links (without WADO server) {{< launch >}}$dicom:get -w "https://nroduit.github.io/demo-archive/Lumbar/mf.xml"{{< /launch >}}
 {{< highlight shell >}}
@@ -88,14 +88,13 @@ $image:get -u "https://user-images.githubusercontent.com/993975/59107662-6c9ed30
 
 The command for modifying the configuration at launch is `$weasis:config` which can have different arguments:
 
-* **cdb** is the Weasis web context (The URL of weasis.war). If the value is null, the weasis version installed from the [native installer](../) is used. In the weasis-pacs-connector <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector/blob/master/src/main/resources/weasis-pacs-connector.properties">configuration</a>, the default value is defined by `weasis.base.url`.
-* **cdb-ext** is the extension web context of Weasis (The URL of weasis-ext.war containing additional plugins). In the weasis-pacs-connector <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector/blob/master/src/main/resources/weasis-pacs-connector.properties">configuration</a>, the default value is defined by `weasis.ext.url`.
+* **cdb** is the Weasis web context (The URL of weasis-native.zip package in [ViewerHub](../../viewer-hub)). If the value is null, the weasis version installed from the [native installer](../) is used. In the weasis-pacs-connector [configuration](https://github.com/nroduit/weasis-pacs-connector/blob/master/src/main/resources/weasis-pacs-connector.properties), the default value is defined by `weasis.base.url`.
 * **arg** is an argument for the launcher. The value must start by $, like arg="$dicom:close --all" (Note: the value can also be directly in the base URI, outside $weasis:config). Single-valued argument but can be specified multiple times.
 * **pro** is a property for the launcher containing a key and a value separate by a space. Single-valued property but can be specified multiple times.
 * **auth** is the web authorization parameter
 * **wcfg** is the URL the remote Weasis configuration service.
 
-Here are some examples that modify the launcher properties without using <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis">weasis-pacs-connector</a>:
+Here are some examples that modify the launcher properties without using [weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector#launch-weasis):
 
 * Configuration for launching Weasis Dicomizer {{< launch >}}$weasis:config pro="felix.extended.config.properties file:conf/dicomizer.json" pro="gosh.port 17181"{{< /launch >}}
 {{< highlight shell >}}

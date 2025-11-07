@@ -156,11 +156,11 @@ Configuration notes:
 - From 5.24.0 {{qidoBaseURL}} must be replaced by your base URL (e.g. https://pacs2.test.com:8443)
 - The character '&' must be escaped in the Docker environment variables.
 - The Authorization header is not required for unsecure service.
-- URL with HTTPS requires a real valid certificate; otherwise, the certificate must be imported into the Weasis Java keystore. For testing purposes in secure mode, you can use the HTTP URL if it is mapped in the OIDC client of keycloack (--url "http://<your-host>:8080/dcm4chee-arc/aets/DCM4CHEE/rs").
+- URL with HTTPS requires a real valid certificate; otherwise, the certificate must be imported into the Weasis Java keystore or must be installed at [system level](https://github.com/nroduit/Weasis/issues/679) (from Weasis 4.6.1).
 {{% /notice %}}
 
 {{% notice note %}}
-Known issue: Weasis cannot open the images because of the token length which is cut by IE and Chrome only under Windows. It is working with Firefox on Windows.
+**Known issue on Windows**: Weasis cannot open the images because of the token length which is cut by the browser. It is only working with Firefox on Windows. It is recommended to use [weasis-pacs-connector](#use-weasis-pacs-connector) or [ViewerHub](../../../viewer-hub) to solve this issue.
 {{% /notice %}}
 
 ### Orthanc WEB Server
