@@ -5,6 +5,17 @@ keywords: [ "download dicom viewer", "dicom viewer", "free dicom viewer", "open 
 weight: 9
 ---
 
+
+* [Automatic Update (Package Manager)](#package-management-systems)
+* [Manual Installation (Native Installers)](#list-of-all-installers)
+
+### Prerequisites
+Weasis can be installed on desktop systems such as Windows, macOS, and Linux. It does not require any additional frameworks (such as Java) to be installed. However, some graphics-related requirements must be met to use [Volume Rendering](../../tutorials/dicom-3d-viewer/#requirements).
+
+{{% notice info %}}
+The open-source distribution of Weasis is not a certified medical device (CE or FDA). Any primary diagnostic use requires you to ensure full compliance with the laws and regulations applicable in your jurisdiction.
+{{% /notice %}}
+
 ### Package management systems
 
 Get automatic updates for Weasis by installing it via these package management systems:
@@ -22,9 +33,8 @@ Get automatic updates for Weasis by installing it via these package management s
 - [Flathub repository](https://flathub.org/apps/details/io.github.nroduit.Weasis) Flatpak package for x86_64 and arm64 architectures)
 - [Snapcraft: The app store for Linux](https://snapcraft.io/weasis) (Snap package for x86_64 and arm64 architectures)
 - [Arch Linux repository](https://aur.archlinux.org/packages/weasis-bin/)
-- [Gentoo repository](https://gpo.zugaina.org/media-gfx/weasis-bin)
 
-{{% notice warning %}}
+{{% notice note %}}
 The package management systems above can limit certain functionalities because they work in sandbox mode, especially for Flatpak (see [Fedora issue](https://github.com/nroduit/Weasis/issues/449#issuecomment-1763311969)) and Snap (see [removable media issue](https://github.com/nroduit/Weasis/issues/487#issuecomment-1826293187)). 
 
 The Snap package installation uses a `<user.home>/snap/weasis/current/.weasis` directory instead of the `<user.home>/.weasis` directory for all other installations.
@@ -33,6 +43,8 @@ The Snap package installation uses a `<user.home>/snap/weasis/current/.weasis` d
 ### List of All Installers
 
 All the packages can be found on [Github](https://github.com/nroduit/Weasis/releases) ![Github](https://img.shields.io/github/downloads/nroduit/weasis/total?classes=inline "Github release downloads") and the legacy repository [Sourceforge](https://sourceforge.net/projects/dcm4che/files/Weasis/) ![Sourceforge](https://img.shields.io/sourceforge/dt/dcm4che/Weasis?classes=inline "Sourceforge release downloads")
+
+Stay informed about new releases and updates by joining our [Google Group](https://groups.google.com/forum/#!forum/weasis). Choose "Email" to get updates directly to your inbox.
 
 For details about GLIBC versions and Linux distribution compatibility, see this [page](https://repology.org/project/glibc/versions).
 {{< old-download >}}

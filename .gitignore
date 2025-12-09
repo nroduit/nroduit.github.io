@@ -1,12 +1,23 @@
-## use script setup.sh (only the first time) and deploy.sh (to update the site) to ignore public
-# public
+node_modules/
+package-lock.json
+/tmp
 
-# IntelliJ project files
-*.iml
-*.iws
-*.ipr
-.idea/
 
-/public
-/resources/_gen/images
+# Hugo
 .hugo_build.lock
+/public
+resources/
+
+# vim temporary files
+*~
+*.sw?
+
+# system files
+.DS_Store
+
+# IDE files
+.idea
+
+# VS Code
+/.vscode/**
+!/.vscode/cspell.json

@@ -11,19 +11,6 @@ Visit the [Download Page](download-dicom-viewer) for a comprehensive list of ins
 
 Since version 4, only the distribution with a native installer is maintained to ensure a better user experience in terms of installation, configuration and compatibility. This distribution also supports launching **Weasis from a web context** via the [weasis protocol](weasis-protocol).
 
-{{< latest-download "deb" >}}
-
-For details about GLIBC versions and Linux distribution compatibility, see this [page](https://repology.org/project/glibc/versions).
-
-{{% notice note %}}
-To manage a Weasis version at the server side, it is possible to install the [Weasis web package](https://github.com/nroduit/weasis-pacs-connector#installation) which will upgrade the native installation at the client side (it works for minor releases by updating all the plugins except the launcher).<br>
-Explore more integration possibilities with other systems [here](../basics/customize/integration).
-{{% /notice %}}
-
-{{% notice tip %}}
-Stay informed about new releases and updates by joining our [Google Group](https://groups.google.com/forum/#!forum/weasis). Choose "Email" to get updates directly to your inbox.
-{{% /notice %}}
-
 ### General Topics
 
 Get started with these links to learn more about Weasis and its features:
