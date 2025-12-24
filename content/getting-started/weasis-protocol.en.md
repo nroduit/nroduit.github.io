@@ -104,3 +104,80 @@ $weasis:config pro="felix.extended.config.properties file:conf/dicomizer.json" p
 {{< highlight shell >}}
 $weasis:config pro="weasis.user user2"
 {{< /highlight >}}
+
+### Enterprise Deployment: Browser Protocol Configuration
+
+By default, Weasis registers the `weasis://` protocol through standard OS mechanisms. To ensure a seamless user experience in institutional environments, administrators can suppress the browser's security confirmation dialog using central policies.
+
+**Official Documentation**:
+- [Chrome Enterprise Policy List](https://chromeenterprise.google/policies/#URLAllowlist)
+- [Microsoft Edge - URLAllowlist](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-browser-policies/urlallowlist)
+- [Mozilla Policy Templates](https://github.com/mozilla/policy-templates#websitefilter)
+
+{{< tabs groupid="configureWeasisProtocol">}}
+{{% tab title="Windows (Group Policy or Registry)" %}}
+Recommended for AD environments.
+
+1. **GPO Path**:
+    * **Chrome/Edge**: `Computer Configuration` → `Admin Templates` → `[Google Chrome/Microsoft Edge]` → `Content Settings` → `Allow access to a list of URLs`
+    * **Firefox**: `Computer Configuration` → `Admin Templates` → `Mozilla` → `Firefox` → `WebsiteFilter` → `Exceptions`
+2. **Value**: Add `weasis://*`
+
+**Direct Registry Deployment**:
+```reg
+Windows Registry Editor Version 5.00
+
+; Chrome
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\URLAllowlist]
+"1"="weasis://*"
+
+; Chromium
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Chromium\URLAllowlist]
+"1"="weasis://*"
+
+; Microsoft Edge
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\URLAllowlist]
+"1"="weasis://*"
+
+; Firefox
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Mozilla\Firefox\WebsiteFilter\Exceptions]
+"1"="weasis://*"
+```
+
+Note: The number in quotes ("1") should be incremented if you already have other entries in the list.
+{{% /tab %}}
+{{% tab title="Linux (JSON Policy)" %}}
+Create a policy file in the managed directory.
+* Chrome: /etc/opt/chrome/policies/managed/weasis.json
+* Chromium: /etc/chromium/policies/managed/weasis.json
+* Firefox: /etc/firefox/policies/policies.json
+
+Example JSON (Chrome/Chromium):
+``` json
+{
+  "URLAllowlist": ["weasis://*"]
+}
+```
+
+Example JSON (Firefox):
+``` json
+{
+  "policies": {
+    "WebsiteFilter": { "Exceptions": ["weasis://*"] }
+  }
+}
+```
+{{% /tab %}}
+{{% tab title="macOS (Configuration Profile)" %}}
+Deploy via MDM (Jamf, Kandji, etc.) using the URLAllowlist key. Chrome/Chromium Payload:
+
+``` xml
+<key>URLAllowlist</key>
+<array>
+    <string>weasis://*</string>
+</array>
+```
+PayloadType: com.google.Chrome (Chrome) or com.brave.Browser (Brave).
+Firefox: Use the macOS Mozilla Policy structure.
+{{% /tab %}}
+{{< /tabs >}}

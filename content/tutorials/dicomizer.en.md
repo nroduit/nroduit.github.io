@@ -42,10 +42,10 @@ The Dicomizer tool supports encapsulating the following file types into DICOM ob
 - **PDF documents (application/pdf)** {{% badge title="Version" %}}4.6.2{{% /badge %}}: Ideal for integrating reports, forms, or scanned documents into DICOM archives.
 - **STL files (model/stl)** {{% badge title="Version" %}}4.6.2{{% /badge %}}: Used for 3D printing and surgical planning.
 - **MPEG-2 video files (video/mpeg)** {{% badge title="Version" %}}4.6.2{{% /badge %}}: Maintains compatibility with legacy medical imaging systems.
-- **MPEG-4 video files (video/mp4)** {{% badge title="Version" %}}4.6.2{{% /badge %}}: A modern format for high-quality medical videos, such as endoscopy, ultrasound, or surgical recordings. _Note: Not all MPEG-4 profiles are supported by the DICOM standard._
+- **MPEG-4 video files (video/mp4)** {{% badge title="Version" %}}4.6.2{{% /badge %}}: A modern format for high-quality medical videos, such as endoscopy, ultrasound, or surgical recordings.
 
 {{% notice warning %}}
-Only MPEG-4 video files that are [compatible with the DICOM standard](https://dicom.nema.org/medical/dicom/current/output/chtml/part18/sect_8.7.3.html) are supported. Other MPEG-4 profiles are not imported in the central panel. 
+Only MPEG-4 video files that are [compatible with the DICOM standard](https://dicom.nema.org/medical/dicom/current/output/chtml/part18/sect_8.7.3.html) are supported. Other MPEG-4 profiles are not imported in the central panel, so they need to be converted to a compatible format before using Dicomizer.
 {{% /notice %}}
 
 
@@ -64,7 +64,7 @@ For image types containing EXIF tags, the following values are automatically map
 - **Image Description** → Maps to "Image Comments"
 - **Manufacturer Description** → Maps to "Manufacturer"
 - **Camera Model Description** → Maps to "Manufacturer Model Name"
-- **Date/Time (Original)** or, if absent, **Date/Time** → Maps to "ContentDate" and "ContentTime"
+- **Date/Time (Original)** or, if absent, **Date/Time** → Maps to "ContentDate" and "ContentTime". Note if both are absent or invalid (date > now + 1 day or date < now - 30 years), the file's last modified date is used.
 {{% /notice %}}
 
 {{% notice note %}}
