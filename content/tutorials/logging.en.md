@@ -5,34 +5,69 @@ description: How to configure application traces
 keywords: [ "log", "logging", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "pacs viewer" ]
 ---
 
-## <center>Configure and view log files</center>
+## <center>Configure and View Log Files</center>
 
-The log folder that can be opened from the menu "_Help > Open the logging folder_" (since {{% badge title="Version" %}}4.1.0{{% /badge %}}) contains two types of log:
-1. A boot log file (boot.log) is always written since {{% badge title="Version" %}}3.5.0{{% /badge %}}
-2. Rolling log files (default.log) that need to be activated in the preference dialog (see below _How to configure the rolling log files_)
+Weasis provides comprehensive logging capabilities to help troubleshoot issues and monitor application behavior. Log files are stored in a dedicated folder that can be easily accessed from the application.
+
+### Accessing the Log Folder
+
+Open the log folder from the menu: **Help > Open the logging folder** (available since {{% badge title="Version" %}}4.1.0{{% /badge %}})
 
 {{% notice tip %}}
-In order to determine the path of <user.home>/.weasis/log for versions prior to v4.1.0, go to the "_Help > About Weasis_" menu and find the property `weasis.path` in the "_System Information_" tab.
+For versions prior to v4.1.0: To find the log folder path (`<user.home>/.weasis/log`), navigate to _Help > About Weasis_ and locate the `weasis.path` property in the _System Information_ tab.
 {{% /notice %}}
 
-Once the file has reached its maximum size, it is compressed into a zip archive, since {{% badge title="Version" %}}4.4.0{{% /badge %}}.
+### Types of Log Files
 
-### Boot log files
-The boot log file is used to trace the startup configuration to ensure that the application starts with the correct input parameters and configuration.
-This type of logs is interesting if the application doesn't start, crashes at startup, or if there is a problem with the startup preferences.
+Weasis generates two types of log files:
 
-### How to configure the rolling log files
+#### 1. Boot Log Files (boot.log)
+The boot log file (available since {{% badge title="Version" %}}3.5.0{{% /badge %}}) automatically captures the application startup sequence and is always written, regardless of your configuration. This log is essential for:
+- Verifying that Weasis starts with the correct parameters
+- Diagnosing startup failures or crashes
+- Troubleshooting configuration issues during launch
+
+#### 2. Rolling Log Files (default.log)
+Rolling log files capture runtime application activity and must be enabled in the preferences (see configuration steps below).
+
+Once a log file reaches its maximum size, it is automatically compressed into a ZIP archive (since {{% badge title="Version" %}}4.4.0{{% /badge %}}).
+
+### Configuring Rolling Log Files
+
 ![Preferences](/tuto/logging.png?classes=shadow)
 <br>
 
-* From the main menu "_File > Preferences > General_" enable "_Rolling log_" to activate writing to files
-* Enter the maximum of _File numbers_ for rolling log (by default 20)
-* Enter the maximum size of each rolling file (by default 10 MB)
-* Select a log level which defines the verbosity of the traces (by default INFO)
-* Select a stacktrace limit which represents the number of lines (by default 3). No value is recommended for investigating problems (it means unlimited stacktrace lines)
+Follow these steps to configure rolling logs:
 
-{{% notice info %}}
-The default logging configuration comes from base.json, see [Weasis Preferences](../../basics/customize/preferences). Some default values have changed since {{% badge title="Version" %}}4.4.0{{% /badge %}}.
+1. Navigate to _File > Preferences > General_ in the main menu
+2. Enable _Rolling log_ to activate file logging
+3. Configure the following settings:
+
+| Setting | Description | Default Value |
+|---------|-------------|---------------|
+| **File numbers** | Maximum number of rolling log files to retain | 20 |
+| **File size** | Maximum size of each log file before rotation | 10 MB |
+| **Log level** | Verbosity of trace messages (TRACE, DEBUG, INFO, WARN, ERROR) | INFO |
+| **Stacktrace limit** | Number of stacktrace lines to display | 3 |
+
+{{% notice tip %}}
+For debugging issues: Set the stacktrace limit to **no value** (or 0) to capture unlimited stacktrace lines. This provides complete error details when investigating problems.
 {{% /notice %}}
 
+### Understanding Log Levels
 
+Choose the appropriate log level based on your needs:
+
+- **ERROR**: Only critical errors
+- **WARN**: Warnings and errors
+- **INFO** (default): General information, warnings, and errors
+- **DEBUG**: Detailed debugging information
+- **TRACE**: Most verbose logging (for in-depth troubleshooting)
+
+{{% notice warning %}}
+Lower log levels (DEBUG, TRACE) generate significantly more data and may impact performance. Use these levels only when actively troubleshooting issues.
+{{% /notice %}}
+
+{{% notice info %}}
+The default logging configuration comes from `base.json`. See [Weasis Preferences](../../basics/customize/preferences) for more details. Some default values have changed since {{% badge title="Version" %}}4.4.0{{% /badge %}}.
+{{% /notice %}}

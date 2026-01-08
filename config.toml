@@ -126,6 +126,9 @@ keepWhitespace = false
     # if in doubt, remove this line
     unsafe = true
 
+    [markup.goldmark.parser.attribute]
+    block = true
+
 
 [Languages]
 [Languages.en]
