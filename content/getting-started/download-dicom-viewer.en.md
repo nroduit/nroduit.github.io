@@ -5,46 +5,75 @@ keywords: [ "download dicom viewer", "dicom viewer", "free dicom viewer", "open 
 weight: 9
 ---
 
+## Installation Methods
 
-* [Automatic Update (Package Manager)](#package-management-systems)
-* [Manual Installation (Native Installers)](#list-of-all-installers)
+* [Manual Installation (Native Installers)](#native-installers)
+* [Automatic Updates (Package Managers)](#package-management-systems)
 
 ### Prerequisites
-Weasis can be installed on desktop systems such as Windows, macOS, and Linux. It does not require any additional frameworks (such as Java) to be installed. However, some graphics-related requirements must be met to use [Volume Rendering](../tutorials/dicom-3d-viewer/#requirements).
+Weasis runs on Windows, macOS, and Linux without requiring additional frameworks like Java. However, certain graphics capabilities are needed for [Volume Rendering](../tutorials/dicom-3d-viewer/#requirements).
 
-{{% notice info %}}
+{{% notice warning %}}
 The open-source distribution of Weasis is not a certified medical device (CE or FDA). Any primary diagnostic use requires you to ensure full compliance with the laws and regulations applicable in your jurisdiction.
 {{% /notice %}}
 
-### Package management systems
+### Native Installers
 
-Get automatic updates for Weasis by installing it via these package management systems:
+Download standalone installers for manual installation:
+
+{{< latest-download >}}
+Linux Compatibility: See the [compatibility matrix](https://repology.org/project/glibc/versions) for GLIBC version requirements and distribution compatibility.
+
+For older releases, visit these repositories:
+- **[GitHub Releases](https://github.com/nroduit/Weasis/releases)** ![Github](https://img.shields.io/github/downloads/nroduit/weasis/total?classes=inline "Github release downloads") - Latest releases
+- **[SourceForge](https://sourceforge.net/projects/dcm4che/files/Weasis/)** ![Sourceforge](https://img.shields.io/sourceforge/dt/dcm4che/Weasis?classes=inline "Sourceforge release downloads") - Legacy repository (older than v3.5.1)
+
+Stay Updated: Subscribe to our [Google Group](https://groups.google.com/forum/#!forum/weasis) and select "Email" to receive release notifications.
+
+
+### Package Management Systems
+
+Install via package managers to receive automatic updates.
 
 #### Windows
-- [Microsoft Windows store](https://www.microsoft.com/en-us/p/weasis/9nhtv46lg4nh)
-- [Windows Package Manager (winget)](https://github.com/microsoft/winget-pkgs/tree/master/manifests/w/WeasisTeam/Weasis/)
-- [Chocolatey Community Repository](https://community.chocolatey.org/packages/weasis) ![Chocolatey](https://img.shields.io/chocolatey/dt/weasis?classes=inline "Chocolatey release downloads")<br>
-  (Ideal for Windows deployment with PowerShell, CHEF, Puppet...)
+- **[Microsoft Store](https://www.microsoft.com/en-us/p/weasis/9nhtv46lg4nh)**
+- **[Windows Package Manager (winget)](https://github.com/microsoft/winget-pkgs/tree/master/manifests/w/WeasisTeam/Weasis/)**
+  ```powershell
+  winget install WeasisTeam.Weasis
+  ```
+- **[Chocolatey](https://community.chocolatey.org/packages/weasis)** ![Chocolatey](https://img.shields.io/chocolatey/dt/weasis?classes=inline "Chocolatey release downloads")
+  ```powershell
+  choco install weasis
+  ```
+  *Ideal for enterprise deployment with PowerShell, CHEF, or Puppet*
 
 #### macOS
-- [Homebrew Formulae](https://formulae.brew.sh/cask/weasis) (Supports both Intel and Apple Silicon architectures)
+- **[Homebrew](https://formulae.brew.sh/cask/weasis)** (Intel & Apple Silicon)
+  ```bash
+  brew install --cask weasis
+  ```
 
 #### Linux
-- [Flathub repository](https://flathub.org/apps/details/io.github.nroduit.Weasis) Flatpak package for x86_64 and arm64 architectures)
-- [Snapcraft: The app store for Linux](https://snapcraft.io/weasis) (Snap package for x86_64 and arm64 architectures)
-- [Arch Linux repository](https://aur.archlinux.org/packages/weasis-bin/)
+- **[Flathub](https://flathub.org/apps/details/io.github.nroduit.Weasis)** (x86_64 & arm64)
+  ```bash
+  flatpak install flathub io.github.nroduit.Weasis
+  ```
+- **[Snap Store](https://snapcraft.io/weasis)** (x86_64 & arm64)
+  ```bash
+  sudo snap install weasis
+  ```
+- **[Arch Linux (AUR)](https://aur.archlinux.org/packages/weasis-bin/)**
+  ```bash
+  yay -S weasis-bin
+  ```
 
 {{% notice note %}}
-The package management systems above can limit certain functionalities because they work in sandbox mode, especially for Flatpak (see [Fedora issue](https://github.com/nroduit/Weasis/issues/449#issuecomment-1763311969)) and Snap (see [removable media issue](https://github.com/nroduit/Weasis/issues/487#issuecomment-1826293187)). 
+**Sandbox Limitations:** Flatpak and Snap packages run in sandboxed environments, which may restrict certain functionalities:
+- **Flatpak**: See [Fedora issue](https://github.com/nroduit/Weasis/issues/449#issuecomment-1763311969)
+- **Snap**: Limited removable media access ([details](https://github.com/nroduit/Weasis/issues/487#issuecomment-1826293187))
 
-The Snap package installation uses a `<user.home>/snap/weasis/current/.weasis` directory instead of the `<user.home>/.weasis` directory for all other installations.
+The Snap installation uses `<user.home>/snap/weasis/current/.weasis` instead of the standard `<user.home>/.weasis` directory.
 {{% /notice %}}
 
-### List of All Installers
 
-All the packages can be found on [Github](https://github.com/nroduit/Weasis/releases) ![Github](https://img.shields.io/github/downloads/nroduit/weasis/total?classes=inline "Github release downloads") and the legacy repository [Sourceforge](https://sourceforge.net/projects/dcm4che/files/Weasis/) ![Sourceforge](https://img.shields.io/sourceforge/dt/dcm4che/Weasis?classes=inline "Sourceforge release downloads")
 
-Stay informed about new releases and updates by joining our [Google Group](https://groups.google.com/forum/#!forum/weasis). Choose "Email" to get updates directly to your inbox.
-
-For details about GLIBC versions and Linux distribution compatibility, see this [page](https://repology.org/project/glibc/versions).
-{{< old-download >}}

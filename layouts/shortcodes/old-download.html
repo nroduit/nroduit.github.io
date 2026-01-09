@@ -50,7 +50,7 @@
                     <td style="text-align: left;">{{ printf "%.1f MB"  (div $val.size 1000000) }}</td>
                     <td style="text-align: left;">
                           <span class="btn cstyle transparent">
-                          <a href="{{ $val.browser_download_url }}" target="_blank" rel="noopener noreferrer" style='font-size: 0.8em;'>{{ $val.name }} <i class="fa-fw fas fa-download" style='font-size: 0.8em;'></i></a>
+                          <a href="{{ $val.browser_download_url }}" target="_blank" rel="noopener noreferrer">{{ $val.name }} <i class="fa-fw fas fa-download"></i></a>
                           {{ $date := time "2024-05-01" }}
                           {{ if ge (time $elem_val.published_at) $date }}
                           </span>
