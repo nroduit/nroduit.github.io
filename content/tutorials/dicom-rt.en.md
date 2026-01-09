@@ -34,7 +34,7 @@ The region tree has context menus that allow you to:
 * **Export to clipboard as CSV**: Exports comprehensive region data including volume measurements and dose calculations to CSV format via clipboard, enabling seamless integration with external analysis tools and spreadsheet applications.
 * **Pixel statistics from the selected view** (only for leaf): Analyzes pixel values within the region boundaries
     - Provides comprehensive statistical data for the enclosed area
-    - For detailed parameter definitions, refer to [Pixel Statistics](../draw-measure/#selected-measurement)
+    - For detailed parameter definitions, refer to [Pixel Statistics](draw-measure/#selected-measurement)
 {{% /notice %}}
 
 

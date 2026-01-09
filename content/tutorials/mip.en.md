@@ -9,11 +9,11 @@ keywords: [ "MIP", "Maximum Intensity Projection", "dicom", "free dicom viewer" 
 
 The MIP viewer is a simple 3D viewer that allows displaying the maximum intensity projection of a volume defined by a number of slices of the image stack. 
 
-The MIP viewer is also available in the [3D viewer](../dicom-3d-viewer) with more advanced options of the volume rendering, but some [minimal hardware requirements](../dicom-3d-viewer/#requirements) are necessary.
+The MIP viewer is also available in the [3D viewer](dicom-3d-viewer) with more advanced options of the volume rendering, but some [minimal hardware requirements](dicom-3d-viewer/#requirements) are necessary.
 
 
 ### Open the MIP viewer
-The MIP viewer can be opened with {{< svg-inline "static/tuto/icon/mip.svg" >}} in the Basic 3D toolbar of the [DICOM 2D viewer](../dicom-2d-viewer).
+The MIP viewer can be opened with {{< svg-inline "static/tuto/icon/mip.svg" >}} in the Basic 3D toolbar of the [DICOM 2D viewer](dicom-2d-viewer).
 
 {{% notice note %}}
 If the button is grayed out, it means that the current series has less than 5 images, which is the minimal number of images for using the MIP viewer. 
@@ -41,7 +41,7 @@ The projection type defines the way the MIP is calculated. The options are:
 * **Max**: Maximum Intensity Projection (the default value)
 
 #### Windowing and Rendering
-The [Windowing and Rendering](../lut/) contains some of the tools found in _Image Tools_ to change the windowing or to select a preset, since {{% badge title="Version" %}}4.4.0{{% /badge %}}.
+The [Windowing and Rendering](lut/) contains some of the tools found in _Image Tools_ to change the windowing or to select a preset, since {{% badge title="Version" %}}4.4.0{{% /badge %}}.
 
 #### Slice position
 The slice position is used to move around the series to apply the projection and display the result. The _Image_ value represents the position in the series stack.
@@ -52,4 +52,4 @@ The _Image Extension_ value represents the number of slices to use for the MIP c
 #### Rebuild Series
 It allows you to build a new MIP series according to the MIP options. In this new series the slice position and thickness are modified. If the windowing is custom, then it is added to the presets of the new series.
 
-The new MIP series is added to the [DICOM explorer](../dicom-explorer/) and can be [exported](../dicom-export/#dicom-exporting).
+The new MIP series is added to the [DICOM explorer](dicom-explorer/) and can be [exported](dicom-export/#exporting).

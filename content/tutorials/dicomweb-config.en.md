@@ -7,7 +7,7 @@ keywords: [ "dicom import", "dicomweb", "dicom viewer", "free dicom viewer", "op
 
 ## <center>How to configure DICOMWeb node</center>
 
-This page explains how to configure DICOMWeb nodes in Weasis for [retrieving images remotely](../dicom-import/#dicom-queryretrieve). While manual configuration in Weasis is covered here, you can also [launch Weasis from a web context](../../basics/customize/integration/#download-directly-with-dicomweb-restful-services) with automatic DICOMWeb parameters derived from the URL.
+This page explains how to configure DICOMWeb nodes in Weasis for [retrieving images remotely](dicom-import/#dicom-queryretrieve). While manual configuration in Weasis is covered here, you can also [launch Weasis from a web context](../basics/customize/integration/#download-directly-with-dicomweb-restful-services) with automatic DICOMWeb parameters derived from the URL.
 
 ### General Configuration Steps
 
@@ -24,7 +24,7 @@ Here are the steps for configuring a new DICOMWeb node:
 2. Select one of the service types. The default one is `DICOMWeb (all RESTful services)` which covers all DICOMWeb services. If you want to use a specific service, select the corresponding one:
    - `QIDO-RS`: Query
    - `STOW-RS` : Store
-   - `WADO-URI (non-RS)`: legacy retrieval for one DICOM object (combines C-Find and WADO retrieve from [query/retrieve](../dicom-import/#dicom-queryretrieve))
+   - `WADO-URI (non-RS)`: legacy retrieval for one DICOM object (combines C-Find and WADO retrieve from [query/retrieve](dicom-import/#dicom-queryretrieve))
    - `WADO-RS (Retrieve)`: Retrieve
 3. Enter the service URL of the DICOMWeb server.
 4. Configure authentication by clicking the "Manager" button and then "Add":
@@ -35,7 +35,7 @@ Here are the steps for configuring a new DICOMWeb node:
 5. Optionally, add HTTP headers for the service URL. This can be used for authentication or other purposes.
 6. Click "OK" to save the authentication
 
-Then open the [DICOM Import](../dicom-import/#dicom-queryretrieve) dialog and select the node just created. You can now query the DICOMWeb server after logging in with your account into your browser when using OAuth2 authentication.
+Then open the [DICOM Import](dicom-import/#dicom-queryretrieve) dialog and select the node just created. You can now query the DICOMWeb server after logging in with your account into your browser when using OAuth2 authentication.
 
 ### Supported DICOMWeb Providers (non-exhaustive list)
 

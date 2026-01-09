@@ -26,7 +26,7 @@ OpenGL does not include specific functionality for selecting a particular graphi
 {{% /notice %}}
 
 ### Open the 3D viewer
-The 3D view can be opened with {{< svg-inline "static/tuto/icon/volume.svg" >}} in the toolbar or by right-clicking on the thumbnail in the [DICOM explorer](../dicom-explorer/).
+The 3D view can be opened with {{< svg-inline "static/tuto/icon/volume.svg" >}} in the toolbar or by right-clicking on the thumbnail in the [DICOM explorer](dicom-explorer).
 
 Try to load a volume dataset (Medical Demos from data.kitware.com)
 {{< launch >}}

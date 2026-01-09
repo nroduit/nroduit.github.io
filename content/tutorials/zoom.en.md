@@ -37,13 +37,13 @@ The toolbar and context menu offer three preset zoom options:
 * Zoom operations always center on the screen, regardless of cursor position
 * Best Fit (default mode) recenters images when scrolling through a series
 * To maintain off-center positioning while scrolling, change the zoom mode or factor
-* To change the zoom interpolation method, see the [Preferences](../dicom-2d-viewer/#preferences) section
+* To change the zoom interpolation method, see the [Preferences](dicom-2d-viewer/#preferences) section
 {{% /notice %}}
 
 ![Zoom tool controls](/tuto/zoom-actions.jpg?classes=shadow&width=700px)
 <br>
 
-### Real-world Size Display {{< svg-inline "static/tuto/icon/zoomRealWorld.svg" >}}
+### Real-world Size Display {{< svg-inline "static/tuto/icon/zoomRealWorld.svg" >}} {#real-world-size-display}
 
 To display images at their actual physical size:
 

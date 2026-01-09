@@ -14,7 +14,7 @@ In order to know which series sharing the same coordinate system, you can select
 The crosshair tool {{< svg-inline "static/tuto/icon/crosshair.svg" >}} can be selected in the mouse buttons on the toolbar or by right-clicking on a view.
 
 {{% notice tip %}}
-It is possible to change the window/level with the [ctrl key](../../basics/shortcuts/) while keeping crosshair selected.
+It is possible to change the window/level with the [ctrl key](../basics/shortcuts/) while keeping crosshair selected.
 {{% /notice %}}
 
 ![3D Cursor](/tuto/3d-cursor.jpg?classes=shadow)
@@ -25,9 +25,9 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/demo/ko.xml"
 {{< /launch >}}
 
 {{% notice info %}}
-For more information on the elements related to the orientation of multiplanar views see [MPR orientation](../image-orientation/#orientation-in-multiplanar-reconstruction-mpr).
+For more information on the elements related to the orientation of multiplanar views see [MPR orientation](image-orientation/#orientation-in-multiplanar-reconstruction-mpr).
 {{% /notice %}}
 
 ### Preferences
 
-The MPR preferences share with the 3D cursor some preferences (_Auto center axes:_ and _Crosshair gap at the center_). See [MPR preferences](../mpr/#preferences) for more details.
+The MPR preferences share with the 3D cursor some preferences (_Auto center axes:_ and _Crosshair gap at the center_). See [MPR preferences](mpr/#preferences) for more details.

@@ -18,10 +18,10 @@ The Modality LUT and the Palette Color LUT are applied automatically when they e
 {{% /notice %}}
 
 ### Windowing and Rendering
-The Windowing and Rendering is a panel in the [_Image Tools_ of the DICOM 2D viewer](../dicom-2d-viewer/#image-tools). Some of the options described below are also available in the Lookup Table toolbar, in the main menu and in contextual menus.
+The Windowing and Rendering is a panel in the [_Image Tools_ of the DICOM 2D viewer](dicom-2d-viewer/#image-tools). Some of the options described below are also available in the Lookup Table toolbar, in the main menu and in contextual menus.
 
-* _Window:_ The range of pixel intensity values. The value can be changed when Window/Level is selected in [mouse actions](../dicom-2d-viewer/#toolbars) or by using the slider.
-* _Level:_ The center of the range defined by Window. The value can be changed when Window/Level is selected in [mouse actions](../dicom-2d-viewer/#toolbars) or by using the slider.
+* _Window:_ The range of pixel intensity values. The value can be changed when Window/Level is selected in [mouse actions](dicom-2d-viewer/#toolbars) or by using the slider.
+* _Level:_ The center of the range defined by Window. The value can be changed when Window/Level is selected in [mouse actions](dicom-2d-viewer/#toolbars) or by using the slider.
 * {{< svg-inline "static/tuto/icon/winLevel.svg" >}} _Preset:_ The possible items are ordered according to the following list:
   * Empty item when the Window and level values are changed manually from slider or mouse actions. 
   * Window and level values or VOI LUT data from the DICOM file (ending with _[DICOM]_). The default value is the first _[DICOM]_ item if exists, otherwise _Auto Level [Image]_.
@@ -33,7 +33,7 @@ The Windowing and Rendering is a panel in the [_Image Tools_ of the DICOM 2D vie
 * _Filter:_ The 2D filter is applied to the image before the LUT. The filter can be used to enhance the image quality or to highlight specific structures. The default value is _None_.
 
 {{% notice tip %}}
-In order to display the LUT on the image, select it from the [_Display_ panel](../dicom-2d-viewer/#display) on the right. The LUT colors are associated with values that correspond to the Modality LUT values (e.g., Hounsfield values for CT) or to the pixel values for some imaging types.
+In order to display the LUT on the image, select it from the [_Display_ panel](dicom-2d-viewer/#display) on the right. The LUT colors are associated with values that correspond to the Modality LUT values (e.g., Hounsfield values for CT) or to the pixel values for some imaging types.
 
-Another way to see the windowing transformation is to display the [histogram](../histogram).
+Another way to see the windowing transformation is to display the [histogram](histogram).
 {{% /notice %}}

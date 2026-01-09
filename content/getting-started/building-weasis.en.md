@@ -5,7 +5,7 @@ keywords: [ "building", "sources", "dicom viewer", "free dicom viewer", "open so
 weight: 30
 ---
 
-These instructions guide you through building Weasis directly from its GitHub repository. For IDE-based builds, refer to the [Weasis plugin development guidelines](../guidelines).
+These instructions guide you through building Weasis directly from its GitHub repository. For IDE-based builds, refer to the [Weasis plugin development guidelines](guidelines).
 
 **Prerequisites**
 

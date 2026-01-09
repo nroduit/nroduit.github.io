@@ -132,7 +132,7 @@ MPR view inherits the same shortcuts as the 2D viewer, with the following additi
 #### Window / Level Adjustment
 - Move the mouse **horizontally to the right** to increase the window width (reduce the perceived contrast).
 - Move the mouse **vertically upwards** to lower the window center (increase the perceived brightness).<br>
-Tip: Use [Preferences](../customize/preferences)  to reverse the direction of level adjustments.
+Tip: Use [Preferences](customize/preferences)  to reverse the direction of level adjustments.
 
 
 #### Drawing a Segment

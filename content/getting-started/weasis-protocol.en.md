@@ -32,17 +32,17 @@ open weasis://?%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fdemo-archi
 {{< /tabs >}}
 
 ### How to Build a URI
-The `weasis://?` URI scheme allows you to launch Weasis directly from the system's URI handler. By constructing the correct URI path, you can execute [Weasis commands](../../basics/commands) to load images or perform other actions.
+The `weasis://?` URI scheme allows you to launch Weasis directly from the system's URI handler. By constructing the correct URI path, you can execute [Weasis commands](../basics/commands) to load images or perform other actions.
 
 [Weasis PACS Connector](https://github.com/nroduit/weasis-pacs-connector#launch-weasis) can dynamically generate manifests (listing references for images to load) and build the required URI through an API. This tool also manages user preferences and other launch parameters.
 
 If you're not using the Weasis PACS Connector, you can build a URI manually by following these steps:
-1. **Choose Commands**: Select one or more [commands](../../basics/commands) to execute.
+1. **Choose Commands**: Select one or more [commands](../basics/commands) to execute.
 2. **Encode the Commands**: Use a URL encoder to format the commands correctly for URI inclusion.
 3. **Prefix the Commands**: Add the `weasis://?` scheme at the beginning of the encoded command string to create the final URI.
 
 ##### Example: Loading a Remote Image
-1. Use [$dicom:get](../../basics/commands/#dicomget) to load an image from URL
+1. Use [$dicom:get](../basics/commands/#dicomget) to load an image from URL
 {{< highlight text >}}
 $dicom:get -r "https://nroduit.github.io/demo-archive/us-palette.dcm"
 {{< /highlight >}}
@@ -56,30 +56,30 @@ $dicom:get -r "https://nroduit.github.io/demo-archive/us-palette.dcm"
 {{< /launch >}}
 
 {{% notice tip %}}
-For loading multiple images, it's recommended to use a manifest file that references all desired images instead of including each image individually in the URI. The easiest way to build this manifest dynamically is by using the [Weasis PACS Connector](https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector). Alternatively, you can create the manifest manually following the [provided instructions](../../basics/customize/integration/#build-an-xml-manifest).
+For loading multiple images, it's recommended to use a manifest file that references all desired images instead of including each image individually in the URI. The easiest way to build this manifest dynamically is by using the [Weasis PACS Connector](https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector). Alternatively, you can create the manifest manually following the [provided instructions](../basics/customize/integration/#build-an-xml-manifest).
 {{% /notice %}}
 
 ### Examples to Load Images
 
 If you use weasis-pacs-connector, please refer to [Launch Weasis](https://github.com/nroduit/weasis-pacs-connector#launch-weasis).
 
-* Use [$dicom:get](../../basics/commands/#dicomget) to load a static XML manifest containing direct links (without WADO server) {{< launch >}}$dicom:get -w "https://nroduit.github.io/demo-archive/Lumbar/mf.xml"{{< /launch >}}
+* Use [$dicom:get](../basics/commands/#dicomget) to load a static XML manifest containing direct links (without WADO server) {{< launch >}}$dicom:get -w "https://nroduit.github.io/demo-archive/Lumbar/mf.xml"{{< /launch >}}
 {{< highlight shell >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/Lumbar/mf.xml"
 {{< /highlight >}}
-* Use [$dicom:rs](../../basics/commands/#dicomrs) to load DICOM files with DICOMWeb RESTful services (see [other examples](../../basics/customize/integration/#download-directly-with-dicomweb-restful-services)) {{< launch >}}$dicom:rs --url "https://demo.orthanc-server.com/dicom-web" -r "patientID=5Yp0E"{{< /launch >}}
+* Use [$dicom:rs](../basics/commands/#dicomrs) to load DICOM files with DICOMWeb RESTful services (see [other examples](../basics/customize/integration/#download-directly-with-dicomweb-restful-services)) {{< launch >}}$dicom:rs --url "https://demo.orthanc-server.com/dicom-web" -r "patientID=5Yp0E"{{< /launch >}}
 {{< highlight shell >}}
 $dicom:rs --url "https://demo.orthanc-server.com/dicom-web" -r "patientID=5Yp0E"
 {{< /highlight >}}
-* Use [$dicom:get](../../basics/commands/#dicomget) to load an image from URL and [remove all](../../basics/commands/#dicomclose) the previous images if Weasis is already open {{< launch >}}$dicom:close --all $dicom:get -r "https://nroduit.github.io/demo-archive/us-palette.dcm"{{< /launch >}}
+* Use [$dicom:get](../basics/commands/#dicomget) to load an image from URL and [remove all](../basics/commands/#dicomclose) the previous images if Weasis is already open {{< launch >}}$dicom:close --all $dicom:get -r "https://nroduit.github.io/demo-archive/us-palette.dcm"{{< /launch >}}
 {{< highlight shell >}}
 $dicom:close --all $dicom:get -r "https://nroduit.github.io/demo-archive/us-palette.dcm"
 {{< /highlight >}}
-* Use [$dicom:get](../../basics/commands/#dicomget) to load multiple local folders and a remote image {{< launch >}}$dicom:get -l "D:/DICOM/Overlay" -l "D:/DICOM/Shutter" -r "https://nroduit.github.io/demo-archive/us-palette.dcm"{{< /launch >}}
+* Use [$dicom:get](../basics/commands/#dicomget) to load multiple local folders and a remote image {{< launch >}}$dicom:get -l "D:/DICOM/Overlay" -l "D:/DICOM/Shutter" -r "https://nroduit.github.io/demo-archive/us-palette.dcm"{{< /launch >}}
 {{< highlight shell >}}
 $dicom:get -l "D:/DICOM/Overlay" -l "D:/DICOM/Shutter" -r "https://nroduit.github.io/demo-archive/us-palette.dcm"
 {{< /highlight >}}
-* Use [$image:get](../../basics/commands/#imageget) to load a non DICOM image {{< launch >}}$image:get -u "https://user-images.githubusercontent.com/993975/59107662-6c9ed300-8939-11e9-83ee-28f2725f4ae1.jpg"{{< /launch >}}
+* Use [$image:get](../basics/commands/#imageget) to load a non DICOM image {{< launch >}}$image:get -u "https://user-images.githubusercontent.com/993975/59107662-6c9ed300-8939-11e9-83ee-28f2725f4ae1.jpg"{{< /launch >}}
 {{< highlight shell >}}
 $image:get -u "https://user-images.githubusercontent.com/993975/59107662-6c9ed300-8939-11e9-83ee-28f2725f4ae1.jpg"
 {{< /highlight >}}
@@ -88,7 +88,7 @@ $image:get -u "https://user-images.githubusercontent.com/993975/59107662-6c9ed30
 
 The command for modifying the configuration at launch is `$weasis:config` which can have different arguments:
 
-* **cdb** is the Weasis web context (The URL of weasis-native.zip package in [ViewerHub](../../viewer-hub)). If the value is null, the weasis version installed from the [native installer](../) is used. In the weasis-pacs-connector [configuration](https://github.com/nroduit/weasis-pacs-connector/blob/master/src/main/resources/weasis-pacs-connector.properties), the default value is defined by `weasis.base.url`.
+* **cdb** is the Weasis web context (The URL of weasis-native.zip package in [ViewerHub](../viewer-hub)). If the value is null, the weasis version installed from the [native installer](download-dicom-viewer) is used. In the weasis-pacs-connector [configuration](https://github.com/nroduit/weasis-pacs-connector/blob/master/src/main/resources/weasis-pacs-connector.properties), the default value is defined by `weasis.base.url`.
 * **arg** is an argument for the launcher. The value must start by $, like arg="$dicom:close --all" (Note: the value can also be directly in the base URI, outside $weasis:config). Single-valued argument but can be specified multiple times.
 * **pro** is a property for the launcher containing a key and a value separate by a space. Single-valued property but can be specified multiple times.
 * **auth** is the web authorization parameter

@@ -24,9 +24,9 @@ Weasis is a standalone and web-based application designed for visualizing and an
 For general questions, you can use the [forum](https://groups.google.com/group/dcm4che) or the [GitHub discussions](https://github.com/nroduit/Weasis/discussions).
 
 On this website you should find help if you are:
-* a person who [integrate Weasis with another system like PACS](../basics/customize/integration/)
-* a [developer](../getting-started/#developer-documentation)
-* a [user](../tutorials/)
+* a person who [integrate Weasis with another system like PACS](basics/customize/integration/)
+* a [developer](getting-started/#developer-documentation)
+* a [user](tutorials)
 
 ### Can Weasis be used for commercial purposes?
 Weasis is available for commercial use, provided that you comply with the terms outlined in [the license](https://github.com/nroduit/Weasis/blob/master/LICENSE).
@@ -52,11 +52,11 @@ Since version 3.7.0, Weasis' source code is distributed under a dual license mod
 For more details, refer to the [EPL 2.0 FAQ](https://www.eclipse.org/legal/epl-2.0/faq.php).
 
 ### Can Weasis be included in DICOM CDs or other removable media?
-Yes, Weasis can be embedded into DICOM CDs, but this feature is only supported on **Windows** platforms. On other platforms, creating a DICOM CD without the viewer is possible. Refer to the tutorial on [DICOM Export CD/DVD Image](../tutorials/dicom-export/#cddvd-image) for more details.
+Yes, Weasis can be embedded into DICOM CDs, but this feature is only supported on **Windows** platforms. On other platforms, creating a DICOM CD without the viewer is possible. Refer to the tutorial on [DICOM Export CD/DVD Image](tutorials/dicom-export/#cddvd-image) for more details.
 
 ### How do I enable Weasis logging?
 
-To trace Weasis activities, enable the rolling log system in the application preferences. For more details on configuration, refer to the tutorial: [How to configure and view log files](../tutorials/logging/).
+To trace Weasis activities, enable the rolling log system in the application preferences. For more details on configuration, refer to the tutorial: [How to configure and view log files](tutorials/logging/).
 
 
 ### Can I download DICOM files without a WADO server?
@@ -64,7 +64,7 @@ To trace Weasis activities, enable the rolling log system in the application pre
 Yes, while a WADO server is recommended, downloading DICOM files without one is possible using the following methods:
 
 1. **Building an XML Manifest File**:  
-   Use the `DirectDownloadFile` and `DirectDownloadThumbnail` options as described in the [integration guide](../basics/customize/integration/#build-an-xml-manifest-no-wado-server).
+   Use the `DirectDownloadFile` and `DirectDownloadThumbnail` options as described in the [integration guide](basics/customize/integration/#build-an-xml-manifest-no-wado-server).
 
 2. **Using the `$dicom:get` Command**:  
    Example command:

@@ -53,7 +53,7 @@ It may be from a DICOM CD/DVD or a folder containing a DICOMDIR
     <br>
     * Archive: select the archive to query
       * With DICOM nodes: classic DIMSE C-Find with C-Move, C-Get or WADO-URI for retrieving DICOM files
-      * With [DICOMWeb nodes](../dicomweb-config): QIDO and WADO-RS for retrieving DICOM files (no other options are required)
+      * With [DICOMWeb nodes](dicomweb-config): QIDO and WADO-RS for retrieving DICOM files (no other options are required)
     * Retrieve (only with DICOM archive): the protocol to retrieve the images
       * C-MOVE: the classic DIMSE protocol (accepts all sop classes, not recommended for WEB)
       * C-GET: transfer syntaxes are negotiated by each sop class according to a configuration file
@@ -70,7 +70,7 @@ It may be from a DICOM CD/DVD or a folder containing a DICOMDIR
     5. Start importing and close the window
 
 {{% notice note %}}
-The progression of downloaded images for a series and the ability to pause the download of a series is only possible with [DICOMWeb nodes](../dicomweb-config) and with the combination (DICOM C-FIND + WADO-URI).
+The progression of downloaded images for a series and the ability to pause the download of a series is only possible with [DICOMWeb nodes](dicomweb-config) and with the combination (DICOM C-FIND + WADO-URI).
 ![Download Manager](/images%2FDownloadManager.jpg?width=150px)
 Resuming the download of a series by clicking on the green play button or from the contextual menu.
 {{% /notice %}}
@@ -82,4 +82,4 @@ With a DICOMWeb node, a login from a web browser can be required (e.g., login to
 {{% /notice %}}
 
 ### From commands
-See this [page](../../getting-started/weasis-protocol/#examples-to-load-images)
+See this [page](../getting-started/weasis-protocol/#examples-to-load-images)

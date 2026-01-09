@@ -21,7 +21,7 @@ The datasets are sourced mainly from the [DICOM standard repository](ftp://medic
 
 ### How to launch Weasis
 
-In order to view the DICOM samples, ensure you’ve installed the [latest version of Weasis](../getting-started/).
+In order to view the DICOM samples, ensure you’ve installed the [latest version of Weasis](getting-started/).
 
 {{% notice tip %}}
 Clicking the **"Launch"** button will open Weasis and display the corresponding images. If Weasis is already running, the dataset will load in a new tab.
@@ -175,7 +175,7 @@ Show or hide overlays from the "Display" right panel.
 ------------------------------------------------------------------------
 
 #### Modality LUT
-Test the [Modality LUT](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.html) and its effect on image rendering. See also [Lookup Tables (LUT)](../tutorials/lut).
+Test the [Modality LUT](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.html) and its effect on image rendering. See also [Lookup Tables (LUT)](tutorials/lut).
 
 {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/mlut.xml"
@@ -188,7 +188,7 @@ Should always render the same image.
 ------------------------------------------------------------------------
 
 #### VOI LUT
-Test the [VOI LUT](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.2.html) and its effect on image rendering. See also [Lookup Tables (LUT)](../tutorials/lut).
+Test the [VOI LUT](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.2.html) and its effect on image rendering. See also [Lookup Tables (LUT)](tutorials/lut).
 
 {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/vlut.xml"
@@ -201,7 +201,7 @@ VOI LUT settings can be adjusted in the "Image Tool" right panel.
 ------------------------------------------------------------------------
 
 #### Combined LUT
-Test the combined effect of Modality LUT, VOI LUT and Presentation LUT on image rendering. See [Lookup Tables (LUT)](../tutorials/lut).
+Test the combined effect of Modality LUT, VOI LUT and Presentation LUT on image rendering. See [Lookup Tables (LUT)](tutorials/lut).
 
 {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/clut.xml"
@@ -295,7 +295,7 @@ Structured reports formatted hierarchically using tag order. It can display link
 Test the rendering of various DICOM presentation states.
 
 {{% notice info %}}
-Click on the right icon over the image to select the Presentation State. See [How to build DICOM PR](../tutorials/build-ko-pr/#presentation-state-pr-or-gsps).
+Click on the right icon over the image to select the Presentation State. See [How to build DICOM PR](tutorials/build-ko-pr/#presentation-state-pr-or-gsps).
 {{% /notice %}}
 
 <ul>
@@ -362,5 +362,5 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/demo/ko.xml"
 {{< /launch >}}
 
 {{% notice info %}}
-Click on the right icon over the image to select the Key Object Selection. See [How to build and export DICOM KO](../tutorials/build-ko-pr/#key-object-selection-ko).
+Click on the right icon over the image to select the Key Object Selection. See [How to build and export DICOM KO](tutorials/build-ko-pr/#key-object-selection-ko).
 {{% /notice %}}

@@ -9,7 +9,7 @@ keywords: [ "orientation", "dicom viewer", "free dicom viewer", "open source dic
 
 The orientation of the DICOM images is displayed by one or more uppercase letters in the middle on the top and left of the view.
 
-If _Anatomical Orientation Type (0010,2210)_ [attribute](../tags/) is absent or has a value of BIPED, the anatomical direction is:
+If _Anatomical Orientation Type (0010,2210)_ [attribute](tags) is absent or has a value of BIPED, the anatomical direction is:
 
 * A: anterior
 * P: posterior
@@ -18,7 +18,7 @@ If _Anatomical Orientation Type (0010,2210)_ [attribute](../tags/) is absent or 
 * H: head
 * F: foot
 
-If _Anatomical Orientation Type (0010,2210)_ [attribute](../tags/) has a value of QUADRUPED (since {{% badge title="Version" %}}4.1.0{{% /badge %}}), the anatomical direction is designated by:
+If _Anatomical Orientation Type (0010,2210)_ [attribute](tags) has a value of QUADRUPED (since {{% badge title="Version" %}}4.1.0{{% /badge %}}), the anatomical direction is designated by:
 * LE: Left
 * RT: Right
 * D: Dorsal

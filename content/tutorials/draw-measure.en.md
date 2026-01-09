@@ -9,7 +9,7 @@ keywords: [ "Draw", "Measure", "Measurements", "viewer 2D", "dicom viewer", "fre
 
 This panel allows you to draw and measure on DICOM and standard images. The results can be exported:
 
-* For DICOM, in a [DICOM Presentation State](../build-ko-pr/#presentation-state-pr-or-gsps) object. 
+* For DICOM, in a [DICOM Presentation State](build-ko-pr/#presentation-state-pr-or-gsps) object. 
 * For standard images, in an XML File in the same directory of the image (when exporting the images in non-dicom file format). The XML file is automatically loaded when the image is displayed in the standard 2D Viewer.
 
 ![Draw & Measure](/tuto/measure.jpg?classes=shadow&width=780px)
@@ -19,11 +19,11 @@ This panel allows you to draw and measure on DICOM and standard images. The resu
 When clicking on {{< svg-inline "static/tuto/icon/normalize.svg" >}} of the vertical button {{< svg-inline "static/tuto/icon/measure.svg" >}}, the panel is displayed on the right side of the viewer. This panel is divided into 4 parts.
 
 #### Measurement tools {{% badge style="red" %}}A{{% /badge %}} {#measurement-tools}
-Select a measurement tool by clicking on one of the buttons and then draw on the image. Note that the previous action will automatically select the drawing action in the [mouse left button](../dicom-2d-viewer/#toolbars).
+Select a measurement tool by clicking on one of the buttons and then draw on the image. Note that the previous action will automatically select the drawing action in the [mouse left button](dicom-2d-viewer/#toolbars).
 
 The first button is the selection tool that allows you to select, resize, and move the graphic objects.
 
-By selecting one or several graphic objects, you can change properties (e.g. color, line width) or copy/paste with the contextual menu. You can also delete the selection with the delete key or {{< svg-inline "static/tuto/icon/selectionDelete.svg" >}}. See other [shortcuts for graphics](../../basics/shortcuts/index.html#graphics).
+By selecting one or several graphic objects, you can change properties (e.g. color, line width) or copy/paste with the contextual menu. You can also delete the selection with the delete key or {{< svg-inline "static/tuto/icon/selectionDelete.svg" >}}. See other [shortcuts for graphics](../basics/shortcuts/index.html#graphics).
 
 {{% notice note %}}
 You can draw a segment in two ways:<br>
@@ -48,15 +48,15 @@ The drawing buttons allow you to add text and graphic as annotations. These grap
 * Line width: The default line width.
 * Draw only once: After drawing a graphic object, the tool is automatically set to the selection mode. If unchecked, the tool remains active for drawing a new graphic.
 * Pixel statistics: Show statistics of the pixel values within the shape. Only for graphic objects with a closed shape (e.g., rectangle, ellipse, polygon).
-* Unit: The unit of the image spatial calibration. If no calibration is defined, the unit is the pixel. See also [How to change the spatial calibration](../calibration).
+* Unit: The unit of the image spatial calibration. If no calibration is defined, the unit is the pixel. See also [How to change the spatial calibration](calibration).
 * More options: The preferences to change more display options (see [preferences](#preferences)).
 
 {{% notice tip %}}
-Show/hide all the graphic objects from the [_Display_ panel](../dicom-2d-viewer/#display) by checking/unchecking the _Drawings_ option.
+Show/hide all the graphic objects from the [_Display_ panel](dicom-2d-viewer/#display) by checking/unchecking the _Drawings_ option.
 {{% /notice %}}
 
 #### Selected Measurement {{% badge style="red" %}}D{{% /badge %}} {#selected-measurement}
-The selected graphic {{% badge style="red" %}}E{{% /badge %}} created with a measurement tool is displayed in the table. The table shows the shape properties according to the measurement type (and its units in square brackets if exists, see also the [calibration type](../dicom-2d-viewer/#open-the-2d-viewer) located at {{% badge style="blue" %}}M{{% /badge %}}).
+The selected graphic {{% badge style="red" %}}E{{% /badge %}} created with a measurement tool is displayed in the table. The table shows the shape properties according to the measurement type (and its units in square brackets if exists, see also the [calibration type](dicom-2d-viewer/#open-the-2d-viewer) located at {{% badge style="blue" %}}M{{% /badge %}}).
 
 {{% notice note %}}
 For polygon, the length, the width, and the orientation are calculated with OMBB (Offset Minimum Bounding Box) method which provides a more accurate approximation of the actual length and width based on the bounding box of the polygon.
@@ -94,6 +94,6 @@ It lets you change the graphic properties when drawing new graphics, since {{% b
 #### Labels on image
 It lets you change the display options for labels attached to measurement graphics.
 
-* Font type: The default font size of the labels on the image. The default value is _Small semibold_. Note that the font size is not absolute and is automatically adjusted according to the [scale factor](../theme/#how-to-scale-the-user-interface).
+* Font type: The default font size of the labels on the image. The default value is _Small semibold_. Note that the font size is not absolute and is automatically adjusted according to the [scale factor](theme/#how-to-scale-the-user-interface).
 * Geometric measurement: the measurement types displayed on the image according the graphic type.
 * Pixel statistics: the statistics types displayed on the image for graphic objects with a closed shape (e.g., rectangle, ellipse, polygon).

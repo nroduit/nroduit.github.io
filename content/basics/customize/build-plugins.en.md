@@ -7,7 +7,7 @@ weight: 30
 
 ## <center>How to build and install a plugin</center>
 
-This page provides a guide on creating new Weasis plugins and explains how to integrate them into the distributions. For details on configuring the development environment, refer to this [guidelines page](../../../getting-started/guidelines).
+This page provides a guide on creating new Weasis plugins and explains how to integrate them into the distributions. For details on configuring the development environment, refer to this [guidelines page](../../getting-started/guidelines).
 
 ### Types of Plugins in Weasis
 
@@ -46,7 +46,7 @@ The factories are used to create the instances of the plugins and are registered
 {{% /notice %}}
 
 {{% notice tip %}}
-For more information about the plugin hierarchy and their relationships, refer to the [Weasis Architecture](../../architecture).
+For more information about the plugin hierarchy and their relationships, refer to the [Weasis Architecture](../architecture).
 {{% /notice %}}
 
 ### Building Plugins Using Maven Archetype
@@ -127,7 +127,7 @@ To test the plugin with an installed version of Weasis without making any change
       $weasis:config pro="felix.extended.config.properties file:///git/myplugin/myplugin.json"
       {{% /tab %}}
       {{< /tabs >}}
-    - Build a valid URI with the above parameter (see [How to build an URI](../../../getting-started/weasis-protocol/#how-to-build-a-uri)) and launch Weasis from the command on a terminal:Construct a valid URI using the parameter mentioned above (refer to [How to build a URI](../../../getting-started/weasis-protocol/#how-to-build-a-uri))) and launch Weasis from the terminal using a command:
+    - Build a valid URI with the above parameter (see [How to build an URI](../../getting-started/weasis-protocol/#how-to-build-a-uri)) and launch Weasis from the command on a terminal:Construct a valid URI using the parameter mentioned above (refer to [How to build a URI](../../getting-started/weasis-protocol/#how-to-build-a-uri))) and launch Weasis from the terminal using a command:
       {{< tabs groupid="launchPlugin">}}
       {{% tab title="Windows" %}}
       start weasis://?%24weasis%3Aconfig%20pro%3D%22felix.extended.config.properties%20file%3A%2F%2F%2FD%3A%2Fgit%2Fmyplugin%2Fmyplugin.json%22

@@ -25,4 +25,4 @@ On Windows and Mac this option does not appear because it is always supported.
 {{% /notice %}}
 
 ### Changing the default theme or scale factor
-See [preferences](../../basics/customize/preferences/#examples-of-properties-in-ext-configproperties)
+See [preferences](../basics/customize/preferences)

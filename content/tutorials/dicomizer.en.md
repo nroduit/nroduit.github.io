@@ -27,7 +27,7 @@ On macOS, you need to run the `Dicomizer` command from the terminal:
 If you plan to use it frequently, with the Automator application you can create a new application `Dicomizer.app` with the `Run Shell Script` action containing the command.
 
 #### From a WEB Context
-The Dicomizer can be launched from a web context with the `weasis://` [protocol](../../getting-started/weasis-protocol).
+The Dicomizer can be launched from a web context with the `weasis://` [protocol](../getting-started/weasis-protocol).
 
 An example for launching Weasis Dicomizer {{< launch >}}$weasis:config pro="felix.extended.config.properties file:conf/dicomizer.json" pro="gosh.port 17181"{{< /launch >}} with the following parameters:
 {{< highlight shell >}}
@@ -89,7 +89,7 @@ The bottom panel organizes DICOM tags into categorized tree structures:
 - **Image level**: Applicable to the image level.
 
 {{% notice note %}}
-Tags can be configured in the [preferences](../../basics/customize/preferences) (items starting by `weasis.acquire.meta`).
+Tags can be configured in the [preferences](../basics/customize/preferences) (items starting by `weasis.acquire.meta`).
 {{% /notice %}}
 
 {{% notice warning %}}
@@ -97,12 +97,12 @@ If an item's dashed outline in the table is red, it indicates that the value is 
 {{% /notice %}}
 
 If you don't want to fill in the Global tags manually, they can be populated:
-- From a DICOM Worklist (configuration by the [items](../../basics/customize/preferences) starting by `weasis.acquire.wkl`). Here is an example to modify the [configuration at launch](../../getting-started/weasis-protocol/#modify-the-launch-parameters):<br>
+- From a DICOM Worklist (configuration by the [items](../basics/customize/preferences) starting by `weasis.acquire.wkl`). Here is an example to modify the [configuration at launch](../getting-started/weasis-protocol/#modify-the-launch-parameters):<br>
   {{< highlight shell >}}
   $weasis:config pro="felix.extended.config.properties file:conf/ext-dicomizer.properties" pro="gosh.port 17181" pro="weasis.acquire.wkl.host localhost" pro="weasis.acquire.wkl.aet DCM4CHEE" pro="weasis.acquire.wkl.port 11112" pro="weasis.acquire.wkl.station.aet WEASIS-MWL"
   {{< /highlight >}}
 
-- By the [acquire:patient](../../basics/commands/#acquirepatient) command containing an XML encoded as a DICOM XML file, e.g.:
+- By the [acquire:patient](../basics/commands/#acquirepatient) command containing an XML encoded as a DICOM XML file, e.g.:
 {{< highlight xml >}}
 <?xml version="1.0" encoding="UTF-8"?>
 <tags>
@@ -145,7 +145,7 @@ Click the **Publish** button to send DICOM files to a remote DICOM archive, or t
 {{% notice note %}}
 The destination can be a specific remote node or a list of remote nodes available from the main menu, open _File > Preferences (Alt + P)_ and select "DICOM node list" and edit ar add a new DICOM node.
 
-When the Dicomizer destination is specified in the [preferences](../../basics/customize/preferences), the list is not selectable in the publication panel. The preference items are the ones starting with `weasis.acquire.dest`.
+When the Dicomizer destination is specified in the [preferences](../basics/customize/preferences), the list is not selectable in the publication panel. The preference items are the ones starting with `weasis.acquire.dest`.
 {{% /notice %}}
 
 {{% notice tip %}}

@@ -8,7 +8,7 @@ weight: 50
 
 ## <center>Weasis Plugin Development</center>
 
-This page describes the necessary configurations to be able to debug Weasis using an IDE. For developers who want to create new plugins, you can visit [How to build and install a plugin](../../basics/customize/build-plugins).
+This page describes the necessary configurations to be able to debug Weasis using an IDE. For developers who want to create new plugins, you can visit [How to build and install a plugin](../basics/customize/build-plugins).
 
 We recommend the use of [IntelliJ IDEA](https://www.jetbrains.com/idea/) because the following instructions are based on it. Nevertheless, it is possible to use other IDEs by configuring weasis-launcher with similar instructions described in [Add a launcher](#add-a-launcher).
 ### Prerequisites
@@ -28,7 +28,7 @@ Weasis uses [google-java-format](https://github.com/google/google-java-format) a
 ### Getting the source and building Weasis
 
 - Getting the Source
-  - For an external Git client, see [Building Weasis](../building-weasis).
+  - For an external Git client, see [Building Weasis](building-weasis).
   - From IntelliJ IDEA: *New > Project from Version Control...*
     - In the *Get from Version Control* dialog, select the menu *Repository URL* and enter the following URL: `https://github.com/nroduit/Weasis.git` (public repository)
 - Building Weasis plugins
@@ -36,7 +36,7 @@ Weasis uses [google-java-format](https://github.com/google/google-java-format) a
 
 {{% notice tip %}}
 * It is possible to use a JVM Option (e.g. `-Dweasis.arch=linux-x86-64`) to limit the build of native plugins only to the architecture of the current system (do not use this option when building the distribution).
-* See also building the final [Weasis Distributions](../building-weasis#building-native-binaries-and-installers)
+* See also building the final [Weasis Distributions](building-weasis#building-native-binaries-and-installers)
 {{% /notice %}}  
 
 ### Add a launcher
@@ -65,12 +65,12 @@ $dicom:get -l \"D:\images test\dicom\"
 {{< /highlight >}}
 {{% notice note %}}
 Some command interpreters need to escape the quotes or double quotes required for paths or URLs. This is the case with IntelliJ IDEA or Eclipse.<br>
-For more commands at startup see also [Weasis commands](../../basics/commands).
+For more commands at startup see also [Weasis commands](../basics/commands).
 {{% /notice %}}
 {{% notice warning %}}
 In Eclipse launcher parameters, '&' within URLs needs to be escaped with a backslash.
 {{% /notice %}}
-- Examples of other VM options for overriding the default [Preferences](../../basics/customize/preferences)
+- Examples of other VM options for overriding the default [Preferences](../basics/customize/preferences)
   - Removing the possibility of exporting DICOM: `-Dweasis.export.dicom=false`
   - Defines a new user (for getting specific preferences): `-Dweasis.user=user1`
   - Examples with specific configuration files:

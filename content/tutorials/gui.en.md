@@ -12,15 +12,15 @@ The following image shows the main elements of the graphical user interface (GUI
 {{< svg "static/tuto/gui-overview.svg" >}}
 
 The interface of the default DICOM workspace consists mainly of 2 parts:
-1. The [DICOM Explorer](../dicom-explorer) on the left (in blue). It allows you to import and export data, as well as select the series to be visualized.
+1. The [DICOM Explorer](dicom-explorer) on the left (in blue). It allows you to import and export data, as well as select the series to be visualized.
 2. Depending on the data imported, different viewer/player types (represented by a tab) are displayed in the main section (green). Menus, toolbars and tools change, according to the type of viewer selected. 
-   * The selected viewer is the image above is the [DICOM 2D viewer](../dicom-2d-viewer) {{< svg-inline "static/tuto/icon/view2d.svg" >}} which is the viewer opened by default. 
+   * The selected viewer is the image above is the [DICOM 2D viewer](dicom-2d-viewer) {{< svg-inline "static/tuto/icon/view2d.svg" >}} which is the viewer opened by default. 
    * A tab containing a multi-view layout can display images from only one patient. However, one patient can appear in several tabs.
    * A tab is also a docked panel that can be arranged by dragging and dropping it to the desired location. This makes it possible to display two tabs side by side.
-   * See also [DICOM Explorer](../dicom-explorer/) to understand how to navigate through the Patient/Study/Series/Image.
+   * See also [DICOM Explorer](dicom-explorer/) to understand how to navigate through the Patient/Study/Series/Image.
 
 {{% notice note %}}
-Select your preferred language and regional settings in the [preferences](../locale). Adapt the graphical interface to your needs by [modifying the theme or the scaling factor](../theme) for a better user experience on HiDPI screens.
+Select your preferred language and regional settings in the [preferences](locale). Adapt the graphical interface to your needs by [modifying the theme or the scaling factor](theme) for a better user experience on HiDPI screens.
 {{% /notice %}}
 
 {{% notice tip %}}
@@ -28,17 +28,17 @@ In the View menu at the top, toolbars and tools related to the selected viewer c
 {{% /notice %}}
 
 ### List of other viewers/Players in the DICOM workspace
-* [Multiplanar Reconstruction (MPR) viewer](../mpr)
-* [Maximum Intensity Projection (MIP) viewer](../mip)
-* [DICOM 3D viewer](../dicom-3d-viewer)
-* [DICOM ECG viewer](../dicom-ecg)
-* [DICOM Structured Report (SR) viewer](../dicom-sr)
-* [DICOM Audio player](../dicom-audio)
+* [Multiplanar Reconstruction (MPR) viewer](mpr)
+* [Maximum Intensity Projection (MIP) viewer](mip)
+* [DICOM 3D viewer](dicom-3d-viewer)
+* [DICOM ECG viewer](dicom-ecg)
+* [DICOM Structured Report (SR) viewer](dicom-sr)
+* [DICOM Audio player](dicom-audio)
 * DICOM PDF viewer (default system application associated with pdf files). Same for other encapsulated documents.
 * DICOM Video player (default system player associated with mpg files)
 
 ### List of other workspaces
-* [Dicomizer](../dicomizer) - Dicomizer workspace
+* [Dicomizer](dicomizer) - Dicomizer workspace
 * Explorer of standard images (based on the non-dicom-explorer.json configuration profile)
 
 

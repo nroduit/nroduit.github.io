@@ -226,7 +226,7 @@ arg is an XML text in UTF8 or an url with the option '--url'
 
 #### weasis:config (only at launch)
 
-This command can be used only at launch, see [Modify the launch parameters](../../getting-started/weasis-protocol/#modify-the-launch-parameters)
+This command can be used only at launch, see [Modify the launch parameters](../getting-started/weasis-protocol/#modify-the-launch-parameters)
 
 
 {{% notice note %}}

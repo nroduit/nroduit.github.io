@@ -67,10 +67,10 @@ The distribution files are located in the *weasis-i18n-dist/target/dist* folder.
 
 ### Apply the translations
 
-The translation package can be built manually as described below, or it is automatically built every 24 hours and can be downloaded from [here](https://github.com/nroduit/weasis-i18n#download-the-binary-package). When [Building Weasis](../building-weasis), the last package is downloaded automatically.
+The translation package can be built manually as described below, or it is automatically built every 24 hours and can be downloaded from [here](https://github.com/nroduit/weasis-i18n#download-the-binary-package). When [Building Weasis](building-weasis), the last package is downloaded automatically.
 
 * In order to update Weasis with new translations, unzip weasis-i18n.zip and either:
-  * Pass the weasis.i18n location into the [launch command](../weasis-protocol/#modify-the-launch-parameters):
+  * Pass the weasis.i18n location into the [launch command](weasis-protocol/#modify-the-launch-parameters):
 {{< highlight bash >}}
 $weasis:config pro="weasis.i18n <your-uri>"
 $weasis:config pro="weasis.i18n file:/home/weasis-i18n-dist-4.0.0-SNAPSHOT"
@@ -83,7 +83,7 @@ weasis-launcher-i18n cannot be updated dynamically as the launcher is not an OSG
 {{% /notice %}}
 
 {{% notice tip %}}
-See [how to change the language in the Weasis preferences](../../tutorials/locale).
+See [how to change the language in the Weasis preferences](../tutorials/locale).
 {{% /notice %}}
 
 

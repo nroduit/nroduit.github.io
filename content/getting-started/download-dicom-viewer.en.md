@@ -10,7 +10,7 @@ weight: 9
 * [Manual Installation (Native Installers)](#list-of-all-installers)
 
 ### Prerequisites
-Weasis can be installed on desktop systems such as Windows, macOS, and Linux. It does not require any additional frameworks (such as Java) to be installed. However, some graphics-related requirements must be met to use [Volume Rendering](../../tutorials/dicom-3d-viewer/#requirements).
+Weasis can be installed on desktop systems such as Windows, macOS, and Linux. It does not require any additional frameworks (such as Java) to be installed. However, some graphics-related requirements must be met to use [Volume Rendering](../tutorials/dicom-3d-viewer/#requirements).
 
 {{% notice info %}}
 The open-source distribution of Weasis is not a certified medical device (CE or FDA). Any primary diagnostic use requires you to ensure full compliance with the laws and regulations applicable in your jurisdiction.

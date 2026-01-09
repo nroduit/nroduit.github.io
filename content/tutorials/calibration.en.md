@@ -22,7 +22,7 @@ The calibration can be applied only to the current image or to all the images be
 {{% /notice %}}
 
 {{% notice info %}}
-Once calibrated, all measuring tools will produce results according to the calibration, and the [real-world zoom](../zoom/#real-world-zoom) will display the images at the same size of the real objects. Currently, the calibration is not saved in the DICOM file.
+Once calibrated, all measuring tools will produce results according to the calibration, and the [real-world zoom](zoom/#real-world-size-display) will display the images at the same size of the real objects. Currently, the calibration is not saved in the DICOM file.
 {{% /notice %}}
 
 ### Changing spacial calibration with Weasis 1.1.3

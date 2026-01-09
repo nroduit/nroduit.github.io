@@ -69,5 +69,5 @@ Lower log levels (DEBUG, TRACE) generate significantly more data and may impact 
 {{% /notice %}}
 
 {{% notice info %}}
-The default logging configuration comes from `base.json`. See [Weasis Preferences](../../basics/customize/preferences) for more details. Some default values have changed since {{% badge title="Version" %}}4.4.0{{% /badge %}}.
+The default logging configuration comes from `base.json`. See [Weasis Preferences](../basics/customize/preferences) for more details. Some default values have changed since {{% badge title="Version" %}}4.4.0{{% /badge %}}.
 {{% /notice %}}

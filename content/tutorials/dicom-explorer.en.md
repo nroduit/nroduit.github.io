@@ -11,13 +11,13 @@ keywords: [ "dicom explorer", "patient", "study", "series", "dicom viewer", "fre
 
 The DICOM Explorer is the panel on the left that displays the [Patient/Study/Series representation](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/chapter_A.html) defined in the DICOM standard.
 
-The data displayed in the DICOM Explorer can be [imported form different ways](../dicom-import).
+The data displayed in the DICOM Explorer can be [imported form different ways](dicom-import).
 
 ![DICOM EXplorer](/tuto/dicom-explorer-level.jpg?classes=shadow&width=700px)
 <br>
 
 {{% notice tip %}}
-You can navigate through the Patient/Study/Series/Image structure using only [keyboard shortcuts](../../basics/shortcuts). For example:
+You can navigate through the Patient/Study/Series/Image structure using only [keyboard shortcuts](../basics/shortcuts). For example:
 - Open an image and, if necessary, select the view to focus on. If the layout has more than one view, you can move across the views with _Tab_ and _Shift + Tab_. The view surrounded by an orange line is the focused view.
 - Navigate through images within a series with _Up_ and _Down_
 - Navigate through series within a study with _Left_ and _Right_
@@ -29,7 +29,7 @@ You can navigate through the Patient/Study/Series/Image structure using only [ke
 * Weasis allows multi-patient display. By default, when images are imported a tab with the patient's name opens in the main area.
 * A tab containing a multi-view layout can only display images from a single patient.
 * Changing patients can be done either through the first combobox in the DICOM Explorer (see image above) or by selecting a tab in the main area.
-* In the combobox the patients are sorted in alphabetical order regardless of case and according to the [regional setting](../locale).
+* In the combobox the patients are sorted in alphabetical order regardless of case and according to the [regional setting](locale).
 * Studies and Series are displayed within the same patient when the metadata Patient Name and Patient ID are the same. Otherwise, new patients are displayed.
 
 #### Study Level
@@ -57,5 +57,5 @@ From the main menu "_File > Preferences > DICOM > DICOM Explorer_":
 
 * _Thumbnail size:_ defines the width of the thumbnails and adjusts the panel accordingly (Default: 144). It is recommended to restart the application after this change.
 * _Study data sorting:_ allows sorting the studies by chronological order or inversely chronological (Default: reverse chronology order). Since {{% badge title="Version" %}}4.1.0{{% /badge %}}.
-* _Open in new tab:_ behavior to automatically open the images of a patient when [using WADO or WADO-RS](../../basics/customize/integration/) (Default: All the patients)
-* _Download all series immediately:_ allows starting the download of the series immediately when [using WADO or WADO-RS](../../basics/customize/integration/) (Default: true). If unchecked then you must click on the play button on each series or globally at the bottom of the thumbnail list.
+* _Open in new tab:_ behavior to automatically open the images of a patient when [using WADO or WADO-RS](../basics/customize/integration/) (Default: All the patients)
+* _Download all series immediately:_ allows starting the download of the series immediately when [using WADO or WADO-RS](../basics/customize/integration/) (Default: true). If unchecked then you must click on the play button on each series or globally at the bottom of the thumbnail list.

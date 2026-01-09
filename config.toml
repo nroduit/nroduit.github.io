@@ -94,9 +94,6 @@ enableRobotsTXT = true
   jdkVersion = "24"
   mavenVersion = "3.8.1"
   
-  [params.image]
-    errorlevel = 'warning'
-  
   [params.link]
     errorlevel = 'warning'
 
@@ -156,17 +153,17 @@ enableRobotsTXT = true
     [[Languages.en.menu.shortcuts]]
       name = "<i class='fa fa-play-circle'></i> Live Demo"
       identifier = "ds"
-      url = "demo"
+      pageRef = "demo"
       weight = 10
 
     [[Languages.en.menu.shortcuts]]
       name = "<i class='fa fa-question-circle'></i> FAQs"
-      url = "faq"
+      pageRef = "faq"
       weight = 15
 
     [[Languages.en.menu.shortcuts]]
       name = "<i class='fa fa-user-circle'></i> Get Involved!"
-      url = "get-involved"
+      pageRef = "get-involved"
       weight = 20
 
   [Languages.fr]

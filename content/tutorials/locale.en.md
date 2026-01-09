@@ -10,7 +10,7 @@ keywords: [ "languages", "locale", "region", "dicom viewer", "free dicom viewer"
 ### Switching from the user interface
 From the main menu, open _File > Preferences (Alt + P)_ and select the desired language and regional format.
 
-Languages in the list have at least 30% translation coverage. For incomplete translations, you can contribute directly through the [translation](../../getting-started/translating).
+Languages in the list have at least 30% translation coverage. For incomplete translations, you can contribute directly through the [translation](../getting-started/translating).
 
 ![Preferences](/tuto/language-prefs.png?classes=shadow)
 <br>
@@ -19,4 +19,4 @@ Anywhere in the user interface, date and number should be displayed with the sel
 {{% /notice %}}
 
 ### Changing the default locale settings
-If you need to change the default settings, please see the [preferences](../../basics/customize/preferences/#priority-order-for-loading-a-property).
+If you need to change the default settings, please see the [preferences](../basics/customize/preferences/#priority-order-for-loading-a-property).

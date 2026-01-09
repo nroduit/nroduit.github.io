@@ -42,7 +42,7 @@ List of dynamic variables in _URI_, _Parameters_ and _Environment Variables_:
    * `{pref:<key>}`  any preferences, e.g. `{pref:weasis.user}`.
 
 {{% notice note %}}
-The Other Launcher is a special launcher that allows you to display a button on [any viewers](../gui#list-of-other-viewersplayers-in-the-dicom-workspace). For this type, only `{pref:<key>}` can be used as a dynamic variable.
+The Other Launcher is a special launcher that allows you to display a button on [any viewers](gui#list-of-other-viewersplayers-in-the-dicom-workspace). For this type, only `{pref:<key>}` can be used as a dynamic variable.
 {{% /notice %}}
 
 ### How to run the third-party launcher

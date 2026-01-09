@@ -5,7 +5,7 @@ keywords: [ "dcm4chee", "dcm4chee web" , "dcm4chee integration", "dcm4chee viewe
 weight: 10
 ---
 
-This page explains how to integrate Weasis with dcm4chee-arc-light using weasis-pacs-connector. To launch Weasis without the connector, follow the alternative [instructions](../../basics/customize/integration/#download-directly-with-dicomweb-restful-services).
+This page explains how to integrate Weasis with dcm4chee-arc-light using weasis-pacs-connector. To launch Weasis without the connector, follow the alternative [instructions](../basics/customize/integration/#download-directly-with-dicomweb-restful-services).
 
 
 ![dcm4chee-arc-light](/gallery-dcm4chee/1Weasis%20in%20dcm4chee-arc-light.png?classes=border "dcm4chee-arc-light")
@@ -52,7 +52,7 @@ deployment-overlay add --name=dcm4chee-arc --deployments=weasis-pacs-connector.w
 {{% /notice %}}
     - {{% badge style="info" %}}Optional{{% /badge %}} Add <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis-with-other-parameters">other properties</a> in the URL.
     - Refresh the web page and the view button should appear as in the screenshot above
-    - To launch the viewer from the web portal, the client computer must have installed the [Weasis package](../).
+    - To launch the viewer from the web portal, the client computer must have installed the [Weasis package](download-dicom-viewer).
 
 ## Configuration Matrix
 

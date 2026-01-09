@@ -15,7 +15,7 @@ The following diagrams illustrate the main plugin types (_known as bundles in OS
 ### Understanding The Categories of Plugins
 Weasis employs a modular approach, where individual plugins (or **bundles** in OSGi terminology) handle specific functionalities. Here are the plugin categories represented by layers in the diagram:
 1. **Media Viewer and Editor**<br>
-   This category handles the main viewing and editing functionalities. Except the [2D viewer](../../tutorials/dicom-2d-viewer/), it includes [specialized viewers](../../tutorials/gui/#list-of-other-viewersplayers-in-the-dicom-workspace) for different modalities and representations.
+   This category handles the main viewing and editing functionalities. Except the [2D viewer](../tutorials/dicom-2d-viewer/), it includes [specialized viewers](../tutorials/gui/#list-of-other-viewersplayers-in-the-dicom-workspace) for different modalities and representations.
 2. **UI Aggregator**<br>
    UI Aggregator plugins bring together various interface components to create a cohesive and user-friendly experience. They dynamically adapt the interface to include provided tools or modules, ensuring that Weasis remains customizable and modular.
 3. **Data Access and Management (Data Explorer)**<br>

@@ -44,5 +44,5 @@ In the DICOM Print dialog, you can manage several configurations. For meaning of
 ![DICOM](/tuto/print/dicom.png?classes=shadow)
 <br>
 {{% notice note %}}
-The DICOM printer configurations can be distributed at the server side for all the clients, see [preferences](../../basics/customize/preferences/#how-to-add-dicom-nodes-or-dicom-printers-at-the-server-side).
+The DICOM printer configurations can be distributed at the server side for all the clients, see [preferences](../basics/customize/preferences/#how-to-add-dicom-nodes-or-dicom-printers-at-the-server-side).
 {{% /notice %}}

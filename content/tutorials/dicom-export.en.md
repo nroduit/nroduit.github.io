@@ -27,7 +27,7 @@ Export the view according to the original image with some options.
 * DICOM Shutter: Apply the [DICOM shutters](https://dicom.nema.org/medical/Dicom/current/output/chtml/part03/sect_C.7.6.11.html) when checked
 * DICOM Overlay: Apply the [DICOM overlays](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.9.2.html) when checked
 
-### DICOM Export {{< svg-inline "static/tuto/icon/exportDicom.svg" >}} {#dicom-exporting}
+### DICOM Export {{< svg-inline "static/tuto/icon/exportDicom.svg" >}} {#exporting}
 
 In order to open the DICOM export window click on toolbar icon {{< svg-inline "static/tuto/icon/exportDicom.svg" >}} or from the main menu _File > Export > DICOM_
 
@@ -42,7 +42,7 @@ In order to open the DICOM export window click on toolbar icon {{< svg-inline "s
    * Include DICOMDIR: Create DICOMDIR file
    * DICOM CD folders: Add a directory to be compliant with DICOM CD
    * Keep directory names: Preserve the name in the directory hierarchy (not compliant with DICOMDIR)
-3. Select the patient/study/series/instance to export. Note: [series created by Weasis](../build-ko-pr/) have a flag "NEW"
+3. Select the patient/study/series/instance to export. Note: [series created by Weasis](build-ko-pr/) have a flag "NEW"
 4. Export the selection and close the Window
 
 {{% notice tip %}}
@@ -60,7 +60,7 @@ Multiframe images are exported by adding a number to the end of the file name.
 #### DICOM Send
 1. Select *DICOM Send* item
 2. Select the destination node (either a DICOM node or a DICOMWeb node)
-3. Select the patient/study/series/instance to export. Note: [series created by Weasis](../build-ko-pr/) have a flag "NEW"
+3. Select the patient/study/series/instance to export. Note: [series created by Weasis](build-ko-pr/) have a flag "NEW"
 4. Send the selection to the destination and close the Window
 
 #### CD/DVD Image

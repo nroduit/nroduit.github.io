@@ -14,7 +14,7 @@ If you encounter a bug or have an idea to improve Weasis, you can contribute by 
 Before creating an issue, check the following resources to see if it’s already been reported:
 - [GitHub Issues](https://github.com/nroduit/Weasis/issues)
 - [Forum](https://groups.google.com/group/dcm4che)
-- Pages like [FAQs](../faq) or [Getting Started](../getting-started).
+- Pages like [FAQs](faq) or [Getting Started](getting-started).
 
 Only then, fill out a bug on [GitHub](https://github.com/nroduit/Weasis/issues) with as much detail as possible.
 
@@ -31,7 +31,7 @@ Not a developer? You can still make an impact by sharing your expertise and supp
   3. [Fork the documentation repository](https://github.com/nroduit/nroduit.github.io/fork) and submit your contributions as pull requests.
 
 - **Localize Weasis**:  
-  Make Weasis accessible to users worldwide by contributing to its [localization efforts](../getting-started/translating).
+  Make Weasis accessible to users worldwide by contributing to its [localization efforts](getting-started/translating).
 
 - **Help Users in the Forum**:  
   Support fellow community members by answering questions and sharing insights on the [dcm4che Forum](https://groups.google.com/group/dcm4che).

@@ -55,6 +55,6 @@ Once all the steps above completed, launch the below URL to launch Weasis and lo
 ```
 http://localhost:8081/display/weasis?studyUID=1.3.12.2.1107.5.1.4.54023.30000004093013443132800000021&archive=dcm4chee-local
 ```
-This URL works with the [Imaging Hub](../hub) stack. If you are using a different setup, you may need to adjust the URL accordingly.
+This URL works with the [Imaging Hub](hub) stack. If you are using a different setup, you may need to adjust the URL accordingly.
 
-For more information, refer to the [Launch APIs](../api) documentation.
+For more information, refer to the [Launch APIs](api) documentation.

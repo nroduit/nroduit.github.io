@@ -10,7 +10,7 @@ keywords: [ "viewer 2D", "dicom data", "dicom viewer", "free dicom viewer", "ope
 The 2D viewer is the default viewer when opening a DICOM series containing images.
 
 ### Open the 2D viewer
-The 2D view can be opened with {{< svg-inline "static/tuto/icon/view2d.svg" >}} in the toolbar or by right-clicking on the thumbnail in the [DICOM explorer](../dicom-explorer/).
+The 2D view can be opened with {{< svg-inline "static/tuto/icon/view2d.svg" >}} in the toolbar or by right-clicking on the thumbnail in the [DICOM explorer](dicom-explorer/).
 
 ![DICOM 2DViewer](/tuto/dicom-viewer2d.jpg?classes=shadow&width=780px)
 <br>
@@ -29,28 +29,28 @@ The rulers {{% badge style="blue" %}}K{{% /badge %}} show a real size when it ca
 
 Select the preferred actions for the three mouse buttons and the mouse wheel:
 
-* Mouse left button: The default value is Window/Level. Action can also be changed from the context menu {{% badge style="blue" %}}F{{% /badge %}} and the [key shortcuts](../../basics/shortcuts).
+* Mouse left button: The default value is Window/Level. Action can also be changed from the context menu {{% badge style="blue" %}}F{{% /badge %}} and the [key shortcuts](../basics/shortcuts).
 * Mouse right button: The default value is _Context Menu_
 * Mouse wheel: The default value is _Series Scroll_
 * Mouse middle button: The default value is _Pan_
 
 Where the possible actions are:
 * Pan: Move the image position. _T_ key to select the action. _Alt + Arrows_ keys to pan when another action is selected.
-* [Window/Level](../lut): Change the contrast of the image. _W_ key to select the action.
+* [Window/Level](lut): Change the contrast of the image. _W_ key to select the action.
 * Series Scroll: Scroll through the images of the current series. _S_ key to select the action.
-* [Zoom](../zoom): Zoom in/out the image. _Z_ key to select the action.
+* [Zoom](zoom): Zoom in/out the image. _Z_ key to select the action.
 * Rotation: Rotate the image with a free angle. _R_ key to select the action.
-* [Measure](../draw-measure/#measurement-tools): Draw a graphic for measuring something. _M_ key to select the action.
-* [Draw](../draw-measure/#drawings): Draw a graphic for annotating. _G_ key to select the action.
+* [Measure](draw-measure/#measurement-tools): Draw a graphic for measuring something. _M_ key to select the action.
+* [Draw](draw-measure/#drawings): Draw a graphic for annotating. _G_ key to select the action.
 * Context Menu: Display the context menu. _Q_ key to select the action.
-* [Crosshair](../mpr/#3d-cursor-crosshair): 3D cursor. _H_ key to select the action. _Ctrl + click_ or _Ctrl + Shift + click_ allows changing Window/Level.
+* [Crosshair](cursor-3d): 3D cursor. _H_ key to select the action. _Ctrl + click_ or _Ctrl + Shift + click_ allows changing Window/Level.
 * No Action: Do nothing. _N_ key to select the action.
 
 {{% notice tip %}}
 When dragging, accelerate the action by pressing the _Ctrl_ key and _Ctrl + Shift_ to accelerate more.
 {{% /notice %}}
 
-* {{< svg-inline "static/tuto/icon/layout.svg" >}} _Default layout:_ Change the layout of the view. [DICOM Information](../tags) and [Histogram](../histogram) are specific layouts where information is automatically updated when scrolling through the series.
+* {{< svg-inline "static/tuto/icon/layout.svg" >}} _Default layout:_ Change the layout of the view. [DICOM Information](tags) and [Histogram](histogram) are specific layouts where information is automatically updated when scrolling through the series.
 * Synchronize: The synchronization feature lets you apply the same settings to other images.
   * _None:_ No synchronization is applied between series.
   * _Default Stack:_ When selected, the layout is synchronized (window/level, scrolling, zoom) only with the series sharing the same Frame of Reference UID (0020,0052). This is the default behavior.
@@ -58,19 +58,19 @@ When dragging, accelerate the action by pressing the _Ctrl_ key and _Ctrl + Shif
 * {{< svg-inline "static/tuto/icon/reset.svg" >}} _Reset:_ Reset the image rendering (see [below](#reset)). _Escape_ key to select the action.
 
 #### Toolbars available in the DICOM 2D viewer
-* [DICOM Import](../dicom-import/#from-weasis-menu-or-toolbar)
-* [DICOM Export](../dicom-export/#dicom-exporting)
-* [Screenshot](../dicom-export/#dicom-export)
+* [DICOM Import](dicom-import/#from-weasis-menu-or-toolbar)
+* [DICOM Export](dicom-export/#exporting)
+* [Screenshot](dicom-export/#export-view)
 * Viewer Main Bar (see above)
-* [Measurement](../draw-measure/)
-* [Zoom](../zoom)
+* [Measurement](draw-measure)
+* [Zoom](zoom)
 * Rotation: Rotate the image by 90° clockwise or flip it horizontally. Note visible by default.
-* [DICOM Header](../tags)
-* [Lookup Table](../lut)
-* Basic 3D: [MPR](../mpr) and [MIP](../mip) (disabled if the series has less than 5 images)
-* [3D Viewer](../dicom-3d-viewer) (disabled if the series has less than 5 images)
+* [DICOM Header](tags)
+* [Lookup Table](lut)
+* Basic 3D: [MPR](mpr) and [MIP](mip) (disabled if the series has less than 5 images)
+* [3D Viewer](dicom-3d-viewer) (disabled if the series has less than 5 images)
 * [Cine](#cine)
-* [Key Object Selection](../build-ko-pr/#key-object-selection-ko)
+* [Key Object Selection](build-ko-pr/#key-object-selection-ko)
 
 {{% notice tip %}}
 Toolbars can be shown or hidden from the _View_ top menu.
@@ -105,26 +105,26 @@ Display transformation properties and DICOM information on the image.
   * {{% badge style="blue" %}}I{{% /badge %}} The bottom right: Series information (related to the modality type)
   * {{% badge style="blue" %}}J{{% /badge %}} The bottom left: Image information and its position in the series
 * Minimal Annotations: Reduce the number of annotations. Use _space_ or _i_ key to toggle between the 3 states (minimal, none, all).
-* Anonymize: Hide identifying information only in the views not in other places of the GUI like the tab title. Must be used with the [screenshot tool](../dicom-export) when exporting image.
+* Anonymize: Hide identifying information only in the views not in other places of the GUI like the tab title. Must be used with the [screenshot tool](dicom-export) when exporting image.
 * Scale: Display the rulers on the left and the bottom of the image {{% badge style="blue" %}}K{{% /badge %}}
-* Lookup Table: Display the [LUT](../lut) on the image {{% badge style="blue" %}}L{{% /badge %}}
-* Orientation: Display the [orientation of the image](../image-orientation) {{% badge style="blue" %}}N{{% /badge %}}
-* Window/Level: Display the [window and level](../lut/#windowing-and-rendering) values {{% badge style="blue" %}}J{{% /badge %}}
+* Lookup Table: Display the [LUT](lut) on the image {{% badge style="blue" %}}L{{% /badge %}}
+* Orientation: Display the [orientation of the image](image-orientation) {{% badge style="blue" %}}N{{% /badge %}}
+* Window/Level: Display the [window and level](lut/#windowing-and-rendering) values {{% badge style="blue" %}}J{{% /badge %}}
 * Zoom: Display the zoom value {{% badge style="blue" %}}J{{% /badge %}}
 * Rotation: Display the rotation value {{% badge style="blue" %}}J{{% /badge %}}
 * Frame Value: Display the frame number {{% badge style="blue" %}}J{{% /badge %}}
 * Pixel (Value/Position): Display the pixel value and the position of the cursor {{% badge style="blue" %}}J{{% /badge %}}
 
 ##### Drawings
-Check/uncheck to show/hide the graphic objects (see [Draw & Measure](../draw-measure/)).
+Check/uncheck to show/hide the graphic objects (see [Draw & Measure](draw-measure)).
 
 #### Image Tools {{% badge style="red" %}}D{{% /badge %}} {#image-tools}
 _Image Tools_ contains all the tools to modify the image rendering.
 
-##### [Windowing and Rendering](../lut/) 
+##### [Windowing and Rendering](lut/) 
 
 ##### Transform
-Allows you to zoom, rotate and flip the image. [Zoom](../zoom) and rotation can also be configured with the [mini-tool](#mini-tool) or the [mouse actions](#toolbars).
+Allows you to zoom, rotate and flip the image. [Zoom](zoom) and rotation can also be configured with the [mini-tool](#mini-tool) or the [mouse actions](#toolbars).
 
 ##### Cine
 The _Cine start_ button {{< svg-inline "static/tuto/icon/execute.svg" >}} lets you scroll through the images in a series at a certain speed (frame per second). The speed values comes from the DICOM file if exists. The cine options can also be changed from the context menu.
@@ -145,10 +145,10 @@ A _Cine_ toolbar is also available. It is not visible by default, but can be dis
 ##### Reset
 It allows you to return to the default image rendering for all or specific parameters. Also available from the toolbar button {{< svg-inline "static/tuto/icon/reset.svg" >}} or from the context menu.
 
-#### [Draw & Measure](../draw-measure/) {{% badge style="red" %}}E{{% /badge %}} {#draw-measure}
+#### [Draw & Measure](draw-measure) {{% badge style="red" %}}E{{% /badge %}} {#draw-measure}
 
 #### Other specific tools
-* [DICOM RT tools](../dicom-rt) (for radiotherapy studies)
+* [DICOM RT tools](dicom-rt) (for radiotherapy studies)
 * DICOM Segmentation tools (not yet available)
 
 ### Preferences
@@ -170,5 +170,5 @@ The default value is _Bilinear_. The _Nearest neighbor_ interpolation is faster 
 #### Other
 * _Apply Window/Level on color images:_ When checked, the window/level is applied on the RGB channels of the image. Otherwise, the window/level has no effect when unchecked.
 * _Inverse level direction:_ When checked, the level direction with mouse actions is inverted (dragging down will increase the brightness) according to the [Basic Image Review profile](https://wiki.ihe.net/index.php?title=Basic_Image_Review). Otherwise, dragging down will decrease the brightness when unchecked.
-* _Apply by default the most recent Presentation State:_ When checked, the most recent [Presentation State](../build-ko-pr/#presentation-state-pr-or-gsps) Object is applied on the related image. Otherwise, it is required to select it from {{< svg-inline "static/tuto/icon/imagePresentation.svg" >}}.
+* _Apply by default the most recent Presentation State:_ When checked, the most recent [Presentation State](build-ko-pr/#presentation-state-pr-or-gsps) Object is applied on the related image. Otherwise, it is required to select it from {{< svg-inline "static/tuto/icon/imagePresentation.svg" >}}.
 * _Overlay color:_ change the color and the opacity of DICOM overlay. The default color is white. The opacity can be changed from the transparency or alpha slider of the different color models in the color picker.

@@ -14,7 +14,7 @@ Artificial intelligence (AI) frameworks can produce various DICOM objects for di
 This type of object represents secondary images where the AI has embedded information in the image pixels. These images may include annotations, measurements, or other enhancements to the original image data.
 
 {{% notice info %}}
-DICOM Secondary Capture can be displayed by Weasis like any other image data, see [DICOM 2D Viewer](../dicom-2d-viewer/).
+DICOM Secondary Capture can be displayed by Weasis like any other image data, see [DICOM 2D Viewer](dicom-2d-viewer).
 {{% /notice %}}
 
 ### DICOM Segmentation (SEG)
@@ -22,7 +22,7 @@ DICOM Secondary Capture can be displayed by Weasis like any other image data, se
 These objects represent the results of segmentation algorithms applied to medical images. Segmentation involves partitioning an image into multiple segments to simplify its representation for analysis or display. AI frameworks can produce SEG objects containing segmentations of anatomical structures, lesions, or other regions of interest. 
 
 {{% notice info %}}
-See [DICOM SEG](../dicom-segmentation) for displaying DICOM SEG objects in Weasis.
+See [DICOM SEG](dicom-segmentation) for displaying DICOM SEG objects in Weasis.
 {{% /notice %}}
 
 ### DICOM RTSTRUCT
@@ -30,7 +30,7 @@ See [DICOM SEG](../dicom-segmentation) for displaying DICOM SEG objects in Weasi
 This type of DICOM object is originally used to represent structures delineated on CT images for radiotherapy treatment planning. Some AI frameworks may produce DICOM RTSTRUCT objects (geometric shapes) instead of DICOM Segmentation (pixel-based).
 
 {{% notice info %}}
-See [DICOM RT](../dicom-rt) for displaying DICOM RTSTRUCT objects in Weasis.
+See [DICOM RT](dicom-rt) for displaying DICOM RTSTRUCT objects in Weasis.
 {{% /notice %}}
 
 [TotalSegmentator](https://github.com/wasserth/TotalSegmentator/) automatically segments over a hundred anatomical zones on CT images.
@@ -42,7 +42,7 @@ When the result is saved in DICOM RTSTRUCT (since version 2), the segmentation r
 AI frameworks can generate structured report containing the results of their analysis. These reports typically include structured information about findings, measurements, observations, and interpretations derived from medical images or other data.
 
 {{% notice info %}}
-See [DICOM SR Viewer](../dicom-sr)
+See [DICOM SR Viewer](dicom-sr)
 {{% /notice %}}
 
 
@@ -61,7 +61,7 @@ This type of object can be displayed by the default system application associate
 Presentation states define how images should be displayed, including display parameters such as window width, window center, and image orientation. A Grayscale Softcopy Presentation State (GSPS) object is used to display annotations and graphics that overlay on a displayed image. AI frameworks might generate presentation states to specify how images should be displayed based on their analysis results or to display graphics overlays on images.
 
 {{% notice info %}}
-See [DICOM PR](../build-ko-pr/#presentation-state-pr-or-gsps) for displaying DICOM Presentation States in Weasis.
+See [DICOM PR](build-ko-pr/#presentation-state-pr-or-gsps) for displaying DICOM Presentation States in Weasis.
 {{% /notice %}}
 
 
@@ -70,7 +70,7 @@ See [DICOM PR](../build-ko-pr/#presentation-state-pr-or-gsps) for displaying DIC
 Enhanced DICOM objects contain additional information. AI frameworks might produce enhanced DICOM objects to include additional annotations or other enhancements to the image data.
 
 {{% notice info %}}
-DICOM Enhanced (e.g., reduce noise or improve visualization of anatomical structures) can be displayed by Weasis like any other image data. Some other additional information (overlay, shutter, and pixel padding) can be added to the image rendering, see [2D Viewer Display](../dicom-2d-viewer/#image).
+DICOM Enhanced (e.g., reduce noise or improve visualization of anatomical structures) can be displayed by Weasis like any other image data. Some other additional information (overlay, shutter, and pixel padding) can be added to the image rendering, see [2D Viewer Display](dicom-2d-viewer/#image).
 {{% /notice %}}
 
 

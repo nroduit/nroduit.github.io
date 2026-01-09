@@ -12,7 +12,7 @@ This page outlines the configuration of connectors used by ViewerHub to connect 
 In order to create the Weasis manifest, connectors are configured to enable connections to various PACS or VNA systems. <br/>
 Three types of connectors are defined in the configuration server: DB, DICOM, and DICOM_WEB.
 
-These connectors are defined according to this model: [connector_model.yml](/viewer-hub/connectors/connector_model.yml)
+These connectors are defined according to this model: <a href="/viewer-hub/connectors/connector_model.yml" download>connector_model.yml</a>
 
 ## Global connector configuration
 

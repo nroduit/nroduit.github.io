@@ -7,10 +7,10 @@ keywords: [ "workflow", "integration", "dicom viewer", "free dicom viewer", "ope
 
 ## <center>How to launch Weasis from any environments</center>
 
-Here we present how to launch Weasis with associated images from any context either [using weasis-pacs-connector](#use-weasis-pacs-connector) or [ViewerHub](../../../viewer-hub) as its successor
-or by [building your own connector](#build-your-own-connector). The launch of the application is based on the [weasis protocol](../../../getting-started/weasis-protocol) available since {{% badge title="Version" %}}3.5.3{{% /badge %}}.
+Here we present how to launch Weasis with associated images from any context either [using weasis-pacs-connector](#use-weasis-pacs-connector) or [ViewerHub](../../viewer-hub) as its successor
+or by [building your own connector](#build-your-own-connector). The launch of the application is based on the [weasis protocol](../../getting-started/weasis-protocol) available since {{% badge title="Version" %}}3.5.3{{% /badge %}}.
 
-Using [weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector) or [ViewerHub](../../../viewer-hub) allows a high degree of integration and facilitates connection to a PACS. Here are some of the advantages:
+Using [weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector) or [ViewerHub](../../viewer-hub) allows a high degree of integration and facilitates connection to a PACS. Here are some of the advantages:
 
 - Automatically build a manifest according to a configuration with a PACS
 - The initial URL starts with HTTP and is then redirected to weasis://? (useful when a custom URI scheme is not allowed by wiki, blog platforms, etc.)
@@ -26,18 +26,18 @@ However, it is also possible:
     - [DICOMcloud (for Azure cloud)](#dicomcloud-for-azure-cloud)
     - [Kheops](#kheops)
     - [Amazon HealthImaging](#amazon-healthimaging)
-- To configure the DICOM archive in Weasis with Dicom [Query/Retrieve](../../../tutorials/dicom-import/#dicom-queryretrieve) or [DICOMWeb](../../../tutorials/dicomweb-config)
+- To configure the DICOM archive in Weasis with Dicom [Query/Retrieve](../../tutorials/dicom-import/#dicom-queryretrieve) or [DICOMWeb](../../tutorials/dicomweb-config)
 
 These integrations provide flexibility to meet the specific needs of healthcare environments, ensuring seamless integration.
 
 {{% notice note %}}
-Requires Weasis installed on the system with the [native installer](../../../getting-started/).
+Requires Weasis installed on the system with the [native installer](../../getting-started/).
 {{% /notice %}}
 
 
 ## Use weasis-pacs-connector
 
-For connecting to dcm4chee web interface, follow the instructions in [Installing Weasis in DCM4CHEE](../../../getting-started/dcm4chee). Otherwise, refer to the documentation of [weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector#installation).
+For connecting to dcm4chee web interface, follow the instructions in [Installing Weasis in DCM4CHEE](../../getting-started/dcm4chee). Otherwise, refer to the documentation of [weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector#installation).
 
 Standard workflow when connecting Weasis to a PACS, RIS, EMR, EPR or any web interface:
 
@@ -52,13 +52,13 @@ The schema above shows that the queries to the PACS are made at the same time as
 
 ## Build your own connector
 
-This documentation describes how to create your own connector without weasis-pacs-connector and with different DICOM archive types. The [weasis protocol](../../../getting-started/weasis-protocol/#how-to-build-a-uri) allows you to build URIs to launch Weasis according to different configurations and allows to load DICOM files locally or remotely.
+This documentation describes how to create your own connector without weasis-pacs-connector and with different DICOM archive types. The [weasis protocol](../../getting-started/weasis-protocol/#how-to-build-a-uri) allows you to build URIs to launch Weasis according to different configurations and allows to load DICOM files locally or remotely.
 
 Here are examples with XML manifests or with DICOMWeb RESTful services.
 
 ### Build an XML manifest
 
-Use [$dicom:get](../../commands/#dicomget) to load a XML manifest returned by your service.
+Use [$dicom:get](../commands/#dicomget) to load a XML manifest returned by your service.
 {{< highlight text >}}
 $dicom:get -w "https://myservice/manifest?studyUID=2.16.756.5.5.100.397184556.14391.1373576413.1508"
 {{< /highlight >}}
@@ -105,7 +105,7 @@ From Weasis 2.5 it is possible to have multiple archives (allows several arcQuer
 ### Build an XML manifest (no WADO server)
 This example requires only a WEB server. Weasis will download DICOM files by URLs.
 
-Use [$dicom:get](../../commands/#dicomget) to load a <a target="_blank" href="https://nroduit.github.io/demo-archive/Lumbar/mf.xml">XML manifest</a> containing direct links {{< launch >}}$dicom:get -w "https://nroduit.github.io/demo-archive/Lumbar/mf.xml"{{< /launch >}}
+Use [$dicom:get](../commands/#dicomget) to load a <a target="_blank" href="https://nroduit.github.io/demo-archive/Lumbar/mf.xml">XML manifest</a> containing direct links {{< launch >}}$dicom:get -w "https://nroduit.github.io/demo-archive/Lumbar/mf.xml"{{< /launch >}}
 {{< highlight text >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/Lumbar/mf.xml"
 {{< /highlight >}}
@@ -127,9 +127,9 @@ This integration requires a PACS/VNA with [DICOMweb](https://www.dicomstandard.o
 - Do not require to install weasis-pacs-connector
 - Allow passing token directly in headers (not in the URL)
 
-The following configurations allow images to be loaded by initiating the request from a WEB context. However, it is possible to access DICOMWeb services by initiating the request directly from the [Weasis import](../../../tutorials/dicom-import).
+The following configurations allow images to be loaded by initiating the request from a WEB context. However, it is possible to access DICOMWeb services by initiating the request directly from the [Weasis import](../../tutorials/dicom-import).
 
-Use [$dicom:rs](../../commands/#dicomrs) to load DICOM files. Here are some configuration examples of DICOMweb applications:
+Use [$dicom:rs](../commands/#dicomrs) to load DICOM files. Here are some configuration examples of DICOMweb applications:
 
 ### dcm4chee-arc-light
 
@@ -152,7 +152,7 @@ Finally, refresh the page for having the viewer button.
 {{% notice warning %}}
 Configuration notes:
 
-- See [configuration](../../../getting-started/dcm4chee) for versions before 5.22.2.
+- See [configuration](../../getting-started/dcm4chee) for versions before 5.22.2.
 - From 5.24.0 {{qidoBaseURL}} must be replaced by your base URL (e.g. https://pacs2.test.com:8443)
 - The character '&' must be escaped in the Docker environment variables.
 - The Authorization header is not required for unsecure service.
@@ -160,7 +160,7 @@ Configuration notes:
 {{% /notice %}}
 
 {{% notice note %}}
-**Known issue on Windows**: Weasis cannot open the images because of the token length which is cut by the browser. It is only working with Firefox on Windows. It is recommended to use [weasis-pacs-connector](#use-weasis-pacs-connector) or [ViewerHub](../../../viewer-hub) to solve this issue.
+**Known issue on Windows**: Weasis cannot open the images because of the token length which is cut by the browser. It is only working with Firefox on Windows. It is recommended to use [weasis-pacs-connector](#use-weasis-pacs-connector) or [ViewerHub](../../viewer-hub) to solve this issue.
 {{% /notice %}}
 
 ### Orthanc WEB Server

@@ -9,7 +9,7 @@ keywords: [ "mpr", "multiplanar reconstruction", "3d cursor", "open source dicom
 
 The multiplanar reconstruction (MPR) allows you to create, from the original plane (usually axial), images in the two other planes of the Euclidean space. Only planes along the 3 axes (x,y,z) can be displayed. The oblique plane can be obtained only from {{% badge title="Version" %}}4.6.0{{% /badge %}}.
 
-The MPR view inherits most properties and actions of the [DICOM 2D viewer](../dicom-2d-viewer), except for the crosshair tool, which remains active regardless of the selected action (from {{% badge title="Version" %}}4.6.0{{% /badge %}}). You can open the MPR view by clicking the {{< svg-inline "static/tuto/icon/mpr.svg" >}} icon in the toolbar or by right-clicking a thumbnail in the [DICOM explorer](../dicom-explorer/).
+The MPR view inherits most properties and actions of the [DICOM 2D viewer](dicom-2d-viewer), except for the crosshair tool, which remains active regardless of the selected action (from {{% badge title="Version" %}}4.6.0{{% /badge %}}). You can open the MPR view by clicking the {{< svg-inline "static/tuto/icon/mpr.svg" >}} icon in the toolbar or by right-clicking a thumbnail in the [DICOM explorer](dicom-explorer/).
 
 {{% notice note %}}
 The menu and the toolbar button will only be active if the series contains at least **5 images**.
@@ -35,7 +35,7 @@ To configure the MPR view, you can access settings by clicking the settings icon
   - **Max**: Maximum intensity projection.
 
 {{% notice note %}}
-Most MPR settings can also be accessed using shortcuts. Refer to the [MPR shortcuts](../../basics/shortcuts/#selected-view-in-the-mpr-viewer) for more details.
+Most MPR settings can also be accessed using shortcuts. Refer to the [MPR shortcuts](../basics/shortcuts/#selected-view-in-the-mpr-viewer) for more details.
 {{% /notice %}}
 
 ![QuMPR](/tuto/mpr.png?classes=shadow)
@@ -59,7 +59,7 @@ The orientation axes of the slice image in 3D space are shown in the top-left co
 - **Green arrow**: Increases from inferior to superior
 - **Blue arrow**: Increases from right to left
 
-For details on the orientation of multiplanar views and their associated colors, refer to [MPR Orientation](../image-orientation/#orientation-in-multiplanar-reconstruction-mpr).
+For details on the orientation of multiplanar views and their associated colors, refer to [MPR Orientation](image-orientation/#orientation-in-multiplanar-reconstruction-mpr).
 {{% /notice %}}
 
 ### Preferences
