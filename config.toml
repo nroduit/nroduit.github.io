@@ -29,38 +29,45 @@ title = "Weasis Documentation"
 enableRobotsTXT = true
 
 [minify]
-disableCSS = false
-disableHTML = true
-disableJS = false
-disableJSON = false
-disableSVG = false
-disableXML = false
-minifyOutput = false
-[minify.tdewolff]
-[minify.tdewolff.css]
-keepCSS2 = true
-precision = 0
-[minify.tdewolff.html]
-keepComments = false
-keepConditionalComments = true
-keepDefaultAttrVals = true
-keepDocumentTags = true
-keepEndTags = true
-keepQuotes = false
-keepWhitespace = true
-[minify.tdewolff.js]
-keepVarNames = false
-noNullishOperator = false
-precision = 0
-version = 0
-[minify.tdewolff.json]
-keepNumbers = false
-precision = 0
-[minify.tdewolff.svg]
-keepComments = false
-precision = 0
-[minify.tdewolff.xml]
-keepWhitespace = false
+  disableCSS = false
+  disableHTML = true
+  disableJS = false
+  disableJSON = false
+  disableSVG = false
+  disableXML = false
+  minifyOutput = false
+  
+  [minify.tdewolff]
+    
+    [minify.tdewolff.css]
+      keepCSS2 = true
+      precision = 0
+    
+    [minify.tdewolff.html]
+      keepComments = false
+      keepConditionalComments = true
+      keepDefaultAttrVals = true
+      keepDocumentTags = true
+      keepEndTags = true
+      keepQuotes = false
+      keepWhitespace = true
+    
+    [minify.tdewolff.js]
+      keepVarNames = false
+      noNullishOperator = false
+      precision = 0
+      version = 0
+    
+    [minify.tdewolff.json]
+      keepNumbers = false
+      precision = 0
+    
+    [minify.tdewolff.svg]
+      keepComments = false
+      precision = 0
+    
+    [minify.tdewolff.xml]
+      keepWhitespace = false
 
 # settings specific to this theme's features; choose to your likings and
 # consult this documentation for explanation
@@ -70,6 +77,7 @@ keepWhitespace = false
   author.name = "Nicolas Roduit"
   # Description of the site, will be used in meta information
   showVisitedLinks = true
+  externalLinkTarget = '_blank'
   disableBreadcrumb = false
   disableTOC = false
   disableGeneratorVersion = true
@@ -85,17 +93,25 @@ keepWhitespace = false
   mermaidInitialize = "{ \"securityLevel\": \"loose\" }"
   jdkVersion = "24"
   mavenVersion = "3.8.1"
+  
+  [params.image]
+    errorlevel = 'warning'
+  
+  [params.link]
+    errorlevel = 'warning'
 
 [caches]
+  
   [caches.getjson]
     dir = ":cacheDir/:project"
     maxAge = "300s"
 
 [outputFormats]
+  
   [outputFormats.API]
-    mediaType= "application/json"
-    baseName="api"
-    isPlainText= true
+    mediaType = "application/json"
+    baseName = "api"
+    isPlainText = true
 
 [outputs]
   # add JSON to the home page to support lunr search; This is a mandatory setting
@@ -105,6 +121,7 @@ keepWhitespace = false
   page = ['html', 'rss', 'print']
 
 [markup]
+  
   [markup.highlight]
     # if `guessSyntax = true`, there will be no unstyled code even if no language
     # was given BUT mermaid code fences will not work anymore! So this is a mandatory
@@ -120,39 +137,39 @@ keepWhitespace = false
     #   (here eg.: theme-relearn-light.css / theme-relearn-dark.css)
     noClasses = false
     # style = "tango"
-
-    [markup.goldmark.renderer]
+  
+  [markup.goldmark.renderer]
     # activated for this showcase to use HTML and JavaScript; decide on your own needs;
     # if in doubt, remove this line
     unsafe = true
-
-    [markup.goldmark.parser.attribute]
+  
+  [markup.goldmark.parser.attribute]
     block = true
 
-
 [Languages]
-[Languages.en]
-title = "Weasis Documentation"
-weight = 1
-languageName = "English"
+  
+  [Languages.en]
+    title = "Weasis Documentation"
+    weight = 1
+    languageName = "English"
 
-[[Languages.en.menu.shortcuts]]
-name = "<i class='fa fa-play-circle'></i> Live Demo"
-identifier = "ds"
-url = "demo"
-weight = 10
+    [[Languages.en.menu.shortcuts]]
+      name = "<i class='fa fa-play-circle'></i> Live Demo"
+      identifier = "ds"
+      url = "demo"
+      weight = 10
 
-[[Languages.en.menu.shortcuts]]
-name = "<i class='fa fa-question-circle'></i> FAQs"
-url = "faq"
-weight = 15
+    [[Languages.en.menu.shortcuts]]
+      name = "<i class='fa fa-question-circle'></i> FAQs"
+      url = "faq"
+      weight = 15
 
-[[Languages.en.menu.shortcuts]]
-name = "<i class='fa fa-user-circle'></i> Get Involved!"
-url = "get-involved"
-weight = 20
+    [[Languages.en.menu.shortcuts]]
+      name = "<i class='fa fa-user-circle'></i> Get Involved!"
+      url = "get-involved"
+      weight = 20
 
-[Languages.fr]
-title = "Documentation"
-weight = 2
-languageName = "Français"
+  [Languages.fr]
+    title = "Documentation"
+    weight = 2
+    languageName = "Français"
