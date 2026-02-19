@@ -1,6 +1,6 @@
 ---
 title: Groups
-description: Creation of groups and user/host association to groups
+description: Creation of groups and user/host association to groups 
 keywords: [ "groups", "association" ]
 weight: 80
 ---

@@ -4,6 +4,6 @@ keywords: [ "viewherhub", "user-guide", "dicom", "pacs", "pacs viewer" ]
 weight: 100
 ---
 
-{{% children description="true" %}}
+{{% children description="false" %}}
 
 

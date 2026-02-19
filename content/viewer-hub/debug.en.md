@@ -51,10 +51,99 @@ Password: password
 
 ## Launch Weasis
 
-Once all the steps above completed, launch the below URL to launch Weasis and load the dicom image stored in the dcm4chee pacs:
+Launch the below URL to launch Weasis and load the dicom image stored in the Dcm4chee or Orthanc pacs:
+
+- Spring profile "connectors-dicom-no-gtw"
+
+Dcm4chee:
 ```
-http://localhost:8081/display/weasis?studyUID=1.3.12.2.1107.5.1.4.54023.30000004093013443132800000021&archive=dcm4chee-local
+http://localhost:8081/display?viewer=WEASIS&studyUID=1.3.12.2.1107.5.1.4.54023.30000004093013443132800000021&archive=dcm4chee-local
 ```
-This URL works with the [Imaging Hub](hub) stack. If you are using a different setup, you may need to adjust the URL accordingly.
+
+Orthanc:
+```
+http://localhost:8081/display?viewer=WEASIS&studyUID=1.3.12.2.1107.5.1.4.54023.30000004093013443132800000021&archive=orthanc-local
+```
+
+- Spring profile "connectors-dicom-gtw"
+
+Dcm4chee:
+```
+http://localhost:8081/display/auth?viewer=WEASIS&studyUID=1.3.12.2.1107.5.1.4.54023.30000004093013443132800000021&archive=dcm4chee-local
+```
+
+Orthanc:
+```
+http://localhost:8081/display/auth?viewer=WEASIS&studyUID=1.3.12.2.1107.5.1.4.54023.30000004093013443132800000021&archive=orthanc-local
+```
+
+## Launch Ohif
+
+Launch the below URL to launch Ohif and load the dicom image stored in the Dcm4chee or Orthanc pacs:
+
+- Spring profile "connectors-dicom-no-gtw"
+
+Dcm4chee
+```
+http://localhost:8081/display?viewer=OHIF&studyUID=1.3.12.2.1107.5.1.4.54023.30000004093013443132800000021&archive=dcm4chee-local
+```
+
+Orthanc
+```
+http://localhost:8081/display?viewer=OHIF&studyUID=1.3.12.2.1107.5.1.4.54023.30000004093013443132800000021&archive=orthanc-local
+```
+
+- Spring profile "connectors-dicom-gtw" or "connectors-dicomweb-gtw"
+
+Dcm4chee
+```
+http://localhost:8081/display/auth?viewer=OHIF&studyUID=1.3.12.2.1107.5.1.4.54023.30000004093013443132800000021&archive=dcm4chee-local
+```
+
+Orthanc
+```
+http://localhost:8081/display/auth?viewer=OHIF&studyUID=1.3.12.2.1107.5.1.4.54023.30000004093013443132800000021&archive=orthanc-local
+```
+
+## Launch 3D Slicer
+
+You need to install 3D Slicer in your machine to use it.
+
+Launch the below URL to launch 3D Slicer and load the dicom image stored in the Dcm4chee or Orthanc pacs:
+
+- Spring profile "connectors-dicom-gtw" or "connectors-dicomweb-gtw"
+
+Dcm4chee
+```
+http://localhost:8081/display/auth?viewer=SLICER&studyUID=1.3.12.2.1107.5.1.4.54023.30000004093013443132800000021&archive=dcm4chee-local
+```
+
+Orthanc
+```
+http://localhost:8081/display/auth?viewer=SLICER&studyUID=1.3.12.2.1107.5.1.4.54023.30000004093013443132800000021&archive=orthanc-local
+```
+
+## Launch Micro Dicom
+
+You need to install Micro Dicom in your machine to use it.
+You also need to add the MICRODICOM AET to the Dcm4chee pacs and to configure the Dicom server corresponding to the Dcm4chee pacs in MicroDicom (localhost:11112, aet DCM4CHEE)
+
+Launch the below URL to launch Micro Dicom and load the dicom image stored in the Dcm4chee or Orthanc pacs:
+
+- Spring profile "connectors-dicom-no-gtw"
+
+Dcm4chee
+```
+http://localhost:8081/display?viewer=MICRODICOM&studyUID=1.3.12.2.1107.5.1.4.54023.30000004093013443132800000021&archive=dcm4chee-local
+```
+
+Orthanc
+```
+http://localhost:8081/display?viewer=MICRODICOM&studyUID=1.3.12.2.1107.5.1.4.54023.30000004093013443132800000021&archive=orthanc-local
+```
+
+## Information
+
+These URLs work with the [Imaging Hub](hub) stack. If you are using a different setup, you may need to adjust the URL accordingly.
 
 For more information, refer to the [Launch APIs](api) documentation.
