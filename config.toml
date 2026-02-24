@@ -97,11 +97,6 @@ enableRobotsTXT = true
   [params.link]
     errorlevel = 'warning'
 
-[caches]
-  
-  [caches.getjson]
-    dir = ":cacheDir/:project"
-    maxAge = "300s"
 
 [outputFormats]
   
