@@ -15,7 +15,7 @@ This stack is designed for development and testing purposes only. It enables deb
 
 This stack comprises the following components:
 - **dcm4chee**: PACS server for storing and retrieving medical images.
-- **ViewerHub**: Manages resources for different versions of Weasis.
+- **ViewerHub**: Manages the launch of different viewers.
 - **MinIO**: Object storage server compatible with Amazon S3 APIs.
 - **Redis**: Cache service storing manifest data for Weasis resources.
 - **Postgres**: Database backend for ViewerHub and dcm4chee.
@@ -74,14 +74,24 @@ Use the following credentials:
 - User: `admin`
 - Password: `changeit`
 
+## Viewer-Hub Gateway
+
+ViewerHub gateway is used to handle different types of authentication in order for viewers to get authentified when requesting data from the pacs.
+
+ViewerHub Gateway handles basic authentication and oAuth2 (client credential and authorization code flow).
+
+In order to install the gateway, follow the instructions in the README.md file: https://github.com/nroduit/viewer-hub-gateway
+
+
 ## ViewerHub
 
-ViewerHub is a web application that manages the resources required by the different versions of Weasis.
+ViewerHub is a web application that manages the launch of different viewers.
 
 Access the ViewerHub console at: http://localhost:8081
 
 Use the following credentials:
 - User: `viewer-hub-user`
 - Password: `password`
+
 
 

@@ -1,50 +1,51 @@
 connector:
   default:
-    config:
-      connector-id:
-        # DB,DICOM,DICOM_WEB
-        type:
-
-        # ------- Search Criteria ----
-        search-criteria:
-          deactivated:
-
-        # ---------- Wado -------------
-        # Used to retrieve images from manifest
+  dicom-web-level-limit:
+  config:
+    <-- id of the archive -->:
+      type:
+      search-criteria:
+        deactivated:
+      weasis:
+        manifest:
+          transfer-syntax-uid:
+          compressionRate:
+          requireOnlySOPInstanceUID:
+          additionnalParameters:
+          overrideDicomTags:
+          httpTags:
+      # --------  DB connector ----------
+      db-connector:
+        user:
+        password:
+        uri:
+        driver:
+        query:
+          select:
+          accession-number-column:
+          patient-id-column:
+          study-instance-uid-column:
+          serie-instance-uid-column:
+          sop-instance-uid-column:
         wado:
           authentication:
-            force-basic:
+            type:
             oauth2:
-              url:
+              oidc-id:
+              server:
+                url:
+                port:
+                context:
             basic:
-              url:
               login:
               password:
-            transfer-syntax-uid:
-            compression-rate:
-            requireOnlySOPInstanceUID:
-            additionnalParameters:
-            overrideDicomTags:
-            httpTags:
-              X-Time:
-              X-Value:
-
-        # -------- For database --------
-        db-connector:
-          user:
-          password:
-          uri:
-          driver:
-          query:
-            select:
-            accession-number-column:
-            patient-id-column:
-            study-instance-uid-column:
-            serie-instance-uid-column:
-            sop-instance-uid-column:
-
-        # -------- For dicom ----------
-        dicom-connector:
+              server:
+                url:
+                port:
+                context:
+      # --------  Dicom connector ----------
+      dicom-connector:
+        dimse:
           calling-aet:
           aet:
           host:
@@ -52,12 +53,62 @@ connector:
           tls:
             mode:
             need-client-authentication:
-          key-store:
+          keyStore:
             url:
             type:
             password:
-            key-store-password:
+            keyStorePassword:
           truststore:
             url:
             type:
             password:
+        wado:
+          authentication:
+            type:
+            oauth2:
+              oidc-id:
+              server:
+                url:
+                port:
+                context:
+            basic:
+              login:
+              password:
+              server:
+                url:
+                port:
+                context:
+      # -------- Dicom web connector ----------
+      dicom-web-connector:
+        qido-rs:
+          authentication:
+            type:
+            oauth2:
+              oidc-id:
+              server:
+                url:
+                port:
+                context:
+            basic:
+              login:
+              password:
+              server:
+                url:
+                port:
+                context:
+        wado-rs:
+          authentication:
+            type:
+            oauth2:
+              oidc-id:
+              server:
+                url:
+                port:
+                context:
+            basic:
+              login:
+              password:
+              server:
+                url:
+                port:
+                context:

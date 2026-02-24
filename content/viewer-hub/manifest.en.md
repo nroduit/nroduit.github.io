@@ -1,5 +1,5 @@
 ---
-title: Manifest
+title: Weasis Manifest
 description: Creation of manifest for Weasis
 keywords: [ "manifest" , "cache" , "redis"]
 weight: 80
@@ -21,7 +21,7 @@ According to the search criteria of the request, ViewerHub constructs the manife
 There are 3 types of connectors:
 - DB (database)
 - DICOM (DICOM DIMSE)
-- DICOM_WEB (DICOMWeb connector will be implemented later).
+- DICOM_WEB (Weasis will use DICOMWeb connector in a future release).
 
 DB queries or DICOM calls are made to retrieve the necessary information to populate the manifest according to the search criteria.
 
