@@ -40,12 +40,12 @@ enableRobotsTXT = true
   [minify.tdewolff]
     
     [minify.tdewolff.css]
-      keepCSS2 = true
+      version = 2
       precision = 0
     
     [minify.tdewolff.html]
       keepComments = false
-      keepConditionalComments = true
+      keepSpecialComments = true
       keepDefaultAttrVals = true
       keepDocumentTags = true
       keepEndTags = true
@@ -83,6 +83,7 @@ enableRobotsTXT = true
   disableGeneratorVersion = true
   disableNextPrev = false
   disableLandingPageButton = true
+  disableLanguageSwitchingButton = true
   titleSeparator = "::"
   themeVariant = [ "relearn-dark", "relearn-light" ]
   themeVariantAuto = [ "relearn-light", "relearn-dark" ]
@@ -91,7 +92,7 @@ enableRobotsTXT = true
   # graphs; you usually will not need it and you should remove this for
   # security reasons
   mermaidInitialize = "{ \"securityLevel\": \"loose\" }"
-  jdkVersion = "24"
+  jdkVersion = "25"
   mavenVersion = "3.8.1"
   
   [params.link]
