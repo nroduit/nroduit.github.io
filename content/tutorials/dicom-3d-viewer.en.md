@@ -28,6 +28,10 @@ OpenGL does not include specific functionality for selecting a particular graphi
 ### Open the 3D viewer
 The 3D view can be opened with {{< svg-inline "static/tuto/icon/volume.svg" >}} in the toolbar or by right-clicking on the thumbnail in the [DICOM explorer](dicom-explorer).
 
+{{% notice tip %}}
+If the series is a **multi-phase 4D acquisition** (e.g., a cardiac CT with several temporal phases), Weasis will automatically split it into individual phase sub-series when 2–7 phases are detected. For series with 8 or more phases, a confirmation dialog is shown first. Open any resulting phase sub-series to use it in the 3D viewer. See [4D Series Sub-Series Splitting](dicom-explorer#4d-splitting) for details.
+{{% /notice %}}
+
 Try to load a volume dataset (Medical Demos from data.kitware.com)
 {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/3d/head-neck.xml"

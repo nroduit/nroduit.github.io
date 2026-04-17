@@ -42,6 +42,40 @@ You can navigate through the Patient/Study/Series/Image structure using only [ke
 <br>
 * A series is represented by a thumbnail that contains a certain number of images (number displayed at the bottom left).
 * According to [predefined rules](https://github.com/nroduit/Weasis/blob/master/weasis-distributions/resources/series-splitting-rules.xml), some series are separated into subseries also represented by a thumbnail with a number preceded by '#' in the upper right corner. Series splitting is necessary for the consistency of some tools such as the MPR, cross-lines and synchronization of series. However, sometimes separation is not desired, and sub-series can be [re-merged using the context menu](https://www.youtube.com/watch?v=tttP__1Sbsc).
+
+#### 4D Series Sub-Series Splitting {#4d-splitting}
+
+When a DICOM series is loaded, Weasis automatically analyzes it to detect multi-phase acquisitions (e.g., cardiac phases, contrast phases, 4D volumes). If multiple phases are detected, the series is split — automatically or with a confirmation step — into separate sub-series, one per phase. Each sub-series can then be used independently in the [MPR](mpr), [MIP](mip), or [3D (VR)](dicom-3d-viewer) viewer.
+
+##### Splitting behavior by number of detected phases
+
+| Phases    | Behavior |
+|-----------|----------|
+| **1**     | No split — treated as a standard single-phase series. |
+| **2 – 7** | **Automatic split** — the series is immediately divided into one sub-series per phase, without any user interaction. |
+| **≥ 8**   | **Manual split** — Weasis stores the phase count but leaves the series intact. A confirmation dialog is shown before splitting to prevent unintended fragmentation of large datasets. |
+
+
+##### Manual split confirmation dialog (≥ 8 phases)
+
+When 8 or more phases are detected, a dialog is displayed asking the user to confirm the split. Once confirmed, the series is divided exactly as in the automatic case. Cancelling leaves the series intact as a single entry in the DICOM Explorer.
+
+##### Sub-series structure after splitting
+
+After splitting, each phase becomes a separate thumbnail in the DICOM Explorer. The first sub-series reuses the original series entry; additional sub-series are created as new entries in the study tree, identified by a `#` number in the upper-right corner of the thumbnail.
+
+{{% notice tip %}}
+After splitting, open any individual phase sub-series in the [MPR](mpr), [MIP](mip), or [3D viewer](dicom-3d-viewer) for accurate volumetric analysis. Each sub-series contains only the images of a single phase and can be reconstructed as a coherent 3D volume.
+{{% /notice %}}
+
+If the split is not needed or was done unintentionally, the sub-series can be merged back together. Select the thumbnails you want to merge (all or a subset of them) and choose _Merge Selected Series_ from the context menu. The selected sub-series are recombined into a single series entry in the DICOM Explorer.
+
+{{% notice note %}}
+Phase detection is based on the spatial position of each image in the series. If multiple images share the same slice position, they are assumed to belong to different temporal phases. If no such overlap is found, the series is treated as a standard single-phase acquisition and is never split.
+{{% /notice %}}
+
+#### Series Display and Opening
+
 * The sorting of the series is done by the serial number and if this last one is not present, then in a chronological way by the date of the series or other dates.
 * To open new series:
   * Drag and drop a thumbnail in the main area (if the series is dropped in a view of the same patient, then the series is replaced, otherwise a new tab is created).

@@ -19,6 +19,10 @@ The MIP viewer can be opened with {{< svg-inline "static/tuto/icon/mip.svg" >}} 
 If the button is grayed out, it means that the current series has less than 5 images, which is the minimal number of images for using the MIP viewer. 
 {{% /notice %}}
 
+{{% notice tip %}}
+If the series is a **multi-phase 4D acquisition** (e.g., a cardiac CT with several temporal phases), Weasis will automatically split it into individual phase sub-series when 2–7 phases are detected. For series with 8 or more phases, a confirmation dialog is shown first. Open any resulting phase sub-series to use it in the MIP viewer. See [4D Series Sub-Series Splitting](dicom-explorer#4d-splitting) for details.
+{{% /notice %}}
+
 ### The MIP Options
 
 This dialog is a modal window that allows you to change the MIP settings and build a new MIP series. 

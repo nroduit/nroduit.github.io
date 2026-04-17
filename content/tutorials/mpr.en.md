@@ -15,6 +15,10 @@ The MPR view inherits most properties and actions of the [DICOM 2D viewer](dicom
 The menu and the toolbar button will only be active if the series contains at least **5 images**.
 {{% /notice %}}
 
+{{% notice tip %}}
+If the series is a **multi-phase 4D acquisition** (e.g., a cardiac CT with several temporal phases), Weasis will automatically split it into individual phase sub-series when 2–7 phases are detected. For series with 8 or more phases, a confirmation dialog is shown first. Open any resulting phase sub-series to use it in the MPR viewer. See [4D Series Sub-Series Splitting](dicom-explorer#4d-splitting) for details.
+{{% /notice %}}
+
 The crosshair actions in the MPR are synchronized with the other views and include:
 - {{< svg-inline "static/tuto/icon/mpr-move.svg" >}} **Move**: Move the cursor in 3D space by dragging the center of the crosshair.
 - {{< svg-inline "static/tuto/icon/mpr-hand.svg" >}} **Move Axis**: Adjust the crosshair along the axes by selecting and dragging one of the lines.
