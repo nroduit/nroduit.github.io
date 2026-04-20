@@ -15,7 +15,9 @@ required for the ray casting computations to be executed efficiently on the grap
 ### Requirements
 Some requirements related to the specifications of your graphic card are mandatory. They can be displayed in "_OpenGL Support_" from the menu "_File > Preferences > Viewer > 3D Viewer_":
 
-* _Driver version:_ The OpenGL version must be **at least 4.3** to support the Compute Shader (not supported currently on macOS)
+* _Driver version:_ Requires OpenGL **3.3+** since {{% badge title="Version" %}}4.7.0{{% /badge %}}. Two rendering backends are used depending on the available OpenGL version:
+  * **OpenGL 4.3+** — uses a **Compute Shader** for optimal performance.
+  * **OpenGL 3.3–4.2** — uses an **FBO-based Fragment Shader** fallback (fully functional, but may be less performant than the Compute Shader path). macOS is capped at OpenGL 4.1 and therefore uses this path.
 * _Max 3D texture dimension length:_ The limit of any dimension (X,Y,Z) of the volume data
 * If you have other information in red, it means that the configuration is not optimal but in most cases can work (see [how to limit the size of 3D textures](#3d-viewer))
 
@@ -23,6 +25,8 @@ Some requirements related to the specifications of your graphic card are mandato
 If the graphic card displayed in Weasis is not the right one, you must solve this problem on the side of the graphic drivers or the operating system.
 
 OpenGL does not include specific functionality for selecting a particular graphics card. Instead, this is handled by the graphics card driver and operating system, which provide a way for users to configure which graphics card should be used by an application.
+
+To force the FBO-based fragment shader path on any platform (e.g., for testing), add the JVM argument `-Dweasis.3d.force.fbo=true` to the Weasis launcher.
 {{% /notice %}}
 
 ### Open the 3D viewer
@@ -40,13 +44,37 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/3d/head-neck.xml"
 ![3D View](/tuto/view-3d.jpg?classes=shadow&width=780px)
 <br>
 
+Patient orientation axes are displayed directly in the 3D view since {{% badge title="Version" %}}4.7.0{{% /badge %}}, using the same LPS color coding as the [MPR viewer orientation axes](mpr#orientation-axes).
+
 ### Toolbar {{% badge style="red" %}}A{{% /badge %}} {#toolbar}
 Actions in the toolbar are:
 * {{< svg-inline "static/tuto/icon/loadVolume.svg" >}} Allows you to fully reload the volume
 * {{< svg-inline "static/tuto/icon/orthographic.svg" >}} The orthographic projection maintains parallel lines unlike the perspective projection that provides a perception of depth. The default mode is the perspective projection.
+* {{< svg-inline "static/tuto/icon/volumeCut.svg" >}} Opens the [MPR crosshair cut mode](#mpr-cut) to interactively clip the rendered volume along the anatomical planes defined by the MPR crosshair position and orientation.
 * {{< svg-inline "static/tuto/icon/volumeSettings.svg" >}} Opens the [3D preferences](#preferences)
 
 For other buttons see below.
+
+### MPR Crosshair Cut Mode {#mpr-cut}
+
+Since {{% badge title="Version" %}}4.7.0{{% /badge %}}, the 3D viewer can display an MPR crosshair overlay synchronized with the [MPR viewer](mpr#crosshair-colors), allowing you to interactively clip the rendered volume along the anatomical planes defined by the crosshair position and orientation. This bridges the 2D MPR viewer and the 3D volume viewer by keeping the crosshair position and rotation synchronized in real time.
+
+#### Recommended workflow
+
+1. Open the [MPR viewer](mpr) from a series view.
+2. In the MPR toolbar, click {{< svg-inline "static/tuto/icon/volume.svg" >}} — this splits the current tab into a side-by-side layout with the MPR views on one side and the 3D volume rendering on the other.
+3. In the 3D view, activate a cut mode using the toolbar button {{< svg-inline "static/tuto/icon/volumeCut.svg" >}} or by right-clicking and selecting _MPR Crosshair Cut_.
+
+#### Alternative workflow
+
+Open the 3D viewer first, then activate a cut mode from the toolbar {{< svg-inline "static/tuto/icon/volumeCut.svg" >}} or the contextual menu. The MPR viewer will open automatically for the same series, but it will appear in a separate tab. To obtain the side-by-side layout, drag the MPR tab and [dock](docking) it next to the 3D view using the docking handles.
+
+#### Cut modes
+
+* _None_: No clipping applied — the full volume is rendered.
+* _18 directional modes_: Clip the volume in halves, quarters, or eighths relative to the MPR crosshair position, along each anatomical axis (Left/Right, Anterior/Posterior, Superior/Inferior).
+
+The crosshair overlay uses the same LPS axis color coding as the MPR viewer.
 
 ### 3D Rendering Tools
 This tab contains all the tools to modify the volume rendering. If you want to return to the original settings, just click on the toolbar button {{< svg-inline "static/tuto/icon/reset.svg" >}} or from the context menu.
@@ -56,7 +84,6 @@ Some of the options described below are also available in the toolbar and in the
 
 * _Window:_ The width of a range of voxels values mapped to a specific range of display values.
 * _Level:_ The center of the range defined by Window.
-* {{< svg-inline "static/tuto/icon/winLevel.svg" >}} _Preset:_ Specific values of Window and level. _Auto Level [Image]_ is the default value when changing a LUT and provides the best visual appearance of a Volume LUT.
 * _LUT Shape:_ The mapping (transfer function) between the input values and the display values can be linear, sigmoid, and logarithmic. Default value is linear.
 * {{< svg-inline "static/tuto/icon/lut.svg" >}} _LUT (Volume LUT):_ A Volume Lookup Table (LUT) is a 3D LUT used to map the grayscale values of a volume dataset to color, opacity, and lighting values for visualization. Choosing a LUT from the toolbar or the contextual menu is easier because the LUTs are displayed in an order according to the modality and with a preview.
 * {{< svg-inline "static/tuto/icon/inverseLut.svg" >}} allows you to invert the LUT.
@@ -65,7 +92,12 @@ Some of the options described below are also available in the toolbar and in the
 #### Volume Rendering {{% badge style="red" %}}C{{% /badge %}} {#volume-rendering}
 This panel contains options for the rendering type and its quality, transparency, lighting, and shading settings.
 
-* _Type:_ Composite is the classic type of volume rendering. The Maximum Intensity Projection (MIP) is the highest intensity voxels (3D pixels) along a ray path are projected onto a 2D plane. Iso surface is a technique to create a 3D representation on a specific intensity threshold.
+* _Type:_ Defines the rendering algorithm applied to the volume:
+  * _Composite_: Classic volume rendering. Each voxel contributes colour and opacity along the ray, blended front-to-back to produce the final image.
+  * _MIP Max_: Maximum Intensity Projection — projects the highest-intensity voxel encountered along each ray. Useful for highlighting bright structures such as contrast-enhanced vessels or bones.
+  * _MinIP_: Minimum Intensity Projection — projects the lowest-intensity voxel along each ray. Useful for visualising air-filled structures such as airways.
+  * _MIP Mean_: Mean Intensity Projection — projects the average intensity along each ray, providing a smoother representation of the volume.
+  * _Iso Surface_: Renders a 3D surface at a specific intensity threshold, representing structures of a uniform density (e.g., bone segmentation).
 * _Z-axis sampling:_ The sampling should be large enough to accurately capture the details of the volume data, but small enough to avoid excessive computation time. The default value is calculated according to the size of the volume.
 * _Opacity:_ The opacity factor of the voxels. Can be set to more than 100% to modify initial values (lower than 100%) transmitted by the Volume LUTs.
 * _Shading:_ Allows to activate the shading. Default value is defined in LUT. The additional options allow you to override the default lighting settings (comes from Volume LUT).

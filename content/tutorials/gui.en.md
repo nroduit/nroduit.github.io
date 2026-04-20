@@ -16,7 +16,7 @@ The interface of the default DICOM workspace consists mainly of 2 parts:
 2. Depending on the data imported, different viewer/player types (represented by a tab) are displayed in the main section (green). Menus, toolbars and tools change, according to the type of viewer selected. 
    * The selected viewer is the image above is the [DICOM 2D viewer](dicom-2d-viewer) {{< svg-inline "static/tuto/icon/view2d.svg" >}} which is the viewer opened by default. 
    * A tab containing a multi-view layout can display images from only one patient. However, one patient can appear in several tabs.
-   * A tab is also a docked panel that can be arranged by dragging and dropping it to the desired location. This makes it possible to display two tabs side by side.
+   * A tab is also a docked panel that can be arranged by dragging and dropping it to the desired location. This makes it possible to display two tabs side by side (see [docking](docking)).
    * See also [DICOM Explorer](dicom-explorer/) to understand how to navigate through the Patient/Study/Series/Image.
 
 {{% notice note %}}
