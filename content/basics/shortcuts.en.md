@@ -7,48 +7,60 @@ weight: 20
 
 ## <center>Keyboard and Mouse Shortcuts</center>
 
-Here is a list of the most common keyboard and mouse shortcuts in Weasis. The shortcuts are divided into different categories for better understanding.
+Here is a list of the default keyboard and mouse shortcuts in Weasis. The shortcuts are divided into different categories for better understanding.
+
+{{% notice note %}}
+Since {{< badgeC "v4.7.0" >}}, most keyboard shortcuts can be customized in **Preferences > General > Keyboard Shortcuts**. This page documents the **default** configuration. To get the current configuration (including any customizations), use **Help > Keyboard Shortcuts** (this page is internationalized).
+{{% /notice %}}
 
 ### Central panel containing viewers and editors
 
 | Shortcut               | Action                                                                  |
 |------------------------|-------------------------------------------------------------------------|
-| **Ctrl + Tab**         | Select the next tab (since {{< badgeC "v4.2.1" >}})                     |
-| **Ctrl + Shift + Tab** | Select the previous tab (since {{< badgeC "v4.2.1" >}})                 |
-| **Ctrl + Shift + E**   | Open a the docking panel list for selection                             |
+| **Ctrl + Tab**         | Select the next tab                     |
+| **Ctrl + Shift + Tab** | Select the previous tab                 |
+| **Ctrl + Shift + E**   | Open the docking panel list for selection                               |
 | **Ctrl + M**           | Maximize/Restore the selected tab                                       |
 | **Ctrl + W**           | Close the tab                                                           |
+| **Ctrl + E**           | Externalize the tab (since {{< badgeC "v4.7.0" >}})                     |
+| **Ctrl + N**           | Normalize the tab (since {{< badgeC "v4.7.0" >}})                       |
 | Tab **Right-click**    | Open the contextual menu for more options (Close Others, All, Maximize) |
 
 ### Selected view in the 2D DICOM Viewer
 
 | Shortcut                                                 | Action                                                                                                                                                                 |
 |----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Left Arrow**                                           | Display previous series (since {{< badgeC "v4.2.1" >}})                                                                                                                |
-| **Right Arrow**                                          | Display next series (since {{< badgeC "v4.2.1" >}})                                                                                                                    |
-| **Page Up**                                              | Display first series (since {{< badgeC "v4.2.1" >}})                                                                                                                   |
-| **Page Down**                                            | Display last series (since {{< badgeC "v4.2.1" >}})                                                                                                                    |
-| **Ctrl + Left Arrow**                                    | Display previous study (since {{< badgeC "v4.2.1" >}})                                                                                                                 |
-| **Ctrl + Right Arrow**                                   | Display next study (since {{< badgeC "v4.2.1" >}})                                                                                                                     |
-| **Ctrl + Page Up**                                       | Display first study (since {{< badgeC "v4.2.1" >}})                                                                                                                    |
-| **Ctrl + Page Down**                                     | Display last study (since {{< badgeC "v4.2.1" >}})                                                                                                                     |
-| **Up Arrow**                                             | Display previous image (since {{< badgeC "v4.2.1" >}})                                                                                                                 |
-| **Down Arrow**                                           | Display next image (since {{< badgeC "v4.2.1" >}})                                                                                                                     |
-| **Home**                                                 | Display first image (since {{< badgeC "v4.2.1" >}})                                                                                                                    |
-| **End**                                                  | Display last image (since {{< badgeC "v4.2.1" >}})                                                                                                                     |
-| **Shift + Up Arrow**                                     | Go 10 images back (since {{< badgeC "v4.2.1" >}})                                                                                                                      |
-| **Shift + Down Arrow**                                   | Go 10 images forward (since {{< badgeC "v4.2.1" >}})                                                                                                                   |
-| **Ctrl + Up Arrow**                                      | Display previous patient (since {{< badgeC "v4.2.1" >}})                                                                                                               |
-| **Ctrl + Down Arrow**                                    | Display next patient (since {{< badgeC "v4.2.1" >}})                                                                                                                   |
-| **Ctrl + Home**                                          | Display first patient (since {{< badgeC "v4.2.1" >}})                                                                                                                  |
-| **Ctrl + End**                                           | Display last patient (since {{< badgeC "v4.2.1" >}})                                                                                                                   |
-| **Tab**                                                  | Go the next view when layout has more than one view                                                                                                                    |
-| **Shift + Tab**                                          | Go the previous view when layout has more than one view                                                                                                                |
-| **Alt + Arrows**                                         | Move image of 5 pixels (since {{< badgeC "v4.2.1" >}})                                                                                                                 |
-| **Alt + Shift + Arrows**                                 | Move image of 10 pixels (since {{< badgeC "v4.2.1" >}})                                                                                                                |
-| **Ctrl + Plus (+)**                                      | Zoom in (since {{< badgeC "v4.2.1" >}})                                                                                                                                |
-| **Ctrl + Minus (-)**                                     | Zoom out (since {{< badgeC "v4.2.1" >}})                                                                                                                               |
-| **Ctrl + Enter**                                         | Set zoom to best fit (since {{< badgeC "v4.2.1" >}})                                                                                                                   |
+| **Left Arrow**                                           | Display previous series                                                                                                                                                |
+| **Right Arrow**                                          | Display next series                                                                                                                                                    |
+| **Page Up**                                              | Display first series                                                                                                                                                   |
+| **Page Down**                                            | Display last series                                                                                                                                                    |
+| **Ctrl + Left Arrow**                                    | Display previous study                                                                                                                                                 |
+| **Ctrl + Right Arrow**                                   | Display next study                                                                                                                                                     |
+| **Ctrl + Page Up**                                       | Display first study                                                                                                                                                    |
+| **Ctrl + Page Down**                                     | Display last study                                                                                                                                                     |
+| **Up Arrow**                                             | Display previous image                                                                                                                                                 |
+| **Down Arrow**                                           | Display next image                                                                                                                                                     |
+| **Home**                                                 | Display first image                                                                                                                                                    |
+| **End**                                                  | Display last image                                                                                                                                                     |
+| **Shift + Up Arrow**                                     | Go 10 images back                                                                                                                                                      |
+| **Shift + Down Arrow**                                   | Go 10 images forward                                                                                                                                                   |
+| **Ctrl + Up Arrow**                                      | Display previous patient                                                                                                                                               |
+| **Ctrl + Down Arrow**                                    | Display next patient                                                                                                                                                   |
+| **Ctrl + Home**                                          | Display first patient                                                                                                                                                  |
+| **Ctrl + End**                                           | Display last patient                                                                                                                                                   |
+| **Tab**                                                  | Go to the next view when layout has more than one view                                                                                                                 |
+| **Shift + Tab**                                          | Go to the previous view when layout has more than one view                                                                                                             |
+| **Alt + Up Arrow**                                       | Move image up 5 pixels (with Pan action)                                                                                                                               |
+| **Alt + Down Arrow**                                     | Move image down 5 pixels (with Pan action)                                                                                                                                                |
+| **Alt + Left Arrow**                                     | Move image left 5 pixels (with Pan action)                                                                                                                                                |
+| **Alt + Right Arrow**                                    | Move image right 5 pixels (with Pan action)                                                                                                                                               |
+| **Alt + Shift + Up Arrow**                               | Move image up 10 pixels (since {{< badgeC "v4.7.0" >}}) (with Pan action)                                                                                                                 |
+| **Alt + Shift + Down Arrow**                             | Move image down 10 pixels (since {{< badgeC "v4.7.0" >}}) (with Pan action)                                                                                                               |
+| **Alt + Shift + Left Arrow**                             | Move image left 10 pixels (since {{< badgeC "v4.7.0" >}}) (with Pan action)                                                                                                                |
+| **Alt + Shift + Right Arrow**                            | Move image right 10 pixels (since {{< badgeC "v4.7.0" >}}) (with Pan action)                                                                                                               |
+| **Ctrl + NumPad +**                                      | Zoom in                                                                                                                                                                |
+| **Ctrl + NumPad -**                                      | Zoom out                                                                                                                                                               |
+| **Ctrl + Enter**                                         | Set zoom to best fit                                                                                                                                                   |
 | **T**                                                    | Translate (pan) the image canvas                                                                                                                                       |
 | **W**                                                    | Window / Level                                                                                                                                                         |
 | **S**                                                    | Series scroll                                                                                                                                                          |
@@ -60,7 +72,9 @@ Here is a list of the most common keyboard and mouse shortcuts in Weasis. The sh
 | **D**                                                    | Distance measurement                                                                                                                                                   |
 | **A**                                                    | Angle measurement                                                                                                                                                      |
 | **Y**                                                    | Polyline measurement                                                                                                                                                   |
+| **G**                                                    | Draw (since {{< badgeC "v4.7.0" >}})                                                                                                                                   |
 | **B**                                                    | Textbox                                                                                                                                                                |
+| **N**                                                    | No Action (since {{< badgeC "v4.7.0" >}})                                                                                                                              |
 | **Q**                                                    | Context menu                                                                                                                                                           |
 | **Ctrl + Spacebar**                                      | Change to the next action                                                                                                                                              |
 | **Ctrl + mouse drag**                                    | Accelerate the current action                                                                                                                                          |
@@ -76,6 +90,9 @@ Here is a list of the most common keyboard and mouse shortcuts in Weasis. The sh
 | **P**                                                    | Print view(s) with the operating system printer                                                                                                                        |
 | **Right-click**                                          | Open the contextual menu for more options                                                                                                                              |
 | **Double click**  or **F11**                             | Toggle fullscreen (F11 since {{< badgeC "v4.5.2" >}})                                                                                                                  |
+| **Left mouse drag**                                      | Perform the selected left mouse action (default: Window/Level)                                                                                                         |
+| **Middle mouse drag**                                    | Perform the selected middle mouse action (default: Pan)                                                                                                                |
+| **Mouse scroll**                                         | Perform the selected scroll action (default: Series scroll)                                                                                                            |
 | **Drag files/directories**<br>(from the OS file manager) | Open DICOMs files                                                                                                                                                      |
 
 ### Selected view in the MPR Viewer

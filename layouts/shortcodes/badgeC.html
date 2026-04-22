@@ -1,17 +1,1 @@
-<style>
-    .badgeC {display: inline-block;
-        padding: 0.1em 0.3em;
-        font-size: 0.9em;
-        font-weight: 500;
-        line-height: 1;
-        color: #084298;
-        background-color: #cfe2ff;
-        text-align: center;
-        white-space: nowrap;
-        vertical-align: baseline;
-        border-radius: 0.25rem;
-        border: 1px solid rgba(0, 0, 0, 0.2);}
-</style>
-{{$text := .Get 0}}
-<span class="badgeC">{{ $text }}</span>
-
+{{$text := .Get 0}}<span style="display:inline-block;padding:0.1em 0.3em;font-size:0.9em;font-weight:500;line-height:1;color:#084298;background-color:#cfe2ff;text-align:center;white-space:nowrap;vertical-align:baseline;border-radius:0.25rem;border:1px solid rgba(0,0,0,0.2);">{{ $text }}</span>

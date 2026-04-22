@@ -31,7 +31,7 @@ To configure the MPR view, you can access settings by clicking the settings icon
 - **Center**: Center the crosshair in the view.
 - **Show Center of Crosshair**: Show or hide the center point of the crosshair.
 - **Show Crosshair**: Show or hide the crosshair lines. When hidden, the crosshair actions become inactive.
-- **MIP Thickness**: Modify the thickness of the MIP in terms of pixel extension. You can also adjust it using _Alt + mouse scroll_ on an axis. Please note that the change in thickness may be delayed, as the MIP is computed in the background and doesn’t utilize 3D acceleration.
+- **MIP Thickness**: Modify the thickness of the MIP in terms of pixel extension. You can also adjust it using _Alt + mouse scroll_ on an axis. Please note that the change in thickness may be delayed, as the MIP is computed in the background and doesn't use 3D acceleration.
 - **MIP Type**:
   - **None**: No MIP applied.
   - **Min**: Minimum intensity projection.
@@ -49,22 +49,63 @@ Try to load a volume dataset and open the MPR viewer. {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/3d/head-neck.xml"
 {{< /launch >}}
 
-{{% notice info %}}
 
-The color of the crosshair lines corresponds to the orientation of the other two planes:
-- **Red Line**: Represents the anterior-posterior axis of the coronal plane.
-- **Green Line**: Represents the inferior-superior axis of the axial plane.
-- **Blue Line**: Represents the right-left axis of the sagittal plane.
+### Crosshair Line Colors {#crosshair-colors}
 
-For oblique planes, the crosshair line colors blend proportionally based on the contribution of the primary axes.
+Each crosshair line represents the intersection of one of the other two planes with the current view. The line color identifies which plane it belongs to:
 
-The orientation axes of the slice image in 3D space are shown in the top-left corner of the MPR view. They are defined as follows:
-- **Red arrow**: Increases from anterior to posterior
-- **Green arrow**: Increases from inferior to superior
-- **Blue arrow**: Increases from right to left
+| Color | Plane | Anatomical axis | Visible in |
+|-------|-------|-----------------|------------|
+| **Red** | Coronal | Anterior → Posterior | Axial, Sagittal |
+| **Green** | Axial | Inferior → Superior | Coronal, Sagittal |
+| **Blue** | Sagittal | Right → Left | Axial, Coronal |
+
+For oblique planes, line colors blend proportionally based on the contribution of the primary axes.
+
+### Orientation Axes {#orientation-axes}
+
+The patient orientation axes are shown in the top-left corner of each MPR view, indicating how the current slice is oriented in 3D space:
+
+| Color | Direction |
+|-------|-----------|
+| **Red arrow** | Anterior → Posterior |
+| **Green arrow** | Inferior → Superior |
+| **Blue arrow** | Right → Left |
 
 For details on the orientation of multiplanar views and their associated colors, refer to [MPR Orientation](image-orientation/#orientation-in-multiplanar-reconstruction-mpr).
+
+### Volume Geometry Handling {#volume-geometry}
+
+Since {{% badge title="Version" %}}4.7.0{{% /badge %}}, when Weasis detects that a volume cannot be reconstructed as a perfect rectilinear grid, a confirmation dialog is displayed before the MPR views are built. Conditions are evaluated in the following priority order — only the first matching condition triggers the dialog:
+
+| Condition | Dialog message |
+|-----------|----------------|
+| Slices are not parallel | _Slice orientations are not parallel!_ |
+| Slice spacing is irregular | _Space between slices is not regular!_ |
+| Too few slices relative to the gantry tilt | _There are too few slices compared to the geometric deformation!_ |
+
+In all three cases, the following is appended to the message:
+
+> _The images may be displayed incorrectly._
+> _Do you want to rectify the images anyway?_
+
+#### Dialog choices
+
+* **Yes — Rectify geometry**: Re-slices the volume to align it with the patient's anatomical orientation. This ensures correct spatial proportions and enables accurate measurements and ratios across planes, but involves interpolation which may slightly affect image sharpness.
+* **No — Stack images**: Stacks the original images directly without any geometric correction. This preserves the full original image quality and avoids interpolation, but distances, ratios, and measurements may not reflect true anatomical values.
+
+{{% notice tip %}}
+Choose **Yes** when accurate measurements are required. Choose **No** when image quality and the avoidance of interpolation artifacts are the priority.
 {{% /notice %}}
+
+#### Status indicator
+
+After the choice is made, a persistent red text is displayed in the **bottom-left corner** of every MPR view to indicate the active geometry mode:
+
+| Choice | Bottom-left indicator |
+|--------|-----------------------|
+| Yes (rectify) | _Geometry aligned to patient orientation_ |
+| No (stack) | _Patient geometry correction skipped — spatial accuracy may be reduced_ |
 
 ### Preferences
 From the main menu "_File > Preferences > Viewer > MPR_" (Since {{% badge title="Version" %}}4.1.0{{% /badge %}}):

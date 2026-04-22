@@ -7,7 +7,7 @@ keywords: [ "dicom import", "dicom viewer", "free dicom viewer", "open source di
 
 ## <center>How to import DICOM files</center>
 
-Weasis can open DICOM files from various ways and sources: drag and drop, local device, DICOM ZIP, DICOM CD/DVD, DICOM Query/Retrieve, and from commands locally or remotely.
+Weasis can open DICOM files from various ways and sources: drag and drop, local device (files, folders, or DICOM ZIP archives), DICOM CD/DVD, DICOM Query/Retrieve, and from commands locally or remotely.
 
 {{% notice note %}}
 An popup error message is displayed when DICOM files cannot be read (from v4.3.0) or when a network error occurs. In the latter case a message asking to download again the missing files.
@@ -16,10 +16,10 @@ An popup error message is displayed when DICOM files cannot be read (from v4.3.0
 ### From the system file explorer
 
 #### Drag and drop
-Files or folders selected from the system file explorer can be opened by dragging and dropping into the central area of Weasis.
+Files, folders, or DICOM ZIP archives selected from the system file explorer can be opened by dragging and dropping into the central area of Weasis.
 
-* Empty central panel: Any files that ca be open by one of the viewers (e.g., standard images such as TIFF, PNG, JPEG...)
-* DICOM Explorer and DICOM viewers (SR, AU, MPR, 2D and 3D) in the central panel: Only DICOM files. Opens the default viewer according to the files.
+* Empty central panel: Any files that can be open by one of the viewers (e.g., standard images such as TIFF, PNG, JPEG...)
+* DICOM Explorer and DICOM viewers (SR, AU, MPR, 2D and 3D) in the central panel: Only DICOM files (including DICOM ZIP). Opens the default viewer according to the files.
 
 #### File association
 Dicom files can be opened by double-clicking them from the system file explorer.
@@ -33,13 +33,10 @@ From the main menu, open _File > Import > DICOM_ or from the first import button
 In order to import DICOM CD/ DVD, go to the main menu, open _File > Import > DICOM CD_ or from the second import button in the toolbar.
 
 #### Local Device
-  * Files and/or folders: list of selected items or unique path
+Since {{% badge title="Version" %}}4.7.0{{% /badge %}}, DICOM ZIP has been added to the list of supported formats for local import:
+  * Files: browse and select one or more DICOM files or DICOM ZIP archives using the file chooser. When a selected ZIP archive is encrypted, a password prompt is displayed.
+  * Folders: browse and select one or more folders using the file chooser. Folders containing DICOM ZIP archives are also supported.
   * Search recursively: when this option is activated the import takes into account the subdirectories
-  * Open in new tab: behavior to automatically open the images of a patient when loading DICOM files
-
-#### DICOM ZIP
-  * Select: browse a DICOM zip file. When the archive file is encrypted, a password prompt is displayed.
-  * Open in new tab: behavior to automatically open the images of a patient when loading DICOM files
 
 #### DICOMDIR
 It may be from a DICOM CD/DVD or a folder containing a DICOMDIR
