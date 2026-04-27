@@ -8,18 +8,18 @@ Source repository for the **[Weasis documentation website](https://weasis.org/)*
 
 ---
 
-## Prerequisites
+## 🚀 Getting Started
+
+### Prerequisites
 
 Before getting started, make sure the following tools are installed:
 
 - [Git](https://git-scm.com/)
 - [Hugo](https://gohugo.io/installation/) (extended version recommended)
 
----
-
-## Getting Started
-
 ### 1. Clone the repository
+
+Clone the repository **with its submodules** (the Relearn theme):
 
 ```shell
 git clone --recurse-submodules https://github.com/nroduit/nroduit.github.io.git
@@ -35,7 +35,7 @@ cd nroduit.github.io
 
 ```shell
 cd themes/hugo-theme-relearn
-git pull origin
+git pull origin main
 cd ../..
 ```
 
@@ -47,17 +47,11 @@ hugo serve
 
 The site will be available at [http://localhost:1313](http://localhost:1313). Hugo automatically reloads the browser on file changes.
 
-For a full production build (output in the `public/` directory):
-
-```shell
-hugo
-```
-
 Refer to the [official Hugo documentation](https://gohugo.io/documentation/) for advanced usage.
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 | Path | Description |
 |------|-------------|
@@ -69,13 +63,21 @@ Refer to the [official Hugo documentation](https://gohugo.io/documentation/) for
 
 ---
 
-## Contributing
+## ✍️ Contributing
 
 Contributions are welcome! To propose a change:
 
 1. Fork the repository and create a new branch.
-2. Edit or add Markdown files under `content/`.
+2. Add or edit Markdown files under `content/`.
+    - Use the `*.en.md` suffix for English content.
+    - Place shared images in `static/` (referenced via `/images/...`).
 3. Preview your changes locally with `hugo serve`.
 4. Open a Pull Request against the `main` branch.
 
-You can also use the **Edit this page** link available on every documentation page to quickly propose edits directly on GitHub.
+Each published page exposes an **Edit this page** link that points directly to the corresponding file on GitHub, making small fixes easy.
+
+## 📚 Useful links
+
+- [Weasis project](https://github.com/nroduit/Weasis)
+- [Hugo documentation](https://gohugo.io/documentation/)
+- [Relearn theme documentation](https://mcshelby.github.io/hugo-theme-relearn/)
