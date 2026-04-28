@@ -16,10 +16,7 @@ The zoom tool {{< svg-inline "static/tuto/icon/zoom.svg" >}} provides multiple w
 * **Toolbar Dropdown**: Select preset zoom levels
 * **Context Menu**: Right-click > Zoom
 * **Image Tool Panel**: Use the zoom slider
-* **Keyboard Shortcuts**:
-  * `Ctrl + Plus (+)`: Zoom in
-  * `Ctrl + Minus (-)`: Zoom out
-  * `Ctrl + Enter`: Reset zoom
+* **[Keyboard Shortcuts](../../basics/shortcuts/)**: zoom in, zoom out, and reset zoom
 
 {{% notice tip %}}
 Quick Access: Press `z` to instantly set zoom as the left mouse button action

@@ -86,10 +86,23 @@ Phase detection is based on the spatial position of each image in the series. If
     * Open in screen: Opens the series in the most appropriate layout in a specific screen.
     * Add: Adds the series to the current patient's layout if exists.
 
+{{% notice note %}}
+Since {{% badge title="Version" %}}4.7.0{{% /badge %}}, tab opening and focus behavior is handled automatically, replacing the old configurable "opening mode" preference.
+
+**When is a new tab opened?**  
+A new viewer tab is opened for every patient whose studies are loaded (e.g. via DICOMWeb).
+
+**How is focus managed?**  
+Focus is controlled by an automatic policy based on loading duration:
+- If the study finishes loading **quickly** (within ~3 seconds), the new tab comes to the **foreground** — the expected behavior for a direct open action.
+- If the study is still loading when the threshold is exceeded (e.g., a slow network import in the background), the **current tab keeps focus** — Weasis will not interrupt your work by stealing focus for a slow background load.
+
+This means you no longer need to configure tab behavior manually: fast loads surface immediately, while slow background loads stay out of the way.
+{{% /notice %}}
+
 #### Preferences
 From the main menu "_File > Preferences > DICOM > DICOM Explorer_":
 
 * _Thumbnail size:_ defines the width of the thumbnails and adjusts the panel accordingly (Default: 144). It is recommended to restart the application after this change.
 * _Study data sorting:_ allows sorting the studies by chronological order or inversely chronological (Default: reverse chronology order). Since {{% badge title="Version" %}}4.1.0{{% /badge %}}.
-* _Open in new tab:_ behavior to automatically open the images of a patient when [using WADO or WADO-RS](../basics/customize/integration/) (Default: All the patients)
 * _Download all series immediately:_ allows starting the download of the series immediately when [using WADO or WADO-RS](../basics/customize/integration/) (Default: true). If unchecked then you must click on the play button on each series or globally at the bottom of the thumbnail list.
