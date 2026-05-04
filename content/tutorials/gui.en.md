@@ -19,8 +19,24 @@ The interface of the default DICOM workspace consists mainly of 2 parts:
    * A tab is also a docked panel that can be arranged by dragging and dropping it to the desired location. This makes it possible to display two tabs side by side (see [docking](docking)).
    * See also [DICOM Explorer](dicom-explorer/) to understand how to navigate through the Patient/Study/Series/Image.
 
-{{% notice note %}}
-Select your preferred language and regional settings in the [preferences](locale). Adapt the graphical interface to your needs by [modifying the theme or the scaling factor](theme) for a better user experience on HiDPI screens.
+## Minimal configuration before starting
+
+Before using Weasis for the first time, a few settings can greatly improve your experience. Open the preferences dialog from the main menu: _File > Preferences (Alt + P)_.
+
+### Language and regional settings
+Select your preferred **language** and **regional format** (dates, numbers) in the _General_ tab of the preferences. Languages with at least 30% translation coverage are listed. Dates, numbers, and other locale-sensitive values will be displayed according to the selected regional format throughout the interface.
+
+➜ See [Language and regional settings](locale) for detailed instructions.
+
+### Theme and scaling factor
+In the _Appearance_ tab of the preferences, you can:
+- Choose a **theme** that suits your environment and reduces eye strain. The recommended theme is **Core Dark - Flat Weasis**.
+- Set a **scaling factor** to match your system display scaling. This is especially recommended for **HiDPI screens** — Weasis will then scale fonts, icons, and all UI components consistently with your operating system.
+
+➜ See [Styles and themes](theme) for detailed instructions.
+
+{{% notice tip %}}
+Whenever you need more complete instructions or explanations, use the {{< svg-inline "static/tuto/icon/help.svg" >}} button available in the preferences dialog or in contextual pop-ups. It will open the corresponding page of the online documentation directly in your browser.
 {{% /notice %}}
 
 {{% notice tip %}}

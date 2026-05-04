@@ -12,10 +12,9 @@ The _RT Tool_ appears on the right panel when a CT exam (when linked with DICOM 
 ### How to display structure and isodose
 In order to display the structures in overlay on the image, apply the following points (see in the image below):
 
-1. {{% badge style="info" %}}Optional{{% /badge %}} When selected, it allows you to force the DVH calculations. Otherwise, it is calculated only if some information is not available in the DICOM files.
-2. Click on "_Load RT_" button to load DICOM STRUCT, PLAN and DOSE associated the CT images. Once loaded, the button becomes inactive.
-3. {{% badge style="info" %}}Optional{{% /badge %}} Select a structure if there is more than one.
-4. {{% badge style="info" %}}Optional{{% /badge %}} Select a plan if there is more than one.
+1. Click on "_Load RT_" button to load DICOM STRUCT, PLAN and DOSE associated the CT images. Once loaded, the button becomes inactive.
+2. {{% badge style="info" %}}Optional{{% /badge %}} Select a structure if there is more than one.
+3. {{% badge style="info" %}}Optional{{% /badge %}} Select a plan if there is more than one.
 
 Try to open an RT sample {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/rt.xml"
@@ -42,13 +41,17 @@ For displaying the isodoses, apply the following points (see in the image below)
 
 1. Select the _Isodoses_ tab
 2. Check the _Isodoses_ root node which is not activated by default
-3. {{% badge style="info" %}}Optional{{% /badge %}} Adjust the graphic opacity
+3. {{% badge style="info" %}}Optional{{% /badge %}} Adjust the graphic opacity (default: 50%)
 
-![DICOM DOSE](/tuto/dicom-rt-dose.jpg?classes=shadow)
+![DICOM DOSE](/tuto/dicom-rt-dose.png?classes=shadow)
 <br>
 
 {{% notice tip %}}
 The "Structures" and "Isodoses" root node can be used to show or hide all graphics while the child nodes can be used independently for showing specific items.
+{{% /notice %}}
+
+{{% notice note %}}
+Since {{% badge title="Version" %}}4.7.0{{% /badge %}} the isodose overlay is rendered directly from the **RTDOSE pixel grid** (resampled to the CT image grid using nearest-neighbor interpolation) instead of vector contours. This provides a more faithful representation of the dose distribution stored in the DICOM file, especially around steep dose gradients.
 {{% /notice %}}
 
 
@@ -57,6 +60,12 @@ The "Structures" and "Isodoses" root node can be used to show or hide all graphi
 * Click on the button "_Display DVH chart_"
 * Right-click on the chart to print or save as a PNG image or vector files such as SVG or EPS.
 
-![DICOM DVH](/tuto/dicom-rt-dvh.jpg?classes=shadow)
+{{% notice warning %}}
+Since {{% badge title="Version" %}}4.7.0{{% /badge %}} the DVH (re)calculation is **enabled by default**. When at least one of the selected structures has no DVH stored in the RTDOSE, a confirmation dialog lists the affected structures and asks whether to compute the missing DVH(s) on the fly.
+
+The calculation algorithm (derived from [dicompyler](https://github.com/dicompyler/dicompyler-core)) is **experimental and not clinically validated**: results must not be used for medical decisions. The feature can be disabled by setting the system preference `weasis.rt.dvh.recalculate.enable` to `false` (see `base.json`); when disabled, only DVHs already stored in the RTDOSE files are displayed.
+{{% /notice %}}
+
+![DICOM DVH](/tuto/dicom-rt-dvh.png?classes=shadow)
 <br>
 
