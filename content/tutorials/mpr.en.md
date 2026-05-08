@@ -24,7 +24,7 @@ The crosshair actions in the MPR are synchronized with the other views and inclu
 - {{< svg-inline "static/tuto/icon/mpr-hand.svg" >}} **Move Axis**: Adjust the crosshair along the axes by selecting and dragging one of the lines.
 - {{< svg-inline "static/tuto/icon/mpr-rotate.svg" >}} **Rotate**: Rotate the crosshair around its center by dragging the points along the axes.
 
-By default, zoom and window/level are also synchronized between the three views. The synchronization of these actions can be deactivated by setting the synchronization drop-down button {{< svg-inline "static/tuto/icon/synch.svg" >}} (on the right of the layout button) to **None**.
+By default, only *Scroll* is propagated between the three planes (in addition to the structural crosshair coupling). *Zoom*, *Window/Level* and the other per-action propagations are off by default and can be enabled — or globally turned off — through the master **Synchronize** checkbox and per-action toggles in the synchronization drop-down popup {{< svg-inline "static/tuto/icon/synch.svg" >}} (on the right of the layout button), or fine-tuned per view through the **Synchronize** submenu of each MPR view's settings popup. See [View Synchronization](synch-view#mpr-sync-options).
 The MRR views can be displayed in different layouts {{< svg-inline "static/tuto/icon/layout.svg" >}}.
 
 To configure the MPR view, you can access settings by clicking the settings icon {{< svg-inline "static/tuto/icon/viewSettings.svg" >}} in the top-right corner. The available options include:
@@ -37,6 +37,7 @@ To configure the MPR view, you can access settings by clicking the settings icon
   - **Min**: Minimum intensity projection.
   - **Mean**: Average intensity projection.
   - **Max**: Maximum intensity projection.
+- **Synchronize**: Per-view sync options for this MPR view — independent toggles for *Scroll*, *Pan*, *Zoom*, *Rotation*, *Flip*, *Window/Level* and *Spatial unit*, plus an **Apply to all views** entry that propagates the current selection to every other MPR view.
 
 {{% notice note %}}
 Most MPR settings can also be accessed using shortcuts. Refer to the [MPR shortcuts](../basics/shortcuts/#selected-view-in-the-mpr-viewer) for more details.
