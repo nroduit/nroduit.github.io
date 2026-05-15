@@ -54,7 +54,7 @@ Tooltips on leaf nodes show the region description, voxel count, and estimated v
 {{% notice note %}}
 **Loading a DICOM SEG.** The first time you display a SEG file — whether in the standard 2D viewer, in MPR, or in 3D — Weasis decodes it in the background. While decoding is in progress you can keep scrolling and interacting with the images normally; the regions appear as soon as the SEG is ready.
 
-A **cancellable** progress entry is shown at the bottom of the DICOM Explorer. If a large or slow SEG is taking too long, you can cancel it and continue working without the overlay. To get it back, simply uncheck and re-check the SEG entry in the Segmentation panel — that asks Weasis to try again.
+A **cancellable** progress entry is shown at the bottom of the DICOM Explorer. If a large or slow SEG is taking too long, you can cancel it and continue working without the overlay.
 
 Once decoded, the SEG is shared between the 2D, MPR and 3D views, so it is loaded only once even when several views are open. Weasis may release it automatically when memory gets tight, and reload it on demand the next time you need it.
 {{% /notice %}}
@@ -70,7 +70,7 @@ Weasis supports all three DICOM SEG segmentation types:
 | **BINARY** | Each pixel is either inside or outside the segment. | Coloured contour drawn on the image. |
 | **FRACTIONAL — PROBABILITY** | Each pixel carries a value between 0 and 1 expressing how confident the AI is that the pixel belongs to the segment. | Smooth coloured overlay: more transparent where the confidence is low, more opaque where it is high. The region's opacity slider scales the whole gradient. |
 | **FRACTIONAL — OCCUPANCY** | Each pixel carries a value between 0 and 1 expressing how much of the pixel is actually covered by the segment (partial-volume fraction). | Same smooth overlay as PROBABILITY — only the meaning of the value differs. |
-| **LABELMAP** | Several segments are stored together in a single image, where the pixel value identifies which segment it belongs to. Often produced by tools such as *highdicom*. | Each segment is extracted automatically and drawn with its own coloured contour. |
+| **LABELMAP** | Several segments are stored together in a single image, where the pixel value identifies which segment it belongs to. | Each segment is extracted automatically and drawn with its own coloured contour. |
 
 {{% notice note %}}
 Some AI frameworks export FRACTIONAL segmentations without an explicit reference back to the source series. Weasis matches them to the correct images automatically (using the DICOM frame of reference), so you do not need to link them by hand.
@@ -82,7 +82,7 @@ Some AI frameworks export FRACTIONAL segmentations without an explicit reference
 
 When a DICOM SEG is linked to the current series, the segmentation overlay is automatically available in the [Multi-Planar Reconstruction (MPR)](../mpr) view. The same Segmentation panel controls visibility and opacity for all three planes (axial, coronal, sagittal — and oblique cuts) at once.
 
-For MPR, Weasis additionally needs to reslice the SEG along the new planes. This extra step is also performed in the background, with the same cancellable progress entry described above; the overlay appears on every plane as soon as it completes.
+For MPR, Weasis additionally needs to reslice the SEG along the new planes. This extra step is also performed in the background; the overlay appears on every plane as soon as it completes.
 
 {{% notice tip %}}
 The segmentation overlay in MPR works even when the SEG has a different orientation, spacing or scanning direction than the source images — for example an AI model that segments at a coarser resolution. Weasis reprojects the mask into the image coordinate system for you, so contours stay aligned on every plane.
@@ -105,9 +105,3 @@ A few things to keep in mind when working with the 3D overlay:
 - **Toggling a segment is instant.** Changing the visibility, colour or opacity of a region in the Segmentation panel updates the 3D view immediately, even on very large volumes — Weasis only refreshes the colour table, not the segmentation itself.
 - **Overlapping segments are handled cleanly.** When two segments share the same area, both colours are combined automatically; you do not have to pick which one wins.
 - **2D, MPR and 3D stay in sync.** Showing or hiding a segment in the panel updates the standard viewer, the MPR view and the 3D view at the same time.
-
-{{% notice note %}}
-3D Volume Rendering — including the segmentation overlay — is now available on **macOS** thanks to the new rendering pipeline introduced in 4.7.0 ([#784](https://github.com/nroduit/Weasis/issues/784)).
-{{% /notice %}}
-
-

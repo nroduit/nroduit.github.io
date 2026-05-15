@@ -61,9 +61,9 @@ Since {{% badge title="Version" %}}4.7.0{{% /badge %}} the isodose overlay is re
 * Right-click on the chart to print or save as a PNG image or vector files such as SVG or EPS.
 
 {{% notice warning %}}
-Since {{% badge title="Version" %}}4.7.0{{% /badge %}} the DVH (re)calculation is **enabled by default**. When at least one of the selected structures has no DVH stored in the RTDOSE, a confirmation dialog lists the affected structures and asks whether to compute the missing DVH(s) on the fly.
+Since {{% badge title="Version" %}}4.7.0{{% /badge %}}, when at least one of the selected structures has no DVH stored in the RTDOSE, a **confirmation dialog** lists the affected structures and asks whether to compute the missing DVH(s) on the fly.
 
-The calculation algorithm (derived from [dicompyler](https://github.com/dicompyler/dicompyler-core)) is **experimental and not clinically validated**: results must not be used for medical decisions. The feature can be disabled by setting the system preference `weasis.rt.dvh.recalculate.enable` to `false` (see `base.json`); when disabled, only DVHs already stored in the RTDOSE files are displayed.
+The calculation algorithm (derived from [dicompyler](https://github.com/dicompyler/dicompyler-core)) is **experimental and not clinically validated**: results must not be used for medical decisions. The feature can be disabled by setting the [system preference](../basics/customize/preferences) `weasis.rt.dvh.recalculate.enable` to `false`; when disabled, only DVHs already stored in the RTDOSE files are displayed.
 {{% /notice %}}
 
 ![DICOM DVH](/tuto/dicom-rt-dvh.png?classes=shadow)

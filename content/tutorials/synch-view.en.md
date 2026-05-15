@@ -55,7 +55,7 @@ To find which series share the same frame of reference, right-click a thumbnail 
 
 Beyond the global toolbar drop-down, each 2D view carries small overlay buttons that drive its sync behaviour independently. They appear in the bottom-right corner of the view when the view is eligible for synchronization with one of its peers.
 
-#### Auto-sync button {#auto-sync-button}
+#### Auto-sync button {{< svg-inline "static/tuto/icon/synch.svg" >}} {#auto-sync-button}
 
 The {{< svg-inline "static/tuto/icon/synch.svg" >}} button toggles **Default Stack** auto-synchronization for *this* view only. Its appearance encodes two pieces of information:
 
@@ -69,7 +69,7 @@ Clicking the button opens a per-view sync popup with:
 - **Apply to all views** — copies this view's effective sync options to every other view sharing the same Frame of Reference UID. The item is decorated with the view's FoR color chip, matching the chip drawn on the auto-sync button so you can confirm at a glance which group will be affected.
 - **Close** — explicit dismiss (the per-action toggles do not auto-close on click; *Esc* and clicks outside also dismiss the popup as usual).
 
-#### Manual sync button {#manual-sync-button}
+#### Manual sync button {{< svg-inline "static/tuto/icon/hand.svg" >}} {#manual-sync-button}
 
 Some series cannot be auto-synced because they have no — or a different — Frame of Reference UID (typical for unrelated CT scans, or legacy series with missing DICOM geometry). The **manual-sync button** {{< svg-inline "static/tuto/icon/hand.svg" >}} (shown in the same bottom-right corner) lets you link such a view to a peer by relative slice index.
 
@@ -121,7 +121,7 @@ See the [3D cursor](cursor-3d) tutorial for full details.
 
 In the [MPR viewer](mpr), the three reconstruction planes (axial, coronal, sagittal) are always cross-synchronized by the crosshair. In addition, **Default Stack** mode propagates *Scroll* between the MPR views and any other 2D view sharing the same Frame of Reference UID — and any further action (*Zoom*, *Window/Level*, …) that the user has explicitly enabled through the per-action toggles described below.
 
-To disable synchronization in the MPR, uncheck the master **Synchronize** checkbox in the toolbar drop-down popup, or use the per-action toggles in each MPR view's [Synchronize submenu](#mpr-sync-options) to opt individual actions out (Zoom, Window/Level, …) while keeping the crosshair coupling intact.
+To disable synchronization in the MPR, use the per-action toggles in each MPR view's [Synchronize submenu](#mpr-sync-options) to opt individual actions out (Zoom, Window/Level, …) while keeping the crosshair coupling intact.
 
 #### Per-view sync options in the MPR {#mpr-sync-options}
 
@@ -131,7 +131,7 @@ The submenu is the same as the one opened by the auto-sync button on a regular 2
 
 - **Per-action toggles** for *Scroll*, *Pan*, *Zoom*, *Rotation*, *Flip*, *Window/Level* and *Spatial unit*. The submenu stays open while you flip several options.
 - **Apply to all views** — propagates the current selection to every other view sharing the same Frame of Reference UID. Decorated with the FoR color chip identifying the target group.
-- **Close** — explicit dismiss.
+- **Close** — closes the popup.
 
 {{% notice note %}}
 When manual synchronization is active on the view, *Scroll* is forced on and locked — manual sync is built on top of scroll propagation.

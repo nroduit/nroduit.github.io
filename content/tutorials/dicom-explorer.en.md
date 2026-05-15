@@ -90,7 +90,7 @@ Phase detection is based on the spatial position of each image in the series. If
 Since {{% badge title="Version" %}}4.7.0{{% /badge %}}, tab opening and focus behavior is handled automatically, replacing the old configurable "opening mode" preference.
 
 **When is a new tab opened?**  
-A new viewer tab is opened for every patient whose studies are loaded (e.g. via DICOMWeb).
+A new viewer tab is opened for every patient whose studies are loaded via an import action. If the patient already has an open tab, the new studies are added to that existing tab instead of opening a new one. This ensures that each patient is organized within a single tab, preventing unnecessary fragmentation of the workspace.
 
 **How is focus managed?**  
 Focus is controlled by an automatic policy based on loading duration:

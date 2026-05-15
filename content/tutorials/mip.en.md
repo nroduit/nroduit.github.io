@@ -30,7 +30,7 @@ If the series is a **multi-phase 4D acquisition** (e.g., a cardiac CT with sever
 Once enabled, the MIP mode provides:
 
 - **Full synchronization**: the MIP slab stays synchronized with the current slice position and any linked views.
-- **Slab geometry overlay**: a visual overlay indicates the extent of the slab used for the projection directly on the image.
+- **Slab geometry overlay**: a visual overlay indicates the extent of the slab used for the projection. It is displayed on another series sharing the same geometry but viewed in a different orientation, so the slab boundaries can be checked from a complementary plane.
 - **View indicator**: once MIP is active on a view, the same {{< svg-inline "static/tuto/icon/mip.svg" >}} icon appears in the top-right corner of that view to indicate MIP is enabled. Clicking this icon opens the same MIP options as the toolbar button, making it easy to adjust settings per view without leaving the layout.
 
 ### The MIP Options
@@ -51,9 +51,9 @@ The projection type defines the way the MIP is calculated. The options are:
 * **None**: No projection, display the original image
 * **Min**: Minimum Intensity Projection
 * **Mean**: Mean Intensity Projection
-* **Max**: Maximum Intensity Projection (the default value)
+* **Max**: Maximum Intensity Projection
 
-When a projection type other than **None** is selected, the slice thickness is automatically initialized to **2 pixels** (1 pixel before and 1 pixel after the current slice).
+When a projection type other than **None** is selected, the slice thickness is automatically initialized to **2 pixels** (2 pixels before and 2 pixels after the current slice).
 
 #### MIP thickness
 The slice thickness defines the extent of the slab used for the projection. It is expressed as the number of pixels before and after the current slice (e.g., a value of 3 means 3 slices on each side, 7 slices total).

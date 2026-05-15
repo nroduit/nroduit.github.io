@@ -17,13 +17,13 @@ Since {{< badgeC "v4.7.0" >}}, most keyboard shortcuts can be customized in **Pr
 
 | Shortcut               | Action                                                                  |
 |------------------------|-------------------------------------------------------------------------|
-| **Ctrl + Tab**         | Select the next tab                     |
-| **Ctrl + Shift + Tab** | Select the previous tab                 |
+| **Ctrl + Tab**         | Select the next tab                                                     |
+| **Ctrl + Shift + Tab** | Select the previous tab                                                 |
 | **Ctrl + Shift + E**   | Open the docking panel list for selection                               |
 | **Ctrl + M**           | Maximize/Restore the selected tab                                       |
 | **Ctrl + W**           | Close the tab                                                           |
-| **Ctrl + E**           | Externalize the tab (since {{< badgeC "v4.7.0" >}})                     |
-| **Ctrl + N**           | Normalize the tab (since {{< badgeC "v4.7.0" >}})                       |
+| **Ctrl + E**           | Externalize the tab (when multiple screens)                             |
+| **Ctrl + N**           | Normalize the tab                                                       |
 | Tab **Right-click**    | Open the contextual menu for more options (Close Others, All, Maximize) |
 
 ### Selected view in the 2D DICOM Viewer
@@ -51,13 +51,13 @@ Since {{< badgeC "v4.7.0" >}}, most keyboard shortcuts can be customized in **Pr
 | **Tab**                                                  | Go to the next view when layout has more than one view                                                                                                                 |
 | **Shift + Tab**                                          | Go to the previous view when layout has more than one view                                                                                                             |
 | **Alt + Up Arrow**                                       | Move image up 5 pixels (with Pan action)                                                                                                                               |
-| **Alt + Down Arrow**                                     | Move image down 5 pixels (with Pan action)                                                                                                                                                |
-| **Alt + Left Arrow**                                     | Move image left 5 pixels (with Pan action)                                                                                                                                                |
-| **Alt + Right Arrow**                                    | Move image right 5 pixels (with Pan action)                                                                                                                                               |
-| **Alt + Shift + Up Arrow**                               | Move image up 10 pixels (since {{< badgeC "v4.7.0" >}}) (with Pan action)                                                                                                                 |
-| **Alt + Shift + Down Arrow**                             | Move image down 10 pixels (since {{< badgeC "v4.7.0" >}}) (with Pan action)                                                                                                               |
-| **Alt + Shift + Left Arrow**                             | Move image left 10 pixels (since {{< badgeC "v4.7.0" >}}) (with Pan action)                                                                                                                |
-| **Alt + Shift + Right Arrow**                            | Move image right 10 pixels (since {{< badgeC "v4.7.0" >}}) (with Pan action)                                                                                                               |
+| **Alt + Down Arrow**                                     | Move image down 5 pixels (with Pan action)                                                                                                                             |
+| **Alt + Left Arrow**                                     | Move image left 5 pixels (with Pan action)                                                                                                                             |
+| **Alt + Right Arrow**                                    | Move image right 5 pixels (with Pan action)                                                                                                                            |
+| **Alt + Shift + Up Arrow**                               | Move image up 10 pixels (with Pan action)                                                                                                                              |
+| **Alt + Shift + Down Arrow**                             | Move image down 10 pixels (with Pan action)                                                                                                                            |
+| **Alt + Shift + Left Arrow**                             | Move image left 10 pixels (with Pan action)                                                                                                                            |
+| **Alt + Shift + Right Arrow**                            | Move image right 10 pixels (with Pan action)                                                                                                                           |
 | **Ctrl + NumPad +**                                      | Zoom in                                                                                                                                                                |
 | **Ctrl + NumPad -**                                      | Zoom out                                                                                                                                                               |
 | **Ctrl + Enter**                                         | Set zoom to best fit                                                                                                                                                   |
@@ -72,9 +72,9 @@ Since {{< badgeC "v4.7.0" >}}, most keyboard shortcuts can be customized in **Pr
 | **D**                                                    | Distance measurement                                                                                                                                                   |
 | **A**                                                    | Angle measurement                                                                                                                                                      |
 | **Y**                                                    | Polyline measurement                                                                                                                                                   |
-| **G**                                                    | Draw (since {{< badgeC "v4.7.0" >}})                                                                                                                                   |
+| **G**                                                    | Draw                                                                                                                                                                   |
 | **B**                                                    | Textbox                                                                                                                                                                |
-| **N**                                                    | No Action (since {{< badgeC "v4.7.0" >}})                                                                                                                              |
+| **N**                                                    | No Action                                                                                                                                                              |
 | **Q**                                                    | Context menu                                                                                                                                                           |
 | **Ctrl + Spacebar**                                      | Change to the next action                                                                                                                                              |
 | **Ctrl + mouse drag**                                    | Accelerate the current action                                                                                                                                          |
