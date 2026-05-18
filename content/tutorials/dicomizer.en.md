@@ -14,9 +14,10 @@ Dicomizer will help you to manage the DICOM tags at the patient, study, and imag
 ![Dicomizer](/gallery2/Dicomizer.jpg?classes=shadow)
 <br>
 
+The sections below describe the day-to-day use of the Dicomizer. Administrators deploying the tool in a clinical workflow should also read [Integrating the Dicomizer](#integrating-the-dicomizer) at the end of this page.
+
 ### How to Launch Dicomizer
 
-#### As a Standalone Application
 When installing Weasis, `Dicomizer` is available as a standalone application with this shortcut {{< svg-inline "static/tuto/icon/Dicomizer.svg" >}} (only on Windows and Linux). 
 
 On macOS, you need to run the `Dicomizer` command from the terminal:
@@ -25,14 +26,6 @@ On macOS, you need to run the `Dicomizer` command from the terminal:
 {{< /highlight >}}
 
 If you plan to use it frequently, with the Automator application you can create a new application `Dicomizer.app` with the `Run Shell Script` action containing the command.
-
-#### From a WEB Context
-The Dicomizer can be launched from a web context with the `weasis://` [protocol](../getting-started/weasis-protocol).
-
-An example for launching Weasis Dicomizer {{< launch >}}$weasis:config pro="felix.extended.config.properties file:conf/dicomizer.json" pro="gosh.port 17181"{{< /launch >}} with the following parameters:
-{{< highlight shell >}}
-$weasis:config pro="felix.extended.config.properties file:conf/dicomizer.json" pro="gosh.port 17181"
-{{< /highlight >}}
 
 ### Import Media Files
 
@@ -45,7 +38,9 @@ The Dicomizer tool supports encapsulating the following file types into DICOM ob
 - **MPEG-4 video files (video/mp4)** {{% badge title="Version" %}}4.6.2{{% /badge %}}: A modern format for high-quality medical videos, such as endoscopy, ultrasound, or surgical recordings.
 
 {{% notice warning %}}
-Only MPEG-4 video files that are [compatible with the DICOM standard](https://dicom.nema.org/medical/dicom/current/output/chtml/part18/sect_8.7.3.html) are supported. Other MPEG-4 profiles are not imported in the central panel, so they need to be converted to a compatible format before using Dicomizer.
+Only MPEG-4 video files that are [compatible with the DICOM standard](https://dicom.nema.org/medical/dicom/current/output/chtml/part18/sect_8.7.3.html) are supported, namely MPEG-4 AVC/H.264 High Profile (up to Level 4.2) or HEVC/H.265 Main and Main 10 Profile. When a video uses another profile, it is not imported and a message invites you to convert it to a compatible format before using Dicomizer.
+
+Video files are also limited in size {{% badge title="Version" %}}4.7.0{{% /badge %}}: a file larger than the maximum defined by the `weasis.acquire.video.max.size` [preference](../basics/customize/preferences) (1024 MB by default) is rejected with a message. Set this preference to `0` to disable the limit.
 {{% /notice %}}
 
 
@@ -88,39 +83,12 @@ The bottom panel organizes DICOM tags into categorized tree structures:
 - **Series level**: Applicable to the series level.
 - **Image level**: Applicable to the image level.
 
-{{% notice note %}}
-Tags can be configured in the [preferences](../basics/customize/preferences) (items starting by `weasis.acquire.meta`).
-{{% /notice %}}
-
 {{% notice warning %}}
 If an item's dashed outline in the table is red, it indicates that the value is mandatory and must be filled in.  
 {{% /notice %}}
 
-If you don't want to fill in the Global tags manually, they can be populated:
-- From a DICOM Worklist (configuration by the [items](../basics/customize/preferences) starting by `weasis.acquire.wkl`). Here is an example to modify the [configuration at launch](../getting-started/weasis-protocol/#modify-the-launch-parameters):<br>
-  {{< highlight shell >}}
-  $weasis:config pro="felix.extended.config.properties file:conf/ext-dicomizer.properties" pro="gosh.port 17181" pro="weasis.acquire.wkl.host localhost" pro="weasis.acquire.wkl.aet DCM4CHEE" pro="weasis.acquire.wkl.port 11112" pro="weasis.acquire.wkl.station.aet WEASIS-MWL"
-  {{< /highlight >}}
-
-- By the [acquire:patient](../basics/commands/#acquirepatient) command containing an XML encoded as a DICOM XML file, e.g.:
-{{< highlight xml >}}
-<?xml version="1.0" encoding="UTF-8"?>
-<tags>
-	<PatientID>97032168</PatientID>
-	<PatientName>TEST^TEST</PatientName>
-	<PatientBirthDate>19580703</PatientBirthDate>
-	<PatientSex>M</PatientSex>
-	<OperatorsName>RODUIT^NICOLAS</OperatorsName>
-	<AccessionNumber>000000003712</AccessionNumber>
-	<IssuerOfAccessionNumberSequence>
-		<LocalNamespaceEntityID>411713364</LocalNamespaceEntityID>
-	</IssuerOfAccessionNumberSequence>
-	<StudyID>411713364</StudyID>
-</tags>
-{{< /highlight >}}
-
 {{% notice warning %}}
-Person name fields (PatientName, OperatorsName, etc.) should be formatted as `Last^First^Middle^Prefix^Suffix` according to the [DICOM standard](https://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_6.2.html#sect_6.2.1). This rule must also be applied when editing manually the DICOM tags.
+Person name fields (PatientName, OperatorsName, etc.) should be formatted as `Last^First^Middle^Prefix^Suffix` according to the [DICOM standard](https://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_6.2.html#sect_6.2.1). This rule applies both when editing the DICOM tags manually and when they are filled in automatically (see [Integrating the Dicomizer](#integrating-the-dicomizer)).
 {{% /notice %}}
 
 {{% notice tip %}}
@@ -143,11 +111,58 @@ Click the **Publish** button to send DICOM files to a remote DICOM archive, or t
 - Choose a calling node (Sender AET Title) that complies with your archive’s restrictions, if applicable.
 
 {{% notice note %}}
-The destination can be a specific remote node or a list of remote nodes available from the main menu, open _File > Preferences (Alt + P)_ and select "DICOM node list" and edit ar add a new DICOM node.
-
-When the Dicomizer destination is specified in the [preferences](../basics/customize/preferences), the list is not selectable in the publication panel. The preference items are the ones starting with `weasis.acquire.dest`.
+The destination can be a specific remote node or a list of remote nodes available from the main menu, open _File > Preferences (Alt + P)_ and select "DICOM node list" and edit or add a new DICOM node.
 {{% /notice %}}
 
 {{% notice tip %}}
 A green-checked icon on the thumbnail indicates that the image has been successfully published.
 {{% /notice %}}
+
+-----
+
+## <center>Integrating the Dicomizer</center>
+
+This section is intended for administrators integrating the Dicomizer into a clinical workflow. It describes how to launch the Dicomizer from a web context and, above all, how to fill in the DICOM metadata automatically so that operators do not have to enter it manually.
+
+### Launch from a Web Context
+
+The Dicomizer can be launched from a web context with the `weasis://` [protocol](../getting-started/weasis-protocol).
+
+An example for launching Weasis Dicomizer {{< launch >}}$weasis:config pro="felix.extended.config.properties file:conf/dicomizer.json" pro="gosh.port 17181"{{< /launch >}} with the following parameters:
+{{< highlight shell >}}
+$weasis:config pro="felix.extended.config.properties file:conf/dicomizer.json" pro="gosh.port 17181"
+{{< /highlight >}}
+
+### Automatically Fill in the Metadata
+
+Instead of being entered manually in the **Album** panel, the Global tags (patient and study levels) can be populated automatically:
+
+- **From a DICOM Worklist**, configured with the [preference items](../basics/customize/preferences) starting with `weasis.acquire.wkl`. Here is an example to set the [configuration at launch](../getting-started/weasis-protocol/#modify-the-launch-parameters):<br>
+  {{< highlight shell >}}
+  $weasis:config pro="felix.extended.config.properties file:conf/ext-dicomizer.properties" pro="gosh.port 17181" pro="weasis.acquire.wkl.host localhost" pro="weasis.acquire.wkl.aet DCM4CHEE" pro="weasis.acquire.wkl.port 11112" pro="weasis.acquire.wkl.station.aet WEASIS-MWL"
+  {{< /highlight >}}
+
+- **With the [acquire:patient](../basics/commands/#acquirepatient) command**, providing an XML encoded as a DICOM XML file, e.g.:
+{{< highlight xml >}}
+<?xml version="1.0" encoding="UTF-8"?>
+<tags>
+	<PatientID>97032168</PatientID>
+	<PatientName>TEST^TEST</PatientName>
+	<PatientBirthDate>19580703</PatientBirthDate>
+	<PatientSex>M</PatientSex>
+	<OperatorsName>RODUIT^NICOLAS</OperatorsName>
+	<AccessionNumber>000000003712</AccessionNumber>
+	<IssuerOfAccessionNumberSequence>
+		<LocalNamespaceEntityID>411713364</LocalNamespaceEntityID>
+	</IssuerOfAccessionNumberSequence>
+	<StudyID>411713364</StudyID>
+</tags>
+{{< /highlight >}}
+
+{{% notice note %}}
+Which DICOM tags are displayed, editable and required in the **Album** panel can be configured through the [preferences](../basics/customize/preferences) (items starting with `weasis.acquire.meta`).
+{{% /notice %}}
+
+### Publication Destination
+
+When the Dicomizer destination is specified in the [preferences](../basics/customize/preferences) (items starting with `weasis.acquire.dest`), the destination is no longer selectable in the **Publication** panel: the DICOM files are sent directly to the configured node.

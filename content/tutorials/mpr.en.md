@@ -37,6 +37,7 @@ To configure the MPR view, you can access settings by clicking the settings icon
   - **Min**: Minimum intensity projection.
   - **Mean**: Average intensity projection.
   - **Max**: Maximum intensity projection.
+- **Build a new series from the current view** / **Build three series from MPR views**: Save the reconstructed MPR slices as a new DICOM series that is loaded back into the [DICOM explorer](dicom-explorer/) (Since {{% badge title="Version" %}}4.7.0{{% /badge %}}). **Build a new series from the current view** exports only the current plane, while **Build three series from MPR views** (in the *All views* submenu) exports the three planes, each as a separate series. Background borders are cropped uniformly across every slice so the exported series keeps a constant image size. Once the export is complete, the crosshair returns to its initial position.
 - **Synchronize**: Per-view sync options for this MPR view — independent toggles for *Scroll*, *Pan*, *Zoom*, *Rotation*, *Flip*, *Window/Level* and *Spatial unit*, plus an **Apply to all views** entry that propagates the current selection to every other MPR view.
 
 {{% notice note %}}

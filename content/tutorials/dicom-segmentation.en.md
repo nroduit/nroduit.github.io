@@ -96,7 +96,7 @@ The 3D Volume Renderer offers three segmentation modes selectable from the _Segm
 
 | Mode | What it shows |
 |------|---------------|
-| **None** | No segmentation is shown. |
+| **No segmentation** | No segmentation is shown. |
 | **Segmentation only** | Only the labelled regions are rendered, with the anatomy hidden. Useful to review the AI output on its own. |
 | **Segmentation overlay** | The segmentation regions are drawn **on top of** the volume rendering, so the anatomy remains visible beneath the coloured regions. |
 

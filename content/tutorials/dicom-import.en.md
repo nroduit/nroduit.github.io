@@ -10,7 +10,11 @@ keywords: [ "dicom import", "dicom viewer", "free dicom viewer", "open source di
 Weasis can open DICOM files from various ways and sources: drag and drop, local device (files, folders, or DICOM ZIP archives), DICOM CD/DVD, DICOM Query/Retrieve, and from commands locally or remotely.
 
 {{% notice note %}}
-An popup error message is displayed when DICOM files cannot be read (from v4.3.0) or when a network error occurs. In the latter case a message asking to download again the missing files.
+Whatever the import method used, a popup message can be displayed at the end of an import in the following cases:
+
+* **Error**: one or more DICOM files cannot be read because they are corrupted or malformed (from {{% badge title="Version" %}}4.3.0{{% /badge %}}).
+* **Information**: since {{% badge title="Version" %}}4.7.0{{% /badge %}}, one or more valid DICOM files were skipped because their SOP Class has no viewer available (e.g., Raw Data Storage). These files are not corrupted, they are simply not displayable. This notification can be disabled with the *Don't show this again* checkbox in the dialog or from the DICOM Explorer preferences (*Notify when DICOM files with an unsupported SOP Class are skipped*).
+* **Network error**: when a network error occurs during a retrieve (DICOMWeb or WADO), a message asks to download the missing files again.
 {{% /notice %}}
 
 ### From the system file explorer
