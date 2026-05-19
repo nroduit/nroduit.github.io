@@ -43,7 +43,7 @@ By default, **only Scroll** is propagated — navigating to a slice in one view 
 
 See [Per-view sync controls](#per-view-sync) for the full list of toggles and the FoR color-chip system.
 
-**Typical use case:** Display a CT series and its corresponding PET series side by side. Because both series share the same Frame of Reference UID, scrolling through slices in the CT view will automatically scroll the PET view to the matching anatomical level. Enable *Window/Level* and *Zoom* through the per-action toggles if you also want those settings to follow the active view.
+**Typical use case:** Display a CT series and its corresponding PET series side by side. Because both series share the same Frame of Reference UID, scrolling through slices in the CT view will automatically scroll the PET view to the matching anatomical level. If you also want *Window/Level* or *Zoom* to follow the active view, enable those actions on **every** view you want coupled — toggle them on one view and use **Apply to all views**, since an action is synced only between views that both have it enabled.
 
 {{% notice tip %}}
 To find which series share the same frame of reference, right-click a thumbnail in the [DICOM explorer](dicom-explorer/) and choose **Select related Series**. Then open all selected series together in the 2D viewer.
@@ -68,6 +68,10 @@ Clicking the button opens a per-view sync popup with:
 - **Per-action toggles** — independent checkboxes for *Scroll*, *Pan*, *Zoom*, *Rotation*, *Flip*, *Window/Level* and *Spatial unit*. The popup stays open while you flip several options, so you can configure the whole set in one pass.
 - **Apply to all views** — copies this view's effective sync options to every other view sharing the same Frame of Reference UID. The item is decorated with the view's FoR color chip, matching the chip drawn on the auto-sync button so you can confirm at a glance which group will be affected.
 - **Close** — explicit dismiss (the per-action toggles do not auto-close on click; *Esc* and clicks outside also dismiss the popup as usual).
+
+{{% notice note %}}
+A per-action toggle only declares whether **this** view takes part in syncing that action. An action is propagated between two views **only when both of them have it enabled** — sharing the same Frame of Reference UID is not enough on its own. Enabling *Zoom* on a single view therefore has no visible effect until at least one peer also has *Zoom* enabled. To couple an action across a whole FoR group in one step, enable it on one view and use **Apply to all views**.
+{{% /notice %}}
 
 #### Manual sync button {{< svg-inline "static/tuto/icon/hand.svg" >}} {#manual-sync-button}
 
