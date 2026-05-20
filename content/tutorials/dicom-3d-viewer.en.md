@@ -76,6 +76,50 @@ Open the 3D viewer first, then activate a cut mode from the toolbar {{< svg-inli
 
 The crosshair overlay uses the same LPS axis color coding as the MPR viewer.
 
+### 3D View Synchronization {#3d-synch}
+
+Since {{% badge title="Version" %}}4.7.0{{% /badge %}}, the 3D viewer can host multiple side-by-side views of the same volume and keep them coordinated. Because every 3D view in the container shows the **same volume**, the auto-sync button {{< svg-inline "static/tuto/icon/synch.svg" >}} is always visible. A single synchronization profile bundles a per-action toggle list with camera-level actions enabled by default and photometric / rendering actions left opt-in.
+
+#### Toolbar "Synchronize" checkbox
+
+The {{< svg-inline "static/tuto/icon/synch.svg" >}} _Synchronize_ checkbox in the toolbar drives the **global on/off** state for the 3D container. It defaults to ON. Toggling it propagates the new state to every per-view auto-sync button on the next refresh.
+
+#### Per-view auto-sync button {{< svg-inline "static/tuto/icon/synch.svg" >}} {#3d-auto-sync-button}
+
+When the layout has **two or more views**, a small auto-sync button appears in the bottom-right corner of each view. Its tint reflects the per-view state — *red* when sync is OFF for the view, *green* when ON. Clicking the button opens a popup with:
+
+- **Synchronize this view** — master on/off toggle for auto-sync on this view (also mirrored into the toolbar _Synchronize_ checkbox so the toolbar state always reflects the active view).
+- **Per-action toggles** — independent checkboxes that decide which actions this view propagates to (and receives from) the other 3D views. The popup stays open while you flip several options.
+- **Apply to all views** — copies this view's effective per-action map to every other 3D view in the container. Unlike the 2D variant of this entry, no FoR filtering is applied: all 3D views share the same volume.
+
+#### Right-click "Synchronize" submenu
+
+The view's right-click context menu also exposes a **Synchronize** submenu with the same per-action toggles and the same _Apply to all views_ entry, useful when you want to adjust the sync map without first enabling/disabling the master toggle.
+
+#### Per-action defaults
+
+| Group | Action | Default |
+|---|---|---|
+| Camera | Pan | ON |
+| Camera | Zoom | ON |
+| Camera | Rotation (slider rotation + axis selection) | ON |
+| Photometric | Window / Level | OFF |
+| Photometric | Preset | OFF |
+| Photometric | LUT Shape | OFF |
+| Photometric | Invert LUT | OFF |
+| Photometric | Volume LUT | OFF |
+| Rendering | Rendering Type | OFF |
+| Rendering | Volume Opacity | OFF |
+| Rendering | Volume Shading | OFF |
+| Rendering | Orthographic projection | OFF |
+| Rendering | MPR Crosshair Cut Mode | OFF |
+
+Camera-level actions are on by default because keeping multiple 3D views framed identically is the common workflow when comparing rendering types or LUT presets side by side. Photometric and rendering actions are opt-in because the typical reason to open a second 3D view is to **diverge** on those settings (e.g. one view in Composite with a soft-tissue LUT, the other in MIP).
+
+{{% notice note %}}
+The view you are actively interacting with always applies its own changes locally, even when the corresponding action is unchecked in its sync map. Only **other** views gate on the per-action toggle. This keeps sliders and mouse drags responsive while letting you decide which actions propagate to the rest of the container.
+{{% /notice %}}
+
 ### 3D Rendering Tools
 This tab contains all the tools to modify the volume rendering. If you want to return to the original settings, just click on the toolbar button {{< svg-inline "static/tuto/icon/reset.svg" >}} or from the context menu.
 
@@ -112,7 +156,7 @@ From the menu "_File > Preferences > Viewer > 3D Viewer_":
 Information about the graphics card and OpenGL capabilities, see [Requirements](#requirements).
 
 #### 3D Viewer
-* {{< svg-inline "static/tuto/icon/layout.svg" >}} _Default layout:_ The preferred layout used when opening the 3D viewer
+* {{< svg-inline "static/tuto/icon/layout.svg" >}} _Default layout:_ The preferred layout used when opening the 3D viewer. Available layouts: **1×1** (single view, default), **1×2**, **2×1**, **1×3**, **2×2**.
 * _Max 3D texture size:_ The maximum size of the volume according to X/Y (width and height of images) and according to Z (number of images in the stack composing the volume)
 
 {{% notice note %}}
