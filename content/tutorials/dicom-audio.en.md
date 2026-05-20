@@ -7,23 +7,27 @@ keywords: [ "dicom au", "au", "audio", "dicom viewer", "open source dicom viewer
 
 ## <center>Playing DICOM AU data {{< svg-inline "static/tuto/icon/audio.svg" >}}</center>
 
-This player is used to play audio data defined by the DICOM AU standard.
+The DICOM Audio SOP Class (commonly referred to as DICOM AU) stores waveform audio inside a DICOM object. It is most often used for **voice annotations** dictated by the technologist or radiologist, **Doppler ultrasound** audio, **phonocardiography**, and other acoustic signals captured alongside an imaging study.
 
-Try to open DICOM AU {{< launch >}}
+Weasis opens these objects in a dedicated player launched by double-clicking the audio thumbnail in the [DICOM Explorer](dicom-explorer).
+
+Try to open a DICOM AU sample {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/audio.xml"
 {{< /launch >}}
 
 ![Audio Player](/tuto/dicom-audio.png?classes=shadow&width=780px)
 <br>
+
 ### Toolbar {{% badge style="red" %}}A{{% /badge %}} {#toolbar}
-Actions in the toolbar are:
-* {{< svg-inline "static/tuto/icon/metadata.svg" >}} Show the DICOM metadata of the DICOM AU
+* {{< svg-inline "static/tuto/icon/metadata.svg" >}} **Show DICOM metadata** — opens the [DICOM attributes](tags) of the audio object.
 
 ### Play {{% badge style="red" %}}B{{% /badge %}} {#play}
-The _Play_ button allows you to play and pause. The slicer allows you to navigate through the audio file and display the position in seconds.
+The _Play_ button toggles between playback and pause. The slider lets you scrub through the recording; the current position is displayed in seconds.
 
-### Volume  {{% badge style="red" %}}C{{% /badge %}} {#volume}
-This slider allows you to adjust the volume of the audio file.
+### Volume {{% badge style="red" %}}C{{% /badge %}} {#volume}
+Adjusts playback volume independently of the system mixer.
 
 ### Export Audio File {{% badge style="red" %}}D{{% /badge %}} {#export-audio-file}
-The _Export Audio File_ button allows you to save the audio file in the format AU or WAVE.
+Saves the embedded waveform to disk as either:
+* **AU** — the format used by the DICOM payload itself, preserved as-is.
+* **WAVE (.wav)** — re-encoded for broad compatibility with consumer audio players and editors.

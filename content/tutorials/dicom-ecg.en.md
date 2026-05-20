@@ -7,9 +7,7 @@ keywords: [ "dicom ecg", "ecg", "electrocardiography", "dicom viewer", "open sou
 
 ## <center>Displaying electrocardiography data {{< svg-inline "static/tuto/icon/ecg.svg" >}}</center>
 
-The ECG viewer is used to display and analyze electrocardiogram (ECG) data in DICOM format obtained from different modalities, such as resting ECGs, ambulatory ECGs, and stress tests.
-
-The viewer can also provide tools for measuring ECG intervals and amplitudes in various formats, such as 12-lead ECGs, 3-lead ECGs, and rhythm strips.
+The ECG viewer displays and analyzes electrocardiogram waveforms stored as DICOM Waveform objects — resting and stress 12-lead ECGs, ambulatory recordings, and rhythm strips. It also provides simple on-screen calipers for measuring intervals and amplitudes, with support for the common lead layouts (12-lead, 3-lead, rhythm strip).
 
 Try to open an ECG sample {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/ecg.xml"
@@ -17,49 +15,54 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/demo/ecg.xml"
 
 ![ECG Viewer](/tuto/ecg.png?classes=shadow&width=780px)
 <br>
+
 ### Toolbar {{% badge style="red" %}}A{{% /badge %}} {#toolbar}
 Actions in the toolbar are:
-* {{< svg-inline "static/tuto/icon/print.svg" >}} Allows you to print the ECG as it is displayed with some basic information (patient/study)
-* {{< svg-inline "static/tuto/icon/metadata.svg" >}} Show the DICOM metadata of the ECG
-* {{< svg-inline "static/tuto/icon/selectionDelete.svg" >}} Delete all the measurements (yellow areas in the image above), see [Markers](#markers)
+* {{< svg-inline "static/tuto/icon/print.svg" >}} **Print** the ECG as displayed, with basic patient and study identification.
+* {{< svg-inline "static/tuto/icon/metadata.svg" >}} **Show DICOM metadata** of the waveform object — opens the full [DICOM attributes](tags).
+* {{< svg-inline "static/tuto/icon/selectionDelete.svg" >}} **Clear all measurements** (the yellow caliper bands in the image above), see [Markers](#markers).
 
 ### Zoom and Display Format {{% badge style="red" %}}B{{% /badge %}} {#zoom-and-display-format}
-The zoom is on several graphic components. The first combo box represents the time, the second represents the voltage, and the slider allows you to zoom in both directions while preserving the aspect ratio.
+Three controls govern how the traces are drawn:
 
-* Time (X-axis): The number of millimeters per second (by default is "_auto mm/s_")
-* Voltage (Y-axis): The number of millimeters per millivolt (by default is "_auto mm/mV_")
+* **Time scale (X-axis)** — millimeters per second; defaults to _auto mm/s_, which fits the recording to the available width.
+* **Voltage scale (Y-axis)** — millimeters per millivolt; defaults to _auto mm/mV_, which fits the dynamic range vertically.
+* **Aspect-preserving zoom slider** — scales both axes together so the visual aspect ratio is preserved.
 
-The Display Format allows you to show the leads in different layouts.
+The **Display Format** menu chooses the lead layout (e.g. 12 × 1, 6 × 2, 3 × 4 + rhythm strip), independent of the zoom.
 
 ### Lead and Cursor information {{% badge style="red" %}}C{{% /badge %}} {#lead-and-cursor-information}
-Moving the cursor over the ECG displays the following information:
+Moving the cursor over the traces updates two readouts:
 
-* Lead label: show the minimum and maximum voltage values of a lead
-* Cursor: show the current time and voltage values under the cursor 
+* **Lead label** — minimum and maximum voltage observed on that lead across the whole recording.
+* **Cursor readout** — time and voltage at the cursor position.
 
 ### Markers {{% badge style="red" %}}D{{% /badge %}} {#markers}
-The markers are the result of the measurements made on the ECG (yellow areas in the image above). A measurement is done by defining a starting and ending point:
+Markers are on-screen calipers (yellow bands above) defined by a start and an end point on the same lead. Each marker reports:
 
-* _Start Time:_ The time in seconds according to the position of the first point
-* _Start Value:_ The voltage in millivolt according to the position of the first point
-* _Stop Time:_ The time in seconds according to the position of the second point
-* _Stop Value:_ The voltage in millivolt according to the position of the second point
-* _Duration:_ The time elapsed between the 2 points
-* _Difference:_ The difference  in millivolt between the start value and the end value
-* _Amplitude:_ The maximum variation in millivolts from the start value to the end value
+| Field          | Meaning                                                                  |
+|----------------|--------------------------------------------------------------------------|
+| _Start Time_   | Time in seconds at the first point                                       |
+| _Start Value_  | Voltage in millivolts at the first point                                 |
+| _Stop Time_    | Time in seconds at the second point                                      |
+| _Stop Value_   | Voltage in millivolts at the second point                                |
+| _Duration_     | Elapsed time between the two points                                      |
+| _Difference_   | Signed voltage difference (_Stop Value_ − _Start Value_)                 |
+| _Amplitude_    | Maximum voltage variation observed between the two points                |
 
-The actions for making measurements are:
+Mouse actions:
 
-* Action to add a starting point: click
-* Action to add an ending point: ctrl+click or right-click
-
-Deleting the measurement in a lead can be done by a middle-click or shift+click. Deleting all bars can be done with the button in the toolbar.
+* **Add a start point** — click
+* **Add an end point** — Ctrl + click, or right-click
+* **Delete the measurement on a lead** — middle-click, or Shift + click
+* **Delete every measurement** — the toolbar button above
 
 {{% notice note %}}
-Only one measurement is possible by lead.
+Only one measurement can be active per lead. Placing a new start point on a lead that already has one replaces it.
 {{% /notice %}}
 
 ### Annotations {{% badge style="red" %}}E{{% /badge %}} {#annotations}
-The annotations come from 2 groups of DICOM metadata:
-* Acquisition context and Annotations: Attributes which describes the conditions present during data acquisition.
-* Annotations: may represent a measurement or categorization based on the waveform data, identification of regions of interest or particular features of the waveform, or events during the data collection that may affect diagnostic interpretation (e.g., the time at which the subject coughed).
+The annotations panel surfaces two related groups of DICOM metadata stored with the waveform:
+
+* **Acquisition Context** — conditions present during recording (patient state, electrode placement, device settings, etc.).
+* **Waveform Annotations** — measurements, classifications, regions of interest, or events that may affect interpretation (for example, the timestamp at which the subject coughed or moved).
