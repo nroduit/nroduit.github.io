@@ -14,7 +14,7 @@ Whatever the import method used, a popup message can be displayed at the end of 
 
 * **Error**: one or more DICOM files cannot be read because they are corrupted or malformed (from {{% badge title="Version" %}}4.3.0{{% /badge %}}).
 * **Information**: since {{% badge title="Version" %}}4.7.0{{% /badge %}}, one or more valid DICOM files were skipped because their SOP Class has no viewer available (e.g., Raw Data Storage). These files are not corrupted, they are simply not displayable. This notification can be disabled with the *Don't show this again* checkbox in the dialog or from the DICOM Explorer preferences (*Notify when DICOM files with an unsupported SOP Class are skipped*).
-* **Network error**: when a network error occurs during a retrieve (DICOMWeb or WADO), a message asks to download the missing files again.
+* **Network error**: when a network error occurs during a retrieve (DICOMweb or WADO), a message asks to download the missing files again.
 {{% /notice %}}
 
 ### From the system file explorer
@@ -54,7 +54,7 @@ It may be from a DICOM CD/DVD or a folder containing a DICOMDIR
     <br>
     * Archive: select the archive to query
       * With DICOM nodes: classic DIMSE C-Find with C-Move, C-Get or WADO-URI for retrieving DICOM files
-      * With [DICOMWeb nodes](dicomweb-config): QIDO and WADO-RS for retrieving DICOM files (no other options are required)
+      * With [DICOMweb nodes](dicomweb-config): QIDO and WADO-RS for retrieving DICOM files (no other options are required)
     * Retrieve (only with DICOM archive): the protocol to retrieve the images
       * C-MOVE: the classic DIMSE protocol (accepts all sop classes, not recommended for WEB)
       * C-GET: transfer syntaxes are negotiated by each sop class according to a configuration file
@@ -65,13 +65,13 @@ It may be from a DICOM CD/DVD or a folder containing a DICOMDIR
   ![Thumbnails](/tuto/dicom-import-search.png?classes=shadow&width=700px)
   <br> 
     1. Select a pre-registered item (bottom right of the _Search Criteria_ panel) or Fill the search criteria. Criteria can be saved and reused later, since {{% badge title="Version" %}}4.1.0{{% /badge %}} the item selected in the combo box is automatically applied the next time this window is opened (the default value is _Empty_).
-    2. Adjust the limit to the maximum number of exams in the response. Set the limit to 0 to avoid this constraint. For DICOMWeb the limit is the number of elements on a page, and you can go to the next page with the spinner buttons.
+    2. Adjust the limit to the maximum number of exams in the response. Set the limit to 0 to avoid this constraint. For DICOMweb the limit is the number of elements on a page, and you can go to the next page with the spinner buttons.
     3. Click on Search
     4. Select the exams you want to import
     5. Start importing and close the window
 
 {{% notice note %}}
-The progression of downloaded images for a series and the ability to pause the download of a series is only possible with [DICOMWeb nodes](dicomweb-config) and with the combination (DICOM C-FIND + WADO-URI).
+The progression of downloaded images for a series and the ability to pause the download of a series is only possible with [DICOMweb nodes](dicomweb-config) and with the combination (DICOM C-FIND + WADO-URI).
 ![Download Manager](/images%2FDownloadManager.jpg?width=150px)
 Resuming the download of a series by clicking on the green play button or from the contextual menu.
 {{% /notice %}}
@@ -79,7 +79,7 @@ Resuming the download of a series by clicking on the green play button or from t
 {{% notice tip %}}
 When a query is too long, try to click on the *Clear* button in *Search Criteria* to cancel the request.
 
-With a DICOMWeb node, a login from a web browser can be required (e.g., login to your Google account). If something goes wrong, Weasis may freeze for at least 1 minute waiting for the authorization code.
+With a DICOMweb node, a login from a web browser can be required (e.g., login to your Google account). If something goes wrong, Weasis may freeze for at least 1 minute waiting for the authorization code.
 {{% /notice %}}
 
 ### From commands

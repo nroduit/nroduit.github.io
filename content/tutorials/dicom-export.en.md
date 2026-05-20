@@ -59,7 +59,7 @@ Multiframe images are exported by adding a number to the end of the file name.
 
 #### DICOM Send
 1. Select *DICOM Send* item
-2. Select the destination node (either a DICOM node or a DICOMWeb node)
+2. Select the destination node (either a DICOM node or a DICOMweb node)
 3. Select the patient/study/series/instance to export. Note: [series created by Weasis](build-ko-pr/) have a flag "NEW"
 4. Send the selection to the destination and close the Window
 
