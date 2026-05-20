@@ -17,7 +17,7 @@ The data displayed in the DICOM Explorer can be [imported form different ways](d
 <br>
 
 {{% notice tip %}}
-You can navigate through the Patient/Study/Series/Image structure using only [keyboard shortcuts](../basics/shortcuts). For example:
+You can navigate through the Patient/Study/Series/Image structure using only [keyboard shortcuts](../basics/shortcuts) (the bindings below are the defaults — customizable since {{< badgeC "v4.7.0" >}}). For example:
 - Open an image and, if necessary, select the view to focus on. If the layout has more than one view, you can move across the views with _Tab_ and _Shift + Tab_. The view surrounded by an orange line is the focused view.
 - Navigate through images within a series with _Up_ and _Down_
 - Navigate through series within a study with _Left_ and _Right_
