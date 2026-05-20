@@ -49,6 +49,15 @@ See [Per-view sync controls](#per-view-sync) for the full list of toggles and th
 To find which series share the same frame of reference, right-click a thumbnail in the [DICOM explorer](dicom-explorer/) and choose **Select related Series**. Then open all selected series together in the 2D viewer.
 {{% /notice %}}
 
+![View synchronization layout](/tuto/synch.png?classes=shadow)
+
+*The screenshot illustrates how Weasis advertises synchronization groups visually inside a single layout:*
+
+- *The **two views in the left column** carry **no Frame of Reference UID**. Because they are not eligible for auto-sync, the auto-sync {{< svg-inline "static/tuto/icon/synch.svg" >}} button is not shown on them at all — only the manual-sync {{< svg-inline "static/tuto/icon/hand.svg" >}} button is available.*
+- *The four views on the right form **two pairs sharing a Frame of Reference UID**, each pair tagged with its own auto-sync color chip: **yellow** for the top pair, **blue** for the bottom pair. Auto-sync is propagated only within a same-colored group.*
+- *A **manual-sync link** (hand icon, in green when active) couples one of the FoR-less left views to two peers at once — the other FoR-less view and a view that belongs to one of the FoR pairs — illustrating that manual sync is the fallback to bridge views that auto-sync cannot connect, regardless of whether the peer has a FoR or not.*
+<br>
+
 ---
 
 ### Per-view Sync Controls {#per-view-sync}

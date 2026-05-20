@@ -44,7 +44,7 @@ To configure the MPR view, you can access settings by clicking the settings icon
 Most MPR settings can also be accessed using shortcuts. Refer to the [MPR shortcuts](../basics/shortcuts/#selected-view-in-the-mpr-viewer) for more details.
 {{% /notice %}}
 
-![QuMPR](/tuto/mpr.png?classes=shadow)
+![MPR](/tuto/mpr.png?classes=shadow)
 <br>
 
 Try to load a volume dataset and open the MPR viewer. {{< launch >}}
