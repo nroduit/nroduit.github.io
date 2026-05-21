@@ -5,51 +5,59 @@ description: How to launch a third-party application
 keywords: [ "Launch", "Launcher", "external application", "dicom viewer", "free dicom viewer"]
 ---
 
-Third-party application launchers allow you to run another application by transmitting information to it in the startup parameters.
+## <center>Launching a third-party application</center>
 
-In the graphical user interface, launchers appear in the _File > Launcher_ menu and optionally in the toolbar.
+**Third-party launchers** let Weasis hand off to another application — a different DICOM viewer, a post-processing tool, a custom report system, a web URL — and pass it information from the current Weasis session as command-line parameters, environment variables, or URI query parameters. Typical uses include opening the current study in a secondary viewer, sending the downloaded DICOM folder to a dedicated **post-processing software** (cardiac analysis, vessel quantification, radiotherapy planning…), calling a clinical report system pre-filled with the patient's accession number, or launching a vendor tool against the DICOM folder Weasis just downloaded.
+
+Configured launchers appear in the **_File > Launcher_** menu and, optionally, as a button in the toolbar.
 
 ![Launcher](/tuto/launchers.png?classes=shadow)
 <br>
-In the example above, we add a button to launch the Horos software on the Mac, importing the directory containing the DICOM files downloaded by Weasis.
 
-### How to create the third-party launcher
+In the screenshot above, a launcher is configured to open the **Horos** viewer on macOS against the folder where Weasis downloaded the current DICOM files.
 
-1. From the main menu, open _File > Preferences (Alt + P)_ and select the _Launcher_ item.
-2. Click on the _Add New_ button to create a new DICOM launcher.
-3. In the DICOM launcher dialog, fill in the fields:
-   * Name: the name of the launcher
-   * Icon path: the icon to display in the menu and toolbar. The path can be absolute or relative to the Weasis resources folder. When the icon is not found, the default icon is displayed.
-   * Enable: to display the launcher in the menu and toolbar
-   * Button: to display the launcher in the toolbar
-4. In DICOM Launcher dialog, click on _Configure_ to specify the launch context.
-5. In Launcher Type, select the launcher type:
-   * URI: add a URI to open a web page or a file. The URI can contain dynamic variables described below.
-   * Application: run an application with parameters. The application _Parameters_ and _Environment Variables_ can contain dynamic variables described below.
-     * Binary Path: the command to run the application.
-     * Working Directory: the working directory of the application (optional).
-     * Parameters: the parameters to pass to the application. Each line is a parameter.
-     * Environment Variables: the environment variables to pass to the application. Each line is an environment variable.
-     * Compatibility: the compatibility of the launcher with the current platform. This feature is useful when the launcher configuration is coming from the server side.
-6. In Launcher Type, click on _Save_ to save the launcher parameters.    
-7. In DICOM Launcher, click on _Save_ to save the launcher general information.
+### How to create the launcher
 
-List of dynamic variables in _URI_, _Parameters_ and _Environment Variables_:
-   * `{dicom:wado.folder}` the temporary folder for images downloaded from the WADO and DICOMWeb protocols.
-   * `{dicom:last.folder}` the last open folder of _Local Device_ in _Import DICOM_.
-   * `{dicom:selection.folder}` it will display a selection dialog (such as _Export DICOM_) and copy the result to this folder, which will be deleted when Weasis is closed.
-   * `{tag::<key>}` any DICOM attribute value from the selected image, e.g. `{tag:AccessionNumber}`
-   * `{pref:<key>}`  any preferences, e.g. `{pref:weasis.user}`.
+1. From the main menu, open **_File > Preferences (Alt + P)_** and select the **Launcher** item.
+2. Click **Add New** to create a new launcher.
+3. Fill in the general fields of the **DICOM Launcher** dialog:
+   * **Name** — display name of the launcher.
+   * **Icon path** — icon shown in the menu and toolbar. Absolute path, or relative to the Weasis resources folder. The default icon is used if the file is not found.
+   * **Enable** — show the launcher in the menu and toolbar.
+   * **Button** — also show it as a toolbar button.
+4. Click **Configure** to specify what the launcher actually does.
+5. Pick the **Launcher Type** and fill in its options:
+   * **URI** — open a web page or a file at a given URI. The URI may contain [dynamic variables](#dynamic-variables) below.
+   * **Application** — run a local application with parameters. Both **Parameters** and **Environment Variables** can contain [dynamic variables](#dynamic-variables).
+     * **Binary Path** — the executable to run.
+     * **Working Directory** — working directory for the process (optional).
+     * **Parameters** — command-line parameters, one per line.
+     * **Environment Variables** — environment variables, one per line.
+     * **Compatibility** — restrict the launcher to specific platforms. Useful when the launcher configuration is pushed from a central server to heterogeneous workstations.
+6. Click **Save** in the Launcher Type dialog to persist the launch configuration.
+7. Click **Save** in the DICOM Launcher dialog to persist the general settings.
+
+#### Dynamic variables {#dynamic-variables}
+
+The placeholders below are expanded at launch time and can appear in **URI**, **Parameters**, or **Environment Variables**:
+
+| Placeholder | Expands to |
+|-------------|------------|
+| `{dicom:wado.folder}`       | Temporary folder for images downloaded over WADO and DICOMweb. |
+| `{dicom:last.folder}`       | Last folder opened through **Local Device** in the [DICOM Import](dicom-import) dialog. |
+| `{dicom:selection.folder}`  | Triggers a selection dialog (similar to [DICOM Export](dicom-export)); the chosen items are copied into a temporary folder that is deleted when Weasis exits. |
+| `{tag:<key>}`               | Any DICOM attribute value from the currently selected image, e.g. `{tag:AccessionNumber}`. |
+| `{pref:<key>}`              | Any Weasis preference value, e.g. `{pref:weasis.user}`. |
 
 {{% notice note %}}
-The Other Launcher is a special launcher that allows you to display a button on [any viewers](gui#list-of-other-viewersplayers-in-the-dicom-workspace). For this type, only `{pref:<key>}` can be used as a dynamic variable.
+The **Other Launcher** type displays a button on [any viewer](gui#other-viewers-and-players) instead of the global toolbar. For this type, only `{pref:<key>}` is supported as a dynamic variable.
 {{% /notice %}}
 
-### How to run the third-party launcher
+### How to run the launcher
 
-* From the main menu, open _File > Launcher_ and select the desired launcher
-* From the toolbar click on the launcher button
+* From the main menu, open **_File > Launcher_** and pick the launcher.
+* From the toolbar, click the launcher button.
 
 {{% notice note %}}
-The launcher must be enabled in the preferences to be displayed in the menu and toolbar.
+The launcher must be **enabled** in the preferences to appear in the menu, and the **Button** option must be checked to appear in the toolbar.
 {{% /notice %}}

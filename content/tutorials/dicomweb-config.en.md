@@ -1,43 +1,46 @@
 ---
-title: DICOMWeb Import
+title: DICOMweb Configuration
 weight: 12
-description: How to configure DICOMWeb node
-keywords: [ "dicom import", "dicomweb", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer", "pacs viewer" ]
+description: How to configure a DICOMweb node for query, retrieve, and store
+keywords: [ "dicom import", "dicomweb", "qido", "wado", "stow", "oauth2", "keycloak", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer", "pacs viewer" ]
 ---
 
-## <center>How to configure DICOMWeb node</center>
+## <center>How to configure a DICOMweb node</center>
 
-This page explains how to configure DICOMWeb nodes in Weasis for [retrieving images remotely](dicom-import/#dicom-queryretrieve). While manual configuration in Weasis is covered here, you can also [launch Weasis from a web context](../basics/customize/integration/#download-directly-with-dicomweb-restful-services) with automatic DICOMWeb parameters derived from the URL.
+**DICOMweb** is the modern, HTTP-based set of DICOM services (QIDO-RS for query, WADO-RS for retrieve, STOW-RS for store, plus the legacy WADO-URI). Once a DICOMweb node is configured in Weasis, it shows up in the [DICOM Query/Retrieve](dicom-import/#dicom-queryretrieve) dialog and behaves like any other archive.
 
-### General Configuration Steps
+This page covers manual configuration inside Weasis. If you embed Weasis in a web portal, you can also [launch it from a web context](../basics/customize/integration/#download-directly-with-dicomweb-restful-services) so that the DICOMweb parameters are derived automatically from the launch URL — no per-user configuration required.
 
-1. Open _File > Preferences_ (Alt + P)
-2. Select "DICOM node list" from the left sidebar
-3. Click the "Add new" button to create a new node or select an existing one and click "Edit"
+### General Configuration Steps {#general-configuration-steps}
 
-![DICOMWeb nodes configuration](/tuto/dicomweb-nodes.png?classes=shadow&width=750)
+1. Open **_File > Preferences_** (Alt + P).
+2. Select **DICOM node list** in the left sidebar.
+3. Click **Add new** to create a new node, or select an existing one and click **Edit**.
+
+![DICOMweb nodes configuration](/tuto/dicomweb-nodes.png?classes=shadow&width=750)
 
 <br>
 
-Here are the steps for configuring a new DICOMWeb node:
-1. Create a new DICOMWeb node with a descriptive name
-2. Select one of the service types. The default one is `DICOMWeb (all RESTful services)` which covers all DICOMWeb services. If you want to use a specific service, select the corresponding one:
-   - `QIDO-RS`: Query
-   - `STOW-RS` : Store
-   - `WADO-URI (non-RS)`: legacy retrieval for one DICOM object (combines C-Find and WADO retrieve from [query/retrieve](dicom-import/#dicom-queryretrieve))
-   - `WADO-RS (Retrieve)`: Retrieve
-3. Enter the service URL of the DICOMWeb server.
-4. Configure authentication by clicking the "Manager" button and then "Add":
-   - Either select a template from the list and click "Fill" to autofill some fields or fill them manually.
-   - In the _Provider_ panel, all the fields are mandatory. 
-   - In the _Registration_ panel, the fields are optional. However, if you want to use the OAuth2 authentication, you need to fill in the Client ID, Client Secret, and the Scope. Audience is not mandatory but can be useful for some specific providers.
-   - Click "OK" to save the authentication
-5. Optionally, add HTTP headers for the service URL. This can be used for authentication or other purposes.
-6. Click "OK" to save the authentication
+In the node dialog:
 
-Then open the [DICOM Import](dicom-import/#dicom-queryretrieve) dialog and select the node just created. You can now query the DICOMWeb server after logging in with your account into your browser when using OAuth2 authentication.
+1. Give the node a descriptive **name**.
+2. Pick a **service type**. The default `DICOMweb (all RESTful services)` covers query, retrieve, and store at once. To restrict the node to a specific service, pick one of:
+   - **QIDO-RS** — query.
+   - **STOW-RS** — store.
+   - **WADO-URI (non-RS)** — legacy single-object retrieval. Combines a classic C-FIND query with a WADO-URI retrieve (see [Query/Retrieve](dicom-import/#dicom-queryretrieve)).
+   - **WADO-RS (Retrieve)** — modern retrieve.
+3. Enter the **service URL** of the DICOMweb server.
+4. Configure **authentication** by clicking **Manager**, then **Add**:
+   - Either pick a template from the list and click **Fill** to populate some fields, or fill them in manually.
+   - In the **Provider** panel, every field is mandatory.
+   - In the **Registration** panel, every field is optional — except for **OAuth2**, where the **Client ID**, **Client Secret**, and **Scope** must be filled. **Audience** is optional, but some providers need it.
+   - Click **OK** to save the authentication.
+5. Optionally, add **HTTP headers** that should be sent with every request to this service URL (useful for tokens or other custom auth schemes).
+6. Click **OK** to save the node.
 
-### Supported DICOMWeb Providers (non-exhaustive list)
+Then open the [DICOM Import](dicom-import/#dicom-queryretrieve) dialog and pick the new node. If OAuth2 is configured, the first query opens your browser to complete the sign-in; subsequent queries reuse the cached token.
+
+### Supported DICOMweb Providers (non-exhaustive list)
 
 - [Google Cloud Healthcare API](#google-cloud-healthcare-api)
 - [Orthanc WEB Server](#orthanc-web-server)
@@ -46,19 +49,20 @@ Then open the [DICOM Import](dicom-import/#dicom-queryretrieve) dialog and selec
 
 #### Google Cloud Healthcare API
 
-Google Cloud provides a comprehensive [DICOMWeb implementation](https://cloud.google.com/healthcare/docs/how-tos/dicomweb) through their Healthcare API.
+Google Cloud provides a comprehensive [DICOMweb implementation](https://cloud.google.com/healthcare/docs/how-tos/dicomweb) through the Healthcare API.
 
-Configuration steps (see also the general steps [above](#general-configuration-steps)):
-1. Create a new DICOMWeb node with a descriptive name
-2. Select `DICOMWeb (all RESTful services)`
-3. Enter the Google repository URL (must end with `/dicomWeb`)
-4. Configure authentication by clicking the *Manager* button and then *Add*:
-    1. Select "Google Cloud Healthcare" template
-    2. Click "Fill"
-    3. Enter your Client ID and Client Secret
-    4. Click "OK" to save the authentication
-5. Optionally, add HTTP headers for the Google API
-6. Click "OK" to save the authentication
+Configuration (see also the general steps [above](#general-configuration-steps)):
+
+1. Create a new DICOMweb node with a descriptive name.
+2. Pick **DICOMweb (all RESTful services)**.
+3. Enter the Google repository URL (must end with `/dicomWeb`).
+4. Configure authentication by clicking **Manager**, then **Add**:
+    1. Pick the **Google Cloud Healthcare** template.
+    2. Click **Fill**.
+    3. Enter your **Client ID** and **Client Secret**.
+    4. Click **OK** to save the authentication.
+5. Optionally, add HTTP headers for the Google API.
+6. Click **OK** to save the node.
 
 ![Google node](/tuto/dicomweb-google-node.png?classes=shadow&width=750)
 
@@ -67,14 +71,14 @@ Configuration steps (see also the general steps [above](#general-configuration-s
 ![Google template](/tuto/dicomweb-google-auth.png?classes=shadow&width=750)
 
 {{% notice note %}}
-Currently, the DICOMWeb service for getting thumbnails doesn't work in the Google API.
+The DICOMweb thumbnail service is not currently supported by the Google API, so series thumbnails will not preview before the full retrieve.
 {{% /notice %}}
 
 #### Orthanc WEB Server
 
-[Orthanc](https://www.orthanc-server.com/) is a lightweight DICOM server with [DICOMWeb capabilities](https://www.orthanc-server.com/static.php?page=dicomweb).
+[Orthanc](https://www.orthanc-server.com/) is a lightweight DICOM server with [DICOMweb capabilities](https://www.orthanc-server.com/static.php?page=dicomweb).
 
-The configuration in the image below is for the demo server without authentication. For a custom Orthanc server, you need to enter the URL of your Orthanc server and define the authentication method (see [above](#general-configuration-steps)).
+The screenshot below is configured for the public demo server, which requires no authentication. For your own Orthanc instance, replace the URL and configure the authentication method as described in the [general steps](#general-configuration-steps).
 
 {{< highlight text >}}
 https://demo.orthanc-server.com/dicom-web
@@ -85,66 +89,64 @@ https://demo.orthanc-server.com/dicom-web
 <br>
 
 {{% notice note %}}
-Currently, the DICOMWeb service of Orthanc doesn't support the [thumbnail service](https://www.dicomstandard.org/news/supplements/view/thumbnail-service-over-dicomweb).
+The DICOMweb implementation in Orthanc does not currently support the [thumbnail service](https://www.dicomstandard.org/news/supplements/view/thumbnail-service-over-dicomweb), so series thumbnails will not preview before the full retrieve.
 {{% /notice %}}
 
 #### dcm4chee-arc-light
 
-[dcm4chee-arc-light](https://github.com/dcm4che/dcm4chee-arc-light) is a robust open-source Picture Archiving and Communication System (PACS) that supports DICOMWeb services.
+[dcm4chee-arc-light](https://github.com/dcm4che/dcm4chee-arc-light) is a robust open-source PACS that exposes DICOMweb services out of the box.
 
-To configure a dcm4chee-arc-light node (see also the general steps [above](#general-configuration-steps)):
-1. Add a new DICOMWeb node
-2. Enter a description (e.g., "DCM4CHEE Archive")
-3. Select DICOMWeb service
-4. Enter the URL of your dcm4chee-arc-light server. The default endpoint typically follows this pattern:
+To configure a dcm4chee-arc-light node (see also the [general steps](#general-configuration-steps)):
+
+1. Add a new DICOMweb node.
+2. Enter a description (e.g. `DCM4CHEE Archive`).
+3. Pick the DICOMweb service.
+4. Enter the URL of your dcm4chee-arc-light server. The default endpoint follows this pattern:
     {{< highlight text >}}
-    http(s)://[server-address]:[8080|8443]/dcm4chee-arc/aets/[AE_TITLE]/rs (e.g., http://localhost:8080/dcm4chee-arc/aets/DCM4CHEE/rs)
+    http(s)://[server-address]:[8080|8443]/dcm4chee-arc/aets/[AE_TITLE]/rs
+    (e.g. http://localhost:8080/dcm4chee-arc/aets/DCM4CHEE/rs)
     {{< /highlight >}}
 
-If authentication is required in dcm4chee-arc-light, here are the steps to configure it for client access in Weasis:
+If the dcm4chee-arc-light server requires authentication, configure it on both sides:
 
-**In Weasis:**
-1. Click on the *Manager* button
-2. Click *Add* to create a new authentication
-3. Select "Default Keycloak" from the templates and fill in the other required fields: 
-   - Name: `dcm4chee-arc-light`
-   - Base URL: `https://[server-address]:8843`
-   - Realm: `dcm4che`
-   - Client ID: `weasis`
-   - Client Secret: the secret you copied from Keycloak, see below
-   - Scope: `openid`
-   - Audience: leave empty
+**In Weasis**
 
-**In Keycloak: Add the Weasis client for DICOMWeb access:**
-1. Log in to the Keycloak Admin Console (typically for secure at `https://[server-address]:8843/admin/dcm4che/console`)
-2. To add the Weasis client:
-   - Click on "Clients" in the left menu
-   - Click the "Create" button
+1. Click **Manager**, then **Add** to create a new authentication.
+2. Pick the **Default Keycloak** template and fill in:
+   - **Name** — `dcm4chee-arc-light`
+   - **Base URL** — `https://[server-address]:8843`
+   - **Realm** — `dcm4che`
+   - **Client ID** — `weasis`
+   - **Client Secret** — the secret you copy from Keycloak (see below).
+   - **Scope** — `openid`
+   - **Audience** — leave empty.
 
-3. Configure the new client in general settings:
-   - Client Type: select "OpenID Connect"
-   - Client ID: `weasis`
+**In Keycloak** — register the Weasis client for DICOMweb access:
 
-4. Capability config:
-   - Client authentication: ON
-   - Standard flow: ON
-   - Direct access grants: ON
-
-5. Login settings:
-   - Root URL: leave empty
-   - Valid Redirect URIs: add `http://127.0.0.1*`
-   - Web Origins: add `+` to allow any origin that matches a Valid Redirect URI
-   - Click "Save"
-   - Copy the Client Secret from the "Credentials" tab
-
+1. Sign in to the Keycloak Admin Console (typically `https://[server-address]:8843/admin/dcm4che/console` for the secure URL).
+2. In the left menu, click **Clients > Create**.
+3. **General settings**:
+   - **Client Type** — `OpenID Connect`
+   - **Client ID** — `weasis`
+4. **Capability config**:
+   - **Client authentication** — ON
+   - **Standard flow** — ON
+   - **Direct access grants** — ON
+5. **Login settings**:
+   - **Root URL** — leave empty.
+   - **Valid Redirect URIs** — add `http://127.0.0.1*`.
+   - **Web Origins** — add `+` to allow any origin that matches a Valid Redirect URI.
+   - Click **Save**.
+   - Copy the **Client Secret** from the **Credentials** tab and paste it into the Weasis authentication form above.
 
 #### Amazon HealthLake
 
-[Amazon HealthLake](https://aws.amazon.com/healthlake/) is a fully managed service that enables healthcare organizations to store, transform, query, and analyze health data at scale.
+[Amazon HealthLake](https://aws.amazon.com/healthlake/) is a fully managed service for storing, transforming, querying, and analyzing healthcare data at scale.
 
-With AHI DICOMWeb Proxy you can use the DICOMWeb API to access your data in Amazon HealthLake. Simply create a [DICOMWeb node](#general-configuration-steps) in Weasis with the following URL:
-    {{< highlight text >}}
-    http://[EC2 instance IP or EC2/ALB DNS]:8080/aetitle
-    {{< /highlight >}}
+Imaging data is exposed through the **AHI DICOMweb Proxy**. To consume it from Weasis, create a [DICOMweb node](#general-configuration-steps) with this URL:
 
-See also the Weasis configuration at the end of this [page](https://github.com/aws-samples/aws-healthimaging-samples/tree/main/dicomweb-proxy#usage).
+{{< highlight text >}}
+http://[EC2 instance IP or EC2/ALB DNS]:8080/aetitle
+{{< /highlight >}}
+
+The complete Weasis configuration is documented at the end of the [AHI DICOMweb Proxy README](https://github.com/aws-samples/aws-healthimaging-samples/tree/main/dicomweb-proxy#usage).

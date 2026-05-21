@@ -7,9 +7,9 @@ keywords: [ "convert to dicom", "dicomizer", "dicom worklist", "jpg to dicom" ]
 
 ## <center>How to convert images into DICOM files {{< svg-inline "static/tuto/icon/Dicomizer.svg" >}}</center>
 
-The Dicomizer tool allows you to convert standard images into DICOM files. This will facilitate the integration of these images into a DICOM archive. 
+The **Dicomizer** converts standard files — photos, scanned reports, videos, 3D models — into DICOM objects so they can be archived in a PACS alongside acquisitions from imaging modalities. Typical use cases include adding dermatology or wound-care photos to a study, attaching a PDF report or consent form, archiving endoscopic or surgical videos, and packaging STL files used for 3D printing.
 
-Dicomizer will help you to manage the DICOM tags at the patient, study, and image levels in order to have more consistent data, easily searchable in the archive system, and compliant with DICOM viewers.
+Beyond the file conversion itself, the Dicomizer also helps you set the DICOM tags at the patient, study, and image levels so the resulting objects are consistent, searchable in the archive, and recognized by every DICOM viewer.
 
 ![Dicomizer](/gallery2/Dicomizer.jpg?classes=shadow)
 <br>
@@ -18,131 +18,134 @@ The sections below describe the day-to-day use of the Dicomizer. Administrators 
 
 ### How to Launch Dicomizer
 
-When installing Weasis, `Dicomizer` is available as a standalone application with this shortcut {{< svg-inline "static/tuto/icon/Dicomizer.svg" >}} (only on Windows and Linux). 
+When Weasis is installed, the **Dicomizer** is also available as a standalone application with this shortcut {{< svg-inline "static/tuto/icon/Dicomizer.svg" >}} (Windows and Linux only).
 
-On macOS, you need to run the `Dicomizer` command from the terminal:
+On macOS, run the `Dicomizer` command from the terminal:
 {{< highlight shell >}}
 /Applications/Weasis.app/Contents/MacOS/Dicomizer
 {{< /highlight >}}
 
-If you plan to use it frequently, with the Automator application you can create a new application `Dicomizer.app` with the `Run Shell Script` action containing the command.
+If you use the Dicomizer frequently on macOS, use **Automator** to create a `Dicomizer.app` with a **Run Shell Script** action containing the command above.
 
 ### Import Media Files
 
-The Dicomizer tool supports encapsulating the following file types into DICOM objects:
+The Dicomizer can encapsulate the following file types into DICOM objects:
 
-- **Standard images**: Includes formats such as TIFF, BMP, GIF, JPEG, PNG, RAS, HDR, and PNM. These are converted to JPEG lossy to ensure compatibility with the DICOM standard.
-- **PDF documents (application/pdf)** {{% badge title="Version" %}}4.6.2{{% /badge %}}: Ideal for integrating reports, forms, or scanned documents into DICOM archives.
-- **STL files (model/stl)** {{% badge title="Version" %}}4.6.2{{% /badge %}}: Used for 3D printing and surgical planning.
-- **MPEG-2 video files (video/mpeg)** {{% badge title="Version" %}}4.6.2{{% /badge %}}: Maintains compatibility with legacy medical imaging systems.
-- **MPEG-4 video files (video/mp4)** {{% badge title="Version" %}}4.6.2{{% /badge %}}: A modern format for high-quality medical videos, such as endoscopy, ultrasound, or surgical recordings.
+- **Standard images** — TIFF, BMP, GIF, JPEG, PNG, RAS, HDR, PNM. Converted to **JPEG lossy** to comply with the DICOM standard.
+- **PDF documents** (`application/pdf`) {{% badge title="Version" %}}4.6.2{{% /badge %}} — convenient for archiving reports, forms, or scanned documents.
+- **STL files** (`model/stl`) {{% badge title="Version" %}}4.6.2{{% /badge %}} — for 3D printing and surgical planning.
+- **MPEG-2 video** (`video/mpeg`) {{% badge title="Version" %}}4.6.2{{% /badge %}} — for compatibility with legacy medical imaging systems.
+- **MPEG-4 video** (`video/mp4`) {{% badge title="Version" %}}4.6.2{{% /badge %}} — modern format for endoscopy, ultrasound, surgical recordings, and other high-quality medical videos.
 
 {{% notice warning %}}
-Only MPEG-4 video files that are [compatible with the DICOM standard](https://dicom.nema.org/medical/dicom/current/output/chtml/part18/sect_8.7.3.html) are supported, namely MPEG-4 AVC/H.264 High Profile (up to Level 4.2) or HEVC/H.265 Main and Main 10 Profile. When a video uses another profile, it is not imported and a message invites you to convert it to a compatible format before using Dicomizer.
+Only MPEG-4 videos that are [compatible with the DICOM standard](https://dicom.nema.org/medical/dicom/current/output/chtml/part18/sect_8.7.3.html) are accepted — namely **MPEG-4 AVC/H.264 High Profile (up to Level 4.2)** or **HEVC/H.265 Main and Main 10 Profile**. Videos using a different profile are rejected with a message asking you to convert them to a compatible format first.
 
-Video files are also limited in size {{% badge title="Version" %}}4.7.0{{% /badge %}}: a file larger than the maximum defined by the `weasis.acquire.video.max.size` [preference](../basics/customize/preferences) (1024 MB by default) is rejected with a message. Set this preference to `0` to disable the limit.
+Video files are also size-limited since {{% badge title="Version" %}}4.7.0{{% /badge %}}: a file larger than `weasis.acquire.video.max.size` (1024 MB by default — see the [preferences](../basics/customize/preferences)) is rejected. Set the preference to `0` to remove the limit.
 {{% /notice %}}
 
+#### Importing files
 
-1. Using the left panel, navigate through the file system to locate the images you want to convert. Click the button next to the combo box on the right to choose the folder containing the media files eligible for DICOM conversion.
-
-2. you can organize images into separate series by selecting thumbnails from the left panel and clicking the **Import** button. The resulting dialog offers three grouping options:
-   - **Do not group**: All images are imported into a single series (same behavior as drag-and-drop).
-   - **Group by date**: Images are divided into separate series based on their acquisition date, with an option to set the maximum time difference between images to group them together.
-   - **Group by name**: All images are imported into a single series and assigned a custom name.
-
-3. Alternatively, you can drag and drop files from the system file explorer into the central panel. Images will either be grouped into the current series if applicable, or assigned to a default series based on their media type.
+1. In the **left panel**, navigate through the file system to locate the files to convert. The button next to the combo box on the right opens a folder chooser to pick the directory containing the eligible media.
+2. To organize files into separate series, select the thumbnails in the left panel and click **Import**. The dialog offers three grouping options:
+   - **Do not group** — all images are imported into a single series (same as drag-and-drop).
+   - **Group by date** — images are split into series based on their acquisition date. A second field controls the maximum time gap that still keeps two images in the same series.
+   - **Group by name** — all images are imported into a single series with a custom name.
+3. Alternatively, **drag and drop** files from the system file explorer into the central panel. The files are either added to the current series, or assigned to a default series based on their media type.
 
 {{% notice note %}}
-For image types containing EXIF tags, the following values are automatically mapped to DICOM tags:
-- **Image Orientation** → Adjust image orientation based on this value
-- **Image Description** → Maps to "Image Comments"
-- **Manufacturer Description** → Maps to "Manufacturer"
-- **Camera Model Description** → Maps to "Manufacturer Model Name"
-- **Date/Time (Original)** or, if absent, **Date/Time** → Maps to "ContentDate" and "ContentTime". Note if both are absent or invalid (date > now + 1 day or date < now - 30 years), the file's last modified date is used.
+For image formats that carry **EXIF tags**, the following values are mapped to DICOM tags automatically:
+
+- **Image Orientation** → adjusts the image orientation.
+- **Image Description** → mapped to _Image Comments_.
+- **Manufacturer Description** → mapped to _Manufacturer_.
+- **Camera Model Description** → mapped to _Manufacturer Model Name_.
+- **Date/Time (Original)** or, if absent, **Date/Time** → mapped to _ContentDate_ and _ContentTime_. If both are absent or invalid (date > now + 1 day, or date < now − 30 years), the file's last-modified date is used.
 {{% /notice %}}
 
 {{% notice note %}}
-Buttons that group series cannot be deleted directly. To remove a button, you must first remove all associated elements (thumbnails in the central panel).
+Series-grouping buttons cannot be deleted directly. Remove every thumbnail associated with the button first, and the button disappears.
 {{% /notice %}}
 
 {{% notice tip %}}
-The combo box contains the list of the last folders used. Connecting a USB device will automatically add the device path to the list.
+The combo box keeps the list of recently used folders. Connecting a USB device automatically adds the device path to the list.
 {{% /notice %}}
 
-### Edit DICOM Tags
+#### Edit DICOM Tags
 
-The **Album** panel allows you to manage the DICOM tags at the patient, study, and instance levels.
+The **Album** panel manages DICOM tags at the patient, study, series, and image levels:
 
-- The left panel shows the group list representing DICOM series.
-- The main panel displays the thumbnails of the imported media files and allows you to select the images to edit the DICOM tags or by double-click to open the image in the Photo Editor.
-- The bottom panel shows the DICOM tags of the selected images. Note that the image level tags are displayed only when a single image is selected.
+- The **left panel** lists the groups, each representing a DICOM series.
+- The **central panel** shows the thumbnails of the imported media. Select one or more thumbnails to edit their DICOM tags; double-click a thumbnail to open the image in the [Photo Editor](#edit-the-images).
+- The **bottom panel** displays the DICOM tags of the selected images. Image-level tags are only visible when a single image is selected.
 
-The bottom panel organizes DICOM tags into categorized tree structures:
-- **Global tags**: Applicable to the patient and study levels.
-- **Series level**: Applicable to the series level.
-- **Image level**: Applicable to the image level.
+Tags in the bottom panel are organized into a categorized tree:
 
-{{% notice warning %}}
-If an item's dashed outline in the table is red, it indicates that the value is mandatory and must be filled in.  
+- **Global tags** — applied to the patient and study levels.
+- **Series level** — applied to the series level.
+- **Image level** — applied to the individual image level.
+
+{{% notice note %}}
+A red dashed outline around an item means the value is **mandatory** and must be filled in before publication.
 {{% /notice %}}
 
 {{% notice warning %}}
-Person name fields (PatientName, OperatorsName, etc.) should be formatted as `Last^First^Middle^Prefix^Suffix` according to the [DICOM standard](https://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_6.2.html#sect_6.2.1). This rule applies both when editing the DICOM tags manually and when they are filled in automatically (see [Integrating the Dicomizer](#integrating-the-dicomizer)).
+Person-name fields (_PatientName_, _OperatorsName_, …) must follow the `Last^First^Middle^Prefix^Suffix` format defined by the [DICOM standard](https://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_6.2.html#sect_6.2.1). This rule applies both to values typed by hand and to values populated automatically (see [Integrating the Dicomizer](#integrating-the-dicomizer)).
 {{% /notice %}}
 
 {{% notice tip %}}
-Various actions are accessible from the contextual menu of a thumbnail:
-- **Edit** (only for image): Opens the Photo Editor to crop, rotate, or adjust the image. Double-clicking on the thumbnail has the same effect.
-- **Remove**: Deletes the image from the series without affecting the original file.
-- **Move to...**: Moves the image to a different series.  
+The thumbnail right-click menu offers:
+
+- **Edit** (images only) — opens the Photo Editor to crop, rotate, or adjust the image. Double-clicking the thumbnail has the same effect.
+- **Remove** — deletes the image from the series without touching the original file.
+- **Move to…** — moves the image to a different series.
 {{% /notice %}}
 
-### Edit the Images
+#### Edit the Images
 
-The **Photo Editor** provides tools to crop, rotate, and adjust the image contrast. You can also add annotations to highlight specific areas and use measurement tools to indicate distances, angles, or areas. Additionally, the image can be calibrated using a known distance for getting real-world measurements.
+The **Photo Editor** offers basic tools to crop, rotate, and adjust contrast on an imported image. You can also add annotations to highlight specific areas, and use measurement tools to indicate distances, angles, or areas. The image can be calibrated against a known distance so that the measurements reflect real-world dimensions.
 
 ### Publish DICOM Files
 
-Click the **Publish** button to send DICOM files to a remote DICOM archive, or the **Export locally** button to save the files to your local system. The **Publication** panel provides the following options:
-- Select specific DICOM items for publication (all items are selected by default).
-- Adjust the resolution for images with high resolution.
-- Choose the target destination for the DICOM files from a list of remote DICOM nodes.
-- Choose a calling node (Sender AET Title) that complies with your archive’s restrictions, if applicable.
+Click **Publish** to send the DICOM files to a remote DICOM archive, or **Export locally** to save them on the local file system. The **Publication** panel offers:
+
+- **Selection** — choose which DICOM items to publish (everything selected by default).
+- **Resolution** — downscale high-resolution images before sending.
+- **Destination** — pick the target node from the list of configured remote DICOM nodes.
+- **Calling AE Title** — pick the calling node, if your archive enforces specific sender AE titles.
 
 {{% notice note %}}
-The destination can be a specific remote node or a list of remote nodes available from the main menu, open _File > Preferences (Alt + P)_ and select "DICOM node list" and edit or add a new DICOM node.
+The destination can be a specific remote node or the list of remote nodes configured under **_File > Preferences (Alt + P) > DICOM node list_** — add or edit DICOM nodes there.
 {{% /notice %}}
 
-{{% notice tip %}}
-A green-checked icon on the thumbnail indicates that the image has been successfully published.
+{{% notice info %}}
+A green check-mark icon on a thumbnail confirms that the image was successfully published.
 {{% /notice %}}
 
 -----
 
 ## <center>Integrating the Dicomizer</center>
 
-This section is intended for administrators integrating the Dicomizer into a clinical workflow. It describes how to launch the Dicomizer from a web context and, above all, how to fill in the DICOM metadata automatically so that operators do not have to enter it manually.
+This section is intended for administrators integrating the Dicomizer into a clinical workflow. It covers launching the Dicomizer from a web context and — most importantly — populating the DICOM metadata automatically so that operators do not have to enter it manually.
 
 ### Launch from a Web Context
 
-The Dicomizer can be launched from a web context with the `weasis://` [protocol](../getting-started/weasis-protocol).
+The Dicomizer can be launched from a web context using the `weasis://` [protocol](../getting-started/weasis-protocol).
 
-An example for launching Weasis Dicomizer {{< launch >}}$weasis:config pro="felix.extended.config.properties file:conf/dicomizer.json" pro="gosh.port 17181"{{< /launch >}} with the following parameters:
+Try launching the Weasis Dicomizer {{< launch >}}$weasis:config pro="felix.extended.config.properties file:conf/dicomizer.json" pro="gosh.port 17181"{{< /launch >}} with the following parameters:
 {{< highlight shell >}}
 $weasis:config pro="felix.extended.config.properties file:conf/dicomizer.json" pro="gosh.port 17181"
 {{< /highlight >}}
 
 ### Automatically Fill in the Metadata
 
-Instead of being entered manually in the **Album** panel, the Global tags (patient and study levels) can be populated automatically:
+Instead of being entered by hand in the **Album** panel, the Global tags (patient and study levels) can be populated automatically:
 
-- **From a DICOM Worklist**, configured with the [preference items](../basics/customize/preferences) starting with `weasis.acquire.wkl`. Here is an example to set the [configuration at launch](../getting-started/weasis-protocol/#modify-the-launch-parameters):<br>
+- **From a DICOM Worklist** — configured with the [preference items](../basics/customize/preferences) starting with `weasis.acquire.wkl`. Example of [configuration at launch](../getting-started/weasis-protocol/#modify-the-launch-parameters):
   {{< highlight shell >}}
   $weasis:config pro="felix.extended.config.properties file:conf/ext-dicomizer.properties" pro="gosh.port 17181" pro="weasis.acquire.wkl.host localhost" pro="weasis.acquire.wkl.aet DCM4CHEE" pro="weasis.acquire.wkl.port 11112" pro="weasis.acquire.wkl.station.aet WEASIS-MWL"
   {{< /highlight >}}
 
-- **With the [acquire:patient](../basics/commands/#acquirepatient) command**, providing an XML encoded as a DICOM XML file, e.g.:
+- **Via the [acquire:patient](../basics/commands/#acquirepatient) command** — pass a DICOM-style XML payload, for example:
 {{< highlight xml >}}
 <?xml version="1.0" encoding="UTF-8"?>
 <tags>
@@ -160,9 +163,9 @@ Instead of being entered manually in the **Album** panel, the Global tags (patie
 {{< /highlight >}}
 
 {{% notice note %}}
-Which DICOM tags are displayed, editable and required in the **Album** panel can be configured through the [preferences](../basics/customize/preferences) (items starting with `weasis.acquire.meta`).
+Which DICOM tags appear, are editable, and are required in the **Album** panel is configured via the [preferences](../basics/customize/preferences) (items starting with `weasis.acquire.meta`).
 {{% /notice %}}
 
 ### Publication Destination
 
-When the Dicomizer destination is specified in the [preferences](../basics/customize/preferences) (items starting with `weasis.acquire.dest`), the destination is no longer selectable in the **Publication** panel: the DICOM files are sent directly to the configured node.
+When the Dicomizer destination is fixed in the [preferences](../basics/customize/preferences) (items starting with `weasis.acquire.dest`), the destination is no longer selectable in the **Publication** panel — DICOM files are sent directly to the configured node.

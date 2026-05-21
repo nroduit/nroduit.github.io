@@ -2,64 +2,74 @@
 title: Image orientation
 weight: 355
 description: How to interpret the orientation
-keywords: [ "orientation", "dicom viewer", "free dicom viewer", "open source dicom viewer" ]
+keywords: [ "orientation", "biped", "quadruped", "anatomical direction", "mpr", "dicom viewer", "free dicom viewer", "open source dicom viewer" ]
 ---
 
 ## <center>Interpretation of the orientation</center>
 
-The orientation of the DICOM images is displayed by one or more uppercase letters in the middle on the top and left of the view.
+DICOM image viewers indicate **which anatomical direction lies outside each edge of the image** using one or more uppercase letters drawn at the top-center and left-center of the view. They let you recognize the patient's left vs. right (or dorsal vs. ventral, etc.) at a glance, without having to scroll the metadata.
 
-If _Anatomical Orientation Type (0010,2210)_ [attribute](tags) is absent or has a value of BIPED, the anatomical direction is:
+The exact set of letters depends on the **_Anatomical Orientation Type (0010,2210)_** [attribute](tags) of the study — Weasis supports both the standard **BIPED** scheme used for human imaging and the **QUADRUPED** scheme used in veterinary imaging.
 
-* A: anterior
-* P: posterior
-* R: right
-* L: left
-* H: head
-* F: foot
+### BIPED (human imaging)
 
-If _Anatomical Orientation Type (0010,2210)_ [attribute](tags) has a value of QUADRUPED (since {{% badge title="Version" %}}4.1.0{{% /badge %}}), the anatomical direction is designated by:
-* LE: Left
-* RT: Right
-* D: Dorsal
-* V: Ventral
-* CR: Cranial
-* CD: Caudal
-* R: Rostral
-* M: Medial
-* L: Lateral
-* PR: Proximal
-* DI: Distal
-* PA: Palmar
-* PL: Plantar
+Used when the _Anatomical Orientation Type_ attribute is absent or set to `BIPED`:
+
+| Axis | Letters |
+|------|---------|
+| Left / Right       | **L** = Left, **R** = Right |
+| Anterior / Posterior | **A** = Anterior, **P** = Posterior |
+| Head / Foot        | **H** = Head, **F** = Foot |
+
+### QUADRUPED (veterinary imaging)
+
+Used when the _Anatomical Orientation Type_ attribute is set to `QUADRUPED` (supported since {{% badge title="Version" %}}4.1.0{{% /badge %}}). The scheme uses **two-letter codes for left and right** (`LE` / `RT`) to avoid collisions with single-letter codes that mean something different in this scheme:
+
+| Axis / direction | Letters |
+|------------------|---------|
+| Left / Right (body sides)        | **LE** = Left, **RT** = Right |
+| Dorsal / Ventral                  | **D** = Dorsal, **V** = Ventral |
+| Cranial / Caudal                  | **CR** = Cranial, **CD** = Caudal |
+| Rostral (head)                    | **R** = Rostral |
+| Medial / Lateral (relative)       | **M** = Medial, **L** = Lateral |
+| Proximal / Distal (limbs)         | **PR** = Proximal, **DI** = Distal |
+| Palmar / Plantar (paws)           | **PA** = Palmar, **PL** = Plantar |
+
+{{% notice warning %}}
+On a QUADRUPED study, **R** means **Rostral** and **L** means **Lateral** — *not* Right and Left. Always check the anatomical-orientation type before interpreting single letters.
+{{% /notice %}}
+
 ![Quadruped orientation](/tuto/quadruped-orientation.jpg?classes=shadow)
 <br>
 
 {{% notice info %}}
-If the orientation is not perfectly aligned according to the three axes of the referential, then there can be a secondary and tertiary orientation (in subscript) separated by "-".
+When the view is not perfectly aligned with the three axes of the patient frame of reference, Weasis appends a **secondary** and **tertiary** orientation in subscript, separated by `-` (e.g. `A-L-H` for an oblique anterior-leaning view).
 {{% /notice %}}
 
 {{% notice info %}}
-For some modalities, such as CR or DX, the orientation comes from the _Patient Orientation (0020,0020)_ attribute and is not displayed when using the rotation tools because it cannot be recalculated dynamically.
+For projection modalities such as **CR** or **DX**, the orientation comes from the _Patient Orientation (0020,0020)_ attribute. It is **not updated** when the image is rotated, because the orientation cannot be re-derived dynamically from the pixel data.
 
-For other modalities such as CT and MRI, the orientation is always displayed because it is dynamically calculated.
+For cross-sectional modalities such as **CT** and **MR**, the orientation **is** recomputed dynamically and remains correct after rotations, flips, and reformats.
 {{% /notice %}}
 
 {{% notice tip %}}
-To display or hide the orientation on the image, select it from the _Display_ panel on the right (DICOM Annotations > Orientation).
+To show or hide the orientation overlay, toggle **DICOM Annotations > Orientation** in the [Display](dicom-2d-viewer/#display) panel on the right.
 {{% /notice %}}
 
 
-### Orientation in multiplanar reconstruction (MPR)
-The image below shows the 3 multiplanar views. The uppercase letter at the left or at the top designates the orientation of each multiplanar view whose type (axial, coronal, sagittal) is defined at the bottom.
+### Orientation in multiplanar reconstruction (MPR) {#orientation-in-multiplanar-reconstruction-mpr}
+
+In the [MPR viewer](mpr), the same letter convention is applied to each of the three reformatted planes. The uppercase letter at the left or the top names the anatomical direction; the plane type (**axial**, **coronal**, or **sagittal**) is labeled at the bottom of the view.
 
 ![MPR orientation](/tuto/mpr-orientation.jpg?classes=shadow)
 <br>
 
 {{% notice info %}}
-The color of the axes used comes from the one defined in [DICOM Patient Orientation](https://dicom.nema.org/medical/dicom/current/output/chtml/part17/chapter_A.html) based on the anatomical direction. Blue corresponds to the left-right axis, the red axis to anterior-posterior, and the green axis to foot-head.
+The crosshair axes follow the color coding defined in the [DICOM Patient Orientation](https://dicom.nema.org/medical/dicom/current/output/chtml/part17/chapter_A.html) standard:
 
-The colored square in the MPR view above corresponds to the plane that is perpendicular to one of the axes.
+- **Blue** — left / right axis.
+- **Red** — anterior / posterior axis.
+- **Green** — foot / head axis.
+
+The small colored square shown in each MPR view corresponds to the axis that is **perpendicular** to that plane.
 {{% /notice %}}
-
-

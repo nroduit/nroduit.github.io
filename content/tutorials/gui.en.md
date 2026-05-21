@@ -5,56 +5,59 @@ description: Essential aspects of the graphical user interface (GUI)
 keywords: [ "GUI", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "pacs viewer" ]
 ---
 
-## <center>Essential aspects of the interface{{< svg-inline "static/tuto/icon/Weasis.svg" >}}</center>
+## <center>Essential aspects of the interface {{< svg-inline "static/tuto/icon/Weasis.svg" >}}</center>
 
-The following image shows the main elements of the graphical user interface (GUI). For more detailed documentation on the various elements of the interface, click on the green or blue areas of the image.
+The image below shows the main elements of the Weasis graphical user interface. Click any of the green or blue areas to jump to the dedicated documentation for that element.
 
 {{< svg "static/tuto/gui-overview.svg" >}}
 
-The interface of the default DICOM workspace consists mainly of 2 parts:
-1. The [DICOM Explorer](dicom-explorer) on the left (in blue). It allows you to import and export data, as well as select the series to be visualized.
-2. Depending on the data imported, different viewer/player types (represented by a tab) are displayed in the main section (green). Menus, toolbars and tools change, according to the type of viewer selected. 
-   * The selected viewer is the image above is the [DICOM 2D viewer](dicom-2d-viewer) {{< svg-inline "static/tuto/icon/view2d.svg" >}} which is the viewer opened by default. 
-   * A tab containing a multi-view layout can display images from only one patient. However, one patient can appear in several tabs.
-   * A tab is also a docked panel that can be arranged by dragging and dropping it to the desired location. This makes it possible to display two tabs side by side (see [docking](docking)).
-   * See also [DICOM Explorer](dicom-explorer/) to understand how to navigate through the Patient/Study/Series/Image.
+The default DICOM workspace has two main areas:
+
+1. The **[DICOM Explorer](dicom-explorer)** on the left (blue) — used to import and export data and to pick the series to display.
+2. The **main area** on the right (green) — hosts the open viewers and players as tabs. The available menus, toolbars, and tools change depending on the viewer currently in focus.
+   * In the screenshot above, the active viewer is the **[DICOM 2D Viewer](dicom-2d-viewer)** {{< svg-inline "static/tuto/icon/view2d.svg" >}}, which is the default for image series.
+   * A tab with a multi-view layout can only display images from a **single patient**, but the same patient can appear in several tabs.
+   * Each tab is a docked panel that can be moved by drag-and-drop, including side-by-side splits — see [Docking](docking) for the full layout options.
+   * For navigating through the Patient / Study / Series / Image hierarchy, see the [DICOM Explorer](dicom-explorer/) page.
 
 ## Minimal configuration before starting
 
-Before using Weasis for the first time, a few settings can greatly improve your experience. Open the preferences dialog from the main menu: _File > Preferences (Alt + P)_.
+A few settings make Weasis noticeably more comfortable the first time you launch it. Open the preferences dialog from the main menu: **_File > Preferences (Alt + P)_**.
 
 ### Language and regional settings
-Select your preferred **language** and **regional format** (dates, numbers) in the _General_ tab of the preferences. Languages with at least 30% translation coverage are listed. Dates, numbers, and other locale-sensitive values will be displayed according to the selected regional format throughout the interface.
+In the **General** tab, pick your preferred **language** and **regional format** (dates, numbers). Only languages with at least 30 % translation coverage appear in the list. Dates, numbers, and other locale-sensitive values follow the selected regional format throughout the interface.
 
-➜ See [Language and regional settings](locale) for detailed instructions.
+➜ See [Language and regional settings](locale) for the detailed instructions.
 
 ### Theme and scaling factor
-In the _Appearance_ tab of the preferences, you can:
-- Choose a **theme** that suits your environment and reduces eye strain. The recommended theme is **Core Dark - Flat Weasis**.
-- Set a **scaling factor** to match your system display scaling. This is especially recommended for **HiDPI screens** — Weasis will then scale fonts, icons, and all UI components consistently with your operating system.
+In the **Appearance** tab:
+- Choose a **theme** that suits your environment and reduces eye strain. The recommended theme is **Core Dark — Flat Weasis**.
+- Set a **scaling factor** that matches your system display scaling. This is especially recommended for **HiDPI screens** — Weasis will scale fonts, icons, and every UI component consistently.
 
-➜ See [Styles and themes](theme) for detailed instructions.
+➜ See [Styles and themes](theme) for the detailed instructions.
 
 {{% notice tip %}}
-Whenever you need more complete instructions or explanations, use the {{< svg-inline "static/tuto/icon/help.svg" >}} button available in the preferences dialog or in contextual pop-ups. It will open the corresponding page of the online documentation directly in your browser.
+Wherever you need more complete instructions, click the {{< svg-inline "static/tuto/icon/help.svg" >}} button in the preferences dialog or in any contextual pop-up — it opens the matching page of this documentation in your browser.
 {{% /notice %}}
 
 {{% notice tip %}}
-In the View menu at the top, toolbars and tools related to the selected viewer can be shown or hidden. These display preferences are retained even after a restart. Only Explorer preferences are retained for the duration of the session.
+In the **View** menu at the top, the toolbars and tools attached to the active viewer can be shown or hidden. These preferences are remembered across restarts. Show / hide preferences specific to the **DICOM Explorer** are only kept for the current session.
 {{% /notice %}}
 
-### List of other viewers/Players in the DICOM workspace
-* [Multiplanar Reconstruction (MPR) viewer](mpr)
+### Other viewers and players in the DICOM workspace {#other-viewers-and-players}
+Depending on the SOP Class of the loaded series, Weasis opens one of the following:
+
+* [Multi-Planar Reconstruction (MPR) viewer](mpr)
 * [Maximum Intensity Projection (MIP) viewer](mip)
-* [DICOM 3D viewer](dicom-3d-viewer)
+* [DICOM 3D Volume Renderer](dicom-3d-viewer)
 * [DICOM ECG viewer](dicom-ecg)
 * [DICOM Structured Report (SR) viewer](dicom-sr)
 * [DICOM Audio player](dicom-audio)
-* DICOM PDF viewer (default system application associated with pdf files). Same for other encapsulated documents.
-* DICOM Video player (default system player associated with mpg files)
+* **DICOM PDF viewer** — opened with the default system application registered for PDF files.
+* **DICOM Video player** — opened with the default system player registered for MPEG files.
 
-### List of other workspaces
-* [Dicomizer](dicomizer) - Dicomizer workspace
-* Explorer of standard images (based on the non-dicom-explorer.json configuration profile)
+Overlay viewers — applied on top of an image series rather than opened on their own — include [DICOM Segmentation (SEG)](dicom-segmentation), [DICOM RT](dicom-rt), and [Presentation State (PR / GSPS)](build-ko-pr#presentation-state-pr-or-gsps).
 
-
+### Other workspaces
+* **[Dicomizer](dicomizer)** — the workspace for converting standard images into DICOM objects.
+* **Standard image explorer** — workspace for non-DICOM images (configured through the `non-dicom-explorer.json` profile).
