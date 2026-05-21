@@ -9,7 +9,7 @@ keywords: [ "dicom seg", "segmentation", "SEG", "binary", "fractional", "probabi
 
 DICOM Segmentation (SEG) stores pixel-based labels — anatomical structures, lesions, organs at risk — as a separate object that references a source image series. It is the standard delivery format for [AI segmentation frameworks](dicom-artificial-intelligence#dicom-segmentation-seg), but also for manual or semi-automatic contouring tools.
 
-Weasis displays SEG regions as a coloured overlay on the source images, with independent visibility and opacity control per region. Available since {{% badge title="Version" %}}4.3.0{{% /badge %}}; significantly extended in {{% badge title="Version" %}}4.7.0{{% /badge %}} with:
+Weasis displays SEG regions as a colored overlay on the source images, with independent visibility and opacity control per region. Available since {{% badge title="Version" %}}4.3.0{{% /badge %}}; significantly extended in {{% badge title="Version" %}}4.7.0{{% /badge %}} with:
 
 - Overlays in **MPR** and **3D Volume Renderer** views, in addition to the standard 2D viewer.
 - Simultaneous display of **all SEG files** linked to the current series, each toggleable independently.
@@ -23,7 +23,7 @@ To display the SEG regions as an overlay on the image, follow these steps (see t
 2. Once the image is displayed, click {{< svg-inline "static/tuto/icon/normalize.svg" >}} on the vertical {{< svg-inline "static/tuto/icon/segmentation.svg" >}} button to open the _Segmentation_ panel on the right side of the viewer.
 3. Every SEG file linked to the current series appears as a top-level node in the tree. Expand a SEG node to reveal its regions and tick the ones you want to display. Regions that share a common name prefix are grouped under a parent node — the parent must be checked for any of its children to be visible.
 4. {{% badge style="info" %}}Optional{{% /badge %}} Adjust the global graphic opacity (border and interior fill) with the slider.
-5. {{% badge style="info" %}}Optional{{% /badge %}} Use tooltips to see the region description, voxel count and estimated volume for each region. For **FRACTIONAL** regions a colour-gradient bar is also displayed to help interpret the probability ramp.
+5. {{% badge style="info" %}}Optional{{% /badge %}} Use tooltips to see the region description, voxel count and estimated volume for each region. For **FRACTIONAL** regions a color-gradient bar is also displayed to help interpret the probability ramp.
 
 Try to open a SEG sample {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/seg.xml"
@@ -46,7 +46,7 @@ Right-click on a region in the tree to access:
 {{% notice note %}}
 **Loading a DICOM SEG.** The first time a SEG is shown — in the 2D viewer, MPR or 3D — Weasis decodes it in the background. Scrolling and other interactions remain responsive while decoding runs; the regions appear as soon as the SEG is ready.
 
-A **cancellable** progress entry is shown at the bottom of the DICOM Explorer, so a large or slow SEG can be cancelled without blocking the rest of your work.
+A **cancelable** progress entry is shown at the bottom of the DICOM Explorer, so a large or slow SEG can be canceled without blocking the rest of your work.
 
 Once decoded, the SEG is shared between the 2D, MPR and 3D views — loaded only once even with several views open. Weasis may release it automatically when memory gets tight and reload it on demand the next time it is needed.
 {{% /notice %}}
@@ -59,10 +59,10 @@ Weasis supports all three DICOM SEG segmentation types:
 
 | Type | What it represents | How Weasis displays it |
 |------|--------------------|------------------------|
-| **BINARY** | Each pixel is either inside or outside the segment. | Coloured contour drawn on the image. |
-| **FRACTIONAL — PROBABILITY** | Each pixel carries a value between 0 and 1 expressing how confident the AI is that the pixel belongs to the segment. | Smooth coloured overlay: more transparent where confidence is low, more opaque where it is high. The opacity slider scales the whole gradient. |
+| **BINARY** | Each pixel is either inside or outside the segment. | Colored contour drawn on the image. |
+| **FRACTIONAL — PROBABILITY** | Each pixel carries a value between 0 and 1 expressing how confident the AI is that the pixel belongs to the segment. | Smooth colored overlay: more transparent where confidence is low, more opaque where it is high. The opacity slider scales the whole gradient. |
 | **FRACTIONAL — OCCUPANCY** | Each pixel carries a value between 0 and 1 expressing how much of the pixel is actually covered by the segment (partial-volume fraction). | Same smooth overlay as PROBABILITY — only the meaning of the value differs. |
-| **LABELMAP** | Several segments are packed into a single image, with the pixel value identifying which segment it belongs to. | Each segment is extracted automatically and drawn with its own colour. |
+| **LABELMAP** | Several segments are packed into a single image, with the pixel value identifying which segment it belongs to. | Each segment is extracted automatically and drawn with its own color. |
 
 {{% notice note %}}
 Some AI frameworks export FRACTIONAL segmentations without an explicit reference back to the source series. Weasis matches them to the correct images automatically (via the DICOM frame of reference).
@@ -92,11 +92,11 @@ The 3D Volume Renderer offers three segmentation modes, selectable from the **Se
 | Mode | What it shows |
 |------|---------------|
 | **No segmentation** | Volume rendering only — no overlay. |
-| **Segmentation only** | Only the labelled regions are rendered; the anatomy is hidden. Useful to review the AI output on its own. |
+| **Segmentation only** | Only the labeled regions are rendered; the anatomy is hidden. Useful to review the AI output on its own. |
 | **Segmentation overlay** | Regions are drawn **on top of** the volume rendering, with the anatomy remaining visible beneath. |
 
 A few things to keep in mind when working with the 3D overlay:
 
-- **Toggling a segment is instant.** Visibility, colour and opacity changes update the 3D view immediately, even on very large volumes — Weasis only refreshes the colour table, not the segmentation itself.
-- **Overlapping segments are handled cleanly.** When two segments share the same area, their colours are blended automatically; you do not have to pick which one wins.
+- **Toggling a segment is instant.** Visibility, color and opacity changes update the 3D view immediately, even on very large volumes — Weasis only refreshes the color table, not the segmentation itself.
+- **Overlapping segments are handled cleanly.** When two segments share the same area, their colors are blended automatically; you do not have to pick which one wins.
 - **2D, MPR and 3D stay in sync.** Showing or hiding a segment in the panel updates all three views simultaneously.

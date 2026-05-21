@@ -73,7 +73,7 @@ sign.
 
 The verdict — the heart of the panel. Each line is rated with one of four levels:
 
-| Level | Colour | Meaning |
+| Level | Color | Meaning |
 |---|---|---|
 | **Collecting…** | neutral | Not enough activity yet to judge — keep using Weasis |
 | **Sub-optimal** | red | The resource limited Weasis; the machine should have more |
@@ -111,7 +111,7 @@ The counters behind the memory verdict, accumulated over every session:
 | Volume disk spills | A 3D volume did not fit in memory and was written to disk — slow |
 | Garbage-collection overhead | Share of time spent reclaiming heap memory; above ~10 % the heap is too small |
 
-A non-zero count is not necessarily a problem — the panel colours a counter red
+A non-zero count is not necessarily a problem — the panel colors a counter red
 **only** when it is the signal currently causing a sub-optimal memory verdict.
 
 ## Acting on the recommendation

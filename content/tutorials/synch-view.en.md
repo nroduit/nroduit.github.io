@@ -62,7 +62,7 @@ To find which series share the same frame of reference, right-click a thumbnail 
 
 ### Per-view Sync Controls {#per-view-sync}
 
-Beyond the global toolbar drop-down, each 2D view carries small overlay buttons that drive its sync behaviour independently. They appear in the bottom-right corner of the view when the view is eligible for synchronization with one of its peers.
+Beyond the global toolbar drop-down, each 2D view carries small overlay buttons that drive its sync behavior independently. They appear in the bottom-right corner of the view when the view is eligible for synchronization with one of its peers.
 
 #### Auto-sync button {{< svg-inline "static/tuto/icon/synch.svg" >}} {#auto-sync-button}
 

@@ -137,9 +137,9 @@ Some of the options described below are also available in the toolbar and in the
 This panel contains options for the rendering type and its quality, transparency, lighting, and shading settings.
 
 * _Type:_ Defines the rendering algorithm applied to the volume:
-  * _Composite_: Classic volume rendering. Each voxel contributes colour and opacity along the ray, blended front-to-back to produce the final image.
+  * _Composite_: Classic volume rendering. Each voxel contributes color and opacity along the ray, blended front-to-back to produce the final image.
   * _MIP Max_: Maximum Intensity Projection — projects the highest-intensity voxel encountered along each ray. Useful for highlighting bright structures such as contrast-enhanced vessels or bones.
-  * _MinIP_: Minimum Intensity Projection — projects the lowest-intensity voxel along each ray. Useful for visualising air-filled structures such as airways.
+  * _MinIP_: Minimum Intensity Projection — projects the lowest-intensity voxel along each ray. Useful for visualizing air-filled structures such as airways.
   * _MIP Mean_: Mean Intensity Projection — projects the average intensity along each ray, providing a smoother representation of the volume.
   * _Iso Surface_: Renders a 3D surface at a specific intensity threshold, representing structures of a uniform density (e.g., bone segmentation).
 * _Z-axis sampling:_ The sampling should be large enough to accurately capture the details of the volume data, but small enough to avoid excessive computation time. The default value is calculated according to the size of the volume.

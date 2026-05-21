@@ -94,7 +94,7 @@ Open any image whose dimensions you know (for example a calibration phantom, a C
 study with a visible ruler, or a printed test pattern displayed full screen) and
 switch to {{< svg-inline "static/tuto/icon/zoomRealWorld.svg" >}} *Real-world Size*.
 Use the [length measurement tool](../draw-measure) and compare with the physical
-ruler — the values should match within a fraction of a millimetre.
+ruler — the values should match within a fraction of a millimeter.
 
 {{% notice warning %}}
 If *Real-world Size* still looks wrong after calibration, check that the image itself

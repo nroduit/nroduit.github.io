@@ -58,7 +58,7 @@ When a DICOM series is loaded, Weasis automatically analyzes it to detect multi-
 
 ##### Manual split confirmation dialog (≥ 8 phases)
 
-When 8 or more phases are detected, a dialog is displayed asking the user to confirm the split. Once confirmed, the series is divided exactly as in the automatic case. Cancelling leaves the series intact as a single entry in the DICOM Explorer.
+When 8 or more phases are detected, a dialog is displayed asking the user to confirm the split. Once confirmed, the series is divided exactly as in the automatic case. Canceling leaves the series intact as a single entry in the DICOM Explorer.
 
 ##### Sub-series structure after splitting
 
