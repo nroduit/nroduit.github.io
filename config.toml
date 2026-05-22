@@ -85,6 +85,10 @@ enableRobotsTXT = true
   disableLandingPageButton = true
   disableLanguageSwitchingButton = true
   titleSeparator = "::"
+  # Logo: replaces the previous layouts/partials/logo.html override (deprecated in Relearn 9.0.0).
+  # `linkTitle = ""` suppresses the site-title text rendered next to the logo by auto-logo.html.
+  logo = { src = '/images/logo.svg' }
+  linkTitle = ""
   themeVariant = [ "relearn-dark", "relearn-light" ]
   themeVariantAuto = [ "relearn-light", "relearn-dark" ]
   disableSeoHiddenPages = true

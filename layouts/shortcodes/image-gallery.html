@@ -8,16 +8,14 @@
 
 {{ $dir := .Params.gallery_dir }}
 <ul class="image-gallery">
-{{ range (readDir (printf "assets/%s" $dir)) }}
-  {{- $image := resources.Get (printf "%s/%s" $dir .Name) -}}
-  {{- $imageurl := printf "/%s/%s" $dir .Name -}}
-  {{- $imagetitle := index (split .Name ".") 0 -}}
+{{ range sort (resources.Match (printf "%s/*" $dir)) ".Name" }}
+  {{- $base := path.Base .Name -}}
+  {{- $imagetitle := strings.TrimSuffix (path.Ext .Name) $base -}}
     <li>
-      <a href="{{ ($image.Fit "1600x1200").Permalink }}" class="lightbox-image" title="{{ $imagetitle }}">
-        <img src="{{ ($image.Fill "300x225").Permalink }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}">
+      <a href="{{ (.Fit "1600x1200").Permalink }}" class="lightbox-image" title="{{ $imagetitle }}">
+        <img src="{{ (.Fill "300x225").Permalink }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}">
         <span>{{ $imagetitle }}</span>
       </a>
     </li>
-  
 {{ end }}
 </ul>

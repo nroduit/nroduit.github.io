@@ -22,33 +22,65 @@ aliases:
 
 ### Find your way around
 
+<style>
+.nav-pills{display:flex;flex-wrap:wrap;gap:0.4em;margin-top:0.6em;}
+.nav-pill{
+  display:inline-flex;align-items:center;gap:0.35em;
+  padding:0.35em 0.85em;
+  border:1px solid var(--SECONDARY-color, #0d6efd);
+  color:var(--SECONDARY-color, #0d6efd);
+  background:transparent;
+  border-radius:1em;
+  text-decoration:none;
+  font-weight:600;font-size:0.9em;line-height:1.2;
+  transition:background-color .15s ease, color .15s ease, border-color .15s ease, box-shadow .15s ease, transform .1s ease;
+}
+.nav-pill:hover{
+  background:var(--SECONDARY-color, #0d6efd);
+  color:#fff;
+  text-decoration:none;
+  box-shadow:0 2px 6px rgba(0,0,0,.15);
+}
+.nav-pill:focus-visible{
+  outline:2px solid var(--SECONDARY-HOVER-color, #0a58ca);
+  outline-offset:2px;
+}
+.nav-pill:active{
+  background:var(--SECONDARY-HOVER-color, #0a58ca);
+  border-color:var(--SECONDARY-HOVER-color, #0a58ca);
+  color:#fff;
+  transform:translateY(1px);
+  box-shadow:none;
+}
+</style>
+
 <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:1rem;margin:1rem 0;">
   <div style="border:1px solid rgba(128,128,128,0.3);border-radius:0.4rem;padding:1rem;display:flex;flex-direction:column;">
     <h4 style="margin-top:0;">🩺 Clinicians &amp; end users</h4>
     <p style="flex:1;">Open studies, drive the 2D / MPR / 3D viewers, measure, annotate, share findings.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:0.4em;margin-top:0.5em;">
-      <a href="tutorials" style="display:inline-block;padding:0.35em 0.8em;border:1px solid #0d6efd;color:#0d6efd;border-radius:1em;text-decoration:none;font-weight:600;font-size:0.9em;">Tutorials</a>
-      <a href="basics/shortcuts" style="display:inline-block;padding:0.35em 0.8em;border:1px solid #0d6efd;color:#0d6efd;border-radius:1em;text-decoration:none;font-weight:600;font-size:0.9em;">Shortcuts</a>
-      <a href="faq" style="display:inline-block;padding:0.35em 0.8em;border:1px solid #0d6efd;color:#0d6efd;border-radius:1em;text-decoration:none;font-weight:600;font-size:0.9em;">FAQ</a>
+    <div class="nav-pills">
+      <a class="nav-pill" href="tutorials">Tutorials</a>
+      <a class="nav-pill" href="basics/shortcuts">Shortcuts</a>
+      <a class="nav-pill" href="faq">FAQ</a>
     </div>
   </div>
   <div style="border:1px solid rgba(128,128,128,0.3);border-radius:0.4rem;padding:1rem;display:flex;flex-direction:column;">
     <h4 style="margin-top:0;">🛠 Integrators &amp; administrators</h4>
     <p style="flex:1;">Connect Weasis to your PACS, DICOMweb endpoints, EHR / RIS / HIS portals.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:0.4em;margin-top:0.5em;">
-      <a href="basics/customize/integration" style="display:inline-block;padding:0.35em 0.8em;border:1px solid #0d6efd;color:#0d6efd;border-radius:1em;text-decoration:none;font-weight:600;font-size:0.9em;">Integration</a>
-      <a href="getting-started/dcm4chee" style="display:inline-block;padding:0.35em 0.8em;border:1px solid #0d6efd;color:#0d6efd;border-radius:1em;text-decoration:none;font-weight:600;font-size:0.9em;">dcm4chee</a>
-      <a href="viewer-hub" style="display:inline-block;padding:0.35em 0.8em;border:1px solid #0d6efd;color:#0d6efd;border-radius:1em;text-decoration:none;font-weight:600;font-size:0.9em;">ViewerHub</a>
-      <a href="basics/customize/preferences" style="display:inline-block;padding:0.35em 0.8em;border:1px solid #0d6efd;color:#0d6efd;border-radius:1em;text-decoration:none;font-weight:600;font-size:0.9em;">Preferences</a>
+    <div class="nav-pills">
+      <a class="nav-pill" href="basics/customize/integration">Integration</a>
+      <a class="nav-pill" href="getting-started/dcm4chee">dcm4chee</a>
+      <a class="nav-pill" href="viewer-hub">ViewerHub</a>
+      <a class="nav-pill" href="basics/customize/preferences">Preferences</a>
     </div>
   </div>
   <div style="border:1px solid rgba(128,128,128,0.3);border-radius:0.4rem;padding:1rem;display:flex;flex-direction:column;">
     <h4 style="margin-top:0;">💻 Developers &amp; contributors</h4>
     <p style="flex:1;">Build plug-ins, extend the architecture, contribute code, translations, or documentation.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:0.4em;margin-top:0.5em;">
-      <a href="getting-started/#developer-documentation" style="display:inline-block;padding:0.35em 0.8em;border:1px solid #0d6efd;color:#0d6efd;border-radius:1em;text-decoration:none;font-weight:600;font-size:0.9em;">Developer docs</a>
-      <a href="basics/architecture" style="display:inline-block;padding:0.35em 0.8em;border:1px solid #0d6efd;color:#0d6efd;border-radius:1em;text-decoration:none;font-weight:600;font-size:0.9em;">Architecture</a>
-      <a href="basics/customize/build-plugins" style="display:inline-block;padding:0.35em 0.8em;border:1px solid #0d6efd;color:#0d6efd;border-radius:1em;text-decoration:none;font-weight:600;font-size:0.9em;">Plug-ins</a>
+    <div class="nav-pills">
+      <a class="nav-pill" href="getting-started/#developer-documentation">Developer docs</a>
+      <a class="nav-pill" href="basics/architecture">Architecture</a>
+      <a class="nav-pill" href="basics/customize/build-plugins">Plug-ins</a>
     </div>
   </div>
 </div>

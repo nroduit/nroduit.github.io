@@ -1,4 +1,5 @@
 {{ $token := getenv "HUGO_GH_TOKEN" }}
+{{ $page := .Page }}
 {{ if not $token }}
     <p style="color: red;">Error: The environment variable <code>HUGO_GH_TOKEN</code> is not set. Please configure it to retrieve the data.</p>
 {{ else }}
@@ -45,16 +46,18 @@
                 {{ $icon := cond (eq $package ".msi") "microsoft" (cond (eq $package ".pkg") "apple" "linux") }}
                 <tr>
                     <td style="text-align: left;">{{ upper ( substr $package 1 ) }}</td>
-                    <td style="text-align: left;"><i class='fab fa-{{ $icon }}' style='font-size: 1.5em;'></i>&#160{{ $system }}</td>
+                    <td style="text-align: left; white-space: nowrap;"><i class='fab fa-{{ $icon }}' style='font-size: 1.5em;'></i>&nbsp;{{ $system }}</td>
                     <td style="text-align: left;">{{ $arch }}</td>
                     <td style="text-align: left;">{{ printf "%.1f MB"  (div $val.size 1000000) }}</td>
                     <td style="text-align: left;">
-                          <span class="btn cstyle transparent">
-                          <a href="{{ $val.browser_download_url }}" target="_blank" rel="noopener noreferrer">{{ $val.name }} <i class="fa-fw fas fa-download"></i></a>
-                          {{ $date := time "2024-05-01" }}
-                          {{ if ge (time $elem_val.published_at) $date }}
-                          </span>
-                          {{ end }}
+                      {{- partial "shortcodes/button.html" (dict
+                        "page"         $page
+                        "href"         $val.browser_download_url
+                        "title"        $val.name
+                        "icon"         "download"
+                        "iconposition" "right"
+                        "style"        "transparent"
+                      ) -}}
                     </td>
                     <td style="text-align: left;">{{ cond ( ge $elem_index 1) "" (cond (eq $package ".msi") "Requires Windows 10 or higher"
                         (cond (eq $package ".pkg") (cond (eq $arch "arm-64") "Requires macOS 12 or higher (Apple Silicon)" "Requires macOS 11 or higher (Intel)")
