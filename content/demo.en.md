@@ -7,29 +7,29 @@ hidden: true
 
 ## <center>Demo: Multiple DICOM Samples</center>
 
-This page offers a variety of DICOM samples to test and evaluate the features and functionality of the Weasis DICOM viewer.
+This page collects a curated set of DICOM samples designed to exercise the rendering pipeline, the input formats, and the headline features of the Weasis DICOM viewer. Each sample loads in one click and is annotated with the test it is meant to demonstrate, along with the expected viewer behavior.
 
 The datasets are sourced mainly from the [DICOM standard repository](ftp://medical.nema.org/MEDICAL/Dicom/DataSets) and the publication [DICOM Image Display Consistency: A Test Environment](https://www.researchgate.net/publication/239747992_DICOM_image_display_consistency_a_test_environment).
 
 {{% notice tip %}}
-**Naming conventions**
+**Sample naming conventions**
 
-- **Patient Name**: Begins with "TEST^", followed by the general test purpose. Prefix "TEST-i18n-" indicates internationalization testing.
-- **Study Description**: Describes the overall test specifics.
-- **Series Description**: Details the specific test purpose related to the series.
+- **Patient Name** — begins with `TEST^`, followed by the general test purpose. A `TEST-i18n-` prefix indicates an internationalization test.
+- **Study Description** — describes the overall test focus.
+- **Series Description** — details the specific test purpose of that series.
 {{% /notice %}}
 
 ### How to launch Weasis
 
-In order to view the DICOM samples, ensure you’ve installed the [latest version of Weasis](getting-started/).
+To view a DICOM sample, make sure you have installed the [latest version of Weasis](getting-started/).
 
 {{% notice tip %}}
-Clicking the **"Launch"** button will open Weasis and display the corresponding images. If Weasis is already running, the dataset will load in a new tab.
+Clicking a **Launch** button opens Weasis and displays the sample. If Weasis is already running, the dataset loads in a new tab.
 {{% /notice %}}
 
-### DICOM Testing Categories and Samples
+### DICOM testing categories and samples
 
-Below are test examples to explore the capabilities of Weasis. Click `Launch` to load the associated dataset. Here are the categories:
+The samples below exercise specific parts of the DICOM standard and the Weasis rendering pipeline. Click **Launch** to load a dataset.
 
 - [Internationalized Characters](#internationalized-characters)
 - [Pixel Depth (9-bit to 16-bit)](#pixel-depth-9-bit-to-16-bit)
@@ -44,9 +44,9 @@ Below are test examples to explore the capabilities of Weasis. Click `Launch` to
 - [Combined LUT](#combined-lut)
 - [DICOM Shutter](#dicom-shutter)
 - [DICOM PDF](#dicom-pdf)
-- [DICOM video](#dicom-video)
+- [DICOM Video](#dicom-video)
 - [DICOM Audio (AU)](#dicom-audio-au)
-- [DICOM floating point pixel data](#dicom-floating-point-pixel-data)
+- [DICOM Floating-Point Pixel Data](#dicom-floating-point-pixel-data)
 - [DICOM Structured Report (SR)](#dicom-structured-report-sr)
 - [DICOM Presentation State (PR, GSPS)](#dicom-presentation-state-pr-gsps)
 - [DICOM Key Object Selection (KO)](#dicom-key-object-selection-ko)
@@ -54,14 +54,14 @@ Below are test examples to explore the capabilities of Weasis. Click `Launch` to
 ------------------------------------------------------------------------
 
 #### Internationalized Characters
-Test international character sets in patient and study data.
+Test international character sets in patient and study identifiers.
 
 {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/international.xml"
 {{< /launch >}}
 
 {{% notice info %}}
-Expected Output:
+**Expected output**:
 ![charset samples](/images/charset.png)
 {{% /notice %}}
 
@@ -69,10 +69,10 @@ Expected Output:
 
 #### Pixel Depth (9-bit to 16-bit)
 
-Tests with different pixel depths to ensure the correct image rendering.
+Verify that images render identically regardless of the underlying pixel depth (signed or unsigned, 9 to 16 bits per sample).
 
 {{% notice info %}}
-**Expected Output**: Images rendered identically regardless of pixel depth.
+**Expected output**: images render identically regardless of the pixel depth.
 {{% /notice %}}
 
 <ul>
@@ -91,20 +91,20 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/demo/pixel-depth-signed.xm
 ------------------------------------------------------------------------
 
 #### Compression Tests
-Evaluate viewer performance with various compression types.
+Exercise the decoder against the main DICOM transfer syntaxes and fragmentation scenarios.
 
 <ul>
-<li style="margin-bottom:10px;">Different Compression Syntaxes (JPEG, JPEG-Lossless, JPEG-LS, J2K, RLE)
+<li style="margin-bottom:10px;">Different compression syntaxes (JPEG, JPEG-Lossless, JPEG-LS, J2K, RLE)
 {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/compression1.xml"
 {{< /launch >}}
 </li>
-<li style="margin-bottom:10px;">Compression and fragments (the file contains the encoded pixel data stream fragmented into several parts, see <a target="_blank" href="http://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_A.4.html">DICOM part5</a>)
+<li style="margin-bottom:10px;">Compression with fragments (the encoded pixel-data stream is split into several fragments, see <a target="_blank" href="http://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_A.4.html">DICOM Part 5</a>)
 {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/compression2.xml"
 {{< /launch >}}
 </li>
-<li style="margin-bottom:10px;">Compression, Multi-frame, and Fragments Combined
+<li style="margin-bottom:10px;">Compression + multi-frame + fragments combined
 {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/compression3.xml"
 {{< /launch >}}
@@ -114,7 +114,7 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/demo/compression3.xml"
 ------------------------------------------------------------------------
 
 #### Photometric Interpretation
-Test multiple [photometric interpretations](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.3.html#sect_C.7.6.3.1.2) (color models, monochrome, and palette).
+Test multiple [photometric interpretations](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.3.html#sect_C.7.6.3.1.2) (color models, monochrome, and palette color).
 
 {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/color.xml"
@@ -123,53 +123,53 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/demo/color.xml"
 ------------------------------------------------------------------------
 
 #### Pixel Spacing
-Test the [pixel spacing](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.7.html#sect_10.7.1.3) with different modalities and measure the distance between pixels.
+Test the [pixel spacing](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.7.html#sect_10.7.1.3) on different modalities by measuring the distance between known landmarks. See also [Spatial Calibration](tutorials/calibration).
 
 {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/pixel-spacing.xml"
 {{< /launch >}}
 
 {{% notice info %}}
-Select the view and press 'd' to draw a line and measure the pixel spacing. Follow the procedure displayed on the image that mentions the acceptable pixel spacing.
+Select the view and press **D** (default — see [Keyboard Shortcuts](basics/shortcuts) to customize) to draw a line and measure the distance. Follow the on-image procedure that lists the acceptable pixel-spacing range.
 {{% /notice %}}
 
 ------------------------------------------------------------------------
 
 #### Pixel Padding Value
-Test the pixel [padding value ](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.5.html#sect_C.7.5.1.1.2) and its effect on the image.
+Test the [pixel padding value](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.5.html#sect_C.7.5.1.1.2) and its effect on the image.
 
 {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/pixel-padding.xml"
 {{< /launch >}}
 
 {{% notice info %}}
-Toggle padding through the "Display" right pane. When padding is enabled, some pixel values are not considered for rendering.
+Toggle padding from the **Display** right-side panel. When padding is enabled, the marked pixel values are excluded from rendering.
 {{% /notice %}}
 
 ------------------------------------------------------------------------
 
 #### Non-Square Pixels
-Test images with non-square pixels to ensure correct rendering.
+Test images with non-square pixels to verify correct stretching.
 
 {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/pixel-nonsquare.xml"
 {{< /launch >}}
 
 {{% notice info %}}
-Stretch or shrink the image according to the "pixel spacing" or "pixel aspect ratio" tag.
+The viewer should stretch or shrink the image according to the **Pixel Spacing** or **Pixel Aspect Ratio** tag.
 {{% /notice %}}
 
 ------------------------------------------------------------------------
 
 #### Overlay
-Test the rendering of [overlays](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.9.2.html) on images.
+Test the rendering of [DICOM overlays](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.9.2.html) on top of the image.
 
 {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/overlay.xml"
 {{< /launch >}}
 
 {{% notice info %}}
-Show or hide overlays from the "Display" right panel. 
+Show or hide overlays from the **Display** right-side panel.
 {{% /notice %}}
 
 ------------------------------------------------------------------------
@@ -182,7 +182,7 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/demo/mlut.xml"
 {{< /launch >}}
 
 {{% notice info %}}
-Should always render the same image.
+**Expected output**: every variant should render the same image.
 {{% /notice %}}
 
 ------------------------------------------------------------------------
@@ -195,20 +195,20 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/demo/vlut.xml"
 {{< /launch >}}
 
 {{% notice info %}}
-VOI LUT settings can be adjusted in the "Image Tool" right panel.
+VOI LUT settings can be adjusted in the **Image Tools** right-side panel.
 {{% /notice %}}
 
 ------------------------------------------------------------------------
 
 #### Combined LUT
-Test the combined effect of Modality LUT, VOI LUT and Presentation LUT on image rendering. See [Lookup Tables (LUT)](tutorials/lut).
+Test the combined effect of Modality LUT, VOI LUT, and Presentation LUT on image rendering. See [Lookup Tables (LUT)](tutorials/lut).
 
 {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/clut.xml"
 {{< /launch >}}
 
 {{% notice info %}}
-Consistently renders identical output regardless of applied LUT combinations.
+**Expected output**: identical rendering regardless of which LUT combination is applied.
 {{% /notice %}}
 
 ------------------------------------------------------------------------
@@ -221,25 +221,25 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/demo/shutter.xml"
 {{< /launch >}}
 
 {{% notice info %}}
-Show or hide shutters from the "Display" right panel.
+Show or hide shutters from the **Display** right-side panel.
 {{% /notice %}}
 
 ------------------------------------------------------------------------
 
 #### DICOM PDF
-Test the rendering of DICOM PDF files.
+Test the handling of DICOM-encapsulated PDF files.
 
 {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/pdf.xml"
 {{< /launch >}}
 
 {{% notice info %}}
-Open the default PDF viewer of the operating system.
+Opens with the default PDF viewer of the operating system.
 {{% /notice %}}
 
 ------------------------------------------------------------------------
 
-#### DICOM video
+#### DICOM Video
 Test the rendering of DICOM video files with different transfer syntaxes.
 
 {{< launch >}}
@@ -247,55 +247,55 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/demo/video.xml"
 {{< /launch >}}
 
 {{% notice info %}}
-Open the default viewer (associated with the video mime type) of the operating system. On Windows, it uses the Windows Media Player, which does not have an MPEG-2 codec installed by default. You can use VLC or any other video player.
+Opens with the default viewer associated with the video MIME type. On Windows, this is Windows Media Player, which does **not** ship with an MPEG-2 codec by default — install VLC or another video player if playback fails.
 {{% /notice %}}
 
 ------------------------------------------------------------------------
 
 #### DICOM Audio (AU)
-Test the rendering of DICOM audio files.
+Test the handling of DICOM audio files. See also [DICOM Audio Player](tutorials/dicom-audio).
 
 {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/audio.xml"
 {{< /launch >}}
 
 {{% notice info %}}
-Plays audio using the embedded Java Audio Player.
+Plays audio with the embedded Java Audio Player.
 {{% /notice %}}
 
 ------------------------------------------------------------------------
 
-#### DICOM floating point pixel data
-Test DICOM pixel data containing float or double values.
+#### DICOM Floating-Point Pixel Data
+Test DICOM pixel data carrying **float** or **double** values (used by parametric maps, AI probability maps, perfusion / diffusion maps).
 
 {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/float.xml"
 {{< /launch >}}
 
 {{% notice info %}}
-Specific dicom pixel data containing float or double. Floating values must be supported by the Window/Level tools.
+**Expected output**: the float / double pixel values are supported by the Window / Level tools.
 {{% /notice %}}
 
 ------------------------------------------------------------------------
 
 #### DICOM Structured Report (SR)
-Test the rendering of DICOM structured reports.
+Test the rendering of DICOM Structured Reports. See also [DICOM SR Viewer](tutorials/dicom-sr).
 
 {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/sr.xml"
 {{< /launch >}}
 
 {{% notice info %}}
-Structured reports formatted hierarchically using tag order. It can display links to images and associated graphics.
+Structured reports are formatted hierarchically following the SR tag order. Links to images and associated graphics are clickable.
 {{% /notice %}}
 
 ------------------------------------------------------------------------
 
 #### DICOM Presentation State (PR, GSPS)
-Test the rendering of various DICOM presentation states.
+Test the rendering of various DICOM Presentation States.
 
 {{% notice info %}}
-Click on the right icon over the image to select the Presentation State. See [How to build DICOM PR](tutorials/build-ko-pr/#presentation-state-pr-or-gsps).
+Click the icon at the top-right of the image to select a Presentation State to apply. See [How to build DICOM PR](tutorials/build-ko-pr/#presentation-state-pr-or-gsps).
 {{% /notice %}}
 
 <ul>
@@ -347,7 +347,7 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/demo/pr-commplex.xml"
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/pr-ge.xml"
 {{< /launch >}}
   {{% notice note %}}
-  This sample is produced by a GE workstation and contains some proprietary items (so not all PRs can be applied)
+  This sample is produced by a GE workstation and contains some proprietary items, so not every PR can be applied.
   {{% /notice %}}
 </li>
 </ul>
@@ -355,12 +355,12 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/demo/pr-ge.xml"
 ------------------------------------------------------------------------
 
 #### DICOM Key Object Selection (KO)
-Test the rendering of DICOM key object selections. 
+Test the rendering of DICOM Key Object Selections.
 
 {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/ko.xml"
 {{< /launch >}}
 
 {{% notice info %}}
-Click on the right icon over the image to select the Key Object Selection. See [How to build and export DICOM KO](tutorials/build-ko-pr/#key-object-selection-ko).
+Click the icon at the right of the image to select a Key Object Selection. See [How to build and export DICOM KO](tutorials/build-ko-pr/#key-object-selection-ko).
 {{% /notice %}}

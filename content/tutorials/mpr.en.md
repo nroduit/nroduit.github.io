@@ -9,7 +9,7 @@ keywords: [ "mpr", "multiplanar reconstruction", "3d cursor", "crosshair", "obli
 
 The **MPR viewer** reconstructs the two complementary anatomical planes from a volumetric acquisition: starting from the original plane (typically axial), Weasis computes the corresponding **coronal** and **sagittal** views, all kept in sync through a shared 3D crosshair. **Oblique planes** are also supported, since {{% badge title="Version" %}}4.6.0{{% /badge %}}.
 
-The MPR view inherits most of the properties and actions of the [DICOM 2D viewer](dicom-2d-viewer), with one structural difference: the crosshair tool stays active regardless of which mouse action is selected (since {{% badge title="Version" %}}4.6.0{{% /badge %}}). Open the MPR viewer from the {{< svg-inline "static/tuto/icon/mpr.svg" >}} icon in the toolbar, or by right-clicking a thumbnail in the [DICOM Explorer](dicom-explorer/).
+The MPR view inherits most of the properties and actions of the [DICOM 2D viewer](dicom-2d-viewer), with one structural difference: the crosshair tool stays active regardless of which mouse action is selected. Open the MPR viewer from the {{< svg-inline "static/tuto/icon/mpr.svg" >}} icon in the toolbar, or by right-clicking a thumbnail in the [DICOM Explorer](dicom-explorer/).
 
 {{% notice note %}}
 The menu and toolbar entries are only enabled when the series contains **at least 5 images**.
@@ -89,6 +89,8 @@ The patient orientation axes are drawn in the **top-left corner** of each MPR vi
 | **Blue arrow** | Right → Left |
 
 See [Orientation in multiplanar reconstruction (MPR)](image-orientation/#orientation-in-multiplanar-reconstruction-mpr) for the wider orientation-labeling conventions.
+
+The same axes widget is also drawn in the [3D viewer](dicom-3d-viewer) since {{% badge title="Version" %}}4.7.0{{% /badge %}}.
 
 ### Volume geometry handling {#volume-geometry}
 

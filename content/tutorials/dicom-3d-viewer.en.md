@@ -39,7 +39,7 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/3d/head-neck.xml"
 ![3D View](/tuto/view-3d.jpg?classes=shadow&width=780px)
 <br>
 
-Patient orientation axes are shown directly in the 3D view since {{% badge title="Version" %}}4.7.0{{% /badge %}}, using the same LPS color coding as the [MPR viewer orientation axes](mpr#orientation-axes).
+The same [patient orientation axes](mpr#orientation-axes) as the MPR views are drawn in the 3D view since {{% badge title="Version" %}}4.7.0{{% /badge %}}.
 
 {{% notice info %}}
 DICOM SEG segmentations linked to the series are rendered in the 3D viewer too — see [Segmentation overlay in the 3D Volume Renderer](dicom-segmentation#segmentation-overlay-in-the-3d-volume-renderer).
@@ -50,7 +50,7 @@ Actions in the toolbar:
 
 * {{< svg-inline "static/tuto/icon/loadVolume.svg" >}} **Reload volume** — fully reloads the volume from the source series.
 * {{< svg-inline "static/tuto/icon/orthographic.svg" >}} **Orthographic / Perspective projection** — toggles between orthographic projection (parallel lines preserved, no foreshortening — useful for measurements) and perspective projection (depth cues, more natural-looking view). Perspective is the default.
-* {{< svg-inline "static/tuto/icon/volumeCut.svg" >}} **MPR Crosshair Cut Mode** — opens the [cut mode](#mpr-cut) to interactively clip the rendered volume along the anatomical planes defined by the MPR crosshair.
+* {{< svg-inline "static/tuto/icon/volumeCut.svg" >}} **MPR Crosshair Cut** — opens the [cut mode](#mpr-cut) to interactively clip the rendered volume along the anatomical planes defined by the MPR crosshair.
 * {{< svg-inline "static/tuto/icon/volumeSettings.svg" >}} **3D preferences** — opens the [Preferences](#preferences).
 
 Other toolbar buttons (LUT, reset, layout, synchronize…) are documented in the sections below.
@@ -71,7 +71,7 @@ Open the 3D viewer first, then activate a cut mode from the toolbar {{< svg-inli
 
 #### Cut modes
 
-* **None** — no clipping; the full volume is rendered.
+* **No cut** — no clipping; the full volume is rendered.
 * **18 directional modes** — clip the volume in halves, quarters, or eighths relative to the MPR crosshair position, along each anatomical axis (Left / Right, Anterior / Posterior, Superior / Inferior).
 
 The crosshair overlay uses the same LPS axis color coding as the MPR viewer.
@@ -107,12 +107,12 @@ The view's right-click context menu also exposes a **Synchronize** submenu with 
 | Photometric | Preset                                       | OFF     |
 | Photometric | LUT Shape                                    | OFF     |
 | Photometric | Invert LUT                                   | OFF     |
-| Photometric | Volume LUT                                   | OFF     |
+| Photometric | LUT                                          | OFF     |
 | Rendering   | Rendering Type                               | OFF     |
 | Rendering   | Volume Opacity                               | OFF     |
 | Rendering   | Volume Shading                               | OFF     |
 | Rendering   | Orthographic projection                      | OFF     |
-| Rendering   | MPR Crosshair Cut Mode                       | OFF     |
+| Rendering   | MPR Crosshair Cut                            | OFF     |
 
 Camera-level actions are on by default because keeping multiple 3D views framed identically is the common workflow when comparing rendering types or LUT presets side by side. Photometric and rendering actions are opt-in because the typical reason to open a second 3D view is to **diverge** on those settings (e.g. one view in Composite with a soft-tissue LUT, the other in MIP).
 
@@ -129,7 +129,7 @@ Some of the options below are also accessible from the toolbar and the right-cli
 * **Window** — width of the voxel-value range mapped to the displayed value range.
 * **Level** — center of the range defined by Window.
 * **LUT Shape** — transfer function applied between input and display values: linear, sigmoid, or logarithmic. Default is linear.
-* {{< svg-inline "static/tuto/icon/lut.svg" >}} **Volume LUT** — a 3D Lookup Table that maps grayscale voxel values to color, opacity, and lighting for visualization. Picking a LUT from the toolbar or the right-click menu is usually easier: LUTs there are ordered by modality and shown with a preview.
+* {{< svg-inline "static/tuto/icon/lut.svg" >}} **LUT** — a 3D Lookup Table that maps grayscale voxel values to color, opacity, and lighting for visualization. Picking a LUT from the toolbar or the right-click menu is usually easier: LUTs there are ordered by modality and shown with a preview.
 * {{< svg-inline "static/tuto/icon/inverseLut.svg" >}} **Invert LUT** — flips the LUT direction.
 
 

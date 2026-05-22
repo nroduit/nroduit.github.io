@@ -55,7 +55,7 @@ The single-key shortcuts above are the **defaults** — most are customizable si
 {{% /notice %}}
 
 * {{< svg-inline "static/tuto/icon/layout.svg" >}} **Default layout** — change the layout of the view. [DICOM Information](tags) and [Histogram](histogram) are special layouts that update automatically as you scroll through the series.
-* **Synchronize** — apply the same settings (window/level, scroll, zoom, …) to multiple views simultaneously. Three modes are available: _None_, _Default Stack_ (the default — couples series sharing the same Frame of Reference UID) and _Default Tile_ (mosaic display of a single series). See [View Synchronization](synch-view) for the full mechanics, the per-action toggles, and the FoR color-chip system.
+* **Synchronize** — apply the same settings (window/level, scroll, zoom, …) to multiple views simultaneously. Two modes are available: _Default Stack_ (the default — couples series sharing the same Frame of Reference UID) and _Default Tile_ (mosaic display of a single series). A master **Synchronize** checkbox at the top of the drop-down turns synchronization on or off globally without changing the active mode. Each 2D view also exposes its own **auto-sync** {{< svg-inline "static/tuto/icon/synch.svg" >}} and **manual-sync** {{< svg-inline "static/tuto/icon/hand.svg" >}} overlay buttons in its bottom-right corner. See [View Synchronization](synch-view) for the full mechanics, the [per-view controls](synch-view#per-view-sync), and the FoR color-chip system.
 * {{< svg-inline "static/tuto/icon/reset.svg" >}} **Reset** — restore the default image rendering (see [Reset](#reset)). _Escape_ key to select.
 
 #### Toolbars available in the DICOM 2D viewer

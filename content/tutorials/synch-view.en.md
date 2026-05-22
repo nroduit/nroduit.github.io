@@ -42,6 +42,7 @@ The synchronization mode is controlled by the drop-down button {{< svg-inline "s
 
 The drop-down popup also contains:
 
+- A non-interactive **series-name header** at the top of the popup, identifying the currently selected view. It makes explicit that the per-action toggles and the **Apply to all views** entry below reflect this specific view's synchronization options.
 - A master **Synchronize** checkbox — turns synchronization on or off globally for the container without changing the active mode. Unchecking it makes every view fully independent.
 - **Per-action toggles** (*Scroll*, *Pan*, *Zoom*, *Rotation*, *Flip*, *Window / Level*, *Spatial unit*) mirroring the **selected view**'s configuration.
 - An **Apply to all views** entry — decorated with the selected view's FoR color chip — that propagates the configuration to every other sync-active view in the container, **regardless of FoR** (broader than the same-named entry in the per-view popup, which is restricted to the selected view's FoR group). See [Per-view sync controls](#per-view-sync) for the per-action semantics and the color-chip system.

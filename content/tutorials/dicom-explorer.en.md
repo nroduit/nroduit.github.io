@@ -48,6 +48,10 @@ You can navigate through the Patient / Study / Series / Image structure using on
 **Select related Series** — right-click a series and choose **_Select related Series_** to highlight every series in the study that shares its [Frame of Reference UID](synch-view#frame-of-reference) (the DICOM coordinate system). Open them together (right-click again → **_2D Viewer > Open_**) to get cross-coupled views that auto-synchronize and that the [3D cursor](cursor-3d) can drive.
 {{% /notice %}}
 
+{{% notice tip %}}
+**Series built inside Weasis** — the [MPR](mpr) viewer (_Build a new series from the current view_ / _Build three series from MPR views_) and the [MIP](mip/#build-a-new-series) viewer (_Build a new Series_) can add reconstructed series back into the Explorer. These newly built series join the current study and can be opened, sent, or [exported](dicom-export) like any other series.
+{{% /notice %}}
+
 #### 4D Series Sub-Series Splitting {#4d-splitting}
 
 When a DICOM series is loaded, Weasis automatically analyzes it to detect multi-phase acquisitions (e.g. cardiac phases, contrast phases, 4D volumes). If multiple phases are detected, the series is split — automatically or with a confirmation step — into separate sub-series, one per phase. Each sub-series can then be used independently in the [MPR](mpr), [MIP](mip), or [3D Volume Renderer](dicom-3d-viewer).
