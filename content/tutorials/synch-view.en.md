@@ -52,7 +52,7 @@ The synchronization mode can also be set programmatically with the command:
 ```
 dcmview2d:synch VALUE
 ```
-where `VALUE` is `Stack` or `Tile`. See [Commands](../basics/commands/#dcmview2d-synch) for details.
+where `VALUE` is `Stack` or `Tile`. See [Commands](../basics/commands/#dcmview2dsynch) for details.
 {{% /notice %}}
 
 ---

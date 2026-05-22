@@ -15,9 +15,9 @@ aliases:
 **Weasis** is a powerful, multifunctional, open-source DICOM viewer for both **standalone** and **web-based** use. From routine reading to AI-assisted review and quantitative imaging, it is engineered for seamless integration with PACS, VNA, and DICOM workflows in hospitals, multicenter research trials, and patient-facing portals.
 
 <p style="text-align:center;">
-  <a href="getting-started/download-dicom-viewer" style="display:inline-block;margin:0.4em 0.4em;padding:0.7em 1.4em;background:#0d6efd;color:#fff;border-radius:0.3rem;text-decoration:none;font-weight:600;">⬇ Download Weasis</a>
-  <a href="demo" style="display:inline-block;margin:0.4em 0.4em;padding:0.7em 1.4em;background:#198754;color:#fff;border-radius:0.3rem;text-decoration:none;font-weight:600;">▶ Try a live sample</a>
-  <a href="tutorials" style="display:inline-block;margin:0.4em 0.4em;padding:0.7em 1.4em;background:#6c757d;color:#fff;border-radius:0.3rem;text-decoration:none;font-weight:600;">📖 Read the tutorials</a>
+{{% button href="getting-started/download-dicom-viewer" style="primary" icon="download" %}}Download Weasis{{% /button %}}
+{{% button href="demo" style="green" icon="play" %}}Try a live sample{{% /button %}}
+{{% button href="tutorials" style="secondary" icon="book" %}}Read the tutorials{{% /button %}}
 </p>
 
 ### Find your way around

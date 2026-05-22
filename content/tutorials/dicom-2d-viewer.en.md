@@ -59,7 +59,7 @@ The single-key shortcuts above are the **defaults** — most are customizable si
 * {{< svg-inline "static/tuto/icon/reset.svg" >}} **Reset** — restore the default image rendering (see [Reset](#reset)). _Escape_ key to select.
 
 #### Toolbars available in the DICOM 2D viewer
-* [DICOM Import](dicom-import/#from-weasis-menu-or-toolbar)
+* [DICOM Import](dicom-import/#from-the-weasis-menu-or-toolbar)
 * [DICOM Export](dicom-export/#exporting)
 * [Screenshot](dicom-export/#export-view)
 * Viewer Main Bar (see above)

@@ -14,7 +14,7 @@ Weasis displays SEG regions as a colored overlay on the source images, with inde
 - Overlays in **MPR** and **3D Volume Renderer** views, in addition to the standard 2D viewer.
 - Simultaneous display of **all SEG files** linked to the current series, each toggleable independently.
 - Support for the **FRACTIONAL** (probability / occupancy maps) and **LABELMAP** (multi-segment files used by tools like *highdicom*) segmentation types produced by modern AI frameworks.
-- The same smooth fractional overlay reused for **RT Dose** isodose rendering — see the [RT tutorial](../dicom-rt).
+- The same smooth fractional overlay reused for **RT Dose** isodose rendering — see the [RT tutorial](dicom-rt).
 
 ### How to display DICOM SEG in the 2D viewer
 To display the SEG regions as an overlay on the image, follow these steps (see the image below):
@@ -72,7 +72,7 @@ Some AI frameworks export FRACTIONAL segmentations without an explicit reference
 
 ### Segmentation overlay in MPR
 
-When a DICOM SEG is linked to the current series, the overlay is automatically available in the [Multi-Planar Reconstruction (MPR)](../mpr) view. The same Segmentation panel controls visibility and opacity for all three planes (axial, coronal, sagittal — plus any oblique cut) at once.
+When a DICOM SEG is linked to the current series, the overlay is automatically available in the [Multi-Planar Reconstruction (MPR)](mpr) view. The same Segmentation panel controls visibility and opacity for all three planes (axial, coronal, sagittal — plus any oblique cut) at once.
 
 For MPR, Weasis additionally has to reslice the SEG along the new planes. This extra step runs in the background; the overlay appears on every plane as soon as it completes.
 

@@ -74,7 +74,7 @@ Without monitor calibration, the {{< svg-inline "static/tuto/icon/zoomRealWorld.
 
 #### Verifying the result
 
-Open any image whose dimensions you know — a calibration phantom, a CR/DX study with a visible ruler, or a printed test pattern displayed full screen — and switch to {{< svg-inline "static/tuto/icon/zoomRealWorld.svg" >}} **Real-world Size**. Use the [length measurement tool](../draw-measure) and compare with the physical ruler — the values should match within a fraction of a millimeter.
+Open any image whose dimensions you know — a calibration phantom, a CR/DX study with a visible ruler, or a printed test pattern displayed full screen — and switch to {{< svg-inline "static/tuto/icon/zoomRealWorld.svg" >}} **Real-world Size**. Use the [length measurement tool](draw-measure) and compare with the physical ruler — the values should match within a fraction of a millimeter.
 
 {{% notice warning %}}
 If **Real-world Size** still looks wrong after monitor calibration, check that the image itself has valid **Pixel Spacing** (or **Imager Pixel Spacing** for projection radiography). Some secondary captures and screenshots ship without spatial information and cannot be displayed at real size — see [Spatial Calibration](calibration) for the manual override.
