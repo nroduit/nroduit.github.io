@@ -7,23 +7,33 @@ keywords: [ "image calibration", "spatial calibration", "dicom viewer", "free di
 
 ## <center>How to change the spatial calibration</center>
 
-When the image does not contain a default spatial calibration and it contains a ruler (or other element allowing to determine a known distance), then you can apply a calibration manually:
+**Spatial calibration** is the link between a pixel and a real-world length. With a valid calibration, every [measurement](draw-measure) (distance, area, angle) reflects actual millimeters or centimeters, and the [real-world zoom](zoom/#real-world-size-display) can display images at the same size as the original objects.
 
-1. Select a line in the *Measurement Tool*
-2. Draw a line on an object with a known distance
-3. Right-click on the selected line and enter the distance on the *Manual Calibration* window
+For DICOM images, the calibration is normally derived from the standard attributes (_Pixel Spacing_ for cross-sectional acquisitions, _Imager Pixel Spacing_ for projection radiography). The 2D viewer indicates how the calibration was obtained — see the [calibration type label](dicom-2d-viewer/#open-the-2d-viewer) shown above the ruler.
+
+When no calibration is available — or when you want to override an existing one — you can apply a **manual calibration** as long as the image contains a reference object of known size (a ruler, a fiducial, a calibration phantom, or any landmark whose physical length you know).
+
+### Manual calibration procedure
+
+1. Pick the **Line** tool from the [Measurement tools](draw-measure/#measurement-tools).
+2. Draw a line along an object whose real-world length you know.
+3. **Right-click** the line and choose **Manual Calibration**.
+4. Enter the known distance (with its unit) in the dialog and confirm.
 
 ![Calibration](/tuto/spatial-calibration.jpg?classes=shadow&width=700px)
 <br>
+
 ![Apply Calibration](/tuto/apply-calibration.png?classes=shadow)
 <br>
+
 {{% notice note %}}
-The calibration can be applied only to the current image or to all the images belonging to the series.
+The Manual Calibration dialog can apply the new scale either to the **current image only** or to **every image in the series**. Pick the right scope for your dataset (a series with consistent geometry is normally calibrated as a whole).
 {{% /notice %}}
 
 {{% notice info %}}
-Once calibrated, all measuring tools will produce results according to the calibration, and the [real-world zoom](zoom/#real-world-size-display) will display the images at the same size of the real objects. Currently, the calibration is not saved in the DICOM file.
+Once the image is calibrated, all measurement tools report values in the chosen unit and the [real-world zoom](zoom/#real-world-size-display) renders the image at its physical size. The manual calibration is kept in memory for the current session but is **not currently written back into the DICOM file**.
 {{% /notice %}}
 
-### Changing spacial calibration with Weasis 1.1.3
+### Changing spatial calibration with Weasis 1.1.3
+The procedure shown below was recorded on an older version of Weasis; the underlying workflow is unchanged.
 {{< youtube id="v8CgcpYT1r8" >}}

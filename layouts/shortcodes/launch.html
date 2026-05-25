@@ -2,9 +2,10 @@
 {{- $cmd := trim .Inner "\n" }}
 {{- $style := .Get "style" | default "transparent" }}
 {{- $title := .Get "title" | default "Launch" }}
-<span class="btn cstyle {{ $style }}">
-  <a href="weasis://?{{ urlquery $cmd }}" class="no-lightbox">
-    <i class="fa-fw fas fa-play"></i>
-    {{ $title }}
-  </a>
-</span>
+{{- partial "shortcodes/button.html" (dict
+  "page"  .Page
+  "href"  (printf "weasis://?%s" (urlquery $cmd))
+  "title" $title
+  "icon"  "play"
+  "style" $style
+) -}}

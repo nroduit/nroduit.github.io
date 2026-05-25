@@ -2,47 +2,56 @@
 title: Print
 weight: 350
 description: How to print images
-keywords: [ "print", "view", "dicom viewer" ]
+keywords: [ "print", "dicom print", "film printer", "view", "dicom viewer" ]
 ---
 
+## <center>Printing images {{< svg-inline "static/tuto/icon/print.svg" >}}</center>
 
-## <center>Build the image selection to print {{< svg-inline "static/tuto/icon/print.svg" >}}</center>
+Weasis can print images two ways:
 
-The image selection to print must be prepared before calling the print function. If you need to print more than one image per page, choose a layout from the dropdown button in the toolbar (1).
+- **Standard printer** — sends a regular page to any printer configured on your operating system (laser, inkjet, PDF writer, …). Used for paper reports, slide handouts, or PDF export.
+- **DICOM Print** — sends the images directly to a **DICOM film printer** over the network, using the DICOM Print Management protocol. Used in radiology departments that still print films for clinical use.
+
+Both modes operate on the **current layout** — the page is built from the views currently visible in the active tab. The first step is therefore to prepare the layout exactly the way you want it on paper or film.
+
+### Preparing the image selection
+
+If you need more than one image per page, pick a layout from the layouts dropdown in the toolbar (1).
 
 {{% notice note %}}
-The layout list is built dynamically according to the window size. So changing the window size ratio will provide other layouts. For instance, with a panoramic screen, you can choose a horizontal layout and then print with a landscape orientation.
+The layout list is computed dynamically from the current window size — resizing or maximizing the Weasis window changes the layouts on offer. On a panoramic monitor you can, for example, pick a wide horizontal layout and then print in **landscape** orientation.
 {{% /notice %}}
 
 ![Print Layout](/tuto/print/layout.jpg?height=400&classes=shadow)
 
-To fill the layout with images you can change the synchronized mode of series (2):
+To fill the layout with images, choose a [synchronization mode](synch-view) (2):
 
-* with *Default Tile* selected, all the views will be filled with the same series. Each view has a new image of the series stack (n + 1).
-* with *Default Stack* selected, drag and drop a series into each view and select independently which image you want to display.
+- **Default Tile** — every view is filled automatically with consecutive images of the **same series** (the first view shows image *n*, the next shows *n+1*, and so on).
+- **Default Stack** — drag and drop a series into each view independently, then scroll each view to the image you want printed.
 
-## Select a print mode
+## Choosing a print mode
 
 ### Standard Printer {{< svg-inline "static/tuto/icon/print.svg" >}} {#standard-printer}
-From the main menu, open _File > Print > Print 2D viewer layout (P)_.
+Open **_File > Print > Print 2D viewer layout (P)_** from the main menu.
 
 ![standard](/tuto/print/standard.png?classes=shadow)
 
-The meaning of the standard print parameters:
+Print options:
 
-* *Image position:* the position of the image in the print area.
-* *Image DPI:* the print resolution in dot per inch (Default value is 150). Higher DPI means higher resolution.
-* *Print image with annotations:* Allows printing the annotations defined in the [Display]() panel.
-* *Print only the selected view:* When this option is checked, only the selected view is printed (view with an orange border). Otherwise, all the views of the layout are printed.
+* **Image position** — where each image is placed inside its page cell (centered, fit, etc.).
+* **Image DPI** — print resolution in dots per inch (default: **150**). Higher DPI means finer detail and a larger file sent to the printer.
+* **Print image with annotations** — when checked, the annotations and graphic objects defined in the [Display panel](dicom-2d-viewer/#display) are printed on top of the image.
+* **Print only the selected view** — when checked, only the view with the orange focus border is printed. When unchecked, every view of the current layout is printed.
 
 
-### DICOM Print
-From the main menu, open _File > Print > DICOM Print_.
+### DICOM Print {{< svg-inline "static/tuto/icon/print.svg" >}}
+Open **_File > Print > DICOM Print_** from the main menu.
 
-In the DICOM Print dialog, you can manage several configurations. For meaning of the options, you can refer to the above parameters and <a target="_blank" href="https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.13.3.html">the DICOM print pages</a>.
+The DICOM Print dialog lets you manage several DICOM printer configurations (each carrying its own AE title, host, port, and film parameters). The print parameters mirror the Standard Printer ones above — for the protocol-level specifics, see the [DICOM Print Management Service](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.13.3.html) chapter of the standard.
 
 ![DICOM](/tuto/print/dicom.png?classes=shadow)
 <br>
+
 {{% notice note %}}
-The DICOM printer configurations can be distributed at the server side for all the clients, see [preferences](../basics/customize/preferences/#how-to-add-dicom-nodes-or-dicom-printers-at-the-server-side).
+DICOM printer configurations can be deployed centrally so every client gets the same printer list — see [How to add DICOM nodes or DICOM printers at the server side](../basics/customize/preferences/#how-to-add-dicom-nodes-or-dicom-printers-at-the-server-side).
 {{% /notice %}}

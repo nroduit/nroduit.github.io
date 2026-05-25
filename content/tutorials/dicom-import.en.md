@@ -7,79 +7,103 @@ keywords: [ "dicom import", "dicom viewer", "free dicom viewer", "open source di
 
 ## <center>How to import DICOM files</center>
 
-Weasis can open DICOM files from various ways and sources: drag and drop, local device, DICOM ZIP, DICOM CD/DVD, DICOM Query/Retrieve, and from commands locally or remotely.
+Weasis can ingest DICOM data from many sources:
+
+- **Drag and drop** files, folders, or DICOM ZIP archives from the system file explorer.
+- **Double-click** a DICOM file in the system file explorer (file association).
+- **Local Device** — browse files, folders, or DICOM ZIP archives from inside Weasis.
+- **DICOMDIR** — load a DICOM CD/DVD or any folder that contains a DICOMDIR index.
+- **DICOM Query/Retrieve** — query a remote PACS over classic DICOM (C-FIND / C-MOVE / C-GET) or [DICOMweb](dicomweb-config) (QIDO / WADO-RS) and retrieve selected studies.
+- **Commands** — local or remote commands launching Weasis with a target series (see the [Weasis Protocol](../getting-started/weasis-protocol/#examples-to-load-images)).
+
+To send data the other way — out of Weasis to a file, a PACS node, or a CD/DVD — see [DICOM Export](dicom-export).
 
 {{% notice note %}}
-An popup error message is displayed when DICOM files cannot be read (from v4.3.0) or when a network error occurs. In the latter case a message asking to download again the missing files.
+Whatever the import method, a popup may appear at the end of an import in any of these cases:
+
+* **Error** — one or more DICOM files cannot be read because they are corrupted or malformed (since {{% badge title="Version" %}}4.3.0{{% /badge %}}).
+* **Information** — since {{% badge title="Version" %}}4.7.0{{% /badge %}}, one or more valid DICOM files were skipped because their SOP Class has no viewer available (e.g. Raw Data Storage). These files are not corrupted, they are simply not displayable. The notification can be silenced with the **Don't show this again** checkbox in the dialog, or from the DICOM Explorer preferences (**Notify when DICOM files with an unsupported SOP Class are skipped**).
+* **Network error** — when a network error occurs during a retrieve (DICOMweb or WADO), a message offers to download the missing files again.
 {{% /notice %}}
 
 ### From the system file explorer
 
 #### Drag and drop
-Files or folders selected from the system file explorer can be opened by dragging and dropping into the central area of Weasis.
+Files, folders, or DICOM ZIP archives selected in the system file explorer can be opened by dragging and dropping them into the central area of Weasis. The accepted drop target depends on the central panel state:
 
-* Empty central panel: Any files that ca be open by one of the viewers (e.g., standard images such as TIFF, PNG, JPEG...)
-* DICOM Explorer and DICOM viewers (SR, AU, MPR, 2D and 3D) in the central panel: Only DICOM files. Opens the default viewer according to the files.
+* **Empty central panel** — any file a Weasis viewer can open, including standard images such as TIFF, PNG, and JPEG.
+* **DICOM Explorer or any DICOM viewer** (2D, MPR, 3D, SR, AU…) — only DICOM files and DICOM ZIP archives. Weasis opens each series in the most appropriate viewer.
 
 #### File association
-Dicom files can be opened by double-clicking them from the system file explorer.
+DICOM files can be opened by double-clicking them from the system file explorer.
+
 {{% notice note %}}
-On Windows only the files with the extension ".dcm" are associated with Weasis. With other systems DICOM files without extension are associated with Weasis.
+On Windows, only files with the `.dcm` extension are associated with Weasis. On other operating systems, DICOM files without an extension are also associated with Weasis.
 {{% /notice %}}
 
-### From Weasis menu or toolbar
-From the main menu, open _File > Import > DICOM_ or from the first import button in the toolbar. ![Open toolbar](/tuto/dicom-open-icon.png?classes=shadow)
+### From the Weasis menu or toolbar
 
-In order to import DICOM CD/ DVD, go to the main menu, open _File > Import > DICOM CD_ or from the second import button in the toolbar.
+Two import entry points sit next to each other in the toolbar (and under **_File > Import_** in the main menu):
+
+![Open toolbar](/tuto/dicom-open-icon.png?classes=shadow)
+
+- The **first** button opens the standard DICOM import dialog described below (**_File > Import > DICOM_**).
+- The **second** button is a shortcut for the DICOMDIR / CD-ROM workflow (**_File > Import > DICOM CD_**).
 
 #### Local Device
-  * Files and/or folders: list of selected items or unique path
-  * Search recursively: when this option is activated the import takes into account the subdirectories
-  * Open in new tab: behavior to automatically open the images of a patient when loading DICOM files
+Since {{% badge title="Version" %}}4.7.0{{% /badge %}}, DICOM ZIP is also accepted in the local-import workflow:
 
-#### DICOM ZIP
-  * Select: browse a DICOM zip file. When the archive file is encrypted, a password prompt is displayed.
-  * Open in new tab: behavior to automatically open the images of a patient when loading DICOM files
+* **Files** — browse and select one or more DICOM files or DICOM ZIP archives via the file chooser. If a ZIP archive is password-protected, a password prompt is shown.
+* **Folders** — browse and select one or more folders via the file chooser. Folders containing DICOM ZIP archives are also supported.
+* **Search recursively** — when enabled, the import also descends into subdirectories.
 
 #### DICOMDIR
-It may be from a DICOM CD/DVD or a folder containing a DICOMDIR
-  * Path: browse a folder containing a DICOMDIR
-  * Detect CD-ROM: try to load a DICOM CD/DVD
-  * Copy images into the local temporary directory: useful for slow reading devices like CD-ROM
+Loads a DICOMDIR-based study from a CD/DVD or any folder that already contains a `DICOMDIR` index file:
+
+* **Path** — browse to a folder containing a DICOMDIR.
+* **Detect CD-ROM** — try to load a DICOM CD/DVD directly.
+* **Copy images into the local temporary directory** — useful for slow reading devices such as CD-ROM drives.
 
 #### DICOM Query/Retrieve
-  * On DICOM Source tab:
-    ![DICOM import archive](/tuto/dicom-import-archive.png?classes=shadow)
-    <br>
-    * Archive: select the archive to query
-      * With DICOM nodes: classic DIMSE C-Find with C-Move, C-Get or WADO-URI for retrieving DICOM files
-      * With [DICOMWeb nodes](dicomweb-config): QIDO and WADO-RS for retrieving DICOM files (no other options are required)
-    * Retrieve (only with DICOM archive): the protocol to retrieve the images
-      * C-MOVE: the classic DIMSE protocol (accepts all sop classes, not recommended for WEB)
-      * C-GET: transfer syntaxes are negotiated by each sop class according to a configuration file
-      * WADO-URI: required a WADO server (C-Find + WADO retrieve)
-    * Calling Node (only with DICOM archive): select the adapted calling DICOM node
-    * More options: allows you to open the preferences to configure the DICOM nodes
-  * On Search Criteria tab:
-  ![Thumbnails](/tuto/dicom-import-search.png?classes=shadow&width=700px)
-  <br> 
-    1. Select a pre-registered item (bottom right of the _Search Criteria_ panel) or Fill the search criteria. Criteria can be saved and reused later, since {{% badge title="Version" %}}4.1.0{{% /badge %}} the item selected in the combo box is automatically applied the next time this window is opened (the default value is _Empty_).
-    2. Adjust the limit to the maximum number of exams in the response. Set the limit to 0 to avoid this constraint. For DICOMWeb the limit is the number of elements on a page, and you can go to the next page with the spinner buttons.
-    3. Click on Search
-    4. Select the exams you want to import
-    5. Start importing and close the window
+Queries a remote PACS and retrieves selected studies into the DICOM Explorer. The dialog has two tabs — **DICOM Source** and **Search Criteria**.
+
+##### DICOM Source tab
+![DICOM import archive](/tuto/dicom-import-archive.png?classes=shadow)
+<br>
+
+* **Archive** — pick the remote node to query:
+  * **DICOM nodes** — classic DIMSE (C-FIND for the query, plus C-MOVE, C-GET, or WADO-URI for retrieval).
+  * **[DICOMweb nodes](dicomweb-config)** — QIDO for the query, WADO-RS for the retrieval (no additional options needed).
+* **Retrieve** (DICOM archives only) — the protocol used to transfer the images:
+  * **C-MOVE** — the classic DIMSE retrieve. Accepts all SOP Classes but is not recommended over the web.
+  * **C-GET** — transfer syntaxes are negotiated per SOP Class through a configuration file.
+  * **WADO-URI** — C-FIND for the query plus WADO-URI retrieve; requires a WADO server.
+* **Calling Node** (DICOM archives only) — pick the calling DICOM node that matches the remote AE.
+* **More options** — opens the preferences so you can add or edit DICOM nodes.
+
+##### Search Criteria tab
+![Thumbnails](/tuto/dicom-import-search.png?classes=shadow&width=700px)
+<br>
+
+1. Pick a pre-registered search (combo box at the bottom-right of the **Search Criteria** panel) or fill in your own criteria. Saved criteria can be reused later; since {{% badge title="Version" %}}4.1.0{{% /badge %}}, the item selected in the combo box is re-applied automatically the next time the window opens (the default is **Empty**).
+2. Adjust the **limit** — the maximum number of studies returned by the query. Set the limit to **0** to remove the cap. For DICOMweb, the limit is the page size; use the spinner buttons to move between pages.
+3. Click **Search**.
+4. Select the studies you want to import.
+5. Click **Import** and close the window.
 
 {{% notice note %}}
-The progression of downloaded images for a series and the ability to pause the download of a series is only possible with [DICOMWeb nodes](dicomweb-config) and with the combination (DICOM C-FIND + WADO-URI).
-![Download Manager](/images%2FDownloadManager.jpg?width=150px)
-Resuming the download of a series by clicking on the green play button or from the contextual menu.
+Tracking the download progress and pausing the download of a series is supported only with [DICOMweb nodes](dicomweb-config) and with the combination **DICOM C-FIND + WADO-URI**.
+
+![Download Manager](/images/DownloadManager.jpg?width=150px)
+
+A paused series can be resumed by clicking the green play button or via its right-click menu.
 {{% /notice %}}
 
 {{% notice tip %}}
-When a query is too long, try to click on the *Clear* button in *Search Criteria* to cancel the request.
+If a query runs for too long, click **Clear** in the **Search Criteria** panel to cancel the request.
 
-With a DICOMWeb node, a login from a web browser can be required (e.g., login to your Google account). If something goes wrong, Weasis may freeze for at least 1 minute waiting for the authorization code.
+When using a DICOMweb node, an external login may be required (for instance signing in to a Google account in your web browser). If the login fails, Weasis can freeze for up to a minute waiting for the authorization code.
 {{% /notice %}}
 
 ### From commands
-See this [page](../getting-started/weasis-protocol/#examples-to-load-images)
+Weasis can be started — or asked to load a specific study — through commands launched locally or remotely. See [Examples to load images](../getting-started/weasis-protocol/#examples-to-load-images) on the Weasis Protocol page.

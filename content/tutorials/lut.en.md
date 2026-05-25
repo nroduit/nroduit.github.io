@@ -7,33 +7,35 @@ keywords: [ "Lookup Tables", "LUT", "VOI LUT",  "Modality LUT", "Presentation LU
 
 ## <center>How to handle Color and DICOM LUTs</center>
 
-A DICOM file can contain one or more LUTs. The [DICOM pipeline for rendering images](https://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_N.2.html) contains a number of stages where the LUTs are applied. There are 4 types of Lookup Tables (LUTs) in DICOM:
-1. The [Modality LUT](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.html) is used to transform the pixel values into the values of the modality (e.g., Hounsfield for CT).
-2. The [Values of Interest (VOI) LUT](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.2.html) is used to transform the modality values into a visible range that enhances specific anatomical structures or pathological conditions.
-3. The [Presentation LUT](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.6.html) is used to transform the intensity values into P-Values (presentation values are device-independent values related to human perception).
-4. The [Palette Color LUT](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.9.html) is used to transform the intensity gray values into color values with a pseudo color LUT.
+A **Lookup Table (LUT)** maps each input pixel value to an output value used somewhere along the rendering pipeline — turning raw acquisition numbers into the contrast, the color, and the brightness you actually see on screen. The [DICOM rendering pipeline](https://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_N.2.html) chains four kinds of LUT, each applied at a different stage:
+
+1. **[Modality LUT](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.html)** — converts raw pixel values into physical modality values (e.g. Hounsfield units for CT).
+2. **[Values of Interest (VOI) LUT](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.2.html)** — maps the modality values into a visible intensity range, enhancing specific anatomical structures or pathological conditions (this is what the **Window / Level** controls).
+3. **[Presentation LUT](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.6.html)** — converts the intensity values into **P-Values**: device-independent values calibrated to human perception (used to render consistently across monitors).
+4. **[Palette Color LUT](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.9.html)** — replaces grayscale intensity values with colors, producing a pseudo-color rendering.
 
 {{% notice note %}}
-The Modality LUT and the Palette Color LUT are applied automatically when they exist. There are no options in the User Interface to modify them.
+The **Modality LUT** and the **Palette Color LUT** are applied automatically when present in the DICOM file — there are no controls in the user interface to override them.
 {{% /notice %}}
 
-### Windowing and Rendering
-The Windowing and Rendering is a panel in the [_Image Tools_ of the DICOM 2D viewer](dicom-2d-viewer/#image-tools). Some of the options described below are also available in the Lookup Table toolbar, in the main menu and in contextual menus.
+### Windowing and Rendering {#windowing-and-rendering}
 
-* _Window:_ The range of pixel intensity values. The value can be changed when Window/Level is selected in [mouse actions](dicom-2d-viewer/#toolbars) or by using the slider.
-* _Level:_ The center of the range defined by Window. The value can be changed when Window/Level is selected in [mouse actions](dicom-2d-viewer/#toolbars) or by using the slider.
-* {{< svg-inline "static/tuto/icon/winLevel.svg" >}} _Preset:_ The possible items are ordered according to the following list:
-  * Empty item when the Window and level values are changed manually from slider or mouse actions. 
-  * Window and level values or VOI LUT data from the DICOM file (ending with _[DICOM]_). The default value is the first _[DICOM]_ item if exists, otherwise _Auto Level [Image]_.
-  * _Auto Level [Image]_  (always visible) which is the Window and level related to the full range of the pixel values
-  * Specific values of Window and level for a modality type  (e.g. Lung for CT)
-* _LUT Shape:_ The mapping ([transfer function](https://dicom.nema.org/medical/dicom/current/output/chtml/part17/chapter_Y.html)) between the input values and the display values can be linear, sigmoid and logarithmic. Default value is linear.
-* {{< svg-inline "static/tuto/icon/lut.svg" >}} _LUT:_ A pseudo color LUT used to map the grayscale values to color. _Default (image)_ is the original image color model. Choosing a LUT from the toolbar or the menus is easier because the LUTs are displayed with a preview.
-* {{< svg-inline "static/tuto/icon/inverseLut.svg" >}} allows you to invert the LUT.
-* _Filter:_ The 2D filter is applied to the image before the LUT. The filter can be used to enhance the image quality or to highlight specific structures. The default value is _None_.
+**Windowing and Rendering** is a panel in [Image Tools](dicom-2d-viewer/#image-tools) of the 2D viewer, exposing the user-controllable parts of the LUT pipeline. The same controls are also accessible from the **Lookup Table** toolbar, the main menu, and the right-click menu.
+
+* **Window** — width of the input range mapped to the displayed values. Change it via the slider, or by selecting **Window / Level** in the [mouse actions](dicom-2d-viewer/#toolbars).
+* **Level** — center of the range defined by **Window**. Same input options as above.
+* {{< svg-inline "static/tuto/icon/winLevel.svg" >}} **Preset** — picks a predefined Window / Level pair. The dropdown is ordered as:
+  * An empty entry, shown while Window and Level are being adjusted manually (slider or mouse drag).
+  * Window / Level pairs or VOI LUT data carried by the DICOM file (suffixed with **_[DICOM]_**). The default selection is the first **_[DICOM]_** entry when present, otherwise **_Auto Level [Image]_**.
+  * **_Auto Level [Image]_** (always shown) — Window and Level computed from the full pixel-value range of the current image.
+  * Modality-specific presets (e.g. _Lung_, _Bone_, _Soft Tissue_ for CT).
+* **LUT Shape** — the [transfer function](https://dicom.nema.org/medical/dicom/current/output/chtml/part17/chapter_Y.html) used between input and display: **linear** (default), **sigmoid**, or **logarithmic**.
+* {{< svg-inline "static/tuto/icon/lut.svg" >}} **LUT** — pseudo-color LUT applied on top of the grayscale image. **_Default (image)_** keeps the original image color model. Picking a LUT from the toolbar or the menus is usually easier because each entry is shown with a preview.
+* {{< svg-inline "static/tuto/icon/inverseLut.svg" >}} **Invert LUT** — flips the LUT direction (dark↔bright, or reversed color mapping).
+* **Filter** — 2D image filter applied **before** the LUT, useful for enhancing image quality or highlighting specific structures. Default: **None**.
 
 {{% notice tip %}}
-In order to display the LUT on the image, select it from the [_Display_ panel](dicom-2d-viewer/#display) on the right. The LUT colors are associated with values that correspond to the Modality LUT values (e.g., Hounsfield values for CT) or to the pixel values for some imaging types.
+To overlay the active LUT bar on the image, enable it from the [Display panel](dicom-2d-viewer/#display) on the right. The values labeled on the bar correspond to the **Modality LUT values** (e.g. Hounsfield units for CT) when one is defined, or to raw pixel values otherwise.
 
-Another way to see the windowing transformation is to display the [histogram](histogram).
+To inspect how the current Window / Level reshapes the pixel distribution, switch to the [Histogram](histogram) layout.
 {{% /notice %}}

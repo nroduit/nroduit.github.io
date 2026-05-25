@@ -2,73 +2,132 @@
 title: MPR Viewer
 weight: 50
 description: How to use Multiplanar reconstruction (MPR) and 3D cursor (crosshair)
-keywords: [ "mpr", "multiplanar reconstruction", "3d cursor", "open source dicom viewer" ]
+keywords: [ "mpr", "multiplanar reconstruction", "3d cursor", "crosshair", "oblique", "open source dicom viewer" ]
 ---
 
-## <center>Multiplanar reconstruction (MPR) {{< svg-inline "static/tuto/icon/mpr.svg" >}}</center>
+## <center>Multi-planar reconstruction (MPR) {{< svg-inline "static/tuto/icon/mpr.svg" >}}</center>
 
-The multiplanar reconstruction (MPR) allows you to create, from the original plane (usually axial), images in the two other planes of the Euclidean space. Only planes along the 3 axes (x,y,z) can be displayed. The oblique plane can be obtained only from {{% badge title="Version" %}}4.6.0{{% /badge %}}.
+The **MPR viewer** reconstructs the two complementary anatomical planes from a volumetric acquisition: starting from the original plane (typically axial), Weasis computes the corresponding **coronal** and **sagittal** views, all kept in sync through a shared 3D crosshair. **Oblique planes** are also supported, since {{% badge title="Version" %}}4.6.0{{% /badge %}}.
 
-The MPR view inherits most properties and actions of the [DICOM 2D viewer](dicom-2d-viewer), except for the crosshair tool, which remains active regardless of the selected action (from {{% badge title="Version" %}}4.6.0{{% /badge %}}). You can open the MPR view by clicking the {{< svg-inline "static/tuto/icon/mpr.svg" >}} icon in the toolbar or by right-clicking a thumbnail in the [DICOM explorer](dicom-explorer/).
+The MPR view inherits most of the properties and actions of the [DICOM 2D viewer](dicom-2d-viewer), with one structural difference: the crosshair tool stays active regardless of which mouse action is selected. Open the MPR viewer from the {{< svg-inline "static/tuto/icon/mpr.svg" >}} icon in the toolbar, or by right-clicking a thumbnail in the [DICOM Explorer](dicom-explorer/).
 
 {{% notice note %}}
-The menu and the toolbar button will only be active if the series contains at least **5 images**.
+The menu and toolbar entries are only enabled when the series contains **at least 5 images**.
 {{% /notice %}}
 
 {{% notice tip %}}
-If the series is a **multi-phase 4D acquisition** (e.g., a cardiac CT with several temporal phases), Weasis will automatically split it into individual phase sub-series when 2–7 phases are detected. For series with 8 or more phases, a confirmation dialog is shown first. Open any resulting phase sub-series to use it in the MPR viewer. See [4D Series Sub-Series Splitting](dicom-explorer#4d-splitting) for details.
+If the series is a **multi-phase 4D acquisition** (e.g. a cardiac CT with several temporal phases), Weasis automatically splits it into individual phase sub-series when 2–7 phases are detected. For series with 8 or more phases, a confirmation dialog is shown first. Open any resulting phase sub-series to reconstruct it in the MPR viewer — see [4D Series Sub-Series Splitting](dicom-explorer#4d-splitting).
 {{% /notice %}}
 
-The crosshair actions in the MPR are synchronized with the other views and include:
-- {{< svg-inline "static/tuto/icon/mpr-move.svg" >}} **Move**: Move the cursor in 3D space by dragging the center of the crosshair.
-- {{< svg-inline "static/tuto/icon/mpr-hand.svg" >}} **Move Axis**: Adjust the crosshair along the axes by selecting and dragging one of the lines.
-- {{< svg-inline "static/tuto/icon/mpr-rotate.svg" >}} **Rotate**: Rotate the crosshair around its center by dragging the points along the axes.
+### Crosshair actions
 
-By default, zoom and window/level are also synchronized between the three views. The synchronization of these actions can be deactivated by setting the synchronization drop-down button {{< svg-inline "static/tuto/icon/synch.svg" >}} (on the right of the layout button) to **None**.
-The MRR views can be displayed in different layouts {{< svg-inline "static/tuto/icon/layout.svg" >}}.
+The crosshair stays synchronized across the three MPR planes (and with any other [FoR-coupled view](synch-view#frame-of-reference)). Three actions are available on its handles:
 
-To configure the MPR view, you can access settings by clicking the settings icon {{< svg-inline "static/tuto/icon/viewSettings.svg" >}} in the top-right corner. The available options include:
-- **Center**: Center the crosshair in the view.
-- **Show Center of Crosshair**: Show or hide the center point of the crosshair.
-- **Show Crosshair**: Show or hide the crosshair lines. When hidden, the crosshair actions become inactive.
-- **MIP Thickness**: Modify the thickness of the MIP in terms of pixel extension. You can also adjust it using _Alt + mouse scroll_ on an axis. Please note that the change in thickness may be delayed, as the MIP is computed in the background and doesn’t utilize 3D acceleration.
-- **MIP Type**:
-  - **None**: No MIP applied.
-  - **Min**: Minimum intensity projection.
-  - **Mean**: Average intensity projection.
-  - **Max**: Maximum intensity projection.
+- {{< svg-inline "static/tuto/icon/mpr-move.svg" >}} **Move** — translate the cursor in 3D space by dragging the **center** of the crosshair.
+- {{< svg-inline "static/tuto/icon/mpr-hand.svg" >}} **Move axis** — slide the crosshair along one axis by selecting and dragging that **line**.
+- {{< svg-inline "static/tuto/icon/mpr-rotate.svg" >}} **Rotate** — rotate the crosshair around its center by dragging one of the **end points** along the axes.
+
+### Synchronization between MPR planes
+
+The MPR viewer uses **different sync defaults from the 2D viewer**: in addition to the structural crosshair coupling, **Scroll, Zoom, and Window / Level are ON by default** between the three planes. The remaining per-action propagations (_Pan_, _Rotation_, _Flip_, _Spatial unit_) are off by default and can be enabled explicitly. The options live in two places:
+
+- The global **Synchronize** drop-down popup {{< svg-inline "static/tuto/icon/synch.svg" >}} (next to the layout button) — master on/off plus per-action toggles for the whole container.
+- The **Synchronize** submenu in each MPR view's settings popup — for per-view fine-tuning.
+
+See [View Synchronization in MPR](synch-view#mpr-sync) for the full mechanics.
+
+The MPR views can be reorganized into different layouts via the {{< svg-inline "static/tuto/icon/layout.svg" >}} layout button.
+
+### View settings
+
+Open the per-view settings popup with the {{< svg-inline "static/tuto/icon/viewSettings.svg" >}} icon in the **top-right corner** of any MPR view:
+
+- **Center** — recenter the crosshair in the view.
+- **Show Center of Crosshair** — show or hide the center point.
+- **Show Crosshair** — show or hide the crosshair lines. When hidden, the crosshair actions are inactive.
+- **MIP Thickness** — slab thickness for the active MIP projection, expressed in slices in the cross-axis direction. Can also be adjusted with **Alt + mouse scroll** on an axis. Note: the projection may take a moment to refresh, since MIP in MPR is computed in the background and does not use 3D acceleration.
+- **MIP Type** — projection mode applied to the slab:
+  - **None** — no MIP applied.
+  - **Min** — Minimum intensity projection.
+  - **Mean** — Mean intensity projection.
+  - **Max** — Maximum intensity projection.
+- **Build a new series from the current view** / **Build three series from MPR views** — save the reconstructed MPR slices back as new DICOM series (since {{% badge title="Version" %}}4.7.0{{% /badge %}}). The first option exports the **current plane only**; the second (in the **All views** submenu) exports the **three planes**, each as a separate series. Background borders are cropped uniformly across every slice so the exported series keeps a constant image size. The crosshair is restored to its initial position when the build completes.
+- **Synchronize** — per-view sync options: independent toggles for _Scroll_, _Pan_, _Zoom_, _Rotation_, _Flip_, _Window / Level_, _Spatial unit_, plus an **Apply to all views** entry that propagates the current selection to every other MPR view (see [View Synchronization in MPR](synch-view#mpr-sync-options)).
 
 {{% notice note %}}
-Most MPR settings can also be accessed using shortcuts. Refer to the [MPR shortcuts](../basics/shortcuts/#selected-view-in-the-mpr-viewer) for more details.
+Most MPR settings are also reachable via keyboard shortcuts — see the [MPR shortcuts](../basics/shortcuts/#selected-view-in-the-mpr-viewer).
 {{% /notice %}}
 
-![QuMPR](/tuto/mpr.png?classes=shadow)
+![MPR](/tuto/mpr.png?classes=shadow)
 <br>
 
-Try to load a volume dataset and open the MPR viewer. {{< launch >}}
+Try it on a volume dataset {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/3d/head-neck.xml"
 {{< /launch >}}
 
-{{% notice info %}}
 
-The color of the crosshair lines corresponds to the orientation of the other two planes:
-- **Red Line**: Represents the anterior-posterior axis of the coronal plane.
-- **Green Line**: Represents the inferior-superior axis of the axial plane.
-- **Blue Line**: Represents the right-left axis of the sagittal plane.
+### Crosshair line colors {#crosshair-colors}
 
-For oblique planes, the crosshair line colors blend proportionally based on the contribution of the primary axes.
+Each crosshair line represents the **intersection** of one of the other two planes with the current view. The line color identifies which plane it belongs to:
 
-The orientation axes of the slice image in 3D space are shown in the top-left corner of the MPR view. They are defined as follows:
-- **Red arrow**: Increases from anterior to posterior
-- **Green arrow**: Increases from inferior to superior
-- **Blue arrow**: Increases from right to left
+| Color | Plane | Anatomical axis | Visible in |
+|-------|-------|-----------------|------------|
+| **Red** | Coronal | Anterior → Posterior | Axial, Sagittal |
+| **Green** | Axial | Inferior → Superior | Coronal, Sagittal |
+| **Blue** | Sagittal | Right → Left | Axial, Coronal |
 
-For details on the orientation of multiplanar views and their associated colors, refer to [MPR Orientation](image-orientation/#orientation-in-multiplanar-reconstruction-mpr).
+For **oblique planes**, line colors blend proportionally based on the contribution of the primary axes.
+
+### Orientation axes {#orientation-axes}
+
+The patient orientation axes are drawn in the **top-left corner** of each MPR view, indicating how the current slice is oriented in 3D space:
+
+| Color | Direction |
+|-------|-----------|
+| **Red arrow** | Anterior → Posterior |
+| **Green arrow** | Inferior → Superior |
+| **Blue arrow** | Right → Left |
+
+See [Orientation in multiplanar reconstruction (MPR)](image-orientation/#orientation-in-multiplanar-reconstruction-mpr) for the wider orientation-labeling conventions.
+
+The same axes widget is also drawn in the [3D viewer](dicom-3d-viewer) since {{% badge title="Version" %}}4.7.0{{% /badge %}}.
+
+### Volume geometry handling {#volume-geometry}
+
+Since {{% badge title="Version" %}}4.7.0{{% /badge %}}, when Weasis detects that a volume cannot be reconstructed as a perfect rectilinear grid, a confirmation dialog appears **before** the MPR views are built. The conditions are evaluated in this priority order — only the first match triggers the dialog:
+
+| Condition | Dialog message |
+|-----------|----------------|
+| Slices are not parallel | _Slice orientations are not parallel!_ |
+| Slice spacing is irregular | _Space between slices is not regular!_ |
+| Too few slices for the gantry tilt | _There are too few slices compared to the geometric deformation!_ |
+
+In each case the message ends with:
+
+> _The images may be displayed incorrectly._
+> _Do you want to rectify the images anyway?_
+
+#### Dialog choices
+
+* **Yes — Rectify geometry** — re-slices the volume to align it with the patient's anatomical orientation. Ensures correct spatial proportions for measurements and ratios across planes, at the cost of one interpolation pass that may slightly soften the image.
+* **No — Stack images** — stacks the original images directly, with no geometric correction. Preserves the full original image quality and avoids interpolation, but distances, ratios, and measurements may not reflect true anatomical values.
+
+{{% notice tip %}}
+Pick **Yes** when accurate measurements matter. Pick **No** when image quality and the absence of interpolation artifacts take precedence.
 {{% /notice %}}
 
-### Preferences
-From the main menu "_File > Preferences > Viewer > MPR_" (Since {{% badge title="Version" %}}4.1.0{{% /badge %}}):
+#### Status indicator
 
-* _Auto center axes:_ Allows you to choose a behavior to recenter the cursor in the different views. The position can be returned to the center systematically with the "Always" option or with the 2nd option only when the position is almost no longer visible (the default value).
-* _Crosshair gap at the center:_ Defines the size of the empty space in the center of the crosshair
-* _Default layout:_ The preferred layout used when opening the MPR viewer
+A persistent red label is then shown in the **bottom-left corner** of every MPR view to indicate the active mode:
+
+| Choice | Bottom-left indicator |
+|--------|-----------------------|
+| Yes (rectify) | _Geometry aligned to patient orientation_ |
+| No (stack)    | _Patient geometry correction skipped — spatial accuracy may be reduced_ |
+
+### Preferences
+From the main menu **_File > Preferences > Viewer > MPR_** (since {{% badge title="Version" %}}4.1.0{{% /badge %}}):
+
+* **Auto center axes** — how the crosshair is recentered when it moves out of the visible area. **Always** recenters after every move; the default option only recenters when the position is **almost no longer visible**.
+* **Crosshair gap at the center** — size of the empty space drawn around the cursor point, so the marker does not occlude the structure being inspected.
+* **Default layout** — preferred layout used when opening the MPR viewer.

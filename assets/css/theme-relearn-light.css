@@ -43,4 +43,7 @@
     --BOX-MAGENTA-color: rgba( 229, 50, 210, 0.75 );
     --BOX-ORANGE-color: rgba( 237, 153, 9, 0.75 );
     --BOX-RED-color: rgba( 224, 62, 62, 0.75 );
+
+    /* enlarge the sidebar logo (theme default --LOGO-IMAGE-width is 4em, too small for the Weasis logo) */
+    --LOGO-IMAGE-width: 100%;
 }

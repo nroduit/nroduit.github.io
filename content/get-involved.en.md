@@ -5,40 +5,56 @@ keywords: [ "contribute", "weasis contribution", "dicom viewer", "free dicom vie
 hidden: true
 ---
 
-Weasis thrives because of its active community of contributors. Whether you're a developer, translator, or someone passionate about open-source healthcare tools, there are many ways to participate and make a difference.
+## <center>Get Involved with Weasis</center>
+
+Weasis is an **open-source** project and thrives because of its community of contributors. Whether you are a developer, a translator, a clinical user, or simply passionate about open-source healthcare tools, there are many ways to participate and make a difference.
 
 ### 📋 Report Bugs and Request Enhancements
 
-If you encounter a bug or have an idea to improve Weasis, you can contribute by reporting issues and requesting enhancements.
+Found a bug or have an idea to improve Weasis? Contribute by reporting it.
 
-Before creating an issue, check the following resources to see if it’s already been reported:
+Before creating an issue, check that it has not already been reported:
+
 - [GitHub Issues](https://github.com/nroduit/Weasis/issues)
-- [Forum](https://groups.google.com/group/dcm4che)
-- Pages like [FAQs](faq) or [Getting Started](getting-started).
+- [GitHub Discussions](https://github.com/nroduit/Weasis/discussions)
+- [dcm4che Forum](https://groups.google.com/group/dcm4che)
+- The [FAQs](faq) and the [Getting Started](getting-started) pages
 
-Only then, fill out a bug on [GitHub](https://github.com/nroduit/Weasis/issues) with as much detail as possible.
+If nothing matches, open a new issue on [GitHub](https://github.com/nroduit/Weasis/issues) with as much detail as possible — see [How do I report a bug?](faq#how-do-i-report-a-bug) for the recommended checklist (version, OS, screenshot, log files).
 
 ### 💻 Contribute to the Code
-- Become a Weasis committer and contribute to the project's development by using [pull requests](https://github.com/nroduit/Weasis/pulls).
+
+Pull requests are welcome on every Weasis repository:
+
+- **[Weasis main repository](https://github.com/nroduit/Weasis)** — the core viewer.
+- **[ViewerHub](https://github.com/nroduit/viewer-hub)** — the web portal that dispatches launches to Weasis (and other viewers), successor to weasis-pacs-connector.
+- **[weasis-dicom-tools](https://github.com/nroduit/weasis-dicom-tools)** — the underlying DICOM toolkit.
+
+How to contribute:
+
+1. **Fork** the relevant repository on GitHub.
+2. Read the **README** for build instructions and the project's coding conventions.
+3. Develop your change on a feature branch.
+4. Open a [pull request](https://github.com/nroduit/Weasis/pulls) describing the motivation and the change.
+
+For larger changes, opening a [discussion](https://github.com/nroduit/Weasis/discussions) or an issue first is recommended so the design can be aligned with the maintainers before you invest time in the implementation.
 
 ### ✍️ Share Your Knowledge
-Not a developer? You can still make an impact by sharing your expertise and supporting other users:
 
-- **Improve Documentation**:  
-  The documentation is written in Markdown and generated with [Hugo](https://gohugo.io). To contribute:
-  1. Learn Markdown and Hugo ([How to Install Hugo](https://gohugo.io/getting-started/quick-start)).
-  2. [Clone the project](https://github.com/nroduit/nroduit.github.io), modify, and serve changes locally using the `hugo server` command. View the changes in your browser at `http://localhost:1313`.
-  3. [Fork the documentation repository](https://github.com/nroduit/nroduit.github.io/fork) and submit your contributions as pull requests.
+Not a developer? You can still make a real impact by sharing your expertise and helping other users.
 
-- **Localize Weasis**:  
-  Make Weasis accessible to users worldwide by contributing to its [localization efforts](getting-started/translating).
+- **Improve the documentation** — this site is written in Markdown and built with [Hugo](https://gohugo.io). Follow the [README of the docs repository](https://github.com/nroduit/nroduit.github.io) for the setup, the local preview command, and the pull-request workflow.
 
-- **Help Users in the Forum**:  
-  Support fellow community members by answering questions and sharing insights on the [dcm4che Forum](https://groups.google.com/group/dcm4che).
+- **Translate Weasis** — make Weasis accessible to users worldwide by contributing to the [localization effort](getting-started/translating).
+
+- **Help other users** — answer questions and share insights on the [dcm4che Forum](https://groups.google.com/group/dcm4che) and on [GitHub Discussions](https://github.com/nroduit/Weasis/discussions).
+
+- **Share your story** — using Weasis in a hospital, clinic, research project, or education program? Let us know so your case study can be featured in the [Stories](stories) section.
+
+- **Cite Weasis** — if your work uses Weasis, citing the project in your publications helps make the impact of the project visible. See [How to cite Weasis](faq#how-to-cite-weasis-in-a-publication).
 
 ### 🤝 Why Contribute?
 
-1. **Support Open Source**: Be part of a global effort to improve healthcare technology.
-2. **Learn and Grow**: Enhance your skills by contributing to a real-world project.
-3. **Make an Impact**: Your contributions can directly help healthcare professionals and institutions worldwide.
-
+1. **Support open source healthcare** — be part of a global effort to keep medical imaging tools free and auditable.
+2. **Learn and grow** — sharpen your skills on a real-world clinical project used in dozens of countries.
+3. **Make an impact** — your contributions directly help healthcare professionals, researchers, and institutions worldwide.
