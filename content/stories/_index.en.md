@@ -1,5 +1,6 @@
 ---
 title: Stories
+description: "Real-world Weasis deployments and peer-reviewed publications — case studies from the University Hospital of Geneva, research trials, and clinical portals worldwide."
 weight: 50
 pre: "<b>5. </b>"
 ---

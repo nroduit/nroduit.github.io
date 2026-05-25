@@ -1,5 +1,6 @@
 ---
 title: ViewerHub
+description: "ViewerHub is the server-side launcher for Weasis (successor to weasis-pacs-connector) — manages viewer selection, user preferences, plugins, and DICOM archives."
 weight: 15
 pre: "<b>3. </b>"
 keywords: [ "viewer-hub", "weasis-viewer-hub", "launcher", "dicom viewer", "pacs", "dicom", ]

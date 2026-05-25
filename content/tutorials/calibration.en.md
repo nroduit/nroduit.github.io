@@ -3,6 +3,18 @@ title: Spatial Calibration
 weight: 380
 description: How to change the spatial calibration of an image or a series
 keywords: [ "image calibration", "spatial calibration", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
+howto:
+  name: "Manually calibrate a DICOM image in Weasis"
+  description: "Override or apply a spatial calibration when the DICOM Pixel Spacing / Imager Pixel Spacing is missing or wrong, using a reference object of known real-world length."
+  steps:
+    - name: "Select the Line tool"
+      text: "Pick the Line tool from the Weasis Measurement toolbar."
+    - name: "Draw a line over a known length"
+      text: "Draw a line along an object whose real-world length you know (a ruler, fiducial, calibration phantom, or any landmark of known physical size)."
+    - name: "Open Manual Calibration"
+      text: "Right-click the line and choose Manual Calibration."
+    - name: "Enter the known distance"
+      text: "Enter the known distance with its unit in the dialog, decide whether to apply the new scale to the current image only or to the entire series, and confirm."
 ---
 
 ## <center>How to change the spatial calibration</center>

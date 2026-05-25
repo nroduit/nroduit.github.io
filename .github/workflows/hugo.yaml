@@ -77,3 +77,58 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # Notify search engines (Bing, Yandex, …) of changed URLs via the
+  # IndexNow protocol — https://www.indexnow.org/. The key file is served
+  # from static/<key>.txt so search engines can verify ownership.
+  indexnow:
+    name: Notify IndexNow
+    runs-on: ubuntu-latest
+    needs: deploy
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 2
+      - name: Submit changed URLs to IndexNow
+        env:
+          INDEXNOW_KEY: 090d483cb316e850f04fcc7d6a900767
+          HOST: weasis.org
+          BEFORE: ${{ github.event.before }}
+          SHA: ${{ github.sha }}
+        run: |
+          set -eo pipefail
+          urls=()
+          if [ -n "${BEFORE:-}" ] && [ "$BEFORE" != "0000000000000000000000000000000000000000" ]; then
+            while IFS= read -r f; do
+              [ -z "$f" ] && continue
+              case "$f" in
+                content/*.md) ;;
+                *) continue ;;
+              esac
+              url="${f#content/}"
+              url="${url%.en.md}"; url="${url%.fr.md}"; url="${url%.md}"
+              url="${url%/_index}"
+              if [ "$url" = "_index" ] || [ -z "$url" ]; then
+                urls+=("https://${HOST}/en/")
+              else
+                urls+=("https://${HOST}/en/${url}/")
+              fi
+            done < <(git diff --name-only --diff-filter=AM "$BEFORE" "$SHA" -- content/ || true)
+          fi
+          # Always include the home page as a fallback / nudge.
+          if [ "${#urls[@]}" -eq 0 ]; then
+            urls=("https://${HOST}/en/")
+          fi
+          mapfile -t urls < <(printf '%s\n' "${urls[@]}" | awk 'NF && !seen[$0]++')
+          url_json=$(printf '%s\n' "${urls[@]}" | jq -R . | jq -s -c .)
+          payload=$(jq -nc --arg host "$HOST" --arg key "$INDEXNOW_KEY" \
+              --arg keyLoc "https://${HOST}/${INDEXNOW_KEY}.txt" --argjson urls "$url_json" \
+              '{host:$host, key:$key, keyLocation:$keyLoc, urlList:$urls}')
+          echo "Submitting ${#urls[@]} URL(s) to IndexNow:"
+          printf '  %s\n' "${urls[@]}"
+          # Don't fail the workflow if IndexNow is briefly unavailable.
+          curl -fsS -X POST -H "Content-Type: application/json" \
+            -d "$payload" "https://api.indexnow.org/indexnow" || \
+            echo "::warning::IndexNow submission failed (non-blocking)"

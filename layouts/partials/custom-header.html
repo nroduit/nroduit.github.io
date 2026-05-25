@@ -10,6 +10,8 @@
 <link rel="canonical" href="{{ .Permalink }}" />
 {{- end }}
 
+{{- partial "seo-jsonld.html" . }}
+
 <!-- Google Consent Mode with minimal data collection that minimize the need for user consent -->
 <script>
     window.dataLayer = window.dataLayer || [];

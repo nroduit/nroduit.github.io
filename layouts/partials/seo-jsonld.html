@@ -1,0 +1,116 @@
+{{- /*
+  schema.org JSON-LD emitted into <head>:
+    - home page : Organization + WebSite + SoftwareApplication
+    - FAQ page  : FAQPage (Q/A pairs come from data/faq.toml)
+  Other pages emit nothing.
+*/ -}}
+
+{{- $base := .Site.BaseURL | strings.TrimRight "/" -}}
+
+{{- if .IsHome -}}
+  {{- $org := dict
+      "@context" "https://schema.org"
+      "@type"    "Organization"
+      "name"     "Weasis"
+      "url"      (printf "%s/" $base)
+      "logo"     (printf "%s/images/logo.svg" $base)
+      "sameAs"   (slice
+        "https://github.com/nroduit/Weasis"
+        "https://github.com/nroduit/Weasis/discussions"
+      )
+  -}}
+
+  {{- $website := dict
+      "@context" "https://schema.org"
+      "@type"    "WebSite"
+      "name"     "Weasis"
+      "url"      (printf "%s/" $base)
+      "inLanguage" (.Site.Language.LanguageCode | default "en")
+  -}}
+
+  {{- $app := dict
+      "@context"               "https://schema.org"
+      "@type"                  "SoftwareApplication"
+      "name"                   "Weasis"
+      "alternateName"          "Weasis DICOM Viewer"
+      "applicationCategory"    "MedicalApplication"
+      "applicationSubCategory" "DICOM viewer"
+      "operatingSystem"        "Windows, macOS, Linux"
+      "url"                    (printf "%s/" $base)
+      "downloadUrl"            (printf "%s/en/getting-started/download-dicom-viewer/" $base)
+      "description"            (.Description | default .Site.Params.description)
+      "image"                  (printf "%s/tuto/seg-mpr-vr.jpg" $base)
+      "screenshot"             (printf "%s/tuto/seg-mpr-vr.jpg" $base)
+      "license"                "https://github.com/nroduit/Weasis/blob/master/LICENSE"
+      "softwareLicense"        "EPL-2.0 OR Apache-2.0"
+      "author" (dict
+        "@type" "Person"
+        "name"  "Nicolas Roduit"
+      )
+      "offers" (dict
+        "@type"         "Offer"
+        "price"         "0"
+        "priceCurrency" "USD"
+      )
+  -}}
+
+  <script type="application/ld+json">{{ $org     | jsonify | safeJS}}</script>
+  <script type="application/ld+json">{{ $website | jsonify | safeJS}}</script>
+  <script type="application/ld+json">{{ $app     | jsonify | safeJS}}</script>
+{{- end -}}
+
+{{- if and .File (eq .File.TranslationBaseName "faq") -}}
+  {{- with .Site.Data.faq -}}
+    {{- $items := slice -}}
+    {{- range .questions -}}
+      {{- $items = $items | append (dict
+          "@type" "Question"
+          "name"  .question
+          "acceptedAnswer" (dict
+            "@type" "Answer"
+            "text"  .answer
+          )
+      ) -}}
+    {{- end -}}
+    {{- $faqPage := dict
+        "@context"   "https://schema.org"
+        "@type"      "FAQPage"
+        "mainEntity" $items
+    -}}
+  <script type="application/ld+json">{{ $faqPage | jsonify | safeJS }}</script>
+  {{- end -}}
+{{- end -}}
+
+{{- /* HowTo schema: any page with a `howto` block in front matter.
+       Expected shape:
+         howto:
+           name: "..."           (defaults to .Title)
+           description: "..."    (optional)
+           totalTime: "PT5M"     (optional, ISO 8601 duration)
+           steps:
+             - name: "..."
+               text: "..."
+               url:  "#anchor"   (optional)
+*/ -}}
+{{- with .Params.howto -}}
+  {{- $steps := slice -}}
+  {{- range $i, $s := .steps -}}
+    {{- $step := dict
+        "@type"    "HowToStep"
+        "position" (add $i 1)
+        "name"     (.name | default (printf "Step %d" (add $i 1)))
+        "text"     .text
+    -}}
+    {{- with .url }}{{ $step = merge $step (dict "url" (absURL .)) }}{{ end -}}
+    {{- $steps = $steps | append $step -}}
+  {{- end -}}
+  {{- $howto := dict
+      "@context"    "https://schema.org"
+      "@type"       "HowTo"
+      "name"        (.name | default $.Title)
+      "step"        $steps
+  -}}
+  {{- with .description }}{{ $howto = merge $howto (dict "description" .) }}{{ end -}}
+  {{- with .totalTime   }}{{ $howto = merge $howto (dict "totalTime"   .) }}{{ end -}}
+  <script type="application/ld+json">{{ $howto | jsonify | safeJS }}</script>
+{{- end -}}

@@ -1,0 +1,52 @@
+# Q/A pairs consumed by layouts/partials/seo-jsonld.html to emit
+# schema.org FAQPage JSON-LD on /en/faq/. Answers are short, self-contained,
+# plain-text summaries of the prose in content/faq.en.md. Keep each `answer`
+# under ~500 chars and avoid Markdown — search engines want plain text.
+
+[[questions]]
+question = "What is Weasis?"
+answer = "Weasis is a free, open-source DICOM viewer for visualizing and analyzing medical images. It runs as a standalone desktop application or can be launched from a web portal, and integrates with PACS, VNAs, and DICOMweb services."
+
+[[questions]]
+question = "Which operating systems does Weasis run on?"
+answer = "Weasis runs on Windows (installer or portable archive), macOS (Intel and Apple Silicon), and Linux (DEB, RPM, Flatpak, and Snap). A web-launch option using the weasis:// URI scheme is also available on all supported platforms."
+
+[[questions]]
+question = "Does the web launch require Weasis to be installed?"
+answer = "Yes. The web launch uses the weasis:// URI scheme to hand parameters to the locally installed Weasis application. Each user must install Weasis once from the Download page; subsequent clicks on weasis:// links reuse that local install. The previous Java Web Start distribution was discontinued in version 3.5."
+
+[[questions]]
+question = "Does Weasis need an internet connection?"
+answer = "No. Weasis runs fully offline once installed. It opens DICOM files from any local source — file system, USB drive, DICOM CD/DVD, or ZIP archive — without network access."
+
+[[questions]]
+question = "Is Weasis a certified medical device?"
+answer = "No. The open-source distribution of Weasis is not a certified medical device — it does not carry CE marking and is not FDA cleared. Primary diagnostic use requires the user or institution to ensure compliance with applicable laws and regulations. Healthcare organizations or vendors that need a certified product can build on the same code base and pursue certification themselves."
+
+[[questions]]
+question = "Can Weasis be used for commercial purposes?"
+answer = "Yes. Weasis is available for commercial use under a dual EPL-2.0 OR Apache-2.0 license. The license permits derivative commercial products, including for vendors who want to pursue medical-device certification on top of the Weasis codebase."
+
+[[questions]]
+question = "How do I report a bug?"
+answer = "Open an issue on the Weasis GitHub issue tracker. Include the Weasis version and your operating system, a description of what you did and what happened (with a screenshot if relevant), and log files captured at DEBUG or TRACE level."
+
+[[questions]]
+question = "How do I contribute a translation?"
+answer = "Weasis translations are managed on a community translation platform. To improve an existing language or add a new one, follow the Translating Weasis guide. End-user instructions for picking the active language are in the Language and Regional Settings tutorial."
+
+[[questions]]
+question = "How to cite Weasis in a publication?"
+answer = "Cite Weasis with the author (Nicolas Roduit), title (Weasis DICOM Viewer), the version you used, the URL https://github.com/nroduit/Weasis, and the date you accessed it. Example: Roduit, N. Weasis DICOM Viewer. Version 4.1.0. https://github.com/nroduit/Weasis (accessed 5 April 2023)."
+
+[[questions]]
+question = "Why does Weasis use the Eclipse Public License?"
+answer = "The Eclipse Public License (EPL) is a business-friendly, OSI-approved open-source license with advantageous terms around patent retaliation and reverse engineering. Plugins can be distributed under any license, but modifications to the existing Weasis source code must be shared. Since version 3.7.0, Weasis is distributed under a dual EPL-2.0 OR Apache-2.0 license."
+
+[[questions]]
+question = "Can Weasis be included in DICOM CDs or other removable media?"
+answer = "Yes. Weasis can be embedded into a DICOM CD ISO so the recipient can launch it directly from the disc — currently supported on Windows x86-64 only. On other platforms, you can still produce a DICOM CD without the embedded viewer."
+
+[[questions]]
+question = "Can I download DICOM files without a WADO server?"
+answer = "Yes — a WADO server is recommended but not strictly required. You can build an XML manifest file using the DirectDownloadFile and DirectDownloadThumbnail options, or use the $dicom:get command to point at one or more files by URL. For larger studies or production deployments, prefer a proper WADO-RS / DICOMweb server."
