@@ -34,11 +34,14 @@ In the node dialog:
    - Either pick a template from the list and click **Fill** to populate some fields, or fill them in manually.
    - In the **Provider** panel, every field is mandatory.
    - In the **Registration** panel, every field is optional — except for **OAuth2**, where the **Client ID**, **Client Secret**, and **Scope** must be filled. **Audience** is optional, but some providers need it.
+   - The **Grant Type** selector chooses the OAuth2 flow:
+     - `code` (**Authorization Code**, the default) — interactive login: Weasis opens your browser so you sign in with your account, then receives the token through a loopback redirect. Use this for user-facing access.
+     - `client_credentials` (**Client Credentials**, RFC 6749 §4.4) — non-interactive, server-to-server: Weasis obtains the token directly from the token endpoint using only the Client ID and Client Secret, with **no browser login**. Use this for service/headless accounts.
    - Click **OK** to save the authentication.
 5. Optionally, add **HTTP headers** that should be sent with every request to this service URL (useful for tokens or other custom auth schemes).
 6. Click **OK** to save the node.
 
-Then open the [DICOM Import](dicom-import/#dicom-queryretrieve) dialog and pick the new node. If OAuth2 is configured, the first query opens your browser to complete the sign-in; subsequent queries reuse the cached token.
+Then open the [DICOM Import](dicom-import/#dicom-queryretrieve) dialog and pick the new node. If OAuth2 is configured with the **Authorization Code** grant, the first query opens your browser to complete the sign-in; subsequent queries reuse the cached token. With the **Client Credentials** grant, no browser login is required — Weasis authenticates silently using the configured Client ID and Secret.
 
 ### Supported DICOMweb Providers (non-exhaustive list)
 

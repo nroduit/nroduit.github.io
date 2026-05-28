@@ -43,7 +43,7 @@ The synchronization mode is controlled by the drop-down button {{< svg-inline "s
 The drop-down popup also contains:
 
 - A non-interactive **series-name header** at the top of the popup, identifying the currently selected view. It makes explicit that the per-action toggles and the **Apply to all views** entry below reflect this specific view's synchronization options.
-- A master **Synchronize** checkbox — turns synchronization on or off globally for the container without changing the active mode. Unchecking it makes every view fully independent.
+- A master **Synchronize** checkbox — a *global* switch that turns synchronization on or off for the **whole synchronization session** (every participating view, including auto-synced views in other linked containers) without changing the active mode. This is broader than the per-view {{< svg-inline "static/tuto/icon/synch.svg" >}} button, which toggles only the single view it sits on. Unchecking it makes every view fully independent. See [Synchronization scope](#sync-scope) for how the scopes interact.
 - **Per-action toggles** (*Scroll*, *Pan*, *Zoom*, *Rotation*, *Flip*, *Window / Level*, *Spatial unit*) mirroring the **selected view**'s configuration.
 - An **Apply to all views** entry — decorated with the selected view's FoR color chip — that propagates the configuration to every other sync-active view in the container, **regardless of FoR** (broader than the same-named entry in the per-view popup, which is restricted to the selected view's FoR group). See [Per-view sync controls](#per-view-sync) for the per-action semantics and the color-chip system.
 
@@ -54,6 +54,16 @@ dcmview2d:synch VALUE
 ```
 where `VALUE` is `Stack` or `Tile`. See [Commands](../basics/commands/#dcmview2dsynch) for details.
 {{% /notice %}}
+
+---
+
+### Synchronization Scope {#sync-scope}
+
+Synchronization operates at three different scopes. Knowing which is which avoids surprises when more than one viewer window is open:
+
+- **Global (whole session)** — the master **Synchronize** checkbox in the toolbar drop-down is a global switch: it enables or disables synchronization for every participating view at once, not just the selected view.
+- **Across containers (auto-sync)** — **Default Stack** auto-synchronization is **not limited to a single container**. Views in any other *visible* container that belongs to the same group (the windows opened together from one patient/study group) and is also in Stack mode are kept in sync as well. Open the same study in two windows and scroll, Window / Level, etc. stay coupled across both.
+- **Within one container (manual sync)** — [manual sync](#manual-sync-button) only links views that live in the **same container window**; you cannot manually link a view to one in another container. In addition, **only one manual-sync session can be active at a time across the whole application** — starting manual sync on another eligible view joins the existing session rather than creating a second, independent group.
 
 ---
 
@@ -111,7 +121,7 @@ A per-action toggle only declares whether **this** view takes part in syncing th
 
 Some series cannot be auto-synced because they have **no** — or a **different** — Frame of Reference UID (typical for unrelated CT scans, or legacy series with missing DICOM geometry). The **manual-sync button** {{< svg-inline "static/tuto/icon/hand.svg" >}} (same bottom-right corner) lets you link such a view to a peer by **relative slice index** instead of 3D position.
 
-A view is an **eligible candidate** for manual sync with the current view when it has the **same orientation** and a **different (or absent) FoR**. Clicking the {{< svg-inline "static/tuto/icon/hand.svg" >}} button on a view that is currently OFF picks the link target according to how many candidates exist:
+A view is an **eligible candidate** for manual sync with the current view when it lives in the **same container**, has the **same orientation**, and a **different (or absent) FoR** — manual sync never crosses containers, and only one manual-sync session can be active across the whole application (see [Synchronization scope](#sync-scope)). Clicking the {{< svg-inline "static/tuto/icon/hand.svg" >}} button on a view that is currently OFF picks the link target according to how many candidates exist:
 
 - **A manual-sync group already exists in the container** — the new view joins it directly (bidirectional links are added to every member). No picker is shown.
 - **Exactly one candidate** — the link is established immediately, no picker.
