@@ -116,7 +116,7 @@ aliases:
 - **[Интеграция PACS и веб](/en/basics/customize/integration)** — [DICOMweb](/en/tutorials/dicomweb-config), DIMSE Q/R, запуск из портала через [`weasis://`](/en/getting-started/weasis-protocol).
 - **Эргономика рабочего процесса** — многомониторность, HiDPI, [докинг](/en/tutorials/docking), [горячие клавиши](/en/basics/shortcuts), [темы](/en/tutorials/theme), [локали](/en/tutorials/locale).
 
-![DICOM SEG](/tuto/seg-mpr-vr.jpg?classes=shadow&width=100%)
+{{< youtube id="ywaBAt2SqxM" title="Weasis DICOM viewer — overview" >}}
 <br>
 
 ### Сообщество &amp; поддержка

@@ -116,7 +116,7 @@ aliases:
 - **[PACS 与 Web 集成](/en/basics/customize/integration)** —— [DICOMweb](/en/tutorials/dicomweb-config)、DIMSE Q/R、通过 [`weasis://`](/en/getting-started/weasis-protocol) 从门户启动。
 - **工作流效率** —— 多显示器、HiDPI、[面板停靠](/en/tutorials/docking)、[快捷键](/en/basics/shortcuts)、[主题](/en/tutorials/theme)、[语言区域](/en/tutorials/locale)。
 
-![DICOM SEG](/tuto/seg-mpr-vr.jpg?classes=shadow&width=100%)
+{{< youtube id="ywaBAt2SqxM" title="Weasis DICOM viewer — overview" >}}
 <br>
 
 ### 社区与支持

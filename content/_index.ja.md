@@ -116,7 +116,7 @@ aliases:
 - **[PACS & Web 連携](/en/basics/customize/integration)** — [DICOMweb](/en/tutorials/dicomweb-config)、DIMSE Q/R、[`weasis://`](/en/getting-started/weasis-protocol) によるポータル起動。
 - **ワークフローの使いやすさ** — マルチモニター、HiDPI、[ドッキング](/en/tutorials/docking)、[ショートカット](/en/basics/shortcuts)、[テーマ](/en/tutorials/theme)、[ロケール](/en/tutorials/locale)。
 
-![DICOM SEG](/tuto/seg-mpr-vr.jpg?classes=shadow&width=100%)
+{{< youtube id="ywaBAt2SqxM" title="Weasis DICOM viewer — overview" >}}
 <br>
 
 ### コミュニティとサポート

@@ -19,4 +19,3 @@ You will find:
 
 If you are deploying Weasis behind a PACS / VNA, see also the [Customize → Integration](customize/integration) guide and the [ViewerHub](../viewer-hub) launcher.
 
-{{% children %}}

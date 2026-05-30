@@ -117,7 +117,7 @@ Cette page d'accueil est disponible en français. **Le reste de la documentation
 - **[Intégration PACS & web](/en/basics/customize/integration)** — [DICOMweb](/en/tutorials/dicomweb-config), DIMSE Q/R, lancement depuis un portail via [`weasis://`](/en/getting-started/weasis-protocol).
 - **Ergonomie du flux de travail** — multi-écran, HiDPI, [ancrage des fenêtres](/en/tutorials/docking), [raccourcis](/en/basics/shortcuts), [thèmes](/en/tutorials/theme), [langues](/en/tutorials/locale).
 
-![DICOM SEG](/tuto/seg-mpr-vr.jpg?classes=shadow&width=100%)
+{{< youtube id="ywaBAt2SqxM" title="Weasis, visionneuse DICOM — présentation" >}}
 <br>
 
 ### Communauté &amp; support

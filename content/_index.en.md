@@ -114,7 +114,7 @@ aliases:
 - **[PACS & web integration](basics/customize/integration)** — [DICOMweb](tutorials/dicomweb-config), DIMSE Q/R, portal launch via [`weasis://`](getting-started/weasis-protocol).
 - **Workflow ergonomics** — multi-monitor, HiDPI, [docking](tutorials/docking), [shortcuts](basics/shortcuts), [themes](tutorials/theme), [locales](tutorials/locale).
 
-![DICOM SEG](/tuto/seg-mpr-vr.jpg?classes=shadow&width=100%)
+{{< youtube id="ywaBAt2SqxM" title="Weasis DICOM viewer — overview" >}}
 <br>
 
 ### Community &amp; support
