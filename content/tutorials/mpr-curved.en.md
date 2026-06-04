@@ -36,7 +36,7 @@ The polyline is smoothed with a spline before sampling, so a handful of well-pla
 
 **Build Panoramic View** switches the container to a layout that adds a panoramic cell next to the axial / coronal / sagittal views, and renders the reconstruction there. The panoramic cell inherits the usual window/level, LUT, zoom and pan controls of the [DICOM 2D viewer](dicom-2d-viewer).
 
-The X axis of the panoramic is the **arc-length position along the curve**; the Y axis is the **vertical (Z) extent** of the volume. Each pixel is a maximum-intensity projection across a slab taken perpendicular to the curve.
+The X axis of the panoramic is the **arc-length position along the curve**; the Y axis is the **vertical (Z) extent** of the volume. Each pixel samples a single voxel on the curve — a thin curved reformation, like the cross-sections and the MPR views — so the values match the source volume exactly.
 
 #### Live editing
 
@@ -76,6 +76,6 @@ Weasis samples the curve at the chosen spacing — one sample is one cut — and
 ### Limitations
 
 - The generator assumes the curve lies on the **axial** plane at a fixed level and samples height along the volume's Z axis (the dental-arch case). Curves drawn on coronal, sagittal or oblique planes are not reconstructed correctly.
-- The panoramic projection slab thickness is **fixed** and not exposed in the UI; only **Height** and **Step** are adjustable.
+- The panoramic is a **thin curved reformation** (one voxel sampled on the curve, no adjustable slab thickness); only **Height** and **Step** are adjustable.
 - Samples that fall **outside the volume** are left empty rather than filled with a background value.
 - The panoramic is **uncalibrated** — measure on the cross-sectional series when accurate distances matter.
