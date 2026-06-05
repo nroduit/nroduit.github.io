@@ -5,7 +5,7 @@ description: How to overlay a PET or SPECT series on a CT/MR base (PET/CT fusion
 keywords: [ "fusion", "pet/ct", "pet ct fusion", "spect", "suv", "overlay", "nuclear medicine", "dicom viewer", "open source dicom viewer" ]
 ---
 
-## <center>Image Fusion {{< svg-inline "static/tuto/icon/imageEdit.svg" >}}</center>
+## <center>Image Fusion</center>
 
 **Image fusion** overlays a functional series — **PET** (`PT`) or **SPECT** (`NM`) — on top of an anatomical **CT** or **MR** base, so metabolic uptake can be read against the underlying anatomy. The overlay is a **registration-free geometric fusion**: Weasis aligns the two series from their DICOM spatial metadata alone, with no manual or algorithmic registration step. Available since {{% badge title="Version" %}}4.7.1{{% /badge %}}.
 
