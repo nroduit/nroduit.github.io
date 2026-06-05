@@ -123,6 +123,8 @@ Check / uncheck to show or hide the graphic objects (see [Draw & Measure](draw-m
 #### Image Tools {{% badge style="red" %}}D{{% /badge %}} {#image-tools}
 **Image Tools** groups every control that affects how the image is rendered.
 
+Each section below can be **collapsed or expanded** by clicking its header (since {{% badge title="Version" %}}4.7.1{{% /badge %}}). The expanded/collapsed state of every section is **remembered and restored** the next time you open Weasis.
+
 ##### [Windowing and Rendering](lut/)
 
 ##### Transform
@@ -143,6 +145,9 @@ For series with a variable frame rate, the playback speed is adjusted automatica
 {{% notice tip %}}
 A dedicated **Cine** toolbar is also available — hidden by default; enable it from the **View** menu.
 {{% /notice %}}
+
+##### Fusion
+Overlay a **PET** or **SPECT** series on the displayed **CT / MR** base, with adjustable color LUT and base/overlay opacity (since {{% badge title="Version" %}}4.7.1{{% /badge %}}). Collapsed by default and enabled only when the study contains a compatible overlay. See [Image Fusion](fusion/) for the full workflow, SUV statistics, and MPR inheritance.
 
 ##### Reset
 Returns the image to its default rendering, either for every parameter or for a specific one. Also available from the toolbar button {{< svg-inline "static/tuto/icon/reset.svg" >}} and from the context menu.

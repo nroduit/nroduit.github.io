@@ -16,6 +16,10 @@ The menu and toolbar entries are only enabled when the series contains **at leas
 {{% /notice %}}
 
 {{% notice tip %}}
+Opening MPR from a **fused** 2D view (PET/CT) carries the overlay over to the three planes — see [Fusion in the MPR viewer](fusion#mpr).
+{{% /notice %}}
+
+{{% notice tip %}}
 If the series is a **multi-phase 4D acquisition** (e.g. a cardiac CT with several temporal phases), Weasis automatically splits it into individual phase sub-series when 2–7 phases are detected. For series with 8 or more phases, a confirmation dialog is shown first. Open any resulting phase sub-series to reconstruct it in the MPR viewer — see [4D Series Sub-Series Splitting](dicom-explorer#4d-splitting).
 {{% /notice %}}
 

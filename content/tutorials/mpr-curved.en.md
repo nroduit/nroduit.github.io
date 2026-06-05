@@ -14,7 +14,7 @@ keywords: [ "curved mpr", "cpr", "curved planar reformation", "panoramic", "opg"
 
 The typical input is a **dental CBCT** (cone-beam CT): trace the dental arch on the axial plane to obtain a panoramic reconstruction and the perpendicular cross-cuts used for implant planning.
 
-Curved MPR is available since {{% badge title="Version" %}}4.7.0{{% /badge %}}.
+Curved MPR is available since {{% badge title="Version" %}}4.7.1{{% /badge %}}.
 
 {{% notice note %}}
 There is **no dedicated drawing tool and no toolbar button**. The curve is an ordinary **polyline** — the standard measurement graphic. Both actions need a polyline with **at least 2 points**.
@@ -23,7 +23,7 @@ There is **no dedicated drawing tool and no toolbar button**. The curve is an or
 ### Workflow
 
 1. Open a volume in the [MPR viewer](mpr).
-2. On the plane that best shows the structure to follow — the **axial** plane for a dental arch — draw a **polyline** tracing it (see [Measurement and Annotation](draw-measure)). Double-click to finish the curve.
+2. On the plane that best shows the structure to follow — the **axial** plane for a dental arch — draw a **polyline** {{% badge style="red" %}}A{{% /badge %}} tracing it (see [Measurement and Annotation](draw-measure)). Double-click to finish the curve.
 3. **Right-click** the completed polyline. The context menu adds two entries:
    - **Build Panoramic View** — generates the straightened panoramic image in place.
    - **Build Cross-Sectional Slices** — opens a dialog and builds the perpendicular cut series.
@@ -32,7 +32,10 @@ There is **no dedicated drawing tool and no toolbar button**. The curve is an or
 The polyline is smoothed with a spline before sampling, so a handful of well-placed points along the arch is enough — you do not need a dense set of vertices. Right-clicking a vertex lets you add or delete that specific point.
 {{% /notice %}}
 
-### Panoramic view
+![Curved MPR panoramic and cross-sectional series of a dental CBCT](/tuto/curved-mpr-dental.jpg?classes=shadow&width=100%)
+<br>
+
+### Panoramic view {{% badge style="red" %}}B{{% /badge %}} {#panoramic-view}
 
 **Build Panoramic View** switches the container to a layout that adds a panoramic cell next to the axial / coronal / sagittal views, and renders the reconstruction there. The panoramic cell inherits the usual window/level, LUT, zoom and pan controls of the [DICOM 2D viewer](dicom-2d-viewer).
 
@@ -56,7 +59,7 @@ Both sliders regenerate the image **only when released**, so dragging stays resp
 The panoramic image intentionally carries **no pixel spacing**: its X axis measures arc length along the curve, which is not the Euclidean distance between distant points, so calibrated millimetre measurements would be misleading. Measurements taken **on the panoramic** therefore report in **pixels**.
 {{% /notice %}}
 
-### Cross-sectional slices
+### Cross-sectional slices {{% badge style="red" %}}C{{% /badge %}} {#cross-sectional-slices}
 
 **Build Cross-Sectional Slices** first shows a small dialog to set the slab geometry:
 
@@ -69,9 +72,6 @@ The panoramic image intentionally carries **no pixel spacing**: its X axis measu
 A **Reset to defaults** button restores the three values. The unit label follows the source image: **mm** when calibrated, **pix** otherwise. Confirm with **OK** (or **Cancel** to abort).
 
 Weasis samples the curve at the chosen spacing — one sample is one cut — and assembles the slabs into a **real DICOM series**. The series is registered **under the source study** in the [DICOM Explorer](dicom-explorer) and opened in a **new viewer tab**. Unlike the panoramic, the cross-sections **are spatially calibrated**, so distances and measurements on them are valid.
-
-![Curved MPR panoramic and cross-sectional series of a dental CBCT](/tuto/mpr-curved.png?classes=shadow)
-<br>
 
 ### Limitations
 
