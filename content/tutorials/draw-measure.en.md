@@ -9,7 +9,7 @@ keywords: [ "Draw", "Measure", "Measurements", "viewer 2D", "dicom viewer", "fre
 
 The **Draw & Measure** panel lets you annotate and measure on DICOM and standard images — distances, angles, areas, regions of interest, free-hand shapes, and text labels. Measurement values are computed from the image's spatial [calibration](calibration) when available, and from pixel statistics when the shape is closed.
 
-![Draw & Measure](/tuto/measure.jpg?classes=shadow&width=780px)
+![Draw & Measure](/tuto/measure.jpg?classes=shadow&width=100%)
 <br>
 
 Where the results are persisted depends on the image type:

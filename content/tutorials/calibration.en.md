@@ -32,7 +32,7 @@ When no calibration is available — or when you want to override an existing on
 3. **Right-click** the line and choose **Manual Calibration**.
 4. Enter the known distance (with its unit) in the dialog and confirm.
 
-![Calibration](/tuto/spatial-calibration.jpg?classes=shadow&width=700px)
+![Calibration](/tuto/spatial-calibration.jpg?classes=shadow&width=100%)
 <br>
 
 ![Apply Calibration](/tuto/apply-calibration.png?classes=shadow)

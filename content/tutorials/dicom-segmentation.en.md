@@ -29,7 +29,7 @@ Try to open a SEG sample {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/seg.xml"
 {{< /launch >}}
 
-![DICOM SEG](/tuto/seg-2d.jpg?classes=shadow&width=780px)
+![DICOM SEG](/tuto/seg-2d.jpg?classes=shadow&width=100%)
 <br>
 
 {{% notice note %}}
@@ -80,7 +80,7 @@ For MPR, Weasis additionally has to reslice the SEG along the new planes. This e
 The MPR overlay works even when the SEG has a different orientation, spacing or scanning direction than the source images — for example an AI model that segments at a coarser resolution. Weasis reprojects the mask into the image coordinate system, so contours stay aligned on every plane.
 {{% /notice %}}
 
-![DICOM SEG](/tuto/seg-mpr-vr.jpg?classes=shadow&width=780px)
+![DICOM SEG](/tuto/seg-mpr-vr.jpg?classes=shadow&width=100%)
 <br>
 
 ---

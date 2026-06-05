@@ -12,7 +12,7 @@ The 2D viewer is the default viewer for any DICOM series that contains images â€
 ### Open the 2D viewer
 The viewer can be opened with {{< svg-inline "static/tuto/icon/view2d.svg" >}} in the toolbar, or by double-clicking a thumbnail (or right-clicking it and choosing **_2D Viewer > Open_**) in the [DICOM Explorer](dicom-explorer/).
 
-![DICOM 2DViewer](/tuto/dicom-viewer2d.jpg?classes=shadow&width=780px)
+![DICOM 2DViewer](/tuto/dicom-viewer2d.jpg?classes=shadow&width=100%)
 <br>
 
 The rulers {{% badge style="blue" %}}K{{% /badge %}} display a real-world size whenever Weasis can derive one from the DICOM file. When a small label {{% badge style="blue" %}}M{{% /badge %}} is shown above the calibration, it indicates how that calibration was obtained:

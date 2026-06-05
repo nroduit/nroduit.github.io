@@ -15,7 +15,7 @@ Try to open sample SR files {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/sr.xml"
 {{< /launch >}}
 
-![SR Viewer](/tuto/dicom-sr.png?classes=shadow&width=780px)
+![SR Viewer](/tuto/dicom-sr.png?classes=shadow&width=100%)
 <br>
 
 ### Toolbar {{% badge style="red" %}}A{{% /badge %}} {#toolbar}

@@ -20,7 +20,7 @@ To make the KO controls visible, enable the **Key Object Selection** toolbar fro
 
 When a DICOM KO is loaded with the series, it appears in the explorer menu (1) and can also be picked from the icon on the right side of the view (6). KO objects created in Weasis behave the same way.
 
-![Build KO](/tuto/ko-actions.jpg?classes=shadow&width=700px)
+![Build KO](/tuto/ko-actions.jpg?classes=shadow&width=100%)
 
 Actions available in the KO toolbar:
 
@@ -34,7 +34,7 @@ Actions available in the KO toolbar:
 - **Apply a PR loaded from a DICOM file** (1) {{< svg-inline "static/tuto/icon/imagePresentation.svg" >}} — since {{% badge title="Version" %}}2.6.0{{% /badge %}}, PRs are **not** applied automatically; click the dedicated icon (2) above the image to apply one. To have the most recent PR applied by default, enable **Apply by default the most recent Presentation State** under **_File > Preferences (Alt + P)_** (also configurable through the [default preferences](../basics/customize/preferences/)).
 - **Create a new PR** — any drawing or measurement (see [Draw & Measure](draw-measure)) can be exported into a DICOM Presentation State. Image-rendering parameters (zoom, calibration, window/level, LUT…) are **not yet** included in the exported PR.
 
-![Build PR](/tuto/pr-actions.jpg?classes=shadow&width=700px)
+![Build PR](/tuto/pr-actions.jpg?classes=shadow&width=100%)
 <br>
 
 ### Exporting Key Object Selection or Presentation State

@@ -13,7 +13,7 @@ The DICOM Explorer is the panel on the left side of the application. It displays
 
 Data can be added to the Explorer in [several different ways](dicom-import) — drag-and-drop, the import dialog, a PACS query, or the Weasis Protocol.
 
-![DICOM Explorer](/tuto/dicom-explorer-level.jpg?classes=shadow&width=700px)
+![DICOM Explorer](/tuto/dicom-explorer-level.jpg?classes=shadow&width=100%)
 <br>
 
 {{% notice tip %}}
@@ -38,7 +38,7 @@ You can navigate through the Patient / Study / Series / Image structure using on
 * All studies are shown by default; the study combobox can restrict the view to a single one.
 
 #### Series Level
-![Thumbnails](/tuto/dicom-explorer-series.jpg?classes=shadow&width=700px)
+![Thumbnails](/tuto/dicom-explorer-series.jpg?classes=shadow&width=100%)
 <br>
 
 * A series is represented by a thumbnail with the image count shown in the bottom-left corner.

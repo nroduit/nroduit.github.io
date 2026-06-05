@@ -16,7 +16,7 @@ Open the DICOM attributes either by:
 * selecting the **DICOM Information** layout from the layouts dropdown {{% badge style="red" %}}A{{% /badge %}}, or
 * clicking the **DICOM Information** button {{< svg-inline "static/tuto/icon/metadata.svg" >}} in the toolbar to open a detached window {{% badge style="red" %}}B{{% /badge %}}.
 
-![Tags](/tuto/dicom-attributes.jpg?classes=shadow&width=700px)
+![Tags](/tuto/dicom-attributes.jpg?classes=shadow&width=100%)
 <br>
 
 {{% notice note %}}

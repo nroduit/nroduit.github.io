@@ -15,7 +15,7 @@ Try to open a DICOM AU sample {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/audio.xml"
 {{< /launch >}}
 
-![Audio Player](/tuto/dicom-audio.png?classes=shadow&width=780px)
+![Audio Player](/tuto/dicom-audio.png?classes=shadow)
 <br>
 
 ### Toolbar {{% badge style="red" %}}A{{% /badge %}} {#toolbar}

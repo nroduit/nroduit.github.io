@@ -38,7 +38,7 @@ The toolbar and context menu expose three presets:
 - To change the **interpolation method** used for zoom, see the [2D viewer preferences](dicom-2d-viewer/#preferences).
 {{% /notice %}}
 
-![Zoom tool controls](/tuto/zoom-actions.jpg?classes=shadow&width=700px)
+![Zoom tool controls](/tuto/zoom-actions.jpg?classes=shadow&width=100%)
 <br>
 
 ### Real-world Size Display {{< svg-inline "static/tuto/icon/zoomRealWorld.svg" >}} {#real-world-size-display}
@@ -86,7 +86,7 @@ The **magnifying lens** is a movable, resizable overlay that displays a zoomed-i
 
 Enable / disable the lens with its toggle button in the zoom toolbar.
 
-![Lens example](/tuto/lens-drawing.jpg?classes=shadow&width=700px)
+![Lens example](/tuto/lens-drawing.jpg?classes=shadow&width=100%)
 <br>
 
 ### Key features
@@ -110,4 +110,4 @@ Enable / disable the lens with its toggle button in the zoom toolbar.
     * **Freeze Image** — captures both the image **and** its processing parameters, so the lens keeps showing the frozen image while the main view moves on. Useful when comparing different slices or time points of a study.
     * **Reset Freeze** — clears the frozen state; the lens reverts to following the current image and its processing settings.
 
-![Lens with frozen parameters](/tuto/lens-freeze.jpg?classes=shadow&width=700px)
+![Lens with frozen parameters](/tuto/lens-freeze.jpg?classes=shadow&width=100%)

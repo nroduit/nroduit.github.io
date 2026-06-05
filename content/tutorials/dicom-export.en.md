@@ -26,7 +26,7 @@ Exports the view exactly as it appears on screen, at its current size and with e
 #### Original Image
 Exports the underlying image — without on-screen overlays — with a few rendering options.
 
-![Export view](/tuto/dicom-export-view.png?classes=shadow&width=350)
+![Export view](/tuto/dicom-export-view.png?classes=shadow&width=350px)
 <br>
 
 * **Size** — scale the exported image (percentage of the original dimensions).
@@ -48,12 +48,12 @@ Hover any series row to see its thumbnail in a tooltip — useful when picking a
 {{% /notice %}}
 
 #### Local Device
-![Export DICOM](/tuto/export-ko-pr.png?classes=shadow&width=500)
+![Export DICOM](/tuto/export-ko-pr.png?classes=shadow&width=500px)
 <br>
 
 1. Select **Local Device**.
 2. Choose the export options:
-   ![Export options](/tuto/dicom-export-options.png?classes=shadow&width=350)
+   ![Export options](/tuto/dicom-export-options.png?classes=shadow&width=350px)
  <br>
    * **Transcoding** — change the DICOM transfer syntax (compression / encoding) of the exported files. Leave the default unless you specifically need a different syntax.
    * **Generate new unique identifiers** — replace the Study / Series / SOP Instance UIDs with newly generated ones. Cross-references between UIDs are kept consistent **within this export session only** — running the export a second time produces a different set of UIDs that no longer matches the first.
@@ -84,7 +84,7 @@ Destination nodes are configured under **_File > Preferences > DICOM_** (see the
 #### CD/DVD Image
 Produces a burnable ISO image that follows the DICOMDIR layout expected by most CD/DVD-based DICOM media.
 
-![Export DICOM](/tuto/dicom-export-cd.png?classes=shadow&width=750)
+![Export DICOM](/tuto/dicom-export-cd.png?classes=shadow&width=750px)
 <br>
 
 1. Select **CD/DVD Image**.

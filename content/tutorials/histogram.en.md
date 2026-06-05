@@ -21,7 +21,7 @@ To open the histogram, pick the **Histogram** layout from the layouts dropdown i
 The X axis values are the **modality values** (e.g. Hounsfield units for CT) when a Modality LUT applies, or the raw pixel values otherwise. When the modality has a known unit, the unit is appended to the histogram title.
 {{% /notice %}}
 
-![Open Histogram](/tuto/histogram.jpg?classes=shadow&width=700px)
+![Open Histogram](/tuto/histogram.jpg?classes=shadow&width=100%)
 
 ### Display parameters
 
@@ -35,7 +35,7 @@ The X axis values are the **modality values** (e.g. Hounsfield units for CT) whe
 A histogram can also be computed on a **region of interest** instead of the full image: draw a closed shape with the [measurement tools](draw-measure/#measurement-tools) and select it to display its histogram (see screenshot below).
 {{% /notice %}}
 
-![Histogram parameters](/tuto/color-histogram.png?classes=shadow&width=700px)
+![Histogram parameters](/tuto/color-histogram.png?classes=shadow&width=100%)
 <br>
 
 {{% notice tip %}}

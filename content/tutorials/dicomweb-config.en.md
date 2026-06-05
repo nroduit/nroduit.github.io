@@ -17,7 +17,7 @@ This page covers manual configuration inside Weasis. If you embed Weasis in a we
 2. Select **DICOM node list** in the left sidebar.
 3. Click **Add new** to create a new node, or select an existing one and click **Edit**.
 
-![DICOMweb nodes configuration](/tuto/dicomweb-nodes.png?classes=shadow&width=750)
+![DICOMweb nodes configuration](/tuto/dicomweb-nodes.png?classes=shadow&width=750px)
 
 <br>
 
@@ -67,11 +67,11 @@ Configuration (see also the general steps [above](#general-configuration-steps))
 5. Optionally, add HTTP headers for the Google API.
 6. Click **OK** to save the node.
 
-![Google node](/tuto/dicomweb-google-node.png?classes=shadow&width=750)
+![Google node](/tuto/dicomweb-google-node.png?classes=shadow&width=750px)
 
 <br>
 
-![Google template](/tuto/dicomweb-google-auth.png?classes=shadow&width=750)
+![Google template](/tuto/dicomweb-google-auth.png?classes=shadow&width=750px)
 
 {{% notice note %}}
 The DICOMweb thumbnail service is not currently supported by the Google API, so series thumbnails will not preview before the full retrieve.
@@ -87,7 +87,7 @@ The screenshot below is configured for the public demo server, which requires no
 https://demo.orthanc-server.com/dicom-web
 {{< /highlight >}}
 
-![Orthanc node](/tuto/dicomweb-orthanc.png?classes=shadow&width=750)
+![Orthanc node](/tuto/dicomweb-orthanc.png?classes=shadow&width=750px)
 
 <br>
 

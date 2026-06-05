@@ -13,7 +13,7 @@ Try to open an ECG sample {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/ecg.xml"
 {{< /launch >}}
 
-![ECG Viewer](/tuto/ecg.png?classes=shadow&width=780px)
+![ECG Viewer](/tuto/ecg.png?classes=shadow&width=100%)
 <br>
 
 ### Toolbar {{% badge style="red" %}}A{{% /badge %}} {#toolbar}

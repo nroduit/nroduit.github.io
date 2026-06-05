@@ -36,7 +36,7 @@ Try it on a volume dataset (Medical Demos from data.kitware.com)
 $dicom:get -w "https://nroduit.github.io/demo-archive/3d/head-neck.xml"
 {{< /launch >}}
 
-![3D View](/tuto/view-3d.jpg?classes=shadow&width=780px)
+![3D View](/tuto/view-3d.jpg?classes=shadow&width=100%)
 <br>
 
 The same [patient orientation axes](mpr#orientation-axes) as the MPR views are drawn in the 3D view since {{% badge title="Version" %}}4.7.0{{% /badge %}}.
