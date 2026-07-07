@@ -30,6 +30,7 @@ You can navigate through the Patient / Study / Series / Image structure using on
 * A tab containing a multi-view layout can only display images from a **single** patient.
 * You can switch between patients either through the first combobox in the DICOM Explorer (see image above) or by selecting a tab in the main area.
 * In the combobox, patients are sorted alphabetically — case-insensitive, and according to the active [regional setting](locale).
+* Since {{% badge title="Version" %}}4.7.1{{% /badge %}}, the patient combobox is **searchable** — click it and start typing part of a patient name (placeholder _Search patient…_) to narrow the list to matching patients. To restore the full patient list, click the **clear button** (✕) on the right of the field, then open the combo to select a patient.
 * Studies and series are grouped under the **same patient** when their _Patient Name_ and _Patient ID_ both match. Otherwise, a new patient entry is created.
 
 #### Study Level
@@ -51,6 +52,20 @@ You can navigate through the Patient / Study / Series / Image structure using on
 {{% notice tip %}}
 **Series built inside Weasis** — the [MPR](mpr) viewer (_Build a new series from the current view_ / _Build three series from MPR views_) and the [MIP](mip/#build-a-new-series) viewer (_Build a new Series_) can add reconstructed series back into the Explorer. These newly built series join the current study and can be opened, sent, or [exported](dicom-export) like any other series.
 {{% /notice %}}
+
+#### Filtering the series list {#series-filter}
+
+Since {{% badge title="Version" %}}4.7.1{{% /badge %}}, a search field above the thumbnail list narrows the series shown for the **currently selected patient**. The small button on the left of the field selects one of three **exclusive** filter modes — click it to switch (its tooltip reads _Filter mode: … (click to change)_). A counter next to the field reports how many series pass the filter (_shown / total series shown_).
+
+| Mode | What it does |
+|------|--------------|
+| **Full text** | Type any text to match the series _Description_, _Modality_, _Body Part Examined_, _Protocol Name_ and _Series Number_, as well as the parent study's _Description_, _Study ID_ and _Accession Number_. Existing series and study descriptions are suggested as you type. |
+| **Study date** | Pick a single study — listed by date — to show only its series, or choose **All studies** to remove the restriction. |
+| **Modality** | Pick one or more modalities (e.g. `CT`, `MR`) from the suggestions to show only the matching series. |
+
+Each patient keeps its **own** filter: switching patients restores the filter last used for that patient. Because only one mode is active at a time, changing the mode clears the current criterion.
+
+To show the full series list again, click the **clear button** (✕) on the right of the field to reset the search, then open the combo to pick from all entries.
 
 #### 4D Series Sub-Series Splitting {#4d-splitting}
 
