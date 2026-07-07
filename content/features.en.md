@@ -44,6 +44,7 @@ This page lists the features supported by Weasis. For a step-by-step walkthrough
 ### Advanced imaging
 
 - **Oblique Multi-Planar Reconstruction (MPR)** with **gantry-tilt correction** (backward mapping + trilinear interpolation) and 3D matrix transformations for non-standard patient positioning.
+- **Curved MPR (CPR)** — trace a curve on any plane to straighten the volume into a **panoramic** view (dental OPG / arch) and a **cross-sectional** slab series cut perpendicular to it, opened as a real DICOM series (since v4.7.1).
 - **Maximum Intensity Projection (MIP / MinIP / Mean IP)** integrated in the 2D viewer with slab cross-lines on companion views.
 - **3D Volume Rendering** with presets and **segmentation overlay** (binary / fractional / labelmap).
 - **DICOM Segmentation (SEG)** overlay in 2D, MPR, and 3D, with cancellable background decoding.
