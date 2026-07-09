@@ -1,0 +1,105 @@
+{{- /*
+  annotate — overlay labels, arrows and highlight boxes on a screenshot without
+  baking them into the image. Everything is drawn in an <svg> whose viewBox
+  matches the image's pixel size, so coordinates map 1:1 to the source
+  screenshot and the overlay scales responsively. Text stays crisp, selectable
+  and translatable (edit the label text in each language file).
+
+  Params:
+    src      (required) path to the clean screenshot, e.g. /tuto/foo.png
+    viewbox  (required) the image's pixel box, e.g. "0 0 1096 936"
+    alt      alt text for the image
+    class    extra classes for the <img> (e.g. "shadow")
+
+  Inner content: one item per line, fields separated by "|".
+
+  Label with optional arrows:
+    text | targets | labelX,labelY | size(optional) | color(optional)
+  - targets is zero or more "x,y" arrow tips separated by ";" (empty = no arrow)
+  - color defaults to red; give a hex to color-code the pill (and match a box)
+  e.g.  "Patient | 262,96 | 500,120"           -> red pill + arrow to 262,96
+        "Series | | 600,640 | 24 | #00a3b4"    -> teal pill, no arrow
+
+  Highlight box (a translucent colored region, no arrow):
+    @box | x,y,w,h | color(optional)
+  e.g.  "@box | 6,185,352,720 | #00a3b4"
+
+  Blank lines and lines starting with "#" are ignored.
+*/ -}}
+{{- $src := .Get "src" -}}
+{{- $vb := .Get "viewbox" | default "0 0 1096 936" -}}
+{{- $alt := .Get "alt" | default "" -}}
+{{- $cls := .Get "class" | default "" -}}
+{{- $red := "#e31a1c" -}}
+{{- $lines := slice -}}
+{{- $boxes := slice -}}
+{{- range (split (trim .Inner "\n\r \t") "\n") -}}
+  {{- $l := trim . " \t\r" -}}
+  {{- if and $l (not (hasPrefix $l "#")) -}}
+    {{- $p := split $l "|" -}}
+    {{- if and (ge (len $p) 2) (eq (trim (index $p 0) " \t") "@box") -}}
+      {{- $b := split (trim (index $p 1) " \t") "," -}}
+      {{- $col := $red -}}
+      {{- if ge (len $p) 3 -}}{{- $col = trim (index $p 2) " \t" -}}{{- end -}}
+      {{- $boxes = $boxes | append (dict
+          "x" (float (trim (index $b 0) " \t"))
+          "y" (float (trim (index $b 1) " \t"))
+          "w" (float (trim (index $b 2) " \t"))
+          "h" (float (trim (index $b 3) " \t"))
+          "color" $col) -}}
+    {{- else if ge (len $p) 3 -}}
+      {{- $text := trim (index $p 0) " \t" -}}
+      {{- $targets := trim (index $p 1) " \t" -}}
+      {{- $pc := split (trim (index $p 2) " \t") "," -}}
+      {{- $size := 28.0 -}}
+      {{- if ge (len $p) 4 -}}{{- $size = float (trim (index $p 3) " \t") -}}{{- end -}}
+      {{- $col := $red -}}
+      {{- if ge (len $p) 5 -}}{{- $col = trim (index $p 4) " \t" -}}{{- end -}}
+      {{- $lines = $lines | append (dict
+          "text" $text
+          "targets" $targets
+          "cx" (float (trim (index $pc 0) " \t"))
+          "cy" (float (trim (index $pc 1) " \t"))
+          "size" $size
+          "color" $col) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+<figure class="wsann" style="position:relative;margin:0;max-width:100%">
+  <img src="{{ $src }}"{{ with $alt }} alt="{{ . }}"{{ end }}{{ with $cls }} class="{{ . }}"{{ end }} loading="lazy" style="display:block;width:100%;height:auto">
+  <svg class="wsann-svg" viewBox="{{ $vb }}" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:visible">
+    <defs>
+      <marker id="wsann-ah" markerWidth="22" markerHeight="22" refX="15" refY="8" orient="auto" markerUnits="userSpaceOnUse">
+        <path d="M0,0 L18,8 L0,16 L5,8 Z" fill="{{ $red }}"></path>
+      </marker>
+    </defs>
+    {{- range $boxes -}}
+    <rect x="{{ .x }}" y="{{ .y }}" width="{{ .w }}" height="{{ .h }}" rx="12" ry="12" fill="{{ .color }}" fill-opacity="0.14" stroke="{{ .color }}" stroke-width="4" stroke-opacity="0.9"></rect>
+    {{- end -}}
+    {{- range $row := $lines -}}
+      {{- range (split $row.targets ";") -}}
+        {{- $t := trim . " \t" -}}
+        {{- if $t -}}
+          {{- $tc := split $t "," -}}
+    <line x1="{{ $row.cx }}" y1="{{ $row.cy }}" x2="{{ trim (index $tc 0) " \t" }}" y2="{{ trim (index $tc 1) " \t" }}" stroke="{{ $red }}" stroke-width="4" stroke-linecap="round" marker-end="url(#wsann-ah)"></line>
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- range $row := $lines -}}
+      {{- $tlines := split $row.text "\\n" -}}
+      {{- $nl := len $tlines -}}
+      {{- $maxc := 0 -}}
+      {{- range $tlines -}}{{- $c := len (trim . " \t") -}}{{- if gt $c $maxc -}}{{- $maxc = $c -}}{{- end -}}{{- end -}}
+      {{- $lineH := mul $row.size 1.18 -}}
+      {{- $tw := mul $maxc (mul $row.size 0.56) -}}
+      {{- $pw := add $tw (mul $row.size 1.2) -}}
+      {{- $ph := add (mul (float $nl) $lineH) (mul $row.size 0.55) -}}
+      {{- $x := sub $row.cx (div $pw 2) -}}
+      {{- $y := sub $row.cy (div $ph 2) -}}
+      {{- $r := div (mul $row.size 1.7) 2 -}}
+      {{- $firstDy := mul (div (sub 1.0 (float $nl)) 2) $lineH -}}
+    <rect x="{{ $x }}" y="{{ $y }}" width="{{ $pw }}" height="{{ $ph }}" rx="{{ $r }}" ry="{{ $r }}" fill="#fff" stroke="{{ $row.color }}" stroke-width="2" opacity="0.96"></rect>
+    <text x="{{ $row.cx }}" y="{{ $row.cy }}" font-size="{{ $row.size }}" text-anchor="middle" dominant-baseline="central" font-family="Arial,Helvetica,sans-serif" font-weight="700" fill="{{ $row.color }}">{{- range $i, $tl := $tlines -}}<tspan x="{{ $row.cx }}" dy="{{ if eq $i 0 }}{{ $firstDy }}{{ else }}{{ $lineH }}{{ end }}">{{ trim $tl " \t" }}</tspan>{{- end -}}</text>
+    {{- end -}}
+  </svg>
+</figure>

@@ -31,7 +31,7 @@ Click a measurement tool and then draw on the image. Picking a tool here also be
 
 The first button is the **selection** tool — used to select, resize, and move existing graphic objects.
 
-Once one or more graphics are selected, you can change their properties (color, line width…) or copy/paste them through the right-click menu. The selection can be removed with the **Delete** key or {{< svg-inline "static/tuto/icon/selectionDelete.svg" >}}. See the full list of [graphic shortcuts](../basics/shortcuts/#graphics).
+Once one or more graphics are selected, you can change their properties (color, line width…) or copy/paste them through the right-click menu. The selection can be removed with the **Delete** key or {{< svg-inline "static/tuto/icon/selectionDelete.svg" >}}. See the full list of [graphic shortcuts](../basics/shortcuts/#graphics). A confirmation dialog is shown before the deletion; it can be disabled from its *Don't ask me again* checkbox or the **Draw & Measure** [preferences](#preferences).
 
 {{% notice note %}}
 A segment can be drawn in two equivalent ways:
@@ -92,6 +92,8 @@ The table can be exported by **copy / paste**. The copied values use the full nu
 
 ### Preferences {#preferences}
 From the main menu **_File > Preferences > Draw & Measure_**.
+
+* **Ask for confirmation before deleting a drawing** — when checked (default), a confirmation dialog is shown before deleting the selected graphics. Unchecking it (or ticking *Don't ask me again* in that dialog) deletes them without confirmation — since {{% badge title="Version" %}}4.7.1{{% /badge %}}.
 
 #### Drawings
 Default graphic properties applied when drawing new objects — since {{% badge title="Version" %}}4.3.0{{% /badge %}}.

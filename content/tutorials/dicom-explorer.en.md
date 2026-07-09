@@ -13,7 +13,13 @@ The DICOM Explorer is the panel on the left side of the application. It displays
 
 Data can be added to the Explorer in [several different ways](dicom-import) — drag-and-drop, the import dialog, a PACS query, or the Weasis Protocol.
 
-![DICOM Explorer](/tuto/dicom-explorer-level.jpg?classes=shadow&width=100%)
+{{% annotate src="/tuto/dicom-explorer.png" viewbox="0 0 1096 936" alt="DICOM Explorer showing the Patient, Study and Series levels" class="shadow" %}}
+@box | 6,186,352,720 | #00a6b6
+Patient              | 262,96; 415,61   | 505,125
+Series filter        | 262,129          | 545,210
+Study                | 112,198; 108,561 | 580,360
+Each thumbnail is a series or sub-series |  | 660,660 | 28 | #00a6b6
+{{% /annotate %}}
 <br>
 
 {{% notice tip %}}
@@ -39,7 +45,13 @@ You can navigate through the Patient / Study / Series / Image structure using on
 * All studies are shown by default; the study combobox can restrict the view to a single one.
 
 #### Series Level
-![Thumbnails](/tuto/dicom-explorer-series.jpg?classes=shadow&width=100%)
+{{% annotate src="/tuto/dicom-explorer.png" viewbox="0 0 1096 936" alt="Series thumbnails with status dots, sub-series numbers and image counts" class="shadow" %}}
+Open in a view                              | 195,225    | 555,150
+Sub-series number (splitting)               | 328,227; 170,395 | 620,320
+Open and selected in a view                 | 36,393     | 640,560
+Related DICOM file:\nPresentation State / Key Object Selection | 327,710 | 700,690
+Number of images within a series            | 197,887    | 640,850
+{{% /annotate %}}
 <br>
 
 * A series is represented by a thumbnail with the image count shown in the bottom-left corner.
@@ -57,11 +69,13 @@ You can navigate through the Patient / Study / Series / Image structure using on
 
 Since {{% badge title="Version" %}}4.7.1{{% /badge %}}, a search field above the thumbnail list narrows the series shown for the **currently selected patient**. The small button on the left of the field selects one of three **exclusive** filter modes — click it to switch (its tooltip reads _Filter mode: … (click to change)_). A counter next to the field reports how many series pass the filter (_shown / total series shown_).
 
-| Mode | What it does |
-|------|--------------|
-| **Full text** | Type any text to match the series _Description_, _Modality_, _Body Part Examined_, _Protocol Name_ and _Series Number_, as well as the parent study's _Description_, _Study ID_ and _Accession Number_. Existing series and study descriptions are suggested as you type. |
-| **Study date** | Pick a single study — listed by date — to show only its series, or choose **All studies** to remove the restriction. |
-| **Modality** | Pick one or more modalities (e.g. `CT`, `MR`) from the suggestions to show only the matching series. |
+![Series filter field in Full text mode, showing 4 of 7 series](/tuto/series-filter.png?classes=shadow)
+
+| Mode           | What it does                                                                                                                                                                                                                                                                                                                                       |
+|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Full text**  | Type any text to match the series _Description_, _Modality_, _Body Part Examined_, _Protocol Name_ and _Series Number_, as well as the parent study's _Description_, _Study ID_ and _Accession Number_. You can also open the combo to pick an existing _Series Description_ or _Study Description_ directly — they are also suggested as you type.|
+| **Study date** | Pick a single study — listed by date — to show only its series, or choose **All studies** to remove the restriction.                                                                                                                                                                                                                               |
+| **Modality**   | Pick one or more modalities (e.g. `CT`, `MR`) from the suggestions to show only the matching series.                                                                                                                                                                                                                                               |
 
 Each patient keeps its **own** filter: switching patients restores the filter last used for that patient. Because only one mode is active at a time, changing the mode clears the current criterion.
 
