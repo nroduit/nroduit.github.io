@@ -151,6 +151,11 @@ enableRobotsTXT = true
     languageName = "English"
 
     [[Languages.en.menu.shortcuts]]
+      name = "<i class='fa fa-list-ul'></i> Features"
+      pageRef = "features"
+      weight = 5
+
+    [[Languages.en.menu.shortcuts]]
       name = "<i class='fa fa-play-circle'></i> Live Demo"
       identifier = "ds"
       pageRef = "demo"

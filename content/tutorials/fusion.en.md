@@ -32,14 +32,35 @@ The fusion controls live in the **Fusion** section of the **Image tool** {{< svg
 
 - **Enable Fusion** — turns the overlay on or off. The other controls become active only while fusion is enabled.
 - **Series** — the functional series to overlay. The list contains every compatible overlay found in the current study (see [Requirements](#requirements)).
-- **LUT** — the color lookup table applied to the overlay. **PET** (a hot-metal palette tuned for functional data) is selected by default. The overlay is colorized through the functional series' own **window/level**, so it shows exactly the colors the overlay would have if displayed directly with that LUT.
-- **Opacity** — two sliders set a flat blend (cross-fade) at composite time: `result = baseOpacity·base + overlayOpacity·overlay`. Each is labelled with the modality of the layer it controls (e.g. **CT** for the base, **PT** for the overlay). Defaults are **100 %** base and **75 %** overlay. Setting base **0 %** and overlay **100 %** shows the pure colorized overlay, identical to the functional series viewed on its own with the same LUT.
+- **LUT** — the color lookup table applied to the overlay. **PET** (a hot-metal palette tuned for functional data) is selected by default. The values are mapped to it through a series-wide [display window](#color-scale), not through the window/level of the functional series.
+- **Opacity** — two sliders control the blend at composite time: `result = baseOpacity·base·(1 − a) + overlay·a`, where `a` is the overlay's own transparency at that pixel — it grows with the value and reaches the **Opacity** setting within the lower tenth of the [display window](#color-scale), so background stays invisible while everything above it is blended at the chosen opacity. Each slider is labelled with the modality of the layer it controls (e.g. **CT** for the base, **PT** for the overlay). Defaults are **100 %** base and **50 %** overlay. Setting the base to **0 %** leaves the colorized overlay alone over a black background.
 
 The overlay follows the base view as you scroll, zoom, window, or reslice it. Because the fusion is resampled from the functional **volume**, it stays correct on **oblique, coronal and sagittal** planes, not only the native acquisition plane.
 
 {{% notice note %}}
 The [Reset](dicom-2d-viewer#reset) action turns fusion **off** and returns to the plain base image, like any other display setting it restores.
 {{% /notice %}}
+
+### Display window and color scale {#color-scale}
+
+Available since {{% badge title="Version" %}}4.7.2{{% /badge %}}.
+
+The overlay is mapped to its LUT through a window derived from the whole functional series, so a given uptake keeps the same color on every slice. It is measured from the data and has no control in the interface:
+
+| Overlay | Window |
+|---------|--------|
+| **PET whose SUV factor can be computed** | **1 SUVbw** to the next whole SUVbw above the series maximum, kept between **4** and **30**. |
+| **Any other overlay** | **0** to the series maximum, in the raw DICOM pixel value unit. |
+
+The upper bound is a high percentile of the active voxels rather than the plain maximum: physiologic excretion (bladder) and the injection site are several times hotter than any diagnostic structure, so they saturate at the top of the palette instead of pushing the rest of the study into its first tenth. The lower bound is where the overlay starts being visible — below it the base image is left untouched, which is why normal tissue does not tint the anatomy.
+
+The resulting scale is drawn as a **color bar** on the fused view, beside the [LUT bar](lut) of the base image when both are shown:
+
+- The value at the top of the bar is the window maximum, the one at the bottom its minimum.
+- The unit written above it is **`SUVbw`** when SUV could be computed, the **DICOM pixel value unit** (`BQML`, `CNTS`, …) otherwise, or a **percentage** of the window when the series carries no unit. Only `SUVbw` values can be compared with another acquisition: the others depend on the injected dose, the patient weight and the uptake time.
+- The band the overlay paints as fully transparent is left blank, so the activity that is deliberately not shown reads as such instead of being mistaken for a color.
+
+The bar is toggled with **Fusion Color Scale** in the [Display panel](dicom-2d-viewer#display) and is enabled by default. It is not drawn on views shorter than 350 pixels, where it would overlap the corner annotations.
 
 ### SUV statistics on a region of interest {#suv}
 

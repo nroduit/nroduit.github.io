@@ -99,7 +99,69 @@ Important Parameters (except mandatory parameters defined in xsd):
 {{% /notice %}}
 
 {{% notice tip %}}
-From Weasis 2.5 it is possible to have multiple archives (allows several arcQuery tags) and the [presentations](https://github.com/nroduit/Weasis/blob/master/weasis-dicom/weasis-dicom-explorer/src/main/resources/config/presentations.xsd) tag which contains the image annotations.
+From Weasis 2.5 it is possible to have multiple archives: several `arcQuery` tags are allowed in the same manifest.
+{{% /notice %}}
+
+### Build a JSON manifest {#json-manifest}
+
+Since {{% badge title="Version" %}}4.7.2{{% /badge %}}, the manifest may also be served as **JSON**. The structure mirrors the 2.5 XML manifest one-for-one — same node names, same attributes — so a connector only has to change its serialization:
+
+{{< highlight json >}}
+{
+  "manifest": {
+    "arcQuery": [
+      {
+        "arcId": "1001",
+        "baseUrl": "https://archive/dicom-web",
+        "queryMode": "DICOM_WEB",
+        "Patient": [
+          {
+            "PatientID": "H13885_9M",
+            "PatientName": "TEST NON SQUARE PIXELS",
+            "Study": [
+              {
+                "StudyInstanceUID": "2.16.756.5.5.100.397184556.14391.1373576413.1508",
+                "Series": [
+                  {
+                    "SeriesInstanceUID": "2.16.756.5.5.100.397184556.7220.1373578035.1",
+                    "Modality": "MR",
+                    "Instance": [
+                      { "SOPInstanceUID": "2.16.756.5.5.100.397184556.7220.1373578035.1.0", "InstanceNumber": "1" }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+{{< /highlight >}}
+
+Both formats are loaded with the same [$dicom:get](../commands/#dicomget) command and both may be gzip-compressed. A few rules to be aware of:
+
+- The format is detected from the **content**, not from the file extension or the `Content-Type`: a document starting with `{` is parsed as JSON, otherwise as XML.
+- Weasis requests `Accept: application/xml` by default. XML is parsed as a **stream**, so it stays the better choice for large instance-level manifests, while JSON is fully buffered in memory. Launch Weasis with `-Dweasis.manifest.accept=json` to request JSON instead.
+- A node holding a single child accepts either a JSON object or an array of objects.
+
+### Partial DICOMweb manifest and series bulk retrieve {#partial-manifest}
+
+Since {{% badge title="Version" %}}4.7.2{{% /badge %}}, an `arcQuery` in `DICOM_WEB` mode (`queryMode="DICOM_WEB"`) may stop at the **Patient**, **Study** or **Series** level instead of listing every SOP instance. Weasis completes the missing levels itself with QIDO-RS queries targeted by UID on the manifest `baseUrl` (`{baseUrl}/studies/{studyUID}/series`), which keeps the manifest small and shifts the enumeration cost to the moment the data is actually needed.
+
+The new `seriesRetrieve` attribute of `arcQuery` controls how a series with no listed instance is downloaded:
+
+| Value | Behavior |
+|-------|----------|
+| `true` | The series is retrieved in **bulk** — one single series-level WADO-RS request instead of one request per instance. |
+| `false` | The instances are enumerated then downloaded individually. |
+| *(absent)* | Falls back to the `weasis.dicom.web.series.bulk` system property. |
+
+The attribute is ignored for non-`DICOM_WEB` manifests.
+
+{{% notice note %}}
+A manifest that already carries the `Instance` level keeps the previous behavior: listing the instances remains the way for the archive connector to control exactly which objects are loaded.
 {{% /notice %}}
 
 ### Build an XML manifest (no WADO server)

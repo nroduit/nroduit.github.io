@@ -54,7 +54,7 @@ Number of images within a series            | 197,887    | 640,850
 {{% /annotate %}}
 <br>
 
-* A series is represented by a thumbnail with the image count shown in the bottom-left corner.
+* A series is represented by a thumbnail with the image count shown in the bottom-left corner. Icons in the **lower-right corner** indicate the objects that explicitly reference this series — Key Object Selection, Presentation State, [Segmentation](dicom-segmentation) {{< svg-inline "static/tuto/icon/segmentation.svg" >}} or [RT](dicom-rt) objects. A missing icon does not always mean the object is unusable with this series: a segmentation is also displayable on any series sharing its [Frame of Reference UID](dicom-segmentation#related-series).
 * According to [predefined rules](https://github.com/nroduit/Weasis/blob/master/weasis-distributions/resources/series-splitting-rules.xml), some series are split into sub-series — also represented as thumbnails, identified by a `#` number in the upper-right corner. Splitting is needed for the consistency of tools such as the [MPR viewer](mpr), [MIP](mip), the [3D cursor (cross-lines)](cursor-3d) and [view synchronization](synch-view). When the split is not desired, sub-series can be [re-merged from the context menu](https://www.youtube.com/watch?v=tttP__1Sbsc).
 
 {{% notice tip %}}
@@ -80,6 +80,10 @@ Since {{% badge title="Version" %}}4.7.1{{% /badge %}}, a search field above the
 Each patient keeps its **own** filter: switching patients restores the filter last used for that patient. Because only one mode is active at a time, changing the mode clears the current criterion.
 
 To show the full series list again, click the **clear button** (✕) on the right of the field to reset the search, then open the combo to pick from all entries.
+
+{{% notice tip %}}
+Since {{% badge title="Version" %}}4.7.2{{% /badge %}}, the mode selected when a patient is opened for the first time can be changed with **Default series filter** in **File > Preferences > DICOM Explorer**, or set for everyone with the [preference](../basics/customize/preferences) `weasis.dicom.explorer.filter.mode` (`TEXT`, `DATE` or `MODALITY`).
+{{% /notice %}}
 
 #### 4D Series Sub-Series Splitting {#4d-splitting}
 

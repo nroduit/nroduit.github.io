@@ -35,7 +35,7 @@ The **Modality LUT** and the **Palette Color LUT** are applied automatically whe
 * **Filter** — 2D image filter applied **before** the LUT, useful for enhancing image quality or highlighting specific structures. Default: **None**.
 
 {{% notice tip %}}
-To overlay the active LUT bar on the image, enable it from the [Display panel](dicom-2d-viewer/#display) on the right. The values labeled on the bar correspond to the **Modality LUT values** (e.g. Hounsfield units for CT) when one is defined, or to raw pixel values otherwise.
+To overlay the active LUT bar on the image, enable it from the [Display panel](dicom-2d-viewer/#display) on the right. The values labeled on the bar correspond to the **Modality LUT values** (e.g. Hounsfield units for CT) when one is defined, or to raw pixel values otherwise. On a fused view, the [fusion color scale](fusion#color-scale) is drawn beside it with the values of the overlay.
 
 To inspect how the current Window / Level reshapes the pixel distribution, switch to the [Histogram](histogram) layout.
 {{% /notice %}}

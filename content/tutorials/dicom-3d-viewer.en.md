@@ -129,7 +129,7 @@ Some of the options below are also accessible from the toolbar and the right-cli
 * **Window** — width of the voxel-value range mapped to the displayed value range.
 * **Level** — center of the range defined by Window.
 * **LUT Shape** — transfer function applied between input and display values: linear, sigmoid, or logarithmic. Default is linear.
-* {{< svg-inline "static/tuto/icon/lut.svg" >}} **LUT** — a 3D Lookup Table that maps grayscale voxel values to color, opacity, and lighting for visualization. Picking a LUT from the toolbar or the right-click menu is usually easier: LUTs there are ordered by modality and shown with a preview.
+* {{< svg-inline "static/tuto/icon/lut.svg" >}} **LUT** — a 3D Lookup Table that maps grayscale voxel values to color, opacity, and lighting for visualization. Picking a LUT from the toolbar or the right-click menu is usually easier: LUTs there are ordered by modality and shown with a preview. Custom LUTs can be created and modified with the [Volume LUT Editor](#lut-editor).
 * {{< svg-inline "static/tuto/icon/inverseLut.svg" >}} **Invert LUT** — flips the LUT direction.
 
 
@@ -151,6 +151,54 @@ Zoom the volume and rotate it around the three patient axes:
 
 * **Zoom slider** — scales the rendering.
 * **Rotation sliders** — rotate around the Left / Right, Anterior / Posterior, and Superior / Inferior axes (LPS coordinate system).
+
+### Volume LUT Editor {#lut-editor}
+
+Since {{% badge title="Version" %}}4.7.2{{% /badge %}} custom Volume LUTs can be created and edited directly in the 3D viewer. A Volume LUT (also called a *preset*) defines, for each voxel intensity, the color, the opacity, and the lighting coefficients used by the volume rendering.
+
+Open the editor from the LUT list in the toolbar {{< svg-inline "static/tuto/icon/lut.svg" >}} or in the right-click menu: the **Edit Volume LUT…** entry is located at the bottom of the list.
+
+{{% annotate src="/tuto/3d-lut-editor.png" viewbox="0 0 2552 1520" alt="Volume LUT Editor dialog with the preset list, preset properties and transfer function" class="shadow" %}}
+A | | 645,270 | 60
+B | | 1400,150 | 60
+C | | 1020,980 | 60
+{{% /annotate %}}
+<br>
+
+#### Preset list {{% badge style="red" %}}A{{% /badge %}} {#preset-list}
+
+The left side of the dialog lists all the available presets. A **search field** and two filters (**modality** and **All / Editable / Built-in**) help to locate a preset in a long list.
+
+Built-in presets cannot be modified. Use the buttons below the list to create an editable one:
+
+* **New** — creates an empty custom preset.
+* **Copy** — duplicates the selected preset. Copying a built-in preset is the easiest way to start from a working configuration and adjust it.
+* **Delete** — removes the selected custom preset (with confirmation).
+
+#### Preset properties {{% badge style="red" %}}B{{% /badge %}} {#preset-properties}
+
+* **Name** — the name displayed in the LUT lists (required).
+* **Modality** — the modality group under which the preset is listed (e.g. CT, MR, PET). Choose **Default** to make it available for all modalities.
+* **Default** — makes this preset the one selected automatically when a volume of that modality is opened.
+* **Shading** and **Specular Power** — default lighting behavior of the preset, which can still be overridden afterward from the [Volume Rendering](#volume-rendering) panel.
+
+#### Transfer function {{% badge style="red" %}}C{{% /badge %}} {#transfer-function}
+
+A preset contains one or more **groups**, and each group is a list of **points** placed along the voxel-intensity axis. Every point defines an opacity, a color, and the **Ambient / Diffuse / Specular** lighting coefficients; values between two points are interpolated linearly.
+
+The points of the selected group can be edited in two ways:
+
+* **Graphically**, in the transfer-function graph: **double-click** on the curve to add a point, **drag** a point to change its intensity and opacity, **double-click a point** to pick its color, and press **Delete** to remove the selected point.
+* **Numerically**, in the point table (**Intensity**, **Opacity**, **Color**, **Specular**, **Ambient**, **Diffuse** columns), together with the **Add Point** / **Remove Point** buttons.
+
+The resulting color bar is previewed under the graph, and every change is also applied live to the current 3D view after a short delay (the **Apply Preview** button forces an immediate update).
+
+* **Save** — validates and persists the preset, then closes the dialog.
+* **Cancel** — discards the unsaved changes and restores the LUT that was active before opening the editor.
+
+{{% notice info %}}
+Custom presets are stored in the `customVolumePresets.json` file inside the Weasis preferences directory. When a remote preference service is configured (e.g. with weasis-pacs-connector), the file is also uploaded so the custom LUTs follow the user profile across workstations.
+{{% /notice %}}
 
 ### Preferences
 From the menu **_File > Preferences > Viewer > 3D Viewer_**.

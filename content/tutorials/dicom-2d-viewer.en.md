@@ -110,6 +110,7 @@ Display transformation values and DICOM information directly on the image.
 * **Anonymize** — hide identifying information **only inside the views** (not in other parts of the GUI such as the tab title). Combine with the [screenshot tool](dicom-export) when exporting an image.
 * **Scale** — display the rulers on the left and bottom of the image {{% badge style="blue" %}}K{{% /badge %}}.
 * **Lookup Table** — display the [LUT](lut) on the image {{% badge style="blue" %}}L{{% /badge %}}.
+* **Fusion Color Scale** — display the color scale of the [fusion overlay](fusion#color-scale), next to the LUT bar when both are shown.
 * **Orientation** — display the [orientation of the image](image-orientation) {{% badge style="blue" %}}N{{% /badge %}}.
 * **Window / Level** — display the [window and level](lut/#windowing-and-rendering) values {{% badge style="blue" %}}J{{% /badge %}}.
 * **Zoom** — display the zoom value {{% badge style="blue" %}}J{{% /badge %}}.

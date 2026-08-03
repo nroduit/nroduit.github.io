@@ -10,7 +10,7 @@ weight: 80
 
 The manifest contains the list of exams, series, and instances to retrieve when loading images by Weasis. 
 
-The manifest is represented in this [format](../basics/customize/integration/#build-an-xml-manifest).
+The manifest is represented in this [format](../basics/customize/integration/#build-an-xml-manifest). Since Weasis {{% badge title="Version" %}}4.7.2{{% /badge %}} it can also be served as [JSON](../basics/customize/integration/#json-manifest); Weasis asks for XML by default and detects the returned format from its content.
 
 The creation of the manifest occurs when a client calls ViewerHub to launch Weasis through the launch URL using the [Launch APIs](api).  
 
@@ -21,9 +21,11 @@ According to the search criteria of the request, ViewerHub constructs the manife
 There are 3 types of connectors:
 - DB (database)
 - DICOM (DICOM DIMSE)
-- DICOM_WEB (Weasis will use DICOMWeb connector in a future release).
+- DICOM_WEB (DICOMweb)
 
 DB queries or DICOM calls are made to retrieve the necessary information to populate the manifest according to the search criteria.
+
+With a DICOM_WEB connector, the manifest may be truncated at the patient, study or series level: Weasis {{% badge title="Version" %}}4.7.2{{% /badge %}} completes the missing levels itself through QIDO-RS and can retrieve a whole series in a single request — see [partial manifest and series bulk retrieve](../basics/customize/integration/#partial-manifest).
 
 The connectors are defined according to a model in the config server.
 
