@@ -157,6 +157,21 @@ image cache. On a machine with little RAM, raising one means lowering the other.
 The full set of memory parameters is described in the
 [Memory Management developer guide](https://github.com/nroduit/Weasis/blob/master/weasis-core/docs/Memory-Management.md).
 
+## Resetting the statistics
+
+The **Reset statistics** button clears the measured history — total uptime, peaks
+and event counters — so the verdict is rebuilt from the current run. The
+**workload** (largest image and volume) and the graphics processor are kept, so
+the panel still has something to judge from right away.
+
+Peaks and counters only ever grow, and they reflect how a *given version* of
+Weasis used memory, so an installed Weasis starts a fresh measurement after an
+update:
+
+| Property | Effect | Default |
+|---|---|---|
+| `weasis.resource.stats.clean.previous.version` | Clear the measured statistics when the Weasis version has changed from the previous launch | `true` |
+
 ## Exporting the report
 
 The **Copy report** button places a plain-text summary of the whole panel on the

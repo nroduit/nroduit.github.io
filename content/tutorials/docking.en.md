@@ -25,6 +25,22 @@ This makes it possible, for example, to compare two series simultaneously in a s
 To return to a single-tab layout, drag one of the split tab groups back onto the other, or close the extra view.
 {{% /notice %}}
 
+#### Tab contextual menu
+
+Since {{% badge title="Version" %}}4.7.3{{% /badge %}}, the same layout changes are available without dragging. **Right-click a tab** to open its contextual menu:
+
+- **Split Right** — move the tab out of its tab group into a new area on the **right**, side by side with the tabs left behind.
+- **Split Down** — same, into a new area **below** the group.
+- **Move to Other Group** — a submenu listing the **other tab groups** of the central area; choosing one moves the tab into it as a new tab.
+
+The two split entries are only enabled when the tab **shares its group with at least one other tab**: a tab alone in its area has nothing to split away from. The split always divides the **current group** in half, so a group that is itself the result of an earlier split can be split again, as deep as needed.
+
+{{% notice tip %}}
+Tabs are titled after the patient, so several tabs of the same patient (2D view, MPR, 3D) look alike in the **Move to Other Group** submenu. Each entry therefore carries a small **diagram of the central area with its group highlighted**, showing at a glance where the tab will land.
+{{% /notice %}}
+
+The menu also holds the tab closing actions: **Close**, **Close Others** and **Close All**.
+
 #### Maximize a tab
 A tab can be **maximized** to occupy the entire application window, including the space normally taken by the tool panels on either side — giving the largest possible viewing area for a single viewer.
 

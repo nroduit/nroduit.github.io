@@ -38,10 +38,14 @@ In the node dialog:
      - `code` (**Authorization Code**, the default) — interactive login: Weasis opens your browser so you sign in with your account, then receives the token through a loopback redirect. Use this for user-facing access.
      - `client_credentials` (**Client Credentials**, RFC 6749 §4.4) — non-interactive, server-to-server: Weasis obtains the token directly from the token endpoint using only the Client ID and Client Secret, with **no browser login**. Use this for service/headless accounts.
    - Click **OK** to save the authentication.
-5. Optionally, add **HTTP headers** that should be sent with every request to this service URL (useful for tokens or other custom auth schemes).
+5. Optionally, add **HTTP headers** that should be sent with every request to this service URL (useful for tokens or other custom auth schemes). One header is not taken from this list: a QIDO query always asks for `application/dicom+json`, because that is the only response Weasis can read. An `Accept` header configured here applies to the retrieve, not to the query.
 6. Click **OK** to save the node.
 
 Then open the [DICOM Import](dicom-import/#dicom-queryretrieve) dialog and pick the new node. If OAuth2 is configured with the **Authorization Code** grant, the first query opens your browser to complete the sign-in; subsequent queries reuse the cached token. With the **Client Credentials** grant, no browser login is required — Weasis authenticates silently using the configured Client ID and Secret.
+
+#### Editing an authentication method {#editing-an-authentication-method}
+
+An authentication method is shared by every node that refers to it. Since {{% badge title="Version" %}}4.7.3{{% /badge %}}, editing or deleting a method through **Manager** takes effect on the next query; before that version, a corrected endpoint or client secret required restarting Weasis.
 
 ### Supported DICOMweb Providers (non-exhaustive list)
 

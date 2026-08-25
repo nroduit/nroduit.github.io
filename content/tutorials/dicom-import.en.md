@@ -65,7 +65,7 @@ Loads a DICOMDIR-based study from a CD/DVD or any folder that already contains a
 * **Copy images into the local temporary directory** — useful for slow reading devices such as CD-ROM drives.
 
 #### DICOM Query/Retrieve
-Queries a remote PACS and retrieves selected studies into the DICOM Explorer. The dialog has two tabs — **DICOM Source** and **Search Criteria**.
+Queries a remote PACS and retrieves the selected studies or series into the DICOM Explorer. The dialog has two tabs — **DICOM Source** and **Search Criteria**.
 
 ##### DICOM Source tab
 ![DICOM import archive](/tuto/dicom-import-archive.png?classes=shadow)
@@ -78,6 +78,8 @@ Queries a remote PACS and retrieves selected studies into the DICOM Explorer. Th
   * **C-MOVE** — the classic DIMSE retrieve. Accepts all SOP Classes but is not recommended over the web.
   * **C-GET** — transfer syntaxes are negotiated per SOP Class through a configuration file.
   * **WADO-URI** — C-FIND for the query plus WADO-URI retrieve; requires a WADO server.
+
+  Since {{% badge title="Version" %}}4.7.3{{% /badge %}}, **C-MOVE** and **C-GET** are also tracked in the Download Manager and can be stopped and resumed series by series, as WADO-URI and DICOMweb nodes already were (see [Download progress, stop and resume](#download-progress-stop-and-resume)).
 * **Calling Node** (DICOM archives only) — pick the calling DICOM node that matches the remote AE.
 * **More options** — opens the preferences so you can add or edit DICOM nodes.
 
@@ -88,15 +90,58 @@ Queries a remote PACS and retrieves selected studies into the DICOM Explorer. Th
 1. Pick a pre-registered search (combo box at the bottom-right of the **Search Criteria** panel) or fill in your own criteria. Saved criteria can be reused later; since {{% badge title="Version" %}}4.1.0{{% /badge %}}, the item selected in the combo box is re-applied automatically the next time the window opens (the default is **Empty**).
 2. Adjust the **limit** — the maximum number of studies returned by the query. Set the limit to **0** to remove the cap. For DICOMweb, the limit is the page size; use the spinner buttons to move between pages.
 3. Click **Search**.
-4. Select the studies you want to import.
+4. Select what you want to import in the result tree (see below).
 5. Click **Import** and close the window.
 
+##### Choosing the retrieve level
+
+The query result is a tree with a checkbox on every node. Since {{% badge title="Version" %}}4.7.3{{% /badge %}}, it has a **series** level below each study: expanding a study lists the series returned by the archive — modality, series number, description and number of images — so the retrieve no longer has to be an all-or-nothing study transfer. The series of a study are queried the first time it is expanded, and kept as long as the result is displayed.
+
+* Checking a **study** retrieves all of its series — this is the previous behavior and remains the default.
+* Expanding a study and checking only some **series** restricts the transfer to those series. The retrieve is then requested at the *SERIES* level instead of the *STUDY* level, so the archive sends only what was selected.
+
+Selecting fewer series is the most effective way to shorten a retrieve from a large study, and it also keeps the local cache smaller.
+
+##### When the transfer starts
+
+Since {{% badge title="Version" %}}4.7.3{{% /badge %}}, a retrieve no longer inspects the whole selection before the first image arrives. Weasis asks the archive for the series of a selected study, queues one download per series and starts transferring, while the remaining studies of the selection are still being queried.
+
+The content of a series is not listed up front either:
+
+* **C-MOVE**, **C-GET** and **DICOMweb** request each series as a whole and let the archive send what it holds. The number of images announced by the series query is enough to fill the progress bar.
+* **WADO-URI** transfers the images one by one, so it has to list them first. That query is made when the series is about to be downloaded, and for that series only.
+
+A resumed series is the exception: whatever the protocol, Weasis then lists the images of that series so that it can ask only for the ones still missing.
+
+On a selection of several large studies this replaces a long silent preparation with a download that starts right away. In exchange, the thumbnail of a series appears with its first images instead of before the download — except with DICOMweb nodes, where the archive's series thumbnail service gives a preview straight away when it implements one.
+
+##### Download progress, stop and resume
+
 {{% notice note %}}
-Tracking the download progress and pausing the download of a series is supported only with [DICOMweb nodes](dicomweb-config) and with the combination **DICOM C-FIND + WADO-URI**.
+Since {{% badge title="Version" %}}4.7.3{{% /badge %}}, every retrieve type — **C-MOVE**, **C-GET**, **WADO-URI** and [**DICOMweb**](dicomweb-config) (QIDO / WADO-RS) — is tracked series by series, and each series can be stopped and resumed individually. Before that version, progress tracking and pausing were available only with DICOMweb nodes and with the combination **DICOM C-FIND + WADO-URI**.
+{{% /notice %}}
 
 ![Download Manager](/images/DownloadManager.jpg?width=150px)
 
-A paused series can be resumed by clicking the green play button or via its right-click menu.
+* Every series carries its own progress bar, filled according to the number of instances already received.
+* **Stop Downloading** and **Resume Downloading** are available in the right-click menu of a series, and on the button in front of its progress bar. A stopped series is restarted with the green play button.
+* **Stop All** and **Resume All** are the two buttons at the bottom of the DICOM Explorer panel. They apply to the whole download queue at once.
+* Stopping loses nothing: the instances already received are kept, and resuming asks only for the missing ones instead of transferring the series again from the beginning.
+
+##### Selecting a thumbnail downloads that series first
+
+Weasis transfers only a few series at a time and leaves the others waiting in a queue, in the order in which they were requested. Clicking the thumbnail of a series that is still waiting makes it the next one to arrive:
+
+1. the selected series is moved to the front of the queue;
+2. one of the series currently being transferred is stopped and put back in the queue, which frees a slot;
+3. the selected series starts downloading immediately in that slot.
+
+The interrupted series loses neither its place in the queue nor the images it had already received: it resumes from where it stopped as soon as a slot is free again. Selecting a series that is already being transferred, or one that is complete, changes nothing.
+
+This is what makes a large retrieve usable: instead of waiting for the whole study, click the series you want to read and it is transferred first, while the rest keeps downloading in the background.
+
+{{% notice warning %}}
+Stopping a **C-MOVE** or **C-GET** retrieve asks the remote archive to cancel the transfer. Some archives take a while to react, so a few more images may still arrive after the stop; Weasis closes the association once the cancel has been sent instead of waiting for the archive to finish.
 {{% /notice %}}
 
 {{% notice tip %}}

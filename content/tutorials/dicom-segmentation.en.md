@@ -85,16 +85,23 @@ When a SEG carries **no usable reference at all** — frequent with AI-generated
 
 ### Segmentations hidden by default {#segmentations-hidden-by-default}
 
-Since {{% badge title="Version" %}}4.7.2{{% /badge %}}, a SEG file matching a keyword list is **loaded but not displayed**: it still appears — unticked — in the Segmentation panel and can be shown at any time. This avoids cluttering the image with segments produced by acquisition or planning tools that are rarely of diagnostic interest — the table, the couch or the patient support.
+Since {{% badge title="Version" %}}4.7.2{{% /badge %}}, a SEG file can be **loaded but not displayed**: it still appears — unticked — in the Segmentation panel and can be shown at any time. This avoids cluttering the image with segments produced by acquisition or planning tools that are rarely of diagnostic interest — the table, the couch or the patient support.
 
-Both settings are in **File > Preferences > 2D Viewer**:
+Since {{% badge title="Version" %}}4.7.3{{% /badge %}}, these settings have a page of their own, **_File > Preferences > Viewer > Segmentation_** (they were under _2D Viewer_ before), because they govern every view that draws a SEG — 2D, MPR and 3D. A third rule has been added for studies that carry many segmentations at once. **Any one of the three rules is enough to hide a segmentation:**
 
 | Setting | Behavior |
 |---------|----------|
-| **Keywords to hide** | Comma-separated keywords. A SEG file is hidden when one of them appears in its _Series Description_, _Content Description_ or _Content Label_, or when **every** one of its segments matches by label, description or algorithm name. Case, spaces, underscores and hyphens are ignored when matching. Default: `table removal, tabletop, couch, patient support, bed removal`. An empty value disables the feature. |
-| **Hide all segmentations by default** | Hides *every* segmentation on load — nothing is drawn until you enable it in the panel or with **Alt + S**. When checked, the keyword list is not used. |
+| **Hide all segmentations by default** | Hides *every* segmentation on load — nothing is drawn until you enable it in the panel or with **Alt + S**. It **overrides** the two rules below, which are greyed out while it is checked. |
+| **Keywords to hide** | Comma-separated keywords. A SEG file is hidden when one of them appears in its _Series Description_, _Content Description_ or _Content Label_, or when **every** one of its segments matches by label, description or algorithm name — so a multi-segment object is not hidden just because one of its segments happens to be the table. Case, spaces, underscores and hyphens are ignored when matching. Default: `table removal, table segmentation, tabletop, couch, patient support, bed removal`. An empty value disables the rule. |
+| **Hide from** {{% badge title="Version" %}}4.7.3{{% /badge %}} | Number of segmentations loaded **for the patient** from which they all start hidden, exactly as _Hide all_ does — beyond a handful they paint over each other and none of them is readable. Segmentations already hidden by the keywords are not counted, so a study whose only extra objects are table removals is not considered crowded. Default: `3`. Enter `0` to disable the rule. |
 
-The same values can be pre-set at the server side with the [preferences](../basics/customize/preferences) `weasis.dicom.seg.hide.keywords` and `weasis.dicom.seg.hide.all`.
+{{% notice note %}}
+The count spans the **patient**, not the series: a cardiac study routinely spreads its segmentations over several series, and counting each series separately would leave the single-file ones showing while the crowded ones hide.
+{{% /notice %}}
+
+Hiding is only a **default**. A hidden segmentation is fully loaded and listed unticked in the Segmentation panel — tick it, or press **Alt + S**, to display it. Since {{% badge title="Version" %}}4.7.3{{% /badge %}}, changing these settings also re-applies them to the segmentations **already loaded**, at the next repaint, instead of only to the next study; the ones you ticked by hand keep their state. The **Restore default values** button of the page puts the three settings back to the values above.
+
+The same values can be pre-set at the server side with the [preferences](../basics/customize/preferences) `weasis.dicom.seg.hide.all`, `weasis.dicom.seg.hide.keywords` and `weasis.dicom.seg.hide.count`.
 
 ---
 
@@ -148,3 +155,4 @@ A few things to keep in mind when working with the 3D overlay:
 - **Overlapping segments are handled cleanly.** When two segments share the same area, their colors are blended automatically; you do not have to pick which one wins.
 - **2D, MPR and 3D stay in sync.** Showing or hiding a segment in the panel updates all three views simultaneously.
 - **Several SEG files at once.** Since {{% badge title="Version" %}}4.7.2{{% /badge %}}, every SEG file linked to the series is resampled on the image grid and merged into a single segmentation volume, so segments coming from different files are rendered together. Building this volume runs in the background — a progress bar is displayed in the view — and **Show all** / **Hide all** are available in the 3D Segmentation panel too.
+- **Segments are lit like the anatomy.** Since {{% badge title="Version" %}}4.7.3{{% /badge %}}, the **Shading** option of the [Volume Rendering](dicom-3d-viewer#volume-rendering) panel also applies to the segmentation surfaces.

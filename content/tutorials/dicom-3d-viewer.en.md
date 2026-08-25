@@ -16,7 +16,7 @@ The graphics-card capabilities used by Weasis are reported under **OpenGL Suppor
 
 * **Driver version** — requires OpenGL **3.3+** since {{% badge title="Version" %}}4.7.0{{% /badge %}}. Two rendering backends are used depending on the available OpenGL version:
   * **OpenGL 4.3+** — uses a **Compute Shader** for optimal performance.
-  * **OpenGL 3.3 – 4.2** — uses an **FBO-based Fragment Shader** fallback (fully functional, but may be less performant than the Compute Shader path). macOS is capped at OpenGL 4.1 and therefore always uses this path.
+  * **OpenGL 3.3 – 4.2** — uses an **FBO-based Fragment Shader** fallback (fully functional, but may be less performant than the Compute Shader path). macOS is capped at OpenGL 4.1 and therefore always uses this path. Since {{% badge title="Version" %}}4.7.3{{% /badge %}}, this path renders at a reduced resolution while the view is being dragged — see [rendering during interaction](#interactive-rendering).
 * **Max 3D texture dimension length** — the upper limit, in voxels, of any X / Y / Z dimension of the volume.
 * Any other entry shown in **red** indicates a non-optimal configuration. The viewer often still works — see [how to limit the size of 3D textures](#3d-viewer) if performance becomes an issue.
 
@@ -144,7 +144,7 @@ Controls for the rendering algorithm, quality, transparency, lighting, and shadi
   * **Iso Surface** — renders a 3D surface at a given intensity threshold, representing structures of a uniform density (e.g. bone segmentation).
 * **Z-axis sampling** — distance between successive samples along each ray. Smaller values capture more detail at the cost of compute time; the default is derived from the volume size.
 * **Opacity** — global opacity factor for the voxels. Can be pushed above 100 % to compensate for the lower-than-100 % values defined by some Volume LUTs.
-* **Shading** — enables shading on the rendered surface. The default is taken from the Volume LUT; the additional options let you override the inherited lighting settings.
+* **Shading** — enables shading on the rendered surface. The default is taken from the Volume LUT; the additional options let you override the inherited lighting settings. Since {{% badge title="Version" %}}4.7.3{{% /badge %}}, the toggle also lights the **segmentation surfaces** drawn over or in place of the anatomy — see [Segmentation overlay in the 3D Volume Renderer](dicom-segmentation#segmentation-overlay-in-the-3d-volume-renderer).
 
 #### Transform {{% badge style="red" %}}D{{% /badge %}} {#transform}
 Zoom the volume and rotate it around the three patient axes:
@@ -214,8 +214,13 @@ Information about the graphics card and OpenGL capabilities, see [Requirements](
 The maximum 3D texture defaults come from the graphics card. Lowering them (e.g. to 512) can produce a more fluid rendering on hardware that struggles with the full-size texture.
 {{% /notice %}}
 
-#### Volume Rendering
+#### Volume Rendering {#interactive-rendering}
 * **Dynamic quality** — reduces the rendering quality along the Z axis while you rotate or modify the view, for a smoother interaction. At the maximum slider position there is no quality reduction.
+
+{{% notice note %}}
+Since {{% badge title="Version" %}}4.7.3{{% /badge %}}, the **FBO fragment-shader** backend (OpenGL 3.3 – 4.2, and therefore always on macOS — see [Requirements](#requirements)) additionally lowers the **rendering resolution** while the camera is being dragged: the volume is ray-cast at the logical window resolution instead of the physical one and the result is upscaled for the duration of the gesture, which on a HiDPI / Retina display is a quarter of the pixels to compute. The frame drawn as soon as you release the mouse is at full resolution again. This is automatic and is independent of the **Dynamic quality** slider, which acts on the sampling along the ray; the **Compute Shader** backend (OpenGL 4.3+) always renders at full resolution.
+{{% /notice %}}
+
 * **Default orientation** — preferred starting orientation. Default: anterior view rotated 15° to the right and 15° downward.
 * **Background color** — background color of the rendered scene.
 * **Light color** — color of the light used to illuminate the rendering.

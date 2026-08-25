@@ -88,8 +88,18 @@ Tags in the bottom panel are organized into a categorized tree:
 A red dashed outline around an item means the value is **mandatory** and must be filled in before publication.
 {{% /notice %}}
 
+Person-name fields (_PatientName_, _ReferringPhysicianName_, _OperatorsName_, …) must follow the `Last^First^Middle^Prefix^Suffix` format defined by the [DICOM standard](https://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_6.2.html#sect_6.2.1).
+
+Since {{% badge title="Version" %}}4.7.3{{% /badge %}}, these fields are no longer edited as raw text: clicking the cell opens a dialog with one input per component — **Last name**, **First name**, **Middle name**, **Prefix**, and **Suffix**. The separators are inserted for you, a **DICOM value** line previews the encoded result while you type, and empty components are dropped. In the table, the value is displayed in the usual lexical order (_Smith, John_).
+
+{{% notice note %}}
+The dialog rejects the DICOM delimiter characters `^`, `=` and `\`, and the preview turns red if a name exceeds the 64-character limit of the standard.
+
+Ideographic and phonetic component groups (the parts after `=`, used for Japanese or Korean names) are preserved unchanged; the dialog edits the alphabetic group only.
+{{% /notice %}}
+
 {{% notice warning %}}
-Person-name fields (_PatientName_, _OperatorsName_, …) must follow the `Last^First^Middle^Prefix^Suffix` format defined by the [DICOM standard](https://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_6.2.html#sect_6.2.1). This rule applies both to values typed by hand and to values populated automatically (see [Integrating the Dicomizer](#integrating-the-dicomizer)).
+The `Last^First^Middle^Prefix^Suffix` rule also applies to values populated automatically — from a DICOM Worklist or through the `acquire:patient` command (see [Integrating the Dicomizer](#integrating-the-dicomizer)). Those values are not reformatted by the Dicomizer.
 {{% /notice %}}
 
 {{% notice tip %}}
