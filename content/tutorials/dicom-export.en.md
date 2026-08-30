@@ -31,6 +31,7 @@ Exports the underlying image — without on-screen overlays — with a few rende
 
 * **Size** — scale the exported image (percentage of the original dimensions).
 * **Preserve 16-bit per channel** — keep the original pixel depth (16-bit in PNG / JPEG 2000 / JPEG-XL / TIFF, double values in TIFF). When checked, the exported pixel values match the Modality LUT values (e.g. Hounsfield units for CT). JPEG Lossy is only available with this option **unchecked**, since the format requires an 8-bit image.
+  When unchecked, the image is reduced to 8 bits per channel by applying the **default window/level** of the image — the first window center/width (or VOI LUT) stored in the DICOM header, or the full pixel range when the header defines none. This is *not* the rendering currently displayed in the view: the window/level you adjusted manually, the preset you picked, an applied [Presentation State](build-ko-pr/), an inverted LUT, and any pseudo-color LUT are all ignored. To export exactly what is on screen, use **Current view** instead.
 * **DICOM Pixel Padding** — apply the [DICOM pixel padding](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.5.html#sect_C.7.5.1.1.2) when checked.
 * **DICOM Shutter** — apply the [DICOM shutters](https://dicom.nema.org/medical/Dicom/current/output/chtml/part03/sect_C.7.6.11.html) when checked.
 * **DICOM Overlay** — apply the [DICOM overlays](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.9.2.html) when checked.
@@ -42,7 +43,7 @@ Exports the underlying image — without on-screen overlays — with a few rende
 Open the DICOM Export window from the toolbar icon {{< svg-inline "static/tuto/icon/exportDicom.svg" >}} or from the main menu **_File > Export > DICOM_**. Three destinations are available in the left panel — **Local Device**, **DICOM Send**, and **CD/DVD Image** — each with its own set of options.
 
 {{% notice tip %}}
-When the export window opens, the study that was selected in the viewer (orange focus border) is pre-checked, and the series that are currently open are highlighted with a full-line selection.
+When the export window opens, the study selected in the viewer (orange focus border) is pre-checked, and the series that are currently open are highlighted with a full-line selection.
 
 Hover any series row to see its thumbnail in a tooltip — useful when picking among several similar series.
 {{% /notice %}}
