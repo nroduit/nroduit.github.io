@@ -12,6 +12,12 @@
 
   The badge is a self-contained phrase, so a marker can be deleted without
   breaking the sentence around it.
+
+  Two tooltips are emitted: `title` reads as if the feature is present, and
+  `data-v-alt` as if it is missing. `doc-version.js` swaps them when the reader
+  changes version, so the tooltip explains the state the color is showing instead
+  of repeating the version number. A badge with no index keeps a single tooltip:
+  it applies to every documented version and never changes state.
 */ -}}
 {{- $version := trim ((.Get "version" | default (.Get 0)) | string) " " -}}
 {{- $filepath := "[virtual file]" }}{{ with and .Page .Page.File .Page.File.Filename }}{{ $filepath = . }}{{ end -}}
@@ -23,5 +29,9 @@
     {{- warnf "%q: shortcode 'since' refers to %s, newer than the version window in data/versions.toml; the badge is shown unfiltered" $filepath $version -}}
   {{- end -}}
   {{- $v := trim $version "vV" -}}
-  <span class="wv-badge wv-badge--since"{{ if ge $r.idx 0 }} data-v-since="{{ $r.idx }}"{{ end }} title="Available since Weasis {{ $v }}">since v{{ $v }}</span>
+  {{- if ge $r.idx 0 -}}
+  <span class="wv-badge wv-badge--since" data-v-since="{{ $r.idx }}" title="Added in Weasis {{ $v }} — the version selected in the sidebar has it." data-v-alt="Added in Weasis {{ $v }} — the version selected in the sidebar does not have it yet.">since v{{ $v }}</span>
+  {{- else -}}
+  <span class="wv-badge wv-badge--since" title="Added in Weasis {{ $v }} — present in every version documented here.">since v{{ $v }}</span>
+  {{- end -}}
 {{- end -}}

@@ -20,5 +20,9 @@
     {{- warnf "%q: shortcode 'until' refers to %s, newer than the version window in data/versions.toml; the badge is shown unfiltered" $filepath $version -}}
   {{- end -}}
   {{- $v := trim $version "vV" -}}
-  <span class="wv-badge wv-badge--until"{{ if ge $r.idx 0 }} data-v-until="{{ $r.idx }}"{{ end }} title="Available up to Weasis {{ $v }}">until v{{ $v }}</span>
+  {{- if ge $r.idx 0 -}}
+  <span class="wv-badge wv-badge--until" data-v-until="{{ $r.idx }}" title="Available up to Weasis {{ $v }} — the version selected in the sidebar still has it." data-v-alt="Available up to Weasis {{ $v }} — removed in the version selected in the sidebar.">until v{{ $v }}</span>
+  {{- else -}}
+  <span class="wv-badge wv-badge--until" title="Available up to Weasis {{ $v }} — no version documented here still has it.">until v{{ $v }}</span>
+  {{- end -}}
 {{- end -}}
