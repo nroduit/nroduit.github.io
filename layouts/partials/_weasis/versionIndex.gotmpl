@@ -1,0 +1,38 @@
+{{- /*
+  Resolves a free-form version string ("4.7", "4.7.2", "v4.7.2") against the
+  window declared in `data/versions.toml`. Line entries are ignored: they are
+  not part of the filter.
+
+  Call: partial "_weasis/versionIndex.gotmpl" (dict "version" "4.7.2")
+
+  Returns a dict:
+    idx     window index, or -1 when the version predates the window (the fact
+            is true for every documented version), or -2 when it is newer than
+            the window (a mistake in the content or a stale versions.toml —
+            callers warn and fail open, i.e. keep it visible)
+    id      the normalized minor version, e.g. "4.7"
+*/ -}}
+{{- $input := trim (.version | string) " " }}
+{{- $input = trim $input "vV" }}
+{{- $versions := partialCached "_weasis/versions.gotmpl" site.Home }}
+{{- $parts := split $input "." }}
+{{- $major := int (index $parts 0) }}
+{{- $minor := cond (gt (len $parts) 1) (int (index $parts 1)) 0 }}
+{{- $id := printf "%d.%d" $major $minor }}
+{{- $key := add (mul $major 1000) $minor }}
+{{- $idx := -2 }}
+{{- $oldest := 0 }}
+{{- range $versions }}
+  {{- if not .isLine }}
+    {{- if eq .id $id }}
+      {{- $idx = .idx }}
+    {{- end }}
+    {{- if or (eq $oldest 0) (lt .key $oldest) }}
+      {{- $oldest = .key }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+{{- if and (eq $idx -2) (lt $key $oldest) }}
+  {{- $idx = -1 }}
+{{- end }}
+{{- return (dict "idx" $idx "id" $id) }}

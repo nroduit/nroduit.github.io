@@ -23,7 +23,7 @@ Each thumbnail is a series or sub-series |  | 660,660 | 28 | #00a6b6
 <br>
 
 {{% notice tip %}}
-You can navigate through the Patient / Study / Series / Image structure using only [keyboard shortcuts](../basics/shortcuts) (the bindings below are the defaults — customizable since {{< badgeC "v4.7.0" >}}). For example:
+You can navigate through the Patient / Study / Series / Image structure using only [keyboard shortcuts](../basics/shortcuts) (the bindings below are the defaults — customizable {{< since "4.7.0" >}}). For example:
 - Open an image and, if necessary, select the view to focus on. If the layout has more than one view, you can move across the views with _Tab_ and _Shift + Tab_. The view surrounded by an orange line is the focused view.
 - Navigate through images within a series with _Up_ and _Down_.
 - Navigate through series within a study with _Left_ and _Right_.
@@ -36,12 +36,12 @@ You can navigate through the Patient / Study / Series / Image structure using on
 * A tab containing a multi-view layout can only display images from a **single** patient.
 * You can switch between patients either through the first combobox in the DICOM Explorer (see image above) or by selecting a tab in the main area.
 * In the combobox, patients are sorted alphabetically — case-insensitive, and according to the active [regional setting](locale).
-* Since {{% badge title="Version" %}}4.7.1{{% /badge %}}, the patient combobox is **searchable** — click it and start typing part of a patient name (placeholder _Search patient…_) to narrow the list to matching patients. To restore the full patient list, click the **clear button** (✕) on the right of the field, then open the combo to select a patient.
+* The patient combobox is **searchable** {{< since "4.7.1" >}} — click it and start typing part of a patient name (placeholder _Search patient…_) to narrow the list to matching patients. To restore the full patient list, click the **clear button** (✕) on the right of the field, then open the combo to select a patient.
 * Studies and series are grouped under the **same patient** when their _Patient Name_ and _Patient ID_ both match. Otherwise, a new patient entry is created.
 
 #### Study Level
 * A study contains one or more series (thumbnails) that belong to a single patient. A surrounding line groups the series of one study (see the image above).
-* Studies are sorted in reverse chronological order by default. Since {{% badge title="Version" %}}4.1.0{{% /badge %}} the sort order can be changed in **_File > Preferences > DICOM > DICOM Explorer_** under **Study data sorting**. If a study has no study date, it is sorted alphabetically by _Study Description_.
+* Studies are sorted in reverse chronological order by default. The sort order can be changed {{< since "4.1.0" >}} in **_File > Preferences > DICOM > DICOM Explorer_** under **Study data sorting**. If a study has no study date, it is sorted alphabetically by _Study Description_.
 * All studies are shown by default; the study combobox can restrict the view to a single one.
 
 #### Series Level
@@ -67,7 +67,7 @@ Number of images within a series            | 197,887    | 640,850
 
 #### Filtering the series list {#series-filter}
 
-Since {{% badge title="Version" %}}4.7.1{{% /badge %}}, a search field above the thumbnail list narrows the series shown for the **currently selected patient**. The small button on the left of the field selects one of three **exclusive** filter modes — click it to switch (its tooltip reads _Filter mode: … (click to change)_). A counter next to the field reports how many series pass the filter (_shown / total series shown_).
+A search field above the thumbnail list narrows the series shown for the **currently selected patient** {{< since "4.7.1" >}}. The small button on the left of the field selects one of three **exclusive** filter modes — click it to switch (its tooltip reads _Filter mode: … (click to change)_). A counter next to the field reports how many series pass the filter (_shown / total series shown_).
 
 ![Series filter field in Full text mode, showing 4 of 7 series](/tuto/series-filter.png?classes=shadow)
 
@@ -82,12 +82,12 @@ Each patient keeps its **own** filter: switching patients restores the filter la
 To show the full series list again, click the **clear button** (✕) on the right of the field to reset the search, then open the combo to pick from all entries.
 
 {{% notice tip %}}
-Since {{% badge title="Version" %}}4.7.2{{% /badge %}}, the mode selected when a patient is opened for the first time can be changed with **Default series filter** in **File > Preferences > DICOM Explorer**, or set for everyone with the [preference](../basics/customize/preferences) `weasis.dicom.explorer.filter.mode` (`TEXT`, `DATE` or `MODALITY`).
+The mode selected when a patient is opened for the first time can be changed {{< since "4.7.2" >}} with **Default series filter** in **File > Preferences > DICOM Explorer**, or set for everyone with the [preference](../basics/customize/preferences) `weasis.dicom.explorer.filter.mode` (`TEXT`, `DATE` or `MODALITY`).
 {{% /notice %}}
 
 #### 4D Series Sub-Series Splitting {#4d-splitting}
 
-When a DICOM series is loaded, Weasis automatically analyzes it to detect multi-phase acquisitions (e.g. cardiac phases, contrast phases, 4D volumes). If multiple phases are detected, the series is split — automatically or with a confirmation step — into separate sub-series, one per phase. Each sub-series can then be used independently in the [MPR](mpr), [MIP](mip), or [3D Volume Renderer](dicom-3d-viewer).
+When a DICOM series is loaded, Weasis automatically analyzes it to detect multi-phase acquisitions (e.g. cardiac phases, contrast phases, 4D volumes). If multiple phases are detected, the series is split — automatically or with a confirmation step — into separate sub-series, one per phase {{< since "4.6.2" >}}. Each sub-series can then be used independently in the [MPR](mpr), [MIP](mip), or [3D Volume Renderer](dicom-3d-viewer).
 
 ##### Splitting behavior by number of detected phases
 
@@ -129,7 +129,7 @@ Phase detection is based on the spatial position of each image. If multiple imag
     * **Add** — appends the series to the current patient's layout, if one exists.
 
 {{% notice note %}}
-Since {{% badge title="Version" %}}4.7.0{{% /badge %}}, tab opening and focus behavior is handled automatically, replacing the old configurable _opening mode_ preference.
+Tab opening and focus behavior is handled automatically {{< since "4.7.0" >}}, replacing the old configurable _opening mode_ preference.
 
 **When is a new tab opened?**
 A new viewer tab is opened for every patient whose studies are loaded via an import action. If the patient already has an open tab, the new studies are added to that existing tab instead of opening a new one. This keeps each patient organized in a single tab and prevents fragmentation of the workspace.
@@ -146,5 +146,5 @@ In practice: fast loads surface immediately, slow background loads stay out of t
 From the main menu **_File > Preferences > DICOM > DICOM Explorer_**:
 
 * **Thumbnail size** — width of the thumbnails; the panel adjusts accordingly. Default: 144. Restart the application after changing this value.
-* **Study data sorting** — sorts studies in reverse chronological order (default) or chronological order. Since {{% badge title="Version" %}}4.1.0{{% /badge %}}.
+* **Study data sorting** — sorts studies in reverse chronological order (default) or chronological order {{< since "4.1.0" >}}.
 * **Download all series immediately** — when checked, series start downloading as soon as they are queued via [WADO or WADO-RS](../basics/customize/integration/). When unchecked, you must click the play button on each series, or the global play button at the bottom of the thumbnail list. Default: checked.

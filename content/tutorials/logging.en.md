@@ -11,7 +11,7 @@ Weasis writes log files that are invaluable when something goes wrong — a seri
 
 ### Accessing the log folder
 
-Open the log folder directly from the menu: **_Help > Open the logging folder_** (available since {{% badge title="Version" %}}4.1.0{{% /badge %}}).
+Open the log folder directly from the menu: **_Help > Open the logging folder_**, available {{< since "4.1.0" >}}.
 
 {{% notice tip %}}
 **On earlier versions:** the log folder is `<user.home>/.weasis/log`. To find `<user.home>` from inside Weasis, open **_Help > About Weasis_** and look up the `weasis.path` property in the **System Information** tab.
@@ -22,7 +22,7 @@ Open the log folder directly from the menu: **_Help > Open the logging folder_**
 Weasis writes two kinds of log files into the log folder.
 
 #### Boot log (`boot.log`)
-The boot log (available since {{% badge title="Version" %}}3.5.0{{% /badge %}}) captures the **application startup sequence** and is **always written**, regardless of the rolling-log configuration. It is the right place to look for:
+The boot log, available {{< since "3.5.0" >}}, captures the **application startup sequence** and is **always written**, regardless of the rolling-log configuration. It is the right place to look for:
 
 - whether Weasis started with the expected parameters,
 - startup failures or crashes,
@@ -31,7 +31,7 @@ The boot log (available since {{% badge title="Version" %}}3.5.0{{% /badge %}}) 
 #### Rolling log (`default.log`)
 The rolling log captures **runtime application activity** — viewer events, network calls, errors during use — and must be **enabled in the preferences** (see [Configuring the rolling log](#configuring-the-rolling-log) below).
 
-Once a rolling log reaches its maximum size, it is rotated and the previous file is automatically compressed into a ZIP archive (since {{% badge title="Version" %}}4.4.0{{% /badge %}}).
+Once a rolling log reaches its maximum size, it is rotated and the previous file is automatically compressed into a ZIP archive {{< since "4.4.0" >}}.
 
 ### Configuring the rolling log {#configuring-the-rolling-log}
 
@@ -72,7 +72,7 @@ Each level includes everything from the levels above it.
 {{% /notice %}}
 
 {{% notice info %}}
-The default logging configuration comes from `base.json`. See [Weasis Preferences](../basics/customize/preferences) for the property lookup order. Some default values have changed since {{% badge title="Version" %}}4.4.0{{% /badge %}}.
+The default logging configuration comes from `base.json`. See [Weasis Preferences](../basics/customize/preferences) for the property lookup order. Some default values have changed {{< since "4.4.0" >}}.
 {{% /notice %}}
 
 {{% notice tip %}}

@@ -27,7 +27,7 @@ To return to a single-tab layout, drag one of the split tab groups back onto the
 
 #### Tab contextual menu
 
-Since {{% badge title="Version" %}}4.7.3{{% /badge %}}, the same layout changes are available without dragging. **Right-click a tab** to open its contextual menu:
+The same layout changes are available without dragging {{< since "4.7.3" >}}. **Right-click a tab** to open its contextual menu:
 
 - **Split Right** — move the tab out of its tab group into a new area on the **right**, side by side with the tabs left behind.
 - **Split Down** — same, into a new area **below** the group.

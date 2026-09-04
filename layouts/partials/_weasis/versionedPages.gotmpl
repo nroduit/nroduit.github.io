@@ -1,0 +1,51 @@
+{{- /*
+  Collects the pages whose front matter narrows them to part of the version
+  window. Call it cached, once per language:
+
+    partialCached "_weasis/versionedPages.gotmpl" . site.Language.Lang
+
+  Returns a slice of dicts:
+    navId     the value the theme puts in the sidebar's `data-nav-id`, which is
+              what the generated CSS keys the menu entry on
+    sinceIdx  window index, or "" when the page is not gated that way
+    untilIdx  window index, or ""
+
+  Front matter versions outside the window are dropped with a warning: below the
+  window the restriction is meaningless, above it the window is stale. In both
+  cases the page stays fully visible.
+*/ -}}
+{{- $pages := slice }}
+{{- range site.Pages }}
+  {{- $page := . }}
+  {{- $since := .Params.since }}
+  {{- $until := .Params.until }}
+  {{- if or $since $until }}
+    {{- $filepath := "[virtual file]" }}{{ with and $page.File $page.File.Filename }}{{ $filepath = . }}{{ end }}
+    {{- $sinceIdx := "" }}
+    {{- with $since }}
+      {{- $r := partial "_weasis/versionIndex.gotmpl" (dict "version" .) }}
+      {{- if ge $r.idx 0 }}
+        {{- $sinceIdx = string $r.idx }}
+      {{- else }}
+        {{- warnf "%q: front matter since=%v is outside the version window in data/versions.toml; the page is not filtered" $filepath . }}
+      {{- end }}
+    {{- end }}
+    {{- $untilIdx := "" }}
+    {{- with $until }}
+      {{- $r := partial "_weasis/versionIndex.gotmpl" (dict "version" .) }}
+      {{- if ge $r.idx 0 }}
+        {{- $untilIdx = string $r.idx }}
+      {{- else }}
+        {{- warnf "%q: front matter until=%v is outside the version window in data/versions.toml; the page is not filtered" $filepath . }}
+      {{- end }}
+    {{- end }}
+    {{- if or $sinceIdx $untilIdx }}
+      {{- $pages = $pages | append (dict
+        "navId" (partial "permalink.gotmpl" (dict "to" $page))
+        "sinceIdx" $sinceIdx
+        "untilIdx" $untilIdx
+      ) }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+{{- return $pages }}

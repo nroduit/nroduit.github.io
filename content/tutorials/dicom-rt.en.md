@@ -51,7 +51,7 @@ The **Structures** and **Isodoses** root nodes act as master switches — toggle
 {{% /notice %}}
 
 {{% notice note %}}
-Since {{% badge title="Version" %}}4.7.0{{% /badge %}} the isodose overlay is rendered directly from the **RTDOSE pixel grid** (resampled to the CT image grid using nearest-neighbor interpolation) instead of vector contours. This provides a more faithful representation of the dose distribution stored in the DICOM file, especially around steep dose gradients.
+The isodose overlay is rendered directly from the **RTDOSE pixel grid** (resampled to the CT image grid using nearest-neighbor interpolation) instead of vector contours {{< since "4.7.0" >}}. This provides a more faithful representation of the dose distribution stored in the DICOM file, especially around steep dose gradients.
 {{% /notice %}}
 
 ### How to display the DVH chart
@@ -65,7 +65,7 @@ The Dose-Volume Histogram (DVH) summarizes, for each selected structure, the fra
 <br>
 
 {{% notice warning %}}
-Since {{% badge title="Version" %}}4.7.0{{% /badge %}}, when one or more selected structures have no DVH stored in the RTDOSE, a **confirmation dialog** lists the affected structures and offers to compute the missing histograms on the fly.
+When one or more selected structures have no DVH stored in the RTDOSE, a **confirmation dialog** {{< since "4.7.0" >}} lists the affected structures and offers to compute the missing histograms on the fly.
 
 The calculation algorithm (derived from [dicompyler](https://github.com/dicompyler/dicompyler-core)) is **experimental and not clinically validated**: results must not be used for medical decisions. The feature can be disabled by setting the [system preference](../basics/customize/preferences) `weasis.rt.dvh.recalculate.enable` to `false`; when disabled, only DVHs already stored in the RTDOSE are displayed.
 {{% /notice %}}

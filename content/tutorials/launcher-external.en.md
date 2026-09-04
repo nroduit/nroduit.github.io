@@ -3,11 +3,12 @@ title: Third-party Launcher
 weight: 360
 description: How to launch a third-party application
 keywords: [ "Launch", "Launcher", "external application", "dicom viewer", "free dicom viewer"]
+since: "4.5.0"
 ---
 
 ## <center>Launching a third-party application</center>
 
-**Third-party launchers** let Weasis hand off to another application — a different DICOM viewer, a post-processing tool, a custom report system, a web URL — and pass it information from the current Weasis session as command-line parameters, environment variables, or URI query parameters. Typical uses include opening the current study in a secondary viewer, sending the downloaded DICOM folder to a dedicated **post-processing software** (cardiac analysis, vessel quantification, radiotherapy planning…), calling a clinical report system pre-filled with the patient's accession number, or launching a vendor tool against the DICOM folder Weasis just downloaded.
+**Third-party launchers** let Weasis hand off to another application — a different DICOM viewer, a post-processing tool, a custom report system, a web URL — and pass it information from the current Weasis session as command-line parameters, environment variables, or URI query parameters. Typical uses include opening the current study in a secondary viewer, sending the downloaded DICOM folder to a dedicated **post-processing software** (cardiac analysis, vessel quantification, radiotherapy planning…), calling a clinical report system pre-filled with the patient's accession number, or launching a vendor tool against the DICOM folder Weasis just downloaded. Available {{< since "4.5.0" >}}.
 
 Configured launchers appear in the **_File > Launcher_** menu and, optionally, as a button in the toolbar.
 

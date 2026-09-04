@@ -65,7 +65,7 @@ Hover any series row to see its thumbnail in a tooltip — useful when picking a
 4. Click **Export** to write the files, then close the window.
 
 {{% notice note %}}
-When the export uses a native image format (JPG, PNG, JPEG 2000, JPEG-XL, or TIFF) instead of DICOM, only the image frames are converted (see the [Original Image options](#original-image)). Encapsulated DICOM payloads — video, audio, and PDF — are extracted as standalone files in their native format.
+When the export uses a native image format (JPG, PNG, JPEG 2000, JPEG-XL {{< since "4.6.4" >}}, or TIFF) instead of DICOM, only the image frames are converted (see the [Original Image options](#original-image)). Encapsulated DICOM payloads — video, audio, and PDF — are extracted as standalone files in their native format.
 
 Multi-frame images are exported as numbered files (one frame per file).
 {{% /notice %}}

@@ -3,6 +3,7 @@ title: Curved MPR Viewer
 weight: 52
 description: How to build a panoramic view and cross-sectional slices along a curve (Curved MPR / CPR), typically from a dental CBCT
 keywords: [ "curved mpr", "cpr", "curved planar reformation", "panoramic", "opg", "cross-sectional slices", "dental", "cbct", "cone beam", "open source dicom viewer" ]
+since: "4.7.1"
 ---
 
 ## <center>Curved MPR (CPR) {{< svg-inline "static/tuto/icon/mpr.svg" >}}</center>
@@ -14,7 +15,7 @@ keywords: [ "curved mpr", "cpr", "curved planar reformation", "panoramic", "opg"
 
 The typical input is a **dental CBCT** (cone-beam CT): trace the dental arch on the axial plane to obtain a panoramic reconstruction and the perpendicular cross-cuts used for implant planning.
 
-Curved MPR is available since {{% badge title="Version" %}}4.7.1{{% /badge %}}.
+Curved MPR is available {{< since "4.7.1" >}}.
 
 {{% notice note %}}
 There is **no dedicated drawing tool and no toolbar button**. The curve is an ordinary **polyline** — the standard measurement graphic. Both actions need a polyline with **at least 2 points**.

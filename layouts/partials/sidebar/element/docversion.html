@@ -1,0 +1,59 @@
+{{- /*
+  Sidebar element for the documentation version selector.
+
+  Registered through `sidebarheadermenus` in config.toml as a custom element of
+  type `docversion`; the theme resolves that to this partial.
+
+  The row is a label and the control, on the menu's own background so it takes
+  the menu's colors and reads as part of it. There is no icon: the word
+  "Version" already says what the number is. The label is a real `<label>`, so
+  clicking it focuses the select.
+
+  It deliberately does NOT use the theme's `menu-control` / `control-style`
+  wrapper. That wrapper is built for the language and variant switchers and
+  brings a fixed 1.574em height with `overflow:hidden`, a 1.33rem select, float
+  layout and `appearance:none` with no replacement arrow — every one of which had
+  to be undone here, and which between them kept the value off its baseline. The
+  row owns its own two elements instead, so nothing has to be fought.
+
+  Two things are added on top:
+
+  - versions that are a *separate documentation line* sit in their own optgroup,
+    because picking one navigates away instead of filtering the page;
+  - a single compact status line appears only while the reader is off the
+    current release, so a filtered page never looks simply incomplete. It ships
+    `hidden` and is filled in by `doc-version.js`, so it cannot render before it
+    has something to say; the reset is a plain `?v=` link that works on its own.
+
+  The whole control is hidden when JavaScript is unavailable, because nothing
+  would be filtered then, and it is left out of an archived build, which is a
+  frozen artifact to be read as-is.
+*/ -}}
+{{- $versions := partialCached "_weasis/versions.gotmpl" site.Home }}
+{{- $window := where $versions "isLine" false }}
+{{- $lines := where $versions "isLine" true }}
+{{- $current := "" }}
+{{- range $window }}{{ if eq .state "current" }}{{ $current = .id }}{{ end }}{{ end }}
+{{- if and (gt (len $versions) 1) (ne site.Params.doclinestate "archived") }}
+			<li class="R-docversionswitcher">
+              <div class="wv-docv-row padding">
+                <label class="wv-docv-label" for="R-select-docversion">Version</label>
+                <span class="wv-docv-field">
+                  <select id="R-select-docversion">
+                    {{- if $lines }}<optgroup label="This documentation">{{ end }}
+                    {{- range $window }}
+                    <option value="{{ .idx }}"{{ if eq .state "current" }} selected{{ end }}>{{ .label }}{{ if eq .state "current" }} — current{{ else if eq .state "next" }} — preview{{ end }}</option>
+                    {{- end }}
+                    {{- if $lines }}</optgroup><optgroup label="Other documentation">
+                    {{- range $lines }}
+                    <option value="{{ .idx }}" data-url="{{ .url | absURL }}">{{ .label }}{{ if eq .state "archived" }} — archived{{ end }}</option>
+                    {{- end }}
+                    </optgroup>{{ end }}
+                  </select>
+                </span>
+              </div>
+              <div class="wv-docv-state padding" hidden>
+                <span class="wv-docv-msg"></span><a href="?v={{ $current }}">show {{ $current }}</a>
+              </div>
+            </li>
+{{- end }}

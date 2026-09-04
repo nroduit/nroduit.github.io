@@ -32,4 +32,4 @@ The content of the SR is displayed as a hierarchical tree. Each node is a conten
 
 Some items also carry a **link to a referenced image or region**. Clicking such a link opens the corresponding image in the [2D viewer](dicom-2d-viewer) and, when the SR contains coordinate data, draws the referenced geometry on top of it (for example, clicking the **POLYLINE** node in the screenshot above opens the source image and displays the polyline measurement at its recorded position).
 
-Weasis renders the standard SR **graphic types** — _POINT_, _MULTIPOINT_, _POLYLINE_, _CIRCLE_, _ELLIPSE_ — and, since {{< badgeC "v4.7.0" >}}, a subset of the SR **compound graphic types** — _MULTILINE_, _RULER_, _ARROW_, _RECTANGLE_ — for richer overlays carried by the SR Compound Graphic module.
+Weasis renders the standard SR **graphic types** — _POINT_, _MULTIPOINT_, _POLYLINE_, _CIRCLE_, _ELLIPSE_ — and a subset of the SR **compound graphic types** {{< since "4.7.0" >}} — _MULTILINE_, _RULER_, _ARROW_, _RECTANGLE_ — for richer overlays carried by the SR Compound Graphic module.

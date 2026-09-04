@@ -3,11 +3,12 @@ title: Image Fusion
 weight: 58
 description: How to overlay a PET or SPECT series on a CT/MR base (PET/CT fusion) and read SUV statistics
 keywords: [ "fusion", "pet/ct", "pet ct fusion", "spect", "suv", "overlay", "nuclear medicine", "dicom viewer", "open source dicom viewer" ]
+since: "4.7.1"
 ---
 
 ## <center>Image Fusion</center>
 
-**Image fusion** overlays a functional series — **PET** (`PT`) or **SPECT** (`NM`) — on top of an anatomical **CT** or **MR** base, so metabolic uptake can be read against the underlying anatomy. The overlay is a **registration-free geometric fusion**: Weasis aligns the two series from their DICOM spatial metadata alone, with no manual or algorithmic registration step. Available since {{% badge title="Version" %}}4.7.1{{% /badge %}}.
+**Image fusion** overlays a functional series — **PET** (`PT`) or **SPECT** (`NM`) — on top of an anatomical **CT** or **MR** base, so metabolic uptake can be read against the underlying anatomy. The overlay is a **registration-free geometric fusion**: Weasis aligns the two series from their DICOM spatial metadata alone, with no manual or algorithmic registration step. Available {{< since "4.7.1" >}}.
 
 {{% notice note %}}
 Fusion is a pure spatial overlay driven by each image's position in the patient coordinate system. It does **not** deform or re-register the images, so it is only offered when the two series are genuinely co-located (see [Requirements](#requirements) below).
@@ -43,7 +44,7 @@ The [Reset](dicom-2d-viewer#reset) action turns fusion **off** and returns to th
 
 ### Display window and color scale {#color-scale}
 
-Available since {{% badge title="Version" %}}4.7.2{{% /badge %}}.
+Available {{< since "4.7.2" >}}.
 
 The overlay is mapped to its LUT through a window derived from the whole functional series, so a given uptake keeps the same color on every slice. It is measured from the data and has no control in the interface:
 

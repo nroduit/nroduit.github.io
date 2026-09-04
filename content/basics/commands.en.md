@@ -139,13 +139,15 @@ PATH is either a directory(recursive) or a file
 {{< highlight text >}}
 g! dicom:close
 Close DICOM files
-Usage: dicom:close  (-a | ([-y UID]... [-s UID]...))
+Usage: dicom:close (-a | ([-y UID]... [-s UID]...))
   -a --all           close all the patients
-  -p --patient=ID    close a patient from its patient ID (since v4.4.1)
+  -p --patient=ID    close a patient from its patient ID
   -y --study=UID     close a study, UID is Study Instance UID
   -s --series=UID    close a series, UID is Series Instance UID
   -? --help          show help
 {{< /highlight >}}
+
+The `-p` option is available {{< since "4.5.0" >}}.
 
 #### dicom:rs
 
@@ -181,10 +183,10 @@ Usage: image:get ([-f file]... [-u url]...)
 {{< highlight text >}}
 g! image:close
 Close images
-Usage: dicom:close (-a | ([-g UID]... [-s UID]...))
+Usage: image:close (-a | ([-g UID]... [-s UID]...))
   -a --all         close all series
   -g --group=UID   close a group from its UID
-  -s --series=UID   close an series/image from its UID
+  -s --series=UID  close a series/image from its UID
   -? --help        show help
 {{< /highlight >}}
 
@@ -204,11 +206,14 @@ Usage: weasis:info (-v | -a)
 {{< highlight text >}}
 g! weasis:ui
 Manage user interface
-Usage: weasis:ui (-q | -v)
-  -q --quit     shutdown Weasis
-  -v --visible  set window on top
-  -? --help     show help
+Usage: weasis:ui (-q | -v | -m)
+  -q --quit        shutdown Weasis
+  -v --visible     set window on top
+  -m --minimized   minimize the window
+  -? --help        show help
 {{< /highlight >}}
+
+The `-m` option is available {{< since "4.6.0" >}}.
 
 #### acquire:patient
 

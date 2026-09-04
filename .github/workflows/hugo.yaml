@@ -61,6 +61,54 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+      # data/versions.toml can point at other documentation lines: the previous
+      # major branch while it is still maintained, and older releases once they
+      # are frozen. Each entry that declares both a `branch` and a `url` is
+      # rebuilt here from that branch — with its own theme commit — into
+      # public/<url>/ on every deploy. Nothing is written back to the
+      # repository, so no built HTML is ever committed. The list is normally
+      # short or empty; each entry costs a worktree checkout plus a sub-second
+      # Hugo build.
+      - name: Build other documentation lines
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+          TZ: UTC
+          BASE_URL: ${{ steps.pages.outputs.base_url }}
+          LINE_LIST: ${{ runner.temp }}/doclines.txt
+        run: |
+          set -euo pipefail
+          python3 - <<'PY' > "$LINE_LIST"
+          import sys, tomllib
+          with open("data/versions.toml", "rb") as handle:
+              data = tomllib.load(handle)
+          for entry in data.get("version", []):
+              state = entry.get("state")
+              branch, url = entry.get("branch"), entry.get("url")
+              if state not in ("maintained", "archived") or not (branch and url):
+                  continue
+              path = url.strip("/")
+              if not path or ".." in path.split("/"):
+                  sys.exit(f"invalid url {url!r} for version {entry.get('id')!r}")
+              print(entry["id"], state, branch, path)
+          PY
+          while read -r id state branch path; do
+            [ -z "$id" ] && continue
+            echo "::group::Weasis $id documentation ($state, branch $branch) -> /$path/"
+            work="${{ runner.temp }}/docline-$id"
+            git fetch --no-tags origin "+refs/heads/$branch:refs/remotes/origin/$branch"
+            git worktree add --detach "$work" "refs/remotes/origin/$branch"
+            git -C "$work" submodule update --init --recursive
+            HUGO_PARAMS_DOCLINE="$id" HUGO_PARAMS_DOCLINESTATE="$state" hugo \
+              --source "$work" \
+              --gc \
+              --minify \
+              --baseURL "$BASE_URL/$path/" \
+              --destination "$GITHUB_WORKSPACE/public/$path"
+            git worktree remove --force "$work"
+            echo "::endgroup::"
+          done < "$LINE_LIST"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

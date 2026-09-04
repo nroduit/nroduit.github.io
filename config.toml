@@ -98,6 +98,16 @@ enableRobotsTXT = true
   mermaidInitialize = "{ \"securityLevel\": \"loose\" }"
   jdkVersion = "25"
   mavenVersion = "3.8.1"
+  # Sidebar: insert the documentation version selector (layouts/partials/sidebar/
+  # element/docversion.html, fed by data/versions.toml) below the search box.
+  # Reconfiguring a sidebar area resets its defaults, so the theme's own entries
+  # for that area are repeated here; the theme's `versionswitcher` is dropped as
+  # it drives multi-site versioning, which this site does not use.
+  sidebarheadermenus = [
+    { type = 'divider' },
+    { type = 'custom', identifier = 'headercontrols', elements = [ { type = 'docversion' } ] },
+    { type = 'divider' }
+  ]
   
   [params.link]
     errorlevel = 'warning'

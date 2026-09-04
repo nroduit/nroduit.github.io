@@ -21,7 +21,7 @@ There are several ways to adjust magnification:
 * **[Keyboard shortcuts](../basics/shortcuts/)** — zoom in, zoom out, and reset zoom.
 
 {{% notice tip %}}
-Quick access: press **Z** to switch the left mouse button to the zoom action (default — customizable since {{< badgeC "v4.7.0" >}} in [Keyboard Shortcuts](../basics/shortcuts/)).
+Quick access: press **Z** to switch the left mouse button to the zoom action (default — customizable {{< since "4.7.0" >}} in [Keyboard Shortcuts](../basics/shortcuts/)).
 {{% /notice %}}
 
 ### Zoom presets

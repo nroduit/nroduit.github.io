@@ -6,6 +6,11 @@
 
 {{- if isset .Params "canonical" -}}
 <link rel="canonical" href="{{ .Params.baseURL }}" />
+{{- else if site.Params.docline -}}
+{{/* another documentation line: keep it out of the index so it does not compete
+     with the current line for the same queries, and credit the live page */}}
+<meta name="robots" content="noindex, follow" />
+<link rel="canonical" href="{{ partial "_weasis/liveURL.gotmpl" . }}" />
 {{- else -}}
 <link rel="canonical" href="{{ .Permalink }}" />
 {{- end }}
@@ -38,3 +43,7 @@
 <!-- Lightbox see https://hugocodex.org/add-ons/lightbox/ -->
 <script defer type="text/javascript" src="/js/lightbox.js"></script>
 <link rel="stylesheet" href="/css/lightbox.css">
+
+<!-- Documentation version filter, see data/versions.toml -->
+{{ partial "docversion-head.html" . }}
+<script defer type="text/javascript" src="/js/doc-version.js"></script>

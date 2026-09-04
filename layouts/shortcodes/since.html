@@ -1,0 +1,27 @@
+{{- /*
+  Inline badge stating the release a feature appeared in.
+
+    Most shortcuts are customizable {{< since "4.7.0" >}}.
+
+  A version older than the whole window still renders — the feature is present
+  in every documented version, which is the badge's ordinary state — but without
+  a `data-v-since` index, so it never flips to "not in your version". Nothing is
+  ever silently dropped when the window rolls forward; pruning a marker that has
+  stopped being interesting is an editorial choice, not something the build
+  makes for you.
+
+  The badge is a self-contained phrase, so a marker can be deleted without
+  breaking the sentence around it.
+*/ -}}
+{{- $version := trim ((.Get "version" | default (.Get 0)) | string) " " -}}
+{{- $filepath := "[virtual file]" }}{{ with and .Page .Page.File .Page.File.Filename }}{{ $filepath = . }}{{ end -}}
+{{- if not $version -}}
+  {{- errorf "%q: shortcode 'since' requires a version, e.g. {{< since \"4.7.0\" >}}" $filepath -}}
+{{- else -}}
+  {{- $r := partial "_weasis/versionIndex.gotmpl" (dict "version" $version) -}}
+  {{- if eq $r.idx -2 -}}
+    {{- warnf "%q: shortcode 'since' refers to %s, newer than the version window in data/versions.toml; the badge is shown unfiltered" $filepath $version -}}
+  {{- end -}}
+  {{- $v := trim $version "vV" -}}
+  <span class="wv-badge wv-badge--since"{{ if ge $r.idx 0 }} data-v-since="{{ $r.idx }}"{{ end }} title="Available since Weasis {{ $v }}">since v{{ $v }}</span>
+{{- end -}}

@@ -8,7 +8,7 @@ keywords: [ "workflow", "integration", "dicom viewer", "free dicom viewer", "ope
 ## <center>How to launch Weasis from any environments</center>
 
 Here we present how to launch Weasis with associated images from any context either [using weasis-pacs-connector](#use-weasis-pacs-connector) or [ViewerHub](../../viewer-hub) as its successor
-or by [building your own connector](#build-your-own-connector). The launch of the application is based on the [weasis protocol](../../getting-started/weasis-protocol) available since {{% badge title="Version" %}}3.5.3{{% /badge %}}.
+or by [building your own connector](#build-your-own-connector). The launch of the application is based on the [weasis protocol](../../getting-started/weasis-protocol) available {{< since "3.5.3" >}}.
 
 Using [weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector) or [ViewerHub](../../viewer-hub) allows a high degree of integration and facilitates connection to a PACS. Here are some of the advantages:
 
@@ -104,7 +104,7 @@ From Weasis 2.5 it is possible to have multiple archives: several `arcQuery` tag
 
 ### Build a JSON manifest {#json-manifest}
 
-Since {{% badge title="Version" %}}4.7.2{{% /badge %}}, the manifest may also be served as **JSON**. The structure mirrors the 2.5 XML manifest one-for-one — same node names, same attributes — so a connector only has to change its serialization:
+The manifest may also be served as **JSON** {{< since "4.7.2" >}}. The structure mirrors the 2.5 XML manifest one-for-one — same node names, same attributes — so a connector only has to change its serialization:
 
 {{< highlight json >}}
 {
@@ -148,7 +148,7 @@ Both formats are loaded with the same [$dicom:get](../commands/#dicomget) comman
 
 ### Partial DICOMweb manifest and series bulk retrieve {#partial-manifest}
 
-Since {{% badge title="Version" %}}4.7.2{{% /badge %}}, an `arcQuery` in `DICOM_WEB` mode (`queryMode="DICOM_WEB"`) may stop at the **Patient**, **Study** or **Series** level instead of listing every SOP instance. Weasis completes the missing levels itself with QIDO-RS queries targeted by UID on the manifest `baseUrl` (`{baseUrl}/studies/{studyUID}/series`), which keeps the manifest small and shifts the enumeration cost to the moment the data is actually needed.
+An `arcQuery` in `DICOM_WEB` mode (`queryMode="DICOM_WEB"`) may stop at the **Patient**, **Study** or **Series** level instead of listing every SOP instance {{< since "4.7.2" >}}. Weasis completes the missing levels itself with QIDO-RS queries targeted by UID on the manifest `baseUrl` (`{baseUrl}/studies/{studyUID}/series`), which keeps the manifest small and shifts the enumeration cost to the moment the data is actually needed.
 
 The new `seriesRetrieve` attribute of `arcQuery` controls how a series with no listed instance is downloaded:
 
@@ -218,7 +218,7 @@ Configuration notes:
 - From 5.24.0 {{qidoBaseURL}} must be replaced by your base URL (e.g. https://pacs2.test.com:8443)
 - The character '&' must be escaped in the Docker environment variables.
 - The Authorization header is not required for unsecure service.
-- URL with HTTPS requires a real valid certificate; otherwise, the certificate must be imported into the Weasis Java keystore or must be installed at [system level](https://github.com/nroduit/Weasis/issues/679) (from Weasis 4.6.1).
+- URL with HTTPS requires a real valid certificate; otherwise, the certificate must be imported into the Weasis Java keystore or must be installed at [system level](https://github.com/nroduit/Weasis/issues/679) {{< since "4.6.1" >}}.
 {{% /notice %}}
 
 {{% notice note %}}

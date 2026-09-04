@@ -1,0 +1,5 @@
+{{- /* Theme hook, rendered inside <header class="headline"> above the page title.
+       Overridden to prepend the documentation version banners; the theme's own
+       content (the tag list) follows unchanged. */ -}}
+{{- partial "docversion-page.html" . }}
+{{- partial "tags.html" . }}

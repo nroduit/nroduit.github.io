@@ -21,8 +21,8 @@ To send data the other way — out of Weasis to a file, a PACS node, or a CD/DVD
 {{% notice note %}}
 Whatever the import method, a popup may appear at the end of an import in any of these cases:
 
-* **Error** — one or more DICOM files cannot be read because they are corrupted or malformed (since {{% badge title="Version" %}}4.3.0{{% /badge %}}).
-* **Information** — since {{% badge title="Version" %}}4.7.0{{% /badge %}}, one or more valid DICOM files were skipped because their SOP Class has no viewer available (e.g. Raw Data Storage). These files are not corrupted, they are simply not displayable. The notification can be silenced with the **Don't show this again** checkbox in the dialog, or from the DICOM Explorer preferences (**Notify when DICOM files with an unsupported SOP Class are skipped**).
+* **Error** {{< since "4.3.0" >}} — one or more DICOM files cannot be read because they are corrupted or malformed.
+* **Information** {{< since "4.7.0" >}} — one or more valid DICOM files were skipped because their SOP Class has no viewer available (e.g. Raw Data Storage). These files are not corrupted, they are simply not displayable. The notification can be silenced with the **Don't show this again** checkbox in the dialog, or from the DICOM Explorer preferences (**Notify when DICOM files with an unsupported SOP Class are skipped**).
 * **Network error** — when a network error occurs during a retrieve (DICOMweb or WADO), a message offers to download the missing files again.
 {{% /notice %}}
 
@@ -51,7 +51,7 @@ Two import entry points sit next to each other in the toolbar (and under **_File
 - The **second** button is a shortcut for the DICOMDIR / CD-ROM workflow (**_File > Import > DICOM CD_**).
 
 #### Local Device
-Since {{% badge title="Version" %}}4.7.0{{% /badge %}}, DICOM ZIP is also accepted in the local-import workflow:
+DICOM ZIP is also accepted in the local-import workflow {{< since "4.7.0" >}}:
 
 * **Files** — browse and select one or more DICOM files or DICOM ZIP archives via the file chooser. If a ZIP archive is password-protected, a password prompt is shown.
 * **Folders** — browse and select one or more folders via the file chooser. Folders containing DICOM ZIP archives are also supported.
@@ -79,15 +79,17 @@ Queries a remote PACS and retrieves the selected studies or series into the DICO
   * **C-GET** — transfer syntaxes are negotiated per SOP Class through a configuration file.
   * **WADO-URI** — C-FIND for the query plus WADO-URI retrieve; requires a WADO server.
 
-  Since {{% badge title="Version" %}}4.7.3{{% /badge %}}, **C-MOVE** and **C-GET** are also tracked in the Download Manager and can be stopped and resumed series by series, as WADO-URI and DICOMweb nodes already were (see [Download progress, stop and resume](#download-progress-stop-and-resume)).
+  **C-MOVE** and **C-GET** are also tracked in the Download Manager {{< since "4.7.3" >}} and can be stopped and resumed series by series, as WADO-URI and DICOMweb nodes already were (see [Download progress, stop and resume](#download-progress-stop-and-resume)).
 * **Calling Node** (DICOM archives only) — pick the calling DICOM node that matches the remote AE.
+* **Charset** (DICOM archives only) — the character set announced to the archive in the C-FIND request, as the DICOM _Specific Character Set_ attribute. It tells the archive how the text you typed is encoded and how it should encode the names it sends back. **ISO_IR 192 (UTF-8)** is the default and works with practically every modern archive; change it only for an older archive that answers in its own local encoding — the list covers ASCII, the Latin, Cyrillic, Greek, Arabic, Hebrew and Turkish alphabets, Thai, the Japanese and Korean sets, and Chinese GB2312 / GB18030. The choice is remembered for the next query {{< since "4.6.0" >}}.
 * **More options** — opens the preferences so you can add or edit DICOM nodes.
 
 ##### Search Criteria tab
 ![Thumbnails](/tuto/dicom-import-search.png?classes=shadow&width=700px)
 <br>
 
-1. Pick a pre-registered search (combo box at the bottom-right of the **Search Criteria** panel) or fill in your own criteria. Saved criteria can be reused later; since {{% badge title="Version" %}}4.1.0{{% /badge %}}, the item selected in the combo box is re-applied automatically the next time the window opens (the default is **Empty**).
+1. Narrow the query by **study date** with the date drop-down: **All dates** (no date filter), a single day such as **Today**, **Yesterday** or **Day before yesterday**, a current period (**This week**, **This month**, **This year**), or a rolling window (**Last 24 hours**, **Last week**, **Last month**, **Last year**…). Choosing one fills in the start and end dates; either can then be adjusted on its own, and clicking a date field opens a calendar to pick an exact day {{< since "4.7.0" >}}.
+1. Pick a pre-registered search (combo box at the bottom-right of the **Search Criteria** panel) or fill in your own criteria. Saved criteria can be reused later; {{< since "4.1.0" >}} the item selected in the combo box is re-applied automatically the next time the window opens (the default is **Empty**).
 2. Adjust the **limit** — the maximum number of studies returned by the query. Set the limit to **0** to remove the cap. For DICOMweb, the limit is the page size; use the spinner buttons to move between pages.
 3. Click **Search**.
 4. Select what you want to import in the result tree (see below).
@@ -95,7 +97,7 @@ Queries a remote PACS and retrieves the selected studies or series into the DICO
 
 ##### Choosing the retrieve level
 
-The query result is a tree with a checkbox on every node. Since {{% badge title="Version" %}}4.7.3{{% /badge %}}, it has a **series** level below each study: expanding a study lists the series returned by the archive — modality, series number, description and number of images — so the retrieve no longer has to be an all-or-nothing study transfer. The series of a study are queried the first time it is expanded, and kept as long as the result is displayed.
+The query result is a tree with a checkbox on every node. It has a **series** level below each study {{< since "4.7.3" >}}: expanding a study lists the series returned by the archive — modality, series number, description and number of images — so the retrieve no longer has to be an all-or-nothing study transfer. The series of a study are queried the first time it is expanded, and kept as long as the result is displayed.
 
 * Checking a **study** retrieves all of its series — this is the previous behavior and remains the default.
 * Expanding a study and checking only some **series** restricts the transfer to those series. The retrieve is then requested at the *SERIES* level instead of the *STUDY* level, so the archive sends only what was selected.
@@ -104,7 +106,7 @@ Selecting fewer series is the most effective way to shorten a retrieve from a la
 
 ##### When the transfer starts
 
-Since {{% badge title="Version" %}}4.7.3{{% /badge %}}, a retrieve no longer inspects the whole selection before the first image arrives. Weasis asks the archive for the series of a selected study, queues one download per series and starts transferring, while the remaining studies of the selection are still being queried.
+A retrieve no longer inspects the whole selection before the first image arrives {{< since "4.7.3" >}}. Weasis asks the archive for the series of a selected study, queues one download per series and starts transferring, while the remaining studies of the selection are still being queried.
 
 The content of a series is not listed up front either:
 
@@ -118,7 +120,7 @@ On a selection of several large studies this replaces a long silent preparation 
 ##### Download progress, stop and resume
 
 {{% notice note %}}
-Since {{% badge title="Version" %}}4.7.3{{% /badge %}}, every retrieve type — **C-MOVE**, **C-GET**, **WADO-URI** and [**DICOMweb**](dicomweb-config) (QIDO / WADO-RS) — is tracked series by series, and each series can be stopped and resumed individually. Before that version, progress tracking and pausing were available only with DICOMweb nodes and with the combination **DICOM C-FIND + WADO-URI**.
+Every retrieve type — **C-MOVE**, **C-GET**, **WADO-URI** and [**DICOMweb**](dicomweb-config) (QIDO / WADO-RS) — is tracked series by series {{< since "4.7.3" >}}, and each series can be stopped and resumed individually. Before that version, progress tracking and pausing were available only with DICOMweb nodes and with the combination **DICOM C-FIND + WADO-URI**.
 {{% /notice %}}
 
 ![Download Manager](/images/DownloadManager.jpg?width=150px)

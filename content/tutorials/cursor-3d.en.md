@@ -27,7 +27,7 @@ The fastest way to load several series that share a coordinate system:
 Select the crosshair {{< svg-inline "static/tuto/icon/crosshair.svg" >}} as the active mouse-button action either from the toolbar mouse-button menus or from any view's right-click context menu. Once active, left-click anywhere in a view and the marker jumps to the matching 3D point in every linked view simultaneously.
 
 {{% notice tip %}}
-You don't have to leave crosshair mode to adjust the image: hold **Ctrl** while dragging to change *Window / Level* without switching tools. See [keyboard shortcuts](../basics/shortcuts) for the full list of modifiers (most are customizable since {{< badgeC "v4.7.0" >}}).
+You don't have to leave crosshair mode to adjust the image: hold **Ctrl** while dragging to change *Window / Level* without switching tools. See [keyboard shortcuts](../basics/shortcuts) for the full list of modifiers (most are customizable {{< since "4.7.0" >}}).
 {{% /notice %}}
 
 ![3D Cursor](/tuto/3d-cursor.jpg?classes=shadow)

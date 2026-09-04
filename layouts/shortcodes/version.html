@@ -1,0 +1,41 @@
+{{- $_hugo_config := `{ "version": 1 }` }}
+{{- /*
+  Wraps a block of content that only applies to part of the version window.
+  Must be called with the percent form so the inner markdown is rendered:
+
+      {{% version since="4.8" %}}
+      ## Curved MPR
+      …paragraphs, images, tables…
+      {{% /version %}}
+
+  `since` and `until` may be combined. The block is always emitted into the
+  HTML — the reader's version selection only hides it client-side — so there is
+  one canonical page per topic for search engines and for readers without JS.
+*/ -}}
+{{- $filepath := "[virtual file]" }}{{ with and .Page .Page.File .Page.File.Filename }}{{ $filepath = . }}{{ end }}
+{{- $since := trim ((.Get "since" | default "") | string) " " }}
+{{- $until := trim ((.Get "until" | default "") | string) " " }}
+{{- if and (not $since) (not $until) }}
+  {{- errorf "%q: shortcode 'version' requires a 'since' and/or an 'until' parameter" $filepath }}
+{{- end }}
+{{- $sinceIdx := "" }}
+{{- with $since }}
+  {{- $r := partial "_weasis/versionIndex.gotmpl" (dict "version" .) }}
+  {{- if eq $r.idx -2 }}
+    {{- warnf "%q: shortcode 'version' has since=%s, newer than the version window in data/versions.toml; the block is shown unfiltered" $filepath . }}
+  {{- else if ge $r.idx 0 }}
+    {{- $sinceIdx = string $r.idx }}
+  {{- end }}
+{{- end }}
+{{- $untilIdx := "" }}
+{{- with $until }}
+  {{- $r := partial "_weasis/versionIndex.gotmpl" (dict "version" .) }}
+  {{- if eq $r.idx -2 }}
+    {{- warnf "%q: shortcode 'version' has until=%s, newer than the version window in data/versions.toml; the block is shown unfiltered" $filepath . }}
+  {{- else if ge $r.idx 0 }}
+    {{- $untilIdx = string $r.idx }}
+  {{- end }}
+{{- end }}
+<div class="wv-gate"{{ with $sinceIdx }} data-v-since="{{ . }}"{{ end }}{{ with $untilIdx }} data-v-until="{{ . }}"{{ end }}>
+{{ .Inner | safeHTML }}
+</div>

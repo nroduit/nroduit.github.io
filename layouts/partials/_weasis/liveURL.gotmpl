@@ -1,0 +1,15 @@
+{{- /*
+  The URL this page has on the current documentation line.
+
+  In a line build the site is published under a path prefix — `/4.x/` for a
+  maintained previous major, `/archive/4.4/` for a frozen release — which is
+  simply the path part of its baseURL. Stripping that prefix and keeping the
+  origin yields the same page on the live site, whatever the prefix looks like.
+  On the current line this returns the page's own permalink unchanged.
+
+  Call: partial "_weasis/liveURL.gotmpl" $page
+*/ -}}
+{{- $base := urls.Parse site.BaseURL }}
+{{- $prefix := strings.TrimSuffix "/" $base.Path }}
+{{- $origin := printf "%s://%s" $base.Scheme $base.Host }}
+{{- return print $origin (strings.TrimPrefix $prefix .RelPermalink) }}

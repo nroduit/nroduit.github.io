@@ -1,0 +1,24 @@
+{{- /*
+  Inline badge stating the last release a feature applied to.
+
+    The legacy applet launcher is available {{< until "4.6.6" >}}.
+
+  Counterpart of `since`. A version newer than the window is a content error and
+  is reported; a version older than the window means the statement no longer
+  applies to anything documented, so the whole sentence should be deleted.
+*/ -}}
+{{- $version := trim ((.Get "version" | default (.Get 0)) | string) " " -}}
+{{- $filepath := "[virtual file]" }}{{ with and .Page .Page.File .Page.File.Filename }}{{ $filepath = . }}{{ end -}}
+{{- if not $version -}}
+  {{- errorf "%q: shortcode 'until' requires a version, e.g. {{< until \"4.6.6\" >}}" $filepath -}}
+{{- else -}}
+  {{- $r := partial "_weasis/versionIndex.gotmpl" (dict "version" $version) -}}
+  {{- if eq $r.idx -1 -}}
+    {{- warnf "%q: shortcode 'until' refers to %s, older than the documented version window; the statement applies to no documented version and should be deleted" $filepath $version -}}
+  {{- end -}}
+  {{- if eq $r.idx -2 -}}
+    {{- warnf "%q: shortcode 'until' refers to %s, newer than the version window in data/versions.toml; the badge is shown unfiltered" $filepath $version -}}
+  {{- end -}}
+  {{- $v := trim $version "vV" -}}
+  <span class="wv-badge wv-badge--until"{{ if ge $r.idx 0 }} data-v-until="{{ $r.idx }}"{{ end }} title="Available up to Weasis {{ $v }}">until v{{ $v }}</span>
+{{- end -}}

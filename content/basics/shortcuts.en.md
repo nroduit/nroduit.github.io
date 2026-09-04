@@ -10,7 +10,7 @@ weight: 20
 Here is a list of the default keyboard and mouse shortcuts in Weasis. The shortcuts are divided into different categories for better understanding.
 
 {{% notice note %}}
-Since {{< badgeC "v4.7.0" >}}, most keyboard shortcuts can be customized in **Preferences > General > Keyboard Shortcuts**. This page documents the **default** configuration. To get the current configuration (including any customizations), use **Help > Keyboard Shortcuts** (this page is internationalized).
+Most keyboard shortcuts can be customized {{< since "4.7.0" >}} in **Preferences > General > Keyboard Shortcuts**. This page documents the **default** configuration. To get the current configuration (including any customizations), use **Help > Keyboard Shortcuts** (this page is internationalized).
 {{% /notice %}}
 
 ### Central panel containing viewers and editors
@@ -84,20 +84,20 @@ Since {{< badgeC "v4.7.0" >}}, most keyboard shortcuts can be customized in **Pr
 | **Alt + F**                                              | Flip horizontally (after rotation action)                                                                                                                              |
 | **0 1 2 3**...                                           | DICOM presets                                                                                                                                                          |
 | **K**                                                    | Toggle key image state                                                                                                                                                 |
-| **Alt + S**                                              | Show/Hide all the [segmentations](../tutorials/dicom-segmentation) of the selected view (since {{< badgeC "v4.7.2" >}})                                                |
+| **Alt + S**                                              | Show/Hide all the [segmentations](../tutorials/dicom-segmentation) of the selected view {{< since "4.7.2" >}}                                                          |
 | **Spacebar**                                             | Show/Hide all the annotations (three states)                                                                                                                           |
 | **I**                                                    | Show/Hide all the annotations (three states)                                                                                                                           |
 | **Escape**                                               | Reset the selected view                                                                                                                                                |
 | **P**                                                    | Print view(s) with the operating system printer                                                                                                                        |
 | **Right-click**                                          | Open the contextual menu for more options                                                                                                                              |
-| **Double click**  or **F11**                             | Toggle fullscreen (F11 since {{< badgeC "v4.5.2" >}})                                                                                                                  |
+| **Double click**  or **F11**                             | Toggle fullscreen (F11 {{< since "4.5.2" >}})                                                                                                                          |
 | **Left mouse drag**                                      | Perform the selected left mouse action (default: Window/Level)                                                                                                         |
 | **Middle mouse drag**                                    | Perform the selected middle mouse action (default: Pan)                                                                                                                |
 | **Mouse scroll**                                         | Perform the selected scroll action (default: Series scroll)                                                                                                            |
 | **Drag files/directories**<br>(from the OS file manager) | Open DICOMs files                                                                                                                                                      |
 
 ### Selected view in the MPR Viewer
-MPR view inherits the same shortcuts as the 2D viewer, with the following additional shortcuts since {{< badgeC "v4.6.0" >}} :
+MPR view inherits the same shortcuts as the 2D viewer, with the following additional shortcuts {{< since "4.6.0" >}}:
 
 | Shortcut               | Action                                                |
 |------------------------|-------------------------------------------------------|

@@ -1,0 +1,174 @@
+{{- /*
+  Head half of the documentation version filter.
+
+  Emits, from `data/versions.toml` and the pages that carry `since` / `until`
+  front matter:
+    1. a generated stylesheet pairing every selectable version with the markup
+       it must hide, flag or reveal — gated blocks, inline badges, out-of-range
+       page banners and sidebar entries;
+    2. a tiny synchronous script that resolves the reader's version — `?v=`
+       query parameter, then localStorage, then the release marked `current` —
+       and stamps it on the root element as `data-docv`.
+
+  The script is synchronous and in the head on purpose: the CSS above does all
+  the hiding, so gated blocks never flash before being filtered. Nothing here
+  removes content from the HTML — with JavaScript off, every version's content
+  stays visible, which keeps one canonical page per topic.
+*/ -}}
+{{- $versions := partialCached "_weasis/versions.gotmpl" site.Home }}
+{{- $versionedPages := partialCached "_weasis/versionedPages.gotmpl" . site.Language.Lang }}
+{{- $n := 0 }}
+{{- $ids := slice }}
+{{- $default := -1 }}
+{{- range $versions }}
+  {{- if not .isLine }}
+    {{- $ids = $ids | append .id }}
+    {{- $n = add $n 1 }}
+    {{- if eq .state "current" }}{{ $default = .idx }}{{ end }}
+  {{- end }}
+{{- end }}
+{{- if lt $default 0 }}{{ $default = sub $n 1 }}{{ end }}
+{{- $hide := slice }}
+{{- $absent := slice }}
+{{- $navhide := slice }}
+{{- $filteredrail := slice }}
+{{- range $i := seq 0 (sub (cond (gt $n 0) $n 1) 1) }}
+  {{- range $j := seq 0 (sub $n 1) }}
+    {{- if gt $j $i }}
+      {{- $hide = $hide | append (printf `html[data-docv="%d"] .wv-gate[data-v-since="%d"]` $i $j) }}
+      {{- $absent = $absent | append (printf `html[data-docv="%d"] .wv-badge[data-v-since="%d"]` $i $j) }}
+    {{- else if lt $j $i }}
+      {{- $hide = $hide | append (printf `html[data-docv="%d"] .wv-gate[data-v-until="%d"]` $i $j) }}
+      {{- $absent = $absent | append (printf `html[data-docv="%d"] .wv-badge[data-v-until="%d"]` $i $j) }}
+    {{- end }}
+  {{- end }}
+  {{- /* off the current release: mark the control itself, before any script runs */ -}}
+  {{- if ne $i $default }}
+    {{- $filteredrail = $filteredrail | append (printf `html[data-docv="%d"] .R-docversionswitcher` $i) }}
+  {{- end }}
+  {{- /* pages narrowed by front matter: banner shown, sidebar entry hidden */ -}}
+  {{- range $versionedPages }}
+    {{- $out := or
+      (and (ne .sinceIdx "") (gt (int .sinceIdx) $i))
+      (and (ne .untilIdx "") (lt (int .untilIdx) $i))
+    }}
+    {{- if $out }}
+      {{- $navhide = $navhide | append (printf `html[data-docv="%d"] li[data-nav-id="%s"]` $i .navId) }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+{{- /* the banner is the mirror image of the block gate: shown when out of range */ -}}
+{{- $reveal := slice }}
+{{- range $absent }}
+  {{- $reveal = $reveal | append (replace . ".wv-badge" ".wv-alert") }}
+{{- end }}
+{{- /*
+  Badge colors are derived, not hardcoded per variant: a single `--wv-tone` hue
+  is mixed against the theme's own background and text variables, so the badge
+  re-tints itself for `relearn-light`, `relearn-dark` or any variant added
+  later. Each state only swaps the tone. The flat declarations come first as the
+  fallback for browsers without `color-mix()`; their values are the light
+  variant's computed result, so both paths look identical there. The 70/11/32
+  mix ratios were picked so every state clears WCAG AA (4.5:1) in both shipped
+  variants — the worst case is `absent` on dark at 5.0:1.
+
+  The out-of-range state is the exception to the 32% border: a hairline that
+  close to its own fill is invisible on the dark variant (1.3:1), so it takes
+  the tone undiluted (3.4:1 against the fill, clearing the 3:1 asked of
+  non-text contrast) and adds a leading multiplication sign. Color, a visible
+  dashed edge and a glyph are three redundant channels, so the state survives
+  grayscale, print and color blindness.
+*/ -}}
+{{- /*
+  Sidebar colors and layout for the version control.
+
+  The entry is painted on the menu's own background (#282828) so it can use the
+  menu's own colors: #bababa at rest (7.6:1), #ffffff on hover (14.7:1), the
+  accent rail 5.1:1. It sits inside `#R-homelinks`, whose palette is meant for a
+  light header band — text #404040, hover pure black — and whose rules are
+  equally specific and come later in the theme's stylesheet, so every color here
+  needs the `#R-sidebar .R-docversionswitcher` prefix to win. The same applies to
+  the status line: `#R-homelinks :is(a,span)` paints its span and link directly,
+  so a color set on their parent never inherits down.
+
+  The row is plain flex over two elements the theme does not style, rather than
+  its `menu-control` / `control-style` wrapper: that wrapper carries a fixed
+  1.574em height with `overflow:hidden`, a 1.33rem select, float layout, and
+  `appearance:none` with no replacement arrow. `align-items:baseline` puts the
+  caption and the version on one baseline — centring boxes is not enough when a
+  native select and a label have different metrics — and the chevron is drawn
+  here because the theme removes the native one without replacing it.
+
+  Three theme rules reach in and are overridden above, each measured on the live
+  page rather than guessed:
+    * `#R-sidebar ul li{padding:0}` outranks a plain class, so the entry's own
+      padding needs the `#R-sidebar` prefix or it silently does nothing;
+    * `label{margin-bottom:.425rem}` applies globally and left 6.8px of dead
+      space under the row, making the block bottom-heavy;
+    * the sidebar inherits font-weight 300, so pinning the caption to 400 made it
+      heavier than the value rather than matching it — it inherits now.
+  The caption also needs its color stated: it is a `<label>`, which none of the
+  theme's sidebar color rules match, so it inherits #R-homelinks' #404040 and
+  lands at about 1.3:1 unless told otherwise.
+
+  The status line is separated by a margin, not padding, so the focus indicator
+  has clear space and cannot touch the text below.
+
+  The dropdown's own list needs colors too. The theme set them on
+  `.menu-control option`, which no longer matches, leaving the options white on
+  the native popup's light background — invisible. They are stated here instead,
+  with a background as well as a color so the result does not depend on whether
+  the platform draws the popup light or dark.
+
+  The chevron inherits from `.wv-docv-field`, which is a `<span>` and so is
+  painted #404040 by `#R-homelinks :is(a,span)`; dimmed on top of that it scored
+  1.3:1 and was effectively absent. The field states its color, and the chevron
+  carries no opacity, so it matches the value at 7.6:1.
+
+  Focus is shown as an underline rather than a box: a ring around the control
+  read as a stray white rectangle in the sidebar. It is still two channels — the
+  value brightens to the hover color and gains a 1px rule — so keyboard focus
+  stays visible without drawing a box.
+*/ -}}
+{{- $rules := slice
+  `.wv-badge{display:inline-block;margin:0 .1em;padding:0 .4em;border:1px solid;border-radius:3px;font-size:.8em;font-weight:500;line-height:1.45;white-space:nowrap;vertical-align:baseline;font-variant-numeric:tabular-nums;cursor:help;color:#293f7c;background-color:#e9effa;border-color:#c1cff0}`
+  `.wv-badge::before{content:var(--wv-mark,"");font-weight:600;padding-inline-end:var(--wv-mark-gap,0)}`
+  `.wv-badge--until{color:#935d03;background-color:#fef4e9;border-color:#fbdfc0}`
+  (printf `%s{color:#8a2323;background-color:#ffebe9;border-color:#e03e3e;border-style:dashed;--wv-mark:"\00d7";--wv-mark-gap:.25em}` (delimit $absent ","))
+  `@supports (color:color-mix(in oklab,red,blue)){`
+  `.wv-badge{--wv-tone:var(--INTERNAL-SECONDARY-color,rgba(72,106,201,1));color:color-mix(in oklab,var(--wv-tone) 70%,var(--INTERNAL-MAIN-TEXT-color,#101010));background-color:color-mix(in oklab,var(--wv-tone) 11%,var(--INTERNAL-MAIN-BG-color,#fff));border-color:color-mix(in oklab,var(--wv-tone) 32%,var(--INTERNAL-MAIN-BG-color,#fff))}`
+  `.wv-badge--until{--wv-tone:rgba(237,153,9,1)}`
+  (printf `%s{--wv-tone:rgba(224,62,62,1);border-color:var(--wv-tone);border-style:dashed;--wv-mark:"\00d7";--wv-mark-gap:.25em}` (delimit $absent ","))
+  `}`
+  (printf `%s{display:none}` (delimit $hide ","))
+  `.wv-alert{display:none}`
+  (printf `%s{display:block}` (delimit $reveal ","))
+  `.R-docversionswitcher{display:none}`
+  `html[data-docv] .R-docversionswitcher{display:list-item}`
+  `#R-sidebar .R-docversionswitcher{background-color:var(--INTERNAL-MENU-SECTIONS-BG-color,rgba(40,40,40,1));margin-block-start:.5rem;padding-block:.55rem}`
+  `#R-sidebar .R-docversionswitcher .wv-docv-row{display:flex;align-items:baseline;gap:.45em}`
+  `#R-sidebar .R-docversionswitcher .wv-docv-label{cursor:pointer;white-space:nowrap;font-weight:inherit;margin:0;color:var(--INTERNAL-MENU-SECTIONS-LINK-color,rgba(186,186,186,1))}`
+  `#R-sidebar .R-docversionswitcher .wv-docv-field{position:relative;flex:0 1 auto;min-width:0;max-width:100%;color:var(--INTERNAL-MENU-SECTIONS-LINK-color,rgba(186,186,186,1))}`
+  `#R-sidebar .R-docversionswitcher .wv-docv-field::after{content:"\25be";position:absolute;inset-inline-end:0;top:0;bottom:0;display:flex;align-items:center;line-height:1;pointer-events:none;font-size:1em}`
+  `#R-sidebar .R-docversionswitcher select{appearance:none;-webkit-appearance:none;box-sizing:border-box;width:auto;max-width:100%;font:inherit;background:transparent;border:0;outline:none;margin:0;padding:0 1.2em 0 0;cursor:pointer;text-overflow:ellipsis;color:var(--INTERNAL-MENU-SECTIONS-LINK-color,rgba(186,186,186,1))}`
+  `#R-sidebar .R-docversionswitcher select:hover{color:var(--INTERNAL-MENU-SECTIONS-LINK-HOVER-color,rgba(255,255,255,1))}`
+  `#R-sidebar .R-docversionswitcher option,#R-sidebar .R-docversionswitcher optgroup{background-color:#fff;color:#000}`
+  `#R-sidebar .R-docversionswitcher optgroup{font-style:normal;font-weight:600}`
+  `#R-sidebar .R-docversionswitcher select:focus-visible{outline:none;color:var(--INTERNAL-MENU-SECTIONS-LINK-HOVER-color,rgba(255,255,255,1));box-shadow:0 1px 0 var(--INTERNAL-MENU-SECTIONS-LINK-HOVER-color,rgba(255,255,255,1))}`
+  `.wv-docv-state[hidden]{display:none}`
+  `.wv-docv-state{font-size:.75rem;line-height:1.45;margin-top:.4rem}`
+  `#R-sidebar .R-docversionswitcher .wv-docv-state,#R-sidebar .R-docversionswitcher .wv-docv-state span{color:var(--INTERNAL-MENU-SECTIONS-LINK-color,rgba(186,186,186,1))}`
+  `#R-sidebar .R-docversionswitcher .wv-docv-state a,#R-sidebar .R-docversionswitcher .wv-docv-state a:hover{color:var(--INTERNAL-MENU-SECTIONS-LINK-HOVER-color,rgba(255,255,255,1));text-decoration:underline;white-space:nowrap}`
+  (printf `%s{box-shadow:inset 3px 0 0 var(--INTERNAL-ACCENT-color,rgba(255,102,78,1))}` (delimit $filteredrail ","))
+}}
+{{- /* pages narrowed by front matter hide their own sidebar entry */ -}}
+{{- with $navhide }}
+  {{- $rules = $rules | append (printf `%s{display:none}` (delimit . ",")) }}
+{{- end }}
+{{- $css := printf "%s\n" (delimit $rules "\n") }}
+{{- $style := resources.FromString "css/doc-version.css" $css | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+<script>
+(function(){var i=null,k="weasis-doc-version",d={{ $default }},v={{ $ids | jsonify | safeJS }};try{var m=/[?&]v=([^&#]+)/.exec(location.search);if(m){var p=decodeURIComponent(m[1]).replace(/^[vV]/,"").split(".");i=v.indexOf(p[0]+"."+(p[1]||"0"));if(i<0){i=null}}if(i===null){var s=localStorage.getItem(k);if(s!==null){var j=v.indexOf(s);if(j>=0){i=j}}}}catch(e){}
+if(i===null){i=d}document.documentElement.setAttribute("data-docv",i);window.WeasisDocVersion={ids:v,idx:i,def:d,key:k}})();
+</script>

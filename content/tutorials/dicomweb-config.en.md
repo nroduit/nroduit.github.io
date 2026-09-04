@@ -33,7 +33,7 @@ In the node dialog:
 4. Configure **authentication** by clicking **Manager**, then **Add**:
    - Either pick a template from the list and click **Fill** to populate some fields, or fill them in manually.
    - In the **Provider** panel, every field is mandatory.
-   - In the **Registration** panel, every field is optional — except for **OAuth2**, where the **Client ID**, **Client Secret**, and **Scope** must be filled. **Audience** is optional, but some providers need it.
+   - In the **Registration** panel, every field is optional — except for **OAuth2**, where the **Client ID**, **Client Secret**, and **Scope** must be filled. **Audience** is optional, but some providers need it — Auth0, for instance, uses it to issue a token for a specific API {{< since "4.6.1" >}}.
    - The **Grant Type** selector chooses the OAuth2 flow:
      - `code` (**Authorization Code**, the default) — interactive login: Weasis opens your browser so you sign in with your account, then receives the token through a loopback redirect. Use this for user-facing access.
      - `client_credentials` (**Client Credentials**, RFC 6749 §4.4) — non-interactive, server-to-server: Weasis obtains the token directly from the token endpoint using only the Client ID and Client Secret, with **no browser login**. Use this for service/headless accounts.
@@ -45,7 +45,7 @@ Then open the [DICOM Import](dicom-import/#dicom-queryretrieve) dialog and pick 
 
 #### Editing an authentication method {#editing-an-authentication-method}
 
-An authentication method is shared by every node that refers to it. Since {{% badge title="Version" %}}4.7.3{{% /badge %}}, editing or deleting a method through **Manager** takes effect on the next query; before that version, a corrected endpoint or client secret required restarting Weasis.
+An authentication method is shared by every node that refers to it. Editing or deleting a method through **Manager** takes effect on the next query {{< since "4.7.3" >}}; before that version, a corrected endpoint or client secret required restarting Weasis.
 
 ### Supported DICOMweb Providers (non-exhaustive list)
 

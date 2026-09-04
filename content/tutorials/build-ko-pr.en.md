@@ -25,13 +25,13 @@ When a DICOM KO is loaded with the series, it appears in the explorer menu (1) a
 Actions available in the KO toolbar:
 
 - **Apply a KO** (2) {{< svg-inline "static/tuto/icon/keyImage.svg" >}} — select which KO drives the current view.
-- **Mark / unmark a key image** (3) — click the **star** icon, or press **K** (default — customizable since {{< badgeC "v4.7.0" >}} in [Keyboard Shortcuts](../basics/shortcuts)) to add the current image to the active KO, or create a new one if none exists yet.
+- **Mark / unmark a key image** (3) — click the **star** icon, or press **K** (default — customizable {{< since "4.7.0" >}} in [Keyboard Shortcuts](../basics/shortcuts)) to add the current image to the active KO, or create a new one if none exists yet.
 - **Filter to key images only** (4) — when active, scrolling skips every image that is not part of the selected KO, so you see only the flagged slices.
 - **Create / delete a KO** (5) — start a new KO (optionally seeded from an existing one) or delete a KO. Only KOs created by Weasis can be deleted.
 
 ### Presentation State (PR or GSPS) {#presentation-state-pr-or-gsps}
 
-- **Apply a PR loaded from a DICOM file** (1) {{< svg-inline "static/tuto/icon/imagePresentation.svg" >}} — since {{% badge title="Version" %}}2.6.0{{% /badge %}}, PRs are **not** applied automatically; click the dedicated icon (2) above the image to apply one. To have the most recent PR applied by default, enable **Apply by default the most recent Presentation State** under **_File > Preferences (Alt + P)_** (also configurable through the [default preferences](../basics/customize/preferences/)).
+- **Apply a PR loaded from a DICOM file** (1) {{< svg-inline "static/tuto/icon/imagePresentation.svg" >}} — PRs are **not** applied automatically {{< since "2.6.0" >}}; click the dedicated icon (2) above the image to apply one. To have the most recent PR applied by default, enable **Apply by default the most recent Presentation State** under **_File > Preferences (Alt + P)_** (also configurable through the [default preferences](../basics/customize/preferences/)).
 - **Create a new PR** — any drawing or measurement (see [Draw & Measure](draw-measure)) can be exported into a DICOM Presentation State. Image-rendering parameters (zoom, calibration, window/level, LUT…) are **not yet** included in the exported PR.
 
 ![Build PR](/tuto/pr-actions.jpg?classes=shadow&width=100%)

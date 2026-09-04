@@ -1,0 +1,53 @@
+{{- /*
+  Normalizes `data/versions.toml` into the list every version-aware template
+  works with. Call it cached: partialCached "_weasis/versions.gotmpl" site.Home
+
+  Entries fall into two kinds:
+
+  - **window entries** — the releases this build documents. They are filtered
+    client-side, and their `idx` is the value used in `data-v-*` attributes and
+    in `data-docv`.
+  - **line entries** — another documentation line (the previous major branch,
+    or an archived release) published at its own `url`. They are never part of
+    the filter: selecting one navigates there. An entry is a line entry exactly
+    when it declares a `url`.
+
+  Returns a slice of dicts, in file order:
+    idx      window index, or -1 for a line entry
+    id       minor version ("4.7") for window entries; the raw id for lines,
+             which may be something like "4.x"
+    label    text shown in the selector; defaults to id
+    state    "supported" | "current" | "next" | "maintained" | "archived"
+    url      where a line entry is published; "" for window entries
+    branch   release branch a line entry is built from; "" for window entries
+    isLine   true for a line entry
+    key      numeric sort key ("4.7" -> 4007), 0 for line entries
+*/ -}}
+{{- $versions := slice }}
+{{- $idx := 0 }}
+{{- range site.Data.versions.version }}
+  {{- $isLine := ne (or .url "") "" }}
+  {{- $id := .id }}
+  {{- $key := 0 }}
+  {{- if not $isLine }}
+    {{- $parts := split .id "." }}
+    {{- $major := int (index $parts 0) }}
+    {{- $minor := cond (gt (len $parts) 1) (int (index $parts 1)) 0 }}
+    {{- $id = printf "%d.%d" $major $minor }}
+    {{- $key = add (mul $major 1000) $minor }}
+  {{- end }}
+  {{- $versions = $versions | append (dict
+    "idx" (cond $isLine -1 $idx)
+    "id" $id
+    "label" (or .label .id)
+    "state" (or .state "supported")
+    "url" (or .url "")
+    "branch" (or .branch "")
+    "isLine" $isLine
+    "key" $key
+  ) }}
+  {{- if not $isLine }}
+    {{- $idx = add $idx 1 }}
+  {{- end }}
+{{- end }}
+{{- return $versions }}

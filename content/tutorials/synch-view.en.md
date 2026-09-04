@@ -63,7 +63,7 @@ Synchronization operates at three different scopes. Knowing which is which avoid
 
 - **Global (whole session)** — the master **Synchronize** checkbox in the toolbar drop-down is a global switch: it enables or disables synchronization for every participating view at once, not just the selected view.
 - **Across containers (auto-sync)** — **Default Stack** auto-synchronization is **not limited to a single container**. Views in any other *visible* container that belongs to the same group (the windows opened together from one patient/study group) and is also in Stack mode are kept in sync as well. Open the same study in two windows and scroll, Window / Level, etc. stay coupled across both.
-- **Within one container (manual sync)** — [manual sync](#manual-sync-button) only links views that live in the **same container window**; you cannot manually link a view to one in another container. In addition, **only one manual-sync session can be active at a time across the whole application** — starting manual sync on another eligible view joins the existing session rather than creating a second, independent group.
+- **Within one container (manual sync)** {{< since "4.7.0" >}} — [manual sync](#manual-sync-button) only links views that live in the **same container window**; you cannot manually link a view to one in another container. In addition, **only one manual-sync session can be active at a time across the whole application** — starting manual sync on another eligible view joins the existing session rather than creating a second, independent group.
 
 ---
 
@@ -97,7 +97,7 @@ To find which series share the same Frame of Reference, right-click a thumbnail 
 
 ### Per-view Sync Controls {#per-view-sync}
 
-In addition to the global toolbar drop-down, each 2D view carries small overlay buttons in the **bottom-right corner** that drive its sync behavior independently. They appear whenever the view has at least one eligible peer for synchronization.
+In addition to the global toolbar drop-down, each 2D view carries small overlay buttons in the **bottom-right corner** that drive its sync behavior independently {{< since "4.7.0" >}}. They appear whenever the view has at least one eligible peer for synchronization.
 
 #### Auto-sync button {{< svg-inline "static/tuto/icon/synch.svg" >}} {#auto-sync-button}
 

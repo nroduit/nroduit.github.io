@@ -1,0 +1,77 @@
+# Documentation version window for weasis.org.
+#
+# This file is the single source of truth for everything version-related on the
+# site: the sidebar version selector, the `since` / `until` badges and the
+# `version` block filter all derive from it.
+#
+# Entries MUST be ordered from oldest to newest. There are two kinds.
+#
+# WINDOW ENTRIES describe the releases this build documents. They are filtered
+# client-side, at MINOR granularity (4.7, not 4.7.3) — patch-level facts stay in
+# the badge text.
+#
+#   state = supported  a still-documented older release
+#           current    the latest stable release; the selector's default choice
+#           next       the upcoming release, documented in advance
+#
+# LINE ENTRIES point at another documentation line, published at its own `url`.
+# They are never filtered: selecting one in the sidebar navigates there. An
+# entry is a line entry exactly when it declares a `url`. With a `branch` as
+# well, .github/workflows/hugo.yaml rebuilds that branch into public/<url>/ on
+# every deploy, using the branch's own content, layouts and theme commit.
+#
+#   state = maintained  the previous major line, still receiving fixes
+#           archived    frozen; nothing is backported to it any more
+#
+# Both kinds of line are noindex and canonicalize to the current line, so they
+# do not compete with it in search results. The difference is the banner they
+# show and, for an archived line, that the version selector is left out.
+#
+# Rolling the window forward at a minor release:
+#   1. the entry marked `next` becomes `current`
+#   2. the former `current` becomes `supported`
+#   3. add the new `next`
+#   4. drop the oldest entry, or keep it online as an `archived` line entry
+#
+# Dropping an entry is safe: a `{{< since "4.4" >}}` badge that falls below the
+# window keeps rendering, it just stops being filtered — the feature is then
+# present in every version the site documents.
+#
+# At a MAJOR release, snapshot the line instead: branch the current content,
+# reset this file to the new major's window, and add one line entry for the old
+# branch, e.g.
+#
+#   [[version]]
+#   id = "4.x"
+#   label = "4.x (previous)"
+#   state = "maintained"
+#   branch = "4.x"
+#   url = "/4.x/"
+#
+# On that branch, add the mirror-image entry pointing back at "/" so readers can
+# come forward, and set `weasis.help.online` in the app's base.json to the same
+# prefix — the app concatenates the help topic straight onto that property, so
+# routing between lines must be a path, never a query parameter.
+#
+# When the old line reaches end of life, change its state to `archived` and stop
+# backporting. Nothing else changes.
+
+[[version]]
+id = "4.4"
+state = "supported"
+
+[[version]]
+id = "4.5"
+state = "supported"
+
+[[version]]
+id = "4.6"
+state = "supported"
+
+[[version]]
+id = "4.7"
+state = "current"
+
+[[version]]
+id = "4.8"
+state = "next"

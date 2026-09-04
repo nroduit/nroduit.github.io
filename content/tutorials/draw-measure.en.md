@@ -93,10 +93,10 @@ The table can be exported by **copy / paste**. The copied values use the full nu
 ### Preferences {#preferences}
 From the main menu **_File > Preferences > Draw & Measure_**.
 
-* **Ask for confirmation before deleting a drawing** — when checked (default), a confirmation dialog is shown before deleting the selected graphics. Unchecking it (or ticking *Don't ask me again* in that dialog) deletes them without confirmation — since {{% badge title="Version" %}}4.7.1{{% /badge %}}.
+* **Ask for confirmation before deleting a drawing** — when checked (default), a confirmation dialog is shown before deleting the selected graphics. Unchecking it (or ticking *Don't ask me again* in that dialog) deletes them without confirmation {{< since "4.7.1" >}}.
 
 #### Drawings
-Default graphic properties applied when drawing new objects — since {{% badge title="Version" %}}4.3.0{{% /badge %}}.
+Default graphic properties applied when drawing new objects {{< since "4.3.0" >}}.
 
 * **Line color** — default color (default: yellow). The transparency / alpha slider in the color picker controls opacity.
 * **Line width** — default line width.

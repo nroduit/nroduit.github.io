@@ -7,16 +7,16 @@ keywords: [ "viewer 3D", "volume rendering", "ray casting", "3D rendering", "dic
 
 ## <center>Displaying volume data {{< svg-inline "static/tuto/icon/volume.svg" >}}</center>
 
-The 3D viewer reconstructs a CT, MR, PET, or other volumetric series into an interactive volume rendering that can be rotated, sliced, recolored, and lit in real time. Typical uses include reviewing CT angiography, inspecting bone or vascular anatomy, surgical-planning views, and quickly conveying findings to colleagues or patients. Available since {{% badge title="Version" %}}4.1.0{{% /badge %}}, with major rendering and synchronization improvements in {{% badge title="Version" %}}4.7.0{{% /badge %}}.
+The 3D viewer reconstructs a CT, MR, PET, or other volumetric series into an interactive volume rendering that can be rotated, sliced, recolored, and lit in real time. Typical uses include reviewing CT angiography, inspecting bone or vascular anatomy, surgical-planning views, and quickly conveying findings to colleagues or patients. The viewer is available {{< since "4.1.0" >}}; its renderer and view synchronization were substantially improved {{< since "4.7.0" >}}.
 
 Internally, the volume is rendered on the graphics card using a [ray-casting algorithm](https://en.wikipedia.org/wiki/Volume_ray_casting) implemented in GLSL shaders, so a modern GPU is required (see [Requirements](#requirements)) but no extra installation step is necessary.
 
 ### Requirements {#requirements}
 The graphics-card capabilities used by Weasis are reported under **OpenGL Support** in **_File > Preferences > Viewer > 3D Viewer_**:
 
-* **Driver version** — requires OpenGL **3.3+** since {{% badge title="Version" %}}4.7.0{{% /badge %}}. Two rendering backends are used depending on the available OpenGL version:
+* **Driver version** — requires OpenGL **3.3+** {{< since "4.7.0" >}}. Two rendering backends are used depending on the available OpenGL version:
   * **OpenGL 4.3+** — uses a **Compute Shader** for optimal performance.
-  * **OpenGL 3.3 – 4.2** — uses an **FBO-based Fragment Shader** fallback (fully functional, but may be less performant than the Compute Shader path). macOS is capped at OpenGL 4.1 and therefore always uses this path. Since {{% badge title="Version" %}}4.7.3{{% /badge %}}, this path renders at a reduced resolution while the view is being dragged — see [rendering during interaction](#interactive-rendering).
+  * **OpenGL 3.3 – 4.2** — uses an **FBO-based Fragment Shader** fallback (fully functional, but may be less performant than the Compute Shader path). macOS is capped at OpenGL 4.1 and therefore always uses this path. This path renders at a reduced resolution while the view is being dragged {{< since "4.7.3" >}} — see [rendering during interaction](#interactive-rendering).
 * **Max 3D texture dimension length** — the upper limit, in voxels, of any X / Y / Z dimension of the volume.
 * Any other entry shown in **red** indicates a non-optimal configuration. The viewer often still works — see [how to limit the size of 3D textures](#3d-viewer) if performance becomes an issue.
 
@@ -39,7 +39,7 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/3d/head-neck.xml"
 ![3D View](/tuto/view-3d.jpg?classes=shadow&width=100%)
 <br>
 
-The same [patient orientation axes](mpr#orientation-axes) as the MPR views are drawn in the 3D view since {{% badge title="Version" %}}4.7.0{{% /badge %}}.
+The same [patient orientation axes](mpr#orientation-axes) as the MPR views are drawn in the 3D view {{< since "4.7.0" >}}.
 
 {{% notice info %}}
 DICOM SEG segmentations linked to the series are rendered in the 3D viewer too — see [Segmentation overlay in the 3D Volume Renderer](dicom-segmentation#segmentation-overlay-in-the-3d-volume-renderer).
@@ -57,7 +57,7 @@ Other toolbar buttons (LUT, reset, layout, synchronize…) are documented in the
 
 ### MPR Crosshair Cut Mode {#mpr-cut}
 
-Since {{% badge title="Version" %}}4.7.0{{% /badge %}} the 3D viewer can display an MPR crosshair overlay synchronized with the [MPR viewer](mpr#crosshair-colors), allowing you to clip the rendered volume along the anatomical planes defined by the crosshair position and orientation. The crosshair position and rotation stay synchronized in real time between the 2D MPR planes and the 3D rendering.
+The 3D viewer can display an MPR crosshair overlay {{< since "4.7.0" >}}, synchronized with the [MPR viewer](mpr#crosshair-colors) and allowing you to clip the rendered volume along the anatomical planes defined by the crosshair position and orientation. The crosshair position and rotation stay synchronized in real time between the 2D MPR planes and the 3D rendering.
 
 #### Recommended workflow
 
@@ -78,7 +78,7 @@ The crosshair overlay uses the same LPS axis color coding as the MPR viewer.
 
 ### 3D View Synchronization {#3d-synch}
 
-Since {{% badge title="Version" %}}4.7.0{{% /badge %}} the 3D viewer can host multiple side-by-side views of the same volume and keep them coordinated. Because every 3D view in the container shows the **same volume**, the auto-sync button {{< svg-inline "static/tuto/icon/synch.svg" >}} is always visible. A single synchronization profile bundles a per-action toggle list with camera-level actions enabled by default and photometric / rendering actions left opt-in.
+The 3D viewer can host multiple side-by-side views of the same volume and keep them coordinated {{< since "4.7.0" >}}. Because every 3D view in the container shows the **same volume**, the auto-sync button {{< svg-inline "static/tuto/icon/synch.svg" >}} is always visible. A single synchronization profile bundles a per-action toggle list with camera-level actions enabled by default and photometric / rendering actions left opt-in.
 
 #### Toolbar "Synchronize" checkbox
 
@@ -144,7 +144,7 @@ Controls for the rendering algorithm, quality, transparency, lighting, and shadi
   * **Iso Surface** — renders a 3D surface at a given intensity threshold, representing structures of a uniform density (e.g. bone segmentation).
 * **Z-axis sampling** — distance between successive samples along each ray. Smaller values capture more detail at the cost of compute time; the default is derived from the volume size.
 * **Opacity** — global opacity factor for the voxels. Can be pushed above 100 % to compensate for the lower-than-100 % values defined by some Volume LUTs.
-* **Shading** — enables shading on the rendered surface. The default is taken from the Volume LUT; the additional options let you override the inherited lighting settings. Since {{% badge title="Version" %}}4.7.3{{% /badge %}}, the toggle also lights the **segmentation surfaces** drawn over or in place of the anatomy — see [Segmentation overlay in the 3D Volume Renderer](dicom-segmentation#segmentation-overlay-in-the-3d-volume-renderer).
+* **Shading** — enables shading on the rendered surface. The default is taken from the Volume LUT; the additional options let you override the inherited lighting settings. The toggle also lights the **segmentation surfaces** drawn over or in place of the anatomy {{< since "4.7.3" >}} — see [Segmentation overlay in the 3D Volume Renderer](dicom-segmentation#segmentation-overlay-in-the-3d-volume-renderer).
 
 #### Transform {{% badge style="red" %}}D{{% /badge %}} {#transform}
 Zoom the volume and rotate it around the three patient axes:
@@ -154,7 +154,7 @@ Zoom the volume and rotate it around the three patient axes:
 
 ### Volume LUT Editor {#lut-editor}
 
-Since {{% badge title="Version" %}}4.7.2{{% /badge %}} custom Volume LUTs can be created and edited directly in the 3D viewer. A Volume LUT (also called a *preset*) defines, for each voxel intensity, the color, the opacity, and the lighting coefficients used by the volume rendering.
+Custom Volume LUTs can be created and edited directly in the 3D viewer {{< since "4.7.2" >}}. A Volume LUT (also called a *preset*) defines, for each voxel intensity, the color, the opacity, and the lighting coefficients used by the volume rendering.
 
 Open the editor from the LUT list in the toolbar {{< svg-inline "static/tuto/icon/lut.svg" >}} or in the right-click menu: the **Edit Volume LUT…** entry is located at the bottom of the list.
 
@@ -218,7 +218,7 @@ The maximum 3D texture defaults come from the graphics card. Lowering them (e.g.
 * **Dynamic quality** — reduces the rendering quality along the Z axis while you rotate or modify the view, for a smoother interaction. At the maximum slider position there is no quality reduction.
 
 {{% notice note %}}
-Since {{% badge title="Version" %}}4.7.3{{% /badge %}}, the **FBO fragment-shader** backend (OpenGL 3.3 – 4.2, and therefore always on macOS — see [Requirements](#requirements)) additionally lowers the **rendering resolution** while the camera is being dragged: the volume is ray-cast at the logical window resolution instead of the physical one and the result is upscaled for the duration of the gesture, which on a HiDPI / Retina display is a quarter of the pixels to compute. The frame drawn as soon as you release the mouse is at full resolution again. This is automatic and is independent of the **Dynamic quality** slider, which acts on the sampling along the ray; the **Compute Shader** backend (OpenGL 4.3+) always renders at full resolution.
+The **FBO fragment-shader** backend (OpenGL 3.3 – 4.2, and therefore always on macOS — see [Requirements](#requirements)) additionally lowers the **rendering resolution** while the camera is being dragged {{< since "4.7.3" >}}: the volume is ray-cast at the logical window resolution instead of the physical one and the result is upscaled for the duration of the gesture, which on a HiDPI / Retina display is a quarter of the pixels to compute. The frame drawn as soon as you release the mouse is at full resolution again. This is automatic and is independent of the **Dynamic quality** slider, which acts on the sampling along the ray; the **Compute Shader** backend (OpenGL 4.3+) always renders at full resolution.
 {{% /notice %}}
 
 * **Default orientation** — preferred starting orientation. Default: anterior view rotated 15° to the right and 15° downward.

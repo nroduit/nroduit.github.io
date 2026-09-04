@@ -9,7 +9,22 @@ keywords: [ "MIP", "Maximum Intensity Projection", "MinIP", "Mean IP", "slab", "
 
 **MIP** collapses a small stack of contiguous slices — a **slab** — into a single image by keeping the brightest voxel encountered along each ray through the slab. The technique is widely used to display high-intensity structures that would otherwise be split across many slices, such as **contrast-enhanced vessels (CT/MR angiography)**, **bones**, or **bright pulmonary nodules**. **MinIP** (minimum) and **Mean IP** (average) projections are also available — useful for **airways**, low-attenuation lesions, or smoother integrated views.
 
-Since {{% badge title="Version" %}}4.7.0{{% /badge %}}, MIP is no longer a standalone window. It is **integrated directly into the [DICOM 2D viewer](dicom-2d-viewer)**, with full synchronization and a slab-geometry overlay shared with linked views.
+MIP is **integrated directly into the [DICOM 2D viewer](dicom-2d-viewer)** {{< since "4.7.0" >}}, with full synchronization and a slab-geometry overlay shared with linked views.
+
+{{% version until="4.6" %}}
+{{% notice note %}}
+In **4.6 and earlier**, MIP is a **standalone viewer** rather than a mode of the 2D viewer. The same {{< svg-inline "static/tuto/icon/mip.svg" >}} button in the **Basic 3D** toolbar opens a separate MIP window, driven by a **modal MIP Options dialog**, and several things on this page work differently:
+
+- **No synchronization** — the MIP window is independent: no slab cross-lines on a complementary series, and no per-view MIP indicator.
+- **Projection type** — **Min**, **Mean** or **Max** only, **Max** by default. There is no **None** entry to return the view to the original image; you close the MIP window instead.
+- **Slice position** — the _Image_ value in the dialog moves the projection through the series stack.
+- **Slice thickness** — the _Image Extension_ value sets how many slices enter the projection, shown in millimeters as well when the series carries the 3D position and is calibrated.
+- **No annotations at all** — the projection changes the image geometry, so overlay graphics are not displayed in MIP mode. Nothing can be drawn, persistently or otherwise.
+- **Rebuild Series** — the dialog's own button builds the new series, which is added to the [DICOM Explorer](dicom-explorer/) and can be [exported](dicom-export/#exporting) like any other series. A custom windowing is carried over to the presets of the new series.
+
+The [Windowing and Rendering](lut/) section of the dialog is available {{< since "4.4.0" >}}.
+{{% /notice %}}
+{{% /version %}}
 
 MIP is also available in the other 3D-capable viewers, each with its own configuration:
 
@@ -28,18 +43,20 @@ The button is grayed out when the current series has fewer than **5 images** —
 If the series is a **multi-phase 4D acquisition** (for example a cardiac CT with several temporal phases), Weasis automatically splits it into individual phase sub-series when 2–7 phases are detected. For series with 8 or more phases, a confirmation dialog is shown first. Open any resulting phase sub-series to use it in MIP mode — see [4D Series Sub-Series Splitting](dicom-explorer#4d-splitting).
 {{% /notice %}}
 
+{{% version since="4.7.0" %}}
 Once active, MIP in the 2D viewer provides:
 
 - **Full synchronization** — the slab stays aligned with the current slice position and follows any [view synchronization](synch-view) you have configured.
 - **Slab cross-lines** — when another loaded series shares the same [Frame of Reference](synch-view#frame-of-reference) and is shown in a different orientation, the standard cross-lines on that series are extended to show **both edges of the slab** instead of just the current slice position. The slab extent is therefore visible at a glance from a complementary plane.
 - **Per-view indicator** — once MIP is active on a view, the {{< svg-inline "static/tuto/icon/mip.svg" >}} icon appears in the **top-right corner** of that view. Clicking it opens the same MIP options as the toolbar button, so you can tweak settings per view without leaving the layout.
+{{% /version %}}
 
 ### MIP options
 
 The MIP options panel can be opened from either of two places:
 
 - The {{< svg-inline "static/tuto/icon/mip.svg" >}} button in the **Basic 3D** toolbar — applies to the currently selected view.
-- The {{< svg-inline "static/tuto/icon/mip.svg" >}} indicator in the top-right corner of any view that already has MIP active.
+- The {{< svg-inline "static/tuto/icon/mip.svg" >}} indicator in the top-right corner of any view that already has MIP active {{< since "4.7.0" >}}.
 
 ![MIP Options](/tuto/mip.jpg?classes=shadow)
 <br>
@@ -51,7 +68,7 @@ Annotations and measurements **can** be added on a MIP-projected image, but they
 #### Projection
 The projection type controls how each pixel of the output is computed across the slab:
 
-* **None** — no projection; display the original image.
+* **None** — no projection; display the original image {{< since "4.7.0" >}}.
 * **Min** — Minimum Intensity Projection.
 * **Mean** — Mean Intensity Projection.
 * **Max** — Maximum Intensity Projection.

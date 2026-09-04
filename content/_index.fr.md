@@ -1,4 +1,9 @@
 ---
+# These pages deliberately link to the English tutorials, which are the only
+# translated content that exists. Hugo cannot resolve "/en/..." as a content
+# path (the language is a filename suffix, not a directory), so the link
+# checker reports false negatives; the emitted URLs are correct.
+urlIgnoreCheck: [ "^/en/" ]
 archetype: "home"
 title: "Weasis : visionneuse DICOM"
 description: "Visionneuse DICOM libre et open source pour l'imagerie médicale — utilisable en application autonome sur Windows / macOS / Linux ou lancée depuis n'importe quel portail web. PACS, DICOMweb, MPR, 3D, compatible IA."

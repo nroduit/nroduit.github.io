@@ -7,7 +7,7 @@ keywords: [ "mpr", "multiplanar reconstruction", "3d cursor", "crosshair", "obli
 
 ## <center>Multi-planar reconstruction (MPR) {{< svg-inline "static/tuto/icon/mpr.svg" >}}</center>
 
-The **MPR viewer** reconstructs the two complementary anatomical planes from a volumetric acquisition: starting from the original plane (typically axial), Weasis computes the corresponding **coronal** and **sagittal** views, all kept in sync through a shared 3D crosshair. **Oblique planes** are also supported, since {{% badge title="Version" %}}4.6.0{{% /badge %}}.
+The **MPR viewer** reconstructs the two complementary anatomical planes from a volumetric acquisition: starting from the original plane (typically axial), Weasis computes the corresponding **coronal** and **sagittal** views, all kept in sync through a shared 3D crosshair. **Oblique planes** are also supported {{< since "4.6.0" >}}.
 
 The MPR view inherits most of the properties and actions of the [DICOM 2D viewer](dicom-2d-viewer), with one structural difference: the crosshair tool stays active regardless of which mouse action is selected. Open the MPR viewer from the {{< svg-inline "static/tuto/icon/mpr.svg" >}} icon in the toolbar, or by right-clicking a thumbnail in the [DICOM Explorer](dicom-explorer/).
 
@@ -59,7 +59,7 @@ Open the per-view settings popup with the {{< svg-inline "static/tuto/icon/viewS
   - **Min** — Minimum intensity projection.
   - **Mean** — Mean intensity projection.
   - **Max** — Maximum intensity projection.
-- **Build a new series from the current view** / **Build three series from MPR views** — save the reconstructed MPR slices back as new DICOM series (since {{% badge title="Version" %}}4.7.0{{% /badge %}}). The first option exports the **current plane only**; the second (in the **All views** submenu) exports the **three planes**, each as a separate series. Background borders are cropped uniformly across every slice so the exported series keeps a constant image size. The crosshair is restored to its initial position when the build completes.
+- **Build a new series from the current view** / **Build three series from MPR views** — save the reconstructed MPR slices back as new DICOM series {{< since "4.7.0" >}}. The first option exports the **current plane only**; the second (in the **All views** submenu) exports the **three planes**, each as a separate series. Background borders are cropped uniformly across every slice so the exported series keeps a constant image size. The crosshair is restored to its initial position when the build completes.
 - **Synchronize** — per-view sync options: independent toggles for _Scroll_, _Pan_, _Zoom_, _Rotation_, _Flip_, _Window / Level_, _Spatial unit_, plus an **Apply to all views** entry that propagates the current selection to every other MPR view (see [View Synchronization in MPR](synch-view#mpr-sync-options)).
 
 {{% notice note %}}
@@ -98,11 +98,11 @@ The patient orientation axes are drawn in the **top-left corner** of each MPR vi
 
 See [Orientation in multiplanar reconstruction (MPR)](image-orientation/#orientation-in-multiplanar-reconstruction-mpr) for the wider orientation-labeling conventions.
 
-The same axes widget is also drawn in the [3D viewer](dicom-3d-viewer) since {{% badge title="Version" %}}4.7.0{{% /badge %}}.
+The same axes widget is also drawn in the [3D viewer](dicom-3d-viewer) {{< since "4.7.0" >}}.
 
 ### Volume geometry handling {#volume-geometry}
 
-Since {{% badge title="Version" %}}4.7.0{{% /badge %}}, when Weasis detects that a volume cannot be reconstructed as a perfect rectilinear grid, a confirmation dialog appears **before** the MPR views are built. The conditions are evaluated in this priority order — only the first match triggers the dialog:
+When Weasis detects that a volume cannot be reconstructed as a perfect rectilinear grid, a confirmation dialog appears **before** the MPR views are built {{< since "4.7.0" >}}. The conditions are evaluated in this priority order — only the first match triggers the dialog:
 
 | Condition | Dialog message |
 |-----------|----------------|
@@ -134,7 +134,7 @@ A persistent red label is then shown in the **bottom-left corner** of every MPR 
 | No (stack)    | _Patient geometry correction skipped — spatial accuracy may be reduced_ |
 
 ### Preferences
-From the main menu **_File > Preferences > Viewer > MPR_** (since {{% badge title="Version" %}}4.1.0{{% /badge %}}):
+From the main menu **_File > Preferences > Viewer > MPR_** {{< since "4.1.0" >}}:
 
 * **Auto center axes** — how the crosshair is recentered when it moves out of the visible area. **Always** recenters after every move; the default option only recenters when the position is **almost no longer visible**.
 * **Crosshair gap at the center** — size of the empty space drawn around the cursor point, so the marker does not occlude the structure being inspected.

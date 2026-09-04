@@ -1,0 +1,58 @@
+{{- /*
+  Banners rendered above the page title (through the `content-header.html`
+  theme hook):
+
+  - pages narrowed by `since` / `until` front matter get a warning that shows
+    only while the reader's selected version is outside that range; the matching
+    sidebar entry is hidden by the CSS generated in `docversion-head.html`. The
+    page itself is never hidden — somebody arriving from a search engine or an
+    in-app help link must still be able to read it.
+  - a build of another documentation line (`params.docline` / `doclinestate`,
+    set by the CI step from data/versions.toml) gets a permanent notice. A
+    `maintained` line still receives fixes and says so; an `archived` one is
+    frozen. Both point at the same page on the current line.
+*/ -}}
+{{- with site.Params.docline }}
+  {{- $here := partial "_weasis/liveURL.gotmpl" $.Page }}
+  {{- if eq site.Params.doclinestate "archived" }}
+    {{- partial "shortcodes/notice.html" (dict
+      "page" $.Page
+      "style" "warning"
+      "title" (printf "Archived documentation — Weasis %s" .)
+      "content" (printf `<p>This page documents Weasis %s and is no longer updated. See the <a href="%s">current documentation</a>.</p>` . $here)
+    ) }}
+  {{- else }}
+    {{- partial "shortcodes/notice.html" (dict
+      "page" $.Page
+      "style" "note"
+      "title" (printf "Weasis %s documentation" .)
+      "content" (printf `<p>You are reading the documentation for the Weasis %s line, which is still maintained. See the <a href="%s">current documentation</a> for the latest release.</p>` . $here)
+    ) }}
+  {{- end }}
+{{- end }}
+{{- with .Params.since }}
+  {{- $r := partial "_weasis/versionIndex.gotmpl" (dict "version" .) }}
+  {{- if ge $r.idx 0 }}
+    <div class="wv-alert" data-v-since="{{ $r.idx }}">
+    {{- partial "shortcodes/notice.html" (dict
+      "page" $.Page
+      "style" "warning"
+      "title" (printf "Requires Weasis %s or later" .)
+      "content" `<p>This page describes a feature that does not exist in the Weasis version selected in the sidebar.</p>`
+    ) }}
+    </div>
+  {{- end }}
+{{- end }}
+{{- with .Params.until }}
+  {{- $r := partial "_weasis/versionIndex.gotmpl" (dict "version" .) }}
+  {{- if ge $r.idx 0 }}
+    <div class="wv-alert" data-v-until="{{ $r.idx }}">
+    {{- partial "shortcodes/notice.html" (dict
+      "page" $.Page
+      "style" "warning"
+      "title" (printf "Removed after Weasis %s" .)
+      "content" `<p>This page describes a feature that is no longer available in the Weasis version selected in the sidebar.</p>`
+    ) }}
+    </div>
+  {{- end }}
+{{- end }}

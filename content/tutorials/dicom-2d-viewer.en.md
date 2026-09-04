@@ -35,6 +35,8 @@ Choose the action assigned to each of the three mouse buttons and the mouse whee
 * **Wheel** — Series Scroll.
 * **Middle button** — Pan.
 
+In a layout with several views, rolling the wheel over any view scrolls **that** view's series straight away: the view under the pointer becomes the selected one, so it no longer has to be clicked first {{< since "4.6.4" >}}.
+
 Available actions:
 
 * **Pan** — move the image position. _T_ key to select. _Alt + Arrows_ to pan while another action is selected.
@@ -51,7 +53,7 @@ Available actions:
 {{% notice tip %}}
 While dragging, hold _Ctrl_ to accelerate the action and _Ctrl + Shift_ to accelerate more.
 
-The single-key shortcuts above are the **defaults** — most are customizable since {{< badgeC "v4.7.0" >}} in **Preferences > General > Keyboard Shortcuts**. See [Keyboard Shortcuts](../basics/shortcuts).
+The single-key shortcuts above are the **defaults** — most are customizable {{< since "4.7.0" >}} in **Preferences > General > Keyboard Shortcuts**. See [Keyboard Shortcuts](../basics/shortcuts).
 {{% /notice %}}
 
 * {{< svg-inline "static/tuto/icon/layout.svg" >}} **Default layout** — change the layout of the view. [DICOM Information](tags) and [Histogram](histogram) are special layouts that update automatically as you scroll through the series.
@@ -124,7 +126,7 @@ Check / uncheck to show or hide the graphic objects (see [Draw & Measure](draw-m
 #### Image Tools {{% badge style="red" %}}D{{% /badge %}} {#image-tools}
 **Image Tools** groups every control that affects how the image is rendered.
 
-Each section below can be **collapsed or expanded** by clicking its header (since {{% badge title="Version" %}}4.7.1{{% /badge %}}). The expanded/collapsed state of every section is **remembered and restored** the next time you open Weasis.
+Each section below can be **collapsed or expanded** by clicking its header {{< since "4.7.1" >}}. The expanded/collapsed state of every section is **remembered and restored** the next time you open Weasis.
 
 ##### [Windowing and Rendering](lut/)
 
@@ -148,7 +150,7 @@ A dedicated **Cine** toolbar is also available — hidden by default; enable it 
 {{% /notice %}}
 
 ##### Fusion
-Overlay a **PET** or **SPECT** series on the displayed **CT / MR** base, with adjustable color LUT and base/overlay opacity (since {{% badge title="Version" %}}4.7.1{{% /badge %}}). Collapsed by default and enabled only when the study contains a compatible overlay. See [Image Fusion](fusion/) for the full workflow, SUV statistics, and MPR inheritance.
+Overlay a **PET** or **SPECT** series on the displayed **CT / MR** base, with adjustable color LUT and base/overlay opacity {{< since "4.7.1" >}}. Collapsed by default and enabled only when the study contains a compatible overlay. See [Image Fusion](fusion/) for the full workflow, SUV statistics, and MPR inheritance.
 
 ##### Reset
 Returns the image to its default rendering, either for every parameter or for a specific one. Also available from the toolbar button {{< svg-inline "static/tuto/icon/reset.svg" >}} and from the context menu.

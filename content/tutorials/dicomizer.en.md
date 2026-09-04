@@ -32,15 +32,15 @@ If you use the Dicomizer frequently on macOS, use **Automator** to create a `Dic
 The Dicomizer can encapsulate the following file types into DICOM objects:
 
 - **Standard images** — TIFF, BMP, GIF, JPEG, PNG, RAS, HDR, PNM. Converted to **JPEG lossy** to comply with the DICOM standard.
-- **PDF documents** (`application/pdf`) {{% badge title="Version" %}}4.6.2{{% /badge %}} — convenient for archiving reports, forms, or scanned documents.
-- **STL files** (`model/stl`) {{% badge title="Version" %}}4.6.2{{% /badge %}} — for 3D printing and surgical planning.
-- **MPEG-2 video** (`video/mpeg`) {{% badge title="Version" %}}4.6.2{{% /badge %}} — for compatibility with legacy medical imaging systems.
-- **MPEG-4 video** (`video/mp4`) {{% badge title="Version" %}}4.6.2{{% /badge %}} — modern format for endoscopy, ultrasound, surgical recordings, and other high-quality medical videos.
+- **PDF documents** (`application/pdf`) {{< since "4.6.2" >}} — convenient for archiving reports, forms, or scanned documents.
+- **STL files** (`model/stl`) {{< since "4.6.2" >}} — for 3D printing and surgical planning.
+- **MPEG-2 video** (`video/mpeg`) {{< since "4.6.2" >}} — for compatibility with legacy medical imaging systems.
+- **MPEG-4 video** (`video/mp4`) {{< since "4.6.2" >}} — modern format for endoscopy, ultrasound, surgical recordings, and other high-quality medical videos.
 
 {{% notice warning %}}
 Only MPEG-4 videos that are [compatible with the DICOM standard](https://dicom.nema.org/medical/dicom/current/output/chtml/part18/sect_8.7.3.html) are accepted — namely **MPEG-4 AVC/H.264 High Profile (up to Level 4.2)** or **HEVC/H.265 Main and Main 10 Profile**. Videos using a different profile are rejected with a message asking you to convert them to a compatible format first.
 
-Video files are also size-limited since {{% badge title="Version" %}}4.7.0{{% /badge %}}: a file larger than `weasis.acquire.video.max.size` (1024 MB by default — see the [preferences](../basics/customize/preferences)) is rejected. Set the preference to `0` to remove the limit.
+Video files are also size-limited {{< since "4.7.0" >}}: a file larger than `weasis.acquire.video.max.size` (1024 MB by default — see the [preferences](../basics/customize/preferences)) is rejected. Set the preference to `0` to remove the limit.
 {{% /notice %}}
 
 #### Importing files
@@ -90,7 +90,7 @@ A red dashed outline around an item means the value is **mandatory** and must be
 
 Person-name fields (_PatientName_, _ReferringPhysicianName_, _OperatorsName_, …) must follow the `Last^First^Middle^Prefix^Suffix` format defined by the [DICOM standard](https://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_6.2.html#sect_6.2.1).
 
-Since {{% badge title="Version" %}}4.7.3{{% /badge %}}, these fields are no longer edited as raw text: clicking the cell opens a dialog with one input per component — **Last name**, **First name**, **Middle name**, **Prefix**, and **Suffix**. The separators are inserted for you, a **DICOM value** line previews the encoded result while you type, and empty components are dropped. In the table, the value is displayed in the usual lexical order (_Smith, John_).
+These fields are no longer edited as raw text {{< since "4.7.3" >}}: clicking the cell opens a dialog with one input per component — **Last name**, **First name**, **Middle name**, **Prefix**, and **Suffix**. The separators are inserted for you, a **DICOM value** line previews the encoded result while you type, and empty components are dropped. In the table, the value is displayed in the usual lexical order (_Smith, John_).
 
 {{% notice note %}}
 The dialog rejects the DICOM delimiter characters `^`, `=` and `\`, and the preview turns red if a name exceeds the 64-character limit of the standard.
@@ -116,7 +116,7 @@ The **Photo Editor** offers basic tools to crop, rotate, and adjust contrast on 
 
 ### Publish DICOM Files
 
-Click **Publish** to send the DICOM files to a remote DICOM archive, or **Export locally** to save them on the local file system. The **Publication** panel offers:
+Click **Publish** to send the DICOM files to a remote DICOM archive, or **Export locally** {{< since "4.6.2" >}} to save them on the local file system. The **Publication** panel offers:
 
 - **Selection** — choose which DICOM items to publish (everything selected by default).
 - **Resolution** — downscale high-resolution images before sending.

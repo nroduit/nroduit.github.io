@@ -5,7 +5,7 @@ keywords: [ "web", "launch", "dicom viewer", "free dicom viewer", "open source d
 weight: 15
 ---
 
-The **Weasis Protocol** enables the launch of Weasis (starting from {{< badgeC "v3.6.0" >}}) in a web context using a specific URI scheme: `weasis://?commands`.
+The **Weasis Protocol** enables the launch of Weasis in a web context using a specific URI scheme: `weasis://?commands`.
 
 ### How to Use the Weasis Protocol
 

@@ -23,7 +23,7 @@ Used when the _Anatomical Orientation Type_ attribute is absent or set to `BIPED
 
 ### QUADRUPED (veterinary imaging)
 
-Used when the _Anatomical Orientation Type_ attribute is set to `QUADRUPED` (supported since {{% badge title="Version" %}}4.1.0{{% /badge %}}). The scheme uses **two-letter codes for left and right** (`LE` / `RT`) to avoid collisions with single-letter codes that mean something different in this scheme:
+Used when the _Anatomical Orientation Type_ attribute is set to `QUADRUPED`, supported {{< since "4.1.0" >}}. The scheme uses **two-letter codes for left and right** (`LE` / `RT`) to avoid collisions with single-letter codes that mean something different in this scheme:
 
 | Axis / direction | Letters |
 |------------------|---------|

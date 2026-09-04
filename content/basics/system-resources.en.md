@@ -3,6 +3,7 @@ title: System Resources
 description: Understand the System resources panel and its hardware recommendations
 keywords: [ "system resources", "memory", "performance", "hardware recommendation", "weasis dicom viewer", "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
 weight: 60
+since: "4.7.0"
 ---
 
 Weasis routinely handles studies far larger than its memory: a CT or MR series is
@@ -11,7 +12,7 @@ is hundreds of megabytes. The **System resources** panel shows, in real time, ho
 much of the machine Weasis is using, whether the hardware matches your daily
 practice, and — when it does not — what to upgrade.
 
-Open it from the menu **Help > System resources**.
+Open it from the menu **Help > System resources** {{< since "4.7.0" >}}.
 
 The panel does not change anything by itself. It is a diagnostic view: it observes,
 measures across all your sessions, and gives a verdict you can act on.

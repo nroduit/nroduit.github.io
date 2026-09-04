@@ -62,7 +62,7 @@ Some attributes are nested inside a **sequence** element (marker (5) in the scre
 When a value is too long to fit:
 
 - **Resize the column** from its header — the new width is kept until the displayed image changes.
-- Hover the cell to read the full value as a **tooltip** (since {{% badge title="Version" %}}4.3.0{{% /badge %}}).
+- Hover the cell to read the full value as a **tooltip** {{< since "4.3.0" >}}.
 {{% /notice %}}
 
 {{% notice tip %}}
