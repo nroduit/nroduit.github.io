@@ -18,7 +18,7 @@ theme = "hugo-theme-relearn"
 
 # the main language of this site; also an automatic pirrrate translation is
 # available in this showcase
-languageCode = "en"
+locale = "en"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir= true
 
@@ -158,7 +158,7 @@ enableRobotsTXT = true
   [Languages.en]
     title = "Weasis Documentation"
     weight = 1
-    languageName = "English"
+    label = "English"
 
     [[Languages.en.menu.shortcuts]]
       name = "<i class='fa fa-list-ul'></i> Features"
@@ -184,34 +184,34 @@ enableRobotsTXT = true
   [Languages.fr]
     title = "Documentation"
     weight = 2
-    languageName = "Français"
+    label = "Français"
 
   [Languages.es]
     title = "Documentación"
     weight = 3
-    languageName = "Español"
+    label = "Español"
 
   [Languages.de]
     title = "Dokumentation"
     weight = 4
-    languageName = "Deutsch"
+    label = "Deutsch"
 
   [Languages.ja]
     title = "ドキュメント"
     weight = 5
-    languageName = "日本語"
+    label = "日本語"
 
   [Languages."zh-cn"]
     title = "文档"
     weight = 6
-    languageName = "简体中文"
+    label = "简体中文"
 
   [Languages.ko]
     title = "문서"
     weight = 7
-    languageName = "한국어"
+    label = "한국어"
 
   [Languages.ru]
     title = "Документация"
     weight = 8
-    languageName = "Русский"
+    label = "Русский"

@@ -25,7 +25,7 @@
       "@type"    "WebSite"
       "name"     "Weasis"
       "url"      (printf "%s/" $base)
-      "inLanguage" (.Site.Language.LanguageCode | default "en")
+      "inLanguage" (.Site.Language.Locale | default "en")
   -}}
 
   {{- $app := dict
@@ -60,7 +60,7 @@
 {{- end -}}
 
 {{- if and .File (eq .File.TranslationBaseName "faq") -}}
-  {{- with .Site.Data.faq -}}
+  {{- with hugo.Data.faq -}}
     {{- $items := slice -}}
     {{- range .questions -}}
       {{- $items = $items | append (dict
