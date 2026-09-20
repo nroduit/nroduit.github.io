@@ -4,17 +4,24 @@
 </style>
 -->
 
-{{- /* Page titles are written for search results, so several now run to 50-70
-       characters. The theme sizes every <h1> at a flat 3.25rem and renders it
-       uppercase with a widened font axis, which was tuned for short titles: a
-       long one then wraps to two or three lines and towers over the page. Scale
-       it down in steps by title length, and keep it fluid so the drop happens on
-       a narrow window too. Only long titles are touched; short ones keep the
-       theme's size. */ -}}
+{{- /* The <h1> is the page title, and those titles are written for search
+       results, so they run from 4 to 74 characters. The theme sizes every one
+       of them at a flat 3.25rem, uppercase and on a widened font axis, which
+       was tuned for the short ones: a long title then wraps to two or three
+       lines and towers over the page. So the size is a continuous function of
+       the title's length rather than a set of steps — with steps, two pages one
+       character apart differed by 20%, which is exactly what the reader notices
+       when moving between them. 3.25rem holds up to 24 characters and then
+       falls by 0.032rem per character, to a floor of 1.95rem (reached around
+       65). The arithmetic is done here rather than in a CSS calc() so that
+       nothing depends on how the minifier treats spaces inside calc. Same rule
+       on the Karnak site. */ -}}
 {{- $titlelen := len (.Title | plainify) -}}
-{{- with cond (gt $titlelen 74) "1.95rem" (cond (gt $titlelen 54) "2.2rem" (cond (gt $titlelen 34) "2.6rem" "")) -}}
-<style>#R-body-inner > .flex-block-wrapper article h1{font-size:clamp(1.6rem,calc(1rem + 2.2vw),{{ . }})}</style>
-{{ end }}
+{{- $over := math.Max 0 (sub $titlelen 24) -}}
+{{- $size := math.Max 1.95 (sub 3.25 (mul $over 0.032)) -}}
+{{- $small := math.Max 1.5 (sub 2.5 (mul $over 0.025)) -}}
+<style>#R-body-inner > .flex-block-wrapper article h1{font-size:{{ printf "%.2f" $size }}rem}@media only screen and (max-width:47.999rem){#R-body-inner > .flex-block-wrapper article h1{font-size:{{ printf "%.2f" $small }}rem}}</style>
+
 {{- /* Which address this page should be indexed under, and whether it should be
        indexed at all. The four cases are mutually exclusive, so exactly one
        canonical link and at most one robots directive is emitted. */ -}}
