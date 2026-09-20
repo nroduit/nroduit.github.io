@@ -6,7 +6,7 @@
 urlIgnoreCheck: [ "^/en/" ]
 archetype: "home"
 title: "Weasis: DICOM-Viewer"
-description: "Freier Open-Source-DICOM-Viewer für die medizinische Bildgebung — läuft als native Anwendung unter Windows / macOS / Linux oder wird aus einem beliebigen Webportal gestartet. PACS, DICOMweb, MPR, 3D, KI-bereit."
+description: "Freier Open-Source-DICOM-Viewer für die medizinische Bildgebung: läuft unter Windows, macOS und Linux oder startet aus einem Webportal. PACS, DICOMweb, MPR, 3D, KI."
 keywords: [ "DICOM-Viewer", "freier DICOM-Viewer", "Open-Source-DICOM-Viewer", "kostenloser DICOM-Viewer", "weasis", "DICOM-Betrachter", "DICOM-Software", "dicom", "PACS", "medizinische Bildgebung", "Radiologie", "dicom viewer" ]
 aliases:
   - /dicom-viewer-deutsch/

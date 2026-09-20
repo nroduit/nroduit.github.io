@@ -73,7 +73,7 @@ answer = "Yes, to an ordinary printer or to a DICOM printer, with a choice of la
 
 [[questions]]
 question = "Is Weasis a certified medical device?"
-answer = "No. The open-source distribution of Weasis is not a certified medical device — it does not carry CE marking and is not FDA cleared. Primary diagnostic use requires the user or institution to ensure compliance with applicable laws and regulations. Healthcare organizations or vendors that need a certified product can build on the same code base and pursue certification themselves."
+answer = "No. The open-source distribution of Weasis is not a medical device: no CE marking, no FDA clearance, and primary diagnostic use is the responsibility of the user or institution. Being a medical device is a property of a product, not of a code base: at the University Hospital of Geneva a variant called Weasis HUG is an in-house medical device under article 9 of the Swiss Medical Devices Ordinance, used only inside the hospital that manufactures it and not placed on the market. That status does not extend to this distribution."
 
 [[questions]]
 question = "Does Weasis de-identify DICOM files?"

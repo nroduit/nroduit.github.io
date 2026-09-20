@@ -1,7 +1,7 @@
 ---
 title: DICOM Viewer Features
 linkTitle: Features
-description: "Every feature of the Weasis DICOM viewer in one list — 2D, MPR, curved MPR, MIP and 3D volume rendering, PET/CT fusion with SUV, DICOM SEG, RT, SR, ECG and waveforms, measurements, DICOMweb (QIDO/WADO/STOW) and PACS integration."
+description: "Every feature of the Weasis DICOM viewer in one list: 2D, MPR, MIP and 3D volume rendering, PET/CT fusion with SUV, DICOM SEG, RT, SR, ECG, DICOMweb and PACS."
 weight: 3
 keywords: [ "dicom viewer features", "weasis features", "dicom viewer capabilities", "mpr", "curved mpr", "3d volume rendering", "mip", "dicom seg", "segmentation", "pet/ct fusion", "suv", "dicom rt", "dicom sr", "dicom ecg", "dicomweb", "wado", "stow", "qido", "free dicom viewer", "open source dicom viewer" ]
 hidden: true
@@ -9,7 +9,7 @@ hidden: true
 
 ## <center>Weasis features</center>
 
-This page lists the features supported by Weasis. For a step-by-step walkthrough of each tool, see the [Tutorials](tutorials).
+This page lists the features supported by Weasis. For a step-by-step walkthrough of each tool, see the [Tutorials](tutorials). For how Weasis differs from OsiriX, Horos, RadiAnt and MicroDicom — platforms, licensing and regulatory status — see the [comparison](dicom-viewer-comparison).
 
 {{< image-gallery gallery_dir="gallery1" >}}
 

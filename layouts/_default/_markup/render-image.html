@@ -1,0 +1,47 @@
+{{- /*
+  Overrides the theme's image render hook, which is otherwise a thin wrapper
+  around partials/shortcodes/image.html, to add responsive candidates.
+
+  Screenshots on this site are 1600–2500 px wide because the detail in them is the
+  content — a measurement, a grey-level difference, thin overlay text. Serving that
+  full-size file to a phone costs several hundred kilobytes for pixels the screen
+  cannot show. So for any image that lives in assets/ and is wider than the
+  threshold, two downscaled candidates are generated and offered alongside the
+  original, and the browser picks by viewport.
+
+  Nothing is lost for the reader who needs the detail: the original is always the
+  largest candidate, and the lightbox copy is served the original unconditionally
+  (see partials/shortcodes/image.html, which strips srcset from it). Only the
+  downscaled variants are re-encoded, and never the file in the repository.
+*/ -}}
+{{- $attributes := .Attributes | default dict -}}
+{{- $widths := slice 768 1280 -}}
+{{- $threshold := 1200 -}}
+{{- $path := strings.TrimPrefix "/" (urls.Parse .Destination).Path -}}
+{{- with resources.Get $path -}}
+  {{- $orig := . -}}
+  {{- if and (in (slice "image/jpeg" "image/png" "image/webp") $orig.MediaType.Type) (gt $orig.Width $threshold) -}}
+    {{- $set := slice -}}
+    {{- range $widths -}}
+      {{- if lt . $orig.Width -}}
+        {{- with $orig.Resize (printf "%dx webp q90" .) -}}
+          {{- $set = $set | append (printf "%s %dw" .RelPermalink .Width) -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if $set -}}
+      {{- $set = $set | append (printf "%s %dw" $orig.RelPermalink $orig.Width) -}}
+      {{- $attributes = merge $attributes (dict
+          "srcset" (delimit $set ", ")
+          "sizes" "(max-width: 48rem) 100vw, 900px") -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- partial "shortcodes/image.html" (dict
+  "page" .Page
+  "url" .Destination
+  "title" .Title
+  "alt" .Text
+  "id" ""
+  "attributes" $attributes
+) }}

@@ -1,7 +1,7 @@
 ---
 title: "Connect Weasis to a DICOMweb Archive"
 linkTitle: "DICOMweb Archives"
-description: "Launch Weasis straight from a DICOMweb archive — dcm4chee-arc-light, Orthanc, Google Cloud Healthcare, DICOMcloud, Kheops and Amazon HealthImaging — with the URL and token for each."
+description: "Launch Weasis straight from a DICOMweb archive: dcm4chee-arc-light, Orthanc, Google Cloud Healthcare, DICOMcloud, Kheops or Amazon HealthImaging."
 keywords: [ "weasis dicomweb", "launch weasis from orthanc", "weasis dcm4chee", "google cloud healthcare weasis", "kheops weasis", "amazon healthimaging dicom viewer", "qido-rs", "wado-rs", "dicomweb archive integration" ]
 weight: 12
 ---

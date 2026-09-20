@@ -50,8 +50,19 @@
 {{- with site.Params.author.orcid }}{{ $person = merge $person (dict "sameAs" .) }}{{ end -}}
 {{- $iso := "2006-01-02T15:04:05-07:00" -}}
 {{- $license := "https://creativecommons.org/licenses/by-sa/4.0/" -}}
+{{- /* The screenshot used for `image` / `screenshot`. Resolved as a resource when
+       it lives in assets/, so that moving it there for image processing does not
+       leave this pointing at a file nobody publishes; the static path is the
+       fallback. */ -}}
+{{- $screenshot := printf "%s/tuto/seg-mpr-vr.jpg" $base -}}
+{{- with resources.Get "tuto/seg-mpr-vr.jpg" }}{{ $screenshot = .Permalink }}{{ end -}}
 
 {{- if .IsHome -}}
+  {{- /* `sameAs` lists the profiles that are this same organization elsewhere: it is
+         what lets a search engine merge the GitHub presence, the YouTube channel and
+         this site into one entity rather than three unrelated ones. The channel is
+         given without a tab suffix (/featured), since the channel is the identity
+         and a tab is only a view of it. */ -}}
   {{- $org := dict
       "@context" "https://schema.org"
       "@type"    "Organization"
@@ -66,6 +77,7 @@
       "sameAs"   (slice
         "https://github.com/nroduit/Weasis"
         "https://github.com/nroduit/Weasis/discussions"
+        "https://www.youtube.com/@weasis"
       )
   -}}
 
@@ -112,8 +124,8 @@
       "featureList"            (printf "%s/en/features/" $base)
       "description"            (.Description | default site.Home.Params.description)
       "isAccessibleForFree"    true
-      "image"                  (printf "%s/tuto/seg-mpr-vr.jpg" $base)
-      "screenshot"             (printf "%s/tuto/seg-mpr-vr.jpg" $base)
+      "image"                  $screenshot
+      "screenshot"             $screenshot
       "license"                "https://github.com/nroduit/Weasis/blob/master/LICENSE"
       "softwareLicense"        "EPL-2.0 OR Apache-2.0"
       "sameAs"                 "https://github.com/nroduit/Weasis"

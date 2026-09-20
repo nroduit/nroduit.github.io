@@ -95,7 +95,7 @@ Yes, to an ordinary printer or to a DICOM printer, with a choice of layout and p
 ### Is Weasis a certified medical device?
 **No.** The open-source distribution of Weasis is **not** a certified medical device — it does not carry CE marking and is not FDA cleared. Any **primary diagnostic** use requires you (or your institution) to ensure full compliance with the laws and regulations applicable in your jurisdiction. The full disclaimer is displayed in a dialog **the first time Weasis is launched** and must be explicitly accepted before the application can be used; it is also reproduced on the [Download Weasis](getting-started/download-dicom-viewer) page.
 
-Healthcare organizations or vendors that need a certified product can build on the same code base and pursue certification themselves — the [Eclipse Public License](https://github.com/nroduit/Weasis/blob/master/LICENSE) permits derivative commercial products.
+**Being a medical device is a property of a product, not of a code base** — and the same code can be both. At the [University Hospital of Geneva](https://www.hug.ch/en), a variant called **Weasis HUG** is an **in-house medical device**: manufactured and used inside the institution under [article 9 of the Swiss Medical Devices Ordinance (ODim)](https://www.hug.ch/conformite-projets-si), with a quality management system following ISO 13485:2016 and conformity to the general safety and performance requirements of Annex I of the European regulation 2017/745. It is deliberately **not placed on the market and carries no CE marking** — the in-house route covers use within the hospital that manufactures it, and nothing beyond that.
 
 ### Does Weasis de-identify DICOM files?
 **No — and this matters.** Weasis can hide patient identifiers *on screen* and in what it renders (screenshots, prints, image exports), which is useful for teaching and demonstrations, but that is **not de-identification**: text burned into the image pixels is not removed automatically, and DICOM files exported or sent from Weasis **keep their original attributes**. To de-identify DICOM data properly, use a tool built for it such as [Karnak](https://karnak.weasis.org/). Always review every image before sharing it.
@@ -125,7 +125,7 @@ Weasis translations are managed on a community translation platform. To improve 
 Yes — Weasis is available for commercial use, provided you comply with the terms outlined in [the license](https://github.com/nroduit/Weasis/blob/master/LICENSE).
 
 ### How to cite Weasis in a publication?
-See [How to cite Weasis](cite): pick the release you used and copy the BibTeX, APA, Vancouver or plain-text entry.
+Cite the software at the version you used — author Nicolas Roduit, title *Weasis DICOM Viewer*, the version, the URL https://weasis.org and the date you retrieved it. [How to cite Weasis](cite) generates ready-made BibTeX, APA, Vancouver and plain-text entries for each release.
 
 ### Why does Weasis use the Eclipse Public License?
 The [Eclipse Public License (EPL)](https://www.eclipse.org/legal/epl-v20.html) is a commercially friendly open-source license approved by the [Open Source Initiative (OSI)](https://www.opensource.org). It offers several benefits:

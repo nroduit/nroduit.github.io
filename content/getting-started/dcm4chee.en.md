@@ -2,7 +2,7 @@
 title: Embedding in dcm4chee
 description: How to install and configure Weasis as the default web viewer in the dcm4chee web interface
 keywords: [ "dcm4chee", "dcm4chee web" , "dcm4chee integration", "dcm4chee viewer", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
-weight: 10
+weight: 16
 ---
 
 This page explains how to integrate Weasis with dcm4chee-arc-light using weasis-pacs-connector. To launch Weasis without the connector, follow the alternative [instructions](../basics/customize/integration/#download-directly-with-dicomweb-restful-services).

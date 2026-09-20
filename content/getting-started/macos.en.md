@@ -3,7 +3,7 @@ title: "DICOM Viewer on macOS"
 linkTitle: "macOS"
 description: "Install the Weasis DICOM viewer on macOS — PKG for Intel and Apple Silicon, or Homebrew — plus the requirements and the behavior specific to macOS."
 keywords: [ "dicom viewer mac", "dicom viewer macos", "weasis macos", "dicom viewer apple silicon", "homebrew weasis", "dicom viewer m1 m2", "free dicom viewer mac" ]
-weight: 12
+weight: 11
 ---
 
 ## <center>Weasis on macOS</center>

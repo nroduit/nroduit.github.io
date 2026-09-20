@@ -6,7 +6,7 @@
 urlIgnoreCheck: [ "^/en/" ]
 archetype: "home"
 title: "Weasis : visionneuse DICOM"
-description: "Visionneuse DICOM libre et open source pour l'imagerie médicale — utilisable en application autonome sur Windows / macOS / Linux ou lancée depuis n'importe quel portail web. PACS, DICOMweb, MPR, 3D, compatible IA."
+description: "Visionneuse DICOM libre et open source pour l'imagerie médicale : autonome sur Windows, macOS, Linux ou lancée depuis un portail web. PACS, DICOMweb, MPR, 3D, IA."
 keywords: [ "visionneuse dicom", "visionneuse dicom libre", "visionneuse dicom open source", "visionneuse dicom gratuite", "weasis", "visualiseur dicom", "logiciel dicom", "dicom", "pacs", "imagerie médicale", "radiologie", "dicom viewer" ]
 aliases:
   - /visionneuse-dicom/

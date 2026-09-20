@@ -1,7 +1,7 @@
 ---
 title: Dicom Conformance
-description: DICOM Conformance Statements of Weasis
-keywords: [ "DICOM Conformance Statements", "IHE", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
+description: "What Weasis supports of the DICOM standard: the transfer syntaxes it can decode, the codec used for each, and the photometric interpretations it renders."
+keywords: [ "dicom conformance statement", "supported transfer syntax", "dicom codec support", "jpeg 2000 dicom", "jpeg-ls", "jpeg-xl dicom", "photometric interpretation", "ihe" ]
 weight: 70
 ---
 

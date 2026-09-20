@@ -49,7 +49,7 @@ Without the token both render an inline error. CI injects it from the `HUGO_GH_T
   - `mkd.html` — includes another Markdown file inline (used on the home page).
   - `version-compatibility.html`, `badgeC.html`, `svg.html`, `svg-inline.html`, `render-preferences.html`.
 - **JSON output** — `content/api/release.md` declares `outputs = ["API"]`, which selects `layouts/api/single.api.json` (the `API` output format is defined in `config.toml`) to emit `/api/release/api.json` for external consumers.
-- **Deployment** — pushes to `main` trigger `.github/workflows/hugo.yaml`, which builds with Hugo extended and deploys `public/` to GitHub Pages. There is no test suite for the content; the gate is the build plus `.github/scripts/seo-conformity.py`, which inspects the generated site (see *Discoverability* below).
+- **Deployment** — pushes to `main` trigger `.github/workflows/hugo.yaml`, which builds with Hugo extended and deploys `public/` to GitHub Pages. `static/CNAME` pins the custom domain (`weasis.org`) in version control rather than leaving it in a repository setting: the `nroduit.github.io` → `weasis.org` redirect depends on it, and `weasis.help.online` — the in-app Help base URL, baked into shipped installers — depends on that redirect. Do not delete it. There is no test suite for the content; the gate is the build plus `.github/scripts/seo-conformity.py`, which inspects the generated site (see *Discoverability* below).
 
 ## Content audience & style
 

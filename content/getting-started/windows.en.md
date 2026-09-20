@@ -3,7 +3,7 @@ title: "DICOM Viewer on Windows"
 linkTitle: "Windows"
 description: "Install the Weasis DICOM viewer on Windows — MSI, portable archive, Store, winget or Chocolatey — plus requirements and Windows-specific behavior."
 keywords: [ "dicom viewer windows", "weasis windows", "dicom viewer windows 11", "winget weasis", "chocolatey weasis", "portable dicom viewer windows", "dicom cd viewer windows", "msi installer" ]
-weight: 11
+weight: 10
 ---
 
 ## <center>Weasis on Windows</center>

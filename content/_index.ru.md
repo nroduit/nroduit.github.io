@@ -6,7 +6,7 @@
 urlIgnoreCheck: [ "^/en/" ]
 archetype: "home"
 title: "Weasis: DICOM-просмотрщик"
-description: "Бесплатный DICOM-просмотрщик с открытым исходным кодом для медицинской визуализации — работает как нативное приложение на Windows / macOS / Linux или запускается из любого веб-портала. PACS, DICOMweb, MPR, 3D, поддержка ИИ."
+description: "Бесплатный DICOM-просмотрщик с открытым исходным кодом для медицинской визуализации: Windows, macOS, Linux или запуск из веб-портала. PACS, DICOMweb, MPR, 3D, ИИ."
 keywords: [ "DICOM-просмотрщик", "просмотрщик dicom", "открытый dicom-просмотрщик", "бесплатный dicom-просмотрщик", "weasis", "медицинская визуализация", "рентгенология", "PACS", "DICOM", "dicom viewer" ]
 aliases:
   - /dicom-russian/

@@ -28,8 +28,10 @@ The invariants, roughly in order of how likely each is to break:
   * canonical is self-referential and og:url agrees with it
   * exactly one canonical link and at most one robots meta per page
   * print renderings are noindex and never canonicalise to themselves
-  * every indexable page has a title, a description and an og:image that exists,
-    exactly one <h1>, and no unrendered shortcode left in the output
+  * every indexable page has a title, a description (warned about below 70 or above
+    165 characters) and an og:image that exists, exactly one <h1>, and no
+    unrendered shortcode left in the output
+  * every image a page points at is actually built, including each srcset candidate
   * every JSON-LD block parses, carries @context and @type, and every @id it
     references is defined somewhere on the site
   * sitemaps: W3C datetime lastmod, hreflang sets that include x-default, every
@@ -46,13 +48,14 @@ warning on what is a judgement call.
 """
 
 import argparse
+import html
 import json
 import os
 import re
 import sys
 import xml.dom.minidom as dom
 from collections import defaultdict
-from urllib.parse import urlsplit
+from urllib.parse import unquote, urlsplit
 
 # Pages that are deliberately kept out of the sidebar tree with `hidden: true`
 # and reachable from the shortcut menu instead. They have been silently
@@ -96,6 +99,10 @@ class Report:
         if not self.fails:
             print("   none")
         return 1 if self.fails else 0
+
+
+def html_unescape(value):
+    return html.unescape(value)
 
 
 def read(path):
@@ -149,7 +156,10 @@ class Site:
         parts = urlsplit(url)
         if parts.scheme and not url.startswith(self.base):
             return None
-        path = parts.path
+        # percent-decoded: a file on disk is named "Color Histograms.jpg" while the
+        # page references it as "Color%20Histograms.jpg", and comparing the two
+        # verbatim reports a missing file that is sitting right there
+        path = unquote(parts.path)
         if self.prefix and path.startswith(self.prefix):
             path = path[len(self.prefix):]
         if path.endswith("/") or not os.path.splitext(path)[1]:
@@ -294,6 +304,16 @@ def check_pages(site, rep, sitemap_urls):
             description = meta(html, "description")
             if not description or not description.strip():
                 rep.fail("description", "empty meta description: %s" % rel)
+            else:
+                # Editorial rather than broken, hence a warning: under ~70 characters
+                # wastes the snippet, over ~165 is truncated mid-sentence. The value
+                # is unescaped first — `l&#39;imagerie` is 10 characters of markup for
+                # one apostrophe, and a search engine counts the text, not the entity.
+                n = len(html_unescape(description))
+                if n > 165:
+                    rep.warn("description/long", "%d chars, will be truncated: %s" % (n, rel))
+                elif n < 70:
+                    rep.warn("description/short", "%d chars, wastes the snippet: %s" % (n, rel))
             og_image = meta(html, "og:image", prop=True)
             if not og_image:
                 rep.fail("og:image", "no og:image: %s" % rel)
@@ -480,6 +500,34 @@ def check_llms(site, rep, sitemap_urls):
                      % (text.count("\nURL: "), len(text)))
 
 
+def check_images(site, rep, indexable):
+    """Every image an indexable page points at must exist, srcset included.
+
+    The responsive candidates are generated at build time from assets/, so a
+    mistake in the render hook shows up as a page referencing a variant that was
+    never written — invisible in a build log, obvious here.
+    """
+    checked = missing = 0
+    for fp in sorted(indexable):
+        if not os.path.exists(fp):
+            continue
+        html = read(fp)
+        urls = re.findall(r'(?:src|xlink:href)="([^"]+)"', html)
+        for attr in re.findall(r'srcset="([^"]+)"', html):
+            urls += [c.strip().split(" ")[0] for c in attr.split(",") if c.strip()]
+        for u in urls:
+            if not re.search(r"\.(png|jpe?g|gif|svg|webp|avif)($|\?)", u, re.I):
+                continue
+            checked += 1
+            if u.startswith(("http://", "https://")) and not u.startswith(site.base):
+                continue                      # off-site image, not ours to verify
+            if not site.built(u):
+                missing += 1
+                rep.fail("image/404", "%s references %s, which is not built"
+                         % (site.rel(fp), u))
+    rep.note("image references checked: %d (missing: %d)" % (checked, missing))
+
+
 def check_aliases(site, rep):
     for fp, html in sorted(site.aliases.items()):
         target = re.search(r"url=([^\"']+)", html)
@@ -531,6 +579,7 @@ def main():
     sitemap_urls = check_sitemaps(site, rep)
     indexable, noindex = check_pages(site, rep, sitemap_urls)
     check_robots(site, rep, sitemap_urls, indexable, noindex)
+    check_images(site, rep, indexable)
     check_llms(site, rep, sitemap_urls)
     check_aliases(site, rep)
     check_shortcut_pages(site, rep, sitemap_urls, noindex)

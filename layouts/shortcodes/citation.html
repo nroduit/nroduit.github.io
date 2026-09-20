@@ -67,7 +67,7 @@
 {{- $today := now.Format "2 January 2006" -}}
 
 <div class="citation-picker">
-  <label for="cite-version"><strong>Version you used</strong></label>
+  <label for="cite-version"><strong>Release to cite</strong></label>
   <select id="cite-version">
     {{- range $releases }}
     <option value="{{ .version }}" data-year="{{ .year }}" data-date="{{ .date }}" data-long="{{ .long }}">{{ .version }} — released {{ .long }}</option>

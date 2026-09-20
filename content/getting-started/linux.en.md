@@ -3,7 +3,7 @@ title: "DICOM Viewer on Linux"
 linkTitle: "Linux"
 description: "Install the Weasis DICOM viewer on Linux — DEB, RPM, Flatpak, Snap or AUR — plus the GLIBC requirements and what the Flatpak and Snap sandboxes restrict."
 keywords: [ "dicom viewer linux", "weasis linux", "dicom viewer ubuntu", "dicom viewer fedora", "flatpak dicom viewer", "snap dicom viewer", "dicom viewer arm64", "aur weasis" ]
-weight: 13
+weight: 12
 ---
 
 ## <center>Weasis on Linux</center>
@@ -21,8 +21,8 @@ Everything on this page is specific to Linux; the packages themselves are on
 | **Snap** — `sudo snap install weasis` | any distribution with snapd, x86-64 and arm64, sandboxed |
 | **AUR** — `weasis-bin` | Arch and derivatives |
 
-The packages ship a desktop entry that declares the `weasis://` scheme, so a link from a PACS
-portal or an EHR opens the locally installed viewer — see the
+Every package — DEB, RPM, Flatpak and Snap — ships a desktop entry that declares the `weasis://`
+scheme, so a link from a PACS portal or an EHR opens the locally installed viewer — see the
 [Weasis Web Protocol](weasis-protocol). You can check it from a terminal with
 `xdg-open "weasis://?…"`.
 

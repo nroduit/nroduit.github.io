@@ -51,10 +51,12 @@
                         "style"        "transparent"
                       ) -}}
                     </td>
+                    {{- /* No arm-32 branch: 32-bit ARM is not built for current
+                           releases. old-download.html keeps it, since it lists
+                           releases that did ship those assets. */ -}}
                     <td style="text-align: left;">{{ cond (eq $package ".msi") "Requires Windows 10 or higher"
                         (cond (eq $package ".pkg") (cond (eq $arch "arm-64") "Requires macOS 12 or higher (Apple Silicon)" "Requires macOS 11 or higher (Intel)" )
-                        (cond (eq $arch "arm-32") "Requires GLIBC_2.17. Only tested with Raspberry Pi 4"
-                        (cond (eq $arch "arm-64") "Requires GLIBC_2.27" (cond (eq $package ".rpm") "Requires GLIBC_2.17, libstdc++.so.6 and libgcc" "Requires GLIBC_2.17" ))))
+                        (cond (eq $arch "arm-64") "Requires GLIBC_2.27" (cond (eq $package ".rpm") "Requires GLIBC_2.17, libstdc++.so.6 and libgcc" "Requires GLIBC_2.17" )))
                         }}
                     </td>
                 </tr>
