@@ -1,2 +1,145 @@
+{{- /* Emitted at the site root because `enableRobotsTXT = true`. Only the root
+       copy is ever read by a crawler, so a documentation-line build under /4.x/
+       publishes one that is simply ignored — those builds rely on the noindex
+       meta tag and the canonical link instead (layouts/partials/custom-header.html).
+
+       The withheld paths are built once, into $rules, and emitted for every
+       group. That is not tidiness: a crawler named in its own group ignores the
+       `User-agent: *` group completely, so a rule added to one group and not the
+       other silently applies to some crawlers and not others. */ -}}
+{{- $prefix := strings.TrimSuffix "/" (urls.Parse site.BaseURL).Path -}}
+{{- $rules := slice "/*/search/" -}}
+{{- range hugo.Sites -}}
+  {{- $rules = $rules | append
+      (printf "%s/%s/tags/" $prefix .Language.Lang)
+      (printf "%s/%s/categories/" $prefix .Language.Lang) -}}
+{{- end -}}
+# robots.txt for {{ absURL "" }}
+#
+# This documentation exists to be read, quoted and indexed — by search engines
+# and by AI assistants alike, since "which free DICOM viewer opens a DICOM CD?"
+# is now as likely to be asked of an assistant as of a search box. Everything is
+# therefore open to every crawler, including the ones that train models; the
+# content is CC BY-SA 4.0 and attribution in an answer is how people find Weasis.
+#
+# Two plain-text renderings are published for language models, following the
+# convention at https://llmstxt.org/ :
+#
+#   {{ absURL "llms.txt" }}       annotated map of every page
+#   {{ absURL "llms-full.txt" }}  the whole documentation in one file
+#
+# Only three kinds of URL are withheld, none of which is content: the JavaScript
+# search page, which renders nothing without a query, and the tag and category
+# listings, which no page on this site populates. The taxonomy paths are spelled
+# out one language at a time rather than as /*/tags/, which would also match the
+# DICOM attributes tutorial at /en/tutorials/tags/. They carry the base URL's own
+# path prefix, which is empty on this domain but not in a build served from a
+# subdirectory — a robots path is absolute on its host, so the prefix belongs in
+# it. The printer-friendly rendering of each page (…/index.print.html) is left
+# crawlable on purpose even though it is served `noindex`: a crawler has to fetch
+# a page to be told not to index it, and blocking it here would leave the
+# duplicate address eligible for the index on the strength of its inbound links.
+
 User-agent: *
-Sitemap: {{ .Site.BaseURL }}sitemap.xml
+Allow: /
+{{ range $rules }}Disallow: {{ . }}
+{{ end }}
+# The group above already allows every crawler, named or not, so nothing below
+# grants access that was missing. The point of naming these is that this file is
+# also read by people — and by the vendors' own opt-out tooling — deciding whether
+# Weasis documentation may be used: the answer is yes, for search, for retrieval
+# at question time, and for training. Tokens are matched case-insensitively
+# (RFC 9309), so one spelling per agent is enough.
+#
+# The list is not exhaustive and does not need to be: an agent absent from it
+# falls back to `User-agent: *` above and is allowed just the same. Some fetchers
+# cannot be named at all — several agentic browsers, and Grok's retrieval traffic,
+# send ordinary browser strings.
+#
+# Academic and public-sector AI research is welcome on exactly the same terms,
+# including the projects that publish no crawler token to name: the Swiss AI
+# Initiative's Apertus (ETH Zurich / EPFL / CSCS), which applies robots.txt
+# opt-outs retroactively to archives going back to 2013 — so a permissive file
+# here is what keeps this documentation eligible for it — and EPFL's Meditron
+# medical models, whose corpora are collected by ordinary Python scrapers. Both
+# are covered by the `*` group; inventing tokens for them would only be noise.
+#
+# OpenAI: training, search index, and pages fetched to answer a question
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+# Anthropic: ClaudeBot trains, Claude-SearchBot indexes, Claude-User fetches on
+# demand; Claude-Web and anthropic-ai are the retired tokens
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: Claude-Web
+User-agent: anthropic-ai
+# Google: Google-Extended governs Gemini training and grounding, and is separate
+# from Googlebot, which the `*` group covers
+User-agent: Google-Extended
+User-agent: GoogleOther
+User-agent: Google-CloudVertexBot
+User-agent: Google-NotebookLM
+User-agent: Gemini-Deep-Research
+# Microsoft / Bing: Bingbot itself is covered by `*`
+User-agent: AzureAI-SearchBot
+# Apple
+User-agent: Applebot
+User-agent: Applebot-Extended
+# Meta: meta-externalagent trains, Meta-ExternalFetcher retrieves for Meta AI
+User-agent: meta-externalagent
+User-agent: Meta-ExternalFetcher
+# Amazon
+User-agent: Amazonbot
+User-agent: Amzn-SearchBot
+User-agent: bedrockbot
+# Perplexity
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+# Mistral
+User-agent: MistralAI-User
+User-agent: MistralAI-Index
+User-agent: MistralAI-Training
+# xAI — reported tokens; no vendor documentation exists for these
+User-agent: GrokBot
+User-agent: xAI-Grok
+User-agent: Grok-DeepSearch
+# DeepSeek, Cohere
+User-agent: DeepSeekBot
+User-agent: cohere-ai
+User-agent: cohere-training-data-crawler
+# ByteDance, Moonshot, Alibaba, Baidu, Huawei, Yandex
+User-agent: Bytespider
+User-agent: DoubaoBot
+User-agent: Kimi-SearchBot
+User-agent: Kimi-User
+User-agent: QwenBot
+User-agent: TongyiBot
+User-agent: ERNIEBot
+User-agent: PanguBot
+User-agent: PetalBot
+User-agent: YandexAdditional
+# Answer engines and AI-native search
+User-agent: YouBot
+User-agent: DuckAssistBot
+User-agent: ExaBot
+User-agent: TavilyBot
+User-agent: kagi-fetcher
+User-agent: Bravebot
+User-agent: LinerBot
+User-agent: iAskBot
+User-agent: PhindBot
+# Open datasets and aggregators that AI training draws on
+User-agent: CCBot
+User-agent: AI2Bot
+User-agent: Diffbot
+User-agent: ImagesiftBot
+User-agent: Timpibot
+User-agent: Webzio-Extended
+User-agent: omgilibot
+User-agent: SemrushBot-OCOB
+Allow: /
+{{ range $rules }}Disallow: {{ . }}
+{{ end }}
+Sitemap: {{ absURL "sitemap.xml" }}

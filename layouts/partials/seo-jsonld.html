@@ -1,51 +1,124 @@
 {{- /*
-  schema.org JSON-LD emitted into <head>:
-    - home page : Organization + WebSite + SoftwareApplication
-    - FAQ page  : FAQPage (Q/A pairs come from data/faq.toml)
-  Other pages emit nothing.
+  schema.org JSON-LD, emitted into <head> by layouts/partials/custom-header.html.
+
+  Search engines use it for rich results; assistants use it as the machine-readable
+  summary of a page they would otherwise have to infer from HTML. Both work far
+  better when the same few entities are described once and then referenced, so
+  everything here hangs off three stable @ids declared on the home page:
+
+    <base>/#organization  the Weasis project
+    <base>/#website       this documentation site
+    <base>/#weasis        the viewer itself, as a SoftwareApplication
+
+  Every other page then says "I am part of #website, I am about #weasis" instead
+  of restating the facts, which is what lets a crawler merge the pages into one
+  picture of one piece of software.
+
+  Per kind:
+    home            Organization + WebSite (with a SearchAction) + SoftwareApplication
+    section listing CollectionPage, whose hasPart names the children
+    ordinary page   TechArticle
+    faq             FAQPage as well, from data/faq.toml
+    `howto` in front matter  HowTo as well
+
+  Breadcrumbs are left to the theme, which marks up the visible trail with
+  microdata; two trails would be one too many.
+
+  Nothing is emitted on a documentation-line build (params.docline), nor on the
+  printer-friendly rendering of a page: both are served noindex, so repeating the
+  entity definitions there would only offer a crawler a second copy of them at an
+  address it has been asked to ignore.
 */ -}}
 
-{{- $base := .Site.BaseURL | strings.TrimRight "/" -}}
+{{- /* `return` cannot be used to bail out of a partial that writes output — Hugo
+       keeps rendering the rest — so the whole body hangs off this one condition. */ -}}
+{{- $emit := and
+      (not site.Params.docline)
+      (eq (.Store.Get "relearnOutputFormat" | default "html") "html")
+-}}
+{{- if $emit -}}
+
+{{- $base := absURL "" | strings.TrimRight "/" -}}
+{{- $orgID := printf "%s/#organization" $base -}}
+{{- $siteID := printf "%s/#website" $base -}}
+{{- $appID := printf "%s/#weasis" $base -}}
+{{- $author := partialCached "_relearn/authorName.gotmpl" site.Home -}}
+{{- $iso := "2006-01-02T15:04:05-07:00" -}}
+{{- $license := "https://creativecommons.org/licenses/by-sa/4.0/" -}}
 
 {{- if .IsHome -}}
   {{- $org := dict
       "@context" "https://schema.org"
       "@type"    "Organization"
+      "@id"      $orgID
       "name"     "Weasis"
       "url"      (printf "%s/" $base)
-      "logo"     (printf "%s/images/logo.svg" $base)
+      "logo"     (dict
+        "@type" "ImageObject"
+        "url"   (printf "%s/images/logo.svg" $base)
+      )
+      "founder" (dict
+        "@type" "Person"
+        "name"  $author
+      )
       "sameAs"   (slice
         "https://github.com/nroduit/Weasis"
         "https://github.com/nroduit/Weasis/discussions"
       )
   -}}
 
+  {{- /* The search page is client-side, but the query it reads from the URL is a
+         stable entry point, so it is worth advertising as a SearchAction. */ -}}
   {{- $website := dict
-      "@context" "https://schema.org"
-      "@type"    "WebSite"
-      "name"     "Weasis"
-      "url"      (printf "%s/" $base)
-      "inLanguage" (.Site.Language.Locale | default "en")
+      "@context"   "https://schema.org"
+      "@type"      "WebSite"
+      "@id"        $siteID
+      "name"       site.Title
+      "url"        (printf "%s/" $base)
+      "inLanguage" (site.Language.Locale | default "en")
+      "publisher"  (dict "@id" $orgID)
+      "license"    $license
+      "about"      (dict "@id" $appID)
+      "potentialAction" (dict
+        "@type"  "SearchAction"
+        "target" (dict
+          "@type"       "EntryPoint"
+          "urlTemplate" (printf "%ssearch/?search-by={search_term_string}" (absLangURL ""))
+        )
+        "query-input" "required name=search_term_string"
+      )
   -}}
+
+  {{- $versions := partialCached "_weasis/versions.gotmpl" site.Home -}}
+  {{- $current := "" -}}
+  {{- range where $versions "isLine" false }}{{ if eq .state "current" }}{{ $current = .id }}{{ end }}{{ end -}}
 
   {{- $app := dict
       "@context"               "https://schema.org"
       "@type"                  "SoftwareApplication"
+      "@id"                    $appID
       "name"                   "Weasis"
       "alternateName"          "Weasis DICOM Viewer"
-      "applicationCategory"    "MedicalApplication"
+      "applicationCategory"    (slice "MedicalApplication" "HealthApplication")
       "applicationSubCategory" "DICOM viewer"
       "operatingSystem"        "Windows, macOS, Linux"
       "url"                    (printf "%s/" $base)
       "downloadUrl"            (printf "%s/en/getting-started/download-dicom-viewer/" $base)
-      "description"            (.Description | default .Site.Params.description)
+      "installUrl"             (printf "%s/en/getting-started/download-dicom-viewer/" $base)
+      "softwareHelp"           (dict "@id" $siteID)
+      "releaseNotes"           "https://github.com/nroduit/Weasis/releases"
+      "featureList"            (printf "%s/en/features/" $base)
+      "description"            (.Description | default site.Home.Params.description)
+      "isAccessibleForFree"    true
       "image"                  (printf "%s/tuto/seg-mpr-vr.jpg" $base)
       "screenshot"             (printf "%s/tuto/seg-mpr-vr.jpg" $base)
       "license"                "https://github.com/nroduit/Weasis/blob/master/LICENSE"
       "softwareLicense"        "EPL-2.0 OR Apache-2.0"
+      "sameAs"                 "https://github.com/nroduit/Weasis"
+      "publisher"              (dict "@id" $orgID)
       "author" (dict
         "@type" "Person"
-        "name"  "Nicolas Roduit"
+        "name"  $author
       )
       "offers" (dict
         "@type"         "Offer"
@@ -53,17 +126,71 @@
         "priceCurrency" "USD"
       )
   -}}
+  {{- with $current }}{{ $app = merge $app (dict "softwareVersion" .) }}{{ end -}}
+  {{- /* The one fact assistants get wrong most often about Weasis, stated where a
+         machine will read it. It is documented on /en/faq/ and on the download page. */ -}}
+  {{- $app = merge $app (dict "disambiguatingDescription" "The open-source distribution of Weasis is not a certified medical device: it carries no CE marking and is not FDA cleared. Primary diagnostic use is the responsibility of the user or institution.") -}}
 
   <script type="application/ld+json">{{ $org     | jsonify | safeJS}}</script>
   <script type="application/ld+json">{{ $website | jsonify | safeJS}}</script>
   <script type="application/ld+json">{{ $app     | jsonify | safeJS}}</script>
 {{- end -}}
 
+{{- /* The page itself, as an article or as a listing. Only real content pages:
+       the theme's own pages have no place in a knowledge graph.
+
+       No BreadcrumbList here — the theme already marks up the visible breadcrumb
+       with schema.org microdata, and a second trail in JSON-LD would give a
+       crawler two answers to the same question. What the microdata cannot
+       express is how a page relates to the rest of the site, which is what the
+       isPartOf / about / publisher references below are for. */ -}}
+{{- /* Ordinary pages and section listings only. The taxonomy listings, the 404
+       page and the theme's own pages are all "a page with a title" as far as Hugo
+       is concerned, and none of them describes anything. */ -}}
+{{- if and (in (slice "page" "section") .Kind) .Title (not (partial "_relearn/pageIsSpecial.gotmpl" .)) -}}
+  {{- $page := dict
+      "@context"   "https://schema.org"
+      "@type"      (cond (eq .Kind "section") "CollectionPage" "TechArticle")
+      "@id"        (printf "%s#page" .Permalink)
+      "url"        .Permalink
+      "name"       (.Title | plainify)
+      "headline"   (.Title | plainify)
+      "inLanguage" (.Language.Locale | default "en")
+      "isPartOf"   (dict "@id" $siteID)
+      "about"      (dict "@id" $appID)
+      "publisher"  (dict "@id" $orgID)
+      "license"    $license
+      "author" (dict
+        "@type" "Person"
+        "name"  $author
+      )
+  -}}
+  {{- with .Description }}{{ $page = merge $page (dict "description" (. | plainify)) }}{{ end -}}
+  {{- with .Keywords }}{{ $page = merge $page (dict "keywords" (delimit . ", ")) }}{{ end -}}
+  {{- if not .Lastmod.IsZero }}{{ $page = merge $page (dict "dateModified" (.Lastmod.Format $iso)) }}{{ end -}}
+  {{- with .FirstSection }}{{ if ne . $ }}{{ $page = merge $page (dict "articleSection" (.Title | plainify)) }}{{ end }}{{ end -}}
+  {{- /* A version-gated page says so here too, so an answer built from it can
+         carry the version along instead of dropping it. */ -}}
+  {{- with .Params.since }}{{ $page = merge $page (dict "softwareVersion" (printf "%s or later" .)) }}{{ end -}}
+  {{- if eq .Kind "section" -}}
+    {{- $parts := slice -}}
+    {{- range .Pages.ByWeight -}}
+      {{- if .Title -}}
+        {{- $part := dict "@type" "WebPage" "name" (.Title | plainify) "url" .Permalink -}}
+        {{- with .Description }}{{ $part = merge $part (dict "description" (. | plainify)) }}{{ end -}}
+        {{- $parts = $parts | append $part -}}
+      {{- end -}}
+    {{- end -}}
+    {{- with $parts }}{{ $page = merge $page (dict "hasPart" .) }}{{ end -}}
+  {{- end -}}
+  <script type="application/ld+json">{{ $page | jsonify | safeJS }}</script>
+{{- end -}}
+
 {{- if and .File (eq .File.TranslationBaseName "faq") -}}
   {{- with hugo.Data.faq -}}
-    {{- $items := slice -}}
+    {{- $qa := slice -}}
     {{- range .questions -}}
-      {{- $items = $items | append (dict
+      {{- $qa = $qa | append (dict
           "@type" "Question"
           "name"  .question
           "acceptedAnswer" (dict
@@ -75,7 +202,11 @@
     {{- $faqPage := dict
         "@context"   "https://schema.org"
         "@type"      "FAQPage"
-        "mainEntity" $items
+        "@id"        (printf "%s#faq" $.Permalink)
+        "url"        $.Permalink
+        "isPartOf"   (dict "@id" $siteID)
+        "about"      (dict "@id" $appID)
+        "mainEntity" $qa
     -}}
   <script type="application/ld+json">{{ $faqPage | jsonify | safeJS }}</script>
   {{- end -}}
@@ -107,10 +238,13 @@
   {{- $howto := dict
       "@context"    "https://schema.org"
       "@type"       "HowTo"
+      "@id"         (printf "%s#howto" $.Permalink)
       "name"        (.name | default $.Title)
+      "about"       (dict "@id" $appID)
       "step"        $steps
   -}}
   {{- with .description }}{{ $howto = merge $howto (dict "description" .) }}{{ end -}}
   {{- with .totalTime   }}{{ $howto = merge $howto (dict "totalTime"   .) }}{{ end -}}
   <script type="application/ld+json">{{ $howto | jsonify | safeJS }}</script>
+{{- end -}}
 {{- end -}}

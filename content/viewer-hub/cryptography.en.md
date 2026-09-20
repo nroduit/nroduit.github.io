@@ -1,8 +1,13 @@
 ---
 title: Cryptography
 description: Encrypt the URL search parameters when launching the Weasis viewer
-keywords: [ "cryptography" ]
+keywords: [ "cryptography", "viewerhub", "url encryption", "query parameters", "patient identifier", "weasis launch" ]
 weight: 90
+aliases:
+  # The file used to be named " cryptography.en.md", with a leading space, which
+  # Hugo published at /viewer-hub/-cryptography/. Keep that address working for
+  # anything that already links to it.
+  - /viewer-hub/-cryptography/
 ---
 
 When launching the Weasis viewer with ViewerHub, a URL containing search criteria in "query parameters" is used.

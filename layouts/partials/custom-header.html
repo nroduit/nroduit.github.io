@@ -4,8 +4,17 @@
 </style>
 -->
 
+{{- /* Which address this page should be indexed under, and whether it should be
+       indexed at all. The four cases are mutually exclusive, so exactly one
+       canonical link and at most one robots directive is emitted. */ -}}
+{{- $format := .Store.Get "relearnOutputFormat" | default "html" -}}
 {{- if isset .Params "canonical" -}}
-<link rel="canonical" href="{{ .Params.baseURL }}" />
+<link rel="canonical" href="{{ .Params.canonical }}" />
+{{- else if ne $format "html" -}}
+{{/* the printer-friendly rendering of a page: the same words at a second URL.
+     The theme already points its canonical at the ordinary page; noindex says
+     the same thing without relying on a crawler to follow a canonical chain. */}}
+<meta name="robots" content="noindex, follow" />
 {{- else if site.Params.docline -}}
 {{/* another documentation line: keep it out of the index so it does not compete
      with the current line for the same queries, and credit the live page */}}
@@ -13,6 +22,22 @@
 <link rel="canonical" href="{{ partial "_weasis/liveURL.gotmpl" . }}" />
 {{- else -}}
 <link rel="canonical" href="{{ .Permalink }}" />
+{{/* Let search engines and AI answer panels use the whole page: an unbounded
+     text snippet, and a large image preview rather than a thumbnail. Without
+     this, Google caps snippets at its own default length, which for a
+     step-by-step tutorial is usually too short to answer anything. */}}
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+{{- end }}
+
+{{- /* Preview image for shares and for the cards assistants render next to an
+       answer. The theme resolves og:image from page resources and finds none
+       here (images live in static/), so fill it in when it left it empty; the
+       matching twitter:image is in layouts/partials/twitter_cards.html. */ -}}
+{{- if not (partial "_funcs/get-page-images" .) }}
+  {{- with partial "_weasis/socialimage.gotmpl" . }}
+<meta property="og:image" content="{{ . }}" />
+<meta property="og:image:alt" content="The Weasis DICOM viewer" />
+  {{- end }}
 {{- end }}
 
 {{- partial "seo-jsonld.html" . }}

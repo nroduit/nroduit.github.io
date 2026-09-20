@@ -61,6 +61,14 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+      # A Hugo build succeeds happily while serving a sitemap full of noindex
+      # pages, or while losing /llms.txt from the site root because an upgrade
+      # changed how a target path is cleaned. This checks the generated site for
+      # those invariants instead — see .github/scripts/seo-conformity.py for the
+      # list and for why each one is there. It reads the base URL out of the
+      # generated robots.txt, so it checks whatever URL this build was given.
+      - name: Check SEO conformity
+        run: python3 .github/scripts/seo-conformity.py
       # data/versions.toml can point at other documentation lines: the previous
       # major branch while it is still maintained, and older releases once they
       # are frozen. Each entry that declares both a `branch` and a `url` is

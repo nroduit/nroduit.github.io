@@ -1,0 +1,24 @@
+{{- /*
+  Flattens the page tree below a given page into a single slice, in the order a
+  reader meets it in the sidebar: each child in `weight` order, and immediately
+  after a section its own descendants.
+
+  Used by the llms.txt renderings, which need one flat, ordered list of every
+  documented page. Pages hidden from the menu (`hidden: true`) are kept — they
+  are still published, indexable pages, and two of them (/features/, /faq/) are
+  among the most useful entry points on the site. Only the theme's internal
+  pages (the search page and friends, under /_relearn) and pages without a
+  title are skipped, since neither is something to send a reader to.
+
+  Call: partial "_weasis/pagetree.gotmpl" (dict "page" site.Home)
+*/ -}}
+{{- $out := slice }}
+{{- range .page.Pages.ByWeight }}
+  {{- if and .Title (not (partial "_relearn/pageIsSpecial.gotmpl" .)) }}
+    {{- $out = $out | append . }}
+    {{- with partial "_weasis/pagetree.gotmpl" (dict "page" .) }}
+      {{- $out = $out | append . }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+{{- return $out }}

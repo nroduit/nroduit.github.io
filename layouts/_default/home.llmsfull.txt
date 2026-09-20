@@ -1,0 +1,52 @@
+{{- /*
+  /llms-full.txt — the whole documentation as one plain-text file, the companion
+  to the /llms.txt index (https://llmstxt.org/).
+
+  The source Markdown is emitted rather than the rendered HTML: headings, tables
+  and links survive, while the sidebar, the version selector, the galleries and
+  the analytics markup do not. Shortcodes are unwrapped instead of dropped — the
+  `since` and `until` badges become the plain words a model can act on, and block
+  shortcodes such as `notice` keep their inner prose. Inline
+  <style> and <script> blocks (the home page has both) are removed outright.
+
+  Inline HTML written inside a page (the home page's card grid, for instance) is
+  kept as it stands: a model reads it without trouble, and guessing which tags
+  are layout and which carry meaning would do more harm than good.
+
+  This is a derived artifact: nothing here is authored, so a page that reads
+  badly in this file reads badly in its Markdown too.
+*/ -}}
+{{- $pages := partial "_weasis/pagetree.gotmpl" (dict "page" site.Home) -}}
+# {{ site.Title }} — full text
+
+> {{ .Description | plainify | chomp }}
+
+Source: {{ site.Home.Permalink }} — index of pages: {{ "llms.txt" | absURL }}
+Pages: {{ add 1 (len $pages) }}. Licensed CC BY-SA 4.0. Weasis itself is EPL-2.0 OR Apache-2.0.
+{{ range (slice site.Home | append $pages) }}
+{{- $md := .RawContent -}}
+{{- $md = replaceRE `(?s)<style[^>]*>.*?</style>` "" $md -}}
+{{- $md = replaceRE `(?s)<script[^>]*>.*?</script>` "" $md -}}
+{{- $md = replaceRE `(?s)<!--.*?-->` "" $md -}}
+{{- /* version markers first, so they survive the generic shortcode strip below */ -}}
+{{- $md = replaceRE `\{\{[<%]-?\s*since\s+"?([0-9][^"\s]*)"?\s*-?[>%]\}\}` "(since v$1)" $md -}}
+{{- $md = replaceRE `\{\{[<%]-?\s*until\s+"?([0-9][^"\s]*)"?\s*-?[>%]\}\}` "(up to v$1)" $md -}}
+{{- $md = replaceRE `\{\{%-?\s*version\s+since="?([0-9][^"\s]*)"?[^}]*-?%\}\}` "(the following applies since v$1)" $md -}}
+{{- $md = replaceRE `\{\{%-?\s*version\s+until="?([0-9][^"\s]*)"?[^}]*-?%\}\}` "(the following applies up to v$1)" $md -}}
+{{- /* every remaining shortcode call, opening or closing; the inner prose of a
+       `%` shortcode is Markdown and stays */ -}}
+{{- $md = replaceRE `(?s)\{\{[<%]-?\s*/?\s*[a-zA-Z][^}]*?-?[>%]\}\}` "" $md -}}
+{{- $md = replaceRE `\n{3,}` "\n\n" $md -}}
+
+---
+
+# {{ .Title | plainify }}
+
+URL: {{ .Permalink }}
+{{ with .Description }}Summary: {{ . | plainify | chomp }}
+{{ end }}{{ with .Params.since }}Applies since Weasis v{{ . }}.
+{{ end }}{{ with .Params.until }}Applies up to Weasis v{{ . }}.
+{{ end }}{{ if not .Lastmod.IsZero }}Last updated: {{ .Lastmod.Format "2006-01-02" }}
+{{ end }}
+{{ $md | chomp }}
+{{ end }}

@@ -1,9 +1,26 @@
-{{- /* based on Hugo 0.125.5 sitemap.xml */}}
+{{- /* Based on Hugo's built-in sitemap.xml, with three deliberate differences.
+
+       - Taxonomy listings and the theme's own pages (the search page) are left
+         out. Neither has content of its own: the tag and category terms are
+         empty on this site, and the search page renders nothing without a query.
+         The previous version filtered on a Scratch value the page sets while it
+         renders, which is not set yet when the sitemap is built — so hidden
+         pages were listed here while being served with `noindex`, the one
+         combination that wastes a crawl and teaches a search engine nothing.
+         Hidden now means "not in the sidebar" only, and those pages belong here.
+
+       - <lastmod> comes from the Git commit that last touched the page
+         (`enableGitInfo` in config.toml), so the freshness signal is the date of
+         the edit rather than the date of the build.
+
+       - Translated pages advertise their siblings with xhtml:link alternates,
+         which is how a search engine learns that /en/ and /fr/ are two versions
+         of one page rather than two competing ones. Only the home page is
+         translated today; the markup follows whatever `content/` contains. */ -}}
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?>" | safeHTML }}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 {{- range .Data.Pages }}
-{{- if and .Title (or (ne (.Scratch.Get "relearnIsHiddenStem") true) (ne .Site.Params.disableSeoHiddenPages true) ) }}
-  {{- if not (or (hasPrefix .RelPermalink "/en/tags") (hasPrefix .RelPermalink "/en/categories")) }}
+  {{- if and .Title .RelPermalink (ne .Kind "taxonomy") (ne .Kind "term") (not (partial "_relearn/pageIsSpecial.gotmpl" .)) }}
   <url>
     <loc>{{ .Permalink }}</loc>
   {{- if not .Lastmod.IsZero }}
@@ -15,8 +32,17 @@
   {{- if ge .Sitemap.Priority 0.0 }}
     <priority>{{ .Sitemap.Priority }}</priority>
   {{- end }}
+  {{- if .IsTranslated }}
+    {{- /* x-default points at the first translation, which is English: the
+           languages are ordered by their `weight` in config.toml. */ -}}
+    {{- with index .AllTranslations 0 }}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
+    {{- end }}
+    {{- range .AllTranslations }}
+    <xhtml:link rel="alternate" hreflang="{{ .Language.Locale }}" href="{{ .Permalink }}" />
+    {{- end }}
+  {{- end }}
   </url>
   {{- end -}}
-{{- end -}}
 {{- end }}
 </urlset>

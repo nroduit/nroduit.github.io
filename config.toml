@@ -28,6 +28,20 @@ title = "Weasis Documentation"
 # Robots.txt for web crawlers
 enableRobotsTXT = true
 
+# Take each page's `lastmod` from the last commit that touched its Markdown
+# file. Without this, pages carry no date at all: the sitemap has no <lastmod>,
+# and the `article:modified_time` / `dateModified` metadata that search engines
+# and AI crawlers read as a freshness signal is simply absent. A full-history
+# checkout is required, which CI already does (`fetch-depth: 0`); a shallow
+# clone silently yields zero dates instead of failing.
+enableGitInfo = true
+
+[frontmatter]
+  # `:git` first, so a page's real edit date wins; `lastmod` in front matter
+  # still overrides it when a page needs a date of its own. No `date` is
+  # invented, so nothing claims a publication date it does not have.
+  lastmod = [':git', 'lastmod', 'date', 'publishDate']
+
 [minify]
   disableCSS = false
   disableHTML = true
@@ -75,7 +89,11 @@ enableRobotsTXT = true
   editURL = "https://github.com/nroduit/nroduit.github.io/edit/main/content/"
   # Author of the site, will be used in meta information
   author.name = "Nicolas Roduit"
-  # Description of the site, will be used in meta information
+  # Fallback preview image for pages that do not set `images` in front matter.
+  # The theme fills og:image / twitter:image from page resources, and this site
+  # has none (images live in static/), so without this every share and every AI
+  # answer card rendered as a bare text link. See layouts/partials/custom-header.html.
+  socialImage = "/images/weasis-banner.jpg"
   showVisitedLinks = true
   externalLinkTarget = '_blank'
   disableBreadcrumb = false
@@ -85,13 +103,26 @@ enableRobotsTXT = true
   disableLandingPageButton = true
   disableLanguageSwitchingButton = false
   titleSeparator = "|"
+  # Emit directory URLs (…/tutorials/mpr/) everywhere instead of the theme's
+  # default …/tutorials/mpr/index.html. The explicit form exists so a built site
+  # can be browsed from the file system; on a hosted site it means every internal
+  # link, every breadcrumb and `og:url` pointed at a URL that then canonicalizes
+  # somewhere else — a crawl spent twice per page, and link equity split between
+  # two spellings of the same address.
+  disableExplicitIndexURLs = true
   # Logo: replaces the previous layouts/partials/logo.html override (deprecated in Relearn 9.0.0).
   # `linkTitle = ""` suppresses the site-title text rendered next to the logo by auto-logo.html.
   logo = { src = '/images/logo.svg' }
   linkTitle = ""
   themeVariant = [ "relearn-dark", "relearn-light" ]
   themeVariantAuto = [ "relearn-light", "relearn-dark" ]
-  disableSeoHiddenPages = true
+  # `hidden: true` in front matter keeps a page out of the sidebar tree — it is
+  # how /features/, /faq/, /demo/ and /get-involved/ live in the shortcut menu
+  # instead. Leaving this at `true` also made the theme stamp those four pages
+  # `noindex, nofollow`, i.e. four of the strongest landing pages on the site
+  # were invisible to search engines and to AI crawlers while still being listed
+  # in the sitemap. Hidden means "not in the menu" here, never "not indexable".
+  disableSeoHiddenPages = false
   # this is for the stylesheet genertor to allow for interactivity in mermaid
   # graphs; you usually will not need it and you should remove this for
   # security reasons
@@ -119,6 +150,35 @@ enableRobotsTXT = true
     mediaType = "application/json"
     baseName = "api"
     isPlainText = true
+
+  # Two plain-text renderings of the documentation for large language models,
+  # following the llms.txt convention (https://llmstxt.org/): an annotated map of
+  # every page, and the whole documentation in one file.
+  #
+  # Both are rendered from the home page, which lives at /en/ here — but crawlers
+  # fetch https://weasis.org/llms.txt, at the root. The `../` in `baseName` is
+  # what lifts the file out of the language directory: Hugo cleans the assembled
+  # target path, so `en/../llms.txt` becomes `llms.txt`. That also means every
+  # language would write the same two files, so the formats are enabled for
+  # English only, in [Languages.en.outputs] below — which is what we want anyway,
+  # the other languages having a home page and nothing else.
+  #
+  # `notAlternative` keeps them out of the <link rel="alternate"> list the theme
+  # builds for the print and RSS renderings of a page, and `permalinkable` keeps
+  # .Permalink pointing at the HTML page; templates use `absURL` for these two.
+  [outputFormats.LLMS]
+    mediaType = "text/plain"
+    baseName = "../llms"
+    isPlainText = true
+    notAlternative = true
+    permalinkable = false
+
+  [outputFormats.LLMSFULL]
+    mediaType = "text/plain"
+    baseName = "../llms-full"
+    isPlainText = true
+    notAlternative = true
+    permalinkable = false
 
 [outputs]
   # add JSON to the home page to support lunr search; This is a mandatory setting
@@ -159,6 +219,17 @@ enableRobotsTXT = true
     title = "Weasis Documentation"
     weight = 1
     label = "English"
+
+    # English is the only language with a full content tree, so it is the one
+    # that renders /llms.txt and /llms-full.txt (see [outputFormats] above).
+    # A per-language `outputs` replaces the whole [outputs] table rather than
+    # merging into it, so `section` and `page` are repeated here verbatim —
+    # leaving them out silently drops the print and RSS renderings of every
+    # English page.
+    [Languages.en.outputs]
+      home = ['html', 'rss', 'print', 'llms', 'llmsfull']
+      section = ['html', 'rss', 'print']
+      page = ['html', 'rss', 'print']
 
     [[Languages.en.menu.shortcuts]]
       name = "<i class='fa fa-list-ul'></i> Features"

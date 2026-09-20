@@ -18,11 +18,15 @@ hugo serve
 # Production build (matches the CI build)
 hugo --gc --minify
 
+# Conformity checks on the build output — canonicals, robots, sitemaps, JSON-LD,
+# llms.txt (CI runs this on every deploy; needs a build in public/ first)
+python3 .github/scripts/seo-conformity.py
+
 # Update the theme to its latest upstream
 cd themes/hugo-theme-relearn && git pull origin main && cd ../..
 ```
 
-Hugo **extended** is required (Dart Sass). CI pins `HUGO_VERSION=0.152.2` in `.github/workflows/hugo.yaml` — prefer matching that locally when reproducing CI behavior.
+Hugo **extended** is required (Dart Sass). CI pins `HUGO_VERSION=0.165.0` in `.github/workflows/hugo.yaml` — prefer matching that locally when reproducing CI behavior.
 
 ### HUGO_GH_TOKEN
 
@@ -45,7 +49,7 @@ Without the token both render an inline error. CI injects it from the `HUGO_GH_T
   - `mkd.html` — includes another Markdown file inline (used on the home page).
   - `version-compatibility.html`, `badgeC.html`, `svg.html`, `svg-inline.html`, `render-preferences.html`.
 - **JSON output** — `content/api/release.md` declares `outputs = ["API"]`, which selects `layouts/api/single.api.json` (the `API` output format is defined in `config.toml`) to emit `/api/release/api.json` for external consumers.
-- **Deployment** — pushes to `main` trigger `.github/workflows/hugo.yaml`, which builds with Hugo extended and deploys `public/` to GitHub Pages. There is no test suite; the build itself is the gate.
+- **Deployment** — pushes to `main` trigger `.github/workflows/hugo.yaml`, which builds with Hugo extended and deploys `public/` to GitHub Pages. There is no test suite for the content; the gate is the build plus `.github/scripts/seo-conformity.py`, which inspects the generated site (see *Discoverability* below).
 
 ## Content audience & style
 
@@ -156,6 +160,42 @@ Moving parts: `data/versions.toml`, `layouts/partials/_weasis/*.gotmpl`,
 (page banners, via the `content-header.html` hook), `static/js/doc-version.js`,
 the `since` / `until` / `version` shortcodes, and the "Build other documentation
 lines" step in `.github/workflows/hugo.yaml`.
+
+## Discoverability (search engines and AI assistants)
+
+Most of what makes this site findable is emergent — a few config flags, a few
+template overrides — and it breaks without failing a build. The moving parts:
+
+- `layouts/partials/custom-header.html` decides, per page, which URL it is
+  indexed under and whether it is indexed at all: self-referential canonical plus
+  `max-snippet:-1, max-image-preview:large` for ordinary pages, `noindex` for the
+  printer-friendly rendering and for a documentation-line build, and the
+  `og:image` fallback for pages with no image of their own.
+- `layouts/partials/seo-jsonld.html` emits schema.org JSON-LD as one entity graph:
+  `#organization`, `#website` and `#weasis` are declared once on the home page and
+  referenced by `isPartOf` / `about` / `publisher` from every other page, which is
+  what lets a crawler merge the pages into one picture of one program. Breadcrumbs
+  are deliberately left to the theme's microdata — do not add a second trail.
+- `layouts/robots.txt` welcomes AI crawlers by name and withholds only the search
+  page and the taxonomy stubs. Never disallow by a pattern like `/*/tags/`: it
+  also matches `/en/tutorials/tags/`.
+- `/llms.txt` and `/llms-full.txt` (`layouts/_default/home.llms.txt`,
+  `home.llmsfull.txt`, helper `layouts/partials/_weasis/pagetree.gotmpl`) follow
+  the convention at <https://llmstxt.org/>. They reach the **site root** through
+  the `../` in their output format's `baseName`, and are enabled for English only
+  in `[Languages.en.outputs]` — which must repeat `section` and `page`, since a
+  per-language `outputs` replaces the whole table instead of merging into it.
+- `enableGitInfo` gives every page a real `lastmod` from its last commit; a page
+  added in the working tree has none until committed.
+- `params.disableSeoHiddenPages = false` matters: `hidden: true` keeps a page out
+  of the sidebar, and with that flag set it also marked `/features/`, `/faq/`,
+  `/demo/` and `/get-involved/` `noindex` while the sitemap still listed them.
+- `params.disableExplicitIndexURLs = true` stops the theme appending `index.html`
+  to internal links, breadcrumbs and `og:url`, which otherwise disagree with the
+  canonical.
+
+Run `python3 .github/scripts/seo-conformity.py` after a build before changing any
+of this; its docstring lists every invariant and why it is there.
 
 ## Editing notes
 

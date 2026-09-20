@@ -25,7 +25,7 @@
 */ -}}
 {{- $versions := slice }}
 {{- $idx := 0 }}
-{{- range site.Data.versions.version }}
+{{- range hugo.Data.versions.version }}
   {{- $isLine := ne (or .url "") "" }}
   {{- $id := .id }}
   {{- $key := 0 }}

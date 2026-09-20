@@ -1,0 +1,19 @@
+{{- /*
+  The preview image for a page, as an absolute URL: the first entry of its own
+  `images` front matter when it has one, otherwise `params.socialImage`. Returns
+  "" when neither is set.
+
+  Why it is needed at all: the theme fills og:image and twitter:image from
+  Hugo's `_funcs/get-page-images`, which returns *resources* — page bundles or
+  files under assets/. Every image on this site lives in static/, so that partial
+  finds nothing and every page was shared, and quoted by assistants, as a bare
+  text card. Callers use this as the fallback.
+
+  Call: partial "_weasis/socialimage.gotmpl" $page
+*/ -}}
+{{- $img := "" }}
+{{- with .Params.images }}{{ $img = index . 0 }}{{ end }}
+{{- if not $img }}{{ $img = site.Params.socialImage }}{{ end }}
+{{- $out := "" }}
+{{- with $img }}{{ $out = absURL . }}{{ end }}
+{{- return $out }}

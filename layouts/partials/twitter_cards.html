@@ -1,0 +1,42 @@
+{{- /* Shadows themes/hugo-theme-relearn/layouts/partials/twitter_cards.html.
+
+       The theme's version is kept as it stands; the single difference is the
+       middle branch: when a page has no image resource of its own — which is
+       every page here, since the images live in static/ — the site-wide preview
+       image is used and the card stays `summary_large_image`. The card type has
+       to be decided in the same place as the image, which is why this file is
+       shadowed rather than topped up from custom-header.html. */ -}}
+{{- $images := partial "_funcs/get-page-images" . }}
+{{- $fallback := partial "_weasis/socialimage.gotmpl" . }}
+{{- with index $images 0 }}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="{{ .Permalink }}">
+{{- else }}
+  {{- with $fallback }}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="{{ . }}">
+  {{- else }}
+    <meta name="twitter:card" content="summary">
+  {{- end }}
+{{- end }}
+
+{{- with (partial "title.gotmpl" (dict "page" . "fullyQualified" true "reverse" true) | plainify) }}
+    <meta name="twitter:title" content="{{ . }}">
+{{- end }}
+
+{{- with trim (or .Description .Summary | plainify | htmlUnescape | replaceRE `\r` " ") "\n\r\t " }}
+    <meta name="twitter:description" content="{{ . }}">
+{{- end }}
+
+{{- $twitterSite := "" }}
+{{- with site.Params.social }}
+  {{- if reflect.IsMap . }}
+    {{- with .twitter }}
+      {{- $content := . }}
+      {{- if not (strings.HasPrefix . "@") }}
+        {{- $content = printf "@%v" . }}
+      {{- end }}
+    <meta name="twitter:site" content="{{ $content }}"/>
+    {{- end }}
+  {{- end }}
+{{- end }}

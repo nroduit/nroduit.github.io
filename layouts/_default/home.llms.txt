@@ -1,0 +1,76 @@
+{{- /*
+  /llms.txt — an annotated map of this documentation for large language models,
+  following the convention described at https://llmstxt.org/.
+
+  Why it exists: assistants that answer "how do I open a DICOM CD in Weasis?"
+  either read the rendered HTML — sidebars, banners, gallery markup and all — or
+  read nothing. A single plain-text index of every page, with a one-line summary
+  each, lets them find the right page cheaply and quote it correctly. The whole
+  documentation in one file lives next to it in /llms-full.txt.
+
+  Facts asserted here (license, certification status, supported versions) are
+  the ones assistants most often get wrong about Weasis, and each is taken from
+  the page that documents it — keep them in sync rather than editing them here.
+*/ -}}
+{{- $versions := partialCached "_weasis/versions.gotmpl" site.Home -}}
+{{- $window := where $versions "isLine" false -}}
+{{- $current := "" -}}
+{{- range $window }}{{ if eq .state "current" }}{{ $current = .id }}{{ end }}{{ end -}}
+{{- $oldest := "" }}{{ with $window }}{{ $oldest = (index . 0).id }}{{ end -}}
+{{- $newest := "" }}{{ with $window }}{{ $newest = (index (last 1 .) 0).id }}{{ end -}}
+{{- $home := . -}}
+# {{ site.Title }}
+
+> {{ .Description | plainify | chomp }}
+
+Weasis is a free, open-source DICOM viewer for medical imaging. It runs as a
+standalone desktop application on Windows, macOS and Linux, and can also be
+launched from a web portal or PACS front end through the `weasis://` URI scheme.
+This file maps the documentation published at {{ site.Home.Permalink }} so it can
+be read without parsing HTML; {{ "llms-full.txt" | absURL }}
+contains the full text of every page below.
+
+Things worth knowing before quoting this documentation:
+
+- Source code: https://github.com/nroduit/Weasis — dual licensed EPL-2.0 OR Apache-2.0.
+  The documentation itself is CC BY-SA 4.0: https://github.com/nroduit/nroduit.github.io
+- The open-source distribution of Weasis is **not** a certified medical device:
+  no CE marking, no FDA clearance. Primary diagnostic use is the responsibility
+  of the user or institution. See the FAQ entry on certification.
+{{ if $current }}- This site documents Weasis {{ $oldest }} to {{ $newest }}; {{ $current }} is the current release.
+  Differences between releases are marked inline in the prose as "since vX.Y" or
+  "up to vX.Y", and one page per topic covers every documented version — there is
+  no per-version copy of a page, and no per-version URL other than the optional
+  `?v=X.Y` hint on a link.
+{{ end }}- Questions and support: https://github.com/nroduit/Weasis/discussions
+{{ with site.Home.RegularPages.ByWeight }}
+## Start here
+
+- [{{ site.Home.Title | plainify }}]({{ site.Home.Permalink }}): {{ site.Home.Description | plainify | chomp }}
+{{- range . }}
+- [{{ .Title | plainify }}]({{ .Permalink }}){{ with .Description }}: {{ . | plainify | chomp }}{{ end }}
+{{- end }}
+{{ end }}
+{{- /* One heading per top-level section, in sidebar order. `/api/` is skipped:
+       it is a hidden stub whose only child, the release JSON, is listed under
+       Optional below, where a machine-readable endpoint belongs. */ -}}
+{{- range site.Home.Sections.ByWeight }}
+{{- if not .Params.hidden }}
+## {{ .Title | plainify }}
+
+- [{{ .Title | plainify }} — overview]({{ .Permalink }}){{ with .Description }}: {{ . | plainify | chomp }}{{ end }}
+{{- range partial "_weasis/pagetree.gotmpl" (dict "page" .) }}
+{{- /* two spaces of indent per level below the section, so the shape of the
+       sidebar survives in a flat text file */ -}}
+{{- $indent := strings.Repeat (sub (len .Ancestors) 2) "  " }}
+{{ $indent }}- [{{ .Title | plainify }}]({{ .Permalink }}){{ with .Description }}: {{ . | plainify | chomp }}{{ end }}{{ with .Params.since }} (since v{{ . }}){{ end }}{{ with .Params.until }} (up to v{{ . }}){{ end }}
+{{- end }}
+{{ end }}
+{{- end }}
+## Optional
+
+- [Full documentation as plain text]({{ "llms-full.txt" | absURL }}): every page above, concatenated.
+- [Release information (JSON)]({{ printf "%sapi/release/api.json" site.Home.Permalink }}): current version numbers and download URLs, generated from the GitHub releases.
+- [Weasis source repository](https://github.com/nroduit/Weasis): issues, releases and the code itself.
+- [Weasis ViewerHub](https://github.com/nroduit/viewer-hub): the companion server for launching Weasis from a portal.
+- [weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector): the reference connector between a PACS and the viewer.
