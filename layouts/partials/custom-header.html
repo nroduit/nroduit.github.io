@@ -4,6 +4,17 @@
 </style>
 -->
 
+{{- /* Page titles are written for search results, so several now run to 50-70
+       characters. The theme sizes every <h1> at a flat 3.25rem and renders it
+       uppercase with a widened font axis, which was tuned for short titles: a
+       long one then wraps to two or three lines and towers over the page. Scale
+       it down in steps by title length, and keep it fluid so the drop happens on
+       a narrow window too. Only long titles are touched; short ones keep the
+       theme's size. */ -}}
+{{- $titlelen := len (.Title | plainify) -}}
+{{- with cond (gt $titlelen 74) "1.95rem" (cond (gt $titlelen 54) "2.2rem" (cond (gt $titlelen 34) "2.6rem" "")) -}}
+<style>#R-body-inner > .flex-block-wrapper article h1{font-size:clamp(1.6rem,calc(1rem + 2.2vw),{{ . }})}</style>
+{{ end }}
 {{- /* Which address this page should be indexed under, and whether it should be
        indexed at all. The four cases are mutually exclusive, so exactly one
        canonical link and at most one robots directive is emitted. */ -}}
