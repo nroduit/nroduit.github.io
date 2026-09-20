@@ -1,8 +1,9 @@
 ---
-title: Docking
+title: "Docking and Panel Layout"
 weight: 12
-description: Organize the interface by docking, splitting, and pinning panels
-keywords: [ "docking", "docking-framework", "panel", "split", "pin", "overlay", "tab", "central view", "tool panel", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer", "multi-platform dicom viewer", "pacs viewer" ]
+description: "Rearrange the interface by docking, undocking, splitting and pinning the central views and the tool panels."
+linkTitle: "Docking"
+keywords: [ "docking", "panel layout", "undock window", "split view", "interface layout" ]
 ---
 
 ## <center>Organizing the Interface with Docking</center>

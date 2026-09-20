@@ -1,8 +1,9 @@
 ---
-title: GUI Overview
+title: "User Interface Overview"
 weight: 5
-description: Essential aspects of the graphical user interface (GUI)
-keywords: [ "GUI", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "pacs viewer" ]
+description: "Find your way around the Weasis window: what to set before starting, language and regional settings, theme and scaling, and where the other viewers are."
+linkTitle: "GUI Overview"
+keywords: [ "weasis interface", "dicom viewer interface", "toolbars", "user interface overview", "theme and scaling" ]
 ---
 
 ## <center>Essential aspects of the interface {{< svg-inline "static/tuto/icon/Weasis.svg" >}}</center>

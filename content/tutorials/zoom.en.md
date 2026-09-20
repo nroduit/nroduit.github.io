@@ -1,8 +1,9 @@
 ---
-title: Zoom
+title: "Zoom and Magnifying Lens"
 weight: 340
-description: How to use zoom controls and magnifying lens
-keywords: ["zoom", "lens", "magnifier", "real-world size", "monitor calibration", "dicom viewer", "pacs viewer"]
+description: "Zoom controls and presets, real-world size display, and the magnifying lens with its own set of controls."
+linkTitle: "Zoom"
+keywords: [ "dicom zoom", "magnifying lens", "zoom preset", "real-world size", "1:1 zoom" ]
 ---
 
 ## <center>Zoom Tool {{< svg-inline "static/tuto/icon/zoom.svg" >}}</center>

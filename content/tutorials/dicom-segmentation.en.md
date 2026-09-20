@@ -1,8 +1,9 @@
 ---
-title: DICOM SEG
+title: "DICOM SEG Segmentation Viewer"
 weight: 337
-description: How to display the DICOM Segmentation file
-keywords: [ "dicom seg", "segmentation", "SEG", "binary", "fractional", "probability", "occupancy", "labelmap", "highdicom", "mpr", "3d", "volume rendering", "ai", "dicom viewer", "free dicom viewer", "open source dicom viewer" ]
+description: "Display DICOM Segmentation objects over their source images, read the information of each region, and tell which series can carry a segmentation."
+linkTitle: "DICOM SEG"
+keywords: [ "dicom seg", "dicom segmentation viewer", "segmentation overlay", "region statistics", "fractional segmentation" ]
 ---
 
 ## <center>Displaying DICOM Segmentation {{< svg-inline "static/tuto/icon/segmentation.svg" >}}</center>

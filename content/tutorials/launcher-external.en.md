@@ -1,8 +1,8 @@
 ---
 title: Third-party Launcher
 weight: 360
-description: How to launch a third-party application
-keywords: [ "Launch", "Launcher", "external application", "dicom viewer", "free dicom viewer"]
+description: "Create a launcher that starts another application from Weasis and hands it the current selection."
+keywords: [ "external application", "third-party launcher", "custom launcher", "weasis integration" ]
 since: "4.5.0"
 ---
 

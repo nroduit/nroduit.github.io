@@ -1,8 +1,9 @@
 ---
-title: Image Fusion
+title: "PET/CT Image Fusion with SUV"
 weight: 58
 description: How to overlay a PET or SPECT series on a CT/MR base (PET/CT fusion) and read SUV statistics
-keywords: [ "fusion", "pet/ct", "pet ct fusion", "spect", "suv", "overlay", "nuclear medicine", "dicom viewer", "open source dicom viewer" ]
+linkTitle: "Image Fusion"
+keywords: [ "pet ct fusion", "image fusion", "suv statistics", "spect fusion", "pet viewer", "fusion color scale" ]
 since: "4.7.1"
 ---
 

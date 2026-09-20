@@ -1,8 +1,8 @@
 ---
-title: Image orientation
+title: "Image Orientation"
 weight: 355
-description: How to interpret the orientation
-keywords: [ "orientation", "biped", "quadruped", "anatomical direction", "mpr", "dicom viewer", "free dicom viewer", "open source dicom viewer" ]
+description: "How orientation is labelled for human (BIPED) and veterinary (QUADRUPED) imaging, and how it carries over to multiplanar reconstruction."
+keywords: [ "dicom image orientation", "patient orientation", "biped", "quadruped", "orientation labels", "veterinary imaging" ]
 ---
 
 ## <center>Interpretation of the orientation</center>

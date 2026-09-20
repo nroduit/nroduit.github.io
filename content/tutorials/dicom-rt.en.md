@@ -1,8 +1,9 @@
 ---
-title: DICOM RT Tools
+title: "DICOM RT Viewer: Structures, Isodoses and DVH"
 weight: 220
-description: How to display radiotherapy information
-keywords: [ "dicom rt", "radiotherapy", "dicom viewer", "free dicom viewer", "open source dicom viewer" ]
+description: "Display radiotherapy data: RT Structure Set contours, isodose lines from the RT Dose, and the dose-volume histogram chart."
+linkTitle: "DICOM RT"
+keywords: [ "dicom rt viewer", "rtstruct", "rt dose", "isodose lines", "dvh chart", "radiotherapy dicom" ]
 ---
 
 ## <center>Displaying radiotherapy information {{< svg-inline "static/tuto/icon/rt.svg" >}}</center>

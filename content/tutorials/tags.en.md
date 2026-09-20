@@ -1,8 +1,9 @@
 ---
-title: DICOM Attributes
+title: "DICOM Attributes (Tags) Viewer"
 weight: 300
-description: How to display and compare DICOM attributes
-keywords: [ "DICOM attributes", "tags", "metadata", "search attributes" ]
+description: "Open the DICOM attributes of an image or a series, search for a specific tag or value, and compare attributes between series."
+linkTitle: "DICOM Attributes"
+keywords: [ "dicom attributes", "dicom tags", "dicom header viewer", "tag viewer", "compare dicom tags" ]
 ---
 
 ## <center>How to display DICOM attributes {{< svg-inline "static/tuto/icon/metadata.svg" >}}</center>

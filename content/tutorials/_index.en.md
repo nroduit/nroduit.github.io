@@ -1,6 +1,7 @@
 ---
-title: Tutorials
+title: "Weasis DICOM Viewer Tutorials"
 description: "Step-by-step tutorials for the Weasis DICOM viewer — opening studies, measurements, MPR and 3D reconstruction, annotations, DICOM SEG/RT, and DICOMweb workflows."
+linkTitle: "Tutorials"
 keywords: [ "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer", "clinical viewer", "radiological viewer", "linux dicom viewer",  "mac dicom viewer" ]
 weight: 20
 pre: "<b>4. </b>"

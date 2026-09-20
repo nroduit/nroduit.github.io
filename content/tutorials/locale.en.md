@@ -1,8 +1,9 @@
 ---
-title: Language & Regional Settings
+title: "Language and Regional Settings"
 weight: 540
-description: How to change the language and regional settings
-keywords: [ "languages", "locale", "region", "translation", "regional format", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "pacs viewer" ]
+description: "Switch the interface language and regional settings from the user interface, or set the default locale for a whole deployment."
+linkTitle: "Language & Regional Settings"
+keywords: [ "dicom viewer language", "locale", "translation", "regional settings", "interface language" ]
 ---
 
 ## <center>How to change the language and regional settings</center>

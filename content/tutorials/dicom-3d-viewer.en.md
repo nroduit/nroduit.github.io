@@ -1,8 +1,9 @@
 ---
-title: DICOM 3D Viewer
+title: "DICOM 3D Viewer: Volume Rendering"
 weight: 60
-description: How to display volume data
-keywords: [ "viewer 3D", "volume rendering", "ray casting", "3D rendering", "dicom viewer", "free dicom viewer", "open source dicom viewer" ]
+description: "Display volume data in 3D: hardware requirements, rendering presets, the MPR crosshair cut mode, and synchronization with the 2D views."
+linkTitle: "DICOM 3D Viewer"
+keywords: [ "dicom 3d viewer", "volume rendering", "3d dicom viewer", "rendering preset", "mpr cut mode", "gpu requirements" ]
 ---
 
 ## <center>Displaying volume data {{< svg-inline "static/tuto/icon/volume.svg" >}}</center>

@@ -1,8 +1,9 @@
 ---
-title: DICOM Export
+title: "Export DICOM Files and Images"
 weight: 20
-description: How to export DICOM files
-keywords: [ "dicom export", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "pacs viewer" ]
+description: "Export a selection as DICOM to a folder, a ZIP archive or a DICOMDIR, and save the view currently displayed as an ordinary picture file."
+linkTitle: "DICOM Export"
+keywords: [ "export dicom", "dicomdir", "dicom zip export", "save dicom as jpeg", "export view" ]
 ---
 
 ## <center>How to export DICOM files</center>

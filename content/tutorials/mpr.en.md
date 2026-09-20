@@ -1,8 +1,9 @@
 ---
-title: MPR Viewer
+title: "MPR Viewer: Multiplanar Reconstruction"
 weight: 50
-description: How to use Multiplanar reconstruction (MPR) and 3D cursor (crosshair)
-keywords: [ "mpr", "multiplanar reconstruction", "3d cursor", "crosshair", "oblique", "open source dicom viewer" ]
+description: "Build axial, coronal, sagittal and oblique reconstructions from a volume, drive them with the crosshair, keep the planes synchronized, and measure across them."
+linkTitle: "MPR Viewer"
+keywords: [ "mpr viewer", "multiplanar reconstruction", "oblique reconstruction", "3d cursor", "crosshair", "axial coronal sagittal" ]
 ---
 
 ## <center>Multi-planar reconstruction (MPR) {{< svg-inline "static/tuto/icon/mpr.svg" >}}</center>

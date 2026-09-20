@@ -1,8 +1,9 @@
 ---
-title: Proxy server
+title: "Proxy Server Configuration"
 weight: 600
-description: How to configure a proxy server
-keywords: [ "network", "proxy", "http proxy", "https proxy", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "pacs viewer" ]
+description: "Reach a PACS or a DICOMweb server through an HTTP proxy, configured from the user interface or from the launch parameters."
+linkTitle: "Proxy server"
+keywords: [ "weasis proxy", "http proxy", "proxy configuration", "network configuration" ]
 ---
 
 ## <center>How to configure a proxy server</center>

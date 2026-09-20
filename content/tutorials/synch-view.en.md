@@ -1,8 +1,8 @@
 ---
 title: View Synchronization
 weight: 45
-description: How to synchronize views manually or automatically
-keywords: [ "synchronization", "synch", "stack", "tile", "frame of reference", "mpr", "cine", "dicom viewer", "free dicom viewer", "open source dicom viewer" ]
+description: "Synchronize views manually or automatically: the frame of reference they share, the synchronization modes, and the scope each one applies to."
+keywords: [ "view synchronization", "frame of reference", "series synchronization", "linked scrolling", "cross-reference" ]
 ---
 
 ## <center>Synchronizing Views {{< svg-inline "static/tuto/icon/synch.svg" >}}</center>

@@ -1,8 +1,9 @@
 ---
-title: Build DICOM KO and PR
+title: "Build DICOM KO and Presentation States"
 weight: 335
-description: How to build and export DICOM Key Object Selection and Presentation State (GSPS)
-keywords: [ "Key Object Selection", "Presentation State", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
+description: "Create and export DICOM Key Object Selection to flag key images, and Grayscale Softcopy Presentation States to keep window level, annotations and layout."
+linkTitle: "Build DICOM KO and PR"
+keywords: [ "dicom key object selection", "dicom ko", "gsps", "dicom presentation state", "key images", "export dicom" ]
 ---
 
 ## <center>How to build and export DICOM KO and PR</center>

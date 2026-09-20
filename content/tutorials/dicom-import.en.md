@@ -1,8 +1,9 @@
 ---
-title: DICOM Import
+title: "Import DICOM Files, CDs and Archives"
 weight: 10
-description: How to import DICOM files
-keywords: [ "dicom import", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "pacs viewer" ]
+description: "Open DICOM data from any local source — files and folders, a DICOM CD or DVD, a ZIP archive — from the file explorer, the Weasis menu or a command."
+linkTitle: "DICOM Import"
+keywords: [ "import dicom", "open dicom files", "open dicom cd", "dicom dvd", "open dicom zip", "drag and drop dicom", "dicomdir" ]
 ---
 
 ## <center>How to import DICOM files</center>

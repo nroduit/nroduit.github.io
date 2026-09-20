@@ -1,8 +1,9 @@
 ---
-title: DICOM SR Viewer
+title: "DICOM SR Viewer: Structured Reports"
 weight: 80
-description: How to display DICOM Structured Report
-keywords: [ "dicom sr", "sr", "structured report", "dicom viewer", "open source dicom viewer" ]
+description: "Read DICOM Structured Reports: the report header, the content tree, and the measurements and image references it carries."
+linkTitle: "DICOM SR Viewer"
+keywords: [ "dicom sr viewer", "structured report", "dicom sr tree", "sr measurements", "dicom report" ]
 ---
 
 ## <center>Displaying DICOM Structured Report {{< svg-inline "static/tuto/icon/text.svg" >}} </center>

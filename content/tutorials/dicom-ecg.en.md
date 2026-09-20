@@ -1,8 +1,9 @@
 ---
-title: DICOM ECG Viewer
+title: "DICOM ECG Viewer: Waveforms"
 weight: 70
-description: How to display electrocardiography data
-keywords: [ "dicom ecg", "ecg", "electrocardiography", "dicom viewer", "open source dicom viewer" ]
+description: "Read electrocardiography waveforms stored as DICOM: display format and zoom, lead and cursor information, amplitude and time readings."
+linkTitle: "DICOM ECG Viewer"
+keywords: [ "dicom ecg viewer", "dicom waveform viewer", "ecg display", "12-lead ecg dicom", "waveform measurement" ]
 ---
 
 ## <center>Displaying electrocardiography data {{< svg-inline "static/tuto/icon/ecg.svg" >}}</center>

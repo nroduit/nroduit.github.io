@@ -1,8 +1,8 @@
 ---
 title: DICOM 2D Viewer
 weight: 40
-description: How to display an image or a stack of images
-keywords: [ "viewer 2D", "dicom data", "dicom viewer", "free dicom viewer", "open source dicom viewer" ]
+description: "Read a stack of DICOM images: viewport layouts, toolbars, window level, zoom and pan, cine playback, and the preferences each view remembers."
+keywords: [ "dicom 2d viewer", "view dicom images", "image stack", "viewport layout", "window level", "cine playback" ]
 ---
 
 ## <center>Displaying DICOM images {{< svg-inline "static/tuto/icon/view2d.svg" >}}</center>

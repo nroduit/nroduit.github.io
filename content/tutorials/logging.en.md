@@ -1,8 +1,9 @@
 ---
-title: Logging
+title: "Logging and Log Files"
 weight: 550
-description: How to configure application traces
-keywords: [ "log", "logging", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "pacs viewer" ]
+description: "Find the log folder, tell the types of log file apart, configure the rolling log, and raise the trace level when reporting a problem."
+linkTitle: "Logging"
+keywords: [ "weasis log files", "logging configuration", "debug log", "trace level", "rolling log" ]
 ---
 
 ## <center>Configure and View Log Files</center>

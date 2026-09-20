@@ -1,8 +1,9 @@
 ---
-title: Print
+title: "Print DICOM Images"
 weight: 350
-description: How to print images
-keywords: [ "print", "dicom print", "film printer", "view", "dicom viewer" ]
+description: "Print a selection of images to an ordinary printer or to a DICOM printer, choosing the layout and the print mode."
+linkTitle: "Print"
+keywords: [ "print dicom", "dicom print", "print medical images", "print layout" ]
 ---
 
 ## <center>Printing images {{< svg-inline "static/tuto/icon/print.svg" >}}</center>

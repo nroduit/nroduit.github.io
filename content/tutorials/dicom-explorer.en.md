@@ -1,8 +1,8 @@
 ---
 title: DICOM Explorer
 weight: 30
-description: Structure and display of Patients/Studies/Series
-keywords: [ "dicom explorer", "patient", "study", "series", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "pacs viewer" ]
+description: "Browse the patient, study and series tree of everything loaded in Weasis, and control what each series shows."
+keywords: [ "dicom explorer", "patient study series", "dicom tree", "series thumbnails", "study browser" ]
 ---
 
 ## <center>Structure and display of Patients/Studies/Series</center>

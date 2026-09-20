@@ -1,8 +1,9 @@
 ---
-title: DICOMweb Configuration
+title: "DICOMweb Configuration: QIDO, WADO and STOW"
 weight: 12
-description: How to configure a DICOMweb node for query, retrieve, and store
-keywords: [ "dicom import", "dicomweb", "qido", "wado", "stow", "oauth2", "keycloak", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer", "pacs viewer" ]
+description: "Configure a DICOMweb node for query (QIDO-RS), retrieve (WADO-RS) and store (STOW-RS), with the settings known to work for common providers."
+linkTitle: "DICOMweb Configuration"
+keywords: [ "dicomweb", "qido-rs", "wado-rs", "stow-rs", "dicomweb viewer", "dicomweb configuration", "orthanc", "dcm4chee" ]
 ---
 
 ## <center>How to configure a DICOMweb node</center>

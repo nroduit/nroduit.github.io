@@ -1,8 +1,9 @@
 ---
-title: Histogram
+title: "Image Histogram"
 weight: 350
-description: How to display histogram of real values and output LUT
-keywords: [ "histogram", "LUT", "VOI LUT",  "Modality LUT" ]
+description: "Display the histogram of the real image values and of the output LUT, and adjust how it is computed and drawn."
+linkTitle: "Histogram"
+keywords: [ "image histogram", "dicom histogram", "pixel value distribution", "output lut" ]
 ---
 
 ## <center>Displaying Histogram {{< svg-inline "static/tuto/icon/histogram.svg" >}}</center>

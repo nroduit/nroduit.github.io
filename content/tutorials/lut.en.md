@@ -1,8 +1,9 @@
 ---
-title: Lookup Tables (LUT)
+title: "DICOM LUTs: Color, VOI and Presentation"
 weight: 330
-description: How to handle Color, VOI and Presentation LUTs
-keywords: [ "Lookup Tables", "LUT", "VOI LUT",  "Modality LUT", "Presentation LUT", "DICOM LUT", "DICOM VOI LUT", "DICOM Modality LUT", "DICOM Presentation LUT", "DICOM viewer", "free DICOM viewer"]
+description: "How color, VOI and presentation lookup tables are applied, how windowing and rendering interact, and how to use window/level presets."
+linkTitle: "Lookup Tables (LUT)"
+keywords: [ "dicom lut", "voi lut", "presentation lut", "modality lut", "windowing", "window level preset" ]
 ---
 
 ## <center>How to handle Color and DICOM LUTs</center>

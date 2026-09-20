@@ -1,8 +1,9 @@
 ---
-title: Dicomizer
+title: "Dicomizer: Convert Images into DICOM"
 weight: 1000
-description: How to convert standard images into DICOM files
-keywords: [ "convert to dicom", "dicomizer", "dicom worklist", "jpg to dicom" ]
+description: "Turn ordinary image files into DICOM objects with the Dicomizer, publish them to an archive, and launch it from another application."
+linkTitle: "Dicomizer"
+keywords: [ "convert to dicom", "jpeg to dicom", "image to dicom", "dicomizer", "secondary capture", "publish dicom" ]
 ---
 
 ## <center>How to convert images into DICOM files {{< svg-inline "static/tuto/icon/Dicomizer.svg" >}}</center>

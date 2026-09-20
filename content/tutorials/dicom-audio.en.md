@@ -1,8 +1,8 @@
 ---
 title: DICOM Audio Player
 weight: 90
-description: How to listen to DICOM audio data
-keywords: [ "dicom au", "au", "audio", "dicom viewer", "open source dicom viewer" ]
+description: "Play DICOM audio waveforms, control playback and volume, and export the audio track to a standard file."
+keywords: [ "dicom audio", "dicom au", "audio waveform", "play dicom sound", "export dicom audio" ]
 ---
 
 ## <center>Playing DICOM AU data {{< svg-inline "static/tuto/icon/audio.svg" >}}</center>

@@ -1,8 +1,9 @@
 ---
-title: Curved MPR Viewer
+title: "Curved MPR (CPR) Viewer"
 weight: 52
 description: How to build a panoramic view and cross-sectional slices along a curve (Curved MPR / CPR), typically from a dental CBCT
-keywords: [ "curved mpr", "cpr", "curved planar reformation", "panoramic", "opg", "cross-sectional slices", "dental", "cbct", "cone beam", "open source dicom viewer" ]
+linkTitle: "Curved MPR Viewer"
+keywords: [ "curved mpr", "cpr viewer", "panoramic view", "dental cbct", "cross-sectional slices", "curved reconstruction" ]
 since: "4.7.1"
 ---
 

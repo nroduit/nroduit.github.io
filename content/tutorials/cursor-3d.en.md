@@ -1,8 +1,9 @@
 ---
-title: 3D Cursor
+title: "3D Cursor (Crosshair)"
 weight: 48
-description: How to use the 3D cursor (crosshair) to locate the same anatomical point across views
-keywords: [ "3d cursor", "crosshair", "synchronization", "frame of reference", "dicom viewer", "open source dicom viewer" ]
+description: "Point at the same anatomical location in every open series and reconstruction at once, in 2D views and in MPR, with the 3D cursor."
+linkTitle: "3D Cursor"
+keywords: [ "3d cursor", "crosshair dicom viewer", "anatomical localization", "cross-reference lines", "series navigation" ]
 ---
 
 ## <center>3D cursor (crosshair) {{< svg-inline "static/tuto/icon/crosshair.svg" >}}</center>

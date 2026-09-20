@@ -1,8 +1,9 @@
 ---
-title: MIP Viewer
+title: "MIP Viewer: Maximum Intensity Projection"
 weight: 55
-description: How to use the Maximum Intensity Projection (MIP) viewer
-keywords: [ "MIP", "Maximum Intensity Projection", "MinIP", "Mean IP", "slab", "dicom", "free dicom viewer" ]
+description: "Activate Maximum Intensity Projection in the 2D viewer and set the options that control the projection."
+linkTitle: "MIP Viewer"
+keywords: [ "mip viewer", "maximum intensity projection", "projection thickness", "vascular imaging" ]
 ---
 
 ## <center>Maximum Intensity Projection (MIP) {{< svg-inline "static/tuto/icon/mip.svg" >}}</center>

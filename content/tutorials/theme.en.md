@@ -1,8 +1,9 @@
 ---
-title: Styles and themes
+title: "Styles and Themes"
 weight: 530
-description: How to apply another style and theme
-keywords: [ "theme", "style", "flatlaf", "hidpi", "scaling", "dark mode", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "pacs viewer" ]
+description: "Apply another theme to the interface, scale it for high-resolution displays, and adjust how viewer elements look."
+linkTitle: "Styles and themes"
+keywords: [ "weasis theme", "dark theme", "ui scaling", "high dpi", "interface appearance" ]
 ---
 
 ## <center>Change the appearance of the user interface</center>

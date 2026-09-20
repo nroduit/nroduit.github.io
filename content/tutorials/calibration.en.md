@@ -1,8 +1,9 @@
 ---
-title: Spatial Calibration
+title: "Spatial Calibration of DICOM Images"
 weight: 380
-description: How to change the spatial calibration of an image or a series
-keywords: [ "image calibration", "spatial calibration", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
+description: "Set or correct the pixel spacing of an image or a whole series, so that distance and area measurements read in real-world units."
+linkTitle: "Spatial Calibration"
+keywords: [ "dicom calibration", "spatial calibration", "pixel spacing", "measurement calibration", "calibrate dicom image" ]
 howto:
   name: "Manually calibrate a DICOM image in Weasis"
   description: "Override or apply a spatial calibration when the DICOM Pixel Spacing / Imager Pixel Spacing is missing or wrong, using a reference object of known real-world length."

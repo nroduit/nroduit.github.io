@@ -1,8 +1,9 @@
 ---
-title: Features
-description: The full list of features supported by the Weasis DICOM viewer.
+title: DICOM Viewer Features
+linkTitle: Features
+description: "Every feature of the Weasis DICOM viewer in one list — 2D, MPR, curved MPR, MIP and 3D volume rendering, PET/CT fusion with SUV, DICOM SEG, RT, SR, ECG and waveforms, measurements, DICOMweb (QIDO/WADO/STOW) and PACS integration."
 weight: 3
-keywords: [ "dicom viewer features", "weasis features", "mpr", "3d", "mip", "seg", "segmentation", "fusion", "pet/ct", "suv", "rt", "sr", "ecg", "dicomweb", "wado", "stow", "qido", "free dicom viewer" ]
+keywords: [ "dicom viewer features", "weasis features", "dicom viewer capabilities", "mpr", "curved mpr", "3d volume rendering", "mip", "dicom seg", "segmentation", "pet/ct fusion", "suv", "dicom rt", "dicom sr", "dicom ecg", "dicomweb", "wado", "stow", "qido", "free dicom viewer", "open source dicom viewer" ]
 hidden: true
 ---
 
