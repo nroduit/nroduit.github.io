@@ -11,7 +11,7 @@ pre: "<b>4. </b>"
 
 If you are new to Weasis, it is recommended to read this [page](gui) to understand the main elements of the interface. 
 
-The tutorials are organized by topics and can be read independently.
+The tutorials are organized by topics and can be read independently. If a DICOM term is new to you, the [glossary](../glossary) defines the ones used here — MPR, MIP, SUV, SEG, SR, RT objects, DICOMweb, window and level.
 
 {{% children description="true" %}}
 

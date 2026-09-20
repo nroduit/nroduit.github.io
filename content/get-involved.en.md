@@ -51,7 +51,7 @@ Not a developer? You can still make a real impact by sharing your expertise and 
 
 - **Share your story** — using Weasis in a hospital, clinic, research project, or education program? Let us know so your case study can be featured in the [Stories](stories) section.
 
-- **Cite Weasis** — if your work uses Weasis, citing the project in your publications helps make the impact of the project visible. See [How to cite Weasis](faq#how-to-cite-weasis-in-a-publication).
+- **Cite Weasis** — if your work uses Weasis, citing the project in your publications helps make the impact of the project visible. See [How to cite Weasis](cite) for ready-made BibTeX, APA and Vancouver entries.
 
 ### 🤝 Why Contribute?
 

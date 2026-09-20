@@ -12,6 +12,14 @@ question = "Which operating systems does Weasis run on?"
 answer = "Weasis runs on Windows (installer or portable archive), macOS (Intel and Apple Silicon), and Linux (DEB, RPM, Flatpak, and Snap). A web-launch option using the weasis:// URI scheme is also available on all supported platforms."
 
 [[questions]]
+question = "Does Weasis require Java or any other framework?"
+answer = "No. The installers bundle everything Weasis needs, so there is no Java runtime to install or maintain. The only external requirement concerns 3D volume rendering, which needs a reasonably modern graphics card."
+
+[[questions]]
+question = "Is there a portable version of Weasis?"
+answer = "Yes, on Windows: a portable archive is published next to the installer, so Weasis can be unpacked on a USB drive and run without installation or administrator rights. Getting the viewer onto the media itself works one way only: the DICOM CD/DVD export can add that portable distribution to the ISO it writes, and only on Windows x86-64 — both to produce such an ISO and to run the embedded copy. On every other platform the export writes a DICOM CD without a viewer."
+
+[[questions]]
 question = "Does the web launch require Weasis to be installed?"
 answer = "Yes. The web launch uses the weasis:// URI scheme to hand parameters to the locally installed Weasis application. Each user must install Weasis once from the Download page; subsequent clicks on weasis:// links reuse that local install. The previous Java Web Start distribution was discontinued in version 3.5."
 
@@ -20,8 +28,56 @@ question = "Does Weasis need an internet connection?"
 answer = "No. Weasis runs fully offline once installed. It opens DICOM files from any local source — file system, USB drive, DICOM CD/DVD, or ZIP archive — without network access."
 
 [[questions]]
+question = "Where can I ask questions about Weasis?"
+answer = "Use the Weasis forum on Google Groups or the GitHub discussions. The site is organized by audience: the Tutorials section for clinicians and end users, Customizing Weasis and the PACS integration guide for integrators and administrators, and the developer documentation for developers."
+
+[[questions]]
+question = "Can Weasis open a DICOM CD or DVD?"
+answer = "Yes. Weasis reads the DICOMDIR of a DICOM CD, DVD or USB drive, and also opens a folder of DICOM files or a ZIP archive, by drag and drop, from the menu or from the command line. Password-protected ZIP archives are supported on import."
+
+[[questions]]
+question = "Can Weasis open ordinary images such as JPEG or TIFF?"
+answer = "Yes. Besides DICOM, Weasis displays TIFF, BMP, GIF, JPEG, JPEG 2000, JPEG-XL, PNG, RAS, HDR and PNM files. To store such images in a PACS rather than only view them, convert them first with the Dicomizer."
+
+[[questions]]
+question = "Which DICOM object types can Weasis display?"
+answer = "Beyond ordinary and multi-frame images, Weasis displays Enhanced CT, MR and US volumes, MPEG-2 and MPEG-4, MIME-encapsulated documents such as PDF, Structured Reports, Presentation States, Key Object Selection, Segmentation, Radiotherapy objects, waveforms and ECG, audio, and Parametric Maps."
+
+[[questions]]
+question = "Which DICOM transfer syntaxes and codecs are supported?"
+answer = "JPEG (baseline, extended and lossless), JPEG-LS, JPEG 2000, JPEG-XL, RLE and Deflated Explicit VR Little Endian, in addition to the uncompressed syntaxes. The DICOM Conformance Statement lists every transfer syntax and SOP class authoritatively."
+
+[[questions]]
+question = "Can Weasis query a PACS directly?"
+answer = "Yes. Weasis performs DICOM Query and Retrieve with C-FIND, C-GET and C-MOVE, and can also retrieve through WADO-URI. Nodes are configured in the import dialog."
+
+[[questions]]
+question = "Does Weasis support DICOMweb?"
+answer = "Yes: QIDO-RS to search, WADO-RS to retrieve and STOW-RS to store, over HTTPS and configurable per source."
+
+[[questions]]
+question = "Does Weasis compute SUV values for PET/CT?"
+answer = "Yes. When a PET or SPECT series is overlaid on a CT or MR base, Weasis reports SUV statistics over a region of interest."
+
+[[questions]]
+question = "What does the 3D viewer require?"
+answer = "A graphics card supporting OpenGL 3.3 or later: the volume is ray-cast on the GPU with GLSL shaders, and nothing extra has to be installed. From OpenGL 4.3 a compute-shader backend is used instead, which renders at full resolution while the camera is moved."
+
+[[questions]]
+question = "Can Weasis convert photos, videos or PDF documents into DICOM?"
+answer = "Yes, with the Dicomizer: photos, scanned reports, videos and 3D models become DICOM objects an archive can store alongside modality acquisitions, with the patient, study and image tags set so they stay searchable. PDF documents are supported since version 4.6.2."
+
+[[questions]]
+question = "Can Weasis print DICOM images?"
+answer = "Yes, to an ordinary printer or to a DICOM printer, with a choice of layout and print mode."
+
+[[questions]]
 question = "Is Weasis a certified medical device?"
 answer = "No. The open-source distribution of Weasis is not a certified medical device — it does not carry CE marking and is not FDA cleared. Primary diagnostic use requires the user or institution to ensure compliance with applicable laws and regulations. Healthcare organizations or vendors that need a certified product can build on the same code base and pursue certification themselves."
+
+[[questions]]
+question = "Does Weasis de-identify DICOM files?"
+answer = "No. Weasis can hide patient identifiers on screen and in what it renders (screenshots, prints, image exports), which is useful for teaching and demonstrations, but that is not de-identification: text burned into the image pixels is not removed automatically, and DICOM files exported from Weasis keep their original attributes. Use a dedicated tool such as Karnak to de-identify DICOM data."
 
 [[questions]]
 question = "Can Weasis be used for commercial purposes?"
@@ -37,7 +93,7 @@ answer = "Weasis translations are managed on a community translation platform. T
 
 [[questions]]
 question = "How to cite Weasis in a publication?"
-answer = "Cite Weasis with the author (Nicolas Roduit), title (Weasis DICOM Viewer), the version you used, the URL https://github.com/nroduit/Weasis, and the date you accessed it. Example: Roduit, N. Weasis DICOM Viewer. Version 4.1.0. https://github.com/nroduit/Weasis (accessed 5 April 2023)."
+answer = "Cite the software at the version you used: author Nicolas Roduit, title Weasis DICOM Viewer, the version, the URL https://weasis.org and the date you retrieved it. The How to cite Weasis page generates ready-made BibTeX, APA, Vancouver and plain-text entries for each release."
 
 [[questions]]
 question = "Why does Weasis use the Eclipse Public License?"
@@ -46,6 +102,10 @@ answer = "The Eclipse Public License (EPL) is a business-friendly, OSI-approved 
 [[questions]]
 question = "Can Weasis be included in DICOM CDs or other removable media?"
 answer = "Yes. Weasis can be embedded into a DICOM CD ISO so the recipient can launch it directly from the disc — currently supported on Windows x86-64 only. On other platforms, you can still produce a DICOM CD without the embedded viewer."
+
+[[questions]]
+question = "How do I enable Weasis logging?"
+answer = "Enable the rolling log in the application preferences to trace Weasis activities. The logging tutorial covers the full configuration, including how to raise the level to DEBUG or TRACE and how to share the logs when filing a bug report."
 
 [[questions]]
 question = "Can I download DICOM files without a WADO server?"

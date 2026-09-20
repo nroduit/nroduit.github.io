@@ -1,0 +1,151 @@
+{{- /*
+  Citation entries for a release the reader picks, on /en/cite/.
+
+  The release list is fetched at build time from the GitHub releases API — the
+  same source as `latest-download` and `/api/release/api.json` — so the versions
+  and their dates are the real ones and nothing has to be maintained by hand in
+  the page.
+
+  Each entry is emitted as HTML with the latest release already filled in and the
+  variable parts wrapped in <span data-cite="…">, so with JavaScript off the page
+  shows a correct citation for the current release; the selector only rewrites
+  those spans. The entries are hand-built HTML rather than Markdown fences because
+  a fenced block escapes the spans, which is what the variable parts need.
+
+  Degradation, in order:
+    - `HUGO_GH_TOKEN` set  : authenticated request, no rate limit worries in CI
+    - no token             : unauthenticated request, which works for a public
+                             repository and keeps local builds honest
+    - request fails        : the `current` entry of data/versions.toml, with a
+                             build warning. The page still renders a citation;
+                             it just offers one version instead of a list.
+
+  Params:
+    repo  GitHub repository, default nroduit/Weasis
+    limit how many releases to offer, default 25 (older ones stay on GitHub)
+*/ -}}
+{{- $repo := .Get "repo" | default "nroduit/Weasis" -}}
+{{- $limit := int (.Get "limit" | default 25) -}}
+{{- $token := getenv "HUGO_GH_TOKEN" -}}
+{{- $opts := dict -}}
+{{- with $token }}{{ $opts = dict "headers" (dict "Authorization" (printf "Bearer %s" .)) }}{{ end -}}
+{{- $url := printf "https://api.github.com/repos/%s/releases?per_page=100" $repo -}}
+
+{{- $releases := slice -}}
+{{- /* `try` is how a failed remote fetch is caught since Hugo 0.141: a network
+       error or a rate-limited API must not break the build of a page whose point
+       is to be citable. */ -}}
+{{- with try (resources.GetRemote $url $opts) -}}
+  {{- with .Err -}}
+    {{- warnf "citation: cannot read %s (%s) — falling back to data/versions.toml" $url . -}}
+  {{- else with .Value -}}
+    {{- range . | transform.Unmarshal -}}
+      {{- if and (not .prerelease) (not .draft) .tag_name -}}
+        {{- $when := time (or .published_at .created_at) -}}
+        {{- $releases = $releases | append (dict
+            "version" (strings.TrimPrefix "v" .tag_name)
+            "date" ($when.Format "2006-01-02")
+            "long" ($when.Format "2 January 2006")
+            "year" ($when.Format "2006")) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- else -}}
+    {{- warnf "citation: empty response from %s — falling back to data/versions.toml" $url -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if not $releases -}}
+  {{- $current := "" -}}
+  {{- range where (partialCached "_weasis/versions.gotmpl" site.Home) "isLine" false -}}
+    {{- if eq .state "current" }}{{ $current = .id }}{{ end -}}
+  {{- end -}}
+  {{- $releases = slice (dict "version" ($current | default "4.7") "date" (now.Format "2006-01-02") "long" (now.Format "2 January 2006") "year" (now.Format "2006")) -}}
+{{- end -}}
+
+{{- $releases = first $limit $releases -}}
+{{- $latest := index $releases 0 -}}
+{{- $today := now.Format "2 January 2006" -}}
+
+<div class="citation-picker">
+  <label for="cite-version"><strong>Version you used</strong></label>
+  <select id="cite-version">
+    {{- range $releases }}
+    <option value="{{ .version }}" data-year="{{ .year }}" data-date="{{ .date }}" data-long="{{ .long }}">{{ .version }} — released {{ .long }}</option>
+    {{- end }}
+  </select>
+  <span class="cite-status" aria-live="polite" data-cite-status>Showing {{ $latest.version }}, released {{ $latest.long }}.</span>
+</div>
+
+<div class="cite-entries">
+
+  <div class="cite-entry">
+    <p class="cite-format"><strong>BibTeX</strong><button type="button" class="cite-copy" data-copy hidden>Copy</button></p>
+<pre class="cite-block"><code>@software{roduit_weasis,
+  author  = {Roduit, Nicolas},
+  title   = {Weasis DICOM Viewer},
+  version = {<span data-cite="version">{{ $latest.version }}</span>},
+  date    = {<span data-cite="date">{{ $latest.date }}</span>},
+  url     = {https://weasis.org},
+  note    = {Open-source DICOM viewer, EPL-2.0 OR Apache-2.0}
+}</code></pre>
+  </div>
+
+  <div class="cite-entry">
+    <p class="cite-format"><strong>APA (7th edition)</strong><button type="button" class="cite-copy" data-copy hidden>Copy</button></p>
+    <blockquote class="cite-block"><p>Roduit, N. (<span data-cite="year">{{ $latest.year }}</span>). <em>Weasis DICOM viewer</em> (Version <span data-cite="version">{{ $latest.version }}</span>) [Computer software]. https://weasis.org</p></blockquote>
+  </div>
+
+  <div class="cite-entry">
+    <p class="cite-format"><strong>Vancouver / ICMJE</strong><button type="button" class="cite-copy" data-copy hidden>Copy</button></p>
+    <blockquote class="cite-block"><p>Roduit N. Weasis DICOM Viewer. Version <span data-cite="version">{{ $latest.version }}</span> [computer software]. <span data-cite="year">{{ $latest.year }}</span>. Available from: https://weasis.org</p></blockquote>
+  </div>
+
+  <div class="cite-entry">
+    <p class="cite-format"><strong>Plain text</strong><button type="button" class="cite-copy" data-copy hidden>Copy</button></p>
+    <blockquote class="cite-block"><p>Roduit, N. <em>Weasis DICOM Viewer</em>, version <span data-cite="version">{{ $latest.version }}</span>, https://weasis.org (accessed <span data-cite="accessed">{{ $today }}</span>).</p></blockquote>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  var select = document.getElementById('cite-version');
+  if (!select) return;
+  var root = select.closest('article') || document;
+
+  function apply() {
+    var opt = select.options[select.selectedIndex];
+    var values = {
+      version: opt.value,
+      year: opt.dataset.year,
+      date: opt.dataset.date,
+      /* the access date belongs to the reader, not to the build */
+      accessed: new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+    };
+    root.querySelectorAll('[data-cite]').forEach(function (span) {
+      var v = values[span.getAttribute('data-cite')];
+      if (v) span.textContent = v;
+    });
+    var status = root.querySelector('[data-cite-status]');
+    if (status) status.textContent = 'Showing ' + opt.value + ', released ' + opt.dataset.long + '.';
+  }
+  select.addEventListener('change', apply);
+  apply();
+
+  /* Copy buttons stay hidden unless the clipboard API is actually available,
+     so nothing is offered that cannot work (it needs a secure context). */
+  if (navigator.clipboard && window.isSecureContext) {
+    root.querySelectorAll('[data-copy]').forEach(function (btn) {
+      btn.hidden = false;
+      btn.addEventListener('click', function () {
+        var block = btn.closest('.cite-entry').querySelector('.cite-block');
+        navigator.clipboard.writeText(block.textContent.trim()).then(function () {
+          var previous = btn.textContent;
+          btn.textContent = 'Copied';
+          setTimeout(function () { btn.textContent = previous; }, 1500);
+        });
+      });
+    });
+  }
+})();
+</script>

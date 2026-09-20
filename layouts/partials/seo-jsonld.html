@@ -43,6 +43,11 @@
 {{- $siteID := printf "%s/#website" $base -}}
 {{- $appID := printf "%s/#weasis" $base -}}
 {{- $author := partialCached "_relearn/authorName.gotmpl" site.Home -}}
+{{- /* The author, described once and referenced by the entities below. An ORCID
+       iD is emitted as `sameAs`, which is how a Person is tied to a scholarly
+       identity that indexers already resolve. */ -}}
+{{- $person := dict "@type" "Person" "name" $author -}}
+{{- with site.Params.author.orcid }}{{ $person = merge $person (dict "sameAs" .) }}{{ end -}}
 {{- $iso := "2006-01-02T15:04:05-07:00" -}}
 {{- $license := "https://creativecommons.org/licenses/by-sa/4.0/" -}}
 
@@ -57,10 +62,7 @@
         "@type" "ImageObject"
         "url"   (printf "%s/images/logo.svg" $base)
       )
-      "founder" (dict
-        "@type" "Person"
-        "name"  $author
-      )
+      "founder" $person
       "sameAs"   (slice
         "https://github.com/nroduit/Weasis"
         "https://github.com/nroduit/Weasis/discussions"
@@ -116,10 +118,7 @@
       "softwareLicense"        "EPL-2.0 OR Apache-2.0"
       "sameAs"                 "https://github.com/nroduit/Weasis"
       "publisher"              (dict "@id" $orgID)
-      "author" (dict
-        "@type" "Person"
-        "name"  $author
-      )
+      "author"                  $person
       "offers" (dict
         "@type"         "Offer"
         "price"         "0"
@@ -160,10 +159,7 @@
       "about"      (dict "@id" $appID)
       "publisher"  (dict "@id" $orgID)
       "license"    $license
-      "author" (dict
-        "@type" "Person"
-        "name"  $author
-      )
+      "author"     $person
   -}}
   {{- with .Description }}{{ $page = merge $page (dict "description" (. | plainify)) }}{{ end -}}
   {{- with .Keywords }}{{ $page = merge $page (dict "keywords" (delimit . ", ")) }}{{ end -}}

@@ -102,6 +102,11 @@ enableGitInfo = true
   editURL = "https://github.com/nroduit/nroduit.github.io/edit/main/content/"
   # Author of the site, will be used in meta information
   author.name = "Nicolas Roduit"
+  # ORCID iD, emitted as `sameAs` on the author in the JSON-LD (see
+  # layouts/partials/seo-jsonld.html). It is what ties the software, its releases
+  # and the papers that cite it to one researcher identity — the same identifier
+  # the repository's CITATION.cff carries.
+  author.orcid = "https://orcid.org/0009-0000-8103-0428"
   # No per-page byline. The theme renders the *last modifier* taken from git,
   # which is not the same thing as the author: a contributor's commit would put
   # their name on someone else's page. Authorship is declared once in
