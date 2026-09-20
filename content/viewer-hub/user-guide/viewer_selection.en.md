@@ -1,7 +1,7 @@
 ---
 title: Viewer Selection
-description: Viewer selection rules
-keywords: [ "viewer", "selection", "rules" ]
+description: "Define the rules that decide which viewer ViewerHub launches for a request, and the order in which those rules are evaluated."
+keywords: [ "viewer selection", "viewerhub rules", "launch rules", "rule order", "default rule" ]
 weight: 10
 ---
 An admin interface has been created to select which viewer to display depending on the archive or modality.
@@ -12,7 +12,7 @@ Rules can be defined in order to select the viewer to display.
 
 These rules are applied in case no viewer has been specified in the parameters of the request.
 
-![viewer_selection.png](/viewer-hub/user-guide/viewer_selection.png)
+![viewer_selection.png](/viewer-hub/user-guide/viewer_selection.webp)
 
 
 ## Rules
@@ -33,13 +33,13 @@ When starting viewer-hub, a default rule is created.
 
 If there is no archive in the request and no rules defined or no rules matching the request, the default rule is applied and the viewer defined in this default rule is launched.
 
-![viewer_selection_default_rule.png](/viewer-hub/user-guide/viewer_selection_default_rule.png)
+![viewer_selection_default_rule.png](/viewer-hub/user-guide/viewer_selection_default_rule.webp)
 
 ## Creation
 
 In order to add a new rule, click on the "Add rule" button
 
-![viewer_selection_rule_creation.png](/viewer-hub/user-guide/viewer_selection_rule_creation.png)
+![viewer_selection_rule_creation.png](/viewer-hub/user-guide/viewer_selection_rule_creation.webp)
 
 A popup will appear to configure the new rule.
 
@@ -50,6 +50,6 @@ It means that this rule has the highest priority and so Viewer-Hub will check th
 
 It is possible to modify the rules order by drag and dropping the icon of the left:
 
-![viewer_selection_reorder.png](/viewer-hub/user-guide/viewer_selection_reorder.png)
+![viewer_selection_reorder.png](/viewer-hub/user-guide/viewer_selection_reorder.webp)
 
 

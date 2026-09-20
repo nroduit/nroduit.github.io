@@ -67,7 +67,7 @@ Open the per-view settings popup with the {{< svg-inline "static/tuto/icon/viewS
 Most MPR settings are also reachable via keyboard shortcuts — see the [MPR shortcuts](../basics/shortcuts/#selected-view-in-the-mpr-viewer).
 {{% /notice %}}
 
-![MPR](/tuto/mpr.png?classes=shadow)
+![MPR](/tuto/mpr.webp?classes=shadow)
 <br>
 
 Try it on a volume dataset {{< launch >}}

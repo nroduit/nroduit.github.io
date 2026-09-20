@@ -1,7 +1,7 @@
 ---
 title: Weasis Architecture
-description: Modular architecture of Weasis
-keywords: [ "architecture", "weasis architecture", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
+description: "How Weasis is assembled: a framework of plugin bundles, the categories of plugin it recognises, fragment bundles, and how bundle translations are managed."
+keywords: [ "weasis architecture", "osgi", "plugin bundles", "fragment bundle", "modular architecture", "dicom viewer architecture" ]
 weight: 10
 ---
 

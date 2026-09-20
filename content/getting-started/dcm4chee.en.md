@@ -8,7 +8,7 @@ weight: 10
 This page explains how to integrate Weasis with dcm4chee-arc-light using weasis-pacs-connector. To launch Weasis without the connector, follow the alternative [instructions](../basics/customize/integration/#download-directly-with-dicomweb-restful-services).
 
 
-![dcm4chee-arc-light](/gallery-dcm4chee/1Weasis%20in%20dcm4chee-arc-light.png?classes=border "dcm4chee-arc-light")
+![dcm4chee-arc-light](/gallery-dcm4chee/1Weasis%20in%20dcm4chee-arc-light.webp?classes=border "dcm4chee-arc-light")
 
 Follow these steps for the integration with `weasis-pacs-connector`:
 

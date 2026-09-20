@@ -1,8 +1,8 @@
 ---
 title: Integration
 weight: 10
-description: How connecting Weasis to a PACS, RIS, EMR or any web interface
-keywords: [ "workflow", "integration", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
+description: "Connect Weasis to a PACS, RIS, EMR or any web interface: weasis-pacs-connector, writing your own connector, and building an XML manifest."
+keywords: [ "weasis integration", "pacs integration", "weasis-pacs-connector", "xml manifest", "launch weasis from web", "emr integration", "ris integration" ]
 ---
 
 ## <center>How to launch Weasis from any environments</center>

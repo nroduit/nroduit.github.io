@@ -37,10 +37,23 @@ enableRobotsTXT = true
 enableGitInfo = true
 
 [frontmatter]
-  # `:git` first, so a page's real edit date wins; `lastmod` in front matter
-  # still overrides it when a page needs a date of its own. No `date` is
-  # invented, so nothing claims a publication date it does not have.
-  lastmod = [':git', 'lastmod', 'date', 'publishDate']
+  # A front-matter `updated` field first, then the Git commit date.
+  #
+  # The two serve different readers. `updated: 2026-09-20` is an editorial claim —
+  # "the content of this page changed on this date" — written by whoever edited
+  # the page, and it is the only date shown to a human (see
+  # layouts/partials/content-footer.html). The Git date is the fallback that keeps
+  # <lastmod> in the sitemap and `dateModified` in the JSON-LD populated for every
+  # page, so machines always have a date even where nobody has annotated one.
+  #
+  # The field is deliberately *not* called `lastmod`: Hugo resolves `lastmod` into
+  # `.Params.lastmod` for every page through this very chain, so a template cannot
+  # tell a declared value from the Git fallback. A separate name can only be there
+  # because someone wrote it. That is what stops a metadata-only commit from
+  # moving a visible date.
+  #
+  # No `date` is invented, so nothing claims a publication date it does not have.
+  lastmod = ['updated', 'lastmod', ':git', 'date', 'publishDate']
 
 [minify]
   disableCSS = false
@@ -89,6 +102,23 @@ enableGitInfo = true
   editURL = "https://github.com/nroduit/nroduit.github.io/edit/main/content/"
   # Author of the site, will be used in meta information
   author.name = "Nicolas Roduit"
+  # No per-page byline. The theme renders the *last modifier* taken from git,
+  # which is not the same thing as the author: a contributor's commit would put
+  # their name on someone else's page. Authorship is declared once in
+  # `author.name` above and in the `author` field of the JSON-LD on every page,
+  # which is what search engines and assistants actually read.
+  #
+  # The email mattered most: it published a personal address as a live mailto:
+  # link on 76 pages, which is what address-harvesting crawlers collect. Support
+  # belongs in GitHub Discussions, linked from the menu footer.
+  #
+  # Hiding the date costs nothing in search: `dateModified` in the JSON-LD and
+  # `<lastmod>` in the sitemap still carry the real edit date from `enableGitInfo`
+  # — only the visible line goes. That line had become misleading anyway, since a
+  # metadata-only commit bumps it without the content changing.
+  hideAuthorName = true
+  hideAuthorEmail = true
+  hideAuthorDate = true
   # Fallback preview image for pages that do not set `images` in front matter.
   # The theme fills og:image / twitter:image from page resources, and this site
   # has none (images live in static/), so without this every share and every AI

@@ -1,7 +1,7 @@
 ---
 title: Guidelines
-description: Guidelines for Weasis plugin development
-keywords: [ "guidelines", "weasis guidelines", "development", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
+description: "Guidelines for writing a Weasis plugin: prerequisites, code style and conventions, building the source, and adding a new plugin to the distribution."
+keywords: [ "weasis plugin development", "plugin guidelines", "code style", "developer guide", "extend weasis" ]
 weight: 50
 ---
 
@@ -23,7 +23,7 @@ Weasis uses [google-java-format](https://github.com/google/google-java-format) a
 
 - From Maven command: `mvn spotless:apply`
 - From the Maven panel
-![Maven Spotless](/images/conf/mvn-spotless.png)
+![Maven Spotless](/images/conf/mvn-spotless.webp)
 
 ### Getting the source and building Weasis
 
@@ -52,7 +52,7 @@ For running or debugging Weasis, you need to create a launcher:
     - Select *Do not build before run*
     - Select *Add VM Options* and enter `-Xms64m -Xmx768m -Dgosh.port=17179`
   - Working Directory: remove the current value and add *%MODULE_WORKING_DIR%* from the Insert Macros button
-![Launcher Configuration](/images/conf/launcher.png)
+![Launcher Configuration](/images/conf/launcher.webp)
 {{% notice note %}}
 As the default build task has been removed it is necessary to apply the Maven command *install* on modules with modified code before launching the *Run* or *Debug* mode.<br>
 Keeping the build task and delegating the build to Maven does not seem configurable for a multi-module project, see this [issue](https://youtrack.jetbrains.com/issue/IDEA-198358).

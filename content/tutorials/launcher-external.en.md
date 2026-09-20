@@ -12,7 +12,7 @@ since: "4.5.0"
 
 Configured launchers appear in the **_File > Launcher_** menu and, optionally, as a button in the toolbar.
 
-![Launcher](/tuto/launchers.png?classes=shadow)
+![Launcher](/tuto/launchers.webp?classes=shadow)
 <br>
 
 In the screenshot above, a launcher is configured to open the **Horos** viewer on macOS against the folder where Weasis downloaded the current DICOM files.

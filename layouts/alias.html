@@ -1,0 +1,24 @@
+{{- /*
+  Overrides Hugo's built-in alias template, which titles every redirect stub with
+  the target path — literally <title>/en/</title>. That matters for one URL in
+  particular: https://weasis.org/ is an alias of /en/, and it is the address
+  every external citation of the site points at. If a search engine ever shows
+  it, it should not read as a path.
+
+  The stub keeps the meta refresh, gains the target's real title, and is marked
+  noindex so the duplicate address cannot compete with the page it points to —
+  the canonical already names that page.
+*/ -}}
+<!DOCTYPE html>
+<html lang="{{ with .Page }}{{ .Language.Lang }}{{ else }}en{{ end }}">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ with .Page }}{{ partial "title.gotmpl" (dict "page" . "fullyQualified" true "reverse" true) | plainify }}{{ else }}{{ site.Title }}{{ end }}</title>
+    <link rel="canonical" href="{{ .Permalink }}">
+    <meta name="robots" content="noindex, follow">
+    <meta http-equiv="refresh" content="0; url={{ .Permalink }}">
+  </head>
+  <body>
+    <p>This page has moved to <a href="{{ .Permalink }}">{{ .Permalink }}</a>.</p>
+  </body>
+</html>

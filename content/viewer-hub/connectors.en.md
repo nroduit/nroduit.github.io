@@ -1,7 +1,7 @@
 ---
 title: Connectors
-description: Configuration of the connectors used to connect to the different PACS
-keywords: [ "connector", "pacs"]
+description: "Configure the ViewerHub connectors that reach your archives — database, DICOM and DICOMweb — and the authentication each one requires."
+keywords: [ "viewerhub connectors", "dicom connector", "dicomweb connector", "database connector", "pacs connection", "connector authentication" ]
 weight: 40
 ---
 

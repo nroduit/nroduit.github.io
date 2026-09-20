@@ -74,7 +74,7 @@ SUV is computed with the body-weight method (SUVbw), following the [vendor-neutr
 
 ### Fusion in the MPR viewer {#mpr}
 
-![Fusion on MPR](/tuto/fusion-mpr.png?classes=shadow)
+![Fusion on MPR](/tuto/fusion-mpr.webp?classes=shadow)
 <br>
 
 Opening the [MPR viewer](mpr) from a fused 2D view **carries the fusion over**: the three MPR planes start with the same overlay series, LUT and opacities you set in the 2D view. Each plane keeps its **own** fusion settings, so you can fine-tune — or disable — the overlay independently per plane afterwards, without affecting the 2D view or the other planes.

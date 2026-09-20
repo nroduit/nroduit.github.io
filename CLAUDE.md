@@ -185,8 +185,14 @@ template overrides — and it breaks without failing a build. The moving parts:
   the `../` in their output format's `baseName`, and are enabled for English only
   in `[Languages.en.outputs]` — which must repeat `section` and `page`, since a
   per-language `outputs` replaces the whole table instead of merging into it.
-- `enableGitInfo` gives every page a real `lastmod` from its last commit; a page
-  added in the working tree has none until committed.
+- **Dates.** `enableGitInfo` gives every page a `lastmod` from its last commit,
+  which feeds `<lastmod>` in the sitemap and `dateModified` in the JSON-LD; a page
+  added in the working tree has none until committed. Readers see a different
+  date: the `Updated …` line appears only where a page declares `updated:` in its
+  front matter (see *Editing notes*). Nothing per-page is shown otherwise —
+  `hideAuthorName`, `hideAuthorEmail` and `hideAuthorDate` are all on, the last
+  because the theme's byline date is the commit date and would move on a
+  metadata-only edit.
 - `params.disableSeoHiddenPages = false` matters: `hidden: true` keeps a page out
   of the sidebar, and with that flag set it also marked `/features/`, `/faq/`,
   `/demo/` and `/get-involved/` `noindex` while the sitemap still listed them.
@@ -195,10 +201,53 @@ template overrides — and it breaks without failing a build. The moving parts:
   canonical.
 
 Run `python3 .github/scripts/seo-conformity.py` after a build before changing any
-of this; its docstring lists every invariant and why it is there.
+of this; its docstring lists every invariant and why it is there. While `hugo
+serve` is running it owns `public/`, so build somewhere else for a check —
+`hugo --gc --minify -d public-check` and `--root public-check` — or the two
+builds interleave and the checker reports failures that are not real.
+
+### Images
+
+Screenshots are the content of this documentation — grey-level detail, thin
+overlay text and measurement graphics — so **nothing here is ever re-encoded
+lossily**. The current state was reached by measuring every candidate and
+verifying it pixel-by-pixel:
+
+- **Screenshots are lossless WebP.** For this material WebP lossless is both
+  smaller *and* bit-exact: 6.99 MB of PNG became 3.04 MB with pixel-identical
+  output, while WebP at q95 was *larger* (3.78 MB) and already visibly degraded
+  (SSIM down to 0.85). There is no quality/size trade-off to make here — the
+  lossless option wins on both counts. Two PNGs stay PNG because the encoder was
+  not bit-exact on them: `images/architecture-packages.png` and `images/light.png`.
+- **The 26 JPEGs are left exactly as they are.** WebP lossless would grow them
+  from 4.82 MB to 13.11 MB (lossless re-encoding of already-lossy data), and WebP
+  q92 would save 13% while adding a second generation of loss. Do not "optimize"
+  them.
+- **Never bake annotations into a screenshot.** Use the `annotate` shortcode: the
+  clean image plus an SVG overlay, so labels stay crisp, selectable and
+  translatable. `static/tuto/gui-overview.svg` is the older approach — a raster
+  with drawn-on boxes — and its screenshot is now an external WebP referenced
+  from the SVG rather than a 600 KB base64 payload, which is what made that one
+  page ship 861 KB of HTML.
+- To re-evaluate after adding images, measure rather than assume: encode each
+  candidate, compare the decoded pixel arrays, and only accept a format change
+  that is exact.
 
 ## Editing notes
 
 - `[params.link] errorlevel = 'warning'` in `config.toml` means broken internal links surface as warnings during `hugo serve`, not failures — watch the dev server output when changing links.
 - `markup.goldmark.renderer.unsafe = true` is intentional so shortcodes and inline HTML/JS render. Be mindful when adding raw HTML to content.
 - The site uses the Relearn-theme front matter conventions (`title`, `weight`, `hidden`, `chapter`, etc.). Look at neighboring pages in the same section before adding new front matter keys.
+- `linkTitle` keeps navigation short when `title` is written for a search result:
+  the sidebar, breadcrumb and `{{% children %}}` listings use `linkTitle`, while
+  `title` becomes the `<h1>` and the `<title>`. That is why the download page is
+  *Download Weasis: Free DICOM Viewer for Windows, macOS and Linux* in a search
+  result and just *Download Weasis* in the sidebar.
+- **`updated: 2026-09-20`** is the only thing that puts a visible date on a page.
+  Set it when the *content* changes in a way a returning reader should know about;
+  leave it alone for a typo, a re-worded description or a metadata pass. It is
+  deliberately not named `lastmod`: Hugo resolves `lastmod` for every page from
+  the `[frontmatter]` chain in `config.toml`, so a template cannot tell a declared
+  value from the Git fallback, whereas `updated` exists only because someone wrote
+  it. A declared `updated` also takes precedence for the sitemap and the JSON-LD,
+  so the editorial claim is what search engines see too.

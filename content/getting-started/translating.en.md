@@ -1,7 +1,8 @@
 ---
-title: Internationalization
-description: How to contribute to the Weasis translation
-keywords: [ "internationalization", "weasis internationalization", "development", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
+title: "Translate the Weasis Interface"
+linkTitle: Internationalization
+description: "Contribute a translation of the Weasis interface: build weasis-i18n, get the source, produce the distribution and apply the translations."
+keywords: [ "translate weasis", "weasis-i18n", "interface translation", "localization", "language files" ]
 weight: 80
 ---
 

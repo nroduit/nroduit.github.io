@@ -1,7 +1,7 @@
 ---
 title: Guidelines for development
-description: How to develop and debug ViewerHub
-keywords: [ "develop", "debug",  "dicom viewer" ]
+description: "Develop and debug ViewerHub, and add launchers for Weasis, OHIF, 3D Slicer or MicroDicom while testing."
+keywords: [ "viewerhub development", "debug viewerhub", "add a launcher", "ohif", "3d slicer", "microdicom" ]
 weight: 30
 ---
 

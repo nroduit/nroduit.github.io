@@ -46,7 +46,7 @@ On Windows, only files with the `.dcm` extension are associated with Weasis. On 
 
 Two import entry points sit next to each other in the toolbar (and under **_File > Import_** in the main menu):
 
-![Open toolbar](/tuto/dicom-open-icon.png?classes=shadow)
+![Open toolbar](/tuto/dicom-open-icon.webp?classes=shadow)
 
 - The **first** button opens the standard DICOM import dialog described below (**_File > Import > DICOM_**).
 - The **second** button is a shortcut for the DICOMDIR / CD-ROM workflow (**_File > Import > DICOM CD_**).
@@ -69,7 +69,7 @@ Loads a DICOMDIR-based study from a CD/DVD or any folder that already contains a
 Queries a remote PACS and retrieves the selected studies or series into the DICOM Explorer. The dialog has two tabs — **DICOM Source** and **Search Criteria**.
 
 ##### DICOM Source tab
-![DICOM import archive](/tuto/dicom-import-archive.png?classes=shadow)
+![DICOM import archive](/tuto/dicom-import-archive.webp?classes=shadow)
 <br>
 
 * **Archive** — pick the remote node to query:
@@ -86,7 +86,7 @@ Queries a remote PACS and retrieves the selected studies or series into the DICO
 * **More options** — opens the preferences so you can add or edit DICOM nodes.
 
 ##### Search Criteria tab
-![Thumbnails](/tuto/dicom-import-search.png?classes=shadow&width=700px)
+![Thumbnails](/tuto/dicom-import-search.webp?classes=shadow&width=700px)
 <br>
 
 1. Narrow the query by **study date** with the date drop-down: **All dates** (no date filter), a single day such as **Today**, **Yesterday** or **Day before yesterday**, a current period (**This week**, **This month**, **This year**), or a rolling window (**Last 24 hours**, **Last week**, **Last month**, **Last year**…). Choosing one fills in the start and end dates; either can then be adjusted on its own, and clicking a date field opens a calendar to pick an exact day {{< since "4.7.0" >}}.

@@ -28,7 +28,8 @@ The invariants, roughly in order of how likely each is to break:
   * canonical is self-referential and og:url agrees with it
   * exactly one canonical link and at most one robots meta per page
   * print renderings are noindex and never canonicalise to themselves
-  * every indexable page has a title, a description and an og:image that exists
+  * every indexable page has a title, a description and an og:image that exists,
+    exactly one <h1>, and no unrendered shortcode left in the output
   * every JSON-LD block parses, carries @context and @type, and every @id it
     references is defined somewhere on the site
   * sitemaps: W3C datetime lastmod, hreflang sets that include x-default, every
@@ -278,6 +279,15 @@ def check_pages(site, rep, sitemap_urls):
                                  % (og_url, canonical, rel))
 
         if fp in indexable:
+            # An unrendered shortcode means a page is publishing template source
+            # instead of content; a missing or duplicated <h1> means the document
+            # outline is wrong. Both are invisible in a build log.
+            leftovers = re.findall(r"\{\{?%[^\n]{0,40}|\{\{<[^\n]{0,40}", html)
+            if leftovers:
+                rep.fail("shortcode", "unrendered shortcode in %s: %r" % (rel, leftovers[0]))
+            h1 = len(re.findall(r"<h1[\s>]", html))
+            if h1 != 1:
+                rep.fail("heading", "%d <h1> elements in %s" % (h1, rel))
             title = re.search(r"<title>(.*?)</title>", html, re.S)
             if not title or not title.group(1).strip():
                 rep.fail("title", "no <title>: %s" % rel)

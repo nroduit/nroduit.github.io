@@ -1,6 +1,6 @@
 ---
 title: Cryptography
-description: Encrypt the URL search parameters when launching the Weasis viewer
+description: "Encrypt the URL search parameters that launch Weasis, so identifiers such as the patient ID never travel in plain text."
 keywords: [ "cryptography", "viewerhub", "url encryption", "query parameters", "patient identifier", "weasis launch" ]
 weight: 90
 aliases:

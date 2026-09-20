@@ -1,7 +1,7 @@
 ---
 title: Weasis Web Protocol
-description: How to launch Weasis from a web context
-keywords: [ "web", "launch", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
+description: "Launch Weasis from a browser with the weasis:// URI scheme: building the URI, loading images, passing launch parameters, and enterprise deployment."
+keywords: [ "weasis protocol", "weasis uri scheme", "launch from browser", "web launch", "url parameters", "enterprise deployment" ]
 weight: 15
 ---
 

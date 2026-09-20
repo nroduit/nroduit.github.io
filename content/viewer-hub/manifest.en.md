@@ -1,7 +1,7 @@
 ---
 title: Weasis Manifest
-description: Creation of manifest for Weasis
-keywords: [ "manifest" , "cache" , "redis"]
+description: "How ViewerHub builds the manifest that tells Weasis which studies to open, and how the cache is used."
+keywords: [ "weasis manifest", "viewerhub manifest", "manifest construction", "redis cache" ]
 weight: 80
 ---
 

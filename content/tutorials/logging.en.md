@@ -49,7 +49,7 @@ Once a rolling log reaches its maximum size, it is rotated and the previous file
 
 <br>
 
-![Preferences](/tuto/logging.png?classes=shadow)
+![Preferences](/tuto/logging.webp?classes=shadow)
 <br>
 
 {{% notice tip %}}

@@ -42,7 +42,7 @@ Actions available in the KO toolbar:
 
 Newly created KO and PR objects are exported through the standard [DICOM Export](dicom-export) dialog — open it from the toolbar icon or from **_File > Export > DICOM_**.
 
-![Export KO locally](/tuto/export-ko-pr.png?classes=shadow)
+![Export KO locally](/tuto/export-ko-pr.webp?classes=shadow)
 <br>
 
 1. Pick the export destination — **Local Device**, **DICOM Send**, or **CD/DVD Image** (see [DICOM Export](dicom-export#exporting) for the per-destination options).

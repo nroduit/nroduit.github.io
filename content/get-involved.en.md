@@ -1,7 +1,7 @@
 ---
 title: Get Involved!
-description: Learn how to contribute to the Weasis project and its community.
-keywords: [ "contribute", "weasis contribution", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
+description: "How to contribute to Weasis: report a bug, request a feature, submit code, improve this documentation, translate the interface or support the project."
+keywords: [ "contribute to weasis", "open source contribution", "report a bug", "translate weasis", "weasis community" ]
 hidden: true
 ---
 

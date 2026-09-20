@@ -36,7 +36,7 @@ When no calibration is available — or when you want to override an existing on
 ![Calibration](/tuto/spatial-calibration.jpg?classes=shadow&width=100%)
 <br>
 
-![Apply Calibration](/tuto/apply-calibration.png?classes=shadow)
+![Apply Calibration](/tuto/apply-calibration.webp?classes=shadow)
 <br>
 
 {{% notice note %}}

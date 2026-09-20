@@ -6,6 +6,8 @@ package-lock.json
 # Hugo
 .hugo_build.lock
 /public
+# verification builds: CLAUDE.md tells you to build here while `hugo serve` owns public/
+/public-check/
 resources/
 
 # vim temporary files

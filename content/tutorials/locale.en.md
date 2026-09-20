@@ -19,7 +19,7 @@ The two are independent, so you can run the UI in English while keeping the regi
 
 From the main menu, open **_File > Preferences (Alt + P)_** and pick the desired **Language** and **Regional format** in the **General** tab.
 
-![Preferences](/tuto/language-prefs.png?classes=shadow)
+![Preferences](/tuto/language-prefs.webp?classes=shadow)
 <br>
 
 {{% notice tip %}}

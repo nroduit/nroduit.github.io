@@ -47,3 +47,29 @@
     /* enlarge the sidebar logo (theme default --LOGO-IMAGE-width is 4em, too small for the Weasis logo) */
     --LOGO-IMAGE-width: 100%;
 }
+
+/* Related-pages block appended to every  article by layouts/partials/content-footer.html.
+   It lives inside <footer class="footline">, which the theme styles as a small
+   muted byline, so the type size is restored to make these read as links a
+   reader is meant to follow. */
+.related-pages {
+  margin: 2rem 0 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(134, 134, 134, 0.35);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: left;
+}
+.related-pages b { display: block; margin-bottom: 0.25rem; }
+.related-pages ul { margin: 0; padding-left: 1.25rem; }
+.related-pages li { margin: 0.15rem 0; }
+
+/* "Updated <date>" line, rendered only for pages that declare `lastmod` in front
+   matter. It sits in <footer class="footline">, whose muted styling suits it. */
+.page-updated {
+  margin: 1.5rem 0 0;
+  font-size: 0.875rem;
+  opacity: 0.75;
+  text-align: left;
+}
+.page-updated + .related-pages { margin-top: 0.75rem; }

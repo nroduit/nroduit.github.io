@@ -1,7 +1,7 @@
 ---
 title: Package Qualifier
-description: Qualifier usage
-keywords: [ "qualifier" ]
+description: "What a package qualifier is in ViewerHub, the default values it takes, and how a qualifier maps to a user, a host or a group."
+keywords: [ "package qualifier", "viewerhub qualifier", "qualifier mapping", "default values" ]
 weight: 40
 ---
 
@@ -17,16 +17,16 @@ These default values are defined in the config-server in the application-package
 
 In order to be able to test specific versions or to be able to launch a version of Weasis different from the default one for a group, it is possible to specify the version to launch for a user/host/group by mapping a particular qualifier.
 
-![group_config_creation.png](/viewer-hub/qualifier/group_config_creation.png)
+![group_config_creation.png](/viewer-hub/qualifier/group_config_creation.webp)
 
 In order to use this feature:
 - the weasis-native.zip file containing the specific version must be loaded into ViewerHub and associated with a group.
 - the "qualifier" property must be defined in the launch_preferred table and must be of type "qualifier".
 
-![launch_preferred_qualifier.png](/viewer-hub/qualifier/launch_preferred_qualifier.png)
+![launch_preferred_qualifier.png](/viewer-hub/qualifier/launch_preferred_qualifier.webp)
 
 - the mapping of the qualifier to use this version must be done at the launch table level for the target/launch_config/launch_preferred association. <br/>
 If this mapping is not done, the default qualifier defined in ViewerHub configuration will be taken into account (see previous paragraph). <br/>
 In order to do this mapping, you must define a configuration in the launch table associating the desired group/launch_config, the previous launch_preferred "qualifier" and for the "selection" column specify the qualifier to launch.
 
-![launch_qualifier.png](/viewer-hub/qualifier/launch_qualifier.png)
+![launch_qualifier.png](/viewer-hub/qualifier/launch_qualifier.webp)

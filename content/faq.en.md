@@ -1,7 +1,7 @@
 ---
 title: FAQs
-description: Frequently Asked Questions about Weasis
-keywords: [ "weasis faqs", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
+description: "Answers to the questions asked most often about Weasis: supported operating systems, web launch, offline use, certification status, licensing and support."
+keywords: [ "weasis faq", "dicom viewer faq", "is weasis free", "weasis certified medical device", "dicom viewer questions", "weasis license" ]
 hidden: true
 ---
 

@@ -1,3 +1,14 @@
-{{ $svg := .Get 0 }}
-{{ $svg  | readFile | safeHTML }}
+{{- /*
+  Inlines an SVG file into the page.
 
+  Root-relative references inside the file are rewritten to absolute URLs first.
+  gui-overview.svg needs this: its screenshot used to be a 600 KB base64 payload
+  inside the file — which is what made that one page ship 861 KB of HTML — and is
+  now an external lossless WebP referenced as "/tuto/…". Because the SVG ends up
+  inlined in a page at an arbitrary depth (and a documentation-line build is
+  served from a path prefix), that path has to be resolved against the site's
+  base URL rather than left to the browser.
+*/ -}}
+{{- $raw := .Get 0 | readFile -}}
+{{- $raw = $raw | replaceRE `((?:xlink:href|href|src)=")/` (printf "${1}%s" (absURL "/")) -}}
+{{ $raw | safeHTML }}

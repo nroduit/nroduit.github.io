@@ -159,7 +159,7 @@ Custom Volume LUTs can be created and edited directly in the 3D viewer {{< since
 
 Open the editor from the LUT list in the toolbar {{< svg-inline "static/tuto/icon/lut.svg" >}} or in the right-click menu: the **Edit Volume LUT…** entry is located at the bottom of the list.
 
-{{% annotate src="/tuto/3d-lut-editor.png" viewbox="0 0 2552 1520" alt="Volume LUT Editor dialog with the preset list, preset properties and transfer function" class="shadow" %}}
+{{% annotate src="/tuto/3d-lut-editor.webp" viewbox="0 0 2552 1520" alt="Volume LUT Editor dialog with the preset list, preset properties and transfer function" class="shadow" %}}
 A | | 645,270 | 60
 B | | 1400,150 | 60
 C | | 1020,980 | 60

@@ -14,7 +14,7 @@ The **Appearance** preferences let you tailor Weasis to your environment: pick a
 
 Use the theme dropdown {{% badge style="red" %}}A{{% /badge %}} to browse the bundled themes, then click **Show** to see a partial preview before applying. The recommended theme for clinical reading is **Core Dark — Flat Weasis**, which keeps the surrounding UI low-luminance to avoid distracting from the images.
 
-![Preferences](/tuto/theme-prefs.png?classes=shadow)
+![Preferences](/tuto/theme-prefs.webp?classes=shadow)
 <br>
 
 ### How to scale the user interface {#how-to-scale-the-user-interface}

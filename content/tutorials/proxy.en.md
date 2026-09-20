@@ -18,7 +18,7 @@ If Weasis must reach the outside world through a corporate proxy — for example
 
 For the meaning of each field, see the [Java networking properties reference](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/net/doc-files/net-properties.html) — the dialog mirrors the standard JVM proxy properties one-for-one.
 
-![Proxy configuration](/tuto/proxy-prefs.png?classes=shadow)
+![Proxy configuration](/tuto/proxy-prefs.webp?classes=shadow)
 <br>
 
 {{% notice tip %}}

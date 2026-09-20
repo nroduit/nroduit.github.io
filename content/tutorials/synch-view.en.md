@@ -84,7 +84,7 @@ See [Per-view sync controls](#per-view-sync) for the full list of toggles and th
 To find which series share the same Frame of Reference, right-click a thumbnail in the [DICOM Explorer](dicom-explorer/) and choose **Select related Series**, then open all the selected series together in the 2D viewer.
 {{% /notice %}}
 
-![View synchronization layout](/tuto/synch.png?classes=shadow)
+![View synchronization layout](/tuto/synch.webp?classes=shadow)
 
 *The screenshot illustrates how Weasis advertises synchronization groups visually inside a single layout:*
 

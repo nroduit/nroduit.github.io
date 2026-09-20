@@ -102,5 +102,5 @@ Wrappers for non-image content (PDF, STL, MPEG, plain text…). Useful when an A
 {{% notice info %}}
 Encapsulated documents are opened with the system application registered for the document MIME type. The DICOM attributes can be inspected from the thumbnail context menu.
 
-![Open DICOM PDF tags](/tuto/dicom-attributes-pdf.png?classes=shadow)
+![Open DICOM PDF tags](/tuto/dicom-attributes-pdf.webp?classes=shadow)
 {{% /notice %}}

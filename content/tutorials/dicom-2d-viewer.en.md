@@ -26,7 +26,7 @@ The rulers {{% badge style="blue" %}}K{{% /badge %}} display a real-world size w
 
 #### Viewer Main Bar
 
-![Main Toolbar](/tuto/main-toolbar.png?classes=shadow)
+![Main Toolbar](/tuto/main-toolbar.webp?classes=shadow)
 
 Choose the action assigned to each of the three mouse buttons and the mouse wheel. Defaults are:
 

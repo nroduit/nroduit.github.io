@@ -1,7 +1,7 @@
 ---
 title: Version Compatibility
-description: How to handle the compatibility between Weasis releases
-keywords: [ "compatibility", "version", "cache", "minio", "s3" ]
+description: "Handle compatibility between Weasis releases in ViewerHub with the compatibility file, the cache and Minio or S3 storage."
+keywords: [ "weasis package compatibility", "version compatibility", "minio", "s3 storage", "package cache" ]
 weight: 60
 ---
 

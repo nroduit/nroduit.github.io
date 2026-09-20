@@ -1,0 +1,133 @@
+{{- /*
+  Theme hook rendered inside <footer class="footline"> at the end of an article.
+  Overridden to prepend a short "Related pages" block; the theme's own content
+  (the author and date line) follows unchanged below.
+
+  Why: the site's contextual link graph was lopsided. /features/ is an excellent
+  hub — it links out to nearly every tutorial — but almost nothing linked *back*
+  to the pages that matter most to a reader who arrives from a search engine:
+  /features/ had one inbound in-article link and the download page four, out of 78
+  pages. The sidebar links everything, but a crawler weighs a link in the body of
+  a page far above one in site-wide navigation, and a reader who has just finished
+  a tutorial has nowhere obvious to go.
+
+  The links are derived, not authored, so no page has to be edited and nothing can
+  drift out of date:
+    - the previous and next page of the same section, in sidebar order
+    - the section's own overview page
+    - the download page, or the features overview when already on the download page
+  A page can override the siblings with `related: [path, path]` in front matter.
+  Kept to four links, and only on ordinary content pages.
+*/ -}}
+
+{{- /* Only in the HTML rendering: neither a date nor navigation links belong on a
+       printed page, which is also served noindex.
+
+       Two scopes. The "updated" date applies to anything a reader reads, section
+       landing pages included. The related-pages block is for ordinary pages only:
+       a section landing already lists its children, so repeating them below would
+       say the same thing twice. */ -}}
+{{- $isHTML := eq (.Store.Get "relearnOutputFormat" | default "html") "html" -}}
+{{- $isContent := and $isHTML .Title
+      (in (slice "page" "section") .Kind)
+      (not (partial "_relearn/pageIsSpecial.gotmpl" .)) -}}
+{{- $isRegular := and $isContent (eq .Kind "page") -}}
+{{- if $isContent -}}
+  {{- $links := cond $isRegular slice slice -}}
+  {{- $download := site.GetPage "/getting-started/download-dicom-viewer" -}}
+  {{- $features := site.GetPage "/features" -}}
+
+  {{- with .Params.related -}}
+    {{- range . -}}
+      {{- with site.GetPage . }}{{ $links = $links | append . }}{{ end -}}
+    {{- end -}}
+  {{- else -}}
+    {{- /* the page before and after this one within its own section */ -}}
+    {{- with .Parent -}}
+      {{- $sibs := where .Pages.ByWeight "Title" "!=" nil -}}
+      {{- $idx := -1 -}}
+      {{- range $i, $p := $sibs }}{{ if eq $p $ }}{{ $idx = $i }}{{ end }}{{ end -}}
+      {{- if ge $idx 0 -}}
+        {{- if gt $idx 0 }}{{ $links = $links | append (index $sibs (sub $idx 1)) }}{{ end -}}
+        {{- if lt $idx (sub (len $sibs) 1) }}{{ $links = $links | append (index $sibs (add $idx 1)) }}{{ end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- /* The two pages a reader coming from a search engine most often wants next,
+         and the two that had almost no inbound links in article text: the download
+         page and the feature overview. /features/ is deliberately kept out of the
+         sidebar tree, so links from article bodies are all it has. */ -}}
+  {{- with $download }}{{ $links = $links | append . }}{{ end -}}
+  {{- with $features }}{{ $links = $links | append . }}{{ end -}}
+
+  {{- /* de-duplicate, drop self, cap at four */ -}}
+  {{- $seen := slice -}}
+  {{- $out := slice -}}
+  {{- range $links -}}
+    {{- if and . .Title (ne . $) (not (in $seen .RelPermalink)) (lt (len $out) 4) -}}
+      {{- $seen = $seen | append .RelPermalink -}}
+      {{- $out = $out | append . -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- /* A visible date only where a page declares `updated:` in its front matter.
+         Neither `.Lastmod` nor `.Params.lastmod` can be used for this: both fall
+         back to the Git commit date through the [frontmatter] chain in
+         config.toml, so they move whenever anything is committed — including a
+         pass that only touched metadata — and a date that overstates freshness is
+         worse than no date at all. `.Params.updated` exists only because an editor
+         wrote it, which is exactly the claim worth showing a reader. */ -}}
+  {{- with .Params.updated }}
+  <p class="page-updated">Updated <time datetime="{{ . | time.Format "2006-01-02" }}">{{ . | time.Format (site.Params.dateFormat | default ":date_medium") }}</time></p>
+  {{- end }}
+
+  {{- with (cond $isRegular $out slice) }}
+  <nav class="related-pages" aria-label="Related pages">
+    <b>Related pages</b>
+    <ul>
+    {{- range . }}
+      <li><a href="{{ partial "permalink.gotmpl" (dict "to" .) }}">{{ partial "title.gotmpl" (dict "page" . "linkTitle" true) }}</a></li>
+    {{- end }}
+    </ul>
+  </nav>
+  {{- end }}
+{{- end -}}
+
+{{- /* ------- from here on, the theme's own content-footer, unchanged ------- */ -}}
+{{- $LastModifierDisplayName := "" }}
+{{- $LastModifierEmail := "" }}
+{{- $Date := "" }}
+{{- $dateFormat := site.Params.dateFormat | default ":date_medium" }}
+{{- with .GitInfo }}
+  {{- with and (not site.Params.hideAuthorName) .AuthorName }}
+    {{- $LastModifierDisplayName = . }}
+  {{- end }}
+  {{- with and (not site.Params.hideAuthorEmail) .AuthorEmail }}
+    {{- $LastModifierEmail = . }}
+  {{- end }}
+  {{- with and (not site.Params.hideAuthorDate) .AuthorDate }}
+    {{- $Date = . | time.Format $dateFormat }}
+  {{- end }}
+{{- else }}
+  {{- with and (not site.Params.hideAuthorName) .Params.LastModifierDisplayName }}
+    {{- $LastModifierDisplayName = . }}
+  {{- end }}
+  {{- with and (not site.Params.hideAuthorEmail) .Params.LastModifierEmail }}
+    {{- $LastModifierEmail = . }}
+  {{- end }}
+  {{- with and (not site.Params.hideAuthorDate) .Date }}
+    {{- $Date = . | time.Format $dateFormat }}
+  {{- end }}
+{{- end }}
+{{- if $LastModifierDisplayName }}
+              <i class='fa-fw fas fa-user'></i> {{ with $LastModifierEmail }}<a href="mailto:{{ . }}">{{ end }}{{ $LastModifierDisplayName }}{{ with $LastModifierEmail }}</a>{{ end }}
+{{- end }}
+{{- with $Date }}
+              <i class='fa-fw fas fa-calendar'></i> {{ . }}
+{{- end }}
+{{- partial "term-list.html" (dict
+  "page" .
+  "taxonomy" "categories"
+  "icon" "layer-group"
+) }}

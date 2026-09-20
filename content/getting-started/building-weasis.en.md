@@ -1,7 +1,7 @@
 ---
 title: Building Weasis
-description: How to build Weasis from sources
-keywords: [ "building", "sources", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
+description: "Build Weasis from source: get the code, build the plugins, and produce the native binaries and installers for each platform."
+keywords: [ "build weasis", "compile from source", "maven build", "native installers", "build from sources" ]
 weight: 30
 ---
 

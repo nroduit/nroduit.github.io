@@ -62,7 +62,7 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/demo/international.xml"
 
 {{% notice info %}}
 **Expected output**:
-![charset samples](/images/charset.png)
+![charset samples](/images/charset.webp)
 {{% /notice %}}
 
 ------------------------------------------------------------------------

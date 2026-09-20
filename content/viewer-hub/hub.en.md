@@ -1,7 +1,7 @@
-﻿---
+---
 title: Imaging Hub
-description: Install all the required components for testing or debugging
-keywords: [ "install",  "dicom viewer" ]
+description: "Install the Imaging Hub for testing or debugging: the services it includes, the prerequisites, the configuration and its usage."
+keywords: [ "imaging hub", "viewerhub installation", "test environment", "minio", "keycloak", "services" ]
 weight: 20
 ---
 

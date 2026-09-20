@@ -13,7 +13,7 @@ The DICOM Explorer is the panel on the left side of the application. It displays
 
 Data can be added to the Explorer in [several different ways](dicom-import) — drag-and-drop, the import dialog, a PACS query, or the Weasis Protocol.
 
-{{% annotate src="/tuto/dicom-explorer.png" viewbox="0 0 1096 936" alt="DICOM Explorer showing the Patient, Study and Series levels" class="shadow" %}}
+{{% annotate src="/tuto/dicom-explorer.webp" viewbox="0 0 1096 936" alt="DICOM Explorer showing the Patient, Study and Series levels" class="shadow" %}}
 @box | 6,186,352,720 | #00a6b6
 Patient              | 262,96; 415,61   | 505,125
 Series filter        | 262,129          | 545,210
@@ -45,7 +45,7 @@ You can navigate through the Patient / Study / Series / Image structure using on
 * All studies are shown by default; the study combobox can restrict the view to a single one.
 
 #### Series Level
-{{% annotate src="/tuto/dicom-explorer.png" viewbox="0 0 1096 936" alt="Series thumbnails with status dots, sub-series numbers and image counts" class="shadow" %}}
+{{% annotate src="/tuto/dicom-explorer.webp" viewbox="0 0 1096 936" alt="Series thumbnails with status dots, sub-series numbers and image counts" class="shadow" %}}
 Open in a view                              | 195,225    | 555,150
 Sub-series number (splitting)               | 328,227; 170,395 | 620,320
 Open and selected in a view                 | 36,393     | 640,560
@@ -69,7 +69,7 @@ Number of images within a series            | 197,887    | 640,850
 
 A search field above the thumbnail list narrows the series shown for the **currently selected patient** {{< since "4.7.1" >}}. The small button on the left of the field selects one of three **exclusive** filter modes — click it to switch (its tooltip reads _Filter mode: … (click to change)_). A counter next to the field reports how many series pass the filter (_shown / total series shown_).
 
-![Series filter field in Full text mode, showing 4 of 7 series](/tuto/series-filter.png?classes=shadow)
+![Series filter field in Full text mode, showing 4 of 7 series](/tuto/series-filter.webp?classes=shadow)
 
 | Mode           | What it does                                                                                                                                                                                                                                                                                                                                       |
 |----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

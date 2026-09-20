@@ -29,7 +29,7 @@ The two display modes behave differently when you scroll:
 
 When Weasis opens certain DICOM payloads with an external application (e.g. encapsulated **PDF** or **video**), the attributes can still be inspected from the **thumbnail right-click menu**.
 
-![Open DICOM PDF tags](/tuto/dicom-attributes-pdf.png?classes=shadow)
+![Open DICOM PDF tags](/tuto/dicom-attributes-pdf.webp?classes=shadow)
 <br>
 
 ## How to find a specific DICOM attribute or value

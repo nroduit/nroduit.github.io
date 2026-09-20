@@ -35,7 +35,7 @@ To fill the layout with images, choose a [synchronization mode](synch-view) (2):
 ### Standard Printer {{< svg-inline "static/tuto/icon/print.svg" >}} {#standard-printer}
 Open **_File > Print > Print 2D viewer layout (P)_** from the main menu.
 
-![standard](/tuto/print/standard.png?classes=shadow)
+![standard](/tuto/print/standard.webp?classes=shadow)
 
 Print options:
 
@@ -50,7 +50,7 @@ Open **_File > Print > DICOM Print_** from the main menu.
 
 The DICOM Print dialog lets you manage several DICOM printer configurations (each carrying its own AE title, host, port, and film parameters). The print parameters mirror the Standard Printer ones above — for the protocol-level specifics, see the [DICOM Print Management Service](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.13.3.html) chapter of the standard.
 
-![DICOM](/tuto/print/dicom.png?classes=shadow)
+![DICOM](/tuto/print/dicom.webp?classes=shadow)
 <br>
 
 {{% notice note %}}

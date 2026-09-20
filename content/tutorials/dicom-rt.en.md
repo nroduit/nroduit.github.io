@@ -44,7 +44,7 @@ The region tree exposes a context menu with the following actions:
 2. Check the **Isodoses** root node — it is unchecked by default.
 3. {{% badge style="info" %}}Optional{{% /badge %}} Adjust the graphic opacity (default: 50 %).
 
-![DICOM DOSE](/tuto/dicom-rt-dose.png?classes=shadow)
+![DICOM DOSE](/tuto/dicom-rt-dose.webp?classes=shadow)
 <br>
 
 {{% notice tip %}}
@@ -62,7 +62,7 @@ The Dose-Volume Histogram (DVH) summarizes, for each selected structure, the fra
 * Click **_Display DVH chart_**.
 * Right-click on the chart to print or save as PNG, or as a vector file (SVG, EPS).
 
-![DICOM DVH](/tuto/dicom-rt-dvh.png?classes=shadow)
+![DICOM DVH](/tuto/dicom-rt-dvh.webp?classes=shadow)
 <br>
 
 {{% notice warning %}}

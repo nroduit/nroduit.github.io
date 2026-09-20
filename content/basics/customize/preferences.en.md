@@ -1,8 +1,8 @@
 ---
 title: Preferences
-description: Manage the Weasis preferences
+description: "Where Weasis preferences live, the order in which properties are loaded, and the list of preferences a site can set for all of its users."
 weight: 20
-keywords: [ "preferences", "weasis preferences", "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer" ]
+keywords: [ "weasis preferences", "configuration properties", "property file", "site configuration", "default settings" ]
 ---
 
 [ViewerHub]() (is a separate project that will be available soon) is a tool designed for managing server-side Weasis preferences across all native client installations. The preferences are defined in each [release package](https://github.com/nroduit/Weasis/releases) (`bin-dist/weasis/conf` within `weasis-native.zip`) and can be modified either through the ViewerHub web portal or via the [Weasis protocol](../../getting-started/weasis-protocol/#modify-the-launch-parameters) with the `pro` parameter.
