@@ -5,7 +5,7 @@ description: "DICOMweb is the set of RESTful web services for DICOM: query, retr
 keywords: [ "what is dicomweb", "dicomweb explained", "qido-rs", "wado-rs", "stow-rs", "dicom rest api" ]
 ---
 
-## <center>What Is DICOMweb</center>
+## <center>Query, retrieve and store over ordinary HTTP</center>
 
 **DICOMweb** is the part of the DICOM standard that defines web services over HTTP, as an
 alternative to the classic DIMSE network protocol. Instead of a dedicated port and association

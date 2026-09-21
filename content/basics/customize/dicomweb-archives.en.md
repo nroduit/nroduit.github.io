@@ -6,7 +6,7 @@ keywords: [ "weasis dicomweb", "launch weasis from orthanc", "weasis dcm4chee", 
 weight: 12
 ---
 
-## <center>Connect Weasis to a DICOMweb archive</center>
+## <center>Query and retrieve straight from the archive, without a connector</center>
 
 This integration requires a PACS/VNA with [DICOMweb](https://www.dicomstandard.org/using/dicomweb) services (QUERY/RETRIEVE) where the requests are managed directly by Weasis. Here are some of the advantages:
 

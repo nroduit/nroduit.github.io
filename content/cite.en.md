@@ -7,7 +7,7 @@ weight: 40
 hidden: true
 ---
 
-## <center>How to cite Weasis</center>
+## <center>Crediting the release the results were read on</center>
 
 If Weasis displayed or measured the images behind a result, cite it in the methods section like any
 other instrument — at the **version you used**, since releases differ in what they render and how

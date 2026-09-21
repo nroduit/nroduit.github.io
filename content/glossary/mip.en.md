@@ -5,7 +5,7 @@ description: "Maximum intensity projection collapses a slab of a volume into one
 keywords: [ "what is mip", "maximum intensity projection", "mip dicom", "thin slab mip", "angiography projection" ]
 ---
 
-## <center>What Is MIP (Maximum Intensity Projection)</center>
+## <center>Bright structures survive, everything dimmer disappears</center>
 
 **Maximum intensity projection (MIP)** casts a ray through a slab of the volume for every pixel of
 the output image and keeps the **highest value** it meets. Bright structures therefore survive and

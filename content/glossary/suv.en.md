@@ -5,7 +5,7 @@ description: "The standardized uptake value normalizes PET activity by injected 
 keywords: [ "what is suv", "suv pet ct", "standardized uptake value", "suvbw", "suv max", "pet quantification" ]
 ---
 
-## <center>What Is SUV in PET/CT</center>
+## <center>PET activity normalized by injected dose and body size</center>
 
 The **standardized uptake value (SUV)** turns the raw activity concentration a PET scanner measures
 into a number that can be compared between patients and between examinations. It divides the

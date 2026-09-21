@@ -5,7 +5,7 @@ description: "Multiplanar reconstruction rebuilds views in planes the scanner ne
 keywords: [ "what is mpr", "mpr meaning", "multiplanar reconstruction", "mpr dicom", "coronal sagittal reconstruction", "oblique reconstruction" ]
 ---
 
-## <center>What Is MPR (Multiplanar Reconstruction)</center>
+## <center>Re-slicing a volume in a plane it was never scanned in</center>
 
 **Multiplanar reconstruction (MPR)** takes a stack of parallel images — typically axial CT or MR
 slices — treats it as a volume, and re-slices that volume in another plane. From one axial

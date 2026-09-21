@@ -5,7 +5,7 @@ description: "Window and level select which range of stored pixel values is mapp
 keywords: [ "what is window level", "window width center dicom", "voi lut", "windowing dicom", "hounsfield window", "dicom contrast" ]
 ---
 
-## <center>What Are Window and Level in DICOM</center>
+## <center>Which stored values become the grays on screen</center>
 
 A DICOM image stores far more distinct values than a display can show or an eye can separate — CT,
 for instance, covers thousands of Hounsfield units. **Windowing** chooses which part of that range

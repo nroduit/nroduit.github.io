@@ -5,7 +5,7 @@ keywords: [ "contribute to weasis", "open source contribution", "report a bug", 
 hidden: true
 ---
 
-## <center>Get Involved with Weasis</center>
+## <center>Report, code, translate or write — where to start</center>
 
 Weasis is an **open-source** project and thrives because of its community of contributors. Whether you are a developer, a translator, a clinical user, or simply passionate about open-source healthcare tools, there are many ways to participate and make a difference.
 

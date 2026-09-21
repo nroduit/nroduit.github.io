@@ -5,7 +5,7 @@ description: "Radiotherapy DICOM objects describe the contours, the plan and the
 keywords: [ "what is dicom rt", "rtstruct", "rt dose", "dvh", "radiotherapy dicom", "dose volume histogram" ]
 ---
 
-## <center>What Are DICOM RT Objects</center>
+## <center>Contours, plan and dose instead of images</center>
 
 Radiotherapy uses a family of DICOM objects that describe a treatment rather than an image.
 

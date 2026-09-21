@@ -6,7 +6,7 @@ keywords: [ "dicom glossary", "dicom terms", "medical imaging glossary", "dicom 
 weight: 30
 ---
 
-## <center>DICOM glossary</center>
+## <center>The vocabulary the tutorials take for granted</center>
 
 The tutorials use a fair amount of DICOM vocabulary, and explaining each term where it first appears
 would make them unreadable. This section answers the question directly instead: what a term means,
