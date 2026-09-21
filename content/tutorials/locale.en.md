@@ -6,7 +6,7 @@ linkTitle: "Language & Regional Settings"
 keywords: [ "dicom viewer language", "locale", "translation", "regional settings", "interface language" ]
 ---
 
-## <center>How to change the language and regional settings</center>
+## <center>Interface language, and date, time and number formats</center>
 
 Weasis separates two locale-related choices:
 

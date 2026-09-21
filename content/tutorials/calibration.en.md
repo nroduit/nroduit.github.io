@@ -18,7 +18,7 @@ howto:
       text: "Enter the known distance with its unit in the dialog, decide whether to apply the new scale to the current image only or to the entire series, and confirm."
 ---
 
-## <center>How to change the spatial calibration</center>
+## <center>The link between a pixel and a real length</center>
 
 **Spatial calibration** is the link between a pixel and a real-world length. With a valid calibration, every [measurement](draw-measure) (distance, area, angle) reflects actual millimeters or centimeters, and the [real-world zoom](zoom/#real-world-size-display) can display images at the same size as the original objects.
 

@@ -6,7 +6,7 @@ linkTitle: "Build DICOM KO and PR"
 keywords: [ "dicom key object selection", "dicom ko", "gsps", "dicom presentation state", "key images", "export dicom" ]
 ---
 
-## <center>How to build and export DICOM KO and PR</center>
+## <center>Two annotation objects authored from the viewer</center>
 
 Weasis can author two standard DICOM annotation objects directly from the viewer:
 

@@ -1,7 +1,7 @@
 ---
 title: "Download Weasis: Free DICOM Viewer for Windows, Mac, Linux"
 linkTitle: Download Weasis
-description: "Download Weasis, the free open-source DICOM viewer, for Windows, macOS or Linux: native installers, winget, Chocolatey, Homebrew, Flathub or Snap. No Java needed."
+description: "Download Weasis, the free open-source DICOM viewer, for Windows, macOS or Linux: native installers, winget, Homebrew, Flathub or Snap. No Java needed."
 keywords: [ "download dicom viewer", "dicom viewer download", "free dicom viewer", "libre dicom viewer", "open source dicom viewer", "dicom viewer windows", "dicom viewer macos", "dicom viewer mac", "dicom viewer linux", "dicom viewer installer", "weasis download", "winget weasis", "homebrew weasis", "flatpak dicom viewer", "portable dicom viewer" ]
 weight: 9
 ---

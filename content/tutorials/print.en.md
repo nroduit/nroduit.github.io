@@ -6,7 +6,7 @@ linkTitle: "Print"
 keywords: [ "print dicom", "dicom print", "print medical images", "print layout" ]
 ---
 
-## <center>Printing images {{< svg-inline "static/tuto/icon/print.svg" >}}</center>
+## <center>A page on paper, or a DICOM film printer {{< svg-inline "static/tuto/icon/print.svg" >}}</center>
 
 Weasis can print images two ways:
 

@@ -6,7 +6,7 @@ linkTitle: "Lookup Tables (LUT)"
 keywords: [ "dicom lut", "voi lut", "presentation lut", "modality lut", "windowing", "window level preset" ]
 ---
 
-## <center>How to handle Color and DICOM LUTs</center>
+## <center>Each step of the rendering pipeline</center>
 
 A **Lookup Table (LUT)** maps each input pixel value to an output value used somewhere along the rendering pipeline — turning raw acquisition numbers into the contrast, the color, and the brightness you actually see on screen. The [DICOM rendering pipeline](https://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_N.2.html) chains four kinds of LUT, each applied at a different stage:
 

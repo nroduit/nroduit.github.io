@@ -6,7 +6,7 @@ linkTitle: "Styles and themes"
 keywords: [ "weasis theme", "dark theme", "ui scaling", "high dpi", "interface appearance" ]
 ---
 
-## <center>Change the appearance of the user interface</center>
+## <center>Light or dark, scaling, and platform behaviors</center>
 
 The **Appearance** preferences let you tailor Weasis to your environment: pick a **light** or **dark** theme to match your reading conditions, adjust the **interface scaling** to fit your monitor's pixel density, and toggle a few platform-specific UI behaviors. Open the settings from **_File > Preferences (Alt + P) > Appearance_**.
 

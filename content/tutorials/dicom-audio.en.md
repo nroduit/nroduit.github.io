@@ -5,7 +5,7 @@ description: "Play DICOM audio waveforms, control playback and volume, and expor
 keywords: [ "dicom audio", "dicom au", "audio waveform", "play dicom sound", "export dicom audio" ]
 ---
 
-## <center>Playing DICOM AU data {{< svg-inline "static/tuto/icon/audio.svg" >}}</center>
+## <center>Voice annotations, Doppler and other recorded sound {{< svg-inline "static/tuto/icon/audio.svg" >}}</center>
 
 The DICOM Audio SOP Class (commonly referred to as DICOM AU) stores waveform audio inside a DICOM object. It is most often used for **voice annotations** dictated by the technologist or radiologist, **Doppler ultrasound** audio, **phonocardiography**, and other acoustic signals captured alongside an imaging study.
 

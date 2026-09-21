@@ -5,7 +5,7 @@ description: "How orientation is labelled for human (BIPED) and veterinary (QUAD
 keywords: [ "dicom image orientation", "patient orientation", "biped", "quadruped", "orientation labels", "veterinary imaging" ]
 ---
 
-## <center>Interpretation of the orientation</center>
+## <center>The letters drawn at the edges of a view</center>
 
 DICOM image viewers indicate **which anatomical direction lies outside each edge of the image** using one or more uppercase letters drawn at the top-center and left-center of the view. They let you recognize the patient's left vs. right (or dorsal vs. ventral, etc.) at a glance, without having to scroll the metadata.
 

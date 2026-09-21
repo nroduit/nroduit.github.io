@@ -13,7 +13,11 @@
       {{ printf "\"version\": \"%s\"," $elem_val }}
     {{ end -}}
   {{ end -}}
-  {{ printf "\"url\": \"%s\"" "https://nroduit.github.io/en/getting-started/download-dicom-viewer/" }}
+  {{- /* the canonical download page on this site; hardcoding the address sent
+         every consumer of this endpoint — /llms.txt links it — through the
+         nroduit.github.io redirect */ -}}
+  {{ $download := site.GetPage "/getting-started/download-dicom-viewer" }}
+  {{ printf "\"url\": \"%s\"" (or (and $download $download.Permalink) ("en/getting-started/download-dicom-viewer/" | absURL)) }}
   {{ printf "}" }}
 {{ else }}
   {{ printf "Environment variable 'HUGO_GH_TOKEN' is not set. Please set the token to proceed." }}

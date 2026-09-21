@@ -6,7 +6,7 @@ linkTitle: "DICOM Import"
 keywords: [ "import dicom", "open dicom files", "open dicom cd", "dicom dvd", "open dicom zip", "drag and drop dicom", "dicomdir" ]
 ---
 
-## <center>How to import DICOM files</center>
+## <center>Every source Weasis can read data from</center>
 
 Weasis can ingest DICOM data from many sources:
 

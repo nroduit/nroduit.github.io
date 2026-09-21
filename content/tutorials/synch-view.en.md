@@ -5,7 +5,7 @@ description: "Synchronize views manually or automatically: the frame of referenc
 keywords: [ "view synchronization", "frame of reference", "series synchronization", "linked scrolling", "cross-reference" ]
 ---
 
-## <center>Synchronizing Views {{< svg-inline "static/tuto/icon/synch.svg" >}}</center>
+## <center>One action propagated across several views {{< svg-inline "static/tuto/icon/synch.svg" >}}</center>
 
 **View synchronization** propagates the same actions (scroll, zoom, window / level, …) across several views at once. Weasis offers two synchronization modes — an automatic mode driven by shared DICOM geometry (the **Frame of Reference UID**, abbreviated **FoR** throughout this page) and a manual mode to bridge views that the automatic mode cannot connect (only for scrolling).
 

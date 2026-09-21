@@ -7,7 +7,7 @@ keywords: [ "curved mpr", "cpr viewer", "panoramic view", "dental cbct", "cross-
 since: "4.7.1"
 ---
 
-## <center>Curved MPR (CPR) {{< svg-inline "static/tuto/icon/mpr.svg" >}}</center>
+## <center>Reformatting a volume along a drawn path {{< svg-inline "static/tuto/icon/mpr.svg" >}}</center>
 
 **Curved Multi-Planar Reconstruction** reformats a volume along a path you draw, instead of along a flat plane. From a single curve, Weasis produces two complementary results:
 

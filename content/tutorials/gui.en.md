@@ -6,7 +6,7 @@ linkTitle: "GUI Overview"
 keywords: [ "weasis interface", "dicom viewer interface", "toolbars", "user interface overview", "theme and scaling" ]
 ---
 
-## <center>Essential aspects of the interface {{< svg-inline "static/tuto/icon/Weasis.svg" >}}</center>
+## <center>The two areas of the DICOM workspace {{< svg-inline "static/tuto/icon/Weasis.svg" >}}</center>
 
 The image below shows the main elements of the Weasis graphical user interface. Click any of the green or blue areas to jump to the dedicated documentation for that element.
 

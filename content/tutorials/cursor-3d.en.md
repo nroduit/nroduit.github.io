@@ -6,7 +6,7 @@ linkTitle: "3D Cursor"
 keywords: [ "3d cursor", "crosshair dicom viewer", "anatomical localization", "cross-reference lines", "series navigation" ]
 ---
 
-## <center>3D cursor (crosshair) {{< svg-inline "static/tuto/icon/crosshair.svg" >}}</center>
+## <center>The same anatomical point in every view {{< svg-inline "static/tuto/icon/crosshair.svg" >}}</center>
 
 The 3D cursor — also called the **crosshair** — lets you click a point on one image and instantly see the **same anatomical point** in every other view that shares the same 3D coordinate system. Use it to:
 

@@ -6,7 +6,7 @@ linkTitle: "MIP Viewer"
 keywords: [ "mip viewer", "maximum intensity projection", "projection thickness", "vascular imaging" ]
 ---
 
-## <center>Maximum Intensity Projection (MIP) {{< svg-inline "static/tuto/icon/mip.svg" >}}</center>
+## <center>The brightest voxel along each ray through a slab {{< svg-inline "static/tuto/icon/mip.svg" >}}</center>
 
 **MIP** collapses a small stack of contiguous slices — a **slab** — into a single image by keeping the brightest voxel encountered along each ray through the slab. The technique is widely used to display high-intensity structures that would otherwise be split across many slices, such as **contrast-enhanced vessels (CT/MR angiography)**, **bones**, or **bright pulmonary nodules**. **MinIP** (minimum) and **Mean IP** (average) projections are also available — useful for **airways**, low-attenuation lesions, or smoother integrated views.
 

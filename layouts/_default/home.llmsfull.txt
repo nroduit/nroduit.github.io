@@ -5,17 +5,38 @@
   The source Markdown is emitted rather than the rendered HTML: headings, tables
   and links survive, while the sidebar, the version selector, the galleries and
   the analytics markup do not. Shortcodes are unwrapped instead of dropped — the
-  `since` and `until` badges become the plain words a model can act on, and block
-  shortcodes such as `notice` keep their inner prose. Inline
-  <style> and <script> blocks (the home page has both) are removed outright.
+  `since` and `until` badges become the plain words a model can act on, `button`
+  becomes the link it points at, and block shortcodes such as `notice` keep their
+  inner prose. Inline <style> and <script> blocks (the home page has both) are
+  removed outright.
 
-  Inline HTML written inside a page (the home page's card grid, for instance) is
-  kept as it stands: a model reads it without trouble, and guessing which tags
-  are layout and which carry meaning would do more harm than good.
+  Two things this file has to repair, because a concatenated text file is read
+  without a base URL and without a browser:
+
+  * Links are made absolute. A page written for the site says `](mpr)` or
+    `](../basics/customize/preferences)`, and `![](/images/…)` for an image —
+    targets that mean nothing once the page is one section among ninety. Each one
+    is resolved through the theme's own `linkObject` partial, so this file agrees
+    with what the site publishes, and falls back to joining the destination onto
+    the page permalink, which is what a browser would do with the same href.
+  * The presentational HTML a page writes by hand (the home page card grid, the
+    `<center>` in a title, `<br>` in a table cell) is unwrapped: `<a>` becomes a
+    Markdown link so the target is not lost — the three home page buttons used to
+    arrive as bare words — a heading tag becomes a Markdown heading, an `<li>`
+    becomes a bullet, and the rest of the tags go, taking their indentation with
+    them so the prose they wrapped does not read as an indented code block.
+
+  Both passes skip fenced code blocks, where `<your-host>` and `<key>` are data
+  and a `](…)` would be an example rather than a link. The tags acted on are an
+  allow list for the same reason.
 
   This is a derived artifact: nothing here is authored, so a page that reads
   badly in this file reads badly in its Markdown too.
 */ -}}
+{{- $blockTags := "div|p|center|span|section|figure|ul|ol|li" -}}
+{{- $openRE := printf `(?i)<(?:%s)(?:\s[^>]*)?>` $blockTags -}}
+{{- $closeRE := printf `(?i)</(?:%s)\s*>` $blockTags -}}
+{{- $tagRE := printf `(?i)</?(?:%s)(?:\s[^>]*)?>` $blockTags -}}
 {{- $pages := partial "_weasis/pagetree.gotmpl" (dict "page" site.Home) -}}
 # {{ site.Title }} — full text
 
@@ -24,11 +45,14 @@
 Source: {{ site.Home.Permalink }} — index of pages: {{ "llms.txt" | absURL }}
 Pages: {{ add 1 (len $pages) }}. Licensed CC BY-SA 4.0. Weasis itself is EPL-2.0 OR Apache-2.0.
 {{ range (slice site.Home | append $pages) }}
+{{- $page := . -}}
 {{- $md := .RawContent -}}
 {{- $md = replaceRE `(?s)<style[^>]*>.*?</style>` "" $md -}}
 {{- $md = replaceRE `(?s)<script[^>]*>.*?</script>` "" $md -}}
 {{- $md = replaceRE `(?s)<!--.*?-->` "" $md -}}
-{{- /* version markers first, so they survive the generic shortcode strip below */ -}}
+{{- /* shortcodes that carry a destination or a version marker are rewritten
+       first, so they survive the generic strip below */ -}}
+{{- $md = replaceRE `\{\{%-?\s*button\s+[^}]*?href="([^"]+)"[^}]*?-?%\}\}(.*?)\{\{%-?\s*/\s*button\s*-?%\}\}` "[$2]($1)" $md -}}
 {{- $md = replaceRE `\{\{[<%]-?\s*since\s+"?([0-9][^"\s]*)"?\s*-?[>%]\}\}` "(since v$1)" $md -}}
 {{- $md = replaceRE `\{\{[<%]-?\s*until\s+"?([0-9][^"\s]*)"?\s*-?[>%]\}\}` "(up to v$1)" $md -}}
 {{- $md = replaceRE `\{\{%-?\s*version\s+since="?([0-9][^"\s]*)"?[^}]*-?%\}\}` "(the following applies since v$1)" $md -}}
@@ -36,6 +60,65 @@ Pages: {{ add 1 (len $pages) }}. Licensed CC BY-SA 4.0. Weasis itself is EPL-2.0
 {{- /* every remaining shortcode call, opening or closing; the inner prose of a
        `%` shortcode is Markdown and stays */ -}}
 {{- $md = replaceRE `(?s)\{\{[<%]-?\s*/?\s*[a-zA-Z][^}]*?-?[>%]\}\}` "" $md -}}
+{{- /* line by line from here, because both remaining passes have to know whether
+       they are inside a fenced code block, and the HTML pass has to remember how
+       deep in a block it is to dedent what that block wrapped */ -}}
+{{- $out := slice -}}
+{{- $fence := false -}}
+{{- $depth := 0 -}}
+{{- range $line := (split $md "\n") -}}
+  {{- if hasPrefix (trim $line " \t") "```" -}}
+    {{- $fence = not $fence -}}
+  {{- else if not $fence -}}
+    {{- $opened := len (findRE $openRE $line) -}}
+    {{- $closed := len (findRE $closeRE $line) -}}
+    {{- /* an anchor keeps its target as a Markdown link, a heading tag becomes a
+           Markdown heading, a line break becomes a space (it is written inside
+           table cells), and the remaining tags are dropped */ -}}
+    {{- $line = replaceRE `(?i)<a\s[^>]*href="([^"]*)"[^>]*>(.*?)</a>` "[$2]($1)" $line -}}
+    {{- range $level := (seq 6) -}}
+      {{- $line = replaceRE
+        (printf `(?i)^[ \t]*<h%d(?:\s[^>]*)?>(.*?)</h%d\s*>[ \t]*$` $level $level)
+        (printf "%s $1" (strings.Repeat $level "#")) $line -}}
+    {{- end -}}
+    {{- $line = replaceRE `(?i)^[ \t]*<li(?:\s[^>]*)?>[ \t]*` "- " $line -}}
+    {{- $line = replaceRE `(?i)<br\s*/?>` " " $line -}}
+    {{- $line = replaceRE $tagRE "" $line -}}
+    {{- if gt $depth 0 -}}
+      {{- $line = strings.TrimLeft " \t" $line -}}
+    {{- end -}}
+    {{- $depth = add $depth (sub $opened $closed) -}}
+    {{- if lt $depth 0 }}{{ $depth = 0 }}{{ end -}}
+    {{- $line = replace $line "&amp;" "&" -}}
+    {{- /* every destination that is not already absolute */ -}}
+    {{- range $match := (findRE `\]\([^()\s]+(?:\s+"[^"]*")?\)` $line) -}}
+      {{- $inner := strings.TrimSuffix ")" (strings.TrimPrefix "](" $match) -}}
+      {{- $dest := index (split $inner " ") 0 -}}
+      {{- $rest := strings.TrimPrefix $dest $inner -}}
+      {{- $u := urls.Parse $dest -}}
+      {{- if and (not $u.Scheme) (not (hasPrefix $dest "#")) (not (hasPrefix $dest "//")) -}}
+        {{- $suffix := "" -}}
+        {{- with $u.RawQuery }}{{ $suffix = printf "?%s" . }}{{ end -}}
+        {{- with $u.Fragment }}{{ $suffix = printf "%s#%s" $suffix . }}{{ end -}}
+        {{- $abs := "" -}}
+        {{- if hasPrefix $dest "/" -}}
+          {{- $abs = printf "%s%s" ($u.EscapedPath | absURL) $suffix -}}
+        {{- else -}}
+          {{- with partial "_relearn/linkObject.gotmpl" (dict "url" $dest "page" $page) -}}
+            {{- $abs = printf "%s%s" .Permalink $suffix -}}
+          {{- end -}}
+          {{- if not $abs -}}
+            {{- $abs = printf "%s%s" (urls.JoinPath $page.Permalink $u.EscapedPath) $suffix -}}
+          {{- end -}}
+        {{- end -}}
+        {{- $line = replace $line $match (printf "](%s%s)" $abs $rest) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $out = $out | append $line -}}
+{{- end -}}
+{{- $md = delimit $out "\n" -}}
+{{- $md = replaceRE `(?m)[ \t]+$` "" $md -}}
 {{- $md = replaceRE `\n{3,}` "\n\n" $md -}}
 
 ---

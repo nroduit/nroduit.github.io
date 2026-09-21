@@ -4,23 +4,29 @@
 </style>
 -->
 
-{{- /* The <h1> is the page title, and those titles are written for search
-       results, so they run from 4 to 74 characters. The theme sizes every one
-       of them at a flat 3.25rem, uppercase and on a widened font axis, which
-       was tuned for the short ones: a long title then wraps to two or three
-       lines and towers over the page. So the size is a continuous function of
-       the title's length rather than a set of steps — with steps, two pages one
-       character apart differed by 20%, which is exactly what the reader notices
-       when moving between them. 3.25rem holds up to 24 characters and then
-       falls by 0.032rem per character, to a floor of 1.95rem (reached around
-       65). The arithmetic is done here rather than in a CSS calc() so that
-       nothing depends on how the minifier treats spaces inside calc. Same rule
-       on the Karnak site. */ -}}
-{{- $titlelen := len (.Title | plainify) -}}
-{{- $over := math.Max 0 (sub $titlelen 24) -}}
-{{- $size := math.Max 1.95 (sub 3.25 (mul $over 0.032)) -}}
-{{- $small := math.Max 1.5 (sub 2.5 (mul $over 0.025)) -}}
-<style>#R-body-inner > .flex-block-wrapper article h1{font-size:{{ printf "%.2f" $size }}rem}@media only screen and (max-width:47.999rem){#R-body-inner > .flex-block-wrapper article h1{font-size:{{ printf "%.2f" $small }}rem}}</style>
+{{- /* One <h1> size for every page of the site.
+
+       The page titles are written for search results, so they run from 4 to 58
+       characters. The theme sizes every one of them at a flat 3.25rem, uppercase
+       and on a widened font axis — tuned for the short ones, so the longest
+       wraps to three lines and towers over the page. Sizing each title on its
+       own length fixes that and introduces something worse: two pages opened one
+       after the other are then titled at different sizes, which a reader notices
+       far more readily than a tall heading. Driving one site-wide size from the
+       median title was tried too, and lands back on 3.25rem — the median is 18
+       characters, nowhere near the point where wrapping starts.
+
+       So: two numbers, written down. They come from the theme's own tuning —
+       one line holds about 24 characters at 3.25rem, so a line is worth
+       24 x 3.25 = 78 character-rem — and they are the size at which the longest
+       title on the site, 58 characters, still fits two lines: 156 / 58 = 2.69rem
+       on the desktop base, 120 / 58 = 2.07rem on the 2.5rem phone base.
+
+       Nothing recomputes this, so nothing changes under you when a page is
+       added. What keeps the numbers honest is seo-conformity.py, which warns
+       when a title passes H1_TWO_LINES characters — change these two values and
+       that constant together. */ -}}
+<style>#R-body-inner > .flex-block-wrapper article h1{font-size:2.69rem}@media only screen and (max-width:47.999rem){#R-body-inner > .flex-block-wrapper article h1{font-size:2.07rem}}</style>
 
 {{- /* Which address this page should be indexed under, and whether it should be
        indexed at all. The four cases are mutually exclusive, so exactly one

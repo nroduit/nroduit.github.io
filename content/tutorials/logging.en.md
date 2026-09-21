@@ -6,7 +6,7 @@ linkTitle: "Logging"
 keywords: [ "weasis log files", "logging configuration", "debug log", "trace level", "rolling log" ]
 ---
 
-## <center>Configure and View Log Files</center>
+## <center>What to read, and what to attach to a bug report</center>
 
 Weasis writes log files that are invaluable when something goes wrong — a series fails to load, a query times out, a third-party integration misbehaves, or the application crashes at startup. The same files are also what to attach when [opening a bug report](https://github.com/nroduit/Weasis/issues) so a developer can reproduce the problem.
 

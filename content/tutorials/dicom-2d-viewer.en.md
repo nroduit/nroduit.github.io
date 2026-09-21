@@ -5,7 +5,7 @@ description: "Read a stack of DICOM images: viewport layouts, toolbars, window l
 keywords: [ "dicom 2d viewer", "view dicom images", "image stack", "viewport layout", "window level", "cine playback" ]
 ---
 
-## <center>Displaying DICOM images {{< svg-inline "static/tuto/icon/view2d.svg" >}}</center>
+## <center>The default viewer, and the way into the others {{< svg-inline "static/tuto/icon/view2d.svg" >}}</center>
 
 The 2D viewer is the default viewer for any DICOM series that contains images — CT, MR, US, CR / DX, mammography, color photographs, and so on. It handles both single images and stacks (volumetric series), and is the entry point for the more specialized viewers such as [MPR](mpr), the [3D Volume Renderer](dicom-3d-viewer), and the [MIP](mip) projection. It can also overlay a PET or SPECT series on a CT/MR base — see [Image Fusion](fusion).
 

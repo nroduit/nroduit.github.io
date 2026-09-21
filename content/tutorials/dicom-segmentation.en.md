@@ -6,7 +6,7 @@ linkTitle: "DICOM SEG"
 keywords: [ "dicom seg", "dicom segmentation viewer", "segmentation overlay", "region statistics", "fractional segmentation" ]
 ---
 
-## <center>Displaying DICOM Segmentation {{< svg-inline "static/tuto/icon/segmentation.svg" >}}</center>
+## <center>Labelled regions carried beside their source images {{< svg-inline "static/tuto/icon/segmentation.svg" >}}</center>
 
 DICOM Segmentation (SEG) stores pixel-based labels — anatomical structures, lesions, organs at risk — as a separate object that references a source image series. It is the standard delivery format for [AI segmentation frameworks](dicom-artificial-intelligence#dicom-segmentation-seg), but also for manual or semi-automatic contouring tools.
 

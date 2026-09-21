@@ -6,7 +6,7 @@ linkTitle: "DICOM ECG Viewer"
 keywords: [ "dicom ecg viewer", "dicom waveform viewer", "ecg display", "12-lead ecg dicom", "waveform measurement" ]
 ---
 
-## <center>Displaying electrocardiography data {{< svg-inline "static/tuto/icon/ecg.svg" >}}</center>
+## <center>Lead layouts, intervals and on-screen calipers {{< svg-inline "static/tuto/icon/ecg.svg" >}}</center>
 
 The ECG viewer displays and analyzes electrocardiogram waveforms stored as DICOM Waveform objects — resting and stress 12-lead ECGs, ambulatory recordings, and rhythm strips. It also provides simple on-screen calipers for measuring intervals and amplitudes, with support for the common lead layouts (12-lead, 3-lead, rhythm strip).
 

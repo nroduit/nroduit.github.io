@@ -6,7 +6,7 @@ linkTitle: "MPR Viewer"
 keywords: [ "mpr viewer", "multiplanar reconstruction", "oblique reconstruction", "3d cursor", "crosshair", "axial coronal sagittal" ]
 ---
 
-## <center>Multi-planar reconstruction (MPR) {{< svg-inline "static/tuto/icon/mpr.svg" >}}</center>
+## <center>Coronal and sagittal built from one acquisition {{< svg-inline "static/tuto/icon/mpr.svg" >}}</center>
 
 The **MPR viewer** reconstructs the two complementary anatomical planes from a volumetric acquisition: starting from the original plane (typically axial), Weasis computes the corresponding **coronal** and **sagittal** views, all kept in sync through a shared 3D crosshair. **Oblique planes** are also supported {{< since "4.6.0" >}}.
 

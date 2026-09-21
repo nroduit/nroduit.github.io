@@ -6,7 +6,7 @@ linkTitle: "Docking"
 keywords: [ "docking", "panel layout", "undock window", "split view", "interface layout" ]
 ---
 
-## <center>Organizing the Interface with Docking</center>
+## <center>Arranging the workspace around the task</center>
 
 Almost every panel and viewer tab in Weasis can be **moved, split, pinned, or hidden** by dragging it with the mouse. This lets you arrange the workspace around the task at hand — for instance comparing two series side by side, putting the [MPR viewer](mpr) and the [3D Volume Renderer](dicom-3d-viewer) next to each other for [crosshair-driven volume cutting](dicom-3d-viewer#mpr-cut), or maximizing a single view for a focused read — without leaving the application.
 

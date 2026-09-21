@@ -6,7 +6,7 @@ linkTitle: "Zoom"
 keywords: [ "dicom zoom", "magnifying lens", "zoom preset", "real-world size", "1:1 zoom" ]
 ---
 
-## <center>Zoom Tool {{< svg-inline "static/tuto/icon/zoom.svg" >}}</center>
+## <center>How much of the image fits in the view {{< svg-inline "static/tuto/icon/zoom.svg" >}}</center>
 
 The zoom tool changes how much of the image fits into the view. Beyond the standard "fit to screen" / "fit to pixel" magnifications, Weasis offers a **Real-world Size** mode that displays images at their **actual physical dimensions** on a calibrated monitor — useful for visual size estimation, surgical planning, or prosthesis sizing.
 

@@ -6,7 +6,7 @@ linkTitle: "Dicomizer"
 keywords: [ "convert to dicom", "jpeg to dicom", "image to dicom", "dicomizer", "secondary capture", "publish dicom" ]
 ---
 
-## <center>How to convert images into DICOM files {{< svg-inline "static/tuto/icon/Dicomizer.svg" >}}</center>
+## <center>Photos, reports and videos into a PACS {{< svg-inline "static/tuto/icon/Dicomizer.svg" >}}</center>
 
 The **Dicomizer** converts standard files — photos, scanned reports, videos, 3D models — into DICOM objects so they can be archived in a PACS alongside acquisitions from imaging modalities. Typical use cases include adding dermatology or wound-care photos to a study, attaching a PDF report or consent form, archiving endoscopic or surgical videos, and packaging STL files used for 3D printing.
 

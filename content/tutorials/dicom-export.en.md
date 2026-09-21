@@ -6,7 +6,7 @@ linkTitle: "DICOM Export"
 keywords: [ "export dicom", "dicomdir", "dicom zip export", "save dicom as jpeg", "export view" ]
 ---
 
-## <center>How to export DICOM files</center>
+## <center>A picture of the view, or DICOM objects</center>
 
 Weasis offers two complementary export workflows:
 

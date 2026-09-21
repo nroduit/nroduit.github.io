@@ -7,7 +7,7 @@ keywords: [ "pet ct fusion", "image fusion", "suv statistics", "spect fusion", "
 since: "4.7.1"
 ---
 
-## <center>Image Fusion</center>
+## <center>Functional series over anatomy, without registration</center>
 
 **Image fusion** overlays a functional series — **PET** (`PT`) or **SPECT** (`NM`) — on top of an anatomical **CT** or **MR** base, so metabolic uptake can be read against the underlying anatomy. The overlay is a **registration-free geometric fusion**: Weasis aligns the two series from their DICOM spatial metadata alone, with no manual or algorithmic registration step. Available {{< since "4.7.1" >}}.
 

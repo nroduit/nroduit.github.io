@@ -6,7 +6,7 @@ linkTitle: "Draw & Measure"
 keywords: [ "dicom measurement", "annotate dicom", "draw on dicom image", "distance measurement", "angle measurement", "roi" ]
 ---
 
-## <center>How to draw and measure on images {{< svg-inline "static/tuto/icon/measure.svg" >}}</center>
+## <center>What each tool draws, and what it reports {{< svg-inline "static/tuto/icon/measure.svg" >}}</center>
 
 The **Draw & Measure** panel lets you annotate and measure on DICOM and standard images — distances, angles, areas, regions of interest, free-hand shapes, and text labels. Measurement values are computed from the image's spatial [calibration](calibration) when available, and from pixel statistics when the shape is closed.
 

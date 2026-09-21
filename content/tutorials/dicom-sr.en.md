@@ -6,7 +6,7 @@ linkTitle: "DICOM SR Viewer"
 keywords: [ "dicom sr viewer", "structured report", "dicom sr tree", "sr measurements", "dicom report" ]
 ---
 
-## <center>Displaying DICOM Structured Report {{< svg-inline "static/tuto/icon/text.svg" >}} </center>
+## <center>Findings as a coded tree, not free text {{< svg-inline "static/tuto/icon/text.svg" >}}</center>
 
 A **DICOM Structured Report (SR)** carries structured findings — measurements, observations, classifications, and references back to the images they were derived from — as a hierarchical tree of content items rather than free-form text. SRs are produced by radiology reporting systems, ultrasound machines, CAD applications, and increasingly by [AI inference frameworks](dicom-artificial-intelligence#dicom-structured-report-sr) that need to expose machine-readable results.
 

@@ -6,7 +6,7 @@ linkTitle: "DICOM Attributes"
 keywords: [ "dicom attributes", "dicom tags", "dicom header viewer", "tag viewer", "compare dicom tags" ]
 ---
 
-## <center>How to display DICOM attributes {{< svg-inline "static/tuto/icon/metadata.svg" >}}</center>
+## <center>Metadata in the layout, or in a separate window {{< svg-inline "static/tuto/icon/metadata.svg" >}}</center>
 
 Every DICOM object carries a set of **attributes** (also called **tags** or metadata) that describe the patient, the study, the acquisition device, the imaging parameters, and so on. Weasis can display these attributes in two ways — a dynamic in-layout view that follows the current image, or a detached window snapshot of a single instance.
 

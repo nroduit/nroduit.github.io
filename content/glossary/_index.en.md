@@ -1,7 +1,7 @@
 ---
 title: "DICOM Glossary"
 linkTitle: "Glossary"
-description: "Short, plain-language definitions of the DICOM and imaging terms used across this documentation — MPR, MIP, SUV, SEG, SR, RT objects, DICOMweb, window and level."
+description: "Plain-language definitions of the DICOM and imaging terms used in this documentation — MPR, MIP, SUV, SEG, SR, RT objects, DICOMweb, window and level."
 keywords: [ "dicom glossary", "dicom terms", "medical imaging glossary", "dicom definitions" ]
 weight: 30
 ---

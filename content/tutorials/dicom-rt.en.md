@@ -6,7 +6,7 @@ linkTitle: "DICOM RT"
 keywords: [ "dicom rt viewer", "rtstruct", "rt dose", "isodose lines", "dvh chart", "radiotherapy dicom" ]
 ---
 
-## <center>Displaying radiotherapy information {{< svg-inline "static/tuto/icon/rt.svg" >}}</center>
+## <center>The three objects a treatment is stored in {{< svg-inline "static/tuto/icon/rt.svg" >}}</center>
 
 Radiotherapy treatment data is distributed across three companion DICOM objects:
 

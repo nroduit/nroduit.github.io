@@ -6,7 +6,7 @@ linkTitle: "DICOM 3D Viewer"
 keywords: [ "dicom 3d viewer", "volume rendering", "3d dicom viewer", "rendering preset", "mpr cut mode", "gpu requirements" ]
 ---
 
-## <center>Displaying volume data {{< svg-inline "static/tuto/icon/volume.svg" >}}</center>
+## <center>Rotate, slice, recolor and light a volume {{< svg-inline "static/tuto/icon/volume.svg" >}}</center>
 
 The 3D viewer reconstructs a CT, MR, PET, or other volumetric series into an interactive volume rendering that can be rotated, sliced, recolored, and lit in real time. Typical uses include reviewing CT angiography, inspecting bone or vascular anatomy, surgical-planning views, and quickly conveying findings to colleagues or patients. The viewer is available {{< since "4.1.0" >}}; its renderer and view synchronization were substantially improved {{< since "4.7.0" >}}.
 

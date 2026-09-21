@@ -5,7 +5,7 @@ keywords: [ "weasis shortcuts", "keyboard shortcuts", "mouse shortcuts", "dicom 
 weight: 20
 ---
 
-## <center>Keyboard and Mouse Shortcuts</center>
+## <center>The defaults, and where to change them</center>
 
 Here is a list of the default keyboard and mouse shortcuts in Weasis. The shortcuts are divided into different categories for better understanding.
 

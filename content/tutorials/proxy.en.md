@@ -6,7 +6,7 @@ linkTitle: "Proxy server"
 keywords: [ "weasis proxy", "http proxy", "proxy configuration", "network configuration" ]
 ---
 
-## <center>How to configure a proxy server</center>
+## <center>Reaching the outside world from a closed network</center>
 
 If Weasis must reach the outside world through a corporate proxy — for example to pull updates, fetch a study from a remote DICOMweb server, or use a third-party launcher — you can either configure the proxy from the user interface or pass standard JVM proxy properties at launch.
 

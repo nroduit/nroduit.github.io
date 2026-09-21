@@ -6,7 +6,7 @@ linkTitle: "DICOMweb Configuration"
 keywords: [ "dicomweb", "qido-rs", "wado-rs", "stow-rs", "dicomweb viewer", "dicomweb configuration", "orthanc", "dcm4chee" ]
 ---
 
-## <center>How to configure a DICOMweb node</center>
+## <center>Adding an HTTP archive to the query dialog</center>
 
 **DICOMweb** is the modern, HTTP-based set of DICOM services (QIDO-RS for query, WADO-RS for retrieve, STOW-RS for store, plus the legacy WADO-URI). Once a DICOMweb node is configured in Weasis, it shows up in the [DICOM Query/Retrieve](dicom-import/#dicom-queryretrieve) dialog and behaves like any other archive.
 
