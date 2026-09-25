@@ -3,17 +3,20 @@
        publishes one that is simply ignored — those builds rely on the noindex
        meta tag and the canonical link instead (layouts/partials/custom-header.html).
 
-       The withheld paths are built once, into $rules, and emitted for every
-       group. That is not tidiness: a crawler named in its own group ignores the
+       Any withheld path goes into $rules once, and is emitted for every group.
+       That is not tidiness: a crawler named in its own group ignores the
        `User-agent: *` group completely, so a rule added to one group and not the
-       other silently applies to some crawlers and not others. */ -}}
-{{- $prefix := strings.TrimSuffix "/" (urls.Parse site.BaseURL).Path -}}
-{{- $rules := slice "/*/search/" -}}
-{{- range hugo.Sites -}}
-  {{- $rules = $rules | append
-      (printf "%s/%s/tags/" $prefix .Language.Lang)
-      (printf "%s/%s/categories/" $prefix .Language.Lang) -}}
-{{- end -}}
+       other silently applies to some crawlers and not others.
+
+       $rules is empty on purpose. It used to disallow the search page and the
+       tag and category listings, which kept Google from ever reading the
+       `noindex` that takes them out of the index: they stayed indexed, in every
+       language. They are served `noindex` now (custom-header.html), and a
+       Disallow here would bring the same trap back. If a path ever needs
+       withholding, spell taxonomy paths one language at a time with the base
+       URL's path prefix — never a wildcard on `tags/`, which also matches the
+       DICOM attributes tutorial at /en/tutorials/tags/. */ -}}
+{{- $rules := slice -}}
 # robots.txt for {{ absURL "" }}
 #
 # This documentation exists to be read, quoted and indexed — by search engines
@@ -28,17 +31,12 @@
 #   {{ absURL "llms.txt" }}       annotated map of every page
 #   {{ absURL "llms-full.txt" }}  the whole documentation in one file
 #
-# Only three kinds of URL are withheld, none of which is content: the JavaScript
-# search page, which renders nothing without a query, and the tag and category
-# listings, which no page on this site populates. The taxonomy paths are spelled
-# out one language at a time rather than as /*/tags/, which would also match the
-# DICOM attributes tutorial at /en/tutorials/tags/. They carry the base URL's own
-# path prefix, which is empty on this domain but not in a build served from a
-# subdirectory — a robots path is absolute on its host, so the prefix belongs in
-# it. The printer-friendly rendering of each page (…/index.print.html) is left
-# crawlable on purpose even though it is served `noindex`: a crawler has to fetch
-# a page to be told not to index it, and blocking it here would leave the
-# duplicate address eligible for the index on the strength of its inbound links.
+# Nothing is withheld. The pages that are not content (the JavaScript search
+# page, the tag and category listings, the printer-friendly rendering of each
+# page at …/index.print.html) are served `noindex` instead, and are left
+# crawlable on purpose: a crawler has to fetch a page to be told not to index
+# it, and blocking it here would leave the address in the index on the strength
+# of its inbound links.
 
 User-agent: *
 Allow: /

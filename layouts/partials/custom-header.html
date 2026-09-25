@@ -29,7 +29,7 @@
 <style>#R-body-inner > .flex-block-wrapper article h1{font-size:2.69rem}@media only screen and (max-width:47.999rem){#R-body-inner > .flex-block-wrapper article h1{font-size:2.07rem}}</style>
 
 {{- /* Which address this page should be indexed under, and whether it should be
-       indexed at all. The four cases are mutually exclusive, so exactly one
+       indexed at all. The five cases are mutually exclusive, so exactly one
        canonical link and at most one robots directive is emitted. */ -}}
 {{- $format := .Store.Get "relearnOutputFormat" | default "html" -}}
 {{- if isset .Params "canonical" -}}
@@ -44,6 +44,14 @@
      with the current line for the same queries, and credit the live page */}}
 <meta name="robots" content="noindex, follow" />
 <link rel="canonical" href="{{ partial "_weasis/liveURL.gotmpl" . }}" />
+{{- else if or (eq .Type "_relearn_searchpage") (in (slice "taxonomy" "term") .Kind) -}}
+{{/* not content: the JavaScript search page, which renders nothing without a
+     query, and the tag and category listings, which no page populates. Google
+     indexed them anyway, in every language, with `?search-by=…` variants of the
+     search page. noindex is what takes them out of the index, and it only works
+     because robots.txt lets a crawler fetch these pages to read it. */}}
+<meta name="robots" content="noindex, follow" />
+<link rel="canonical" href="{{ .Permalink }}" />
 {{- else -}}
 <link rel="canonical" href="{{ .Permalink }}" />
 {{/* Let search engines and AI answer panels use the whole page: an unbounded

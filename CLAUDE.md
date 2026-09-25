@@ -169,16 +169,19 @@ template overrides — and it breaks without failing a build. The moving parts:
 - `layouts/partials/custom-header.html` decides, per page, which URL it is
   indexed under and whether it is indexed at all: self-referential canonical plus
   `max-snippet:-1, max-image-preview:large` for ordinary pages, `noindex` for the
-  printer-friendly rendering and for a documentation-line build, and the
+  printer-friendly rendering, the search page, the tag and category listings,
+  and a documentation-line build, and the
   `og:image` fallback for pages with no image of their own.
 - `layouts/partials/seo-jsonld.html` emits schema.org JSON-LD as one entity graph:
   `#organization`, `#website` and `#weasis` are declared once on the home page and
   referenced by `isPartOf` / `about` / `publisher` from every other page, which is
   what lets a crawler merge the pages into one picture of one program. Breadcrumbs
   are deliberately left to the theme's microdata — do not add a second trail.
-- `layouts/robots.txt` welcomes AI crawlers by name and withholds only the search
-  page and the taxonomy stubs. Never disallow by a pattern like `/*/tags/`: it
-  also matches `/en/tutorials/tags/`.
+- `layouts/robots.txt` welcomes AI crawlers by name and withholds nothing. The
+  search page and the taxonomy stubs are served `noindex` by
+  `custom-header.html` instead: disallowing them kept Google from reading that
+  `noindex`, and they stayed indexed. Never disallow by a pattern like
+  `/*/tags/`: it also matches `/en/tutorials/tags/`.
 - `/llms.txt` and `/llms-full.txt` (`layouts/_default/home.llms.txt`,
   `home.llmsfull.txt`, helper `layouts/partials/_weasis/pagetree.gotmpl`) follow
   the convention at <https://llmstxt.org/>. They reach the **site root** through
