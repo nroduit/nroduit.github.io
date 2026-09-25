@@ -15,7 +15,7 @@ You will find:
 - **[Shortcuts](shortcuts)** — the full keyboard-shortcut reference.
 - **[Commands](commands)** — the command-line and console catalog (`$dicom:get`, `$image:close`, …) usable from scripts, the Weasis console, or remote control.
 - **[System Resources](system-resources)** — heap sizing, file handles, network tuning, and other runtime knobs for large workstations or multi-user deployments.
-- **[DICOM Conformance](dicom)** — the transfer syntaxes Weasis reads and writes, and the photometric interpretations it renders.
+- **[DICOM Conformance](dicom)** — the summary conformance statement: objects displayed and created, network services, transfer syntaxes, pixel formats and IHE profiles.
 
 If you are deploying Weasis behind a PACS / VNA, see also the [Customize → Integration](customize/integration) guide and the [ViewerHub](../viewer-hub) launcher.
 

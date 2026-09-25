@@ -21,7 +21,7 @@ Get started with these links to learn more about Weasis and its features:
 - **[Tutorials](tutorials):** Comprehensive tutorials to help you get the most out of Weasis.
 - **[Weasis Forum](https://groups.google.com/group/dcm4che):** Join discussions and get support directly from the community.
 - **[Frequently Asked Questions (FAQs)](faq):** Find quick answers to common questions about using Weasis.
-- **[DICOM Conformance](basics/dicom):** the transfer syntaxes and pixel formats Weasis supports.
+- **[DICOM Conformance](basics/dicom):** the summary conformance statement: objects, network services, transfer syntaxes and IHE profiles.
 - **[Get Involved!](get-involved):** Learn how to contribute to the Weasis project.
 
 ### Developer Documentation
