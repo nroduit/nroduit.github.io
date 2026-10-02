@@ -14,9 +14,9 @@ Weasis writes log files that are invaluable when something goes wrong — a seri
 
 Open the log folder directly from the menu: **_Help > Open the logging folder_**, available {{< since "4.1.0" >}}.
 
-{{% notice tip %}}
+{{% callout tip %}}
 **On earlier versions:** the log folder is `<user.home>/.weasis/log`. To find `<user.home>` from inside Weasis, open **_Help > About Weasis_** and look up the `weasis.path` property in the **System Information** tab.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Types of log files
 
@@ -52,9 +52,9 @@ Once a rolling log reaches its maximum size, it is rotated and the previous file
 ![Preferences](/tuto/logging.webp?classes=shadow)
 <br>
 
-{{% notice tip %}}
+{{% callout tip %}}
 While investigating an issue, leave **Stacktrace limit** **empty** (or set it to `0`) to capture the full stack — Weasis will then keep every line of every exception. Revert to a low value once the investigation is over to keep log files compact.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Understanding log levels
 
@@ -68,14 +68,14 @@ Pick the lowest log level you actually need:
 
 Each level includes everything from the levels above it.
 
-{{% notice warning %}}
+{{% callout warning %}}
 **DEBUG** and **TRACE** generate significantly more data and may impact performance — enable them only while actively investigating a problem, and switch back to **INFO** once done.
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice info %}}
+{{% callout info %}}
 The default logging configuration comes from `base.json`. See [Weasis Preferences](../basics/customize/preferences) for the property lookup order. Some default values have changed {{< since "4.4.0" >}}.
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice tip %}}
+{{% callout tip %}}
 **Attaching logs to a bug report:** for a clean repro, set the level to **DEBUG** or **TRACE**, restart Weasis, reproduce the issue, then attach both `boot.log` and the most recent `default.log*` files to the [GitHub issue](https://github.com/nroduit/Weasis/issues). The compressed rotated files are also useful when the bug only manifests after long use.
-{{% /notice %}}
+{{% /callout %}}

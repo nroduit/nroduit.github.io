@@ -11,4 +11,4 @@ from the GitHub releases when this site is built. It is what the download table
 on this site reads, and it is available to any other tool that needs the same
 information.
 
-{{% children %}}
+{{% pages display="tree" %}}

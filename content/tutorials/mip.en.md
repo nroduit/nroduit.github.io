@@ -13,7 +13,7 @@ keywords: [ "mip viewer", "maximum intensity projection", "projection thickness"
 MIP is **integrated directly into the [DICOM 2D viewer](dicom-2d-viewer)** {{< since "4.7.0" >}}, with full synchronization and a slab-geometry overlay shared with linked views.
 
 {{% version until="4.6" %}}
-{{% notice note %}}
+{{% callout note %}}
 In **4.6 and earlier**, MIP is a **standalone viewer** rather than a mode of the 2D viewer. The same {{< svg-inline "static/tuto/icon/mip.svg" >}} button in the **Basic 3D** toolbar opens a separate MIP window, driven by a **modal MIP Options dialog**, and several things on this page work differently:
 
 - **No synchronization** — the MIP window is independent: no slab cross-lines on a complementary series, and no per-view MIP indicator.
@@ -24,7 +24,7 @@ In **4.6 and earlier**, MIP is a **standalone viewer** rather than a mode of the
 - **Rebuild Series** — the dialog's own button builds the new series, which is added to the [DICOM Explorer](dicom-explorer/) and can be [exported](dicom-export/#exporting) like any other series. A custom windowing is carried over to the presets of the new series.
 
 The [Windowing and Rendering](lut/) section of the dialog is available {{< since "4.4.0" >}}.
-{{% /notice %}}
+{{% /callout %}}
 {{% /version %}}
 
 MIP is also available in the other 3D-capable viewers, each with its own configuration:
@@ -36,13 +36,13 @@ MIP is also available in the other 3D-capable viewers, each with its own configu
 
 Enable the projection from {{< svg-inline "static/tuto/icon/mip.svg" >}} in the **Basic 3D** toolbar of the [DICOM 2D viewer](dicom-2d-viewer).
 
-{{% notice note %}}
+{{% callout note %}}
 The button is grayed out when the current series has fewer than **5 images** — the minimum needed for a meaningful projection.
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice tip %}}
+{{% callout tip %}}
 If the series is a **multi-phase 4D acquisition** (for example a cardiac CT with several temporal phases), Weasis automatically splits it into individual phase sub-series when 2–7 phases are detected. For series with 8 or more phases, a confirmation dialog is shown first. Open any resulting phase sub-series to use it in MIP mode — see [4D Series Sub-Series Splitting](dicom-explorer#4d-splitting).
-{{% /notice %}}
+{{% /callout %}}
 
 {{% version since="4.7.0" %}}
 Once active, MIP in the 2D viewer provides:
@@ -62,9 +62,9 @@ The MIP options panel can be opened from either of two places:
 ![MIP Options](/tuto/mip.jpg?classes=shadow)
 <br>
 
-{{% notice note %}}
+{{% callout note %}}
 Annotations and measurements **can** be added on a MIP-projected image, but they are **not persistent when scrolling**: each annotation is tied to the exact slice position on which it was drawn, and disappears as soon as you navigate away. To keep annotations attached to a specific MIP configuration, [build a new series](#build-a-new-series) from those options.
-{{% /notice %}}
+{{% /callout %}}
 
 #### Projection
 The projection type controls how each pixel of the output is computed across the slab:

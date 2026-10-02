@@ -18,9 +18,9 @@ To open the histogram, pick the **Histogram** layout from the layouts dropdown i
 * **Bins** — width of the value intervals grouped together in each bar. The default is computed as `max − min` of the pixel values, capped at **512**; you can override it with any value between **64** and **4096**.
 * **Statistics** — show pixel statistics next to the histogram, useful for analyzing and comparing images or regions quantitatively. For the definition of each statistic, see [Pixel Statistics](draw-measure/#selected-measurement).
 
-{{% notice note %}}
+{{% callout note %}}
 The X axis values are the **modality values** (e.g. Hounsfield units for CT) when a Modality LUT applies, or the raw pixel values otherwise. When the modality has a known unit, the unit is appended to the histogram title.
-{{% /notice %}}
+{{% /callout %}}
 
 ![Open Histogram](/tuto/histogram.jpg?classes=shadow&width=100%)
 
@@ -32,13 +32,13 @@ The X axis values are the **modality values** (e.g. Hounsfield units for CT) whe
 * **Show intensity color** — color each bin with the active LUT; otherwise the bars are drawn in black.
 * **Reset** — restore the default display parameters.
 
-{{% notice note %}}
+{{% callout note %}}
 A histogram can also be computed on a **region of interest** instead of the full image: draw a closed shape with the [measurement tools](draw-measure/#measurement-tools) and select it to display its histogram (see screenshot below).
-{{% /notice %}}
+{{% /callout %}}
 
 ![Histogram parameters](/tuto/color-histogram.webp?classes=shadow&width=100%)
 <br>
 
-{{% notice tip %}}
+{{% callout tip %}}
 Click any bin in the histogram to display its occurrence count and the modality-value range it covers.
-{{% /notice %}}
+{{% /callout %}}

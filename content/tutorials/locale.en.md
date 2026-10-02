@@ -22,13 +22,13 @@ From the main menu, open **_File > Preferences (Alt + P)_** and pick the desired
 ![Preferences](/tuto/language-prefs.webp?classes=shadow)
 <br>
 
-{{% notice tip %}}
+{{% callout tip %}}
 Only languages with at least **30 % translation coverage** are listed. If a language you need is missing or incomplete, you can help fill the gaps — see the [translation contribution guide](../getting-started/translating).
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice note %}}
+{{% callout note %}}
 Dates and numbers throughout the user interface are formatted according to the selected regional format.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Changing the default locale at deployment
 

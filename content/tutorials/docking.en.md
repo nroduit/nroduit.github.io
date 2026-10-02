@@ -22,9 +22,9 @@ Reorganize tabs by **dragging and dropping** them:
 
 This makes it possible, for example, to compare two series simultaneously in a split-screen layout, or to keep an MPR tab next to a 3D rendering of the same volume.
 
-{{% notice tip %}}
+{{% callout tip %}}
 To return to a single-tab layout, drag one of the split tab groups back onto the other, or close the extra view.
-{{% /notice %}}
+{{% /callout %}}
 
 #### Tab contextual menu
 
@@ -36,9 +36,9 @@ The same layout changes are available without dragging {{< since "4.7.3" >}}. **
 
 The two split entries are only enabled when the tab **shares its group with at least one other tab**: a tab alone in its area has nothing to split away from. The split always divides the **current group** in half, so a group that is itself the result of an earlier split can be split again, as deep as needed.
 
-{{% notice tip %}}
+{{% callout tip %}}
 Tabs are titled after the patient, so several tabs of the same patient (2D view, MPR, 3D) look alike in the **Move to Other Group** submenu. Each entry therefore carries a small **diagram of the central area with its group highlighted**, showing at a glance where the tab will land.
-{{% /notice %}}
+{{% /callout %}}
 
 The menu also holds the tab closing actions: **Close**, **Close Others** and **Close All**.
 
@@ -77,6 +77,6 @@ Inside the vertical strip, individual tool panels can be **split and re-docked**
 
 This lets you arrange the most-used tools exactly where you want them for a given reading workflow.
 
-{{% notice note %}}
+{{% callout note %}}
 The docking layout is **not currently saved between sessions**. Panel positions and splits can depend on the displayed data and on the environment (screen resolution, number of screens), which makes reliable persistent restoration impractical for now.
-{{% /notice %}}
+{{% /callout %}}

@@ -13,8 +13,8 @@ If you are new to Weasis, it is recommended to read this [page](gui) to understa
 
 The tutorials are organized by topics and can be read independently. If a DICOM term is new to you, the [glossary](../glossary) defines the ones used here — MPR, MIP, SUV, SEG, SR, RT objects, DICOMweb, window and level.
 
-{{% children description="true" %}}
+{{% pages description="true" display="tree" %}}
 
-{{% notice note %}}
+{{% callout note %}}
 If you find any errors or inaccuracies, just click the Edit button displayed on top right of each page, and make a pull request to submit your changes.
-{{% /notice %}}
+{{% /callout %}}

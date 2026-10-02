@@ -41,13 +41,13 @@ The following list describes the types of plugins, the interfaces they implement
     - Represents the bundle for the application's main user interface which aggregates various interface components.
     - The Maven artifact for this bundle must be defined in the `base.json` file (e.g., code:`weasis.main.ui` value:`weasis-base-ui`).
 
-{{% notice note %}}
+{{% callout note %}}
 The factories are used to create the instances of the plugins and are registered as OSGi services. For performance reasons, the factories are created at startup and the plugins are created only if they are needed.
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice tip %}}
+{{% callout tip %}}
 For more information about the plugin hierarchy and their relationships, refer to the [Weasis Architecture](../architecture).
-{{% /notice %}}
+{{% /callout %}}
 
 ### Building Plugins Using Maven Archetype
 
@@ -75,10 +75,10 @@ For more information about the plugin hierarchy and their relationships, refer t
 
 Once the plugin is built, it can be integrated into the Weasis distributions either locally or remotely.
 
-{{% notice warning %}}
+{{% callout warning %}}
 The plugin depends on the Weasis framework, and its version must align with the version of the Weasis distribution being integrated.<br>
 If the versions do not match, the plugin may fail to start and produce an error such as _org.osgi.framework.BundleException: Unable to resolve myplugin ..._.
-{{% /notice %}}
+{{% /callout %}}
 
 #### Testing the Plugin
 
@@ -190,7 +190,7 @@ public class MyViewerPrefFactory implements PreferencesPageFactory {
 }
 
 {{< /highlight >}}
-{{% notice tip %}} 
+{{% callout tip %}} 
 For more details on annotations, refer to the [Apache Felix SCR Annotations documentation](https://felix.apache.org/documentation/subprojects/apache-felix-maven-scr-plugin/scr-annotations.html).
-{{% /notice %}}
+{{% /callout %}}
 

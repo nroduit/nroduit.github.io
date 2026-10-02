@@ -78,9 +78,9 @@ Configuration (see also the general steps [above](#general-configuration-steps))
 
 ![Google template](/tuto/dicomweb-google-auth.webp?classes=shadow&width=750px)
 
-{{% notice note %}}
+{{% callout note %}}
 The DICOMweb thumbnail service is not currently supported by the Google API, so series thumbnails will not preview before the full retrieve.
-{{% /notice %}}
+{{% /callout %}}
 
 #### Orthanc WEB Server
 
@@ -96,9 +96,9 @@ https://demo.orthanc-server.com/dicom-web
 
 <br>
 
-{{% notice note %}}
+{{% callout note %}}
 The DICOMweb implementation in Orthanc does not currently support the [thumbnail service](https://www.dicomstandard.org/news/supplements/view/thumbnail-service-over-dicomweb), so series thumbnails will not preview before the full retrieve.
-{{% /notice %}}
+{{% /callout %}}
 
 #### dcm4chee-arc-light
 

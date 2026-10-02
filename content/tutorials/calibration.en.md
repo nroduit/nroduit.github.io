@@ -39,13 +39,13 @@ When no calibration is available — or when you want to override an existing on
 ![Apply Calibration](/tuto/apply-calibration.webp?classes=shadow)
 <br>
 
-{{% notice note %}}
+{{% callout note %}}
 The Manual Calibration dialog can apply the new scale either to the **current image only** or to **every image in the series**. Pick the right scope for your dataset (a series with consistent geometry is normally calibrated as a whole).
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice info %}}
+{{% callout info %}}
 Once the image is calibrated, all measurement tools report values in the chosen unit and the [real-world zoom](zoom/#real-world-size-display) renders the image at its physical size. The manual calibration is kept in memory for the current session but is **not currently written back into the DICOM file**.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Changing spatial calibration with Weasis 1.1.3
 The procedure shown below was recorded on an older version of Weasis; the underlying workflow is unchanged.

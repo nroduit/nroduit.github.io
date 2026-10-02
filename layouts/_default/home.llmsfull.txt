@@ -6,7 +6,7 @@
   and links survive, while the sidebar, the version selector, the galleries and
   the analytics markup do not. Shortcodes are unwrapped instead of dropped — the
   `since` and `until` badges become the plain words a model can act on, `button`
-  becomes the link it points at, and block shortcodes such as `notice` keep their
+  becomes the link it points at, and block shortcodes such as `callout` keep their
   inner prose. Inline <style> and <script> blocks (the home page has both) are
   removed outright.
 

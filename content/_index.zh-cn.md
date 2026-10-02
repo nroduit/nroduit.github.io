@@ -23,9 +23,9 @@ aliases:
 {{% button href="/en/tutorials" style="secondary" icon="book" %}}阅读教程{{% /button %}}
 </p>
 
-{{% notice note %}}
+{{% callout note %}}
 本主页提供中文版本。**其余文档目前仅有英文版本**，以下链接将跳转到英文页面。
-{{% /notice %}}
+{{% /callout %}}
 
 ### 文档导航
 

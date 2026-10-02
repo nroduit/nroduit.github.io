@@ -31,25 +31,25 @@ These objects carry their own pixel data and are viewed as standalone images.
 
 Pre-rendered images where the AI has burned its output directly into the pixels — typically annotations, heatmaps, or side-by-side comparisons. Convenient for legacy viewers, but the overlay cannot be toggled off or recomputed.
 
-{{% notice info %}}
+{{% callout info %}}
 Secondary Capture displays like any other image, see [DICOM 2D Viewer](dicom-2d-viewer).
-{{% /notice %}}
+{{% /callout %}}
 
 #### DICOM Enhanced Objects
 
 Reconstructed or post-processed images — for example denoised CTs, super-resolved MRs, or motion-corrected series. The output replaces or complements the original acquisition rather than annotating it.
 
-{{% notice info %}}
+{{% callout info %}}
 Enhanced images display like any other image. Overlays, shutters, and pixel padding stored in the object are honored by the rendering pipeline — see [2D Viewer Display](dicom-2d-viewer/#image).
-{{% /notice %}}
+{{% /callout %}}
 
 #### DICOM Parametric Map (PMAP)
 
 Single- or multi-frame images whose pixel values represent a derived quantity rather than an acquisition signal — common carriers for AI probability maps, class-activation heatmaps, perfusion (rCBF, rCBV, MTT), diffusion (ADC), and PET-derived metrics.
 
-{{% notice info %}}
+{{% callout info %}}
 Weasis renders Parametric Maps as standard images, including the float and double pixel representations that AI pipelines typically emit. Window/level and LUT controls apply normally — pick a suitable [LUT](lut) to interpret the value range.
-{{% /notice %}}
+{{% /callout %}}
 
 ## Image overlays
 
@@ -59,17 +59,17 @@ These objects do not contain a viewable image of their own; they reference a sou
 
 Pixel-based labels produced by segmentation models — anatomical structures, lesions, organs at risk, etc. Each segment is stored as a binary or fractional mask and is independently toggleable in the viewer.
 
-{{% notice info %}}
+{{% callout info %}}
 See [DICOM SEG](dicom-segmentation) for displaying DICOM SEG objects in Weasis, including in MPR and the 3D Volume Renderer.
-{{% /notice %}}
+{{% /callout %}}
 
 #### DICOM RTSTRUCT
 
 Originally designed to describe contours for radiotherapy planning, RTSTRUCT is also used by AI tools that output **vector** geometry instead of pixel masks. Lighter to store than SEG, but inherently 2D per slice.
 
-{{% notice info %}}
+{{% callout info %}}
 See [DICOM RT](dicom-rt) for displaying DICOM RTSTRUCT objects in Weasis.
-{{% /notice %}}
+{{% /callout %}}
 
 [TotalSegmentator](https://github.com/wasserth/TotalSegmentator/) is a good example: starting from version 2, its automatic segmentation of 100+ anatomical structures on CT can be exported as DICOM RTSTRUCT — and, in recent releases, as DICOM SEG as well — both of which load directly in Weasis without any extra configuration.
 
@@ -79,9 +79,9 @@ See [DICOM RT](dicom-rt) for displaying DICOM RTSTRUCT objects in Weasis.
 
 Grayscale Softcopy Presentation States store the **display intent** for an image — window/level, zoom, rotation — together with vector annotations and measurements. AI tools use them to ship findings as toggleable overlays on the original images rather than baking them into pixels.
 
-{{% notice info %}}
+{{% callout info %}}
 See [DICOM PR](build-ko-pr/#presentation-state-pr-or-gsps) for displaying DICOM Presentation States in Weasis.
-{{% /notice %}}
+{{% /callout %}}
 
 ## Reports & documents
 
@@ -91,16 +91,16 @@ These objects carry structured or document content rather than imagery.
 
 Tree-structured findings: measurements, classifications, observations, and references back to the images they describe. The standard delivery format for AI tools that need to expose interpretable, machine-readable results.
 
-{{% notice info %}}
+{{% callout info %}}
 See [DICOM SR Viewer](dicom-sr).
-{{% /notice %}}
+{{% /callout %}}
 
 #### DICOM Encapsulated Documents
 
 Wrappers for non-image content (PDF, STL, MPEG, plain text…). Useful when an AI pipeline produces a full report or auxiliary artifact that would otherwise live outside the imaging study.
 
-{{% notice info %}}
+{{% callout info %}}
 Encapsulated documents are opened with the system application registered for the document MIME type. The DICOM attributes can be inspected from the thumbnail context menu.
 
 ![Open DICOM PDF tags](/tuto/dicom-attributes-pdf.webp?classes=shadow)
-{{% /notice %}}
+{{% /callout %}}

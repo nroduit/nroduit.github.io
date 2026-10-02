@@ -39,9 +39,9 @@ To launch viewers from your own web application, you need to build the URL with 
   - Ex CT more recent than 01.01.2010 12:00:00: http://localhost:8081/display?viewer=WEASIS&patientID=1168514&modalitiesInStudy=CT&upperDateTime=2010-01-01T12:00:00Z&archive=dcm4chee-local
 
   
-{{% notice note %}}
+{{% callout note %}}
 You can restrict the types of UIDs (patientID, studyUID, accessionNumber, seriesUID, objectUID) that services can access. Refer to the "request.ids" section in the configuration file to specify which UIDs are permitted. By default, all UIDs are allowed.
-{{% /notice %}}
+{{% /callout %}}
 
 ## Launch viewers with IHE IID profile
 

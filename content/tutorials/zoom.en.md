@@ -21,9 +21,9 @@ There are several ways to adjust magnification:
 * **Image Tool panel** — drag the zoom slider.
 * **[Keyboard shortcuts](../basics/shortcuts/)** — zoom in, zoom out, and reset zoom.
 
-{{% notice tip %}}
+{{% callout tip %}}
 Quick access: press **Z** to switch the left mouse button to the zoom action (default — customizable {{< since "4.7.0" >}} in [Keyboard Shortcuts](../basics/shortcuts/)).
-{{% /notice %}}
+{{% /callout %}}
 
 ### Zoom presets
 
@@ -33,11 +33,11 @@ The toolbar and context menu expose three presets:
 * **Real-world Size** {{< svg-inline "static/tuto/icon/zoomRealWorld.svg" >}} — physical-size display (requires a [calibrated monitor](#real-world-size-display)).
 * **Best Fit** {{< svg-inline "static/tuto/icon/zoomBestFit.svg" >}} — scale the image to fit the view area (default).
 
-{{% notice note %}}
+{{% callout note %}}
 - Zoom operations always center on the **screen**, regardless of the cursor position.
 - **Best Fit** (the default) recenters images when you scroll through a series. To keep an off-center crop while scrolling, switch to another preset or set a manual zoom factor.
 - To change the **interpolation method** used for zoom, see the [2D viewer preferences](dicom-2d-viewer/#preferences).
-{{% /notice %}}
+{{% /callout %}}
 
 ![Zoom tool controls](/tuto/zoom-actions.jpg?classes=shadow&width=100%)
 <br>
@@ -77,9 +77,9 @@ Without monitor calibration, the {{< svg-inline "static/tuto/icon/zoomRealWorld.
 
 Open any image whose dimensions you know — a calibration phantom, a CR/DX study with a visible ruler, or a printed test pattern displayed full screen — and switch to {{< svg-inline "static/tuto/icon/zoomRealWorld.svg" >}} **Real-world Size**. Use the [length measurement tool](draw-measure) and compare with the physical ruler — the values should match within a fraction of a millimeter.
 
-{{% notice warning %}}
+{{% callout warning %}}
 If **Real-world Size** still looks wrong after monitor calibration, check that the image itself has valid **Pixel Spacing** (or **Imager Pixel Spacing** for projection radiography). Some secondary captures and screenshots ship without spatial information and cannot be displayed at real size — see [Spatial Calibration](calibration) for the manual override.
-{{% /notice %}}
+{{% /callout %}}
 
 ## <center>Magnifying Lens {{< svg-inline "static/tuto/icon/zoomPan.svg" >}}</center>
 

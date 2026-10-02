@@ -58,9 +58,9 @@ Mouse actions:
 * **Delete the measurement on a lead** — middle-click, or Shift + click
 * **Delete every measurement** — the toolbar button above
 
-{{% notice note %}}
+{{% callout note %}}
 Only one measurement can be active per lead. Placing a new start point on a lead that already has one replaces it.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Annotations {{% badge style="red" %}}E{{% /badge %}} {#annotations}
 The annotations panel surfaces two related groups of DICOM metadata stored with the waveform:

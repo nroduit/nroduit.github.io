@@ -11,4 +11,4 @@ pages below cover connecting it to a PACS, a RIS or a web portal, setting the
 preferences and the Window/Level presets every user starts from, and building
 your own plugins when the existing ones are not enough.
 
-{{% children %}}
+{{% pages display="tree" %}}

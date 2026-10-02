@@ -15,9 +15,9 @@ A **Lookup Table (LUT)** maps each input pixel value to an output value used som
 3. **[Presentation LUT](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.11.6.html)** — converts the intensity values into **P-Values**: device-independent values calibrated to human perception (used to render consistently across monitors).
 4. **[Palette Color LUT](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.9.html)** — replaces grayscale intensity values with colors, producing a pseudo-color rendering.
 
-{{% notice note %}}
+{{% callout note %}}
 The **Modality LUT** and the **Palette Color LUT** are applied automatically when present in the DICOM file — there are no controls in the user interface to override them.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Windowing and Rendering {#windowing-and-rendering}
 
@@ -35,8 +35,8 @@ The **Modality LUT** and the **Palette Color LUT** are applied automatically whe
 * {{< svg-inline "static/tuto/icon/inverseLut.svg" >}} **Invert LUT** — flips the LUT direction (dark↔bright, or reversed color mapping).
 * **Filter** — 2D image filter applied **before** the LUT, useful for enhancing image quality or highlighting specific structures. Default: **None**.
 
-{{% notice tip %}}
+{{% callout tip %}}
 To overlay the active LUT bar on the image, enable it from the [Display panel](dicom-2d-viewer/#display) on the right. The values labeled on the bar correspond to the **Modality LUT values** (e.g. Hounsfield units for CT) when one is defined, or to raw pixel values otherwise. On a fused view, the [fusion color scale](fusion#color-scale) is drawn beside it with the values of the overlay.
 
 To inspect how the current Window / Level reshapes the pixel distribution, switch to the [Histogram](histogram) layout.
-{{% /notice %}}
+{{% /callout %}}

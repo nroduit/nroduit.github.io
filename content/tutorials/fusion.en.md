@@ -11,9 +11,9 @@ since: "4.7.1"
 
 **Image fusion** overlays a functional series — **PET** (`PT`) or **SPECT** (`NM`) — on top of an anatomical **CT** or **MR** base, so metabolic uptake can be read against the underlying anatomy. The overlay is a **registration-free geometric fusion**: Weasis aligns the two series from their DICOM spatial metadata alone, with no manual or algorithmic registration step. Available {{< since "4.7.1" >}}.
 
-{{% notice note %}}
+{{% callout note %}}
 Fusion is a pure spatial overlay driven by each image's position in the patient coordinate system. It does **not** deform or re-register the images, so it is only offered when the two series are genuinely co-located (see [Requirements](#requirements) below).
-{{% /notice %}}
+{{% /callout %}}
 
 ### Requirements {#requirements}
 
@@ -39,9 +39,9 @@ The fusion controls live in the **Fusion** section of the **Image tool** {{< svg
 
 The overlay follows the base view as you scroll, zoom, window, or reslice it. Because the fusion is resampled from the functional **volume**, it stays correct on **oblique, coronal and sagittal** planes, not only the native acquisition plane.
 
-{{% notice note %}}
+{{% callout note %}}
 The [Reset](dicom-2d-viewer#reset) action turns fusion **off** and returns to the plain base image, like any other display setting it restores.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Display window and color scale {#color-scale}
 
@@ -68,9 +68,9 @@ The bar is toggled with **Fusion Color Scale** in the [Display panel](dicom-2d-v
 
 When the overlay is a PET series carrying the required metadata, a **closed measurement** drawn on the fused base image also reports the overlay's **SUV** values inside the region — **Min**, **Max** and **Mean**, in `SUVbw, g/ml`. These rows are sampled from the **original PET voxels** (no resampling loss on the maximum) and are tagged with the overlay's modality — for example `Max (PT)` — so they read alongside the base-image statistics.
 
-{{% notice tip %}}
+{{% callout tip %}}
 SUV is computed with the body-weight method (SUVbw), following the [vendor-neutral QIBA definition](https://qibawiki.rsna.org/index.php/Standardized_Uptake_Value_(SUV)). The same values can be read directly on the PET series itself — see [SUV measurements](draw-measure#selected-measurement).
-{{% /notice %}}
+{{% /callout %}}
 
 ### Fusion in the MPR viewer {#mpr}
 
@@ -79,9 +79,9 @@ SUV is computed with the body-weight method (SUVbw), following the [vendor-neutr
 
 Opening the [MPR viewer](mpr) from a fused 2D view **carries the fusion over**: the three MPR planes start with the same overlay series, LUT and opacities you set in the 2D view. Each plane keeps its **own** fusion settings, so you can fine-tune — or disable — the overlay independently per plane afterwards, without affecting the 2D view or the other planes.
 
-{{% notice note %}}
+{{% callout note %}}
 Inheritance only applies when the overlay is still compatible with the reconstructed MPR base. If you open MPR from a non-fused view, the planes start with fusion off, and you can enable it from the same **Fusion** section as in the 2D viewer.
-{{% /notice %}}
+{{% /callout %}}
 
 ### See also
 

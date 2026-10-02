@@ -23,9 +23,9 @@ MicroDicom](../dicom-viewer-comparison).
 ### Prerequisites
 Weasis runs on Windows, macOS, and Linux without requiring additional frameworks like Java. However, certain graphics capabilities are needed for [Volume Rendering](../tutorials/dicom-3d-viewer/#requirements).
 
-{{% notice warning %}}
+{{% callout warning %}}
 The open-source distribution of Weasis is not a certified medical device (CE or FDA). Any primary diagnostic use requires you to ensure full compliance with the laws and regulations applicable in your jurisdiction.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Native Installers
 
@@ -77,13 +77,13 @@ Install via package managers to receive automatic updates.
   yay -S weasis-bin
   ```
 
-{{% notice note %}}
+{{% callout note %}}
 **Sandbox Limitations:** Flatpak and Snap packages run in sandboxed environments, which may restrict certain functionalities:
 - **Flatpak**: See [Fedora issue](https://github.com/nroduit/Weasis/issues/449#issuecomment-1763311969)
 - **Snap**: Limited removable media access ([details](https://github.com/nroduit/Weasis/issues/487#issuecomment-1826293187))
 
 The Snap installation uses `<user.home>/snap/weasis/current/.weasis` instead of the standard `<user.home>/.weasis` directory.
-{{% /notice %}}
+{{% /callout %}}
 
 
 

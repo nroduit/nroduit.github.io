@@ -50,11 +50,11 @@ Available actions:
 * **[Crosshair](cursor-3d)** — 3D cursor. _H_ key to select. _Ctrl + click_ or _Ctrl + Shift + click_ adjusts Window / Level without leaving crosshair mode.
 * **No Action** — do nothing. _N_ key to select.
 
-{{% notice tip %}}
+{{% callout tip %}}
 While dragging, hold _Ctrl_ to accelerate the action and _Ctrl + Shift_ to accelerate more.
 
 The single-key shortcuts above are the **defaults** — most are customizable {{< since "4.7.0" >}} in **Preferences > General > Keyboard Shortcuts**. See [Keyboard Shortcuts](../basics/shortcuts).
-{{% /notice %}}
+{{% /callout %}}
 
 * {{< svg-inline "static/tuto/icon/layout.svg" >}} **Default layout** — change the layout of the view. [DICOM Information](tags) and [Histogram](histogram) are special layouts that update automatically as you scroll through the series.
 * **Synchronize** — apply the same settings (window/level, scroll, zoom, …) to multiple views simultaneously. Two modes are available: _Default Stack_ (the default — couples series sharing the same Frame of Reference UID) and _Default Tile_ (mosaic display of a single series). A master **Synchronize** checkbox at the top of the drop-down turns synchronization on or off globally without changing the active mode. Each 2D view also exposes its own **auto-sync** {{< svg-inline "static/tuto/icon/synch.svg" >}} and **manual-sync** {{< svg-inline "static/tuto/icon/hand.svg" >}} overlay buttons in its bottom-right corner. See [View Synchronization](synch-view) for the full mechanics, the [per-view controls](synch-view#per-view-sync), and the FoR color-chip system.
@@ -75,9 +75,9 @@ The single-key shortcuts above are the **defaults** — most are customizable {{
 * [Cine](#cine)
 * [Key Object Selection](build-ko-pr/#key-object-selection-ko)
 
-{{% notice tip %}}
+{{% callout tip %}}
 Toolbars can be shown or hidden from the **View** top menu.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Viewer tools
 The right-side panel groups all the tools tied to the 2D viewer.
@@ -139,15 +139,15 @@ The **Cine start** button {{< svg-inline "static/tuto/icon/execute.svg" >}} play
 * Click **Cine stop** {{< svg-inline "static/tuto/icon/suspend.svg" >}} to end the animation.
 * Click the **Loop / Sweep** toggle {{< svg-inline "static/tuto/icon/loop.svg" >}} to switch between looping and sweeping playback.
 
-{{% notice note %}}
+{{% callout note %}}
 When cine is active, every series currently synchronized with the playing series is animated too. Selecting another series keeps the cine running on it until the **Cine stop** button is pressed.
 
 For series with a variable frame rate, the playback speed is adjusted automatically, so a value entered manually is not preserved.
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice tip %}}
+{{% callout tip %}}
 A dedicated **Cine** toolbar is also available — hidden by default; enable it from the **View** menu.
-{{% /notice %}}
+{{% /callout %}}
 
 ##### Fusion
 Overlay a **PET** or **SPECT** series on the displayed **CT / MR** base, with adjustable color LUT and base/overlay opacity {{< since "4.7.1" >}}. Collapsed by default and enabled only when the study contains a compatible overlay. See [Image Fusion](fusion/) for the full workflow, SUV statistics, and MPR inheritance.

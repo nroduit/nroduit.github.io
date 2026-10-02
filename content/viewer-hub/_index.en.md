@@ -22,7 +22,7 @@ The main features of ViewerHub are:
 - Configuration of Keycloak clients and token transmission for DICOMWeb or WADO URI calls
 
 Here is a list of pages related to ViewerHub documentation:
-{{% children description="true" %}}
+{{% pages description="true" display="tree" %}}
 
 
 

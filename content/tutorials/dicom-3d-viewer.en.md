@@ -21,16 +21,16 @@ The graphics-card capabilities used by Weasis are reported under **OpenGL Suppor
 * **Max 3D texture dimension length** — the upper limit, in voxels, of any X / Y / Z dimension of the volume.
 * Any other entry shown in **red** indicates a non-optimal configuration. The viewer often still works — see [how to limit the size of 3D textures](#3d-viewer) if performance becomes an issue.
 
-{{% notice note %}}
+{{% callout note %}}
 If Weasis reports a graphics card that is not the one you expected, the choice is made by the graphics driver and the operating system, not by Weasis. OpenGL itself has no API to select a specific card; consult your OS's GPU-selection settings for the application.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Open the 3D viewer
 Open the viewer by clicking {{< svg-inline "static/tuto/icon/volume.svg" >}} in the toolbar of a series view, by double-clicking the series thumbnail, or by right-clicking the thumbnail in the [DICOM Explorer](dicom-explorer) and choosing the 3D viewer.
 
-{{% notice tip %}}
+{{% callout tip %}}
 If the series is a **multi-phase 4D acquisition** (e.g. a cardiac CT with several temporal phases), Weasis automatically splits it into individual phase sub-series when 2–7 phases are detected. For series with 8 or more phases, a confirmation dialog is shown first. Open any resulting phase sub-series to render it in the 3D viewer. See [4D Series Sub-Series Splitting](dicom-explorer#4d-splitting) for details.
-{{% /notice %}}
+{{% /callout %}}
 
 Try it on a volume dataset (Medical Demos from data.kitware.com)
 {{< launch >}}
@@ -42,9 +42,9 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/3d/head-neck.xml"
 
 The same [patient orientation axes](mpr#orientation-axes) as the MPR views are drawn in the 3D view {{< since "4.7.0" >}}.
 
-{{% notice info %}}
+{{% callout info %}}
 DICOM SEG segmentations linked to the series are rendered in the 3D viewer too — see [Segmentation overlay in the 3D Volume Renderer](dicom-segmentation#segmentation-overlay-in-the-3d-volume-renderer).
-{{% /notice %}}
+{{% /callout %}}
 
 ### Toolbar {{% badge style="red" %}}A{{% /badge %}} {#toolbar}
 Actions in the toolbar:
@@ -117,9 +117,9 @@ The view's right-click context menu also exposes a **Synchronize** submenu with 
 
 Camera-level actions are on by default because keeping multiple 3D views framed identically is the common workflow when comparing rendering types or LUT presets side by side. Photometric and rendering actions are opt-in because the typical reason to open a second 3D view is to **diverge** on those settings (e.g. one view in Composite with a soft-tissue LUT, the other in MIP).
 
-{{% notice note %}}
+{{% callout note %}}
 The view you are actively interacting with always applies its own changes locally, even when the corresponding action is unchecked in its sync map. Only **other** views gate on the per-action toggle. This keeps sliders and mouse drags responsive while letting you decide which actions propagate to the rest of the container.
-{{% /notice %}}
+{{% /callout %}}
 
 ### 3D Rendering Tools
 This tab groups every control that affects how the volume is rendered. To return to the original settings, click the toolbar button {{< svg-inline "static/tuto/icon/reset.svg" >}} or pick **Reset** from the context menu.
@@ -197,9 +197,9 @@ The resulting color bar is previewed under the graph, and every change is also a
 * **Save** — validates and persists the preset, then closes the dialog.
 * **Cancel** — discards the unsaved changes and restores the LUT that was active before opening the editor.
 
-{{% notice info %}}
+{{% callout info %}}
 Custom presets are stored in the `customVolumePresets.json` file inside the Weasis preferences directory. When a remote preference service is configured (e.g. with weasis-pacs-connector), the file is also uploaded so the custom LUTs follow the user profile across workstations.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Preferences
 From the menu **_File > Preferences > Viewer > 3D Viewer_**.
@@ -211,16 +211,16 @@ Information about the graphics card and OpenGL capabilities, see [Requirements](
 * {{< svg-inline "static/tuto/icon/layout.svg" >}} **Default layout** — preferred layout used when opening the 3D viewer. Available layouts: **1×1** (single view, default), **1×2**, **2×1**, **1×3**, **2×2**.
 * **Max 3D texture size** — maximum volume dimensions, both in X / Y (image width and height) and in Z (number of images in the stack composing the volume).
 
-{{% notice note %}}
+{{% callout note %}}
 The maximum 3D texture defaults come from the graphics card. Lowering them (e.g. to 512) can produce a more fluid rendering on hardware that struggles with the full-size texture.
-{{% /notice %}}
+{{% /callout %}}
 
 #### Volume Rendering {#interactive-rendering}
 * **Dynamic quality** — reduces the rendering quality along the Z axis while you rotate or modify the view, for a smoother interaction. At the maximum slider position there is no quality reduction.
 
-{{% notice note %}}
+{{% callout note %}}
 The **FBO fragment-shader** backend (OpenGL 3.3 – 4.2, and therefore always on macOS — see [Requirements](#requirements)) additionally lowers the **rendering resolution** while the camera is being dragged {{< since "4.7.3" >}}: the volume is ray-cast at the logical window resolution instead of the physical one and the result is upscaled for the duration of the gesture, which on a HiDPI / Retina display is a quarter of the pixels to compute. The frame drawn as soon as you release the mouse is at full resolution again. This is automatic and is independent of the **Dynamic quality** slider, which acts on the sampling along the ray; the **Compute Shader** backend (OpenGL 4.3+) always renders at full resolution.
-{{% /notice %}}
+{{% /callout %}}
 
 * **Default orientation** — preferred starting orientation. Default: anterior view rotated 15° to the right and 15° downward.
 * **Background color** — background color of the rendered scene.

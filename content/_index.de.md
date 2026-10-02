@@ -24,9 +24,9 @@ aliases:
 {{% button href="/en/tutorials" style="secondary" icon="book" %}}Tutorials lesen{{% /button %}}
 </p>
 
-{{% notice note %}}
+{{% callout note %}}
 Diese Startseite ist auf Deutsch verfügbar. **Die übrige Dokumentation ist derzeit nur auf Englisch** — die folgenden Links führen daher zu englischsprachigen Seiten.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Durch die Dokumentation navigieren
 

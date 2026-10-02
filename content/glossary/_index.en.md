@@ -13,4 +13,4 @@ would make them unreadable. This section answers the question directly instead: 
 when it is used, and what to watch out for. Each entry ends with a link to the page that shows how to
 work with it in Weasis.
 
-{{% children description="true" %}}
+{{% pages description="true" display="tree" %}}

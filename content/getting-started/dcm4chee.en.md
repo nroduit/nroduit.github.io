@@ -20,9 +20,9 @@ Follow these steps for the integration with `weasis-pacs-connector`:
 3. Open the <a target="_blank" href="http://localhost:9990/">WildFly management console</a> (at `http://<your-host>:9990`). Note: with some Keycloak versions, the [management console may not be accessible](https://groups.google.com/g/dcm4che/c/UeNKzgijfqo).
     - Select the “Deployments” tab
     - Add `weasis-pacs-connector.war` using the “Add” button (Choose Upload a new deployment or select Replace when the file already exists)
-{{% notice note %}}
+{{% callout note %}}
 Alternatively one may deploy the `.war` using JBoss Command Line Interface Console.
-{{% /notice %}}
+{{% /callout %}}
 
 4. Configure weasis-pacs-connector (optional if default settings are sufficient).<br>
 The default configuration is stored in two files inside weasis-pacs-connector.war. To override the default configuration:
@@ -30,9 +30,9 @@ The default configuration is stored in two files inside weasis-pacs-connector.wa
     - Edit the configuration as needed. For example, dcm4chee may be running on a different computer than Weasis, or the AE Title of dcm4chee may have been changed. If so, edit `weasis-pacs-connector.properties` or `dicom-dcm4chee-arc.properties` (Change pacs.host, pacs.port, and pacs.aet).
     - Copy `weasis-pacs-connector.properties` and `dicom-dcm4chee-arc.properties` into $WILDFLY_HOME/standalone/configuration (where $WILDFLY_HOME is the path of the running Wildfly).<br>
     With the docker installation use the docker copy command ($ docker cp ...)
-{{% notice tip %}}
+{{% callout tip %}}
 Instead of copying the files into $WILDFLY_HOME/standalone/configuration, JBoss Command Line Interface Console can be used to override files in the war. Add the two configuration files with the deployment-overlay command:<br>
-{{% /notice %}}
+{{% /callout %}}
 {{< highlight bash >}}
 deployment-overlay add --name=dcm4chee-arc --deployments=weasis-pacs-connector.war --content=WEB-INF/classes/weasis-pacs-connector.properties=/tmp/weasis-pacs-connector.properties,WEB-INF/classes/dicom-dcm4chee-arc.properties=/tmp/dicom-dcm4chee-arc.properties --redeploy-affected
 {{< /highlight >}}
@@ -44,23 +44,23 @@ deployment-overlay add --name=dcm4chee-arc --deployments=weasis-pacs-connector.w
         - From dcm4chee-arc-light 5.10.2 to 5.19.0, the left menu: Configuration > Devices > dcm4chee-arc > Extensions > Archive Device
         - From dcm4chee-arc-light 5.19.1 the left menu: Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE
         - From dcm4chee-arc-light 5.22.0 by editing `docker-compose.env` (allows applying properties at deploy time). Note: the character `&` must be escaped (e.g., `IID_STUDY_URL=../../weasis-pacs-connector/weasis?studyUID={{studyUID}}\\&access_token={{access_token}}`)
-{{% notice note %}}
+{{% callout note %}}
 **URL parameters**
 
 - `access_token` is necessary in secure mode (secured RESTful services) from dcm4chee-arc-light 5.15.1
 - `_self` avoids opening a new empty window in the browser<br>
-{{% /notice %}}
+{{% /callout %}}
     - {{% badge style="info" %}}Optional{{% /badge %}} Add <a target="_blank" href="https://github.com/nroduit/weasis-pacs-connector#launch-weasis-with-other-parameters">other properties</a> in the URL.
     - Refresh the web page and the view button should appear as in the screenshot above
     - To launch the viewer from the web portal, the client computer must have installed the [Weasis package](download-dicom-viewer).
 
 ## Configuration Matrix
 
-{{% notice note %}}
+{{% callout note %}}
 The list below maps dcm4chee-arc-light versions to the recommended `weasis-pacs-connector`, and gives the properties to add in dcm4chee-arc-light configuration to enable Weasis launching.
 
 Older versions pass _self via query parameter (target=_self); newer versions (5.22.2+) use the dedicated property IID_URL_TARGET=_self.
-{{% /notice %}}
+{{% /callout %}}
 
 ### dcm4chee-arc-light 5.10.2 to 5.19.0
 
@@ -134,10 +134,10 @@ Older versions pass _self via query parameter (target=_self); newer versions (5.
 
 {{% badge style="info" title="weasis-pacs-connector" %}}8.x{{% /badge %}}
 
-{{% notice warning %}}
+{{% callout warning %}}
 **Requirements**: Java 17+ and Jakarta EE 10 (WildFly 29.0.1.Final or later)<br>
 **Note**:the context path has changed from ../../ to ../../../
-{{% /notice %}}
+{{% /callout %}}
 
 #### Unsecured Mode
 <div style="font-size: 0.80em;">

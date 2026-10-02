@@ -30,16 +30,16 @@ You can also increase (or decrease) the scaling factor **independently of the sy
 ### How to integrate the main menu in the window bar
 Option {{% badge style="red" %}}C{{% /badge %}} forces the main menu to be integrated into the window's title bar (disabled by default). It is shown only on **Linux**, where the wide variety of window managers makes integration unreliable without an explicit opt-in.
 
-{{% notice info %}}
+{{% callout info %}}
 On **Windows** and **macOS**, this option is not shown — menu integration is always supported by the platform.
-{{% /notice %}}
+{{% /callout %}}
 
 ### System File Chooser
 Option {{% badge style="red" %}}D{{% /badge %}} swaps the Java default file dialog for the **system-native file chooser**, providing a more familiar file-browsing experience on each platform.
 
-{{% notice tip %}}
+{{% callout tip %}}
 Favorite or bookmarked folders configured in your system file explorer (Nautilus, Finder, Windows Explorer, …) appear as shortcuts inside the native file chooser, so frequently used import or export locations are one click away.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Changing the default theme or scale factor
 

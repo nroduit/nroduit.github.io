@@ -30,9 +30,9 @@ However, it is also possible:
 
 These integrations provide flexibility to meet the specific needs of healthcare environments, ensuring seamless integration.
 
-{{% notice note %}}
+{{% callout note %}}
 Requires Weasis installed on the system with the [native installer](../../getting-started/).
-{{% /notice %}}
+{{% /callout %}}
 
 
 ## Use weasis-pacs-connector
@@ -42,13 +42,13 @@ For connecting to dcm4chee web interface, follow the instructions in [Installing
 Standard workflow when connecting Weasis to a PACS, RIS, EMR, EPR or any web interface:
 
 {{< svg "static/images/weasis-pacs-connector.svg" >}}
-{{% notice note %}}
+{{% callout note %}}
 The schema above shows that the queries to the PACS are made at the same time as the viewer starts. This makes it possible to optimize the launch by simultaneously launching weasis and building the manifest.
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice tip %}}
+{{% callout tip %}}
 [weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector) services allow either to build a manifest from a PACS via DICOM C-Find or to upload the manifest by http POST.
-{{% /notice %}}
+{{% /callout %}}
 
 ## Build your own connector
 
@@ -90,17 +90,17 @@ Build an XML file containing the UIDs of the images which will be retrieved from
     </arcQuery>
 </manifest>
 {{< /highlight >}}
-{{% notice note %}}
+{{% callout note %}}
 Important Parameters (except mandatory parameters defined in xsd):
 
 - `PatientBirthDate` helps to identify a patient.
 - `StudyDate,` `StudyTime`, `Modality`, `SeriesNumber` and `InstanceNumber` help to sort data before downloading images.
 - `SeriesDescription` and `StudyDescription` allow immediately displaying the descriptions before downloading the images.
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice tip %}}
+{{% callout tip %}}
 From Weasis 2.5 it is possible to have multiple archives: several `arcQuery` tags are allowed in the same manifest.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Build a JSON manifest {#json-manifest}
 
@@ -160,9 +160,9 @@ The new `seriesRetrieve` attribute of `arcQuery` controls how a series with no l
 
 The attribute is ignored for non-`DICOM_WEB` manifests.
 
-{{% notice note %}}
+{{% callout note %}}
 A manifest that already carries the `Instance` level keeps the previous behavior: listing the instances remains the way for the archive connector to control exactly which objects are loaded.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Build an XML manifest (no WADO server)
 This example requires only a WEB server. Weasis will download DICOM files by URLs.
@@ -172,13 +172,13 @@ Use [$dicom:get](../commands/#dicomget) to load a <a target="_blank" href="https
 $dicom:get -w "https://nroduit.github.io/demo-archive/Lumbar/mf.xml"
 {{< /highlight >}}
 
-{{% notice note %}}
+{{% callout note %}}
 Required Parameters:
 
 - `DirectDownloadFile` defines the URL of the DICOM file to download (the final URL is the combination of wadoURL + DirectDownloadFile)
 - `DirectDownloadThumbnail` defines the URL of the JPEG file representing the series (the final URL is the combination of wadoURL + DirectDownloadThumbnail)
 - See in the previous note above.
-{{% /notice %}}
+{{% /callout %}}
 
 ## Download directly with DICOMWeb RESTful services
 

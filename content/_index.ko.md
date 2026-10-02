@@ -23,9 +23,9 @@ aliases:
 {{% button href="/en/tutorials" style="secondary" icon="book" %}}튜토리얼 읽기{{% /button %}}
 </p>
 
-{{% notice note %}}
+{{% callout note %}}
 이 홈페이지는 한국어로 제공됩니다. **나머지 문서는 현재 영어로만 제공**되며, 아래 링크는 영어 페이지로 연결됩니다.
-{{% /notice %}}
+{{% /callout %}}
 
 ### 문서 둘러보기
 

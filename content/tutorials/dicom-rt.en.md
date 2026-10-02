@@ -28,7 +28,7 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/demo/rt.xml"
 ![DICOM STRUCT](/tuto/dicom-rt.jpg?classes=shadow)
 <br>
 
-{{% notice note %}}
+{{% callout note %}}
 The region tree exposes a context menu with the following actions:
 * **Select / unselect all child nodes** (parent nodes only) — toggle visibility for every sub-region in a group at once.
 * **Fill opacity** — controls the transparency of the region's interior relative to its border.
@@ -37,7 +37,7 @@ The region tree exposes a context menu with the following actions:
     - Example: 80 % line + 20 % fill → 16 % perceived interior opacity.
 * **Export to clipboard as CSV** — copies region data (volume measurements, dose calculations) for analysis in spreadsheets or external tools.
 * **Pixel statistics from the selected view** (leaf nodes only) — computes statistical descriptors of pixel values inside the region. For the parameter definitions, see [Pixel Statistics](draw-measure/#selected-measurement).
-{{% /notice %}}
+{{% /callout %}}
 
 ### How to display isodoses
 1. Switch to the **Isodoses** tab.
@@ -47,13 +47,13 @@ The region tree exposes a context menu with the following actions:
 ![DICOM DOSE](/tuto/dicom-rt-dose.webp?classes=shadow)
 <br>
 
-{{% notice tip %}}
+{{% callout tip %}}
 The **Structures** and **Isodoses** root nodes act as master switches — toggle them to show or hide all overlays at once, while child nodes keep individual control over specific items.
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice note %}}
+{{% callout note %}}
 The isodose overlay is rendered directly from the **RTDOSE pixel grid** (resampled to the CT image grid using nearest-neighbor interpolation) instead of vector contours {{< since "4.7.0" >}}. This provides a more faithful representation of the dose distribution stored in the DICOM file, especially around steep dose gradients.
-{{% /notice %}}
+{{% /callout %}}
 
 ### How to display the DVH chart
 The Dose-Volume Histogram (DVH) summarizes, for each selected structure, the fraction of its volume that receives at least a given dose level — the standard way to compare plans and check organ-at-risk constraints.
@@ -65,8 +65,8 @@ The Dose-Volume Histogram (DVH) summarizes, for each selected structure, the fra
 ![DICOM DVH](/tuto/dicom-rt-dvh.webp?classes=shadow)
 <br>
 
-{{% notice warning %}}
+{{% callout warning %}}
 When one or more selected structures have no DVH stored in the RTDOSE, a **confirmation dialog** {{< since "4.7.0" >}} lists the affected structures and offers to compute the missing histograms on the fly.
 
 The calculation algorithm (derived from [dicompyler](https://github.com/dicompyler/dicompyler-core)) is **experimental and not clinically validated**: results must not be used for medical decisions. The feature can be disabled by setting the [system preference](../basics/customize/preferences) `weasis.rt.dvh.recalculate.enable` to `false`; when disabled, only DVHs already stored in the RTDOSE are displayed.
-{{% /notice %}}
+{{% /callout %}}

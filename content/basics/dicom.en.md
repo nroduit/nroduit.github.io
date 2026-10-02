@@ -125,9 +125,9 @@ Video transfer syntaxes are not decoded by Weasis. The video stream is extracted
 | 1.2.840.10008.1.2.4.107   | video/H265 | HEVC/H.265 Main Profile / Level 5.1                                  | yes  | No    |
 | 1.2.840.10008.1.2.4.108   | video/H265 | HEVC/H.265 Main 10 Profile / Level 5.1                               | yes  | No    |
 
-{{% notice note %}}
+{{% callout note %}}
 For video, **Read** means that Weasis extracts the stream and hands it to the system player; the frames are not rendered in the viewer.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Not supported
 

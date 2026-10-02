@@ -35,26 +35,26 @@ Used when the _Anatomical Orientation Type_ attribute is set to `QUADRUPED`, sup
 | Proximal / Distal (limbs)         | **PR** = Proximal, **DI** = Distal |
 | Palmar / Plantar (paws)           | **PA** = Palmar, **PL** = Plantar |
 
-{{% notice warning %}}
+{{% callout warning %}}
 On a QUADRUPED study, **R** means **Rostral** and **L** means **Lateral** — *not* Right and Left. Always check the anatomical-orientation type before interpreting single letters.
-{{% /notice %}}
+{{% /callout %}}
 
 ![Quadruped orientation](/tuto/quadruped-orientation.jpg?classes=shadow)
 <br>
 
-{{% notice info %}}
+{{% callout info %}}
 When the view is not perfectly aligned with the three axes of the patient frame of reference, Weasis appends a **secondary** and **tertiary** orientation in subscript, separated by `-` (e.g. `A-L-H` for an oblique anterior-leaning view).
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice info %}}
+{{% callout info %}}
 For projection modalities such as **CR** or **DX**, the orientation comes from the _Patient Orientation (0020,0020)_ attribute. It is **not updated** when the image is rotated, because the orientation cannot be re-derived dynamically from the pixel data.
 
 For cross-sectional modalities such as **CT** and **MR**, the orientation **is** recomputed dynamically and remains correct after rotations, flips, and reformats.
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice tip %}}
+{{% callout tip %}}
 To show or hide the orientation overlay, toggle **DICOM Annotations > Orientation** in the [Display](dicom-2d-viewer/#display) panel on the right.
-{{% /notice %}}
+{{% /callout %}}
 
 
 ### Orientation in multiplanar reconstruction (MPR) {#orientation-in-multiplanar-reconstruction-mpr}
@@ -64,7 +64,7 @@ In the [MPR viewer](mpr), the same letter convention is applied to each of the t
 ![MPR orientation](/tuto/mpr-orientation.jpg?classes=shadow)
 <br>
 
-{{% notice info %}}
+{{% callout info %}}
 The crosshair axes follow the color coding defined in the [DICOM Patient Orientation](https://dicom.nema.org/medical/dicom/current/output/chtml/part17/chapter_A.html) standard:
 
 - **Blue** — left / right axis.
@@ -72,4 +72,4 @@ The crosshair axes follow the color coding defined in the [DICOM Patient Orienta
 - **Green** — foot / head axis.
 
 The small colored square shown in each MPR view corresponds to the axis that is **perpendicular** to that plane.
-{{% /notice %}}
+{{% /callout %}}

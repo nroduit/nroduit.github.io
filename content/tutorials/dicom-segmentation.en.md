@@ -43,7 +43,7 @@ $dicom:get -w "https://nroduit.github.io/demo-archive/demo/seg.xml"
 ![DICOM SEG](/tuto/seg-2d.jpg?classes=shadow&width=100%)
 <br>
 
-{{% notice note %}}
+{{% callout note %}}
 Right-click on a region in the tree to access:
 * **Select / unselect all child nodes** (parent only) — toggle visibility for every child region at once.
 * **Fill opacity** — transparency of a region's interior relative to its border.
@@ -52,15 +52,15 @@ Right-click on a region in the tree to access:
     - Example: 80 % line + 20 % fill → 16 % perceived interior opacity.
 * **Show in the image view** (leaf only) — jumps to the slice where the region has its largest cross-section. It also works in [MPR](mpr) {{< since "4.7.2" >}}, where the crosshair is moved to the centre of the densest slice of the region; the search runs in the background with a progress bar shown in the views (_Locating the region…_).
 * **Pixel statistics from the selected view** (leaf only) — computes statistical descriptors of pixel values inside the region. For the parameter definitions, see [Pixel Statistics](draw-measure/#selected-measurement).
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice note %}}
+{{% callout note %}}
 **Loading a DICOM SEG.** The first time a SEG is shown — in the 2D viewer, MPR or 3D — Weasis decodes it in the background. Scrolling and other interactions remain responsive while decoding runs; the regions appear as soon as the SEG is ready.
 
 A **cancelable** progress entry is shown at the bottom of the DICOM Explorer, so a large or slow SEG can be canceled without blocking the rest of your work. The views themselves also display a **_Loading segmentations…_** message while the build is running {{< since "4.7.2" >}}, so it is clear that the missing overlay is only pending.
 
 Once decoded, the SEG is shared between the 2D, MPR and 3D views — loaded only once even with several views open. Weasis may release it automatically when memory gets tight and reload it on demand the next time it is needed.
-{{% /notice %}}
+{{% /callout %}}
 
 ---
 
@@ -78,9 +78,9 @@ That icon marks a *declared reference* — it is not the complete list of series
 
 This is what makes it possible, for example, to display a segmentation computed on a contrast phase over another phase of the same acquisition, or over a series reconstructed with a different kernel, slice thickness or resolution: only the geometry has to match, not the SOP Instance UIDs. Weasis reslices the segmentation volume when the image plane is not parallel to the segmentation frames.
 
-{{% notice note %}}
+{{% callout note %}}
 When a SEG carries **no usable reference at all** — frequent with AI-generated objects — Weasis links it to every image series of the patient that shares its Frame of Reference UID, and those series *do* get the icon. The icon is therefore missing only when the SEG references another series explicitly.
-{{% /notice %}}
+{{% /callout %}}
 
 ---
 
@@ -96,9 +96,9 @@ These settings have a page of their own {{< since "4.7.3" >}}, **_File > Prefere
 | **Keywords to hide** | Comma-separated keywords. A SEG file is hidden when one of them appears in its _Series Description_, _Content Description_ or _Content Label_, or when **every** one of its segments matches by label, description or algorithm name — so a multi-segment object is not hidden just because one of its segments happens to be the table. Case, spaces, underscores and hyphens are ignored when matching. Default: `table removal, table segmentation, tabletop, couch, patient support, bed removal`. An empty value disables the rule. |
 | **Hide from** {{< since "4.7.3" >}} | Number of segmentations loaded **for the patient** from which they all start hidden, exactly as _Hide all_ does — beyond a handful they paint over each other and none of them is readable. Segmentations already hidden by the keywords are not counted, so a study whose only extra objects are table removals is not considered crowded. Default: `3`. Enter `0` to disable the rule. |
 
-{{% notice note %}}
+{{% callout note %}}
 The count spans the **patient**, not the series: a cardiac study routinely spreads its segmentations over several series, and counting each series separately would leave the single-file ones showing while the crowded ones hide.
-{{% /notice %}}
+{{% /callout %}}
 
 Hiding is only a **default**. A hidden segmentation is fully loaded and listed unticked in the Segmentation panel — tick it, or press **Alt + S**, to display it. Changing these settings also re-applies them to the segmentations **already loaded** {{< since "4.7.3" >}}, at the next repaint, instead of only to the next study; the ones you ticked by hand keep their state. The **Restore default values** button of the page puts the three settings back to the values above.
 
@@ -117,9 +117,9 @@ Weasis supports all three DICOM SEG segmentation types:
 | **FRACTIONAL — OCCUPANCY** | Each pixel carries a value between 0 and 1 expressing how much of the pixel is actually covered by the segment (partial-volume fraction). | Same smooth overlay as PROBABILITY — only the meaning of the value differs. |
 | **LABELMAP** | Several segments are packed into a single image, with the pixel value identifying which segment it belongs to. | Each segment is extracted automatically and drawn with its own color. |
 
-{{% notice note %}}
+{{% callout note %}}
 Some AI frameworks export FRACTIONAL segmentations without an explicit reference back to the source series. Weasis matches them to the correct images automatically, via the DICOM frame of reference — see [which series can display a segmentation](#related-series).
-{{% /notice %}}
+{{% /callout %}}
 
 ---
 
@@ -129,9 +129,9 @@ When a DICOM SEG is linked to the current series, the overlay is automatically a
 
 For MPR, Weasis additionally has to reslice the SEG along the new planes. This extra step runs in the background; the overlay appears on every plane as soon as it completes.
 
-{{% notice tip %}}
+{{% callout tip %}}
 The MPR overlay works even when the SEG has a different orientation, spacing or scanning direction than the source images — for example an AI model that segments at a coarser resolution. Weasis reprojects the mask into the image coordinate system, so contours stay aligned on every plane.
-{{% /notice %}}
+{{% /callout %}}
 
 ![DICOM SEG](/tuto/seg-mpr-vr.jpg?classes=shadow&width=100%)
 <br>

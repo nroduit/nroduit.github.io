@@ -20,12 +20,12 @@ Open the DICOM attributes either by:
 ![Tags](/tuto/dicom-attributes.jpg?classes=shadow&width=100%)
 <br>
 
-{{% notice note %}}
+{{% callout note %}}
 The two display modes behave differently when you scroll:
 
 - **In-layout view (A)** — the attributes are updated dynamically and reflect the currently displayed image (useful while scrolling through a series).
 - **Detached window (B)** — the attributes are a snapshot of the instance that was active when the window was opened. They do **not** update when you scroll.
-{{% /notice %}}
+{{% /callout %}}
 
 When Weasis opens certain DICOM payloads with an external application (e.g. encapsulated **PDF** or **video**), the attributes can still be inspected from the **thumbnail right-click menu**.
 
@@ -38,11 +38,11 @@ The DICOM Information window has two tabs:
 * **Limited DICOM attributes** — the main attributes grouped by category (a curated subset for everyday use).
 * **All DICOM attributes** — every attribute present in the file. Each [data element](https://dicom.nema.org/medical/dicom/current/output/chtml/part05/chapter_7.html) is shown in four columns: **Tag ID**, **VR**, **Tag Name**, **Value**.
 
-{{% notice note %}}
+{{% callout note %}}
 When a data element holds multiple values, they are separated by a single backslash `\`.
 
 Data elements whose [Value Representation (VR)](https://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_6.2.html) is one of **OB**, **OD**, **OL**, **OF**, **OW**, or **UN** — binary VRs used for pixel data, lookup tables, and other large byte streams — display _binary data_ in place of the actual bytes.
-{{% /notice %}}
+{{% /callout %}}
 
 ![Search DICOM tags](/tuto/dicom-attributes-search.jpg?classes=shadow)
 <br>
@@ -55,17 +55,17 @@ The example above searches for the word **date**. The procedure is:
 
 Using {{% icon icon="filter" %}} in the toolbar applies a persistent filter on the attribute list — useful when you want to keep the focus on a specific set of attributes while scrolling through a stack of images (in-layout view {{% badge style="red" %}}A{{% /badge %}}) only).
 
-{{% notice note %}}
+{{% callout note %}}
 Some attributes are nested inside a **sequence** element (marker (5) in the screenshot). The arrow on the left of a row shows the **nesting depth** — sequences can themselves contain sequences.
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice tip %}}
+{{% callout tip %}}
 When a value is too long to fit:
 
 - **Resize the column** from its header — the new width is kept until the displayed image changes.
 - Hover the cell to read the full value as a **tooltip** {{< since "4.3.0" >}}.
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice tip %}}
+{{% callout tip %}}
 The selected DICOM attributes can be copied to the clipboard with the **standard copy shortcut** of your operating system. Paste into a spreadsheet, a text editor, or a bug report.
-{{% /notice %}}
+{{% /callout %}}

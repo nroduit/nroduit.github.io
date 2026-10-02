@@ -19,13 +19,13 @@ Weasis can ingest DICOM data from many sources:
 
 To send data the other way — out of Weasis to a file, a PACS node, or a CD/DVD — see [DICOM Export](dicom-export).
 
-{{% notice note %}}
+{{% callout note %}}
 Whatever the import method, a popup may appear at the end of an import in any of these cases:
 
 * **Error** {{< since "4.3.0" >}} — one or more DICOM files cannot be read because they are corrupted or malformed.
 * **Information** {{< since "4.7.0" >}} — one or more valid DICOM files were skipped because their SOP Class has no viewer available (e.g. Raw Data Storage). These files are not corrupted, they are simply not displayable. The notification can be silenced with the **Don't show this again** checkbox in the dialog, or from the DICOM Explorer preferences (**Notify when DICOM files with an unsupported SOP Class are skipped**).
 * **Network error** — when a network error occurs during a retrieve (DICOMweb or WADO), a message offers to download the missing files again.
-{{% /notice %}}
+{{% /callout %}}
 
 ### From the system file explorer
 
@@ -38,9 +38,9 @@ Files, folders, or DICOM ZIP archives selected in the system file explorer can b
 #### File association
 DICOM files can be opened by double-clicking them from the system file explorer.
 
-{{% notice note %}}
+{{% callout note %}}
 On Windows, only files with the `.dcm` extension are associated with Weasis. On other operating systems, DICOM files without an extension are also associated with Weasis.
-{{% /notice %}}
+{{% /callout %}}
 
 ### From the Weasis menu or toolbar
 
@@ -120,9 +120,9 @@ On a selection of several large studies this replaces a long silent preparation 
 
 ##### Download progress, stop and resume
 
-{{% notice note %}}
+{{% callout note %}}
 Every retrieve type — **C-MOVE**, **C-GET**, **WADO-URI** and [**DICOMweb**](dicomweb-config) (QIDO / WADO-RS) — is tracked series by series {{< since "4.7.3" >}}, and each series can be stopped and resumed individually. Before that version, progress tracking and pausing were available only with DICOMweb nodes and with the combination **DICOM C-FIND + WADO-URI**.
-{{% /notice %}}
+{{% /callout %}}
 
 ![Download Manager](/images/DownloadManager.jpg?width=150px)
 
@@ -143,15 +143,15 @@ The interrupted series loses neither its place in the queue nor the images it ha
 
 This is what makes a large retrieve usable: instead of waiting for the whole study, click the series you want to read and it is transferred first, while the rest keeps downloading in the background.
 
-{{% notice warning %}}
+{{% callout warning %}}
 Stopping a **C-MOVE** or **C-GET** retrieve asks the remote archive to cancel the transfer. Some archives take a while to react, so a few more images may still arrive after the stop; Weasis closes the association once the cancel has been sent instead of waiting for the archive to finish.
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice tip %}}
+{{% callout tip %}}
 If a query runs for too long, click **Clear** in the **Search Criteria** panel to cancel the request.
 
 When using a DICOMweb node, an external login may be required (for instance signing in to a Google account in your web browser). If the login fails, Weasis can freeze for up to a minute waiting for the authorization code.
-{{% /notice %}}
+{{% /callout %}}
 
 ### From commands
 Weasis can be started — or asked to load a specific study — through commands launched locally or remotely. See [Examples to load images](../getting-started/weasis-protocol/#examples-to-load-images) on the Weasis Protocol page.

@@ -22,14 +22,14 @@ Each thumbnail is a series or sub-series |  | 660,660 | 28 | #00a6b6
 {{% /annotate %}}
 <br>
 
-{{% notice tip %}}
+{{% callout tip %}}
 You can navigate through the Patient / Study / Series / Image structure using only [keyboard shortcuts](../basics/shortcuts) (the bindings below are the defaults — customizable {{< since "4.7.0" >}}). For example:
 - Open an image and, if necessary, select the view to focus on. If the layout has more than one view, you can move across the views with _Tab_ and _Shift + Tab_. The view surrounded by an orange line is the focused view.
 - Navigate through images within a series with _Up_ and _Down_.
 - Navigate through series within a study with _Left_ and _Right_.
 - Navigate through studies within a patient with _Ctrl + Left_ and _Ctrl + Right_.
 - Navigate through patients with _Ctrl + Up_ and _Ctrl + Down_ (follow the order in the patient's combo box and select the last tab if a patient has several tabs already open). To navigate open tabs, use _Ctrl + Tab_ and _Ctrl + Shift + Tab_.
-{{% /notice %}}
+{{% /callout %}}
 
 #### Patient Level
 * Weasis can display several patients at the same time. By default, when images are imported, a tab with the patient's name opens in the main area.
@@ -57,13 +57,13 @@ Number of images within a series            | 197,887    | 640,850
 * A series is represented by a thumbnail with the image count shown in the bottom-left corner. Icons in the **lower-right corner** indicate the objects that explicitly reference this series — Key Object Selection, Presentation State, [Segmentation](dicom-segmentation) {{< svg-inline "static/tuto/icon/segmentation.svg" >}} or [RT](dicom-rt) objects. A missing icon does not always mean the object is unusable with this series: a segmentation is also displayable on any series sharing its [Frame of Reference UID](dicom-segmentation#related-series).
 * According to [predefined rules](https://github.com/nroduit/Weasis/blob/master/weasis-distributions/resources/series-splitting-rules.xml), some series are split into sub-series — also represented as thumbnails, identified by a `#` number in the upper-right corner. Splitting is needed for the consistency of tools such as the [MPR viewer](mpr), [MIP](mip), the [3D cursor (cross-lines)](cursor-3d) and [view synchronization](synch-view). When the split is not desired, sub-series can be [re-merged from the context menu](https://www.youtube.com/watch?v=tttP__1Sbsc).
 
-{{% notice tip %}}
+{{% callout tip %}}
 **Select related Series** — right-click a series and choose **_Select related Series_** to highlight every series in the study that shares its [Frame of Reference UID](synch-view#frame-of-reference) (the DICOM coordinate system). Open them together (right-click again → **_2D Viewer > Open_**) to get cross-coupled views that auto-synchronize and that the [3D cursor](cursor-3d) can drive.
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice tip %}}
+{{% callout tip %}}
 **Series built inside Weasis** — the [MPR](mpr) viewer (_Build a new series from the current view_ / _Build three series from MPR views_) and the [MIP](mip/#build-a-new-series) viewer (_Build a new Series_) can add reconstructed series back into the Explorer. These newly built series join the current study and can be opened, sent, or [exported](dicom-export) like any other series.
-{{% /notice %}}
+{{% /callout %}}
 
 #### Filtering the series list {#series-filter}
 
@@ -81,9 +81,9 @@ Each patient keeps its **own** filter: switching patients restores the filter la
 
 To show the full series list again, click the **clear button** (✕) on the right of the field to reset the search, then open the combo to pick from all entries.
 
-{{% notice tip %}}
+{{% callout tip %}}
 The mode selected when a patient is opened for the first time can be changed {{< since "4.7.2" >}} with **Default series filter** in **File > Preferences > DICOM Explorer**, or set for everyone with the [preference](../basics/customize/preferences) `weasis.dicom.explorer.filter.mode` (`TEXT`, `DATE` or `MODALITY`).
-{{% /notice %}}
+{{% /callout %}}
 
 #### 4D Series Sub-Series Splitting {#4d-splitting}
 
@@ -106,15 +106,15 @@ When 8 or more phases are detected, a dialog asks you to confirm the split. Once
 
 After splitting, each phase becomes a separate thumbnail in the DICOM Explorer. The first sub-series reuses the original series entry; the additional sub-series are added to the study tree, identified by a `#` number in the upper-right corner of the thumbnail.
 
-{{% notice tip %}}
+{{% callout tip %}}
 Open any individual phase sub-series in the [MPR](mpr), [MIP](mip), or [3D viewer](dicom-3d-viewer) for accurate volumetric analysis — each sub-series contains only the images of a single phase and can be reconstructed as a coherent 3D volume.
-{{% /notice %}}
+{{% /callout %}}
 
 If the split is not needed, or was triggered unintentionally, the sub-series can be merged back. Select the thumbnails you want to merge (all or a subset) and choose **_Merge Selected Series_** from the context menu — the selected sub-series are recombined into a single series entry.
 
-{{% notice note %}}
+{{% callout note %}}
 Phase detection is based on the spatial position of each image. If multiple images share the same slice position, they are assumed to belong to different temporal phases. If no such overlap is found, the series is treated as a standard single-phase acquisition and is never split.
-{{% /notice %}}
+{{% /callout %}}
 
 #### Series Display and Opening
 
@@ -128,7 +128,7 @@ Phase detection is based on the spatial position of each image. If multiple imag
     * **Open in screen** — same, but on a specific screen.
     * **Add** — appends the series to the current patient's layout, if one exists.
 
-{{% notice note %}}
+{{% callout note %}}
 Tab opening and focus behavior is handled automatically {{< since "4.7.0" >}}, replacing the old configurable _opening mode_ preference.
 
 **When is a new tab opened?**
@@ -140,7 +140,7 @@ Focus follows an automatic policy based on loading duration:
 - If the study is still loading when the threshold is exceeded (for example a slow network import in the background), the **current tab keeps focus** — Weasis will not interrupt your work by stealing focus for a slow background load.
 
 In practice: fast loads surface immediately, slow background loads stay out of the way.
-{{% /notice %}}
+{{% /callout %}}
 
 #### Preferences
 From the main menu **_File > Preferences > DICOM > DICOM Explorer_**:

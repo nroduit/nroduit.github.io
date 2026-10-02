@@ -12,21 +12,21 @@ The **MPR viewer** reconstructs the two complementary anatomical planes from a v
 
 The MPR view inherits most of the properties and actions of the [DICOM 2D viewer](dicom-2d-viewer), with one structural difference: the crosshair tool stays active regardless of which mouse action is selected. Open the MPR viewer from the {{< svg-inline "static/tuto/icon/mpr.svg" >}} icon in the toolbar, or by right-clicking a thumbnail in the [DICOM Explorer](dicom-explorer/).
 
-{{% notice note %}}
+{{% callout note %}}
 The menu and toolbar entries are only enabled when the series contains **at least 5 images**.
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice tip %}}
+{{% callout tip %}}
 Opening MPR from a **fused** 2D view (PET/CT) carries the overlay over to the three planes — see [Fusion in the MPR viewer](fusion#mpr).
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice tip %}}
+{{% callout tip %}}
 If the series is a **multi-phase 4D acquisition** (e.g. a cardiac CT with several temporal phases), Weasis automatically splits it into individual phase sub-series when 2–7 phases are detected. For series with 8 or more phases, a confirmation dialog is shown first. Open any resulting phase sub-series to reconstruct it in the MPR viewer — see [4D Series Sub-Series Splitting](dicom-explorer#4d-splitting).
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice note %}}
+{{% callout note %}}
 To reconstruct the volume along a **curve** instead of a flat plane — for example a dental panoramic from a CBCT — draw a polyline and use the **Curved MPR** actions. See [Curved MPR Viewer](mpr-curved).
-{{% /notice %}}
+{{% /callout %}}
 
 ### Crosshair actions
 
@@ -63,9 +63,9 @@ Open the per-view settings popup with the {{< svg-inline "static/tuto/icon/viewS
 - **Build a new series from the current view** / **Build three series from MPR views** — save the reconstructed MPR slices back as new DICOM series {{< since "4.7.0" >}}. The first option exports the **current plane only**; the second (in the **All views** submenu) exports the **three planes**, each as a separate series. Background borders are cropped uniformly across every slice so the exported series keeps a constant image size. The crosshair is restored to its initial position when the build completes.
 - **Synchronize** — per-view sync options: independent toggles for _Scroll_, _Pan_, _Zoom_, _Rotation_, _Flip_, _Window / Level_, _Spatial unit_, plus an **Apply to all views** entry that propagates the current selection to every other MPR view (see [View Synchronization in MPR](synch-view#mpr-sync-options)).
 
-{{% notice note %}}
+{{% callout note %}}
 Most MPR settings are also reachable via keyboard shortcuts — see the [MPR shortcuts](../basics/shortcuts/#selected-view-in-the-mpr-viewer).
-{{% /notice %}}
+{{% /callout %}}
 
 ![MPR](/tuto/mpr.webp?classes=shadow)
 <br>
@@ -121,9 +121,9 @@ In each case the message ends with:
 * **Yes — Rectify geometry** — re-slices the volume to align it with the patient's anatomical orientation. Ensures correct spatial proportions for measurements and ratios across planes, at the cost of one interpolation pass that may slightly soften the image.
 * **No — Stack images** — stacks the original images directly, with no geometric correction. Preserves the full original image quality and avoids interpolation, but distances, ratios, and measurements may not reflect true anatomical values.
 
-{{% notice tip %}}
+{{% callout tip %}}
 Pick **Yes** when accurate measurements matter. Pick **No** when image quality and the absence of interpolation artifacts take precedence.
-{{% /notice %}}
+{{% /callout %}}
 
 #### Status indicator
 

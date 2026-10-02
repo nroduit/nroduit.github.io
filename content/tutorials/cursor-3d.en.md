@@ -27,9 +27,9 @@ The fastest way to load several series that share a coordinate system:
 
 Select the crosshair {{< svg-inline "static/tuto/icon/crosshair.svg" >}} as the active mouse-button action either from the toolbar mouse-button menus or from any view's right-click context menu. Once active, left-click anywhere in a view and the marker jumps to the matching 3D point in every linked view simultaneously.
 
-{{% notice tip %}}
+{{% callout tip %}}
 You don't have to leave crosshair mode to adjust the image: hold **Ctrl** while dragging to change *Window / Level* without switching tools. See [keyboard shortcuts](../basics/shortcuts) for the full list of modifiers (most are customizable {{< since "4.7.0" >}}).
-{{% /notice %}}
+{{% /callout %}}
 
 ![3D Cursor](/tuto/3d-cursor.jpg?classes=shadow)
 <br>
@@ -38,13 +38,13 @@ Try it on a multi-series sample {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/ko.xml"
 {{< /launch >}}
 
-{{% notice info %}}
+{{% callout info %}}
 The crosshair is the position-coupling part of a broader synchronization system. For action coupling (Scroll, Pan, Zoom, Window / Level…) between views sharing a Frame of Reference, see [View Synchronization](synch-view#crosshair-sync).
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice info %}}
+{{% callout info %}}
 For the conventions used to label anatomical directions in multiplanar views, see [MPR orientation](image-orientation/#orientation-in-multiplanar-reconstruction-mpr).
-{{% /notice %}}
+{{% /callout %}}
 
 ### Preferences
 

@@ -19,9 +19,9 @@ Both modes operate on the **current layout** — the page is built from the view
 
 If you need more than one image per page, pick a layout from the layouts dropdown in the toolbar (1).
 
-{{% notice note %}}
+{{% callout note %}}
 The layout list is computed dynamically from the current window size — resizing or maximizing the Weasis window changes the layouts on offer. On a panoramic monitor you can, for example, pick a wide horizontal layout and then print in **landscape** orientation.
-{{% /notice %}}
+{{% /callout %}}
 
 ![Print Layout](/tuto/print/layout.jpg?height=400&classes=shadow)
 
@@ -53,6 +53,6 @@ The DICOM Print dialog lets you manage several DICOM printer configurations (eac
 ![DICOM](/tuto/print/dicom.webp?classes=shadow)
 <br>
 
-{{% notice note %}}
+{{% callout note %}}
 DICOM printer configurations can be deployed centrally so every client gets the same printer list — see [How to add DICOM nodes or DICOM printers at the server side](../basics/customize/preferences/#how-to-add-dicom-nodes-or-dicom-printers-at-the-server-side).
-{{% /notice %}}
+{{% /callout %}}

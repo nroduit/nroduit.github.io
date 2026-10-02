@@ -38,11 +38,11 @@ The Dicomizer can encapsulate the following file types into DICOM objects:
 - **MPEG-2 video** (`video/mpeg`) {{< since "4.6.2" >}} — for compatibility with legacy medical imaging systems.
 - **MPEG-4 video** (`video/mp4`) {{< since "4.6.2" >}} — modern format for endoscopy, ultrasound, surgical recordings, and other high-quality medical videos.
 
-{{% notice warning %}}
+{{% callout warning %}}
 Only MPEG-4 videos that are [compatible with the DICOM standard](https://dicom.nema.org/medical/dicom/current/output/chtml/part18/sect_8.7.3.html) are accepted — namely **MPEG-4 AVC/H.264 High Profile (up to Level 4.2)** or **HEVC/H.265 Main and Main 10 Profile**. Videos using a different profile are rejected with a message asking you to convert them to a compatible format first.
 
 Video files are also size-limited {{< since "4.7.0" >}}: a file larger than `weasis.acquire.video.max.size` (1024 MB by default — see the [preferences](../basics/customize/preferences)) is rejected. Set the preference to `0` to remove the limit.
-{{% /notice %}}
+{{% /callout %}}
 
 #### Importing files
 
@@ -53,7 +53,7 @@ Video files are also size-limited {{< since "4.7.0" >}}: a file larger than `wea
    - **Group by name** — all images are imported into a single series with a custom name.
 3. Alternatively, **drag and drop** files from the system file explorer into the central panel. The files are either added to the current series, or assigned to a default series based on their media type.
 
-{{% notice note %}}
+{{% callout note %}}
 For image formats that carry **EXIF tags**, the following values are mapped to DICOM tags automatically:
 
 - **Image Orientation** → adjusts the image orientation.
@@ -61,15 +61,15 @@ For image formats that carry **EXIF tags**, the following values are mapped to D
 - **Manufacturer Description** → mapped to _Manufacturer_.
 - **Camera Model Description** → mapped to _Manufacturer Model Name_.
 - **Date/Time (Original)** or, if absent, **Date/Time** → mapped to _ContentDate_ and _ContentTime_. If both are absent or invalid (date > now + 1 day, or date < now − 30 years), the file's last-modified date is used.
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice note %}}
+{{% callout note %}}
 Series-grouping buttons cannot be deleted directly. Remove every thumbnail associated with the button first, and the button disappears.
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice tip %}}
+{{% callout tip %}}
 The combo box keeps the list of recently used folders. Connecting a USB device automatically adds the device path to the list.
-{{% /notice %}}
+{{% /callout %}}
 
 #### Edit DICOM Tags
 
@@ -85,31 +85,31 @@ Tags in the bottom panel are organized into a categorized tree:
 - **Series level** — applied to the series level.
 - **Image level** — applied to the individual image level.
 
-{{% notice note %}}
+{{% callout note %}}
 A red dashed outline around an item means the value is **mandatory** and must be filled in before publication.
-{{% /notice %}}
+{{% /callout %}}
 
 Person-name fields (_PatientName_, _ReferringPhysicianName_, _OperatorsName_, …) must follow the `Last^First^Middle^Prefix^Suffix` format defined by the [DICOM standard](https://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_6.2.html#sect_6.2.1).
 
 These fields are no longer edited as raw text {{< since "4.7.3" >}}: clicking the cell opens a dialog with one input per component — **Last name**, **First name**, **Middle name**, **Prefix**, and **Suffix**. The separators are inserted for you, a **DICOM value** line previews the encoded result while you type, and empty components are dropped. In the table, the value is displayed in the usual lexical order (_Smith, John_).
 
-{{% notice note %}}
+{{% callout note %}}
 The dialog rejects the DICOM delimiter characters `^`, `=` and `\`, and the preview turns red if a name exceeds the 64-character limit of the standard.
 
 Ideographic and phonetic component groups (the parts after `=`, used for Japanese or Korean names) are preserved unchanged; the dialog edits the alphabetic group only.
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice warning %}}
+{{% callout warning %}}
 The `Last^First^Middle^Prefix^Suffix` rule also applies to values populated automatically — from a DICOM Worklist or through the `acquire:patient` command (see [Integrating the Dicomizer](#integrating-the-dicomizer)). Those values are not reformatted by the Dicomizer.
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice tip %}}
+{{% callout tip %}}
 The thumbnail right-click menu offers:
 
 - **Edit** (images only) — opens the Photo Editor to crop, rotate, or adjust the image. Double-clicking the thumbnail has the same effect.
 - **Remove** — deletes the image from the series without touching the original file.
 - **Move to…** — moves the image to a different series.
-{{% /notice %}}
+{{% /callout %}}
 
 #### Edit the Images
 
@@ -124,13 +124,13 @@ Click **Publish** to send the DICOM files to a remote DICOM archive, or **Export
 - **Destination** — pick the target node from the list of configured remote DICOM nodes.
 - **Calling AE Title** — pick the calling node, if your archive enforces specific sender AE titles.
 
-{{% notice note %}}
+{{% callout note %}}
 The destination can be a specific remote node or the list of remote nodes configured under **_File > Preferences (Alt + P) > DICOM node list_** — add or edit DICOM nodes there.
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice info %}}
+{{% callout info %}}
 A green check-mark icon on a thumbnail confirms that the image was successfully published.
-{{% /notice %}}
+{{% /callout %}}
 
 -----
 
@@ -173,9 +173,9 @@ Instead of being entered by hand in the **Album** panel, the Global tags (patien
 </tags>
 {{< /highlight >}}
 
-{{% notice note %}}
+{{% callout note %}}
 Which DICOM tags appear, are editable, and are required in the **Album** panel is configured via the [preferences](../basics/customize/preferences) (items starting with `weasis.acquire.meta`).
-{{% /notice %}}
+{{% /callout %}}
 
 ### Publication Destination
 

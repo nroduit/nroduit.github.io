@@ -55,9 +55,9 @@ $dicom:get -r "https://nroduit.github.io/demo-archive/us-palette.dcm"
 $dicom:get -r "https://nroduit.github.io/demo-archive/us-palette.dcm"
 {{< /launch >}}
 
-{{% notice tip %}}
+{{% callout tip %}}
 For loading multiple images, it's recommended to use a manifest file that references all desired images instead of including each image individually in the URI. The easiest way to build this manifest dynamically is by using the [Weasis PACS Connector](https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector). Alternatively, you can create the manifest manually following the [provided instructions](../basics/customize/integration/#build-an-xml-manifest).
-{{% /notice %}}
+{{% /callout %}}
 
 ### Examples to Load Images
 

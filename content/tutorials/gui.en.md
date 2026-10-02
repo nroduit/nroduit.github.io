@@ -37,13 +37,13 @@ In the **Appearance** tab:
 
 ➜ See [Styles and themes](theme) for the detailed instructions.
 
-{{% notice tip %}}
+{{% callout tip %}}
 Wherever you need more complete instructions, click the {{< svg-inline "static/tuto/icon/help.svg" >}} button in the preferences dialog or in any contextual pop-up — it opens the matching page of this documentation in your browser.
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice tip %}}
+{{% callout tip %}}
 In the **View** menu at the top, the toolbars and tools attached to the active viewer can be shown or hidden. These preferences are remembered across restarts. Show / hide preferences specific to the **DICOM Explorer** are only kept for the current session.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Other viewers and players in the DICOM workspace {#other-viewers-and-players}
 Depending on the SOP Class of the loaded series, Weasis opens one of the following:

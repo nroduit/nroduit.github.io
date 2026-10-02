@@ -9,9 +9,9 @@ weight: 20
 
 Here is a list of the default keyboard and mouse shortcuts in Weasis. The shortcuts are divided into different categories for better understanding.
 
-{{% notice note %}}
+{{% callout note %}}
 Most keyboard shortcuts can be customized {{< since "4.7.0" >}} in **Preferences > General > Keyboard Shortcuts**. This page documents the **default** configuration. To get the current configuration (including any customizations), use **Help > Keyboard Shortcuts** (this page is internationalized).
-{{% /notice %}}
+{{% /callout %}}
 
 ### Central panel containing viewers and editors
 
@@ -126,9 +126,9 @@ MPR view inherits the same shortcuts as the 2D viewer, with the following additi
 | **Right-click**                                                    | Open the contextual menu for more options      |
 | **Drag files/directories**<br>(from the OS file manager)           | Open DICOMs files                              |
 
-{{% notice note %}}
+{{% callout note %}}
 **Downloading Priorities**: Selecting a thumbnail gives the best priority to download.
-{{% /notice %}}
+{{% /callout %}}
 
 
 ### Graphics

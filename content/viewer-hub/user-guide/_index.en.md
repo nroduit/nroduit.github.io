@@ -11,6 +11,6 @@ pages below cover that day-to-day administration: the rules that select a viewer
 for an incoming request, and the Weasis versions, translations and groups served
 to users.
 
-{{% children description="false" %}}
+{{% pages description="false" display="tree" %}}
 
 

@@ -50,15 +50,15 @@ The placeholders below are expanded at launch time and can appear in **URI**, **
 | `{tag:<key>}`               | Any DICOM attribute value from the currently selected image, e.g. `{tag:AccessionNumber}`. |
 | `{pref:<key>}`              | Any Weasis preference value, e.g. `{pref:weasis.user}`. |
 
-{{% notice note %}}
+{{% callout note %}}
 The **Other Launcher** type displays a button on [any viewer](gui#other-viewers-and-players) instead of the global toolbar. For this type, only `{pref:<key>}` is supported as a dynamic variable.
-{{% /notice %}}
+{{% /callout %}}
 
 ### How to run the launcher
 
 * From the main menu, open **_File > Launcher_** and pick the launcher.
 * From the toolbar, click the launcher button.
 
-{{% notice note %}}
+{{% callout note %}}
 The launcher must be **enabled** in the preferences to appear in the menu, and the **Button** option must be checked to appear in the toolbar.
-{{% /notice %}}
+{{% /callout %}}

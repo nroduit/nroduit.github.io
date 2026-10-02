@@ -32,22 +32,22 @@ mvn clean install
 {{< highlight shell >}}
 mvn -P compressXZ -f weasis-distributions clean package
 {{< /highlight >}}
-{{% notice tip %}}
+{{% callout tip %}}
 **-P compressXZ**: Option for compressing the packages in [xz](https://en.wikipedia.org/wiki/XZ_Utils), only from Weasis 3.6.0. The compression pack200 is not supported anymore (removed from Java 14), before 3.6.0 the profile was **-P pack200**.<br>
-{{% /notice %}}
-{{% notice tip %}}
+{{% /callout %}}
+{{% callout tip %}}
 **-P purgeI18nPackage**: Option to delete the translation package in the local maven repository (active by default). To disable this option, add `-` before the profile:
 {{< highlight bash >}}
 mvn -P compressXZ,-purgeI18nPackage -f weasis-distributions clean package
 {{< /highlight >}}
-{{% /notice %}}
-{{% notice warning %}}
+{{% /callout %}}
+{{% callout warning %}}
 For production, the version must not include SNAPSHOT (as packages with a SNAPSHOT are always downloaded, not cached). To remove SNAPASHOT or create your own release (use a specific name to prevent package conflicts in the cache), update the changelist property. From the Weasis root folder, execute:
 {{< highlight shell >}}
 mvn -Dchangelist=-mybuild-beta clean install
 mvn -Dchangelist=-mybuild-beta -P compressXZ -f weasis-distributions clean package
 {{< /highlight >}}
-{{% /notice %}}
+{{% /callout %}}
 
 
 ### Building native binaries and installers
@@ -69,15 +69,15 @@ However, you can also build the native binaries and installer locally using the 
 {{% /tab %}}
 {{< /tabs >}}
 
-{{% notice note %}}
+{{% callout note %}}
 - Replace `--jdk` with the path to your local JDK installation.<br>
 - To generate only the native binaries (without creating an installer), include the `--no-installer` flag.<br>
 - For additional command options, run:
   {{< highlight shell >}}
   ./build/script/package-weasis.sh --help
   {{< /highlight >}}
-  {{% /notice %}}
+  {{% /callout %}}
 
-{{% notice tip %}}
+{{% callout tip %}}
 On Windows the bash script must be executed with Git Bash or Cygwin. Avoid having spaces in the input and output paths.
-{{% /notice %}}
+{{% /callout %}}

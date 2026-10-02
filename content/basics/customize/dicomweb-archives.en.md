@@ -36,7 +36,7 @@ IID_URL_TARGET=_self
 
 Finally, refresh the page for having the viewer button.
 
-{{% notice warning %}}
+{{% callout warning %}}
 Configuration notes:
 
 - See [configuration](../../getting-started/dcm4chee) for versions before 5.22.2.
@@ -44,11 +44,11 @@ Configuration notes:
 - The character '&' must be escaped in the Docker environment variables.
 - The Authorization header is not required for unsecure service.
 - URL with HTTPS requires a real valid certificate; otherwise, the certificate must be imported into the Weasis Java keystore or must be installed at [system level](https://github.com/nroduit/Weasis/issues/679) {{< since "4.6.1" >}}.
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice note %}}
+{{% callout note %}}
 **Known issue on Windows**: Weasis cannot open the images because of the token length which is cut by the browser. It is only working with Firefox on Windows. It is recommended to use [weasis-pacs-connector](integration/#use-weasis-pacs-connector) or [ViewerHub](../../viewer-hub) to solve this issue.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Orthanc WEB Server
 
@@ -76,9 +76,9 @@ $weasis:config pro="dicom.qido.query.multi.params true" $dicom:rs --url "https:/
 
 Currently, the DICOMWeb service for getting thumbnails doesn't work in the Google API.
 
-{{% notice note %}}
+{{% callout note %}}
 `<your-token>` must be replaced by a valid token.
-{{% /notice %}}
+{{% /callout %}}
 
 ### DICOMcloud (for Azure cloud)
 
@@ -92,9 +92,9 @@ $dicom:rs --url "https://dicomcloud.azurewebsites.net/api" -r "studyUID=1.3.6.1.
 $dicom:rs --url "https://dicomcloud.azurewebsites.net/api" -r "studyUID=1.3.6.1.4.1.14519.5.2.1.4429.7055.198257099234774234268879426857"
 {{< /launch >}}
 
-{{% notice note %}}
+{{% callout note %}}
 The demo server is no longer accessible.
-{{% /notice %}}
+{{% /callout %}}
 
 Currently, the DICOMWeb service of DICOMcloud doesn't support:
 
@@ -108,9 +108,9 @@ https://kheops.online
 $dicom:rs --url "https://demo.kheops.online/api" -r "studyUID=1.3.6.1.4.1.14519.5.2.1.4429.7055.198257099234774234268879426857" -H "Authorization: Bearer <your-token>"
 {{< /highlight >}}
 
-{{% notice note %}}
+{{% callout note %}}
 `<your-token>` must be replaced by a valid token.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Amazon HealthImaging
 

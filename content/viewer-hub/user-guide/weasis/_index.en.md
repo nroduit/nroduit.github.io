@@ -10,6 +10,6 @@ ViewerHub stores and serves the Weasis packages its users launch. The pages belo
 cover importing and removing versions, package qualifiers, translation packages,
 compatibility between releases, and which group each package is served to.
 
-{{% children description="true" %}}
+{{% pages description="true" display="tree" %}}
 
 

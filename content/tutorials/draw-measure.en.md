@@ -34,20 +34,20 @@ The first button is the **selection** tool — used to select, resize, and move 
 
 Once one or more graphics are selected, you can change their properties (color, line width…) or copy/paste them through the right-click menu. The selection can be removed with the **Delete** key or {{< svg-inline "static/tuto/icon/selectionDelete.svg" >}}. See the full list of [graphic shortcuts](../basics/shortcuts/#graphics). A confirmation dialog is shown before the deletion; it can be disabled from its *Don't ask me again* checkbox or the **Draw & Measure** [preferences](#preferences).
 
-{{% notice note %}}
+{{% callout note %}}
 A segment can be drawn in two equivalent ways:
 
 1. **Click + Drag** — click, drag to draw, release.
 2. **Click > Release > Drag** — click to set the start point, release, drag to draw, click again to set the end point.
 
 To keep the same tool active for several draws in a row, uncheck **Draw only once** (see [Graphic Options](#graphic-options)).
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice tip %}}
+{{% callout tip %}}
 For a **polyline** or **polygon**, double-click to finish editing. Right-clicking a vertex offers add / delete actions on that specific point.
 
 **Rectangles** and **ellipses** can be drawn at any angle. The external control points rotate and resize the shape; the single control point on the opposite side resizes only.
-{{% /notice %}}
+{{% /callout %}}
 
 #### Drawings {{% badge style="red" %}}B{{% /badge %}} {#drawings}
 The drawing buttons add **text** and **graphic** annotations. These objects are purely decorative — they do not display measurement values and do not appear in the [Selected Measurement](#selected-measurement) table.
@@ -61,16 +61,16 @@ The drawing buttons add **text** and **graphic** annotations. These objects are 
 * **Unit** — unit of the image's spatial calibration. When the image has no calibration, the unit falls back to pixels. See [How to change the spatial calibration](calibration).
 * **More options** — opens the Draw & Measure [preferences](#preferences) for the deeper display options.
 
-{{% notice tip %}}
+{{% callout tip %}}
 All graphics can be shown or hidden at once from the [_Display_ panel](dicom-2d-viewer/#display) by checking or unchecking the **Drawings** option.
-{{% /notice %}}
+{{% /callout %}}
 
 #### Selected Measurement {{% badge style="red" %}}D{{% /badge %}} {#selected-measurement}
 The graphic {{% badge style="red" %}}E{{% /badge %}} currently selected on the image is summarized in this table. The reported properties depend on the measurement type, with units shown in square brackets when present (see the [calibration type](dicom-2d-viewer/#open-the-2d-viewer) at {{% badge style="blue" %}}M{{% /badge %}}).
 
-{{% notice note %}}
+{{% callout note %}}
 For **polygons**, length, width, and orientation are computed with the **OMBB (Oriented Minimum Bounding Box)** method — a tighter bounding box than the axis-aligned one, giving a more accurate approximation of the polygon's real dimensions.
-{{% /notice %}}
+{{% /callout %}}
 
 When **Pixel statistics** is checked, the table also reports descriptors computed from the pixels enclosed by the (closed) shape:
 
@@ -83,13 +83,13 @@ When **Pixel statistics** is checked, the table also reports descriptors compute
 * **Skewness** — asymmetry of the value distribution.
 * **Kurtosis** — "tailedness" of the value distribution.
 
-{{% notice note %}}
+{{% callout note %}}
 **SUV** (Standardized Uptake Value) measurements are added to the table on **PET** images when the required metadata is present (patient weight, decay correction, radiopharmaceutical dose, acquisition time, …). Min / Max / Mean SUV are computed with the body-weight method (**SUVbw**), following the [vendor-neutral QIBA definition](https://qibawiki.rsna.org/index.php/Standardized_Uptake_Value_(SUV)).
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice tip %}}
+{{% callout tip %}}
 The table can be exported by **copy / paste**. The copied values use the full numerical precision, not the rounded values shown on screen.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Preferences {#preferences}
 From the main menu **_File > Preferences > Draw & Measure_**.

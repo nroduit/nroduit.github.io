@@ -18,9 +18,9 @@ The typical input is a **dental CBCT** (cone-beam CT): trace the dental arch on 
 
 Curved MPR is available {{< since "4.7.1" >}}.
 
-{{% notice note %}}
+{{% callout note %}}
 There is **no dedicated drawing tool and no toolbar button**. The curve is an ordinary **polyline** — the standard measurement graphic. Both actions need a polyline with **at least 2 points**.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Workflow
 
@@ -30,9 +30,9 @@ There is **no dedicated drawing tool and no toolbar button**. The curve is an or
    - **Build Panoramic View** — generates the straightened panoramic image in place.
    - **Build Cross-Sectional Slices** — opens a dialog and builds the perpendicular cut series.
 
-{{% notice tip %}}
+{{% callout tip %}}
 The polyline is smoothed with a spline before sampling, so a handful of well-placed points along the arch is enough — you do not need a dense set of vertices. Right-clicking a vertex lets you add or delete that specific point.
-{{% /notice %}}
+{{% /callout %}}
 
 ![Curved MPR panoramic and cross-sectional series of a dental CBCT](/tuto/curved-mpr-dental.jpg?classes=shadow&width=100%)
 <br>
@@ -57,9 +57,9 @@ Open the settings popup with the {{< svg-inline "static/tuto/icon/viewSettings.s
 
 Both sliders regenerate the image **only when released**, so dragging stays responsive on large volumes. Values are shown in **mm** when the source volume is calibrated, and in **pix** otherwise.
 
-{{% notice note %}}
+{{% callout note %}}
 The panoramic image intentionally carries **no pixel spacing**: its X axis measures arc length along the curve, which is not the Euclidean distance between distant points, so calibrated millimetre measurements would be misleading. Measurements taken **on the panoramic** therefore report in **pixels**.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Cross-sectional slices {{% badge style="red" %}}C{{% /badge %}} {#cross-sectional-slices}
 

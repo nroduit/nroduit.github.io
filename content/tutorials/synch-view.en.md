@@ -47,13 +47,13 @@ The drop-down popup also contains:
 - **Per-action toggles** (*Scroll*, *Pan*, *Zoom*, *Rotation*, *Flip*, *Window / Level*, *Spatial unit*) mirroring the **selected view**'s configuration.
 - An **Apply to all views** entry — decorated with the selected view's FoR color chip — that propagates the configuration to every other sync-active view in the container, **regardless of FoR** (broader than the same-named entry in the per-view popup, which is restricted to the selected view's FoR group). See [Per-view sync controls](#per-view-sync) for the per-action semantics and the color-chip system.
 
-{{% notice note %}}
+{{% callout note %}}
 The synchronization mode can also be set programmatically with the command:
 ```
 dcmview2d:synch VALUE
 ```
 where `VALUE` is `Stack` or `Tile`. See [Commands](../basics/commands/#dcmview2dsynch) for details.
-{{% /notice %}}
+{{% /callout %}}
 
 ---
 
@@ -80,9 +80,9 @@ See [Per-view sync controls](#per-view-sync) for the full list of toggles and th
 
 **Typical use case:** display a CT series and its corresponding PET series side by side. Because both series share the same Frame of Reference UID, scrolling through slices in the CT view automatically scrolls the PET view to the matching anatomical level. To couple *Window / Level* or *Zoom* too, enable the action on **every** view in the group (an action is synced only between views that **both** have it enabled) — toggle it on one view and use **Apply to all views**.
 
-{{% notice tip %}}
+{{% callout tip %}}
 To find which series share the same Frame of Reference, right-click a thumbnail in the [DICOM Explorer](dicom-explorer/) and choose **Select related Series**, then open all the selected series together in the 2D viewer.
-{{% /notice %}}
+{{% /callout %}}
 
 ![View synchronization layout](/tuto/synch.webp?classes=shadow)
 
@@ -113,9 +113,9 @@ Clicking the button opens a per-view sync popup with:
 - **Apply to all views** — copies this view's effective sync options to every other view sharing the same Frame of Reference UID. The item is decorated with the view's FoR color chip, matching the chip drawn on the auto-sync button so you can confirm at a glance which group will be affected.
 - **Close** — explicit dismiss (the per-action toggles do not auto-close on click; *Esc* and clicks outside also dismiss the popup as usual).
 
-{{% notice note %}}
+{{% callout note %}}
 A per-action toggle only declares whether **this** view takes part in syncing that action. An action is propagated between two views **only when both of them have it enabled** — sharing the same Frame of Reference UID is not enough on its own. Enabling *Zoom* on a single view therefore has no visible effect until at least one peer also has *Zoom* enabled. To couple an action across a whole FoR group in one step, enable it on one view and use **Apply to all views**.
-{{% /notice %}}
+{{% /callout %}}
 
 #### Manual sync button {{< svg-inline "static/tuto/icon/hand.svg" >}} {#manual-sync-button}
 
@@ -132,9 +132,9 @@ Once active:
 - *Scroll* propagation is **forced on and locked** in the per-view sync popup — manual sync is built on top of scroll. All other per-action toggles (*Pan*, *Zoom*, *W / L*, …) remain freely configurable.
 - The manual-sync button turns green to indicate that a manual link is established. Clicking it again removes this view from the group.
 
-{{% notice tip %}}
+{{% callout tip %}}
 The auto-sync {{< svg-inline "static/tuto/icon/synch.svg" >}} and manual-sync {{< svg-inline "static/tuto/icon/hand.svg" >}} buttons coexist on the same view. Auto-sync is preferred whenever a shared FoR is available; manual sync is the fallback for views that fall outside any spatial group.
-{{% /notice %}}
+{{% /callout %}}
 
 ---
 
@@ -152,9 +152,9 @@ Use the [per-action toggles](#per-view-sync) to disable any user-toggleable sett
 
 **Typical use case:** print or export a multi-image layout where each cell shows a different slice of the same series. See [Print](print) for more details.
 
-{{% notice note %}}
+{{% callout note %}}
 This is the **opposite default** from [Default Stack](#stack-mode), where only *Scroll* propagates and every other action starts off. Tile mode assumes you want everything in lock-step (same series, multi-cell view); Stack mode assumes you want surgical control (different series, cross-modality comparison).
-{{% /notice %}}
+{{% /callout %}}
 
 ---
 
@@ -188,9 +188,9 @@ The submenu is the same as the one opened by the auto-sync button on a regular 2
 - **Apply to all views** — propagates the current selection to every other view sharing the same Frame of Reference UID. Decorated with the FoR color chip identifying the target group.
 - **Close** — closes the popup.
 
-{{% notice note %}}
+{{% callout note %}}
 When manual synchronization is active on the view, *Scroll* is forced on and locked — manual sync is built on top of scroll propagation.
-{{% /notice %}}
+{{% /callout %}}
 
 ---
 

@@ -49,12 +49,12 @@ A static description of the machine:
 | Native memory budget | Upper bound of the decoded-image pool |
 | Graphics processor | The GPU detected by the 3D viewer, and its OpenGL version |
 
-{{% notice note %}}
+{{% callout note %}}
 The graphics processor row stays **not assessed** until a 3D view has been opened
 at least once — Weasis only learns the GPU when the 3D engine starts. If it reports
 **software rendering**, the 3D viewer is running without GPU acceleration and will
 be slow; install or enable a proper graphics driver.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Live pressure
 
@@ -88,11 +88,11 @@ The verdict — the heart of the panel. Each line is rated with one of four leve
 - **CPU** — sub-optimal on 2 cores or fewer; abundant on 8+ cores left mostly idle.
 - **Recommended upgrade** — see below.
 
-{{% notice info %}}
+{{% callout info %}}
 The verdict is **cumulative across all your sessions**, not just the current one.
 It stays **Collecting…** until Weasis has run long enough and done enough work to
 judge fairly, so a fresh installation will not show a verdict immediately.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Workload
 
@@ -149,11 +149,11 @@ cached and avoids reloads:
 weasis.native.memory.percent=70
 {{< /highlight >}}
 
-{{% notice warning %}}
+{{% callout warning %}}
 The heap and the native pool share the same physical RAM, so keep their combined
 share comfortably below 100 %. Raising the heap *reduces* the room left for the
 image cache. On a machine with little RAM, raising one means lowering the other.
-{{% /notice %}}
+{{% /callout %}}
 
 The full set of memory parameters is described in the
 [Memory Management developer guide](https://github.com/nroduit/Weasis/blob/master/weasis-core/docs/Memory-Management.md).
@@ -180,9 +180,9 @@ clipboard — hardware, verdict, recommendation and event counters. Paste it int
 [bug report](https://github.com/nroduit/Weasis/issues) or a message to your IT
 department when asking for a hardware upgrade.
 
-{{% notice tip %}}
+{{% callout tip %}}
 The verdict and the limiting events are also written to the Weasis log files in
 `<user home>/.weasis/log/`, and the cumulative statistics are kept in
 `<user home>/.weasis/resource-stats.properties`. You do not need the panel open
 for Weasis to keep measuring.
-{{% /notice %}}
+{{% /callout %}}

@@ -7,9 +7,9 @@ weight: 20
 
 This page describes how to install the Imaging Hub, a Docker Compose stack for managing dcm4chee PACS, ViewerHub, and related services.
 
-{{% notice warning %}}
+{{% callout warning %}}
 This stack is designed for development and testing purposes only. It enables debugging ViewerHub and testing integration with dcm4chee PACS. It is **not suitable for production use**.
-{{% /notice %}}
+{{% /callout %}}
 
 ## Included Services
 

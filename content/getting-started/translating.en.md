@@ -8,14 +8,14 @@ weight: 80
 
 Translation files are hosted and managed on the [Transifex](https://app.transifex.com/weasis/public/) website. Get an account and help to translate to your language! If your language is missing, just head over to Transifex and request a new language.
 
-{{% notice warning %}}
+{{% callout warning %}}
 **Text length**: The translations for many languages frequently exceed the length of the corresponding English source. It could be a problem for the layout of graphical components (e.g., buttons). Some elements have a character limit on the translation tool.
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice tip %}}
+{{% callout tip %}}
 **Special characters**: Some characters representing values (%d, %s), newline (\\n) and HTML tags must not be translated. For other translating recommendations, see <a target="_blank" href="https://docs.transifex.com/#translating">Transifex help</a><br>
 For special words or particular contexts look at the "Instructions" text box (gives explanations or definitions).
-{{% /notice %}}
+{{% /callout %}}
 
 ## Building Weasis-i18n
 
@@ -23,14 +23,14 @@ For special words or particular contexts look at the "Instructions" text box (gi
 
 To obtain daily built packages, see this [page](https://github.com/nroduit/weasis-i18n).
 
-{{% notice note %}}
+{{% callout note %}}
 That means the translation packages can be deployed at any time; it does not need to follow the Weasis life cycle. With remote packages, the plugin translation will be updated by Weasis only if the timestamp number has changed. This timestamp is set during the build phase described below.
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice info %}}
+{{% callout info %}}
 Additional projects to obtain a full translation of Weasis:<br>
 The [java-swing-dialogs](https://app.transifex.com/weasis/java-swing-dialogs) translations must be updated manually in the weasis-launcher module and [docking-frames](https://app.transifex.com/weasis/docking-frames) translations must be packaged witin the library.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Prerequisites
 
@@ -62,9 +62,9 @@ Command if you are behind a proxy server:
 $ mvn clean install -DproxySet=true -DproxyHost="host" -DproxyPort="port" -Dtransifex.token="<your-token>"
 {{< /highlight >}}
 
-{{% notice info %}}
+{{% callout info %}}
 The distribution files are located in the *weasis-i18n-dist/target/dist* folder.
-{{% /notice %}}
+{{% /callout %}}
 
 ### Apply the translations
 
@@ -79,13 +79,13 @@ $weasis:config pro="weasis.i18n https://<your-domain>/weasis-i18n-dist-4.0.0"
 {{< /highlight >}}
   * Replace the files in the "bundle-i18n" folder where Weasis is installed (not possible when Weasis is distributed from an application store or the Mac signed package).
 
-{{% notice note %}}
+{{% callout note %}}
 weasis-launcher-i18n cannot be updated dynamically as the launcher is not an OSGi module. It must be imported manually into the Weasis source (weasis-launcher).
-{{% /notice %}}
+{{% /callout %}}
 
-{{% notice tip %}}
+{{% callout tip %}}
 See [how to change the language in the Weasis preferences](../tutorials/locale).
-{{% /notice %}}
+{{% /callout %}}
 
 
 

@@ -15,14 +15,14 @@
 {{- with site.Params.docline }}
   {{- $here := partial "_weasis/liveURL.gotmpl" $.Page }}
   {{- if eq site.Params.doclinestate "archived" }}
-    {{- partial "shortcodes/notice.html" (dict
+    {{- partial "shortcodes/callout.html" (dict
       "page" $.Page
       "style" "warning"
       "title" (printf "Archived documentation — Weasis %s" .)
       "content" (printf `<p>This page documents Weasis %s and is no longer updated. See the <a href="%s">current documentation</a>.</p>` . $here)
     ) }}
   {{- else }}
-    {{- partial "shortcodes/notice.html" (dict
+    {{- partial "shortcodes/callout.html" (dict
       "page" $.Page
       "style" "note"
       "title" (printf "Weasis %s documentation" .)
@@ -34,7 +34,7 @@
   {{- $r := partial "_weasis/versionIndex.gotmpl" (dict "version" .) }}
   {{- if ge $r.idx 0 }}
     <div class="wv-alert" data-v-since="{{ $r.idx }}">
-    {{- partial "shortcodes/notice.html" (dict
+    {{- partial "shortcodes/callout.html" (dict
       "page" $.Page
       "style" "warning"
       "title" (printf "Requires Weasis %s or later" .)
@@ -47,7 +47,7 @@
   {{- $r := partial "_weasis/versionIndex.gotmpl" (dict "version" .) }}
   {{- if ge $r.idx 0 }}
     <div class="wv-alert" data-v-until="{{ $r.idx }}">
-    {{- partial "shortcodes/notice.html" (dict
+    {{- partial "shortcodes/callout.html" (dict
       "page" $.Page
       "style" "warning"
       "title" (printf "Removed after Weasis %s" .)

@@ -34,10 +34,10 @@ Weasis uses [google-java-format](https://github.com/google/google-java-format) a
 - Building Weasis plugins
   - In the maven panel, select clean/install in Lifecycle of *weasis-framework (root)* to compile and to install all the plugins in the local Maven repository.
 
-{{% notice tip %}}
+{{% callout tip %}}
 * It is possible to use a JVM Option (e.g. `-Dweasis.arch=linux-x86-64`) to limit the build of native plugins only to the architecture of the current system (do not use this option when building the distribution).
 * See also building the final [Weasis Distributions](building-weasis#building-native-binaries-and-installers)
-{{% /notice %}}  
+{{% /callout %}}  
 
 ### Add a launcher
 
@@ -53,30 +53,30 @@ For running or debugging Weasis, you need to create a launcher:
     - Select *Add VM Options* and enter `-Xms64m -Xmx768m -Dgosh.port=17179`
   - Working Directory: remove the current value and add *%MODULE_WORKING_DIR%* from the Insert Macros button
 ![Launcher Configuration](/images/conf/launcher.webp)
-{{% notice note %}}
+{{% callout note %}}
 As the default build task has been removed it is necessary to apply the Maven command *install* on modules with modified code before launching the *Run* or *Debug* mode.<br>
 Keeping the build task and delegating the build to Maven does not seem configurable for a multi-module project, see this [issue](https://youtrack.jetbrains.com/issue/IDEA-198358).
-{{% /notice %}}
+{{% /callout %}}
 
 - Examples of launching parameters by entering values in the *Program arguments* text box
   - Loading DICOM files from a local path:
 {{< highlight text >}}
 $dicom:get -l \"D:\images test\dicom\"
 {{< /highlight >}}
-{{% notice note %}}
+{{% callout note %}}
 Some command interpreters need to escape the quotes or double quotes required for paths or URLs. This is the case with IntelliJ IDEA or Eclipse.<br>
 For more commands at startup see also [Weasis commands](../basics/commands).
-{{% /notice %}}
-{{% notice warning %}}
+{{% /callout %}}
+{{% callout warning %}}
 In Eclipse launcher parameters, '&' within URLs needs to be escaped with a backslash.
-{{% /notice %}}
+{{% /callout %}}
 - Examples of other VM options for overriding the default [Preferences](../basics/customize/preferences)
   - Removing the possibility of exporting DICOM: `-Dweasis.export.dicom=false`
   - Defines a new user (for getting specific preferences): `-Dweasis.user=user1`
   - Examples with specific configuration files:
     - For launching Weasis Dicomizer: `-Dfelix.extended.config.properties=file:target/conf/dicomizer.json`
     - Configuration from a URL: `-Dfelix.extended.config.properties=https://mysite.com/weasis/conf/config.json`
-{{% notice note %}}
+{{% callout note %}}
 **felix.config.properties** defines the location of base.json (the OSGI configuration and the list of plugins to install/start)<br>
 **felix.extended.config.properties** defines the location of a json file (extends/overrides base.json)
-{{% /notice %}}
+{{% /callout %}}

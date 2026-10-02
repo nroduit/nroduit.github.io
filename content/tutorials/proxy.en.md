@@ -21,17 +21,17 @@ For the meaning of each field, see the [Java networking properties reference](ht
 ![Proxy configuration](/tuto/proxy-prefs.webp?classes=shadow)
 <br>
 
-{{% notice tip %}}
+{{% callout tip %}}
 Some changes take effect only after **restarting Weasis**.
-{{% /notice %}}
+{{% /callout %}}
 
 ### From the launch parameters
 
 To pass proxy settings as JVM options at launch, the UI selection must be set to **Direct connection (no proxy) or configuration at launch** so that the manual UI values do not override the command-line ones.
 
-{{% notice tip %}}
+{{% callout tip %}}
 JVM options can also be set permanently in the `[JavaOptions]` section of `Weasis.cfg` (located in the installation directory).
-{{% /notice %}}
+{{% /callout %}}
 
 Common examples:
 
@@ -56,10 +56,10 @@ Common examples:
 -Dhttp.proxyPassword="password"
   {{< /highlight >}}
 
-{{% notice note %}}
+{{% callout note %}}
 The same JVM options can be injected from the launch URL through the `pro=` parameter — see the [weasis-pacs-connector launch parameters](https://github.com/nroduit/weasis-pacs-connector#launch-weasis-with-other-parameters). Example:
 
 ```
 http://localhost:8080/weasis-pacs-connector/weasis?patientID=9702672&pro="https.proxyHost%20127.0.0.1"&pro="https.proxyPort%203128"
 ```
-{{% /notice %}}
+{{% /callout %}}

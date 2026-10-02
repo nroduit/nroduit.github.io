@@ -43,11 +43,11 @@ Exports the underlying image — without on-screen overlays — with a few rende
 
 Open the DICOM Export window from the toolbar icon {{< svg-inline "static/tuto/icon/exportDicom.svg" >}} or from the main menu **_File > Export > DICOM_**. Three destinations are available in the left panel — **Local Device**, **DICOM Send**, and **CD/DVD Image** — each with its own set of options.
 
-{{% notice tip %}}
+{{% callout tip %}}
 When the export window opens, the study selected in the viewer (orange focus border) is pre-checked, and the series that are currently open are highlighted with a full-line selection.
 
 Hover any series row to see its thumbnail in a tooltip — useful when picking among several similar series.
-{{% /notice %}}
+{{% /callout %}}
 
 #### Local Device
 ![Export DICOM](/tuto/export-ko-pr.webp?classes=shadow&width=500px)
@@ -65,11 +65,11 @@ Hover any series row to see its thumbnail in a tooltip — useful when picking a
 3. Pick the patient(s), study (or studies), series, or individual instances to export. Series created inside Weasis (such as [Key Object / Presentation State](build-ko-pr/) objects) are marked with a **NEW** flag.
 4. Click **Export** to write the files, then close the window.
 
-{{% notice note %}}
+{{% callout note %}}
 When the export uses a native image format (JPG, PNG, JPEG 2000, JPEG-XL {{< since "4.6.4" >}}, or TIFF) instead of DICOM, only the image frames are converted (see the [Original Image options](#original-image)). Encapsulated DICOM payloads — video, audio, and PDF — are extracted as standalone files in their native format.
 
 Multi-frame images are exported as numbered files (one frame per file).
-{{% /notice %}}
+{{% /callout %}}
 
 #### DICOM Send
 Sends the selected objects directly to a remote DICOM or DICOMweb node over the network — the same protocols used by PACS systems for inter-institutional transfer.
@@ -79,9 +79,9 @@ Sends the selected objects directly to a remote DICOM or DICOMweb node over the 
 3. Pick the patient(s) / study / series / instances to send. Series created inside Weasis are marked with a **NEW** flag.
 4. Click **Send** to transfer, then close the window.
 
-{{% notice tip %}}
+{{% callout tip %}}
 Destination nodes are configured under **_File > Preferences > DICOM_** (see the **DICOM Node List** and **DICOMweb Node List** entries) and can be reused across export sessions.
-{{% /notice %}}
+{{% /callout %}}
 
 #### CD/DVD Image
 Produces a burnable ISO image that follows the DICOMDIR layout expected by most CD/DVD-based DICOM media.
