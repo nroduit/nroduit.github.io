@@ -30,8 +30,8 @@ When no calibration is available — or when you want to override an existing on
 
 1. Pick the **Line** tool from the [Measurement tools](draw-measure/#measurement-tools).
 2. Draw a line along an object whose real-world length you know.
-3. **Right-click** the line and choose **Manual Calibration**.
-4. Enter the known distance (with its unit) in the dialog and confirm.
+3. **Right-click** the line and choose **Manual Calibration**. {{< since "4.8.0" >}} two shortcuts open the same dialog: hold **Ctrl** (**Cmd** on macOS) while drawing the line and the dialog opens as soon as the line is finished, or select the line and click **Calibrate…** under the table of the [Draw & Measure panel](draw-measure/#selected-measurement).
+4. Enter the known distance (with its unit), choose whether it applies to the current image or to the whole series, and click **Apply**. **Restore original** {{< since "4.8.0" >}} drops your calibration: the image gets back the calibration of its DICOM file, or the one of the Presentation State applied to the view when it defines a pixel spacing; an image that has none of them returns to pixel units.
 
 ![Calibration](/tuto/spatial-calibration.jpg?classes=shadow&width=100%)
 <br>

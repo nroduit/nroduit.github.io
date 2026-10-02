@@ -42,19 +42,36 @@ A static description of the machine:
 
 | Row | Meaning |
 |---|---|
+| Machine {{< since "4.8.0" >}} | Model of the computer, when the system reports one |
 | Operating system | OS name, version and architecture |
-| CPU cores | Number of processor cores available to Weasis |
-| Physical memory | Total RAM of the machine |
+| Processor {{< since "4.8.0" >}} | Model of the CPU, when the system reports one |
+| CPU cores | Number of processor cores. Reads _N_ **physical** / _M_ **logical** {{< since "4.8.0" >}} — the physical count is the one that matters for decoding throughput, since two logical cores sharing one physical core do not decode twice as fast |
+| Physical memory | Total RAM of the machine, followed by the amount currently **available** {{< since "4.8.0" >}} |
 | JVM heap maximum | Upper bound of the heap pool |
 | Native memory budget | Upper bound of the decoded-image pool |
-| Graphics processor | The GPU detected by the 3D viewer, and its OpenGL version |
+| Graphics processor | Each graphics adapter of the machine, with its vendor and video memory |
+| OpenGL version | The OpenGL version reported by the 3D engine |
 
 {{% callout note %}}
-The graphics processor row stays **not assessed** until a 3D view has been opened
-at least once — Weasis only learns the GPU when the 3D engine starts. If it reports
+The **OpenGL version** row stays **not assessed** until a 3D view has been opened
+at least once — Weasis only learns it when the 3D engine starts. If it reports
 **software rendering**, the 3D viewer is running without GPU acceleration and will
 be slow; install or enable a proper graphics driver.
+
+The **Graphics processor** rows do not wait for that {{< since "4.8.0" >}}: the
+adapters are read from the operating system, so they are listed as soon as the
+panel opens, one row per adapter.
 {{% /callout %}}
+
+{{% version until="4.7" %}}
+{{% callout note %}}
+In 4.7 and earlier there is a single **Graphics processor** row carrying both the
+adapter and its OpenGL version, and it stays **not assessed** until a 3D view has
+been opened. The **Machine**, **Processor** and **available** memory figures are
+not shown, and **CPU cores** reports only the count the JVM sees, which on a
+machine with hyper-threading is twice the number of physical cores.
+{{% /callout %}}
+{{% /version %}}
 
 ### Live pressure
 
@@ -85,7 +102,10 @@ The verdict — the heart of the panel. Each line is rated with one of four leve
 - **Memory** — based on real failure signals, not on raw usage: out-of-memory
   errors, a 3D volume that had to spill to disk, or sustained garbage-collection
   overhead. A rare event is tolerated; a *recurring* one turns the verdict red.
-- **CPU** — sub-optimal on 2 cores or fewer; abundant on 8+ cores left mostly idle.
+- **CPU** — sub-optimal on 2 cores or fewer; abundant on 8+ cores left mostly
+  idle. The count used is the number of **physical** cores {{< since "4.8.0" >}};
+  earlier versions counted the logical processors the JVM reports, so a
+  four-core machine with hyper-threading was judged as eight.
 - **Recommended upgrade** — see below.
 
 {{% callout info %}}

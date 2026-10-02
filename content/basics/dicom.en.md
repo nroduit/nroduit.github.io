@@ -74,11 +74,13 @@ Weasis can be started with a manifest that lists the studies to load and the arc
 ## Transfer syntaxes
 
 - **Read**: the pixel data is decoded and displayed by Weasis.
-- **Write**: the syntax is offered when exporting or sending (see [Export](../tutorials/dicom-export)). Images in a syntax that is not offered are exported unchanged.
+- **Write**: the syntax can be selected in the Export dialog (see [Export](../tutorials/dicom-export)), or Weasis uses it when sending over the network or saving the objects it creates. When exporting with the original syntax kept, images are copied unchanged whatever their syntax.
+
+Implicit VR Little Endian is not offered in the Export dialog. Weasis uses it in two cases: as the last fallback of a C-STORE send, when the receiving system accepts neither the syntax of the file nor Explicit VR Little Endian, and for the key object selections it creates.
 
 | Transfer Syntax UID     | Media Type | Description                                                                                                     | Read | Write |
 |-------------------------|------------|-----------------------------------------------------------------------------------------------------------------|------|-------|
-| 1.2.840.10008.1.2       |            | Implicit VR - Little Endian                                                                                     | yes  | No    |
+| 1.2.840.10008.1.2       |            | Implicit VR - Little Endian                                                                                     | yes  | yes   |
 | 1.2.840.10008.1.2.1     |            | Explicit VR - Little Endian                                                                                     | yes  | yes   |
 | 1.2.840.10008.1.2.1.99  |            | Deflated Explicit VR Little Endian                                                                              | yes  | No    |
 | 1.2.840.10008.1.2.2     |            | Explicit VR Big Endian (Retired)                                                                                | yes  | No    |
@@ -104,7 +106,7 @@ Weasis can be started with a manifest that lists the studies to load and the arc
 
 <br>
 
-Video transfer syntaxes are not decoded by Weasis. The video stream is extracted to a temporary file and opened with the default video player of the operating system.
+Video transfer syntaxes are not decoded by Weasis. The video stream is extracted to a temporary file and opened with the default video player of the operating system. The file carries the extension of its container, `.mpg` for MPEG-2 and `.mp4` for H.264 and HEVC {{< since "4.8.0" >}}, so that the player recognizes the format.
 
 | Transfer Syntax UID       | Media Type | Description                                                          | Read | Write |
 |---------------------------|------------|----------------------------------------------------------------------|------|-------|
@@ -137,20 +139,34 @@ The following transfer syntaxes are not read: JPIP Referenced (1.2.840.10008.1.2
 
 ### Photometric interpretation
 
-This table lists the [Photometric Interpretation](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.3.html#sect_C.7.6.3.1.2) values supported by Weasis.
+This table lists every [Photometric Interpretation](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.3.html#sect_C.7.6.3.1.2) value defined by the standard, including the retired ones, and how Weasis reads it. The "Pixel data" column gives the encodings the standard allows for the value: native (uncompressed), encapsulated (compressed), or both. Compressed transfer syntaxes add their own restrictions, see [PS3.5 section 8.2](https://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_8.2.html).
 
-| Photometric Interpretation | Description                                                        | Supported                       |
-|----------------------------|--------------------------------------------------------------------|---------------------------------|
-| MONOCHROME1                | grey level image description (high values=dark, low values=bright) | yes                             |
-| MONOCHROME2                | grey level image description (high values=bright, low values=dark) | yes                             |
-| PALETTE COLOR              | pseudo color image description                                     | yes                             |
-| RGB                        | true color image description                                       | yes                             |
-| YBR_FULL                   | true color image description                                       | yes                             |
-| YBR_FULL_422               | true color image description                                       | yes                             |
-| YBR_PARTIAL_422            | true color image description (Retired)                             | yes (uncompressed pixel data)   |
-| YBR_PARTIAL_420            | true color image description                                       | yes (uncompressed pixel data)   |
-| YBR_ICT                    | true color image description (JPEG-2000)                           | yes                             |
-| YBR_RCT                    | true color image description (JPEG-2000)                           | yes                             |
+| Photometric Interpretation | Description                                                                 | Pixel data             | Supported                                                                                                                                                                 |
+|----------------------------|-----------------------------------------------------------------------------|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| MONOCHROME1                | One gray plane; the minimum value is displayed as white                     | native or encapsulated | yes                                                                                                                                                                       |
+| MONOCHROME2                | One gray plane; the minimum value is displayed as black                     | native or encapsulated | yes                                                                                                                                                                       |
+| PALETTE COLOR              | One plane of indices into the red, green and blue palette color lookup tables | native or encapsulated | yes                                                                                                                                                                       |
+| RGB                        | Red, green and blue planes                                                  | native or encapsulated | yes                                                                                                                                                                       |
+| YBR_FULL                   | Full-range luminance and chrominance (Y, CB, CR)                            | native or encapsulated | yes; native pixel data is converted only for 8-bit samples                                                                                                                |
+| YBR_FULL_422               | As YBR_FULL, chrominance subsampled horizontally                            | native or encapsulated | yes; native pixel data is converted only for 8-bit samples                                                                                                                |
+| YBR_PARTIAL_420            | Partial-range luminance and chrominance, subsampled in both directions      | encapsulated only      | MPEG-2, H.264 and HEVC video: handed to the system video player (see [Objects displayed](#objects-displayed)). Native 8-bit pixel data (not conformant) is also converted |
+| YBR_ICT                    | Irreversible color transformation of JPEG 2000                              | encapsulated only      | yes (JPEG 2000 and High-Throughput JPEG 2000)                                                                                                                             |
+| YBR_RCT                    | Reversible color transformation of JPEG 2000                                | encapsulated only      | yes (JPEG 2000 and High-Throughput JPEG 2000)                                                                                                                             |
+| XYB                        | Perceptual color model of JPEG XL                                           | encapsulated only      | yes {{< since "4.7.3" >}}                                                                                                                                                 |
+| YBR_PARTIAL_422            | Retired in PS3.3-2017b                                                      | —                      | native 8-bit pixel data only                                                                                                                                            |
+| HSV, ARGB, CMYK            | Retired in PS3.3-2001                                                       | —                      | no                                                                                                                                                                        |
+
+The standard also allows values it does not define when a transfer syntax supports them. Weasis cannot read an image with a value missing from this table, retired values included.
+
+When a JPEG Baseline, Extended or Progressive image declares RGB but its JPEG stream carries luminance and chrominance (a JFIF header or component identifiers other than R, G, B), Weasis follows the stream and converts the colors to RGB.
+
+### Photometric interpretation written
+
+| Object created                                                           | Photometric Interpretation written                                                                   |
+|--------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
+| Secondary Capture of screenshots, animations and recordings {{< since "4.8.0" >}} | YBR_FULL_422 with JPEG Baseline, RGB with JPEG XL and uncompressed                                   |
+| DICOMDIR icon images                                                     | MONOCHROME2 for grayscale images, PALETTE COLOR for color images                                     |
+| Film boxes sent to a DICOM printer                                       | RGB when printing in color, otherwise MONOCHROME2                                                    |
 
 ### Pixel data characteristics
 

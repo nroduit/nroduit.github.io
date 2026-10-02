@@ -1,12 +1,14 @@
 ---
-title: "AI-Generated DICOM Objects"
+title: "AI DICOM Viewer: Read AI-Generated Results"
 weight: 339
-description: "Display what an AI framework sends back as DICOM: derived images, segmentation overlays, structured reports and documents."
+description: "Open AI results in DICOM with a free viewer: segmentations, structured reports, parametric maps, derived images. Weasis displays model output; the base version does not run models."
 linkTitle: "AI DICOM Objects"
-keywords: [ "ai dicom", "ai segmentation dicom", "derived images", "ai structured report", "totalsegmentator", "dicom ai output" ]
+keywords: [ "ai dicom", "dicom ai", "ai dicom viewer", "ai dicom reader", "ai dicom analyzer", "ai segmentation dicom", "view ai segmentation", "derived images", "ai structured report", "totalsegmentator", "dicom ai output" ]
 ---
 
 ## <center>Model output packaged as standard DICOM</center>
+
+**Weasis is a free viewer for AI results stored as DICOM.** It opens what an inference framework produced — segmentations, structured reports, parametric maps, derived images — and displays them over the study they were computed from. The base version does not run the models: the analysis happens in your own pipeline, and Weasis reads what that pipeline writes.
 
 AI inference rarely defines its own file formats — instead, results are packaged as standard DICOM objects so any compliant PACS or viewer can ingest them. The same SOP Classes used for human-authored content (segmentations, structured reports, presentation states…) are reused to carry model outputs.
 
@@ -22,6 +24,23 @@ This page maps the AI-produced object types you are most likely to encounter to 
 |                                             | [Presentation State (GSPS)](#dicom-presentation-states-gsps) | Vector annotations, measurements, display settings |
 | [Reports & documents](#reports--documents)  | [Structured Report (SR)](#dicom-structured-report-sr) | Findings, measurements, classification results           |
 |                                             | [Encapsulated Documents](#dicom-encapsulated-documents) | PDF reports, attached non-image data                   |
+
+## Does Weasis run AI models?
+
+Not in the base version, and that distinction matters when choosing tools. Weasis is the **viewer** at
+the end of an AI pipeline: the model runs wherever you deploy it — a research framework, a vendor
+appliance, a PACS plug-in — and writes its output as DICOM. Weasis opens that output next to the
+original images, so a reader can check the result against what was acquired.
+
+A [plugin](../basics/customize/build-plugins) could still run a model inside Weasis, provided the
+computer it runs on supports it (memory, GPU, runtime libraries). No such plugin is part of the
+standard distribution.
+
+Weasis can also start AI tasks and follow them {{< since "4.8.0" >}}, without running them itself. It
+acts as a *User Agent*, the role defined by DICOMweb's Unified Procedure Step service (UPS-RS) and
+used by the IHE **AI Workflow for Imaging** (AIW-I) profile. From the study you have open, you can ask
+the server to run an AI task, see whether that task is queued, running or finished, and open its
+results once they are ready.
 
 ## Image outputs
 

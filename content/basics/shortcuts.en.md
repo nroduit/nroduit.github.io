@@ -10,7 +10,7 @@ weight: 20
 Here is a list of the default keyboard and mouse shortcuts in Weasis. The shortcuts are divided into different categories for better understanding.
 
 {{% callout note %}}
-Most keyboard shortcuts can be customized {{< since "4.7.0" >}} in **Preferences > General > Keyboard Shortcuts**. This page documents the **default** configuration. To get the current configuration (including any customizations), use **Help > Keyboard Shortcuts** (this page is internationalized).
+Most keyboard shortcuts can be customized {{< since "4.7.0" >}} in **Preferences > General > Keyboard Shortcuts**. This page documents the **default** configuration. To get the current configuration (including any customizations), use **Help > Keyboard Shortcuts** (this page is internationalized). Every tool of the [Draw & Measure](../tutorials/draw-measure) palettes, including the tools added by plugins, has its own entry there {{< since "4.8.0" >}}; most have no key by default.
 {{% /callout %}}
 
 ### Central panel containing viewers and editors
@@ -25,6 +25,8 @@ Most keyboard shortcuts can be customized {{< since "4.7.0" >}} in **Preferences
 | **Ctrl + E**           | Externalize the tab (when multiple screens)                             |
 | **Ctrl + N**           | Normalize the tab                                                       |
 | Tab **Right-click**    | Open the contextual menu for more options (Close Others, All, Maximize) |
+
+The tab menu also moves a tab: **Split Down** / **Split Right** open a new area for it below or on the right, and **Move to Other Group** sends it to another group of tabs.
 
 ### Selected view in the 2D DICOM Viewer
 
@@ -72,6 +74,9 @@ Most keyboard shortcuts can be customized {{< since "4.7.0" >}} in **Preferences
 | **D**                                                    | Distance measurement                                                                                                                                                   |
 | **A**                                                    | Angle measurement                                                                                                                                                      |
 | **Y**                                                    | Polyline measurement                                                                                                                                                   |
+| **E**                                                    | Ellipse measurement {{< since "4.8.0" >}}                                                                                                                              |
+| **O**                                                    | Circle measurement (centre and radius) {{< since "4.8.0" >}}                                                                                                           |
+| **X**                                                    | Bidirectional measurement {{< since "4.8.0" >}}                                                                                                                        |
 | **G**                                                    | Draw                                                                                                                                                                   |
 | **B**                                                    | Textbox                                                                                                                                                                |
 | **N**                                                    | No Action                                                                                                                                                              |
@@ -87,8 +92,11 @@ Most keyboard shortcuts can be customized {{< since "4.7.0" >}} in **Preferences
 | **Alt + S**                                              | Show/Hide all the [segmentations](../tutorials/dicom-segmentation) of the selected view {{< since "4.7.2" >}}                                                          |
 | **Spacebar**                                             | Show/Hide all the annotations (three states)                                                                                                                           |
 | **I**                                                    | Show/Hide all the annotations (three states)                                                                                                                           |
-| **Escape**                                               | Reset the selected view                                                                                                                                                |
+| **Escape**                                               | Reset the selected view; while a graphic is being drawn, cancel that drawing instead {{< since "4.8.0" >}}                                                           |
 | **P**                                                    | Print view(s) with the operating system printer                                                                                                                        |
+| **Ctrl + Shift + S**                                     | Screenshot of the selected view {{< since "4.8.0" >}}                                                                                                                  |
+| **Ctrl + Shift + A**                                     | Export an animation of the selected view: cine loop or 3D rotation {{< since "4.8.0" >}}                                                                               |
+| **Ctrl + Shift + R**                                     | Record the viewer {{< since "4.8.0" >}}                                                                                                                                |
 | **Right-click**                                          | Open the contextual menu for more options                                                                                                                              |
 | **Double click**  or **F11**                             | Toggle fullscreen (F11 {{< since "4.5.2" >}})                                                                                                                          |
 | **Left mouse drag**                                      | Perform the selected left mouse action (default: Window/Level)                                                                                                         |
@@ -140,8 +148,18 @@ MPR view inherits the same shortcuts as the 2D viewer, with the following additi
 | **Ctrl + A**                   | Select all the graphics                                                                                                                                               |
 | **Ctrl + D**                   | Deselect all the graphics                                                                                                                                             |
 | **Delete**                     | Delete the selected graphics                                                                                                                                          |
+| **Ctrl + C**                   | Copy the selected graphics (**Cmd** on macOS) {{< since "4.8.0" >}}                                                                                                   |
+| **Ctrl + X**                   | Cut the selected graphics (**Cmd** on macOS) {{< since "4.8.0" >}}                                                                                                    |
+| **Ctrl + V**                   | Paste the graphics, centered on the cursor or at their original position (see the [preferences](../tutorials/draw-measure/#preferences)) {{< since "4.8.0" >}}        |
+| **Ctrl + Shift + V**           | Paste the graphics at their original position {{< since "4.8.0" >}}                                                                                                   |
+| **Ctrl + Shift + D**           | Duplicate the selected graphics {{< since "4.8.0" >}}                                                                                                                 |
+| **Escape**                     | Cancel the drawing in progress (otherwise resets the selected view) {{< since "4.8.0" >}}                                                                             |
+| **Backspace**                  | Remove the last placed vertex of the path being drawn {{< since "4.8.0" >}}                                                                                           |
+| **Alt + click on a vertex**    | Remove that vertex {{< since "4.8.0" >}}                                                                                                                              |
+| **Alt + drag from a path end** | Continue drawing an open path from its first or last point {{< since "4.8.0" >}}                                                                                      |
+| **Midpoint handle**            | Click to insert a vertex on the middle of a segment (polyline, polygon, freehand path); drag to insert one and place it {{< since "4.8.0" >}}                         |
 | **Shift + click on a graphic** | In selection mode: add or remove a graphic to the current selection.<br /> In drawing mode: force to draw on another graphic (without shift the graphic is selected). |
-| **Double click**               | Stop adding points for polyline (also available in the context menu)                                                                                                  |
+| **Double click**               | Stop adding points for a polyline (also **Stop drawing** in the context menu while drawing)                                                                           |
 | **Right-click**                | Open the contextual menu for more options                                                                                                                             |
 
 

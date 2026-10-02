@@ -17,6 +17,7 @@ hidden: true
 - [Can Weasis open a DICOM CD or DVD?](#can-weasis-open-a-dicom-cd-or-dvd)
 - [Can Weasis open ordinary images such as JPEG or TIFF?](#can-weasis-open-ordinary-images-such-as-jpeg-or-tiff)
 - [Which DICOM object types can Weasis display?](#which-dicom-object-types-can-weasis-display)
+- [Does Weasis run AI models on my images?](#does-weasis-run-ai-models-on-my-images)
 - [Which DICOM transfer syntaxes and codecs are supported?](#which-dicom-transfer-syntaxes-and-codecs-are-supported)
 - [Can Weasis query a PACS directly?](#can-weasis-query-a-pacs-directly)
 - [Does Weasis support DICOMweb?](#does-weasis-support-dicomweb)
@@ -70,6 +71,9 @@ Yes. Besides DICOM, Weasis displays TIFF, BMP, GIF, JPEG, JPEG 2000, JPEG-XL, PN
 
 ### Which DICOM object types can Weasis display?
 Beyond ordinary and multi-frame images, Weasis displays **Enhanced** CT / MR / US volumes, MPEG-2 and MPEG-4, MIME-encapsulated documents such as PDF, [Structured Reports](tutorials/dicom-sr), [Presentation States and Key Object Selection](tutorials/build-ko-pr), [Segmentation](tutorials/dicom-segmentation), [Radiotherapy objects](tutorials/dicom-rt), [waveforms and ECG](tutorials/dicom-ecg), [audio](tutorials/dicom-audio) and Parametric Maps. The full list is on the [Features](features) page.
+
+### Does Weasis run AI models on my images?
+Not in the base version. Weasis **displays** AI results: the model runs in your own pipeline and writes its output as DICOM — segmentation (SEG), RTSTRUCT, structured report, parametric map or derived images — and Weasis opens that output over the original study. A [plugin](basics/customize/build-plugins) could run a model inside Weasis, as long as the computer it runs on supports it. Weasis can also start AI tasks on a server and follow their progress {{< since "4.8.0" >}}, as a DICOMweb UPS-RS *User Agent* in an IHE AI Workflow for Imaging (AIW-I). See [AI DICOM Viewer](tutorials/dicom-artificial-intelligence) for the object types and how each one is rendered.
 
 ### Which DICOM transfer syntaxes and codecs are supported?
 JPEG (baseline, extended and lossless), **JPEG-LS**, **JPEG 2000**, **JPEG-XL**, RLE and Deflated Explicit VR Little Endian, in addition to the uncompressed syntaxes. The [DICOM Conformance Statement](basics/dicom) lists every transfer syntax and SOP class authoritatively; the [Features](features) page gives the summary.

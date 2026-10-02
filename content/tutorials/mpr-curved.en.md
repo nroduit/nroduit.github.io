@@ -25,7 +25,7 @@ There is **no dedicated drawing tool and no toolbar button**. The curve is an or
 ### Workflow
 
 1. Open a volume in the [MPR viewer](mpr).
-2. On the plane that best shows the structure to follow — the **axial** plane for a dental arch — draw a **polyline** {{% badge style="red" %}}A{{% /badge %}} tracing it (see [Measurement and Annotation](draw-measure)). Double-click to finish the curve.
+2. On the plane that best shows the structure to follow — the **axial** plane for a dental arch, but any plane, oblique included, works — draw a **polyline** {{% badge style="red" %}}A{{% /badge %}} tracing it (see [Measurement and Annotation](draw-measure)). Double-click to finish the curve.
 3. **Right-click** the completed polyline. The context menu adds two entries:
    - **Build Panoramic View** — generates the straightened panoramic image in place.
    - **Build Cross-Sectional Slices** — opens a dialog and builds the perpendicular cut series.
@@ -77,7 +77,7 @@ Weasis samples the curve at the chosen spacing — one sample is one cut — and
 
 ### Limitations
 
-- The generator assumes the curve lies on the **axial** plane at a fixed level and samples height along the volume's Z axis (the dental-arch case). Curves drawn on coronal, sagittal or oblique planes are not reconstructed correctly.
+- The curve must lie in one plane: the reconstruction extends it along the normal of the plane it was drawn on. A path that bends out of that plane is not supported.
 - The panoramic is a **thin curved reformation** (one voxel sampled on the curve, no adjustable slab thickness); only **Height** and **Step** are adjustable.
 - Samples that fall **outside the volume** are left empty rather than filled with a background value.
 - The panoramic is **uncalibrated** — measure on the cross-sectional series when accurate distances matter.

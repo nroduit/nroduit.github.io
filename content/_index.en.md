@@ -110,7 +110,7 @@ aliases:
 - **[3D](tutorials/dicom-3d-viewer) & [MPR](tutorials/mpr)** — volume rendering, oblique reconstruction, [sync views](tutorials/synch-view), [MIP](tutorials/mip) slabs.
 - **Wide DICOM coverage** — CT, MR, US, X-ray, PET, [SR](tutorials/dicom-sr), [ECG](tutorials/dicom-ecg), [audio](tutorials/dicom-audio), 4D, multi-frame.
 - **DICOM [SEG](tutorials/dicom-segmentation) & [RT](tutorials/dicom-rt)** — overlays in 2D / MPR / 3D, RTSTRUCT, RTDOSE isodose, DVH.
-- **[AI-friendly objects](tutorials/dicom-artificial-intelligence)** — secondary capture, parametric maps, GSPS, SR, segmentations.
+- **[AI DICOM objects](tutorials/dicom-artificial-intelligence)** — read what a model produced: secondary capture, parametric maps, GSPS, SR, segmentations.
 - **[Measurements](tutorials/draw-measure)** — [calibrated](tutorials/calibration) distances, angles, ROI stats, [histograms](tutorials/histogram); saved as [KO / PR](tutorials/build-ko-pr).
 - **[PACS & web integration](basics/customize/integration)** — [DICOMweb](tutorials/dicomweb-config), DIMSE Q/R, portal launch via [`weasis://`](getting-started/weasis-protocol).
 - **Workflow ergonomics** — multi-monitor, HiDPI, [docking](tutorials/docking), [shortcuts](basics/shortcuts), [themes](tutorials/theme), [locales](tutorials/locale).

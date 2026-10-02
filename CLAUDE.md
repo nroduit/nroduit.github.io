@@ -26,7 +26,7 @@ python3 .github/scripts/seo-conformity.py
 cd themes/hugo-theme-relearn && git pull origin main && cd ../..
 ```
 
-Hugo **extended** is required (Dart Sass). CI pins `HUGO_VERSION=0.165.0` in `.github/workflows/hugo.yaml` — prefer matching that locally when reproducing CI behavior.
+Hugo **extended** is required (Dart Sass). CI pins `HUGO_VERSION=0.166.0` in `.github/workflows/hugo.yaml` — prefer matching that locally when reproducing CI behavior.
 
 ### HUGO_GH_TOKEN
 
