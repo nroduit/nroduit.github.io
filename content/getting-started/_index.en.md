@@ -3,7 +3,7 @@ title: Getting Started
 description: "Install, launch, and deploy Weasis — download options for Windows, macOS, and Linux, web-launch via the weasis:// protocol, and DCM4CHEE integration."
 keywords: [ "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer", "clinical viewer", "radiological viewer", "linux dicom viewer",  "mac dicom viewer" ]
 weight: 5
-pre: "<b>1. </b>"
+menuPre: "<b>1. </b>"
 ---
 
 ### Try Weasis now

@@ -4,7 +4,7 @@ description: "Step-by-step tutorials for the Weasis DICOM viewer: opening studie
 linkTitle: "Tutorials"
 keywords: [ "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer", "clinical viewer", "radiological viewer", "linux dicom viewer",  "mac dicom viewer" ]
 weight: 20
-pre: "<b>4. </b>"
+menuPre: "<b>4. </b>"
 ---
 
 [Weasis](../) provides the tools to visualize and analyze images obtained from medical imaging equipment according to the [DICOM standard](https://www.dicomstandard.org/). This free DICOM viewer is used by healthcare professionals, researchers and patients.

@@ -2,7 +2,7 @@
 title: Stories
 description: "Real-world Weasis deployments and peer-reviewed publications: case studies from the University Hospital of Geneva, research trials and clinical portals."
 weight: 50
-pre: "<b>5. </b>"
+menuPre: "<b>5. </b>"
 ---
 Weasis, the latest medical imaging software developed at the [University Hospital of Geneva (HUG)](https://www.hug.ch/en), serves as the clinical viewer for the hospital's in-house Electronic Medical Records system. Since becoming open source in 2010, Weasis has earned its place as a reference DICOM viewer for medical professionals worldwide.
 

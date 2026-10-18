@@ -21,9 +21,17 @@ The graphics-card capabilities used by Weasis are reported under **OpenGL Suppor
 * **Max 3D texture dimension length** — the upper limit, in voxels, of any X / Y / Z dimension of the volume.
 * Any other entry shown in **red** indicates a non-optimal configuration. The viewer often still works — see [how to limit the size of 3D textures](#3d-viewer) if performance becomes an issue.
 
-{{% callout note %}}
-If Weasis reports a graphics card that is not the one you expected, the choice is made by the graphics driver and the operating system, not by Weasis. OpenGL itself has no API to select a specific card; consult your OS's GPU-selection settings for the application.
-{{% /callout %}}
+#### Use the high-performance graphics card on a Windows laptop {#gpu-selection}
+
+The card in use is shown on the **Graphic card** line under **OpenGL Support**. To switch to the dedicated card:
+
+1. Close Weasis.
+2. Open **Settings > System > Display > Graphics**.
+3. Click **Add desktop app** and select `C:\Program Files\Weasis\Weasis.exe`.
+4. Click **Weasis** in the list and set **GPU preference** to **High performance**.
+5. Start Weasis again.
+
+If the integrated card is still shown, use **NVIDIA Control Panel > Manage 3D settings > Program Settings** (or the equivalent in **AMD Software**) for `Weasis.exe`.
 
 ### Open the 3D viewer
 Open the viewer by clicking {{< svg-inline "static/tuto/icon/volume.svg" >}} in the toolbar of a series view, by double-clicking the series thumbnail, or by right-clicking the thumbnail in the [DICOM Explorer](dicom-explorer) and choosing the 3D viewer.
@@ -37,7 +45,14 @@ Try it on a volume dataset (Medical Demos from data.kitware.com)
 $dicom:get -w "https://nroduit.github.io/demo-archive/3d/head-neck.xml"
 {{< /launch >}}
 
-![3D View](/tuto/view-3d.jpg?classes=shadow&width=100%)
+{{% annotate src="/tuto/view-3d.webp" viewbox="0 0 1252 1309" alt="3D viewer with four renderings of a head and neck CT: plain shading in the left column, cinematic lighting in the right column, path tracing in the selected bottom-right view, and the 3D Rendering Tools panel on the right" class="shadow" %}}
+A | | 792,32 | 26
+B | | 958,110 | 26
+C | | 958,337 | 26
+D | | 958,599 | 26
+E | | 230,72 | 26
+F | | 690,72 | 26
+{{% /annotate %}}
 <br>
 
 The same [patient orientation axes](mpr#orientation-axes) as the MPR views are drawn in the 3D view {{< since "4.7.0" >}}.
@@ -54,7 +69,7 @@ Actions in the toolbar:
 * {{< svg-inline "static/tuto/icon/volumeCut.svg" >}} **MPR Crosshair Cut** — opens the [cut mode](#mpr-cut) to interactively clip the rendered volume along the anatomical planes defined by the MPR crosshair.
 * {{< svg-inline "static/tuto/icon/volumeSettings.svg" >}} **3D preferences** — opens the [Preferences](#preferences).
 
-Other toolbar buttons (LUT, reset, layout, synchronize…) are documented in the sections below.
+Other toolbar buttons (LUT, reset, layout, synchronize…) are documented in the sections below. The **Capture** button {{< since "4.8.0" >}} saves the view as a picture, records it, or exports a turn of the volume as an animation with **Export rotation** — see [Capture](capture#rotation).
 
 ### MPR Crosshair Cut Mode {#mpr-cut}
 
@@ -112,8 +127,10 @@ The view's right-click context menu also exposes a **Synchronize** submenu with 
 | Rendering   | Rendering Type                               | OFF     |
 | Rendering   | Volume Opacity                               | OFF     |
 | Rendering   | Volume Shading                               | OFF     |
+| Rendering   | Cinematic lighting {{< since "4.8.0" >}}     | OFF     |
 | Rendering   | Orthographic projection                      | OFF     |
 | Rendering   | MPR Crosshair Cut                            | OFF     |
+| Rendering   | Segmentation type                            | OFF     |
 
 Camera-level actions are on by default because keeping multiple 3D views framed identically is the common workflow when comparing rendering types or LUT presets side by side. Photometric and rendering actions are opt-in because the typical reason to open a second 3D view is to **diverge** on those settings (e.g. one view in Composite with a soft-tissue LUT, the other in MIP).
 
@@ -130,7 +147,12 @@ Some of the options below are also accessible from the toolbar and the right-cli
 * **Window** — width of the voxel-value range mapped to the displayed value range.
 * **Level** — center of the range defined by Window.
 * **LUT Shape** — transfer function applied between input and display values: linear, sigmoid, or logarithmic. Default is linear.
-* {{< svg-inline "static/tuto/icon/lut.svg" >}} **LUT** — a 3D Lookup Table that maps grayscale voxel values to color, opacity, and lighting for visualization. Picking a LUT from the toolbar or the right-click menu is usually easier: LUTs there are ordered by modality and shown with a preview. Custom LUTs can be created and modified with the [Volume LUT Editor](#lut-editor).
+* {{< svg-inline "static/tuto/icon/lut.svg" >}} **LUT** — a 3D Lookup Table that maps grayscale voxel values to color, opacity, and lighting for visualization. Picking a LUT from the toolbar or the right-click menu is usually easier: LUTs there are ordered by modality and shown with a preview. Custom LUTs can be created and modified with the [Volume LUT Editor](#lut-editor), and the whole library is described in [Color Maps](color-maps/) {{< since "4.8.0" >}}. In the list {{< since "4.8.0" >}}:
+  * Presets are grouped by anatomical category (bone, vascular, cardiac, lung and airways, soft tissue and skin…). The CT list includes the classic volume rendering presets of 3D Slicer (aorta, cardiac, coronary and pulmonary arteries, liver vasculature, muscle, soft tissue, airways…).
+  * MR presets are defined as a percentage of the volume maximum and PET presets in SUVbw (standardized uptake value), so they adapt to the loaded series instead of assuming a fixed intensity range.
+  * Presets you use often can be marked as **favorites**, which keeps them at the top of the list.
+  * Each preset carries one to three **dots** showing its rendering cost on the loaded volume — hover them to read *Rendering cost: N % of the voxels visible* — so an empty preset or a solid block is spotted before it is applied.
+  * Presets marked with a ✦ are the ones that suit [Cinematic lighting](#volume-rendering) and **Path tracing** best: bone, contrast-filled vessels, cardiac, skin and endoscopic views for CT, **Angiography** for MR and **Fetal** for ultrasound. Their opaque, well-separated materials give clean shadows and reflections.
 * {{< svg-inline "static/tuto/icon/inverseLut.svg" >}} **Invert LUT** — flips the LUT direction.
 
 
@@ -143,32 +165,59 @@ Controls for the rendering algorithm, quality, transparency, lighting, and shadi
   * **MinIP** — Minimum Intensity Projection. Keeps the lowest-intensity voxel along each ray. Useful for visualizing air-filled structures such as airways.
   * **MIP Mean** — Mean Intensity Projection. Averages intensities along each ray, producing a smoother representation of the volume.
   * **Iso Surface** — renders a 3D surface at a given intensity threshold, representing structures of a uniform density (e.g. bone segmentation).
+  * **Path tracing** {{< since "4.8.0" >}} — the most realistic look, close to a photograph. Weasis simulates how light travels: it scatters inside the tissue, bounces from one structure to another, casts soft shadows from the main light and comes from the chosen lighting **Environment** (see **Cinematic lighting** below). A built-in denoiser smooths the first, grainy frames, then the image **refines itself over a few seconds** while the view stands still; the progress is shown at the bottom of the view. Rotating or changing anything starts the refinement again, and while you drag, the view shows the faster **Composite** rendering with cinematic lighting instead. Choosing this type turns **Cinematic lighting** (and with it **Shading**) on. The same **More Options** controls apply (light direction, environment, exposure), and the **Cinematic lighting quality** [preference](#interactive-rendering) sets how many times the light may bounce.
 * **Z-axis sampling** — distance between successive samples along each ray. Smaller values capture more detail at the cost of compute time; the default is derived from the volume size.
 * **Opacity** — global opacity factor for the voxels. Can be pushed above 100 % to compensate for the lower-than-100 % values defined by some Volume LUTs.
 * **Shading** — enables shading on the rendered surface. The default is taken from the Volume LUT; the additional options let you override the inherited lighting settings. The toggle also lights the **segmentation surfaces** drawn over or in place of the anatomy {{< since "4.7.3" >}} — see [Segmentation overlay in the 3D Volume Renderer](dicom-segmentation#segmentation-overlay-in-the-3d-volume-renderer).
+* **Cinematic lighting** {{< since "4.8.0" >}} — a more realistic look for the **Composite** and **Iso Surface** types. A single main light casts **shadows** through the volume, and structures darken where they are enclosed or close to one another (**ambient occlusion**), which makes depth easier to read. Brightness is then adjusted like in a photograph, so bright areas fade smoothly instead of turning flat white. It refines the shading, so turning it on also turns **Shading** on. The same checkbox is available in the right-click menu of the view. The **More Options** button then gives, in addition to the shininess:
+  * **Shadow strength** and **Ambient occlusion** — how much each effect darkens the image (0 disables it). Both run from 0 to 1; the defaults are 0.70 and 0.60.
+  * **Exposure** — overall brightness of the image, from 0.25 to 3 (default 1.20).
+  * **Light azimuth** and **Light elevation** — where the main light comes from, relative to the viewer, each from −90° to 90°. Both at 0° give a headlight; the default (−30° azimuth, 35° elevation) lights the scene from the upper left, which reveals the shape of the anatomy best.
+  * **Environment** and **Environment strength** — soft light coming from all around the volume, as in a photo studio: **Studio** (neutral key, fill and rim panels, the default), **Overcast** (soft shadowless sky), **Warm** (low sun) or **Cool** (clinical overhead panels), or **None** to keep the flat ambient light of the LUT. The environment turns with the camera, fills the shadows with colored light and adds soft reflections whose blur follows the **Shininess**. The strength runs from 0 to 2 (default 1.0).
+
+The [screenshot at the top of the page](#open-the-3d-viewer) shows the difference: the left column {{% badge style="red" %}}E{{% /badge %}} uses plain **Shading**, the right column {{% badge style="red" %}}F{{% /badge %}} **Cinematic lighting** on the same presets, and the selected view, bottom right, **Path tracing**.
+
+<!-- SCREENSHOT TO ADD: /tuto/3d-cinematic-environments.webp (one row, same view: Studio, Overcast, Warm, Cool, None). Insert as: ![The five lighting environments](/tuto/3d-cinematic-environments.webp?classes=shadow) -->
+<!-- SCREENSHOT TO ADD: /tuto/3d-path-tracing.webp (fully refined Path tracing still on a ✦ preset (e.g. CT bone or contrast-filled vessels)). Insert as: ![Path tracing on a CT preset](/tuto/3d-path-tracing.webp?classes=shadow) -->
+
+{{% callout note %}}
+Cinematic lighting takes roughly two to three times longer to render than plain shading, because every point of the volume also has to look toward the light and around itself. On a slow graphics card, lower the [Cinematic lighting quality](#interactive-rendering) in the preferences or leave the option off: the shadows and occlusion follow the **Dynamic quality** setting while you rotate the view, so interaction stays smooth even at the higher quality levels.
+{{% /callout %}}
 
 #### Transform {{% badge style="red" %}}D{{% /badge %}} {#transform}
-Zoom the volume and rotate it around the three patient axes:
+Zoom the volume and rotate it around one of the three patient axes:
 
 * **Zoom slider** — scales the rendering.
-* **Rotation sliders** — rotate around the Left / Right, Anterior / Posterior, and Superior / Inferior axes (LPS coordinate system).
+* **Rotation slider** and **axis selector** — pick the Left / Right, Anterior / Posterior or Superior / Inferior axis (LPS coordinate system), then turn the volume around it. The slider sets the twist around that axis alone and leaves the tilt given by the mouse untouched, so a view can be spun around the patient's vertical axis without losing its inclination {{< since "4.8.0" >}}.
 
 ### Volume LUT Editor {#lut-editor}
 
 Custom Volume LUTs can be created and edited directly in the 3D viewer {{< since "4.7.2" >}}. A Volume LUT (also called a *preset*) defines, for each voxel intensity, the color, the opacity, and the lighting coefficients used by the volume rendering.
 
+{{% version since="4.8" %}}
+Volume presets are edited in the **color map editor**, the same dialog that creates the color maps of the 2D viewer and of the fusion overlays — see [Color Maps](color-maps/) for the complete description. Open it from the LUT list in the toolbar {{< svg-inline "static/tuto/icon/lut.svg" >}} or in the right-click menu, with the **Edit color maps…** entry at the bottom of the list. The list of the dialog then opens on the **3D presets** of the modality of the loaded volume.
+
+What is specific to a volume preset:
+
+* **Volume preset**, in the quick settings, is what makes a map usable by the 3D viewer: it gains lighting, and its positions are anchored to the values of the volume (Hounsfield units for CT, SUVbw for PET, a percentage of the maximum otherwise).
+* **Shade**, **Specular power** and **Edge emphasis** set the default lighting of the preset, which can still be overridden afterward from the [Volume Rendering](#volume-rendering) panel.
+* Each stop carries, besides its color and its opacity, the **Ambient / Diffuse / Specular** coefficients of its material. The **Material** list applies a ready-made combination (matte, soft tissue, skin, vessel, bone, glass, metal) to the selected stop or to all of them.
+* The histogram of the loaded volume is drawn behind the opacity curve, and the status line reports the **share of the voxels the preset leaves visible** — a quick way to tell an empty preset from a solid block.
+
+Your presets are saved with your other color maps in `customColorMaps.json`, in the Weasis preferences folder, on this workstation. Presets created with an earlier version, in `customVolumePresets.json`, are imported once on the first start.
+{{% /version %}}
+
+{{% version until="4.7" %}}
 Open the editor from the LUT list in the toolbar {{< svg-inline "static/tuto/icon/lut.svg" >}} or in the right-click menu: the **Edit Volume LUT…** entry is located at the bottom of the list.
 
-{{% annotate src="/tuto/3d-lut-editor.webp" viewbox="0 0 2552 1520" alt="Volume LUT Editor dialog with the preset list, preset properties and transfer function" class="shadow" %}}
+{{< annotate src="/tuto/3d-lut-editor.webp" viewbox="0 0 2552 1520" alt="Volume LUT Editor dialog with the preset list, preset properties and transfer function" class="shadow" >}}
 A | | 645,270 | 60
 B | | 1400,150 | 60
 C | | 1020,980 | 60
-{{% /annotate %}}
+{{< /annotate >}}
 <br>
 
-#### Preset list {{% badge style="red" %}}A{{% /badge %}} {#preset-list}
-
-The left side of the dialog lists all the available presets. A **search field** and two filters (**modality** and **All / Editable / Built-in**) help to locate a preset in a long list.
+**Preset list** {{% badge style="red" %}}A{{% /badge %}} — the left side of the dialog lists all the available presets. A **search field** and two filters (**modality** and **All / Editable / Built-in**) help to locate a preset in a long list.
 
 Built-in presets cannot be modified. Use the buttons below the list to create an editable one:
 
@@ -176,16 +225,14 @@ Built-in presets cannot be modified. Use the buttons below the list to create an
 * **Copy** — duplicates the selected preset. Copying a built-in preset is the easiest way to start from a working configuration and adjust it.
 * **Delete** — removes the selected custom preset (with confirmation).
 
-#### Preset properties {{% badge style="red" %}}B{{% /badge %}} {#preset-properties}
+**Preset properties** {{% badge style="red" %}}B{{% /badge %}}:
 
 * **Name** — the name displayed in the LUT lists (required).
 * **Modality** — the modality group under which the preset is listed (e.g. CT, MR, PET). Choose **Default** to make it available for all modalities.
 * **Default** — makes this preset the one selected automatically when a volume of that modality is opened.
 * **Shading** and **Specular Power** — default lighting behavior of the preset, which can still be overridden afterward from the [Volume Rendering](#volume-rendering) panel.
 
-#### Transfer function {{% badge style="red" %}}C{{% /badge %}} {#transfer-function}
-
-A preset contains one or more **groups**, and each group is a list of **points** placed along the voxel-intensity axis. Every point defines an opacity, a color, and the **Ambient / Diffuse / Specular** lighting coefficients; values between two points are interpolated linearly.
+**Transfer function** {{% badge style="red" %}}C{{% /badge %}} — a preset contains one or more **groups**, and each group is a list of **points** placed along the voxel-intensity axis. Every point defines an opacity, a color, and the **Ambient / Diffuse / Specular** lighting coefficients; values between two points are interpolated linearly.
 
 The points of the selected group can be edited in two ways:
 
@@ -197,9 +244,8 @@ The resulting color bar is previewed under the graph, and every change is also a
 * **Save** — validates and persists the preset, then closes the dialog.
 * **Cancel** — discards the unsaved changes and restores the LUT that was active before opening the editor.
 
-{{% callout info %}}
-Custom presets are stored in the `customVolumePresets.json` file inside the Weasis preferences directory. When a remote preference service is configured (e.g. with weasis-pacs-connector), the file is also uploaded so the custom LUTs follow the user profile across workstations.
-{{% /callout %}}
+Custom presets are stored in the `customVolumePresets.json` file inside the Weasis preferences directory, on this workstation.
+{{% /version %}}
 
 ### Preferences
 From the menu **_File > Preferences > Viewer > 3D Viewer_**.
@@ -216,7 +262,8 @@ The maximum 3D texture defaults come from the graphics card. Lowering them (e.g.
 {{% /callout %}}
 
 #### Volume Rendering {#interactive-rendering}
-* **Dynamic quality** — reduces the rendering quality along the Z axis while you rotate or modify the view, for a smoother interaction. At the maximum slider position there is no quality reduction.
+* **Dynamic quality** — reduces the rendering quality along the Z axis while you rotate or modify the view, for a smoother interaction. At the maximum slider position there is no quality reduction. The same reduction applies to the shadow and occlusion probes of the [Cinematic lighting](#volume-rendering).
+* **Cinematic lighting quality** {{< since "4.8.0" >}} — how finely the shadow and occlusion probes of the [Cinematic lighting](#volume-rendering) sample the volume, and how many bounces the **Path tracing** type follows: **Low**, **Medium** (default) or **High**. Higher levels give smoother shadows and richer indirect light at a higher rendering cost.
 
 {{% callout note %}}
 The **FBO fragment-shader** backend (OpenGL 3.3 – 4.2, and therefore always on macOS — see [Requirements](#requirements)) additionally lowers the **rendering resolution** while the camera is being dragged {{< since "4.7.3" >}}: the volume is ray-cast at the logical window resolution instead of the physical one and the result is upscaled for the duration of the gesture, which on a HiDPI / Retina display is a quarter of the pixels to compute. The frame drawn as soon as you release the mouse is at full resolution again. This is automatic and is independent of the **Dynamic quality** slider, which acts on the sampling along the ray; the **Compute Shader** backend (OpenGL 4.3+) always renders at full resolution.
@@ -227,5 +274,7 @@ The **FBO fragment-shader** backend (OpenGL 3.3 – 4.2, and therefore always on
 * **Light color** — color of the light used to illuminate the rendering.
 
 ### Video tutorials
+
+<!-- VIDEO TO ADD: short clip of Path tracing refining progressively after the view stops moving (4.8.0). Insert with the youtube shortcode -->
 Display an MR angiography series as a volume rendering, then switch to a MIP projection or pick a 3D LUT and adjust the window / level values:
 {{< youtube id="waPx_-35zps" >}}

@@ -8,21 +8,22 @@ keywords: [ "export dicom", "dicomdir", "dicom zip export", "save dicom as jpeg"
 
 ## <center>A picture of the view, or DICOM objects</center>
 
-Weasis offers two complementary export workflows:
+Weasis offers complementary export workflows:
 
-- **Export the selected view** — produces a **raster image** (PNG, TIFF, JPG, JPEG 2000) or a clipboard copy of what is currently shown on screen. Useful for slides, reports, e-mails, screenshots of measurements, and other non-DICOM consumers.
+- **Export the selected view** — produces a **raster image** (PNG, TIFF, JPG, JPEG 2000, JPEG XL) or a clipboard copy of what is currently shown on screen. Useful for slides, reports, e-mails, screenshots of measurements, and other non-DICOM consumers.
+- **Capture** {{< since "4.8.0" >}} — the button at the right end of the menu bar also exports a cine loop or a 3D rotation as an animation, and records the viewer; see [Capture](capture/).
 - **DICOM Export** — produces **DICOM-format output** (a directory tree, an ISO image, or a network transfer to a remote node). Use this to share studies with another DICOM-capable system without losing pixel fidelity or metadata.
 
 ---
 
 ### Exporting the selected view {{< svg-inline "static/tuto/icon/exportImage.svg" >}} {#export-view}
 
-Open the export-view dialog from the toolbar icon {{< svg-inline "static/tuto/icon/exportImage.svg" >}} or from the main menu **_File > Export > Exporting view_**. The output can be sent to the clipboard or saved to an image file in PNG, TIFF, JPG, or JPEG 2000 format.
+Open the export-view dialog from the toolbar icon {{< svg-inline "static/tuto/icon/exportImage.svg" >}} {{< until "4.7.3" >}}, from the **Capture** button at the right end of the menu bar or with **Ctrl + Shift + S** {{< since "4.8.0" >}}, or from the main menu **_File > Export > Exporting view_**. The output can be sent to the clipboard or saved to an image file in PNG, TIFF, JPG, JPEG 2000 or JPEG XL format.
 
 #### Current view
 Exports the view exactly as it appears on screen, at its current size and with every overlay (annotations, measurements, DICOM annotations, rulers…) visible.
 
-**Anonymize** — removes identifying information from the overlay, in line with the [Anonymize option](dicom-2d-viewer/#dicom-annotations) of the 2D viewer.
+**Anonymize** {{< until "4.7.3" >}} — removes identifying information from the overlay. **Identity** {{< since "4.8.0" >}} — the [masking profile](identity-masking/#outputs) applied to the picture: *Display* by default, or *Keep identity*; the screen itself is not changed.
 
 #### Original Image
 Exports the underlying image — without on-screen overlays — with a few rendering options.
@@ -69,6 +70,13 @@ Hover any series row to see its thumbnail in a tooltip — useful when picking a
 When the export uses a native image format (JPG, PNG, JPEG 2000, JPEG-XL {{< since "4.6.4" >}}, or TIFF) instead of DICOM, only the image frames are converted (see the [Original Image options](#original-image)). Encapsulated DICOM payloads — video, audio, and PDF — are extracted as standalone files in their native format.
 
 Multi-frame images are exported as numbered files (one frame per file).
+{{% /callout %}}
+
+{{% callout note %}}
+Exporting to a **network share** is handled in one bulk transfer
+{{< since "4.8.0" >}}: the files and the DICOMDIR are written to a local staging
+folder first and moved to the share afterwards, which is much faster than
+writing every file, piece by piece, over the network.
 {{% /callout %}}
 
 #### DICOM Send

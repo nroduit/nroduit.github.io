@@ -23,6 +23,10 @@ This file also indicates which translation version should be used ("i18n-version
 
 {{< version-compatibility >}}
 
+## Site configuration
+
+The resources package (`resources.zip`, uploaded per release and group) may hold a `config/` folder with the site configuration documents {{< since "4.8.0" >}}: Window/Level presets, color maps, masking, measurement profiles, DICOM and DICOMweb nodes, authentication methods, search templates, viewer annotations and series splitting rules, one JSON file each. Their names, the three-layer merge rules and the legacy XML files are described in [Configuration documents](../../../basics/customize/preferences/#configuration-documents).
+
 ## Cache
 
 When uploading a new version in ViewerHub or when starting the application (in case the compatibility file is already present in the S3), ViewerHub will construct the different possible combinations from the compatibility file between the versions installed in ViewerHub and the Weasis releases.

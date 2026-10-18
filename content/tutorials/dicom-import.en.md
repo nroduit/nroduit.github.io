@@ -62,8 +62,32 @@ DICOM ZIP is also accepted in the local-import workflow {{< since "4.7.0" >}}:
 Loads a DICOMDIR-based study from a CD/DVD or any folder that already contains a `DICOMDIR` index file:
 
 * **Path** — browse to a folder containing a DICOMDIR.
-* **Detect CD-ROM** — try to load a DICOM CD/DVD directly.
+* **Detect CD-ROM** — try to load a DICOM CD/DVD directly. The search also covers removable drives such as USB sticks and memory cards, after the optical discs, and never probes fixed or network disks, so a disconnected share cannot stall it {{< since "4.8.0" >}}.
 * **Copy images into the local temporary directory** — useful for slow reading devices such as CD-ROM drives.
+
+A DICOMDIR entry whose referenced file lies outside the folder of the DICOMDIR — directly or through a symbolic link — is rejected and reported in the log rather than opened {{< since "4.8.0" >}}.
+
+#### Reading from a network share or a disc {#slow-media}
+
+Opening DICOM files straight from an SMB/NFS mount, a mapped drive, a UNC path or
+a CD/DVD is slow: every read is a network round trip or a disc seek, and the
+images are read again from that medium each time they are displayed. Weasis now
+copies such files into its local cache while importing {{< since "4.8.0" >}}, so
+the slow medium is read once and everything afterwards comes from the local disk.
+
+You do not have to select anything: Weasis recognizes those locations from the
+mount table the operating system reports — SMB and NFS mounts, Windows UNC paths
+and mapped drives, and optical media. Files on a local disk are imported as before.
+
+{{% callout note %}}
+This is controlled by the `weasis.import.dicom.network.cache`
+[preference](../basics/customize/preferences), enabled by default. Turning it off
+makes Weasis read images directly from the share every time they are displayed,
+which avoids the local copy at the cost of a round trip per image.
+{{% /callout %}}
+
+The [DICOMDIR](#dicomdir) dialog keeps its own **Copy images into the local
+temporary directory** checkbox, which does the same for a CD/DVD loaded by hand.
 
 #### DICOM Query/Retrieve
 Queries a remote PACS and retrieves the selected studies or series into the DICOM Explorer. The dialog has two tabs — **DICOM Source** and **Search Criteria**.
@@ -83,7 +107,7 @@ Queries a remote PACS and retrieves the selected studies or series into the DICO
   **C-MOVE** and **C-GET** are also tracked in the Download Manager {{< since "4.7.3" >}} and can be stopped and resumed series by series, as WADO-URI and DICOMweb nodes already were (see [Download progress, stop and resume](#download-progress-stop-and-resume)).
 * **Calling Node** (DICOM archives only) — pick the calling DICOM node that matches the remote AE.
 * **Charset** (DICOM archives only) — the character set announced to the archive in the C-FIND request, as the DICOM _Specific Character Set_ attribute. It tells the archive how the text you typed is encoded and how it should encode the names it sends back. **ISO_IR 192 (UTF-8)** is the default and works with practically every modern archive; change it only for an older archive that answers in its own local encoding — the list covers ASCII, the Latin, Cyrillic, Greek, Arabic, Hebrew and Turkish alphabets, Thai, the Japanese and Korean sets, and Chinese GB2312 / GB18030. The choice is remembered for the next query {{< since "4.6.0" >}}.
-* **More options** — opens the preferences so you can add or edit DICOM nodes.
+* **More options** — opens the preferences so you can add or edit DICOM nodes. Nodes shipped by your site in `config/dicomNodes.json` of the resources package are listed as *(site)* and cannot be edited {{< since "4.8.0" >}}; see [Configuration documents](../basics/customize/preferences/#configuration-documents).
 
 ##### Search Criteria tab
 ![Thumbnails](/tuto/dicom-import-search.webp?classes=shadow&width=700px)
@@ -144,11 +168,11 @@ The interrupted series loses neither its place in the queue nor the images it ha
 This is what makes a large retrieve usable: instead of waiting for the whole study, click the series you want to read and it is transferred first, while the rest keeps downloading in the background.
 
 {{% callout warning %}}
-Stopping a **C-MOVE** or **C-GET** retrieve asks the remote archive to cancel the transfer. Some archives take a while to react, so a few more images may still arrive after the stop; Weasis closes the association once the cancel has been sent instead of waiting for the archive to finish.
+Stopping a **C-MOVE** or **C-GET** retrieve asks the remote archive to cancel the transfer. Some archives take a while to react, so a few more images may still arrive after the stop; Weasis gives the archive 1.5 s to acknowledge the cancel (property `dicom.qr.cancel.grace`, in milliseconds), then aborts the association instead of waiting for the transfer to finish.
 {{% /callout %}}
 
 {{% callout tip %}}
-If a query runs for too long, click **Clear** in the **Search Criteria** panel to cancel the request.
+A running query cannot be canceled on its own: starting another query or selecting another archive stops it. **Clear** only resets the search criteria.
 
 When using a DICOMweb node, an external login may be required (for instance signing in to a Google account in your web browser). If the login fails, Weasis can freeze for up to a minute waiting for the authorization code.
 {{% /callout %}}

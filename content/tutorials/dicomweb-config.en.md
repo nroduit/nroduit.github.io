@@ -16,7 +16,7 @@ This page covers manual configuration inside Weasis. If you embed Weasis in a we
 
 1. Open **_File > Preferences_** (Alt + P).
 2. Select **DICOM node list** in the left sidebar.
-3. Click **Add new** to create a new node, or select an existing one and click **Edit**.
+3. Click **Add new** to create a new node, or select an existing one and click **Edit**. A node shipped by your site in `config/dicomWebNodes.json` of the resources package is listed as *(site)* and cannot be edited {{< since "4.8.0" >}}; see [Configuration documents](../basics/customize/preferences/#configuration-documents).
 
 ![DICOMweb nodes configuration](/tuto/dicomweb-nodes.webp?classes=shadow&width=750px)
 
@@ -36,7 +36,7 @@ In the node dialog:
    - In the **Provider** panel, every field is mandatory.
    - In the **Registration** panel, every field is optional — except for **OAuth2**, where the **Client ID**, **Client Secret**, and **Scope** must be filled. **Audience** is optional, but some providers need it — Auth0, for instance, uses it to issue a token for a specific API {{< since "4.6.1" >}}.
    - The **Grant Type** selector chooses the OAuth2 flow:
-     - `code` (**Authorization Code**, the default) — interactive login: Weasis opens your browser so you sign in with your account, then receives the token through a loopback redirect. Use this for user-facing access.
+     - `code` (**Authorization Code**, the default) — interactive login: Weasis opens your browser so you sign in with your account, then receives the token through a loopback redirect. Use this for user-facing access. The exchange is protected with PKCE (RFC 7636) {{< since "4.8.0" >}}, so the client registered at the provider (Keycloak, Auth0…) must allow it — public clients and the default settings of most providers already do.
      - `client_credentials` (**Client Credentials**, RFC 6749 §4.4) — non-interactive, server-to-server: Weasis obtains the token directly from the token endpoint using only the Client ID and Client Secret, with **no browser login**. Use this for service/headless accounts.
    - Click **OK** to save the authentication.
 5. Optionally, add **HTTP headers** that should be sent with every request to this service URL (useful for tokens or other custom auth schemes). One header is not taken from this list: a QIDO query always asks for `application/dicom+json`, because that is the only response Weasis can read. An `Accept` header configured here applies to the retrieve, not to the query.
@@ -47,6 +47,34 @@ Then open the [DICOM Import](dicom-import/#dicom-queryretrieve) dialog and pick 
 #### Editing an authentication method {#editing-an-authentication-method}
 
 An authentication method is shared by every node that refers to it. Editing or deleting a method through **Manager** takes effect on the next query {{< since "4.7.3" >}}; before that version, a corrected endpoint or client secret required restarting Weasis.
+
+### Thumbnails and timeouts {#thumbnails-and-timeouts}
+
+Two settings of the HTTP layer are not in the node dialog: they are [properties](../basics/customize/preferences) set for the whole application, or carried by the manifest that launches Weasis.
+
+#### Thumbnail service {#thumbnail-service}
+
+The thumbnails of the DICOM explorer come from a rendering service of the archive, and archives implement different subsets of them {{< since "4.8.0" >}}:
+
+| Mode | Service requested |
+|---|---|
+| `AUTO` (default) | probes the services the archive type can offer — `RS_THUMBNAIL` then `RENDERED` for a DICOMweb archive, `WADO_URI` alone for a WADO-URI archive — and remembers what the archive supports, so a missing service is probed once, not once per series |
+| `RS_THUMBNAIL` | the DICOMweb thumbnail service, `…/series/{uid}/thumbnail` |
+| `RENDERED` | the DICOMweb rendered service on one instance, `…/instances/{uid}/rendered` |
+| `WADO_URI` | a WADO-URI request with `contentType=image/jpeg` |
+| `NONE` | no thumbnail is requested from the archive |
+
+Set the mode per archive with the `thumbnailMode` attribute of the `arcQuery` element of a [manifest](../getting-started/weasis-protocol), or for every archive that declares none — the nodes of this dialog included — with the property `weasis.dicom.thumbnail.mode`. An unknown value falls back to `AUTO`. Choose `NONE` for an archive whose rendering services are slow or missing, as noted for some providers below.
+
+#### Timeouts {#timeouts}
+
+| Property | Default | Meaning |
+|---|---|---|
+| `UrlConnectionTimeout` | 5000 ms | time allowed to open the connection |
+| `UrlReadTimeout` | 15000 ms | time allowed **without progress** on a response: a transfer that keeps delivering bytes is never cut by it |
+| `UrlResponseTimeout` {{< since "4.8.0" >}} | 300000 ms | time allowed for the **whole response**, however steady the transfer; `0` waits indefinitely |
+
+Until 4.7, `UrlReadTimeout` was the only budget and long transfers — a STOW-RS export of a large study, a WADO-RS retrieve of a long series — failed once they outlasted it. The two budgets now apply together: raise `UrlResponseTimeout` for archives that answer slowly as a whole, and `UrlReadTimeout` only for archives that stall between bytes.
 
 ### Supported DICOMweb Providers (non-exhaustive list)
 

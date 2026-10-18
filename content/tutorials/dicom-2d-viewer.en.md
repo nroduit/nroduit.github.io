@@ -56,7 +56,7 @@ While dragging, hold _Ctrl_ to accelerate the action and _Ctrl + Shift_ to accel
 The single-key shortcuts above are the **defaults** — most are customizable {{< since "4.7.0" >}} in **Preferences > General > Keyboard Shortcuts**. See [Keyboard Shortcuts](../basics/shortcuts).
 {{% /callout %}}
 
-* {{< svg-inline "static/tuto/icon/layout.svg" >}} **Default layout** — change the layout of the view. [DICOM Information](tags) and [Histogram](histogram) are special layouts that update automatically as you scroll through the series.
+* {{< svg-inline "static/tuto/icon/layout.svg" >}} **Default layout** — change the layout of the view. [DICOM Information](tags) and [Histogram](histogram) are special layouts that update automatically as you scroll through the series. The same button carries the **Viewport Layout** submenu {{< since "4.8.0" >}}, which splits the selected viewport into a grid of tiles — see [Viewport layouts](#viewport-layouts).
 * **Synchronize** — apply the same settings (window/level, scroll, zoom, …) to multiple views simultaneously. Two modes are available: _Default Stack_ (the default — couples series sharing the same Frame of Reference UID) and _Default Tile_ (mosaic display of a single series). A master **Synchronize** checkbox at the top of the drop-down turns synchronization on or off globally without changing the active mode. Each 2D view also exposes its own **auto-sync** {{< svg-inline "static/tuto/icon/synch.svg" >}} and **manual-sync** {{< svg-inline "static/tuto/icon/hand.svg" >}} overlay buttons in its bottom-right corner. See [View Synchronization](synch-view) for the full mechanics, the [per-view controls](synch-view#per-view-sync), and the FoR color-chip system.
 * {{< svg-inline "static/tuto/icon/reset.svg" >}} **Reset** — restore the default image rendering (see [Reset](#reset)). _Escape_ key to select.
 
@@ -77,6 +77,64 @@ The single-key shortcuts above are the **defaults** — most are customizable {{
 
 {{% callout tip %}}
 Toolbars can be shown or hidden from the **View** top menu.
+{{% /callout %}}
+
+### Viewport layouts {#viewport-layouts}
+
+The viewing area is a grid of **viewports**. A viewport normally holds one image
+that you scroll through; it can also be split into a grid of tiles showing
+consecutive images of the same series at once {{< since "4.8.0" >}} — the
+arrangement the DICOM standard calls a **tiled** image box in a hanging protocol.
+It is the usual way to read a long series at a glance: a whole stack of slices on
+one screen instead of one slice at a time.
+
+Each viewport is in one of two modes:
+
+* **Stack** — one image, scrolled through as usual. This is the default and the
+  behavior of earlier versions.
+* **Tiled n×m** — the viewport is divided into *columns × rows* cells filled with
+  consecutive images of the series. Scrolling advances the **whole set**, so the
+  tiles keep their order and always show a contiguous run of images.
+
+The available grids are **1×2**, **2×1**, **2×2**, **2×3**, **3×2**, **3×3** and
+**4×4**.
+
+The mode is changed from the **Viewport Layout** submenu, reachable from three
+places:
+
+* the {{< svg-inline "static/tuto/icon/layout.svg" >}} layout button in the
+  [main toolbar](#toolbars);
+* the viewer's own menu;
+* the **right-click** [context menu](#other-specific-tools) on a view.
+
+It applies to the **selected viewport only**, so a scrolling stack and a mosaic
+can sit side by side in the same layout. Switching modes carries the displayed
+series with it — to the first tile when you go tiled, and back to the single
+image when you return to Stack — so nothing has to be reopened.
+
+{{% callout note %}}
+Tiling is not offered in the [MPR](mpr) and [3D](dicom-3d-viewer) viewers: their
+views are fixed orthogonal planes and a volume rendering, which a tile grid would
+have nothing to divide.
+{{% /callout %}}
+
+#### Synchronization inside a viewport
+
+When the selected view is one tile of a viewport, the synchronization drop-down
+replaces **Apply to all views** with **Apply to all tiled views**
+{{< since "4.8.0" >}}. Window/level, zoom, pan and the other synchronized actions
+are then propagated to every tile of that viewport rather than to the other
+viewports of the layout. A tiled viewport is kept out of the synchronization
+between viewports altogether: its tiles never follow another view sharing the
+same Frame of Reference, and the master **Synchronize** checkbox is grayed out
+while a tile is selected. See [View Synchronization](synch-view) for the rest of
+the synchronization model.
+
+{{% callout tip %}}
+Deployments that do not want the submenu can remove it from the toolbar and
+from the right-click menu with the `weasis.toolbar.layout.viewport` and
+`weasis.contextmenu.viewport` [preferences](../basics/customize/preferences);
+both default to `true`. The entry of the viewer's menu bar always stays.
 {{% /callout %}}
 
 ### Viewer tools
@@ -109,7 +167,7 @@ Display transformation values and DICOM information directly on the image.
   * {{% badge style="blue" %}}I{{% /badge %}} Bottom right — series information (depends on the modality).
   * {{% badge style="blue" %}}J{{% /badge %}} Bottom left — image information and the position of the image in the series.
 * **Minimal Annotations** — reduce the number of annotations shown. Press **Space** or _I_ to cycle through the three states (minimal, none, all).
-* **Anonymize** — hide identifying information **only inside the views** (not in other parts of the GUI such as the tab title). Combine with the [screenshot tool](dicom-export) when exporting an image.
+* **Anonymize** {{< until "4.7" >}} — hide identifying information only inside the views. Replaced by [Identity masking](identity-masking/) {{< since "4.8.0" >}}, which masks the whole application and the pictures it produces.
 * **Scale** — display the rulers on the left and bottom of the image {{% badge style="blue" %}}K{{% /badge %}}.
 * **Lookup Table** — display the [LUT](lut) on the image {{% badge style="blue" %}}L{{% /badge %}}.
 * **Fusion Color Scale** — display the color scale of the [fusion overlay](fusion#color-scale), next to the LUT bar when both are shown.
@@ -120,8 +178,8 @@ Display transformation values and DICOM information directly on the image.
 * **Frame Value** — display the frame number {{% badge style="blue" %}}J{{% /badge %}}.
 * **Pixel (Value / Position)** — display the pixel value and the cursor position {{% badge style="blue" %}}J{{% /badge %}}.
 
-##### Drawings
-Check / uncheck to show or hide the graphic objects (see [Draw & Measure](draw-measure)).
+##### Graphics
+Check / uncheck to show or hide the graphic objects (see [Draw & Measure](draw-measure)), one check box per layer {{< since "4.8.0" >}}: **Measurements**, **Drawings**, **Annotations**, **DICOM PR** and **DICOM SR**.
 
 #### Image Tools {{% badge style="red" %}}D{{% /badge %}} {#image-tools}
 **Image Tools** groups every control that affects how the image is rendered.

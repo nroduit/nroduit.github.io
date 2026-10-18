@@ -1,6 +1,6 @@
 ---
 title: DICOM Conformance
-description: "Summary conformance statement for Weasis: the DICOM objects it displays and creates, the network services it uses, the transfer syntaxes it reads and writes, the pixel formats it renders, and the IHE profiles it implements."
+description: "Weasis DICOM conformance summary: objects displayed and created, network services, transfer syntaxes read and written, pixel formats rendered, and IHE profiles."
 keywords: [ "dicom conformance statement", "sop class", "dimse", "dicomweb", "supported transfer syntax", "dicom codec support", "jpeg 2000 dicom", "jpeg-ls", "jpeg-xl dicom", "photometric interpretation", "ihe" ]
 weight: 70
 ---

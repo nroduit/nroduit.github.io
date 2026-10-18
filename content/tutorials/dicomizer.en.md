@@ -61,6 +61,8 @@ For image formats that carry **EXIF tags**, the following values are mapped to D
 - **Manufacturer Description** → mapped to _Manufacturer_.
 - **Camera Model Description** → mapped to _Manufacturer Model Name_.
 - **Date/Time (Original)** or, if absent, **Date/Time** → mapped to _ContentDate_ and _ContentTime_. If both are absent or invalid (date > now + 1 day, or date < now − 30 years), the file's last-modified date is used.
+
+From JPEG files, more of the capture settings are carried over {{< since "4.8.0" >}}, following the DICOM mapping for photographs: _Acquisition DateTime_ with the time zone of the capture, _Exposure Time_, _F-Number_, _Photographic Sensitivity_ (ISO), _Focal Length_, _Lens Model_ and the flash attributes. The capture date is used even when the photo was edited afterwards. Identifying values — camera serial number, owner name, GPS position — are copied only when the embedded metadata is kept at publication (see [Publish DICOM Files](#publish-dicom-files)).
 {{% /callout %}}
 
 {{% callout note %}}
@@ -68,7 +70,15 @@ Series-grouping buttons cannot be deleted directly. Remove every thumbnail assoc
 {{% /callout %}}
 
 {{% callout tip %}}
-The combo box keeps the list of recently used folders. Connecting a USB device automatically adds the device path to the list.
+The combo box keeps the list of recently used folders. **Removable media** — USB
+sticks, memory cards, external disks and CD/DVD — are added to the list on their
+own as soon as they are mounted, and removed again when they are ejected
+{{< since "4.8.0" >}}. Each entry is shown with the name the operating system gives
+the drive, followed by its mount path.
+
+Weasis looks for them where the system mounts removable media: drives flagged
+removable on Windows, `/Volumes` on macOS, and `/media`, `/run/media` or `/mnt`
+on Linux. A disc inserted after the panel is open appears within a few seconds.
 {{% /callout %}}
 
 #### Edit DICOM Tags
@@ -121,6 +131,7 @@ Click **Publish** to send the DICOM files to a remote DICOM archive, or **Export
 
 - **Selection** — choose which DICOM items to publish (everything selected by default).
 - **Resolution** — downscale high-resolution images before sending.
+- **Remove embedded metadata from JPEG images (EXIF, GPS location...)** {{< since "4.8.0" >}} — checked by default. The published file then carries none of the metadata blocks embedded in the JPEG (EXIF, XMP, ICC, JFIF), so the GPS location, the camera serial number and the owner name written by phones and cameras do not travel with the patient's photo. The technical settings of the capture are still copied into DICOM attributes (see the note on EXIF tags above). Uncheck it to keep the JPEG as it is, embedded blocks included. The choice is remembered for the next publication.
 - **Destination** — pick the target node from the list of configured remote DICOM nodes.
 - **Calling AE Title** — pick the calling node, if your archive enforces specific sender AE titles.
 

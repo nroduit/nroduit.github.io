@@ -1,7 +1,7 @@
 ---
 title: "AI DICOM Viewer: Read AI-Generated Results"
 weight: 339
-description: "Open AI results in DICOM with a free viewer: segmentations, structured reports, parametric maps, derived images. Weasis displays model output; the base version does not run models."
+description: "View AI results in DICOM for free: segmentations, structured reports, parametric maps, derived images. Weasis displays model output; the base version runs no model."
 linkTitle: "AI DICOM Objects"
 keywords: [ "ai dicom", "dicom ai", "ai dicom viewer", "ai dicom reader", "ai dicom analyzer", "ai segmentation dicom", "view ai segmentation", "derived images", "ai structured report", "totalsegmentator", "dicom ai output" ]
 ---

@@ -47,6 +47,10 @@ See [View Synchronization in MPR](synch-view#mpr-sync) for the full mechanics.
 
 The MPR views can be reorganized into different layouts via the {{< svg-inline "static/tuto/icon/layout.svg" >}} layout button.
 
+### Measurements across planes {#measurements-across-planes}
+
+A measurement or annotation drawn on an MPR plane is attached to its position in the patient, not to the screen {{< since "4.8.0" >}}. Scroll or rotate the plane and it disappears from that view, then comes back, editable, when the plane contains it again. On the two other planes, small marks show where the graphic crosses them, and they follow every edit. This needs a rectified volume (see [Volume geometry handling](#volume-geometry)): with stacked images, a measurement is only kept for the exact plane it was drawn on.
+
 ### View settings
 
 Open the per-view settings popup with the {{< svg-inline "static/tuto/icon/viewSettings.svg" >}} icon in the **top-right corner** of any MPR view:
@@ -140,3 +144,4 @@ From the main menu **_File > Preferences > Viewer > MPR_** {{< since "4.1.0" >}}
 * **Auto center axes** — how the crosshair is recentered when it moves out of the visible area. **Always** recenters after every move; the default option only recenters when the position is **almost no longer visible**.
 * **Crosshair gap at the center** — size of the empty space drawn around the cursor point, so the marker does not occlude the structure being inspected.
 * **Default layout** — preferred layout used when opening the MPR viewer.
+* **Scroll direction** {{< since "4.8.0" >}} — the order in which the mouse wheel and the arrow keys walk through the slices of the three planes. **Radiology (head → feet)**, the default, goes from head to feet in the axial plane, from front to back in the coronal plane and from the patient's right to left in the sagittal plane; **Neuroimaging (feet → head)** reverses all three. The selected MPR view takes the change at once; the other open views follow at their next scroll.
