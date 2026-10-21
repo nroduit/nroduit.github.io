@@ -35,6 +35,24 @@ Click a measurement tool, then draw on the image. The tool you pick also becomes
 
 The first button is the **selection** tool: it selects, resizes and moves existing graphics.
 
+##### Selecting graphics {#selecting-graphics}
+
+Any tool selects and moves graphics; to draw a new one, press away from existing outlines.
+
+- **Click** selects the graphic whose outline is nearest, even below another one {{< since "4.8.0" >}}.
+- **Shift + click** adds or removes a graphic, with any tool {{< since "4.8.0" >}}. On the image itself, Shift keeps its [drawing role](#rectangles-ellipses).
+- **Drag** one of several selected graphics to move them all; graphics that cannot be edited (DICOM PR, SR) stay in place {{< since "4.8.0" >}}.
+- The cursor shows four arrows over a graphic that can be moved {{< since "4.8.0" >}}, and a hand over a label.
+
+###### Superposed graphics {#superposed-graphics}
+
+To reach a graphic hidden by another one {{< since "4.8.0" >}}:
+
+- **Click again** at the same place: each click selects the next graphic under the cursor (one graphic selected, not on a control point or label).
+- **Right-click > Select** lists the graphics under the cursor, nearest first. Hovering an entry previews it; closing the menu without choosing restores the selection.
+
+The axis guide of an ellipse is shown only while it is selected {{< since "4.8.0" >}}.
+
 ##### Working with selected graphics {#selected-graphics}
 
 Right-click a selection to change its properties (color, line width…) or to edit it:

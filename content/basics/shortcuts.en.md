@@ -143,7 +143,8 @@ MPR view inherits the same shortcuts as the 2D viewer, with the following additi
 
 | Shortcut                       | Action                                                                                                                                                                |
 |--------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Click on a graphic**         | Select a Graphics                                                                                                                                                     |
+| **Click on a graphic**         | Select the graphic whose outline is nearest the cursor, with any tool {{< since "4.8.0" >}}                                                                          |
+| **Click again on a graphic**   | Select the next graphic under the cursor, to reach [superposed graphics](../tutorials/draw-measure/#superposed-graphics) {{< since "4.8.0" >}}                       |
 | **Click + mouse drag**         | In selection mode: select all the graphics inside the selection area.<br /> In drawing mode: draw the selected graphic shape.                                         |
 | **Ctrl + A**                   | Select all the graphics                                                                                                                                               |
 | **Ctrl + D**                   | Deselect all the graphics                                                                                                                                             |
@@ -158,9 +159,10 @@ MPR view inherits the same shortcuts as the 2D viewer, with the following additi
 | **Alt + click on a vertex**    | Remove that vertex {{< since "4.8.0" >}}                                                                                                                              |
 | **Alt + drag from a path end** | Continue drawing an open path from its first or last point {{< since "4.8.0" >}}                                                                                      |
 | **Midpoint handle**            | Click to insert a vertex on the middle of a segment (polyline, polygon, freehand path); drag to insert one and place it {{< since "4.8.0" >}}                         |
-| **Shift + click on a graphic** | In selection mode: add or remove a graphic to the current selection.<br /> In drawing mode: force to draw on another graphic (without shift the graphic is selected). |
+| **Shift + click on a graphic** | Add the graphic to the current selection or remove it from it, with any tool {{< since "4.8.0" >}}. On the image itself, **Shift** keeps its drawing role.           |
+| **Drag a selected graphic**    | Move all the selected graphics; those that cannot be edited (DICOM PR, SR) stay in place {{< since "4.8.0" >}}                                                       |
 | **Double click**               | Stop adding points for a polyline (also **Stop drawing** in the context menu while drawing)                                                                           |
-| **Right-click**                | Open the contextual menu for more options                                                                                                                             |
+| **Right-click**                | Open the contextual menu for more options. Over superposed graphics, its **Select** entry lists them to pick one {{< since "4.8.0" >}}                               |
 
 
 ### Tips and Tricks
