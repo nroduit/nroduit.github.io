@@ -177,9 +177,6 @@ Controls for the rendering algorithm, quality, transparency, lighting, and shadi
 
 The [screenshot at the top of the page](#open-the-3d-viewer) shows the difference: the left column {{% badge style="red" %}}E{{% /badge %}} uses plain **Shading**, the right column {{% badge style="red" %}}F{{% /badge %}} **Cinematic lighting** on the same presets, and the selected view, bottom right, **Path tracing**.
 
-<!-- SCREENSHOT TO ADD: /tuto/3d-cinematic-environments.webp (one row, same view: Studio, Overcast, Warm, Cool, None). Insert as: ![The five lighting environments](/tuto/3d-cinematic-environments.webp?classes=shadow) -->
-<!-- SCREENSHOT TO ADD: /tuto/3d-path-tracing.webp (fully refined Path tracing still on a ✦ preset (e.g. CT bone or contrast-filled vessels)). Insert as: ![Path tracing on a CT preset](/tuto/3d-path-tracing.webp?classes=shadow) -->
-
 {{% callout note %}}
 Cinematic lighting takes roughly two to three times longer to render than plain shading, because every point of the volume also has to look toward the light and around itself. On a slow graphics card, lower the [Cinematic lighting quality](#interactive-rendering) in the preferences or leave the option off: the shadows and occlusion follow the **Dynamic quality** setting while you rotate the view, so interaction stays smooth even at the higher quality levels.
 {{% /callout %}}

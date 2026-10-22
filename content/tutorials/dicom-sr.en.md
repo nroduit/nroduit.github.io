@@ -59,19 +59,17 @@ A **3D region** — a _POINT_, _MULTIPOINT_, _POLYLINE_, _POLYGON_, _ELLIPSE_ or
 
 To hide or show the regions without closing anything, use the **DICOM SR** check box in the **Graphics** group of the [Display](dicom-2d-viewer#display) panel of the 2D viewer. The choice is kept for the images you display afterward.
 
-<!-- SCREENSHOT TO ADD: /tuto/sr-region.webp (SR report on the left, its image on the right with magenta regions, the clicked one thicker and labeled). Insert as: ![Structured report region highlighted on its image](/tuto/sr-region.webp?classes=shadow) -->
+![Structured report region highlighted on its image](/tuto/sr-region.webp?classes=shadow&width=100%)
 
 #### Measurements on ECG waveforms {#waveforms}
 
 A report on an electrocardiogram places its measurements in time rather than in space. Clicking **Show the waveform** opens the [ECG viewer](dicom-ecg) and draws each temporal coordinate as a **dashed marker** on the leads the report refers to. The markers carry no label: the measurements are listed in the [Annotations](dicom-ecg#annotations) panel of the ECG viewer, each with its name, its temporal range type and its positions; the list follows the reports you open and close.
 
-<!-- SCREENSHOT TO ADD: /tuto/sr-ecg-markers.webp (ECG viewer with the dashed temporal markers of an SR and the Annotations panel). Insert as: ![Measurements of a report on an ECG](/tuto/sr-ecg-markers.webp?classes=shadow) -->
+![Measurements of a report on an ECG, and a table at the bottom of the report](/tuto/sr-ecg-table.webp?classes=shadow&width=100%)
 
 #### Tables {#tables}
 
-A content item laid out as a **table** — a template such as a dose summary or an extensible measurement table — is rendered as a table in the report: the row and column concepts become the headers, with their units; coded cells show their meaning; qualifiers are in italics; and a cell that refers to another content item is a link to it inside the report.
-
-<!-- SCREENSHOT TO ADD: /tuto/sr-table.webp (a TABLE content item rendered in the SR viewer, e.g. a dose summary). Insert as: ![Table rendered in a structured report](/tuto/sr-table.webp?classes=shadow) -->
+A content item laid out as a **table** — a template such as a dose summary or an extensible measurement table — is rendered as a table in the report: the row and column concepts become the headers, with their units; coded cells show their meaning; qualifiers are in italics; and a cell that refers to another content item is a link to it inside the report. See the table at the bottom of the report in the screenshot [above](#waveforms).
 
 #### Segments and presentation states {#segments}
 
