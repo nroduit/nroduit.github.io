@@ -114,11 +114,14 @@ Queries a remote PACS and retrieves the selected studies or series into the DICO
 <br>
 
 1. Narrow the query by **study date** with the date drop-down: **All dates** (no date filter), a single day such as **Today**, **Yesterday** or **Day before yesterday**, a current period (**This week**, **This month**, **This year**), or a rolling window (**Last 24 hours**, **Last week**, **Last month**, **Last year**…). Choosing one fills in the start and end dates; either can then be adjusted on its own, and clicking a date field opens a calendar to pick an exact day {{< since "4.7.0" >}}.
-1. Pick a pre-registered search (combo box at the bottom-right of the **Search Criteria** panel) or fill in your own criteria. Saved criteria can be reused later; {{< since "4.1.0" >}} the item selected in the combo box is re-applied automatically the next time the window opens (the default is **Empty**).
-2. Adjust the **limit** — the maximum number of studies returned by the query. Set the limit to **0** to remove the cap. For DICOMweb, the limit is the page size; use the spinner buttons to move between pages.
-3. Click **Search**.
-4. Select what you want to import in the result tree (see below).
-5. Click **Import** and close the window.
+2. Pick the attribute to match (patient name, patient ID, accession number…) and type its value. `*` matches any sequence of characters and `?` a single character.
+   * When the attribute is a person name (patient, referring, performing or reading physician), the **≈** button inside the search field turns on **fuzzy name matching** {{< since "4.8.0" >}}: the archive then also returns names that are spelled differently, such as a spelling variant or another transliteration. It is off by default, and it applies to both DICOMweb (`fuzzymatching=true`) and DICOM nodes (C-FIND extended negotiation).
+   * Fuzzy matching is optional for the archive. If the archive cannot do it, it matches the name exactly as typed, and **Literal match** appears next to the **Search** button; its tooltip gives the archive's explanation. Any other warning returned by a DICOMweb archive appears there as **Archive warning**, with the archive's text in the tooltip.
+3. Pick a pre-registered search (combo box at the bottom-right of the **Search Criteria** panel) or fill in your own criteria. Saved criteria can be reused later; {{< since "4.1.0" >}} the item selected in the combo box is re-applied automatically the next time the window opens (the default is **Empty**).
+4. Adjust the **limit** — the maximum number of studies returned by the query. Set the limit to **0** to remove the cap. For DICOMweb, the limit is the page size; use the spinner buttons to move between pages.
+5. Click **Search**.
+6. Select what you want to import in the result tree (see below).
+7. Click **Import** and close the window.
 
 ##### Choosing the retrieve level
 

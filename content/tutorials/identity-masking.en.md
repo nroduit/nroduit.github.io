@@ -84,7 +84,7 @@ When the image may carry identity in its pixels — the DICOM attributes *Burned
 
 ### Hide text burned into the pixels {#redaction}
 
-Ultrasound scanners, angiography systems and screen captures often print the patient name and the date into the image itself. The **Redaction Bar** of the 2D viewer paints over those areas with the surrounding background color.
+Ultrasound scanners, angiography systems and screen captures often print the patient name and the date into the image itself. The **Redaction Bar** of the 2D viewer paints over those areas with the surrounding background color. Its controls follow the order of the work: the **Redact** button, the **Image** / **Series** scope, and the **Device masks and regions** menu.
 
 1. With the [Draw & Measure](draw-measure/) tools, draw a **closed shape** — rectangle, ellipse, polygon, oblique rectangle or circle — over each area to hide, and select the shapes. Lines, angles and text labels are ignored.
 2. Choose the scope: **Image** hides the areas on the current image only, **Series** on every image of the series. Printed text sits at the same place on every frame of a cine loop, so *Series* is usually the right choice.
@@ -92,23 +92,26 @@ Ultrasound scanners, angiography systems and screen captures often print the pat
 
 <!-- SCREENSHOT TO ADD: /tuto/redaction-bar.webp (ultrasound image with the Redaction Bar visible and the burned-in header painted over). Insert as: ![Redaction Bar with a redacted region](/tuto/redaction-bar.webp?classes=shadow) -->
 
-Redactions apply to every view of the series, to its thumbnails, and to every picture produced from it: screenshot, print, image export, animation. They live in memory for the session only, and a DICOM export still writes the original pixels. **Clear** removes every region of the chosen scope.
+Redactions apply to every view of the series, to its thumbnails in the explorer and in the export dialog, and to every picture produced from it: screenshot, print, image export, animation. They live in memory for the session only, and a DICOM export still writes the original pixels.
+
+While something is hidden on the displayed image, the **Device masks and regions** button is shown pressed, and its tooltip says by what: *Hidden by the device mask "…"* or *Hidden by drawn regions*. To take the regions back, open the menu and choose **Remove the regions of this image** or **Remove the regions of this series**, depending on the scope.
 
 #### Keep the regions for a device {#device-masks}
 
 A given scanner prints its text at the same place on every image. Instead of redrawing the regions for each study, save them once for that device:
 
 1. Redact an image as above.
-2. Click **Save for device** in the Redaction Bar. The dialog **Save for this device** proposes a **Name**, lists under **Applies to** the attributes that identify the device — modality, station name, manufacturer, model, institution — and shows under **Drawn on** the size of the image the regions were drawn on. The station name and the modality are checked by default; check more attributes to narrow the match, fewer to widen it.
+2. Open the **Device masks and regions** menu of the Redaction Bar and choose **Save these regions for this device...**. The dialog **Save for this device** proposes a **Name**, lists under **Applies to** the attributes that identify the device — modality, station name, manufacturer, model, institution — and shows under **Drawn on** the size of the image the regions were drawn on. The station name and the modality are checked by default; check more attributes to narrow the match, fewer to widen it.
 3. Give each **Region** the kind of information it hides, and save.
 
 <!-- SCREENSHOT TO ADD: /tuto/device-mask-dialog.webp (Save for this device dialog: Name, Applies to attributes, Drawn on size, regions with their kind). Insert as: ![Save for this device dialog](/tuto/device-mask-dialog.webp?classes=shadow) -->
 
-From then on, every image whose attributes match the entry, and whose proportions are the same as the image the regions were drawn on, gets the regions automatically. The Redaction Bar then shows **Device:** followed by the name of the entry. A region is painted only when the profile in force hides that kind of information; with masking off and no picture being produced, nothing is painted. Regions are never stretched to a different image shape: an image with other proportions is left alone.
+From then on, every image whose attributes match the entry, and whose proportions are the same as the image the regions were drawn on, gets the regions automatically. The **Device masks and regions** button is then shown pressed, and its tooltip gives the name of the entry. A region is painted only when the profile in force hides that kind of information; with masking off and no picture being produced, nothing is painted. Regions are never stretched to a different image shape: an image with other proportions is left alone.
 
-* **Device masks** lists the entries that fit the current image; pick one by hand to paint all of its regions whatever the profile. The menu reads *No device mask fits this image* when none applies.
-* **Clear** removes the regions of a device entry for the session; the entry itself is kept.
-* **Save for device** needs at least one region applied, and a series that names a device.
+* The top of the **Device masks and regions** menu lists the entries that fit the current image, the one in use being checked; pick one by hand to paint all of its regions whatever the profile. The menu reads *No device mask fits this image* when none applies.
+* **Remove the regions of this image** (or *of this series*) takes the regions of a device entry away for the session; the entry itself is kept.
+* **Save these regions for this device...** needs at least one region applied, and a series that names a device; it is not available when an administrator has locked the configuration.
+* Drawing a shape and clicking **Redact** over a device mask adds the region to it, to hide something the entry does not cover.
 
 The entries are managed in **Preferences > Viewer > Device masks**: a table with the **Name**, the **Device** key, the number of **Regions**, where the entry comes **From** and whether it is **Used**, a preview of the regions, and the buttons **Rename**, **Delete**, **Import…** and **Export…**.
 
@@ -118,7 +121,7 @@ Export writes either a masking document (JSON) or a **Karnak profile (YAML)**, s
 
 **File > Preferences > General > Identity masking** has two tabs.
 
-* **Profiles** — choose a **Profile**; the built-in ones are read-only, so **Clone** one to get an editable copy, then set its **Name**, whether it is **Offered when producing an image**, whether it **Shift dates by the session offset**, and under **What each kind of information becomes** the action for each kind. The menu next to the list imports, exports and deletes profiles. **Profiles in force** sets the profile of the **Session masking** and the one used for **Remote and AI requests**.
+* **Profiles** — choose a **Profile**; the built-in ones are read-only, so **Clone** one to get an editable copy, then set its **Name**, whether it is **Offered when producing an image**, and under **What each kind of information becomes** the action for each kind. A profile shifts dates as soon as one kind or one tag is set to **Shifted**; there is no separate setting. The menu next to the list imports, exports and deletes profiles. **Profiles in force** sets the profile of the **Session masking** and the one used for **Remote and AI requests**.
 * **Tag classification** — the list of DICOM attributes with the kind of information each one carries and where that classification comes **From**. Add a tag or remove one to change how a profile treats it. A tag is entered as its DICOM keyword (`PatientName`), as `gggg,eeee@creator` for a private tag, or as `weasis:keyword` for a value Weasis computes itself.
 
 Changes take effect when you click **Apply**: they are written to `identityMasking.json` in the preference directory. **Export** proposes that same file, and **Import** reads a document of the same format.
