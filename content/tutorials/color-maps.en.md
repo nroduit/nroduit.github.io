@@ -105,7 +105,7 @@ The upper part covers what most maps need. The colored strip right below it prev
 * **Interpolation** — how the values between two stops are filled:
   * `LINEAR` — a straight blend from one stop to the next; the default.
   * `STEP` — each stop holds its color until the next one, which gives the flat bands of a qualitative map or of an isodose display (_Isodose_, _CT Body Composition_).
-  * `SAMPLED` — the map comes from a flat table, a legacy `.txt` file or a DICOM color palette, where every entry of the table is a stop. It is rendered like `LINEAR`; the difference is that such a map has hundreds of stops, so it is reshaped with the **Palette**, **Bands** or **Range** actions rather than stop by stop.
+  * `SAMPLED` — the map comes from a flat table, a legacy `.txt` file or a DICOM color palette written by other software, where every entry of the table is a stop. It is rendered like `LINEAR`; the difference is that such a map has hundreds of stops, so it is reshaped with the **Palette**, **Bands** or **Range** actions rather than stop by stop.
 
   A single hard edge does not need `STEP`: two stops placed at the same position produce one, and the rest of the map stays smooth.
 * **Palette** + **Apply** — replaces the colors of the map with those of another map of the library, keeping the opacity curve. **Reverse** flips the map end to end.
@@ -148,10 +148,18 @@ Your maps and your favorites are stored in the `customColorMaps.json` file of th
 | Format | Import | Export |
 |---|---|---|
 | **JSON color map** (`.json`) — the native format, with the stops, the domain, the opacity and, for a preset, the lighting; the only format offered by the editor of the 3D viewer | ✔ | ✔ |
-| **DICOM color palette** (`.dcm`) — a Color Palette object, readable by other DICOM software (DICOM 2D viewer only); the exported object embeds an sRGB input-device ICC profile, as the standard requires {{< since "4.8.0" >}} | ✔ | ✔ |
+| **DICOM color palette** (`.dcm`) — a Color Palette object, readable by other DICOM software (DICOM 2D viewer only); the exported object embeds an sRGB input-device ICC profile, as the standard requires, and the whole map for Weasis (see below) {{< since "4.8.0" >}} | ✔ | ✔ |
 | **Legacy color table** (`.txt`) — 256 lines of `R G B` values, the format of the older Weasis LUT files (2D viewers only) | ✔ | — |
 
-A legacy table carries neither opacity nor anchored positions, which is why it is read but never written. An imported map is loaded in the editor: give it a name and **Save** it to keep it. When a JSON document holds several maps, only the first one is imported.
+A legacy table carries neither opacity nor anchored positions, which is why it is read but never written.
+
+{{% callout warning %}}
+The DICOM standard defines a color palette as **256 opaque colors**, nothing more. Another DICOM viewer therefore shows an exported map as those colors only, spread over the current window: the opacity, the value range (`absolute`, `fixed` or `percent`), the colors outside the range, a precision above 8 bits and the lighting of a volume preset have no DICOM equivalent. Weasis also writes the whole map, as JSON, in a private element of the file, so **only Weasis** reads the map back exactly as it was authored. After such an export, the status line of the editor says so. To exchange a map between Weasis installations, either format works; to keep a map you can edit, prefer JSON.
+{{% /callout %}}
+
+When Weasis reads a DICOM color palette without that private element, written by other software or modified since its export, it builds a `SAMPLED` map from the palette: one stop per entry, with the opacity of the alpha palette when the object has one, and the content description as the name when the content label is only its short form.
+
+An imported map is loaded in the editor: give it a name and **Save** it to keep it. When a JSON document holds several maps, only the first one is imported.
 
 The JSON document is the same for an exported map, for `customColorMaps.json` and for the maps delivered with Weasis: an envelope with a schema version, the maps and, in the user file, the ids of the favorites. Only `name` and `stops` are required; a field left out keeps its default.
 
