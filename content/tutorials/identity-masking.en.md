@@ -67,11 +67,11 @@ You can clone a built-in profile and adjust it in the [preferences](#preferences
 
 The dialogs that produce a picture carry an **Identity** list with the same profiles plus **Keep identity**. The profile applies only while the picture is rendered: the screen keeps showing what it showed, masked or not.
 
-<!-- SCREENSHOT TO ADD: /tuto/masking-identity-selector.webp (Exporting view dialog with the Identity list open, and the notice Identity may be printed into the pixels of this image). Insert as: ![Identity list of the Exporting view dialog](/tuto/masking-identity-selector.webp?classes=shadow) -->
+<!-- SCREENSHOT TO ADD: /tuto/masking-identity-selector.webp (Take a screenshot dialog with the Identity list open, and the notice Identity may be printed into the pixels of this image). Insert as: ![Identity list of the Take a screenshot dialog](/tuto/masking-identity-selector.webp?classes=shadow) -->
 
 | Dialog | Default when the screen is not masked |
 |---|---|
-| [Export the selected view](dicom-export/#export-view) to a file or to the clipboard | **Display** |
+| [Take a screenshot](capture/#screenshot) of a view, a layout or the window, to a file or to the clipboard | **Display** |
 | [Capture](capture/): animation export and recording | **Display** |
 | [Print](print/) and DICOM print | **Keep identity** |
 | Image export of a series (JPEG, PNG, TIFF…) | the last profile you chose |

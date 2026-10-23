@@ -18,7 +18,7 @@ Weasis offers complementary export workflows:
 
 ### Exporting the selected view {{< svg-inline "static/tuto/icon/exportImage.svg" >}} {#export-view}
 
-Open the export-view dialog from the toolbar icon {{< svg-inline "static/tuto/icon/exportImage.svg" >}} {{< until "4.7.3" >}}, from the **Capture** button at the right end of the menu bar or with **Ctrl + Shift + S** {{< since "4.8.0" >}}, or from the main menu **_File > Export > Exporting view_**. The output can be sent to the clipboard or saved to an image file in PNG, TIFF, JPG, JPEG 2000 or JPEG XL format.
+Open the export-view dialog from the toolbar icon {{< svg-inline "static/tuto/icon/exportImage.svg" >}} {{< until "4.7.3" >}}, from the **Capture** button at the right end of the menu bar or with **Ctrl + Shift + S** {{< since "4.8.0" >}}, or from the main menu **_File > Export > Exporting view_** {{< until "4.7.3" >}} **_File > Export > Take a screenshot_** {{< since "4.8.0" >}}. Its **Capture** list {{< since "4.8.0" >}} also takes the whole layout or the application window as displayed, see [Capture](capture/#screenshot); this section describes the **Selected view**. The output can be sent to the clipboard or saved to an image file in PNG, TIFF, JPG, JPEG 2000 or JPEG XL format. The proposed file name is `screenshot` followed by the date and time {{< since "4.8.0" >}}.
 
 #### Current view
 Exports the view exactly as it appears on screen, at its current size and with every overlay (annotations, measurements, DICOM annotations, rulers…) visible.
