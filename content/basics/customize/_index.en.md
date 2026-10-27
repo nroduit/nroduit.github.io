@@ -1,7 +1,6 @@
 ---
 title: Customize
 description: Adapt Weasis to a site — connect it to a PACS or web portal, set preferences and Window/Level presets for every user, and build your own plugins.
-updated: 2026-09-20
 keywords: [ "customize weasis", "weasis configuration", "preferences", "integration", "plugins", "window level presets" ]
 weight: 30
 ---

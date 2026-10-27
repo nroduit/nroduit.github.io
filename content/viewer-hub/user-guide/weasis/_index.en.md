@@ -1,7 +1,6 @@
 ---
 title: Weasis
 description: Manage the Weasis packages ViewerHub serves — versioning, qualifiers, translation packages, release compatibility and group assignment.
-updated: 2026-09-20
 keywords: [ "viewerhub", "weasis packages", "versioning", "qualifier", "translation", "groups" ]
 weight: 100
 ---

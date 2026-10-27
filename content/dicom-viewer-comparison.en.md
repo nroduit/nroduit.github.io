@@ -5,7 +5,6 @@ description: "How Weasis differs from OsiriX, Horos, 3D Slicer, OHIF, RadiAnt an
 keywords: [ "dicom viewer comparison", "weasis vs osirix", "osirix alternative windows", "osirix alternative linux", "horos alternative", "3d slicer alternative", "ohif viewer alternative", "radiant dicom viewer alternative", "microdicom alternative", "free dicom viewer comparison", "open source dicom viewer", "web dicom viewer" ]
 weight: 45
 hidden: true
-updated: 2026-09-20
 ---
 
 ## <center>How Weasis compares with other DICOM viewers</center>
