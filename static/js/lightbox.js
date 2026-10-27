@@ -1,7 +1,19 @@
 
+// An image link is an http(s) or relative URL whose path ends with an image extension.
+// Matching the extension anywhere in the string also caught weasis:// launch links that
+// merely carry an image URL as a parameter ($image:get -u "...jpg"): the click opened an
+// empty lightbox and the link never reached Weasis.
 function isImageLink(url) {
-    const p = /([a-z\-_0-9\/:.]*\.(jpg|jpeg|png|gif))/i;
-    return url.match(p);
+    let u;
+    try {
+        u = new URL(url, document.baseURI);
+    } catch (e) {
+        return false;
+    }
+    if (u.protocol !== 'http:' && u.protocol !== 'https:') {
+        return false;
+    }
+    return /\.(jpe?g|png|gif|webp)$/i.test(u.pathname);
 }
 function setGallery(el) {
     const elements = document.body.querySelectorAll(".gallery");
