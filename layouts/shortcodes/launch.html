@@ -2,10 +2,15 @@
 {{- $cmd := trim .Inner "\n" }}
 {{- $style := .Get "style" | default "transparent" }}
 {{- $title := .Get "title" | default "Launch" }}
-{{- partial "shortcodes/button.html" (dict
+{{- $button := partial "shortcodes/button.html" (dict
   "page"  .Page
   "href"  (printf "weasis://?%s" (urlquery $cmd))
   "title" $title
   "icon"  "play"
   "style" $style
 ) -}}
+{{- /* The theme re-serializes the href through Go's url.URL, which drops the "//"
+  of an authority-less URI: weasis://?… comes out as weasis:?…. Weasis (4.x)
+  recognizes only ^weasis(-.*)?:// as a launch URI, so without the "//" the
+  viewer starts but ignores the command. Put the "//" back. */}}
+{{- replace $button `href="weasis:?` `href="weasis://?` | safeHTML -}}
