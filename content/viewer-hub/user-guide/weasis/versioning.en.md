@@ -20,11 +20,12 @@ This file corresponds to one of the Weasis release versions produced here: https
 ### Import process
 
 The import process of a Weasis version follows these different steps:
+
 - Retrieval of the "weasis-native xxx.zip" file, decompression and storage of the version's resources/bundles in minio/S3.
 - Compression of the version's "resources" folder into a zip file (necessary for Weasis) and storage on S3.
-![resource_zip_compression.png](/viewer-hub/weasis_versioning/resource_zip_compression.webp)
+  ![resource_zip_compression.png](/viewer-hub/weasis_versioning/resource_zip_compression.webp)
 - Update on S3 of the Weasis version compatibility file if the imported version is more recent.
-![minio_mapping-minimal-version.png](/viewer-hub/weasis_versioning/minio_mapping-minimal-version.webp)
+  ![minio_mapping-minimal-version.png](/viewer-hub/weasis_versioning/minio_mapping-minimal-version.webp)
 - Cache update regarding Weasis version compatibility mapping.
 - Loading of the version's properties into the database.
 
@@ -73,4 +74,3 @@ For example to modify the name of the viewer for a package/launch config/group:
 - launching the viewer after modification: the label corresponds to the modified property
 
 ![result_rename_property.png](/viewer-hub/weasis_versioning/result_rename_property.webp)
-

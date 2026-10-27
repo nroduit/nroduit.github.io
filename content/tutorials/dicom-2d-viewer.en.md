@@ -7,9 +7,12 @@ keywords: [ "dicom 2d viewer", "view dicom images", "image stack", "viewport lay
 
 ## <center>The default viewer, and the way into the others {{< svg-inline "static/tuto/icon/view2d.svg" >}}</center>
 
-The 2D viewer is the default viewer for any DICOM series that contains images — CT, MR, US, CR / DX, mammography, color photographs, and so on. It handles both single images and stacks (volumetric series), and is the entry point for the more specialized viewers such as [MPR](mpr), the [3D Volume Renderer](dicom-3d-viewer), and the [MIP](mip) projection. It can also overlay a PET or SPECT series on a CT/MR base — see [Image Fusion](fusion).
+The 2D viewer is the default viewer for any DICOM series that contains images — CT, MR, US, CR / DX, mammography, color photographs, and so on.
+It handles both single images and stacks (volumetric series), and is the entry point for the more specialized viewers such as [MPR](mpr), the [3D Volume Renderer](dicom-3d-viewer), and the [MIP](mip) projection.
+It can also overlay a PET or SPECT series on a CT/MR base — see [Image Fusion](fusion).
 
 ### Open the 2D viewer
+
 The viewer can be opened with {{< svg-inline "static/tuto/icon/view2d.svg" >}} in the toolbar, or by double-clicking a thumbnail (or right-clicking it and choosing **_2D Viewer > Open_**) in the [DICOM Explorer](dicom-explorer/).
 
 ![DICOM 2DViewer](/tuto/dicom-viewer2d.webp?classes=shadow&width=100%)
@@ -28,7 +31,8 @@ The rulers {{% badge style="blue" %}}K{{% /badge %}} display a real-world size w
 
 ![Main Toolbar](/tuto/main-toolbar.webp?classes=shadow)
 
-Choose the action assigned to each of the three mouse buttons and the mouse wheel. Defaults are:
+Choose the action assigned to each of the three mouse buttons and the mouse wheel.
+Defaults are:
 
 * **Left button** — Window / Level. Can also be changed from the context menu {{% badge style="blue" %}}F{{% /badge %}} or the [keyboard shortcuts](../basics/shortcuts).
 * **Right button** — Context Menu.
@@ -39,16 +43,28 @@ In a layout with several views, rolling the wheel over any view scrolls **that**
 
 Available actions:
 
-* **Pan** — move the image position. _T_ key to select. _Alt + Arrows_ to pan while another action is selected.
-* **[Window / Level](lut)** — change image contrast. _W_ key to select.
-* **Series Scroll** — navigate through the images of the current series. _S_ key to select.
-* **[Zoom](zoom)** — zoom in / out. _Z_ key to select.
-* **Rotation** — rotate the image by a free angle. _R_ key to select.
-* **[Measure](draw-measure/#measurement-tools)** — draw a graphic to measure something. _M_ key to select.
-* **[Draw](draw-measure/#drawings)** — draw a graphic to annotate. _G_ key to select.
-* **Context Menu** — open the context menu. _Q_ key to select.
-* **[Crosshair](cursor-3d)** — 3D cursor. _H_ key to select. _Ctrl + click_ or _Ctrl + Shift + click_ adjusts Window / Level without leaving crosshair mode.
-* **No Action** — do nothing. _N_ key to select.
+* **Pan** — move the image position.
+  _T_ key to select.
+  _Alt + Arrows_ to pan while another action is selected.
+* **[Window / Level](lut)** — change image contrast.
+  _W_ key to select.
+* **Series Scroll** — navigate through the images of the current series.
+  _S_ key to select.
+* **[Zoom](zoom)** — zoom in / out.
+  _Z_ key to select.
+* **Rotation** — rotate the image by a free angle.
+  _R_ key to select.
+* **[Measure](draw-measure/#measurement-tools)** — draw a graphic to measure something.
+  _M_ key to select.
+* **[Draw](draw-measure/#drawings)** — draw a graphic to annotate.
+  _G_ key to select.
+* **Context Menu** — open the context menu.
+  _Q_ key to select.
+* **[Crosshair](cursor-3d)** — 3D cursor.
+  _H_ key to select.
+  _Ctrl + click_ or _Ctrl + Shift + click_ adjusts Window / Level without leaving crosshair mode.
+* **No Action** — do nothing.
+  _N_ key to select.
 
 {{% callout tip %}}
 While dragging, hold _Ctrl_ to accelerate the action and _Ctrl + Shift_ to accelerate more.
@@ -61,13 +77,15 @@ The single-key shortcuts above are the **defaults** — most are customizable {{
 * {{< svg-inline "static/tuto/icon/reset.svg" >}} **Reset** — restore the default image rendering (see [Reset](#reset)). _Escape_ key to select.
 
 #### Toolbars available in the DICOM 2D viewer
+
 * [DICOM Import](dicom-import/#from-the-weasis-menu-or-toolbar)
 * [DICOM Export](dicom-export/#exporting)
 * [Screenshot](dicom-export/#export-view)
 * Viewer Main Bar (see above)
 * [Measurement](draw-measure)
 * [Zoom](zoom)
-* Rotation — rotate the image by 90° clockwise or flip it horizontally. Not visible by default.
+* Rotation — rotate the image by 90° clockwise or flip it horizontally.
+  Not visible by default.
 * [DICOM Header](tags)
 * [Lookup Table](lut)
 * Basic 3D — [MPR](mpr) and [MIP](mip) (disabled when the series has fewer than 5 images).
@@ -90,27 +108,22 @@ one screen instead of one slice at a time.
 
 Each viewport is in one of two modes:
 
-* **Stack** — one image, scrolled through as usual. This is the default and the
-  behavior of earlier versions.
-* **Tiled n×m** — the viewport is divided into *columns × rows* cells filled with
-  consecutive images of the series. Scrolling advances the **whole set**, so the
-  tiles keep their order and always show a contiguous run of images.
+* **Stack** — one image, scrolled through as usual.
+  This is the default and the behavior of earlier versions.
+* **Tiled n×m** — the viewport is divided into *columns × rows* cells filled with consecutive images of the series.
+  Scrolling advances the **whole set**, so the tiles keep their order and always show a contiguous run of images.
 
-The available grids are **1×2**, **2×1**, **2×2**, **2×3**, **3×2**, **3×3** and
-**4×4**.
+The available grids are **1×2**, **2×1**, **2×2**, **2×3**, **3×2**, **3×3** and **4×4**.
 
-The mode is changed from the **Viewport Layout** submenu, reachable from three
-places:
+The mode is changed from the **Viewport Layout** submenu, reachable from three places:
 
 * the {{< svg-inline "static/tuto/icon/layout.svg" >}} layout button in the
   [main toolbar](#toolbars);
 * the viewer's own menu;
 * the **right-click** [context menu](#other-specific-tools) on a view.
 
-It applies to the **selected viewport only**, so a scrolling stack and a mosaic
-can sit side by side in the same layout. Switching modes carries the displayed
-series with it — to the first tile when you go tiled, and back to the single
-image when you return to Stack — so nothing has to be reopened.
+It applies to the **selected viewport only**, so a scrolling stack and a mosaic can sit side by side in the same layout.
+Switching modes carries the displayed series with it — to the first tile when you go tiled, and back to the single image when you return to Stack — so nothing has to be reopened.
 
 {{% callout note %}}
 Tiling is not offered in the [MPR](mpr) and [3D](dicom-3d-viewer) viewers: their
@@ -120,8 +133,7 @@ have nothing to divide.
 
 #### Synchronization inside a viewport
 
-When the selected view is one tile of a viewport, the synchronization drop-down
-replaces **Apply to all views** with **Apply to all tiled views**
+When the selected view is one tile of a viewport, the synchronization drop-down replaces **Apply to all views** with **Apply to all tiled views**
 {{< since "4.8.0" >}}. Window/level, zoom, pan and the other synchronized actions
 are then propagated to every tile of that viewport rather than to the other
 viewports of the layout. A tiled viewport is kept out of the synchronization
@@ -138,27 +150,36 @@ both default to `true`. The entry of the viewer's menu bar always stays.
 {{% /callout %}}
 
 ### Viewer tools
+
 The right-side panel groups all the tools tied to the 2D viewer.
 
 The **mini-tool** is always visible; the other panels open by clicking the corresponding vertical button. The normalize button {{< svg-inline "static/tuto/icon/normalize.svg" >}} docks a panel into the main layout — otherwise it opens as a pop-up that can be kept in front with the pin button {{< svg-inline "static/tuto/icon/holdon.svg" >}} (not recommended, as a pinned pop-up hides other panels).
 
 #### Mini-tool {{% badge style="red" %}}B{{% /badge %}} {#mini-tool}
-By default the mini-tool scrolls through the images of the selected series (the one surrounded by the orange focus border). The combobox at the top can switch it to control zoom or rotation instead.
+
+By default the mini-tool scrolls through the images of the selected series (the one surrounded by the orange focus border).
+The combobox at the top can switch it to control zoom or rotation instead.
 
 #### Display {{% badge style="red" %}}C{{% /badge %}} {#display}
 
 Controls how the image and graphic objects are displayed in the view.
 
-The **Apply to all views** option propagates the chosen display settings to every view in the selected tab. When unchecked, settings apply only to the focused view (orange border).
+The **Apply to all views** option propagates the chosen display settings to every view in the selected tab.
+When unchecked, settings apply only to the focused view (orange border).
 
 ##### Image
-Display options for the image itself. Unchecking **Image** hides the image and leaves only the annotations and graphic objects visible. The other options expose DICOM-specific behavior:
 
-* **DICOM Image Overlay** — apply the [DICOM overlays](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.9.2.html) when checked. The [overlay color](#other) is configurable.
+Display options for the image itself.
+Unchecking **Image** hides the image and leaves only the annotations and graphic objects visible.
+The other options expose DICOM-specific behavior:
+
+* **DICOM Image Overlay** — apply the [DICOM overlays](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.9.2.html) when checked.
+  The [overlay color](#other) is configurable.
 * **Shutter** — apply the [DICOM shutters](https://dicom.nema.org/medical/Dicom/current/output/chtml/part03/sect_C.7.6.11.html) when checked.
 * **Pixel Padding** — apply the [DICOM pixel padding](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.5.html#sect_C.7.5.1.1.2) when checked.
 
 ##### DICOM Annotations
+
 Display transformation values and DICOM information directly on the image.
 
 * **Annotations** — DICOM information shown in the image corners:
@@ -166,7 +187,8 @@ Display transformation values and DICOM information directly on the image.
   * {{% badge style="blue" %}}H{{% /badge %}} Top right — study information.
   * {{% badge style="blue" %}}I{{% /badge %}} Bottom right — series information (depends on the modality).
   * {{% badge style="blue" %}}J{{% /badge %}} Bottom left — image information and the position of the image in the series.
-* **Minimal Annotations** — reduce the number of annotations shown. Press **Space** or _I_ to cycle through the three states (minimal, none, all).
+* **Minimal Annotations** — reduce the number of annotations shown.
+  Press **Space** or _I_ to cycle through the three states (minimal, none, all).
 * **Anonymize** {{< until "4.7" >}} — hide identifying information only inside the views. Replaced by [Identity masking](identity-masking/) {{< since "4.8.0" >}}, which masks the whole application and the pictures it produces.
 * **Scale** — display the rulers on the left and bottom of the image {{% badge style="blue" %}}K{{% /badge %}}.
 * **Lookup Table** — display the [LUT](lut) on the image {{% badge style="blue" %}}L{{% /badge %}}.
@@ -179,9 +201,11 @@ Display transformation values and DICOM information directly on the image.
 * **Pixel (Value / Position)** — display the pixel value and the cursor position {{% badge style="blue" %}}J{{% /badge %}}.
 
 ##### Graphics
+
 Check / uncheck to show or hide the graphic objects (see [Draw & Measure](draw-measure)), one check box per layer {{< since "4.8.0" >}}: **Measurements**, **Drawings**, **Annotations**, **DICOM PR** and **DICOM SR**.
 
 #### Image Tools {{% badge style="red" %}}D{{% /badge %}} {#image-tools}
+
 **Image Tools** groups every control that affects how the image is rendered.
 
 Each section below can be **collapsed or expanded** by clicking its header {{< since "4.7.1" >}}. The expanded/collapsed state of every section is **remembered and restored** the next time you open Weasis.
@@ -189,9 +213,12 @@ Each section below can be **collapsed or expanded** by clicking its header {{< s
 ##### [Windowing and Rendering](lut/)
 
 ##### Transform
-Zoom, rotate, and flip the image. Zoom and rotation can also be driven from the [mini-tool](#mini-tool) or the [mouse actions](#toolbars).
+
+Zoom, rotate, and flip the image.
+Zoom and rotation can also be driven from the [mini-tool](#mini-tool) or the [mouse actions](#toolbars).
 
 ##### Cine
+
 The **Cine start** button {{< svg-inline "static/tuto/icon/execute.svg" >}} plays the series at a fixed speed (frames per second). The default speed is taken from the DICOM file when present. Cine options are also accessible from the context menu.
 
 * Click **Cine stop** {{< svg-inline "static/tuto/icon/suspend.svg" >}} to end the animation.
@@ -208,35 +235,48 @@ A dedicated **Cine** toolbar is also available — hidden by default; enable it 
 {{% /callout %}}
 
 ##### Fusion
+
 Overlay a **PET** or **SPECT** series on the displayed **CT / MR** base, with adjustable color LUT and base/overlay opacity {{< since "4.7.1" >}}. Collapsed by default and enabled only when the study contains a compatible overlay. See [Image Fusion](fusion/) for the full workflow, SUV statistics, and MPR inheritance.
 
 ##### Reset
+
 Returns the image to its default rendering, either for every parameter or for a specific one. Also available from the toolbar button {{< svg-inline "static/tuto/icon/reset.svg" >}} and from the context menu.
 
 #### [Draw & Measure](draw-measure) {{% badge style="red" %}}E{{% /badge %}} {#draw-measure}
 
 #### Other specific tools
+
 * [DICOM RT tools](dicom-rt) — for radiotherapy studies (RTSTRUCT, RTPLAN, RTDOSE).
 * [DICOM Segmentation](dicom-segmentation) — for pixel-based SEG overlays (binary, fractional, label-map).
 
 ### Preferences
+
 From the menu **_File > Preferences > Viewer > 2D Viewer_**.
 
 #### Mouse Action Sensitivity
+
 Adjust how strongly a mouse drag translates into action for: _Window_, _Level_, _Zoom_, _Rotation_, and _Series Scroll_.
 
 #### Zoom
+
 Zoom interpolation controls how new pixels are computed when the image is zoomed in or out:
 
 * **Nearest neighbor** — the simplest method: extends the nearest pixel value as-is.
-* **Bilinear** — averages the four neighboring pixels. Slightly sharper than nearest neighbor, slightly slower.
-* **Bicubic** — uses a 16-point kernel. Sharper than bilinear, but the slowest of the four.
+* **Bilinear** — averages the four neighboring pixels.
+  Slightly sharper than nearest neighbor, slightly slower.
+* **Bicubic** — uses a 16-point kernel.
+  Sharper than bilinear, but the slowest of the four.
 * **Lanczos** — uses a sinc kernel; produces the sharpest results, with performance between bilinear and bicubic.
 
-The default is **Bilinear**. **Nearest neighbor** is the fastest option but produces aliasing artifacts.
+The default is **Bilinear**.
+**Nearest neighbor** is the fastest option but produces aliasing artifacts.
 
 #### Other
-* **Apply Window / Level on color images** — when checked, the window / level is applied to the RGB channels. Unchecked, window / level has no effect on color images.
-* **Inverse level direction** — when checked, the level direction with mouse drag is inverted (dragging down increases brightness), matching the [Basic Image Review profile](https://wiki.ihe.net/index.php?title=Basic_Image_Review). Unchecked, dragging down decreases brightness.
+
+* **Apply Window / Level on color images** — when checked, the window / level is applied to the RGB channels.
+  Unchecked, window / level has no effect on color images.
+* **Inverse level direction** — when checked, the level direction with mouse drag is inverted (dragging down increases brightness), matching the [Basic Image Review profile](https://wiki.ihe.net/index.php?title=Basic_Image_Review).
+  Unchecked, dragging down decreases brightness.
 * **Apply by default the most recent Presentation State** — when checked, the most recent [Presentation State](build-ko-pr/#presentation-state-pr-or-gsps) object is applied automatically. Otherwise it has to be selected manually via {{< svg-inline "static/tuto/icon/imagePresentation.svg" >}}.
-* **Overlay color** — color and opacity of the DICOM overlay. The default is white; the opacity is the transparency / alpha slider of the color picker.
+* **Overlay color** — color and opacity of the DICOM overlay.
+  The default is white; the opacity is the transparency / alpha slider of the color picker.

@@ -11,6 +11,7 @@ To easily manage your computer network, ViewerHub allows the creation and associ
 Users, hosts, user groups and host groups are represented by ‘targets’.
 
 There are 4 types of target:
+
 - user
 - host
 - user group
@@ -32,4 +33,4 @@ It is possible to associate several users with a user group and several hosts wi
 
 ![group_association_result.png](/viewer-hub/groups/group_association_result.webp)
 
-It is not possible to mix up the association between a user and a host group or a host in a user group. 
+It is not possible to mix up the association between a user and a host group or a host in a user group.

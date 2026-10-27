@@ -17,6 +17,7 @@ Radiotherapy treatment data is distributed across three companion DICOM objects:
 When a CT series is loaded together with its associated RTSTRUCT, RTPLAN, and RTDOSE files, Weasis automatically links them and the **RT Tool** appears in the right panel.
 
 ### How to display structures
+
 1. Click **_Load RT_** {{% badge style="red" %}}A{{% /badge %}} to load the linked DICOM STRUCT, PLAN, and DOSE objects. The button becomes inactive once loading completes.
 2. {{% badge style="info" %}}Optional{{% /badge %}} Select a structure set {{% badge style="red" %}}B{{% /badge %}} if more than one is available.
 3. {{% badge style="info" %}}Optional{{% /badge %}} Select a plan {{% badge style="red" %}}C{{% /badge %}} if more than one is available.
@@ -54,6 +55,7 @@ The region tree exposes a context menu with the following actions:
 {{% /callout %}}
 
 ### How to display isodoses
+
 1. Switch to the **Isodoses** tab {{% badge style="red" %}}F{{% /badge %}}.
 2. Check the **Isodoses** root node — it is unchecked by default.
 3. {{% badge style="info" %}}Optional{{% /badge %}} Adjust the graphic opacity {{% badge style="red" %}}H{{% /badge %}} (default: 50 %).
@@ -79,7 +81,9 @@ A **colorwash** paints the whole dose distribution over the CT in color, instead
 ![Axial CT of the breast plan with the dose shown as a colorwash and its Isodose color bar graduated from 0 to 120 % of the prescribed dose](/tuto/dicom-rt-colorwash.webp?classes=shadow)
 <br>
 
-The dose grid of the plan is laid over the selected view with the **Isodose** [color map](color-maps/), graduated in **percent of the prescribed dose** from 0 to 120 %. Its colors are bands, like the isodose levels: nothing below 10 %, then blue, light blue, green, yellow and orange up to 100 %, **red** from the prescription and **magenta** from 110 %, where an overdose stands out. When the plan gives no prescribed dose, the scale is measured on the dose grid instead.
+The dose grid of the plan is laid over the selected view with the **Isodose** [color map](color-maps/), graduated in **percent of the prescribed dose** from 0 to 120 %.
+Its colors are bands, like the isodose levels: nothing below 10 %, then blue, light blue, green, yellow and orange up to 100 %, **red** from the prescription and **magenta** from 110 %, where an overdose stands out.
+When the plan gives no prescribed dose, the scale is measured on the dose grid instead.
 
 The colorwash uses the [image fusion](fusion) overlay, so everything described there applies:
 
@@ -87,9 +91,11 @@ The colorwash uses the [image fusion](fusion) overlay, so everything described t
 * the **Fusion** section of the **Image tool** panel changes the opacity (50 % by default), the color map or the top of the scale;
 * the overlay follows the view as you scroll, zoom or change the window, and it can be combined with the isodose lines and the structures.
 
-Uncheck **Colorwash** to remove it. The [Reset](dicom-2d-viewer#reset) action also turns it off.
+Uncheck **Colorwash** to remove it.
+The [Reset](dicom-2d-viewer#reset) action also turns it off.
 
 ### How to display the DVH chart
+
 The Dose-Volume Histogram (DVH) summarizes, for each selected structure, the fraction of its volume that receives at least a given dose level — the standard way to compare plans and check organ-at-risk constraints.
 
 * Select one or several structures (the **Structures** root node must also be selected).

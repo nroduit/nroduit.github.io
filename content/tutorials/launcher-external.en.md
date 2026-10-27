@@ -23,18 +23,23 @@ In the screenshot above, a launcher is configured to open the **Horos** viewer o
 2. Click **Add New** to create a new launcher.
 3. Fill in the general fields of the **DICOM Launcher** dialog:
    * **Name** — display name of the launcher.
-   * **Icon path** — icon shown in the menu and toolbar. Absolute path, or relative to the Weasis resources folder. The default icon is used if the file is not found.
+   * **Icon path** — icon shown in the menu and toolbar.
+     Absolute path, or relative to the Weasis resources folder.
+     The default icon is used if the file is not found.
    * **Enable** — show the launcher in the menu and toolbar.
    * **Button** — also show it as a toolbar button.
 4. Click **Configure** to specify what the launcher actually does.
 5. Pick the **Launcher Type** and fill in its options:
-   * **URI** — open a web page or a file at a given URI. The URI may contain [dynamic variables](#dynamic-variables) below.
-   * **Application** — run a local application with parameters. Both **Parameters** and **Environment Variables** can contain [dynamic variables](#dynamic-variables).
+   * **URI** — open a web page or a file at a given URI.
+     The URI may contain [dynamic variables](#dynamic-variables) below.
+   * **Application** — run a local application with parameters.
+     Both **Parameters** and **Environment Variables** can contain [dynamic variables](#dynamic-variables).
      * **Binary Path** — the executable to run.
      * **Working Directory** — working directory for the process (optional).
      * **Parameters** — command-line parameters, one per line.
      * **Environment Variables** — environment variables, one per line.
-     * **Compatibility** — restrict the launcher to specific platforms. Useful when the launcher configuration is pushed from a central server to heterogeneous workstations.
+     * **Compatibility** — restrict the launcher to specific platforms.
+       Useful when the launcher configuration is pushed from a central server to heterogeneous workstations.
 6. Click **Save** in the Launcher Type dialog to persist the launch configuration.
 7. Click **Save** in the DICOM Launcher dialog to persist the general settings.
 

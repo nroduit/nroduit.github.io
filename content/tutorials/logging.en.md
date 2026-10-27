@@ -8,7 +8,8 @@ keywords: [ "weasis log files", "logging configuration", "debug log", "trace lev
 
 ## <center>What to read, and what to attach to a bug report</center>
 
-Weasis writes log files that are invaluable when something goes wrong — a series fails to load, a query times out, a third-party integration misbehaves, or the application crashes at startup. The same files are also what to attach when [opening a bug report](https://github.com/nroduit/Weasis/issues) so a developer can reproduce the problem.
+Weasis writes log files that are invaluable when something goes wrong — a series fails to load, a query times out, a third-party integration misbehaves, or the application crashes at startup.
+The same files are also what to attach when [opening a bug report](https://github.com/nroduit/Weasis/issues) so a developer can reproduce the problem.
 
 ### Accessing the log folder
 
@@ -23,6 +24,7 @@ Open the log folder directly from the menu: **_Help > Open the logging folder_**
 Weasis writes two kinds of log files into the log folder.
 
 #### Boot log (`boot.log`)
+
 The boot log, available {{< since "3.5.0" >}}, captures the **application startup sequence** and is **always written**, regardless of the rolling-log configuration. It is the right place to look for:
 
 - whether Weasis started with the expected parameters,
@@ -30,6 +32,7 @@ The boot log, available {{< since "3.5.0" >}}, captures the **application startu
 - configuration issues raised during launch.
 
 #### Rolling log (`default.log`)
+
 The rolling log captures **runtime application activity** — viewer events, network calls, errors during use — and must be **enabled in the preferences** (see [Configuring the rolling log](#configuring-the-rolling-log) below).
 
 Once a rolling log reaches its maximum size, it is rotated and the previous file is automatically compressed into a ZIP archive {{< since "4.4.0" >}}.

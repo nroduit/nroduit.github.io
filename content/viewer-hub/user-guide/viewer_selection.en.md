@@ -8,12 +8,11 @@ An admin interface has been created to select which viewer to display depending 
 
 ## Viewer selection rules
 
-Rules can be defined in order to select the viewer to display. 
+Rules can be defined in order to select the viewer to display.
 
 These rules are applied in case no viewer has been specified in the parameters of the request.
 
 ![viewer_selection.png](/viewer-hub/user-guide/viewer_selection.webp)
-
 
 ## Rules
 
@@ -21,15 +20,17 @@ A rule is composed of a list of modalities, an archive and a viewer to launch.
 
 #### Modalities
 
-The modalities are combined using a logical OR. In other words, the rule is triggered when at least one modality is fulfilled.
+The modalities are combined using a logical OR.
+In other words, the rule is triggered when at least one modality is fulfilled.
 
 #### Archive
 
-A specific archive can be defined in the rule. Otherwise the option "ALL" will match all the archives requests.
+A specific archive can be defined in the rule.
+Otherwise the option "ALL" will match all the archives requests.
 
 #### Default
 
-When starting viewer-hub, a default rule is created. 
+When starting viewer-hub, a default rule is created.
 
 If there is no archive in the request and no rules defined or no rules matching the request, the default rule is applied and the viewer defined in this default rule is launched.
 
@@ -51,5 +52,3 @@ It means that this rule has the highest priority and so Viewer-Hub will check th
 It is possible to modify the rules order by drag and dropping the icon of the left:
 
 ![viewer_selection_reorder.png](/viewer-hub/user-guide/viewer_selection_reorder.webp)
-
-

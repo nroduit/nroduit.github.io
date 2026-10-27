@@ -10,9 +10,11 @@ keywords: [ "export dicom", "dicomdir", "dicom zip export", "save dicom as jpeg"
 
 Weasis offers complementary export workflows:
 
-- **Export the selected view** — produces a **raster image** (PNG, TIFF, JPG, JPEG 2000, JPEG XL) or a clipboard copy of what is currently shown on screen. Useful for slides, reports, e-mails, screenshots of measurements, and other non-DICOM consumers.
+- **Export the selected view** — produces a **raster image** (PNG, TIFF, JPG, JPEG 2000, JPEG XL) or a clipboard copy of what is currently shown on screen.
+  Useful for slides, reports, e-mails, screenshots of measurements, and other non-DICOM consumers.
 - **Capture** {{< since "4.8.0" >}} — the button at the right end of the menu bar also exports a cine loop or a 3D rotation as an animation, and records the viewer; see [Capture](capture/).
-- **DICOM Export** — produces **DICOM-format output** (a directory tree, an ISO image, or a network transfer to a remote node). Use this to share studies with another DICOM-capable system without losing pixel fidelity or metadata.
+- **DICOM Export** — produces **DICOM-format output** (a directory tree, an ISO image, or a network transfer to a remote node).
+  Use this to share studies with another DICOM-capable system without losing pixel fidelity or metadata.
 
 ---
 
@@ -21,6 +23,7 @@ Weasis offers complementary export workflows:
 Open the export-view dialog from the toolbar icon {{< svg-inline "static/tuto/icon/exportImage.svg" >}} {{< until "4.7.3" >}}, from the **Capture** button at the right end of the menu bar or with **Ctrl + Shift + S** {{< since "4.8.0" >}}, or from the main menu **_File > Export > Exporting view_** {{< until "4.7.3" >}} **_File > Export > Take a screenshot_** {{< since "4.8.0" >}}. Its **Capture** list {{< since "4.8.0" >}} also takes the whole layout or the application window as displayed, see [Capture](capture/#screenshot); this section describes the **Selected view**. The output can be sent to the clipboard or saved to an image file in PNG, TIFF, JPG, JPEG 2000 or JPEG XL format. The proposed file name is `screenshot` followed by the date and time {{< since "4.8.0" >}}.
 
 #### Current view
+
 Exports the view exactly as it appears on screen, at its current size and with every overlay (annotations, measurements, DICOM annotations, rulers…) visible.
 
 **Display** {{< since "4.8.0" >}} — what the picture shows: **As displayed**, **Image only** without annotations and graphics, or **Custom**, where the button next to the list lets you choose which annotations and layers appear.
@@ -28,14 +31,19 @@ Exports the view exactly as it appears on screen, at its current size and with e
 **Anonymize** {{< until "4.7.3" >}} — removes identifying information from the overlay. **Identity** {{< since "4.8.0" >}} — the [masking profile](identity-masking/#outputs) applied to the picture: *Display* by default, or *Keep identity*; the screen itself is not changed.
 
 #### Original Image
+
 Exports the underlying image — without on-screen overlays — with a few rendering options.
 
 ![Take a screenshot dialog: Capture, Current view with Display and Identity, Original image with its size and DICOM options](/tuto/dicom-export-view.webp?classes=shadow&width=350px)
 <br>
 
 * **Size** — scale the exported image (percentage of the original dimensions).
-* **Preserve 16-bit per channel** — keep the original pixel depth (16-bit in PNG / JPEG 2000 / JPEG-XL / TIFF, double values in TIFF). When checked, the exported pixel values match the Modality LUT values (e.g. Hounsfield units for CT). JPEG Lossy is only available with this option **unchecked**, since the format requires an 8-bit image.
-  When unchecked, the image is reduced to 8 bits per channel by applying the **default window/level** of the image — the first window center/width (or VOI LUT) stored in the DICOM header, or the full pixel range when the header defines none. This is *not* the rendering currently displayed in the view: the window/level you adjusted manually, the preset you picked, an applied [Presentation State](build-ko-pr/), an inverted LUT, and any pseudo-color LUT are all ignored. To export exactly what is on screen, use **Current view** instead.
+* **Preserve 16-bit per channel** — keep the original pixel depth (16-bit in PNG / JPEG 2000 / JPEG-XL / TIFF, double values in TIFF).
+  When checked, the exported pixel values match the Modality LUT values (e.g. Hounsfield units for CT).
+  JPEG Lossy is only available with this option **unchecked**, since the format requires an 8-bit image.
+  When unchecked, the image is reduced to 8 bits per channel by applying the **default window/level** of the image — the first window center/width (or VOI LUT) stored in the DICOM header, or the full pixel range when the header defines none.
+  This is *not* the rendering currently displayed in the view: the window/level you adjusted manually, the preset you picked, an applied [Presentation State](build-ko-pr/), an inverted LUT, and any pseudo-color LUT are all ignored.
+  To export exactly what is on screen, use **Current view** instead.
 * **DICOM Pixel Padding** — apply the [DICOM pixel padding](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.5.html#sect_C.7.5.1.1.2) when checked.
 * **DICOM Shutter** — apply the [DICOM shutters](https://dicom.nema.org/medical/Dicom/current/output/chtml/part03/sect_C.7.6.11.html) when checked.
 * **DICOM Overlay** — apply the [DICOM overlays](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.9.2.html) when checked.
@@ -53,12 +61,12 @@ Hover any series row to see its thumbnail in a tooltip — useful when picking a
 {{% /callout %}}
 
 #### Local Device
+
 ![Export DICOM](/tuto/export-ko-pr.webp?classes=shadow&width=500px)
 <br>
 
 1. Select **Local Device**.
-2. Choose the export options:
-   ![Export options](/tuto/dicom-export-options.webp?classes=shadow&width=350px)
+2. Choose the export options: ![Export options](/tuto/dicom-export-options.webp?classes=shadow&width=350px)
  <br>
    * **Transcoding** — change the DICOM transfer syntax (compression / encoding) of the exported files. Leave the default unless you specifically need a different syntax.
    * **Generate new unique identifiers** — replace the Study / Series / SOP Instance UIDs with newly generated ones. Cross-references between UIDs are kept consistent **within this export session only** — running the export a second time produces a different set of UIDs that no longer matches the first.
@@ -82,11 +90,13 @@ writing every file, piece by piece, over the network.
 {{% /callout %}}
 
 #### DICOM Send
+
 Sends the selected objects directly to a remote DICOM or DICOMweb node over the network — the same protocols used by PACS systems for inter-institutional transfer.
 
 1. Select **DICOM Send**.
 2. Choose the destination node — a classic DICOM node (C-STORE) or a DICOMweb node (STOW-RS).
-3. Pick the patient(s) / study / series / instances to send. Series created inside Weasis are marked with a **NEW** flag.
+3. Pick the patient(s) / study / series / instances to send.
+   Series created inside Weasis are marked with a **NEW** flag.
 4. Click **Send** to transfer, then close the window.
 
 {{% callout tip %}}
@@ -94,6 +104,7 @@ Destination nodes are configured under **_File > Preferences > DICOM_** (see the
 {{% /callout %}}
 
 #### CD/DVD Image
+
 Produces a burnable ISO image that follows the DICOMDIR layout expected by most CD/DVD-based DICOM media.
 
 ![Export DICOM](/tuto/dicom-export-cd.webp?classes=shadow&width=750px)
@@ -101,9 +112,13 @@ Produces a burnable ISO image that follows the DICOMDIR layout expected by most 
 
 1. Select **CD/DVD Image**.
 2. Choose the export options:
-   * **Transcoding** — change the DICOM transfer syntax of the exported files. Leave the default unless you specifically need a different syntax.
-   * **Generate new unique identifiers** — replace the Study / Series / SOP Instance UIDs with newly generated ones. Cross-references between UIDs are kept consistent **within this export session only** — running the export a second time produces a different set of UIDs that no longer matches the first.
+   * **Transcoding** — change the DICOM transfer syntax of the exported files.
+     Leave the default unless you specifically need a different syntax.
+   * **Generate new unique identifiers** — replace the Study / Series / SOP Instance UIDs with newly generated ones.
+     Cross-references between UIDs are kept consistent **within this export session only** — running the export a second time produces a different set of UIDs that no longer matches the first.
 3. **Add JPEG images** — also extract every image and every encapsulated payload (video, audio, PDF) into a separate JPEG folder for easy preview on systems without a DICOM viewer.
-4. **Add Weasis** — embed the Weasis viewer directly into the ISO so the recipient can launch it from the media. Currently supported only on Windows x86-64 (both for producing and for running the embedded copy). Running Weasis straight off a CD/DVD is slow; for a better experience, write the ISO to a USB stick or open the disc with a locally installed copy of Weasis as described in the `README.html` on the disc.
+4. **Add Weasis** — embed the Weasis viewer directly into the ISO so the recipient can launch it from the media.
+   Currently supported only on Windows x86-64 (both for producing and for running the embedded copy).
+   Running Weasis straight off a CD/DVD is slow; for a better experience, write the ISO to a USB stick or open the disc with a locally installed copy of Weasis as described in the `README.html` on the disc.
 5. Pick the patient(s) / study / series / instances to export.
 6. Click **Export** to write the ISO, then close the window.

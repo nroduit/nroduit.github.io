@@ -10,10 +10,13 @@ keywords: [ "print dicom", "dicom print", "print medical images", "print layout"
 
 Weasis can print images two ways:
 
-- **Standard printer** — sends a regular page to any printer configured on your operating system (laser, inkjet, PDF writer, …). Used for paper reports, slide handouts, or PDF export.
-- **DICOM Print** — sends the images directly to a **DICOM film printer** over the network, using the DICOM Print Management protocol. Used in radiology departments that still print films for clinical use.
+- **Standard printer** — sends a regular page to any printer configured on your operating system (laser, inkjet, PDF writer, …).
+  Used for paper reports, slide handouts, or PDF export.
+- **DICOM Print** — sends the images directly to a **DICOM film printer** over the network, using the DICOM Print Management protocol.
+  Used in radiology departments that still print films for clinical use.
 
-Both modes operate on the **current layout** — the page is built from the views currently visible in the active tab. The first step is therefore to prepare the layout exactly the way you want it on paper or film.
+Both modes operate on the **current layout** — the page is built from the views currently visible in the active tab.
+The first step is therefore to prepare the layout exactly the way you want it on paper or film.
 
 ### Preparing the image selection
 
@@ -33,6 +36,7 @@ To fill the layout with images, choose a [synchronization mode](synch-view) (2):
 ## Choosing a print mode
 
 ### Standard Printer {{< svg-inline "static/tuto/icon/print.svg" >}} {#standard-printer}
+
 Open **_File > Print > Print 2D viewer layout (P)_** from the main menu.
 
 ![standard](/tuto/print/standard.webp?classes=shadow)
@@ -40,15 +44,18 @@ Open **_File > Print > Print 2D viewer layout (P)_** from the main menu.
 Print options:
 
 * **Image position** — where each image is placed inside its page cell (centered, fit, etc.).
-* **Image DPI** — print resolution in dots per inch (default: **150**). Higher DPI means finer detail and a larger file sent to the printer.
+* **Image DPI** — print resolution in dots per inch (default: **150**).
+  Higher DPI means finer detail and a larger file sent to the printer.
 * **Print image with annotations** — when checked, the annotations and graphic objects defined in the [Display panel](dicom-2d-viewer/#display) are printed on top of the image.
-* **Print only the selected view** — when checked, only the view with the orange focus border is printed. When unchecked, every view of the current layout is printed.
-
+* **Print only the selected view** — when checked, only the view with the orange focus border is printed.
+  When unchecked, every view of the current layout is printed.
 
 ### DICOM Print {{< svg-inline "static/tuto/icon/print.svg" >}}
+
 Open **_File > Print > DICOM Print_** from the main menu.
 
-The DICOM Print dialog lets you manage several DICOM printer configurations (each carrying its own AE title, host, port, and film parameters). The print parameters mirror the Standard Printer ones above — for the protocol-level specifics, see the [DICOM Print Management Service](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.13.3.html) chapter of the standard.
+The DICOM Print dialog lets you manage several DICOM printer configurations (each carrying its own AE title, host, port, and film parameters).
+The print parameters mirror the Standard Printer ones above — for the protocol-level specifics, see the [DICOM Print Management Service](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.13.3.html) chapter of the standard.
 
 ![DICOM](/tuto/print/dicom.webp?classes=shadow)
 <br>

@@ -8,9 +8,11 @@ keywords: [ "ai dicom", "dicom ai", "ai dicom viewer", "ai dicom reader", "ai di
 
 ## <center>Model output packaged as standard DICOM</center>
 
-**Weasis is a free viewer for AI results stored as DICOM.** It opens what an inference framework produced — segmentations, structured reports, parametric maps, derived images — and displays them over the study they were computed from. The base version does not run the models: the analysis happens in your own pipeline, and Weasis reads what that pipeline writes.
+**Weasis is a free viewer for AI results stored as DICOM.** It opens what an inference framework produced — segmentations, structured reports, parametric maps, derived images — and displays them over the study they were computed from.
+The base version does not run the models: the analysis happens in your own pipeline, and Weasis reads what that pipeline writes.
 
-AI inference rarely defines its own file formats — instead, results are packaged as standard DICOM objects so any compliant PACS or viewer can ingest them. The same SOP Classes used for human-authored content (segmentations, structured reports, presentation states…) are reused to carry model outputs.
+AI inference rarely defines its own file formats — instead, results are packaged as standard DICOM objects so any compliant PACS or viewer can ingest them.
+The same SOP Classes used for human-authored content (segmentations, structured reports, presentation states…) are reused to carry model outputs.
 
 This page maps the AI-produced object types you are most likely to encounter to how Weasis displays them.
 
@@ -27,14 +29,12 @@ This page maps the AI-produced object types you are most likely to encounter to 
 
 ## Does Weasis run AI models?
 
-Not in the base version, and that distinction matters when choosing tools. Weasis is the **viewer** at
-the end of an AI pipeline: the model runs wherever you deploy it — a research framework, a vendor
-appliance, a PACS plug-in — and writes its output as DICOM. Weasis opens that output next to the
-original images, so a reader can check the result against what was acquired.
+Not in the base version, and that distinction matters when choosing tools.
+Weasis is the **viewer** at the end of an AI pipeline: the model runs wherever you deploy it — a research framework, a vendor appliance, a PACS plug-in — and writes its output as DICOM.
+Weasis opens that output next to the original images, so a reader can check the result against what was acquired.
 
-A [plugin](../basics/customize/build-plugins) could still run a model inside Weasis, provided the
-computer it runs on supports it (memory, GPU, runtime libraries). No such plugin is part of the
-standard distribution.
+A [plugin](../basics/customize/build-plugins) could still run a model inside Weasis, provided the computer it runs on supports it (memory, GPU, runtime libraries).
+No such plugin is part of the standard distribution.
 
 Weasis can also start AI tasks and follow them {{< since "4.8.0" >}}, without running them itself. It
 acts as a *User Agent*, the role defined by DICOMweb's Unified Procedure Step service (UPS-RS) and
@@ -48,7 +48,8 @@ These objects carry their own pixel data and are viewed as standalone images.
 
 #### DICOM Secondary Capture (SC)
 
-Pre-rendered images where the AI has burned its output directly into the pixels — typically annotations, heatmaps, or side-by-side comparisons. Convenient for legacy viewers, but the overlay cannot be toggled off or recomputed.
+Pre-rendered images where the AI has burned its output directly into the pixels — typically annotations, heatmaps, or side-by-side comparisons.
+Convenient for legacy viewers, but the overlay cannot be toggled off or recomputed.
 
 {{% callout info %}}
 Secondary Capture displays like any other image, see [DICOM 2D Viewer](dicom-2d-viewer).
@@ -56,7 +57,8 @@ Secondary Capture displays like any other image, see [DICOM 2D Viewer](dicom-2d-
 
 #### DICOM Enhanced Objects
 
-Reconstructed or post-processed images — for example denoised CTs, super-resolved MRs, or motion-corrected series. The output replaces or complements the original acquisition rather than annotating it.
+Reconstructed or post-processed images — for example denoised CTs, super-resolved MRs, or motion-corrected series.
+The output replaces or complements the original acquisition rather than annotating it.
 
 {{% callout info %}}
 Enhanced images display like any other image. Overlays, shutters, and pixel padding stored in the object are honored by the rendering pipeline — see [2D Viewer Display](dicom-2d-viewer/#image).
@@ -84,7 +86,8 @@ See [DICOM SEG](dicom-segmentation) for displaying DICOM SEG objects in Weasis, 
 
 #### DICOM RTSTRUCT
 
-Originally designed to describe contours for radiotherapy planning, RTSTRUCT is also used by AI tools that output **vector** geometry instead of pixel masks. Lighter to store than SEG, but inherently 2D per slice.
+Originally designed to describe contours for radiotherapy planning, RTSTRUCT is also used by AI tools that output **vector** geometry instead of pixel masks.
+Lighter to store than SEG, but inherently 2D per slice.
 
 {{% callout info %}}
 See [DICOM RT](dicom-rt) for displaying DICOM RTSTRUCT objects in Weasis.
@@ -96,7 +99,8 @@ See [DICOM RT](dicom-rt) for displaying DICOM RTSTRUCT objects in Weasis.
 
 #### DICOM Presentation States (GSPS)
 
-Grayscale Softcopy Presentation States store the **display intent** for an image — window/level, zoom, rotation — together with vector annotations and measurements. AI tools use them to ship findings as toggleable overlays on the original images rather than baking them into pixels.
+Grayscale Softcopy Presentation States store the **display intent** for an image — window/level, zoom, rotation — together with vector annotations and measurements.
+AI tools use them to ship findings as toggleable overlays on the original images rather than baking them into pixels.
 
 {{% callout info %}}
 See [DICOM PR](build-ko-pr/#presentation-state-pr-or-gsps) for displaying DICOM Presentation States in Weasis.
@@ -108,7 +112,8 @@ These objects carry structured or document content rather than imagery.
 
 #### DICOM Structured Report (SR)
 
-Tree-structured findings: measurements, classifications, observations, and references back to the images they describe. The standard delivery format for AI tools that need to expose interpretable, machine-readable results.
+Tree-structured findings: measurements, classifications, observations, and references back to the images they describe.
+The standard delivery format for AI tools that need to expose interpretable, machine-readable results.
 
 {{% callout info %}}
 See [DICOM SR Viewer](dicom-sr).
@@ -116,7 +121,8 @@ See [DICOM SR Viewer](dicom-sr).
 
 #### DICOM Encapsulated Documents
 
-Wrappers for non-image content (PDF, STL, MPEG, plain text…). Useful when an AI pipeline produces a full report or auxiliary artifact that would otherwise live outside the imaging study.
+Wrappers for non-image content (PDF, STL, MPEG, plain text…).
+Useful when an AI pipeline produces a full report or auxiliary artifact that would otherwise live outside the imaging study.
 
 {{% callout info %}}
 Encapsulated documents are opened with the system application registered for the document MIME type. The DICOM attributes can be inspected from the thumbnail context menu.

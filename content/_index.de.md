@@ -16,7 +16,8 @@ aliases:
 
 ## <center>Ein offener Viewer für die medizinische Bildgebung</center>
 
-**Weasis** ist ein vielseitiger Open-Source-DICOM-Viewer, der sowohl als **native Anwendung** als auch **aus dem Web** läuft. Vom alltäglichen Befunden über KI-gestützte Beurteilung bis zur quantitativen Bildgebung ist Weasis auf die nahtlose Integration in PACS, VNA und DICOM-Workflows von Krankenhäusern, multizentrischen Studien und Patientenportalen ausgelegt.
+**Weasis** ist ein vielseitiger Open-Source-DICOM-Viewer, der sowohl als **native Anwendung** als auch **aus dem Web** läuft.
+Vom alltäglichen Befunden über KI-gestützte Beurteilung bis zur quantitativen Bildgebung ist Weasis auf die nahtlose Integration in PACS, VNA und DICOM-Workflows von Krankenhäusern, multizentrischen Studien und Patientenportalen ausgelegt.
 
 <p style="text-align:center;">
 {{% button href="/en/getting-started/download-dicom-viewer" style="primary" icon="download" %}}Weasis herunterladen{{% /button %}}

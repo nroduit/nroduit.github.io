@@ -8,15 +8,19 @@ keywords: [ "image histogram", "dicom histogram", "pixel value distribution", "o
 
 ## <center>Which intensities are present, and how spread {{< svg-inline "static/tuto/icon/histogram.svg" >}}</center>
 
-The **Histogram** view plots the distribution of pixel values in an image (or in a selected region), so you can see what intensity ranges are actually present and how they are spread across the available scale. It is also a quick way to gauge the effect of any change made in the [windowing and rendering](lut) panel: as you move the window / level sliders or pick a different LUT, the histogram visually reflects how the input values are being mapped to the output.
+The **Histogram** view plots the distribution of pixel values in an image (or in a selected region), so you can see what intensity ranges are actually present and how they are spread across the available scale.
+It is also a quick way to gauge the effect of any change made in the [windowing and rendering](lut) panel: as you move the window / level sliders or pick a different LUT, the histogram visually reflects how the input values are being mapped to the output.
 
 To open the histogram, pick the **Histogram** layout from the layouts dropdown in the toolbar (see screenshot below).
 
 ### General histogram parameters
 
-* **Channel** — for grayscale images, only the **Luminance** channel is available. For color images, pick one of the **RGB**, **HSV**, or **HLS** color models — each channel of the chosen model gets its own histogram.
-* **Bins** — width of the value intervals grouped together in each bar. The default is computed as `max − min` of the pixel values, capped at **512**; you can override it with any value between **64** and **4096**.
-* **Statistics** — show pixel statistics next to the histogram, useful for analyzing and comparing images or regions quantitatively. For the definition of each statistic, see [Pixel Statistics](draw-measure/#selected-measurement).
+* **Channel** — for grayscale images, only the **Luminance** channel is available.
+  For color images, pick one of the **RGB**, **HSV**, or **HLS** color models — each channel of the chosen model gets its own histogram.
+* **Bins** — width of the value intervals grouped together in each bar.
+  The default is computed as `max − min` of the pixel values, capped at **512**; you can override it with any value between **64** and **4096**.
+* **Statistics** — show pixel statistics next to the histogram, useful for analyzing and comparing images or regions quantitatively.
+  For the definition of each statistic, see [Pixel Statistics](draw-measure/#selected-measurement).
 
 {{% callout note %}}
 The X axis values are the **modality values** (e.g. Hounsfield units for CT) when a Modality LUT applies, or the raw pixel values otherwise. When the modality has a known unit, the unit is appended to the histogram title.

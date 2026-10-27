@@ -5,20 +5,20 @@ keywords: [ "weasis manifest", "viewerhub manifest", "manifest construction", "r
 weight: 80
 ---
 
-
 ## Manifest
 
-The manifest contains the list of exams, series, and instances to retrieve when loading images by Weasis. 
+The manifest contains the list of exams, series, and instances to retrieve when loading images by Weasis.
 
 The manifest is represented in this [format](../basics/customize/integration/#build-an-xml-manifest). It can also be served as [JSON](../basics/customize/integration/#json-manifest) {{< since "4.7.2" >}}; Weasis asks for XML by default and detects the returned format from its content.
 
-The creation of the manifest occurs when a client calls ViewerHub to launch Weasis through the launch URL using the [Launch APIs](api).  
+The creation of the manifest occurs when a client calls ViewerHub to launch Weasis through the launch URL using the [Launch APIs](api).
 
 ## Construction
 
 According to the search criteria of the request, ViewerHub constructs the manifest through connectors.
 
 There are 3 types of connectors:
+
 - DB (database)
 - DICOM (DICOM DIMSE)
 - DICOM_WEB (DICOMweb)
@@ -38,4 +38,3 @@ This mechanism allows multiple instances of ViewerHub, as the retrieval of the m
 It is also useful when the user requests the visualization of the same study within the TTL period: the manifest will be retrieved directly from the Redis cache.
 
 The key for retrieving the manifest corresponds to the hash of the search criteria.
-

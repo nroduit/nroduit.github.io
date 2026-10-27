@@ -8,14 +8,16 @@ keywords: [ "convert to dicom", "jpeg to dicom", "image to dicom", "dicomizer", 
 
 ## <center>Photos, reports and videos into a PACS {{< svg-inline "static/tuto/icon/Dicomizer.svg" >}}</center>
 
-The **Dicomizer** converts standard files — photos, scanned reports, videos, 3D models — into DICOM objects so they can be archived in a PACS alongside acquisitions from imaging modalities. Typical use cases include adding dermatology or wound-care photos to a study, attaching a PDF report or consent form, archiving endoscopic or surgical videos, and packaging STL files used for 3D printing.
+The **Dicomizer** converts standard files — photos, scanned reports, videos, 3D models — into DICOM objects so they can be archived in a PACS alongside acquisitions from imaging modalities.
+Typical use cases include adding dermatology or wound-care photos to a study, attaching a PDF report or consent form, archiving endoscopic or surgical videos, and packaging STL files used for 3D printing.
 
 Beyond the file conversion itself, the Dicomizer also helps you set the DICOM tags at the patient, study, and image levels so the resulting objects are consistent, searchable in the archive, and recognized by every DICOM viewer.
 
 ![Dicomizer](/gallery2/Dicomizer.jpg?classes=shadow)
 <br>
 
-The sections below describe the day-to-day use of the Dicomizer. Administrators deploying the tool in a clinical workflow should also read [Integrating the Dicomizer](#integrating-the-dicomizer) at the end of this page.
+The sections below describe the day-to-day use of the Dicomizer.
+Administrators deploying the tool in a clinical workflow should also read [Integrating the Dicomizer](#integrating-the-dicomizer) at the end of this page.
 
 ### How to Launch Dicomizer
 
@@ -32,7 +34,8 @@ If you use the Dicomizer frequently on macOS, use **Automator** to create a `Dic
 
 The Dicomizer can encapsulate the following file types into DICOM objects:
 
-- **Standard images** — TIFF, BMP, GIF, JPEG, PNG, RAS, HDR, PNM. Converted to **JPEG lossy** to comply with the DICOM standard.
+- **Standard images** — TIFF, BMP, GIF, JPEG, PNG, RAS, HDR, PNM.
+  Converted to **JPEG lossy** to comply with the DICOM standard.
 - **PDF documents** (`application/pdf`) {{< since "4.6.2" >}} — convenient for archiving reports, forms, or scanned documents.
 - **STL files** (`model/stl`) {{< since "4.6.2" >}} — for 3D printing and surgical planning.
 - **MPEG-2 video** (`video/mpeg`) {{< since "4.6.2" >}} — for compatibility with legacy medical imaging systems.
@@ -46,12 +49,16 @@ Video files are also size-limited {{< since "4.7.0" >}}: a file larger than `wea
 
 #### Importing files
 
-1. In the **left panel**, navigate through the file system to locate the files to convert. The button next to the combo box on the right opens a folder chooser to pick the directory containing the eligible media.
-2. To organize files into separate series, select the thumbnails in the left panel and click **Import**. The dialog offers three grouping options:
+1. In the **left panel**, navigate through the file system to locate the files to convert.
+   The button next to the combo box on the right opens a folder chooser to pick the directory containing the eligible media.
+2. To organize files into separate series, select the thumbnails in the left panel and click **Import**.
+   The dialog offers three grouping options:
    - **Do not group** — all images are imported into a single series (same as drag-and-drop).
-   - **Group by date** — images are split into series based on their acquisition date. A second field controls the maximum time gap that still keeps two images in the same series.
+   - **Group by date** — images are split into series based on their acquisition date.
+     A second field controls the maximum time gap that still keeps two images in the same series.
    - **Group by name** — all images are imported into a single series with a custom name.
-3. Alternatively, **drag and drop** files from the system file explorer into the central panel. The files are either added to the current series, or assigned to a default series based on their media type.
+3. Alternatively, **drag and drop** files from the system file explorer into the central panel.
+   The files are either added to the current series, or assigned to a default series based on their media type.
 
 {{% callout note %}}
 For image formats that carry **EXIF tags**, the following values are mapped to DICOM tags automatically:
@@ -86,8 +93,10 @@ on Linux. A disc inserted after the panel is open appears within a few seconds.
 The **Album** panel manages DICOM tags at the patient, study, series, and image levels:
 
 - The **left panel** lists the groups, each representing a DICOM series.
-- The **central panel** shows the thumbnails of the imported media. Select one or more thumbnails to edit their DICOM tags; double-click a thumbnail to open the image in the [Photo Editor](#edit-the-images).
-- The **bottom panel** displays the DICOM tags of the selected images. Image-level tags are only visible when a single image is selected.
+- The **central panel** shows the thumbnails of the imported media.
+  Select one or more thumbnails to edit their DICOM tags; double-click a thumbnail to open the image in the [Photo Editor](#edit-the-images).
+- The **bottom panel** displays the DICOM tags of the selected images.
+  Image-level tags are only visible when a single image is selected.
 
 Tags in the bottom panel are organized into a categorized tree:
 
@@ -123,7 +132,9 @@ The thumbnail right-click menu offers:
 
 #### Edit the Images
 
-The **Photo Editor** offers basic tools to crop, rotate, and adjust contrast on an imported image. You can also add annotations to highlight specific areas, and use measurement tools to indicate distances, angles, or areas. The image can be calibrated against a known distance so that the measurements reflect real-world dimensions.
+The **Photo Editor** offers basic tools to crop, rotate, and adjust contrast on an imported image.
+You can also add annotations to highlight specific areas, and use measurement tools to indicate distances, angles, or areas.
+The image can be calibrated against a known distance so that the measurements reflect real-world dimensions.
 
 ### Publish DICOM Files
 
@@ -147,7 +158,8 @@ A green check-mark icon on a thumbnail confirms that the image was successfully 
 
 ## <center>Integrating the Dicomizer</center>
 
-This section is intended for administrators integrating the Dicomizer into a clinical workflow. It covers launching the Dicomizer from a web context and — most importantly — populating the DICOM metadata automatically so that operators do not have to enter it manually.
+This section is intended for administrators integrating the Dicomizer into a clinical workflow.
+It covers launching the Dicomizer from a web context and — most importantly — populating the DICOM metadata automatically so that operators do not have to enter it manually.
 
 ### Launch from a Web Context
 
@@ -162,7 +174,8 @@ $weasis:config pro="felix.extended.config.properties file:conf/dicomizer.json" p
 
 Instead of being entered by hand in the **Album** panel, the Global tags (patient and study levels) can be populated automatically:
 
-- **From a DICOM Worklist** — configured with the [preference items](../basics/customize/preferences) starting with `weasis.acquire.wkl`. Example of [configuration at launch](../getting-started/weasis-protocol/#modify-the-launch-parameters):
+- **From a DICOM Worklist** — configured with the [preference items](../basics/customize/preferences) starting with `weasis.acquire.wkl`.
+  Example of [configuration at launch](../getting-started/weasis-protocol/#modify-the-launch-parameters):
   {{< highlight shell >}}
   $weasis:config pro="felix.extended.config.properties file:conf/ext-dicomizer.properties" pro="gosh.port 17181" pro="weasis.acquire.wkl.host localhost" pro="weasis.acquire.wkl.aet DCM4CHEE" pro="weasis.acquire.wkl.port 11112" pro="weasis.acquire.wkl.station.aet WEASIS-MWL"
   {{< /highlight >}}

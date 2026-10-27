@@ -16,7 +16,8 @@ aliases:
 
 ## <center>Un visor abierto para la imagen médica</center>
 
-**Weasis** es un visor DICOM versátil y de código abierto, utilizable tanto como **aplicación nativa** como **desde la web**. De la lectura habitual a la revisión asistida por IA y la imagen cuantitativa, está diseñado para integrarse fácilmente con PACS, VNA y flujos DICOM de hospitales, ensayos clínicos multicéntricos y portales para pacientes.
+**Weasis** es un visor DICOM versátil y de código abierto, utilizable tanto como **aplicación nativa** como **desde la web**.
+De la lectura habitual a la revisión asistida por IA y la imagen cuantitativa, está diseñado para integrarse fácilmente con PACS, VNA y flujos DICOM de hospitales, ensayos clínicos multicéntricos y portales para pacientes.
 
 <p style="text-align:center;">
 {{% button href="/en/getting-started/download-dicom-viewer" style="primary" icon="download" %}}Descargar Weasis{{% /button %}}

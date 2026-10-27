@@ -9,8 +9,7 @@ This page outlines the configuration of connectors used by Viewer-Hub to connect
 
 ## Model
 
-In order to retrieve the metadata used to identify the studies to display, connectors are configured to enable connections to various PACS or VNA systems. <br/>
-Three types of connectors are defined in the configuration server: DB, DICOM, and DICOM_WEB.
+In order to retrieve the metadata used to identify the studies to display, connectors are configured to enable connections to various PACS or VNA systems. <br/> Three types of connectors are defined in the configuration server: DB, DICOM, and DICOM_WEB.
 
 These connectors are defined according to this model: <a href="/viewer-hub/connectors/connector_model.yml" download>connector_model.yml</a>
 
@@ -29,7 +28,7 @@ connector:
     config:
         connector-id:
             type:  # Type of connector used => DB, DICOM, DICOM_WEB
-            
+
             # ------- Search Criteria ----
             search-criteria:
                 deactivated: # If a search criteria needs to be deactivated=> SOP_INSTANCE_UID, SERIE_INSTANCE_UID, STUDY_INSTANCE_UID, STUDY_ACCESSION_NUMBER, PATIENT_ID
@@ -97,7 +96,6 @@ dicom-connector:
             ... => described below in the section "Authentication configuration"
 {{< /highlight >}}
 
-
 ## DICOM Web connector
 
 This connector is used to connect to the PACS in Dicom Web in order to find the metadata of studies, series, instances to retrieve.
@@ -114,8 +112,7 @@ dicom-web-connector:
 
 ## Authentication configuration
 
-Authentication configuration is used to build the web clients for Dicom Web connectors which will get the metadata from the archive 
-or used to handle Weasis authentication when building the manifest in order for Weasis to retrieve the images
+Authentication configuration is used to build the web clients for Dicom Web connectors which will get the metadata from the archive or used to handle Weasis authentication when building the manifest in order for Weasis to retrieve the images
 
 {{< highlight yaml >}}
     authentication:

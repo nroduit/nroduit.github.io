@@ -13,7 +13,8 @@ aliases:
 
 ## <center>A free / libre DICOM viewer for medical imaging</center>
 
-**Weasis** is a powerful, multifunctional, open-source DICOM viewer for both **standalone** and **web-based** use. From routine reading to AI-assisted review and quantitative imaging, it is engineered for seamless integration with PACS, VNA, and DICOM workflows in hospitals, multicenter research trials, and patient-facing portals.
+**Weasis** is a powerful, multifunctional, open-source DICOM viewer for both **standalone** and **web-based** use.
+From routine reading to AI-assisted review and quantitative imaging, it is engineered for seamless integration with PACS, VNA, and DICOM workflows in hospitals, multicenter research trials, and patient-facing portals.
 
 <p style="text-align:center;">
 {{% button href="getting-started/download-dicom-viewer" style="primary" icon="download" %}}Download Weasis{{% /button %}}

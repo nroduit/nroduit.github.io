@@ -16,11 +16,15 @@ Weasis combines three sets of Window/Level presets {{< since "4.8.0" >}}:
 | **Site** | `config/windowPresets.json` of the resources package, see [Configuration documents](../customize/preferences/#configuration-documents) | no |
 | **User** | saved by each user in `customWindowPresets.json` of the preferences folder; see [Window / Level presets](../../tutorials/lut/#window-level-presets) | yes |
 
-The three sets are merged by preset **id**: a site preset with the id of a built-in preset replaces it, and a user preset replaces a site one — unless the site locked it. Users see the site presets as read-only, marked *(site)* or *(site, locked)*, in **Preferences > Viewer > Window/Level presets** and can duplicate them to make their own version; a user preset that overrides a site or built-in one offers **Reset to the site preset** instead of **Delete**.
+The three sets are merged by preset **id**: a site preset with the id of a built-in preset replaces it, and a user preset replaces a site one — unless the site locked it.
+Users see the site presets as read-only, marked *(site)* or *(site, locked)*, in **Preferences > Viewer > Window/Level presets** and can duplicate them to make their own version; a user preset that overrides a site or built-in one offers **Reset to the site preset** instead of **Delete**.
 
 ### Ship the site document
 
-The site document is `config/windowPresets.json` of the resources package — `resources.zip` uploaded in ViewerHub for a release and a group, or `app/resources/config/` of a local installation — like the other [configuration documents](../customize/preferences/#configuration-documents). The package is fetched and cached by the launcher, so the document is always a local file: reading it never waits for the network. A document that cannot be parsed leaves the built-in and user presets available and is reported in the log. The **Reload configuration files** button of the preferences dialog reads it again without restarting.
+The site document is `config/windowPresets.json` of the resources package — `resources.zip` uploaded in ViewerHub for a release and a group, or `app/resources/config/` of a local installation — like the other [configuration documents](../customize/preferences/#configuration-documents).
+The package is fetched and cached by the launcher, so the document is always a local file: reading it never waits for the network.
+A document that cannot be parsed leaves the built-in and user presets available and is reported in the log.
+The **Reload configuration files** button of the preferences dialog reads it again without restarting.
 
 {{% callout tip %}}
 The easiest way to write the document is to create the presets in **Preferences > Viewer > Window/Level presets**, then export them with **⋯ > Export…** (the export holds the user presets only). Rename the ids from `user.` to `site.` before publishing the file.
@@ -81,8 +85,11 @@ The document is a JSON object with a schema version and a list of presets:
 
 `bodyPart` and `preferBodyPart` accept a list of:
 
-* an **area**: `HEAD`, `NECK`, `CHEST`, `BREAST`, `ABDOMEN`, `PELVIS`, `EXTREMITY`, `UPPER_EXTREMITY`, `LOWER_EXTREMITY`, `WHOLE_BODY` — the _Region imaged_ values of the [LOINC/RSNA Radiology Playbook](https://loinc.org/kb/radiology/loinc-rsna-radiology-playbook-user-guide) — and `SPINE`. An area includes all its regions: `CHEST` also matches a lung, a heart or a chest-abdomen-pelvis image.
+* an **area**: `HEAD`, `NECK`, `CHEST`, `BREAST`, `ABDOMEN`, `PELVIS`, `EXTREMITY`, `UPPER_EXTREMITY`, `LOWER_EXTREMITY`, `WHOLE_BODY` — the _Region imaged_ values of the [LOINC/RSNA Radiology Playbook](https://loinc.org/kb/radiology/loinc-rsna-radiology-playbook-user-guide) — and `SPINE`.
+  An area includes all its regions: `CHEST` also matches a lung, a heart or a chest-abdomen-pelvis image.
 * a [Body Part Examined](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_L.html) term, e.g. `LIVER`;
 * a code, e.g. `SCT:10200004` (SNOMED CT).
 
-The anatomy of an image comes from its _Anatomic Region Sequence_, otherwise from its _Body Part Examined_. Many images record neither: prefer `preferBodyPart`, which never hides a preset. A value that is none of the above is compared with the _Body Part Examined_ of the image as written, and reported in the log in case it is a typo.
+The anatomy of an image comes from its _Anatomic Region Sequence_, otherwise from its _Body Part Examined_.
+Many images record neither: prefer `preferBodyPart`, which never hides a preset.
+A value that is none of the above is compared with the _Body Part Examined_ of the image as written, and reported in the log in case it is a typo.

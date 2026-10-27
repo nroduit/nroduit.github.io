@@ -7,13 +7,11 @@ weight: 9
 ---
 
 Weasis is a free, libre and open-source DICOM viewer for **Windows, macOS and Linux**.
-Every distribution below is the same application: install it manually from a native
-installer, or through the package manager you already use to keep it updated.
+Every distribution below is the same application: install it manually from a native installer, or through the package manager you already use to keep it updated.
 
-Platform notes — requirements, and what behaves differently on each system:
-**[Windows](windows)** · **[macOS](macos)** · **[Linux](linux)**.
-Still comparing viewers? See [how Weasis differs from OsiriX, Horos, RadiAnt and
-MicroDicom](../dicom-viewer-comparison).
+Platform notes — requirements, and what behaves differently on each system: **[Windows](windows)** · **[macOS](macos)** · **[Linux](linux)**.
+Still comparing viewers?
+See [how Weasis differs from OsiriX, Horos, RadiAnt and MicroDicom](../dicom-viewer-comparison).
 
 ## Installation Methods
 
@@ -21,7 +19,9 @@ MicroDicom](../dicom-viewer-comparison).
 * [Automatic Updates (Package Managers)](#package-management-systems)
 
 ### Prerequisites
-Weasis runs on Windows, macOS, and Linux without requiring additional frameworks like Java. However, certain graphics capabilities are needed for [Volume Rendering](../tutorials/dicom-3d-viewer/#requirements).
+
+Weasis runs on Windows, macOS, and Linux without requiring additional frameworks like Java.
+However, certain graphics capabilities are needed for [Volume Rendering](../tutorials/dicom-3d-viewer/#requirements).
 
 {{% callout warning %}}
 The open-source distribution of Weasis is not a certified medical device (CE or FDA). Any primary diagnostic use requires you to ensure full compliance with the laws and regulations applicable in your jurisdiction.
@@ -35,17 +35,18 @@ Download standalone installers for manual installation:
 Linux Compatibility: See the [compatibility matrix](https://repology.org/project/glibc/versions) for GLIBC version requirements and distribution compatibility.
 
 For older releases, visit these repositories:
+
 - **[GitHub Releases](https://github.com/nroduit/Weasis/releases)** ![Github](https://img.shields.io/github/downloads/nroduit/weasis/total?classes=inline "Github release downloads") - Latest releases
 - **[SourceForge](https://sourceforge.net/projects/dcm4che/files/Weasis/)** ![Sourceforge](https://img.shields.io/sourceforge/dt/dcm4che/Weasis?classes=inline "Sourceforge release downloads") - Legacy repository (older than v3.5.1)
 
 Stay Updated: Subscribe to our [Google Group](https://groups.google.com/forum/#!forum/weasis) and select "Email" to receive release notifications.
-
 
 ### Package Management Systems
 
 Install via package managers to receive automatic updates.
 
 #### Windows
+
 - **[Microsoft Store](https://www.microsoft.com/en-us/p/weasis/9nhtv46lg4nh)**
 - **[Windows Package Manager (winget)](https://github.com/microsoft/winget-pkgs/tree/master/manifests/w/WeasisTeam/Weasis/)**
   ```powershell
@@ -58,12 +59,14 @@ Install via package managers to receive automatic updates.
   *Ideal for enterprise deployment with PowerShell, CHEF, or Puppet*
 
 #### macOS
+
 - **[Homebrew](https://formulae.brew.sh/cask/weasis)** (Intel & Apple Silicon)
   ```bash
   brew install --cask weasis
   ```
 
 #### Linux
+
 - **[Flathub](https://flathub.org/apps/details/io.github.nroduit.Weasis)** (x86_64 & arm64)
   ```bash
   flatpak install flathub io.github.nroduit.Weasis
@@ -84,6 +87,3 @@ Install via package managers to receive automatic updates.
 
 The Snap installation uses `<user.home>/snap/weasis/current/.weasis` instead of the standard `<user.home>/.weasis` directory.
 {{% /callout %}}
-
-
-

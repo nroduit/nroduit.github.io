@@ -16,7 +16,8 @@ aliases:
 
 ## <center>Une visionneuse ouverte pour l'imagerie médicale</center>
 
-**Weasis** est une visionneuse DICOM polyvalente et open source, utilisable à la fois en **application ntive** et **depuis le web**. De la lecture quotidienne à la relecture assistée par IA en passant par l'imagerie quantitative, elle est conçue pour s'intégrer facilement aux PACS, VNA et flux DICOM des hôpitaux, des essais cliniques multicentriques et des portails patients.
+**Weasis** est une visionneuse DICOM polyvalente et open source, utilisable à la fois en **application ntive** et **depuis le web**.
+De la lecture quotidienne à la relecture assistée par IA en passant par l'imagerie quantitative, elle est conçue pour s'intégrer facilement aux PACS, VNA et flux DICOM des hôpitaux, des essais cliniques multicentriques et des portails patients.
 
 <p style="text-align:center;">
 {{% button href="/en/getting-started/download-dicom-viewer" style="primary" icon="download" %}}Télécharger Weasis{{% /button %}}

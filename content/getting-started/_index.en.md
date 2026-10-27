@@ -10,11 +10,13 @@ menuPre: "<b>1. </b>"
 
 Visit the [Download Page](download-dicom-viewer) for a comprehensive list of installation options adapted to your system.<br>
 
-Since version 4, only the distribution with a native installer is maintained to ensure a better user experience in terms of installation, configuration and compatibility. This distribution also supports launching **Weasis from a web context** via the [weasis protocol](weasis-protocol).
+Since version 4, only the distribution with a native installer is maintained to ensure a better user experience in terms of installation, configuration and compatibility.
+This distribution also supports launching **Weasis from a web context** via the [weasis protocol](weasis-protocol).
 
 ### General Topics
 
 Get started with these links to learn more about Weasis and its features:
+
 - **[Live Demo](demo):** Explore Weasis with a variety of DICOM datasets.
 - **[Weasis Web Protocol](weasis-protocol):** Learn how to launch Weasis directly from web links or network-based workflows.
 - **[Installing Weasis in DCM4CHEE](dcm4chee):** Step-by-step guide to integrating Weasis with DCM4CHEE PACS.
@@ -25,7 +27,9 @@ Get started with these links to learn more about Weasis and its features:
 - **[Get Involved!](get-involved):** Learn how to contribute to the Weasis project.
 
 ### Developer Documentation
+
 Dive into advanced topics and technical resources for developers:
+
 - **[Building Weasis from source](building-weasis)**
 - **[Weasis Architecture](basics/architecture)**
 - **[Weasis Plugin Development Guidelines](guidelines)**
@@ -35,5 +39,3 @@ Dive into advanced topics and technical resources for developers:
 - **[Weasis Preferences](basics/customize/preferences)**
 - **[Building weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector#build-weasis-pacs-connector)**
 - **[Report Issues on GitHub](https://github.com/nroduit/Weasis/issues)**
-
-

@@ -10,14 +10,17 @@ keywords: [ "weasis integration", "pacs integration", "weasis-pacs-connector", "
 Here we present how to launch Weasis with associated images from any context either [using weasis-pacs-connector](#use-weasis-pacs-connector) or [ViewerHub](../../viewer-hub) as its successor
 or by [building your own connector](#build-your-own-connector). The launch of the application is based on the [weasis protocol](../../getting-started/weasis-protocol) available {{< since "3.5.3" >}}.
 
-Using [weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector) or [ViewerHub](../../viewer-hub) allows a high degree of integration and facilitates connection to a PACS. Here are some of the advantages:
+Using [weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector) or [ViewerHub](../../viewer-hub) allows a high degree of integration and facilitates connection to a PACS.
+Here are some of the advantages:
 
 - Automatically build a manifest according to a configuration with a PACS
-- The initial URL starts with HTTP and is then redirected to weasis://? (useful when a custom URI scheme is not allowed by wiki, blog platforms, etc.)
+- The initial URL starts with HTTP and is then redirected to weasis://?
+  (useful when a custom URI scheme is not allowed by wiki, blog platforms, etc.)
 - Efficiently manages to build the manifest simultaneously with the start of Weasis, optimizing loading time
 - Easily handles secure manifest requests and manages tokens for the DICOMWeb services
 
-However, it is also possible: 
+However, it is also possible:
+
 - To [build your own connector](#build-your-own-connector) for custom integrations
 - To let Weasis [querying DICOMWeb services](#download-directly-with-dicomweb-restful-services) directly, bypassing any connector when supported like
     - [dcm4chee-arc-light](dicomweb-archives/#dcm4chee-arc-light)
@@ -34,10 +37,10 @@ These integrations provide flexibility to meet the specific needs of healthcare 
 Requires Weasis installed on the system with the [native installer](../../getting-started/).
 {{% /callout %}}
 
-
 ## Use weasis-pacs-connector
 
-For connecting to dcm4chee web interface, follow the instructions in [Installing Weasis in DCM4CHEE](../../getting-started/dcm4chee). Otherwise, refer to the documentation of [weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector#installation).
+For connecting to dcm4chee web interface, follow the instructions in [Installing Weasis in DCM4CHEE](../../getting-started/dcm4chee).
+Otherwise, refer to the documentation of [weasis-pacs-connector](https://github.com/nroduit/weasis-pacs-connector#installation).
 
 Standard workflow when connecting Weasis to a PACS, RIS, EMR, EPR or any web interface:
 
@@ -52,7 +55,8 @@ The schema above shows that the queries to the PACS are made at the same time as
 
 ## Build your own connector
 
-This documentation describes how to create your own connector without weasis-pacs-connector and with different DICOM archive types. The [weasis protocol](../../getting-started/weasis-protocol/#how-to-build-a-uri) allows you to build URIs to launch Weasis according to different configurations and allows to load DICOM files locally or remotely.
+This documentation describes how to create your own connector without weasis-pacs-connector and with different DICOM archive types.
+The [weasis protocol](../../getting-started/weasis-protocol/#how-to-build-a-uri) allows you to build URIs to launch Weasis according to different configurations and allows to load DICOM files locally or remotely.
 
 Here are examples with XML manifests or with DICOMWeb RESTful services.
 
@@ -63,7 +67,10 @@ Use [$dicom:get](../commands/#dicomget) to load a XML manifest returned by your 
 $dicom:get -w "https://myservice/manifest?studyUID=2.16.756.5.5.100.397184556.14391.1373576413.1508"
 {{< /highlight >}}
 
-Build an XML file containing the UIDs of the images which will be retrieved from Weasis. There is [XLS](https://github.com/nroduit/Weasis/blob/master/weasis-dicom/weasis-dicom-explorer/src/main/resources/config/manifest.xsd) to validate the content of xml. This output file can be either compressed in gzip or uncompressed. Here is an example:
+Build an XML file containing the UIDs of the images which will be retrieved from Weasis.
+There is [XLS](https://github.com/nroduit/Weasis/blob/master/weasis-dicom/weasis-dicom-explorer/src/main/resources/config/manifest.xsd) to validate the content of xml.
+This output file can be either compressed in gzip or uncompressed.
+Here is an example:
 {{< highlight xml >}}
 <?xml version="1.0" encoding="UTF-8" ?>
 <manifest xmlns="http://www.weasis.org/xsd/2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -140,10 +147,13 @@ The manifest may also be served as **JSON** {{< since "4.7.2" >}}. The structure
 }
 {{< /highlight >}}
 
-Both formats are loaded with the same [$dicom:get](../commands/#dicomget) command and both may be gzip-compressed. A few rules to be aware of:
+Both formats are loaded with the same [$dicom:get](../commands/#dicomget) command and both may be gzip-compressed.
+A few rules to be aware of:
 
 - The format is detected from the **content**, not from the file extension or the `Content-Type`: a document starting with `{` is parsed as JSON, otherwise as XML.
-- Weasis requests `Accept: application/xml` by default. XML is parsed as a **stream**, so it stays the better choice for large instance-level manifests, while JSON is fully buffered in memory. Launch Weasis with `-Dweasis.manifest.accept=json` to request JSON instead.
+- Weasis requests `Accept: application/xml` by default.
+  XML is parsed as a **stream**, so it stays the better choice for large instance-level manifests, while JSON is fully buffered in memory.
+  Launch Weasis with `-Dweasis.manifest.accept=json` to request JSON instead.
 - A node holding a single child accepts either a JSON object or an array of objects.
 
 ### Partial DICOMweb manifest and series bulk retrieve {#partial-manifest}
@@ -165,7 +175,9 @@ A manifest that already carries the `Instance` level keeps the previous behavior
 {{% /callout %}}
 
 ### Build an XML manifest (no WADO server)
-This example requires only a WEB server. Weasis will download DICOM files by URLs.
+
+This example requires only a WEB server.
+Weasis will download DICOM files by URLs.
 
 Use [$dicom:get](../commands/#dicomget) to load a <a target="_blank" href="https://nroduit.github.io/demo-archive/Lumbar/mf.xml">XML manifest</a> containing direct links {{< launch >}}$dicom:get -w "https://nroduit.github.io/demo-archive/Lumbar/mf.xml"{{< /launch >}}
 {{< highlight text >}}
@@ -182,8 +194,5 @@ Required Parameters:
 
 ## Download directly with DICOMWeb RESTful services
 
-Weasis can query and retrieve from a DICOMweb archive directly, without
-weasis-pacs-connector in between — which also allows the token to travel in a header rather than in
-the URL. The configuration for each archive (dcm4chee-arc-light, Orthanc, Google Cloud Healthcare,
-DICOMcloud, Kheops, Amazon HealthImaging) has moved to its own page:
-**[Connect Weasis to a DICOMweb archive](dicomweb-archives)**.
+Weasis can query and retrieve from a DICOMweb archive directly, without weasis-pacs-connector in between — which also allows the token to travel in a header rather than in the URL.
+The configuration for each archive (dcm4chee-arc-light, Orthanc, Google Cloud Healthcare, DICOMcloud, Kheops, Amazon HealthImaging) has moved to its own page: **[Connect Weasis to a DICOMweb archive](dicomweb-archives)**.

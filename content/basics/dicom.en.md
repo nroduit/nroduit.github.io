@@ -5,13 +5,16 @@ keywords: [ "dicom conformance statement", "sop class", "dimse", "dicomweb", "su
 weight: 70
 ---
 
-This page is a summary conformance statement for the Weasis viewer. It follows the order of a DICOM PS3.2 conformance statement but keeps one table per topic; it is not a formal PS3.2 document with association and negotiation tables. It applies to the Weasis releases documented on this site; a feature newer than the oldest documented release carries a version badge.
+This page is a summary conformance statement for the Weasis viewer.
+It follows the order of a DICOM PS3.2 conformance statement but keeps one table per topic; it is not a formal PS3.2 document with association and negotiation tables.
+It applies to the Weasis releases documented on this site; a feature newer than the oldest documented release carries a version badge.
 
 ## DICOM objects
 
 ### Objects displayed
 
-Weasis opens any file or network object below. A valid DICOM object that matches none of them is listed in the explorer as unsupported.
+Weasis opens any file or network object below.
+A valid DICOM object that matches none of them is listed in the explorer as unsupported.
 
 | Object                                                                      | Handling                                                                                                                                             | See                                                          |
 |-----------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
@@ -43,7 +46,9 @@ Weasis opens any file or network object below. A valid DICOM object that matches
 
 ### DIMSE
 
-Weasis acts as a Service Class User. Its only Service Class Provider role is the Storage SCP that receives the objects of a C-MOVE. DIMSE connections are not encrypted.
+Weasis acts as a Service Class User.
+Its only Service Class Provider role is the Storage SCP that receives the objects of a C-MOVE.
+DIMSE connections are not encrypted.
 
 | Service                | SOP Class or information model                                  | Role | Notes                                                                                                                                          |
 |------------------------|-----------------------------------------------------------------|------|------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -65,18 +70,22 @@ Configuration: [DICOM explorer](../tutorials/dicom-explorer), [Print](../tutoria
 | STOW-RS  | Send the loaded objects                                                |
 | WADO-URI | Retrieve instances, typically from a manifest built by a launcher      |
 
-HTTPS is supported, with OAuth 2.0 (Keycloak and Google templates) or custom HTTP headers for authentication. See [DICOMweb configuration](../tutorials/dicomweb-config) and [DICOMweb archives](customize/dicomweb-archives).
+HTTPS is supported, with OAuth 2.0 (Keycloak and Google templates) or custom HTTP headers for authentication.
+See [DICOMweb configuration](../tutorials/dicomweb-config) and [DICOMweb archives](customize/dicomweb-archives).
 
 ### Launch from an external system
 
-Weasis can be started with a manifest that lists the studies to load and the archive to fetch them from, or with the parameters of the IHE Invoke Image Display profile. See [Integration](customize/integration) and the [ViewerHub launch APIs](../viewer-hub/api).
+Weasis can be started with a manifest that lists the studies to load and the archive to fetch them from, or with the parameters of the IHE Invoke Image Display profile.
+See [Integration](customize/integration) and the [ViewerHub launch APIs](../viewer-hub/api).
 
 ## Transfer syntaxes
 
 - **Read**: the pixel data is decoded and displayed by Weasis.
-- **Write**: the syntax can be selected in the Export dialog (see [Export](../tutorials/dicom-export)), or Weasis uses it when sending over the network or saving the objects it creates. When exporting with the original syntax kept, images are copied unchanged whatever their syntax.
+- **Write**: the syntax can be selected in the Export dialog (see [Export](../tutorials/dicom-export)), or Weasis uses it when sending over the network or saving the objects it creates.
+  When exporting with the original syntax kept, images are copied unchanged whatever their syntax.
 
-Implicit VR Little Endian is not offered in the Export dialog. Weasis uses it in two cases: as the last fallback of a C-STORE send, when the receiving system accepts neither the syntax of the file nor Explicit VR Little Endian, and for the key object selections it creates.
+Implicit VR Little Endian is not offered in the Export dialog.
+Weasis uses it in two cases: as the last fallback of a C-STORE send, when the receiving system accepts neither the syntax of the file nor Explicit VR Little Endian, and for the key object selections it creates.
 
 | Transfer Syntax UID     | Media Type | Description                                                                                                     | Read | Write |
 |-------------------------|------------|-----------------------------------------------------------------------------------------------------------------|------|-------|
@@ -139,7 +148,9 @@ The following transfer syntaxes are not read: JPIP Referenced (1.2.840.10008.1.2
 
 ### Photometric interpretation
 
-This table lists every [Photometric Interpretation](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.3.html#sect_C.7.6.3.1.2) value defined by the standard, including the retired ones, and how Weasis reads it. The "Pixel data" column gives the encodings the standard allows for the value: native (uncompressed), encapsulated (compressed), or both. Compressed transfer syntaxes add their own restrictions, see [PS3.5 section 8.2](https://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_8.2.html).
+This table lists every [Photometric Interpretation](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.3.html#sect_C.7.6.3.1.2) value defined by the standard, including the retired ones, and how Weasis reads it.
+The "Pixel data" column gives the encodings the standard allows for the value: native (uncompressed), encapsulated (compressed), or both.
+Compressed transfer syntaxes add their own restrictions, see [PS3.5 section 8.2](https://dicom.nema.org/medical/dicom/current/output/chtml/part05/sect_8.2.html).
 
 | Photometric Interpretation | Description                                                                 | Pixel data             | Supported                                                                                                                                                                 |
 |----------------------------|-----------------------------------------------------------------------------|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -156,7 +167,8 @@ This table lists every [Photometric Interpretation](https://dicom.nema.org/medic
 | YBR_PARTIAL_422            | Retired in PS3.3-2017b                                                      | —                      | native 8-bit pixel data only                                                                                                                                            |
 | HSV, ARGB, CMYK            | Retired in PS3.3-2001                                                       | —                      | no                                                                                                                                                                        |
 
-The standard also allows values it does not define when a transfer syntax supports them. Weasis cannot read an image with a value missing from this table, retired values included.
+The standard also allows values it does not define when a transfer syntax supports them.
+Weasis cannot read an image with a value missing from this table, retired values included.
 
 When a JPEG Baseline, Extended or Progressive image declares RGB but its JPEG stream carries luminance and chrominance (a JFIF header or component identifiers other than R, G, B), Weasis follows the stream and converts the colors to RGB.
 
@@ -177,7 +189,8 @@ When a JPEG Baseline, Extended or Progressive image declares RGB but its JPEG st
 
 ## Character sets
 
-The Specific Character Set of each object is honored when decoding text attributes, including the ISO 2022 multi-byte sets and UTF-8. Text is displayed with the fonts of the operating system.
+The Specific Character Set of each object is honored when decoding text attributes, including the ISO 2022 multi-byte sets and UTF-8.
+Text is displayed with the fonts of the operating system.
 
 ## IHE profiles
 

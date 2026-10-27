@@ -6,7 +6,9 @@ keywords: [ "translate weasis", "weasis-i18n", "interface translation", "localiz
 weight: 80
 ---
 
-Translation files are hosted and managed on the [Transifex](https://app.transifex.com/weasis/public/) website. Get an account and help to translate to your language! If your language is missing, just head over to Transifex and request a new language.
+Translation files are hosted and managed on the [Transifex](https://app.transifex.com/weasis/public/) website.
+Get an account and help to translate to your language!
+If your language is missing, just head over to Transifex and request a new language.
 
 {{% callout warning %}}
 **Text length**: The translations for many languages frequently exceed the length of the corresponding English source. It could be a problem for the layout of graphical components (e.g., buttons). Some elements have a character limit on the translation tool.
@@ -19,7 +21,9 @@ For special words or particular contexts look at the "Instructions" text box (gi
 
 ## Building Weasis-i18n
 
-[weasis-i18n](https://github.com/nroduit/weasis-i18n) is the internationalization project (i18n) of Weasis. As a separate project, it can have its own release cycle. The [OSGi](https://www.osgi.org) fragments of plugins contain only the translation files which are merged during runtime to the matching module of the application.
+[weasis-i18n](https://github.com/nroduit/weasis-i18n) is the internationalization project (i18n) of Weasis.
+As a separate project, it can have its own release cycle.
+The [OSGi](https://www.osgi.org) fragments of plugins contain only the translation files which are merged during runtime to the matching module of the application.
 
 To obtain daily built packages, see this [page](https://github.com/nroduit/weasis-i18n).
 
@@ -35,8 +39,7 @@ The [java-swing-dialogs](https://app.transifex.com/weasis/java-swing-dialogs) tr
 ### Prerequisites
 
 1. JDK 11 or higher
-2. Maven 3 or higher<br>
-    If your computer is behind a proxy server, [configure maven](https://maven.apache.org/guides/mini/guide-proxies.html).
+2. Maven 3 or higher<br> If your computer is behind a proxy server, [configure maven](https://maven.apache.org/guides/mini/guide-proxies.html).
 3. Git or directly download the source code from [GitHub](https://github.com/nroduit/weasis-i18n)
 
 ### Getting the Source
@@ -55,7 +58,8 @@ Go in the *weasis-i18n* directory, Compile and install all the plugins in the lo
 $ mvn clean install -Dtransifex.token="<your-token>"
 {{< /highlight >}}
 
-All the APIs require to be authenticated. So the value "your-token" must be replaced by your generated token, see how to [get this token](https://docs.transifex.com/account/authentication) on Transifex.
+All the APIs require to be authenticated.
+So the value "your-token" must be replaced by your generated token, see how to [get this token](https://docs.transifex.com/account/authentication) on Transifex.
 
 Command if you are behind a proxy server:
 {{< highlight bash >}}
@@ -68,7 +72,8 @@ The distribution files are located in the *weasis-i18n-dist/target/dist* folder.
 
 ### Apply the translations
 
-The translation package can be built manually as described below, or it is automatically built every 24 hours and can be downloaded from [here](https://github.com/nroduit/weasis-i18n#download-the-binary-package). When [Building Weasis](building-weasis), the last package is downloaded automatically.
+The translation package can be built manually as described below, or it is automatically built every 24 hours and can be downloaded from [here](https://github.com/nroduit/weasis-i18n#download-the-binary-package).
+When [Building Weasis](building-weasis), the last package is downloaded automatically.
 
 * In order to update Weasis with new translations, unzip weasis-i18n.zip and either:
   * Pass the weasis.i18n location into the [launch command](weasis-protocol/#modify-the-launch-parameters):
@@ -86,6 +91,3 @@ weasis-launcher-i18n cannot be updated dynamically as the launcher is not an OSG
 {{% callout tip %}}
 See [how to change the language in the Weasis preferences](../tutorials/locale).
 {{% /callout %}}
-
-
-

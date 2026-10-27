@@ -8,7 +8,9 @@ keywords: [ "mip viewer", "maximum intensity projection", "projection thickness"
 
 ## <center>The brightest voxel along each ray through a slab {{< svg-inline "static/tuto/icon/mip.svg" >}}</center>
 
-**MIP** collapses a small stack of contiguous slices — a **slab** — into a single image by keeping the brightest voxel encountered along each ray through the slab. The technique is widely used to display high-intensity structures that would otherwise be split across many slices, such as **contrast-enhanced vessels (CT/MR angiography)**, **bones**, or **bright pulmonary nodules**. **MinIP** (minimum) and **Mean IP** (average) projections are also available — useful for **airways**, low-attenuation lesions, or smoother integrated views.
+**MIP** collapses a small stack of contiguous slices — a **slab** — into a single image by keeping the brightest voxel encountered along each ray through the slab.
+The technique is widely used to display high-intensity structures that would otherwise be split across many slices, such as **contrast-enhanced vessels (CT/MR angiography)**, **bones**, or **bright pulmonary nodules**.
+**MinIP** (minimum) and **Mean IP** (average) projections are also available — useful for **airways**, low-attenuation lesions, or smoother integrated views.
 
 MIP is **integrated directly into the [DICOM 2D viewer](dicom-2d-viewer)** {{< since "4.7.0" >}}, with full synchronization and a slab-geometry overlay shared with linked views.
 
@@ -67,6 +69,7 @@ Annotations and measurements **can** be added on a MIP-projected image, but they
 {{% /callout %}}
 
 #### Projection
+
 The projection type controls how each pixel of the output is computed across the slab:
 
 * **None** — no projection; display the original image {{< since "4.7.0" >}}.
@@ -77,9 +80,14 @@ The projection type controls how each pixel of the output is computed across the
 Switching from **None** to any of the projection types initializes the slab thickness to **2 slices** (2 slices before and 2 slices after the current one).
 
 #### MIP thickness
+
 Defines the **extent of the slab** used for the projection — expressed as a number of slices before and after the current one (e.g. a value of **3** means 3 slices on each side of the current slice, **7 slices total** in the slab).
 
-The dropdown shows suggested values, with the corresponding physical thickness in millimeters shown in parentheses when the series is spatially calibrated (e.g. `5 (3.5 mm)`). The last entry, **_Custom thickness_**, lets you type any value manually.
+The dropdown shows suggested values, with the corresponding physical thickness in millimeters shown in parentheses when the series is spatially calibrated (e.g. `5 (3.5 mm)`).
+The last entry, **_Custom thickness_**, lets you type any value manually.
 
 #### Build a new series
-Builds a **new MIP series** from the current options — every slice of the source series is reprojected with the chosen projection type and slab thickness, and the result is stored as a standalone series. The new series is added to the [DICOM Explorer](dicom-explorer/) and can be [exported](dicom-export/#exporting) like any other series. Annotations drawn on the new series are persistent since they are no longer tied to a live slab calculation.
+
+Builds a **new MIP series** from the current options — every slice of the source series is reprojected with the chosen projection type and slab thickness, and the result is stored as a standalone series.
+The new series is added to the [DICOM Explorer](dicom-explorer/) and can be [exported](dicom-export/#exporting) like any other series.
+Annotations drawn on the new series are persistent since they are no longer tied to a live slab calculation.

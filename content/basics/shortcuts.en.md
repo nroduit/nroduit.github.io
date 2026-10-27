@@ -7,7 +7,8 @@ weight: 20
 
 ## <center>The defaults, and where to change them</center>
 
-Here is a list of the default keyboard and mouse shortcuts in Weasis. The shortcuts are divided into different categories for better understanding.
+Here is a list of the default keyboard and mouse shortcuts in Weasis.
+The shortcuts are divided into different categories for better understanding.
 
 {{% callout note %}}
 Most keyboard shortcuts can be customized {{< since "4.7.0" >}} in **Preferences > General > Keyboard Shortcuts**. This page documents the **default** configuration. To get the current configuration (including any customizations), use **Help > Keyboard Shortcuts** (this page is internationalized). Every tool of the [Draw & Measure](../tutorials/draw-measure) palettes, including the tools added by plugins, has its own entry there {{< since "4.8.0" >}}; most have no key by default.
@@ -75,7 +76,7 @@ The tab menu also moves a tab: **Split Down** / **Split Right** open a new area 
 | **A**                                                    | Angle measurement                                                                                                                                                      |
 | **Y**                                                    | Polyline measurement                                                                                                                                                   |
 | **E**                                                    | Ellipse measurement {{< since "4.8.0" >}}                                                                                                                              |
-| **O**                                                    | Circle measurement (centre and radius) {{< since "4.8.0" >}}                                                                                                           |
+| **O**                                                    | Circle measurement (center and radius) {{< since "4.8.0" >}}                                                                                                           |
 | **X**                                                    | Bidirectional measurement {{< since "4.8.0" >}}                                                                                                                        |
 | **G**                                                    | Draw                                                                                                                                                                   |
 | **B**                                                    | Textbox                                                                                                                                                                |
@@ -105,6 +106,7 @@ The tab menu also moves a tab: **Split Down** / **Split Right** open a new area 
 | **Drag files/directories**<br>(from the OS file manager) | Open DICOMs files                                                                                                                                                      |
 
 ### Selected view in the MPR Viewer
+
 MPR view inherits the same shortcuts as the 2D viewer, with the following additional shortcuts {{< since "4.6.0" >}}:
 
 | Shortcut               | Action                                                |
@@ -138,7 +140,6 @@ MPR view inherits the same shortcuts as the 2D viewer, with the following additi
 **Downloading Priorities**: Selecting a thumbnail gives the best priority to download.
 {{% /callout %}}
 
-
 ### Graphics
 
 | Shortcut                       | Action                                                                                                                                                                |
@@ -164,16 +165,16 @@ MPR view inherits the same shortcuts as the 2D viewer, with the following additi
 | **Double click**               | Stop adding points for a polyline (also **Stop drawing** in the context menu while drawing)                                                                           |
 | **Right-click**                | Open the contextual menu for more options. Over superposed graphics, its **Select** entry lists them to pick one {{< since "4.8.0" >}}                               |
 
-
 ### Tips and Tricks
 
 #### Window / Level Adjustment
-- Move the mouse **horizontally to the right** to increase the window width (reduce the perceived contrast).
-- Move the mouse **vertically upwards** to lower the window center (increase the perceived brightness).<br>
-Tip: Use [Preferences](customize/preferences)  to reverse the direction of level adjustments.
 
+- Move the mouse **horizontally to the right** to increase the window width (reduce the perceived contrast).
+- Move the mouse **vertically upwards** to lower the window center (increase the perceived brightness).<br> Tip: Use [Preferences](customize/preferences)  to reverse the direction of level adjustments.
 
 #### Drawing a Segment
+
 You can draw a segment in two ways:<br>
+
 1. **Click + Drag**: Click, drag to draw, then release.
 2. **Click > Release > Drag**: Click to start, release, drag to draw, and release again.

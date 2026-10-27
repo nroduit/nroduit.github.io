@@ -8,19 +8,23 @@ keywords: [ "3d cursor", "crosshair dicom viewer", "anatomical localization", "c
 
 ## <center>The same anatomical point in every view {{< svg-inline "static/tuto/icon/crosshair.svg" >}}</center>
 
-The 3D cursor — also called the **crosshair** — lets you click a point on one image and instantly see the **same anatomical point** in every other view that shares the same 3D coordinate system. Use it to:
+The 3D cursor — also called the **crosshair** — lets you click a point on one image and instantly see the **same anatomical point** in every other view that shares the same 3D coordinate system.
+Use it to:
 
 - Localize a finding on one modality (for example a CT lesion) on the matching PET, MR, or follow-up acquisition.
 - Cross-check structures between axial, coronal, sagittal and oblique planes.
 - Compare the same anatomical level on prior and current studies opened side by side.
 
-Two views are linked by the crosshair when they share the same **Frame of Reference UID** — DICOM's way of declaring that those series live in the same 3D coordinate system. See [Frame of Reference: the shared coordinate system](synch-view#frame-of-reference) for the full explanation and the typical cases where it applies. Weasis discovers the link automatically from the DICOM metadata — no manual configuration is needed.
+Two views are linked by the crosshair when they share the same **Frame of Reference UID** — DICOM's way of declaring that those series live in the same 3D coordinate system.
+See [Frame of Reference: the shared coordinate system](synch-view#frame-of-reference) for the full explanation and the typical cases where it applies.
+Weasis discovers the link automatically from the DICOM metadata — no manual configuration is needed.
 
 ### Opening related series together
 
 The fastest way to load several series that share a coordinate system:
 
-1. In the [DICOM Explorer](dicom-explorer), right-click a series and choose **_Select related Series_**. Weasis selects every series in the study that shares the same Frame of Reference UID.
+1. In the [DICOM Explorer](dicom-explorer), right-click a series and choose **_Select related Series_**.
+   Weasis selects every series in the study that shares the same Frame of Reference UID.
 2. Right-click the selection again and choose **_2D Viewer > Open_** to display them side by side.
 
 ### Activating the crosshair

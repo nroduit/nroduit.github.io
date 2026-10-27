@@ -13,17 +13,20 @@ The 3D viewer reconstructs a CT, MR, PET, or other volumetric series into an int
 Internally, the volume is rendered on the graphics card using a [ray-casting algorithm](https://en.wikipedia.org/wiki/Volume_ray_casting) implemented in GLSL shaders, so a modern GPU is required (see [Requirements](#requirements)) but no extra installation step is necessary.
 
 ### Requirements {#requirements}
+
 The graphics-card capabilities used by Weasis are reported under **OpenGL Support** in **_File > Preferences > Viewer > 3D Viewer_**:
 
 * **Driver version** — requires OpenGL **3.3+** {{< since "4.7.0" >}}. Two rendering backends are used depending on the available OpenGL version:
   * **OpenGL 4.3+** — uses a **Compute Shader** for optimal performance.
   * **OpenGL 3.3 – 4.2** — uses an **FBO-based Fragment Shader** fallback (fully functional, but may be less performant than the Compute Shader path). macOS is capped at OpenGL 4.1 and therefore always uses this path. This path renders at a reduced resolution while the view is being dragged {{< since "4.7.3" >}} — see [rendering during interaction](#interactive-rendering).
 * **Max 3D texture dimension length** — the upper limit, in voxels, of any X / Y / Z dimension of the volume.
-* Any other entry shown in **red** indicates a non-optimal configuration. The viewer often still works — see [how to limit the size of 3D textures](#3d-viewer) if performance becomes an issue.
+* Any other entry shown in **red** indicates a non-optimal configuration.
+  The viewer often still works — see [how to limit the size of 3D textures](#3d-viewer) if performance becomes an issue.
 
 #### Use the high-performance graphics card on a Windows laptop {#gpu-selection}
 
-The card in use is shown on the **Graphic card** line under **OpenGL Support**. To switch to the dedicated card:
+The card in use is shown on the **Graphic card** line under **OpenGL Support**.
+To switch to the dedicated card:
 
 1. Close Weasis.
 2. Open **Settings > System > Display > Graphics**.
@@ -34,6 +37,7 @@ The card in use is shown on the **Graphic card** line under **OpenGL Support**. 
 If the integrated card is still shown, use **NVIDIA Control Panel > Manage 3D settings > Program Settings** (or the equivalent in **AMD Software**) for `Weasis.exe`.
 
 ### Open the 3D viewer
+
 Open the viewer by clicking {{< svg-inline "static/tuto/icon/volume.svg" >}} in the toolbar of a series view, by double-clicking the series thumbnail, or by right-clicking the thumbnail in the [DICOM Explorer](dicom-explorer) and choosing the 3D viewer.
 
 {{% callout tip %}}
@@ -62,6 +66,7 @@ DICOM SEG segmentations linked to the series are rendered in the 3D viewer too �
 {{% /callout %}}
 
 ### Toolbar {{% badge style="red" %}}A{{% /badge %}} {#toolbar}
+
 Actions in the toolbar:
 
 * {{< svg-inline "static/tuto/icon/loadVolume.svg" >}} **Reload volume** — fully reloads the volume from the source series.
@@ -102,11 +107,15 @@ The {{< svg-inline "static/tuto/icon/synch.svg" >}} **Synchronize** checkbox in 
 
 #### Per-view auto-sync button {{< svg-inline "static/tuto/icon/synch.svg" >}} {#3d-auto-sync-button}
 
-When the layout has **two or more views**, a small auto-sync button appears in the bottom-right corner of each view. Its tint reflects the per-view state — *red* when sync is OFF for the view, *green* when ON. Clicking the button opens a popup with:
+When the layout has **two or more views**, a small auto-sync button appears in the bottom-right corner of each view.
+Its tint reflects the per-view state — *red* when sync is OFF for the view, *green* when ON.
+Clicking the button opens a popup with:
 
 - **Synchronize this view** — master on/off toggle for auto-sync on this view (also mirrored into the toolbar **Synchronize** checkbox so the toolbar state always reflects the active view).
-- **Per-action toggles** — independent checkboxes that decide which actions this view propagates to (and receives from) the other 3D views. The popup stays open while you flip several options.
-- **Apply to all views** — copies this view's effective per-action map to every other 3D view in the container. Unlike the 2D variant of this entry, no FoR filtering is applied because all 3D views share the same volume.
+- **Per-action toggles** — independent checkboxes that decide which actions this view propagates to (and receives from) the other 3D views.
+  The popup stays open while you flip several options.
+- **Apply to all views** — copies this view's effective per-action map to every other 3D view in the container.
+  Unlike the 2D variant of this entry, no FoR filtering is applied because all 3D views share the same volume.
 
 #### Right-click "Synchronize" submenu
 
@@ -132,48 +141,66 @@ The view's right-click context menu also exposes a **Synchronize** submenu with 
 | Rendering   | MPR Crosshair Cut                            | OFF     |
 | Rendering   | Segmentation type                            | OFF     |
 
-Camera-level actions are on by default because keeping multiple 3D views framed identically is the common workflow when comparing rendering types or LUT presets side by side. Photometric and rendering actions are opt-in because the typical reason to open a second 3D view is to **diverge** on those settings (e.g. one view in Composite with a soft-tissue LUT, the other in MIP).
+Camera-level actions are on by default because keeping multiple 3D views framed identically is the common workflow when comparing rendering types or LUT presets side by side.
+Photometric and rendering actions are opt-in because the typical reason to open a second 3D view is to **diverge** on those settings (e.g. one view in Composite with a soft-tissue LUT, the other in MIP).
 
 {{% callout note %}}
 The view you are actively interacting with always applies its own changes locally, even when the corresponding action is unchecked in its sync map. Only **other** views gate on the per-action toggle. This keeps sliders and mouse drags responsive while letting you decide which actions propagate to the rest of the container.
 {{% /callout %}}
 
 ### 3D Rendering Tools
+
 This tab groups every control that affects how the volume is rendered. To return to the original settings, click the toolbar button {{< svg-inline "static/tuto/icon/reset.svg" >}} or pick **Reset** from the context menu.
 
 #### Windowing and Rendering {{% badge style="red" %}}B{{% /badge %}} {#windowing}
+
 Some of the options below are also accessible from the toolbar and the right-click menu.
 
 * **Window** — width of the voxel-value range mapped to the displayed value range.
 * **Level** — center of the range defined by Window.
-* **LUT Shape** — transfer function applied between input and display values: linear, sigmoid, or logarithmic. Default is linear.
+* **LUT Shape** — transfer function applied between input and display values: linear, sigmoid, or logarithmic.
+  Default is linear.
 * {{< svg-inline "static/tuto/icon/lut.svg" >}} **LUT** — a 3D Lookup Table that maps grayscale voxel values to color, opacity, and lighting for visualization. Picking a LUT from the toolbar or the right-click menu is usually easier: LUTs there are ordered by modality and shown with a preview. Custom LUTs can be created and modified with the [Volume LUT Editor](#lut-editor), and the whole library is described in [Color Maps](color-maps/) {{< since "4.8.0" >}}. In the list {{< since "4.8.0" >}}:
-  * Presets are grouped by anatomical category (bone, vascular, cardiac, lung and airways, soft tissue and skin…). The CT list includes the classic volume rendering presets of 3D Slicer (aorta, cardiac, coronary and pulmonary arteries, liver vasculature, muscle, soft tissue, airways…).
+  * Presets are grouped by anatomical category (bone, vascular, cardiac, lung and airways, soft tissue and skin…).
+    The CT list includes the classic volume rendering presets of 3D Slicer (aorta, cardiac, coronary and pulmonary arteries, liver vasculature, muscle, soft tissue, airways…).
   * MR presets are defined as a percentage of the volume maximum and PET presets in SUVbw (standardized uptake value), so they adapt to the loaded series instead of assuming a fixed intensity range.
   * Presets you use often can be marked as **favorites**, which keeps them at the top of the list.
   * Each preset carries one to three **dots** showing its rendering cost on the loaded volume — hover them to read *Rendering cost: N % of the voxels visible* — so an empty preset or a solid block is spotted before it is applied.
-  * Presets marked with a ✦ are the ones that suit [Cinematic lighting](#volume-rendering) and **Path tracing** best: bone, contrast-filled vessels, cardiac, skin and endoscopic views for CT, **Angiography** for MR and **Fetal** for ultrasound. Their opaque, well-separated materials give clean shadows and reflections.
+  * Presets marked with a ✦ are the ones that suit [Cinematic lighting](#volume-rendering) and **Path tracing** best: bone, contrast-filled vessels, cardiac, skin and endoscopic views for CT, **Angiography** for MR and **Fetal** for ultrasound.
+    Their opaque, well-separated materials give clean shadows and reflections.
 * {{< svg-inline "static/tuto/icon/inverseLut.svg" >}} **Invert LUT** — flips the LUT direction.
 
-
 #### Volume Rendering {{% badge style="red" %}}C{{% /badge %}} {#volume-rendering}
+
 Controls for the rendering algorithm, quality, transparency, lighting, and shading.
 
 * **Type** — defines the rendering algorithm applied to the volume:
-  * **Composite** — classic volume rendering. Each voxel contributes color and opacity along the ray, blended front-to-back to produce the final image.
-  * **MIP Max** — Maximum Intensity Projection. Keeps the highest-intensity voxel encountered along each ray. Useful for highlighting bright structures such as contrast-enhanced vessels or bones.
-  * **MinIP** — Minimum Intensity Projection. Keeps the lowest-intensity voxel along each ray. Useful for visualizing air-filled structures such as airways.
-  * **MIP Mean** — Mean Intensity Projection. Averages intensities along each ray, producing a smoother representation of the volume.
+  * **Composite** — classic volume rendering.
+    Each voxel contributes color and opacity along the ray, blended front-to-back to produce the final image.
+  * **MIP Max** — Maximum Intensity Projection.
+    Keeps the highest-intensity voxel encountered along each ray.
+    Useful for highlighting bright structures such as contrast-enhanced vessels or bones.
+  * **MinIP** — Minimum Intensity Projection.
+    Keeps the lowest-intensity voxel along each ray.
+    Useful for visualizing air-filled structures such as airways.
+  * **MIP Mean** — Mean Intensity Projection.
+    Averages intensities along each ray, producing a smoother representation of the volume.
   * **Iso Surface** — renders a 3D surface at a given intensity threshold, representing structures of a uniform density (e.g. bone segmentation).
   * **Path tracing** {{< since "4.8.0" >}} — the most realistic look, close to a photograph. Weasis simulates how light travels: it scatters inside the tissue, bounces from one structure to another, casts soft shadows from the main light and comes from the chosen lighting **Environment** (see **Cinematic lighting** below). A built-in denoiser smooths the first, grainy frames, then the image **refines itself over a few seconds** while the view stands still; the progress is shown at the bottom of the view. Rotating or changing anything starts the refinement again, and while you drag, the view shows the faster **Composite** rendering with cinematic lighting instead. Choosing this type turns **Cinematic lighting** (and with it **Shading**) on. The same **More Options** controls apply (light direction, environment, exposure), and the **Cinematic lighting quality** [preference](#interactive-rendering) sets how many times the light may bounce.
-* **Z-axis sampling** — distance between successive samples along each ray. Smaller values capture more detail at the cost of compute time; the default is derived from the volume size.
-* **Opacity** — global opacity factor for the voxels. Can be pushed above 100 % to compensate for the lower-than-100 % values defined by some Volume LUTs.
+* **Z-axis sampling** — distance between successive samples along each ray.
+  Smaller values capture more detail at the cost of compute time; the default is derived from the volume size.
+* **Opacity** — global opacity factor for the voxels.
+  Can be pushed above 100 % to compensate for the lower-than-100 % values defined by some Volume LUTs.
 * **Shading** — enables shading on the rendered surface. The default is taken from the Volume LUT; the additional options let you override the inherited lighting settings. The toggle also lights the **segmentation surfaces** drawn over or in place of the anatomy {{< since "4.7.3" >}} — see [Segmentation overlay in the 3D Volume Renderer](dicom-segmentation#segmentation-overlay-in-the-3d-volume-renderer).
 * **Cinematic lighting** {{< since "4.8.0" >}} — a more realistic look for the **Composite** and **Iso Surface** types. A single main light casts **shadows** through the volume, and structures darken where they are enclosed or close to one another (**ambient occlusion**), which makes depth easier to read. Brightness is then adjusted like in a photograph, so bright areas fade smoothly instead of turning flat white. It refines the shading, so turning it on also turns **Shading** on. The same checkbox is available in the right-click menu of the view. The **More Options** button then gives, in addition to the shininess:
-  * **Shadow strength** and **Ambient occlusion** — how much each effect darkens the image (0 disables it). Both run from 0 to 1; the defaults are 0.70 and 0.60.
+  * **Shadow strength** and **Ambient occlusion** — how much each effect darkens the image (0 disables it).
+    Both run from 0 to 1; the defaults are 0.70 and 0.60.
   * **Exposure** — overall brightness of the image, from 0.25 to 3 (default 1.20).
-  * **Light azimuth** and **Light elevation** — where the main light comes from, relative to the viewer, each from −90° to 90°. Both at 0° give a headlight; the default (−30° azimuth, 35° elevation) lights the scene from the upper left, which reveals the shape of the anatomy best.
-  * **Environment** and **Environment strength** — soft light coming from all around the volume, as in a photo studio: **Studio** (neutral key, fill and rim panels, the default), **Overcast** (soft shadowless sky), **Warm** (low sun) or **Cool** (clinical overhead panels), or **None** to keep the flat ambient light of the LUT. The environment turns with the camera, fills the shadows with colored light and adds soft reflections whose blur follows the **Shininess**. The strength runs from 0 to 2 (default 1.0).
+  * **Light azimuth** and **Light elevation** — where the main light comes from, relative to the viewer, each from −90° to 90°.
+    Both at 0° give a headlight; the default (−30° azimuth, 35° elevation) lights the scene from the upper left, which reveals the shape of the anatomy best.
+  * **Environment** and **Environment strength** — soft light coming from all around the volume, as in a photo studio: **Studio** (neutral key, fill and rim panels, the default), **Overcast** (soft shadowless sky), **Warm** (low sun) or **Cool** (clinical overhead panels), or **None** to keep the flat ambient light of the LUT.
+    The environment turns with the camera, fills the shadows with colored light and adds soft reflections whose blur follows the **Shininess**.
+    The strength runs from 0 to 2 (default 1.0).
 
 The [screenshot at the top of the page](#open-the-3d-viewer) shows the difference: the left column {{% badge style="red" %}}E{{% /badge %}} uses plain **Shading**, the right column {{% badge style="red" %}}F{{% /badge %}} **Cinematic lighting** on the same presets, and the selected view, bottom right, **Path tracing**.
 
@@ -182,6 +209,7 @@ Cinematic lighting takes roughly two to three times longer to render than plain 
 {{% /callout %}}
 
 #### Transform {{% badge style="red" %}}D{{% /badge %}} {#transform}
+
 Zoom the volume and rotate it around one of the three patient axes:
 
 * **Zoom slider** — scales the rendering.
@@ -245,12 +273,15 @@ Custom presets are stored in the `customVolumePresets.json` file inside the Weas
 {{% /version %}}
 
 ### Preferences
+
 From the menu **_File > Preferences > Viewer > 3D Viewer_**.
 
 #### OpenGL Support
+
 Information about the graphics card and OpenGL capabilities, see [Requirements](#requirements).
 
 #### 3D Viewer
+
 * {{< svg-inline "static/tuto/icon/layout.svg" >}} **Default layout** — preferred layout used when opening the 3D viewer. Available layouts: **1×1** (single view, default), **1×2**, **2×1**, **1×3**, **2×2**.
 * **Max 3D texture size** — maximum volume dimensions, both in X / Y (image width and height) and in Z (number of images in the stack composing the volume).
 
@@ -259,14 +290,18 @@ The maximum 3D texture defaults come from the graphics card. Lowering them (e.g.
 {{% /callout %}}
 
 #### Volume Rendering {#interactive-rendering}
-* **Dynamic quality** — reduces the rendering quality along the Z axis while you rotate or modify the view, for a smoother interaction. At the maximum slider position there is no quality reduction. The same reduction applies to the shadow and occlusion probes of the [Cinematic lighting](#volume-rendering).
+
+* **Dynamic quality** — reduces the rendering quality along the Z axis while you rotate or modify the view, for a smoother interaction.
+  At the maximum slider position there is no quality reduction.
+  The same reduction applies to the shadow and occlusion probes of the [Cinematic lighting](#volume-rendering).
 * **Cinematic lighting quality** {{< since "4.8.0" >}} — how finely the shadow and occlusion probes of the [Cinematic lighting](#volume-rendering) sample the volume, and how many bounces the **Path tracing** type follows: **Low**, **Medium** (default) or **High**. Higher levels give smoother shadows and richer indirect light at a higher rendering cost.
 
 {{% callout note %}}
 The **FBO fragment-shader** backend (OpenGL 3.3 – 4.2, and therefore always on macOS — see [Requirements](#requirements)) additionally lowers the **rendering resolution** while the camera is being dragged {{< since "4.7.3" >}}: the volume is ray-cast at the logical window resolution instead of the physical one and the result is upscaled for the duration of the gesture, which on a HiDPI / Retina display is a quarter of the pixels to compute. The frame drawn as soon as you release the mouse is at full resolution again. This is automatic and is independent of the **Dynamic quality** slider, which acts on the sampling along the ray; the **Compute Shader** backend (OpenGL 4.3+) always renders at full resolution.
 {{% /callout %}}
 
-* **Default orientation** — preferred starting orientation. Default: anterior view rotated 15° to the right and 15° downward.
+* **Default orientation** — preferred starting orientation.
+  Default: anterior view rotated 15° to the right and 15° downward.
 * **Background color** — background color of the rendered scene.
 * **Light color** — color of the light used to illuminate the rendering.
 

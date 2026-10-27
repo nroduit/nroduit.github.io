@@ -11,7 +11,8 @@ keywords: [ "dicom viewer language", "locale", "translation", "regional settings
 Weasis separates two locale-related choices:
 
 - **Language** — the language of the user interface (menus, tooltips, dialogs).
-- **Regional format** — the rules used to display **dates**, **times**, and **numbers** (decimal separator, thousands separator, calendar conventions…). These also drive how patient lists are sorted, see the [DICOM Explorer](dicom-explorer).
+- **Regional format** — the rules used to display **dates**, **times**, and **numbers** (decimal separator, thousands separator, calendar conventions…).
+  These also drive how patient lists are sorted, see the [DICOM Explorer](dicom-explorer).
 
 The two are independent, so you can run the UI in English while keeping the regional format you prefer.
 
@@ -32,4 +33,5 @@ Dates and numbers throughout the user interface are formatted according to the s
 
 ### Changing the default locale at deployment
 
-When deploying Weasis to multiple workstations, the default language and regional format can be set centrally via the property files instead of being chosen per user. See the [preferences overview](../basics/customize/preferences/#priority-order-for-loading-a-property) for the lookup order Weasis uses when resolving a preference.
+When deploying Weasis to multiple workstations, the default language and regional format can be set centrally via the property files instead of being chosen per user.
+See the [preferences overview](../basics/customize/preferences/#priority-order-for-loading-a-property) for the lookup order Weasis uses when resolving a preference.

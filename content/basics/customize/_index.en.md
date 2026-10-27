@@ -6,9 +6,7 @@ keywords: [ "customize weasis", "weasis configuration", "preferences", "integrat
 weight: 30
 ---
 
-Weasis is meant to be adapted to a site rather than used exactly as shipped. The
-pages below cover connecting it to a PACS, a RIS or a web portal, setting the
-preferences and the Window/Level presets every user starts from, and building
-your own plugins when the existing ones are not enough.
+Weasis is meant to be adapted to a site rather than used exactly as shipped.
+The pages below cover connecting it to a PACS, a RIS or a web portal, setting the preferences and the Window/Level presets every user starts from, and building your own plugins when the existing ones are not enough.
 
 {{% pages display="tree" %}}

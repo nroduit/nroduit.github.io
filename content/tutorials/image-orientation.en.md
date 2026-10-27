@@ -7,7 +7,8 @@ keywords: [ "dicom image orientation", "patient orientation", "biped", "quadrupe
 
 ## <center>The letters drawn at the edges of a view</center>
 
-DICOM image viewers indicate **which anatomical direction lies outside each edge of the image** using one or more uppercase letters drawn at the top-center and left-center of the view. They let you recognize the patient's left vs. right (or dorsal vs. ventral, etc.) at a glance, without having to scroll the metadata.
+DICOM image viewers indicate **which anatomical direction lies outside each edge of the image** using one or more uppercase letters drawn at the top-center and left-center of the view.
+They let you recognize the patient's left vs. right (or dorsal vs. ventral, etc.) at a glance, without having to scroll the metadata.
 
 The exact set of letters depends on the **_Anatomical Orientation Type (0010,2210)_** [attribute](tags) of the study — Weasis supports both the standard **BIPED** scheme used for human imaging and the **QUADRUPED** scheme used in veterinary imaging.
 
@@ -56,10 +57,10 @@ For cross-sectional modalities such as **CT** and **MR**, the orientation **is**
 To show or hide the orientation overlay, toggle **DICOM Annotations > Orientation** in the [Display](dicom-2d-viewer/#display) panel on the right.
 {{% /callout %}}
 
-
 ### Orientation in multiplanar reconstruction (MPR) {#orientation-in-multiplanar-reconstruction-mpr}
 
-In the [MPR viewer](mpr), the same letter convention is applied to each of the three reformatted planes. The uppercase letter at the left or the top names the anatomical direction; the plane type (**axial**, **coronal**, or **sagittal**) is labeled at the bottom of the view.
+In the [MPR viewer](mpr), the same letter convention is applied to each of the three reformatted planes.
+The uppercase letter at the left or the top names the anatomical direction; the plane type (**axial**, **coronal**, or **sagittal**) is labeled at the bottom of the view.
 
 ![MPR orientation](/tuto/mpr-orientation.jpg?classes=shadow)
 <br>

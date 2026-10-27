@@ -20,13 +20,12 @@ In order to be able to test specific versions or to be able to launch a version 
 ![group_config_creation.png](/viewer-hub/qualifier/group_config_creation.webp)
 
 In order to use this feature:
+
 - the weasis-native.zip file containing the specific version must be loaded into ViewerHub and associated with a group.
 - the "qualifier" property must be defined in the launch_preferred table and must be of type "qualifier".
 
 ![launch_preferred_qualifier.png](/viewer-hub/qualifier/launch_preferred_qualifier.webp)
 
-- the mapping of the qualifier to use this version must be done at the launch table level for the target/launch_config/launch_preferred association. <br/>
-If this mapping is not done, the default qualifier defined in ViewerHub configuration will be taken into account (see previous paragraph). <br/>
-In order to do this mapping, you must define a configuration in the launch table associating the desired group/launch_config, the previous launch_preferred "qualifier" and for the "selection" column specify the qualifier to launch.
+- the mapping of the qualifier to use this version must be done at the launch table level for the target/launch_config/launch_preferred association. <br/> If this mapping is not done, the default qualifier defined in ViewerHub configuration will be taken into account (see previous paragraph). <br/> In order to do this mapping, you must define a configuration in the launch table associating the desired group/launch_config, the previous launch_preferred "qualifier" and for the "selection" column specify the qualifier to launch.
 
 ![launch_qualifier.png](/viewer-hub/qualifier/launch_qualifier.webp)

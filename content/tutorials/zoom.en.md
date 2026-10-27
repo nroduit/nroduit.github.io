@@ -8,7 +8,8 @@ keywords: [ "dicom zoom", "magnifying lens", "zoom preset", "real-world size", "
 
 ## <center>How much of the image fits in the view {{< svg-inline "static/tuto/icon/zoom.svg" >}}</center>
 
-The zoom tool changes how much of the image fits into the view. Beyond the standard "fit to screen" / "fit to pixel" magnifications, Weasis offers a **Real-world Size** mode that displays images at their **actual physical dimensions** on a calibrated monitor — useful for visual size estimation, surgical planning, or prosthesis sizing.
+The zoom tool changes how much of the image fits into the view.
+Beyond the standard "fit to screen" / "fit to pixel" magnifications, Weasis offers a **Real-world Size** mode that displays images at their **actual physical dimensions** on a calibrated monitor — useful for visual size estimation, surgical planning, or prosthesis sizing.
 
 ### Basic zoom controls
 
@@ -44,7 +45,8 @@ The toolbar and context menu expose three presets:
 
 ### Real-world Size Display {{< svg-inline "static/tuto/icon/zoomRealWorld.svg" >}} {#real-world-size-display}
 
-Real-world size means **1 mm on the image equals 1 mm on the screen**, so anatomical structures appear at their true physical dimensions. This is essential for visual size estimation, surgical planning, prosthesis sizing, or any clinical comparison done directly on the monitor.
+Real-world size means **1 mm on the image equals 1 mm on the screen**, so anatomical structures appear at their true physical dimensions.
+This is essential for visual size estimation, surgical planning, prosthesis sizing, or any clinical comparison done directly on the monitor.
 
 For Weasis to compute this accurately, it needs two things:
 
@@ -62,16 +64,19 @@ Without monitor calibration, the {{< svg-inline "static/tuto/icon/zoomRealWorld.
 
 1. Open **_File > Preferences (Alt + P) > Monitors_**.
 2. The list shows every detected monitor with its pixel resolution; once calibrated, the real width × height in mm is appended in parentheses.
-3. Click **Spatial calibration** next to the monitor you want to calibrate. A fullscreen window opens on **that** monitor and draws a black background with a white horizontal line and a white vertical line.
+3. Click **Spatial calibration** next to the monitor you want to calibrate.
+   A fullscreen window opens on **that** monitor and draws a black background with a white horizontal line and a white vertical line.
 4. Physically measure one of the three references on the screen surface:
    * the **horizontal line**,
    * the **vertical line**, or
    * the screen **diagonal** (corner to corner of the visible glass).
 5. At the bottom of the dialog, pick the matching reference in the first dropdown (**Horizontal line** / **Vertical line** / **Screen size**), type the measured value, and pick its unit (mm, cm, 1/1000 in, in).
-6. Click **Apply**. The dialog redraws each line with its computed real length next to it — cross-check that the displayed value matches what you measured (within ±0.5 mm). Re-measure and re-apply if needed.
-7. Close the calibration window. The Monitors page now shows the screen's real size, and the value is persisted (per monitor) for the next sessions.
+6. Click **Apply**.
+   The dialog redraws each line with its computed real length next to it — cross-check that the displayed value matches what you measured (within ±0.5 mm).
+   Re-measure and re-apply if needed.
+7. Close the calibration window.
+   The Monitors page now shows the screen's real size, and the value is persisted (per monitor) for the next sessions.
 8. Activate the result in any 2D viewer with the {{< svg-inline "static/tuto/icon/zoomRealWorld.svg" >}} **Real-world Size** preset (toolbar dropdown, context menu **Zoom**, or the image tool panel).
-
 
 #### Verifying the result
 
@@ -83,7 +88,8 @@ If **Real-world Size** still looks wrong after monitor calibration, check that t
 
 ## <center>Magnifying Lens {{< svg-inline "static/tuto/icon/zoomPan.svg" >}}</center>
 
-The **magnifying lens** is a movable, resizable overlay that displays a zoomed-in view of a small area without affecting the underlying image. Useful for inspecting fine detail (small lesions, calcifications, fine vascular structures) without changing the global zoom level, or for comparing two rendering parameters side-by-side using the freeze options.
+The **magnifying lens** is a movable, resizable overlay that displays a zoomed-in view of a small area without affecting the underlying image.
+Useful for inspecting fine detail (small lesions, calcifications, fine vascular structures) without changing the global zoom level, or for comparing two rendering parameters side-by-side using the freeze options.
 
 Enable / disable the lens with its toggle button in the zoom toolbar.
 
@@ -107,8 +113,10 @@ Enable / disable the lens with its toggle button in the zoom toolbar.
   * **Show Drawings** — toggles overlay visibility inside the lens.
   * **Magnify** — pick the lens zoom level from a preset list.
   * **Image** — control image and parameter freezing:
-    * **Freeze Parameters** — keeps the current image processing settings (Window / Level, LUT, filters) frozen inside the lens while you scroll through the series elsewhere. Useful for comparing the same anatomical area with different rendering settings.
-    * **Freeze Image** — captures both the image **and** its processing parameters, so the lens keeps showing the frozen image while the main view moves on. Useful when comparing different slices or time points of a study.
+    * **Freeze Parameters** — keeps the current image processing settings (Window / Level, LUT, filters) frozen inside the lens while you scroll through the series elsewhere.
+      Useful for comparing the same anatomical area with different rendering settings.
+    * **Freeze Image** — captures both the image **and** its processing parameters, so the lens keeps showing the frozen image while the main view moves on.
+      Useful when comparing different slices or time points of a study.
     * **Reset Freeze** — clears the frozen state; the lens reverts to following the current image and its processing settings.
 
 ![Lens with frozen parameters](/tuto/lens-freeze.jpg?classes=shadow&width=100%)

@@ -7,11 +7,13 @@ weight: 20
 menuPre: "<b>4. </b>"
 ---
 
-[Weasis](../) provides the tools to visualize and analyze images obtained from medical imaging equipment according to the [DICOM standard](https://www.dicomstandard.org/). This free DICOM viewer is used by healthcare professionals, researchers and patients.
+[Weasis](../) provides the tools to visualize and analyze images obtained from medical imaging equipment according to the [DICOM standard](https://www.dicomstandard.org/).
+This free DICOM viewer is used by healthcare professionals, researchers and patients.
 
-If you are new to Weasis, it is recommended to read this [page](gui) to understand the main elements of the interface. 
+If you are new to Weasis, it is recommended to read this [page](gui) to understand the main elements of the interface.
 
-The tutorials are organized by topics and can be read independently. If a DICOM term is new to you, the [glossary](../glossary) defines the ones used here — MPR, MIP, SUV, SEG, SR, RT objects, DICOMweb, window and level.
+The tutorials are organized by topics and can be read independently.
+If a DICOM term is new to you, the [glossary](../glossary) defines the ones used here — MPR, MIP, SUV, SEG, SR, RT objects, DICOMweb, window and level.
 
 {{% pages description="true" display="tree" %}}
 

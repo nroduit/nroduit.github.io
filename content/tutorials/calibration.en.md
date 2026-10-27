@@ -20,9 +20,11 @@ howto:
 
 ## <center>The link between a pixel and a real length</center>
 
-**Spatial calibration** is the link between a pixel and a real-world length. With a valid calibration, every [measurement](draw-measure) (distance, area, angle) reflects actual millimeters or centimeters, and the [real-world zoom](zoom/#real-world-size-display) can display images at the same size as the original objects.
+**Spatial calibration** is the link between a pixel and a real-world length.
+With a valid calibration, every [measurement](draw-measure) (distance, area, angle) reflects actual millimeters or centimeters, and the [real-world zoom](zoom/#real-world-size-display) can display images at the same size as the original objects.
 
-For DICOM images, the calibration is normally derived from the standard attributes (_Pixel Spacing_ for cross-sectional acquisitions, _Imager Pixel Spacing_ for projection radiography). The 2D viewer indicates how the calibration was obtained — see the [calibration type label](dicom-2d-viewer/#open-the-2d-viewer) shown above the ruler.
+For DICOM images, the calibration is normally derived from the standard attributes (_Pixel Spacing_ for cross-sectional acquisitions, _Imager Pixel Spacing_ for projection radiography).
+The 2D viewer indicates how the calibration was obtained — see the [calibration type label](dicom-2d-viewer/#open-the-2d-viewer) shown above the ruler.
 
 When no calibration is available — or when you want to override an existing one — you can apply a **manual calibration** as long as the image contains a reference object of known size (a ruler, a fiducial, a calibration phantom, or any landmark whose physical length you know).
 
@@ -48,5 +50,6 @@ Once the image is calibrated, all measurement tools report values in the chosen 
 {{% /callout %}}
 
 ### Changing spatial calibration with Weasis 1.1.3
+
 The procedure shown below was recorded on an older version of Weasis; the underlying workflow is unchanged.
 {{< youtube id="v8CgcpYT1r8" >}}

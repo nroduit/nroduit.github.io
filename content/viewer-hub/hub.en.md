@@ -14,6 +14,7 @@ This stack is designed for development and testing purposes only. It enables deb
 ## Included Services
 
 This stack comprises the following components:
+
 - **dcm4chee**: PACS server for storing and retrieving medical images.
 - **ViewerHub**: Manages the launch of different viewers.
 - **MinIO**: Object storage server compatible with Amazon S3 APIs.
@@ -24,10 +25,12 @@ This stack comprises the following components:
 - **Eureka**: Provides service discovery for stack components.
 
 ## Prerequisites
+
 - Docker
 - Docker Compose CLI
 
 ## Configurations
+
 This stack supports multiple configurations:
 
 - **Debug (`local`)**: Includes all the required stack except ViewerHub and uses local volumes.
@@ -35,6 +38,7 @@ This stack supports multiple configurations:
 - **Secure (`secure`)** [<span style="color:red">Not yet available</span>]: Enables HTTPS and uses production-grade settings. dcm4chee and ViewerHub services have authentication.
 
 ### Usage
+
 Run the following commands based on the environment:
 
 - **For debugging ViewerHub**:
@@ -45,11 +49,13 @@ Run the following commands based on the environment:
 
 ## Minio
 
-Minio is an open-source object storage server compatible with Amazon S3 APIs. It is used to store resources required by the different versions of Weasis.
+Minio is an open-source object storage server compatible with Amazon S3 APIs.
+It is used to store resources required by the different versions of Weasis.
 
 Access the Minio console at: http://localhost:9090
 
 Use the following credentials:
+
 - User: `viewer-hub`
 - Password: `viewer-hub`
 
@@ -60,6 +66,7 @@ Keycloak is an open-source identity and access management server used to authent
 Access the Keycloak console at: http://localhost:8085
 
 Use the following credentials:
+
 - User: `admin`
 - Password: `admin`
 
@@ -69,8 +76,8 @@ Dcm4chee is a PACS server that enables storing and retrieving medical images.
 
 Access the dcm4chee console at: http://localhost:8080/dcm4chee-arc/ui2/en/study/study
 
-For secure mode, access the dcm4chee console at: https://localhost:8443/dcm4chee-arc/ui2/en/study/study
-Use the following credentials:
+For secure mode, access the dcm4chee console at: https://localhost:8443/dcm4chee-arc/ui2/en/study/study Use the following credentials:
+
 - User: `admin`
 - Password: `changeit`
 
@@ -82,7 +89,6 @@ ViewerHub Gateway handles basic authentication and oAuth2 (client credential and
 
 In order to install the gateway, follow the instructions in the README.md file: https://github.com/nroduit/viewer-hub-gateway
 
-
 ## ViewerHub
 
 ViewerHub is a web application that manages the launch of different viewers.
@@ -90,8 +96,6 @@ ViewerHub is a web application that manages the launch of different viewers.
 Access the ViewerHub console at: http://localhost:8081
 
 Use the following credentials:
+
 - User: `viewer-hub-user`
 - Password: `password`
-
-
-

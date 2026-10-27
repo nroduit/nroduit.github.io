@@ -8,7 +8,8 @@ keywords: [ "weasis theme", "dark theme", "ui scaling", "high dpi", "interface a
 
 ## <center>Light or dark, scaling, and platform behaviors</center>
 
-The **Appearance** preferences let you tailor Weasis to your environment: pick a **light** or **dark** theme to match your reading conditions, adjust the **interface scaling** to fit your monitor's pixel density, and toggle a few platform-specific UI behaviors. Open the settings from **_File > Preferences (Alt + P) > Appearance_**.
+The **Appearance** preferences let you tailor Weasis to your environment: pick a **light** or **dark** theme to match your reading conditions, adjust the **interface scaling** to fit your monitor's pixel density, and toggle a few platform-specific UI behaviors.
+Open the settings from **_File > Preferences (Alt + P) > Appearance_**.
 
 ### How to apply another theme
 
@@ -28,6 +29,7 @@ The scaling factor {{% badge style="red" %}}B{{% /badge %}} controls the size of
 You can also increase (or decrease) the scaling factor **independently of the system** — useful for reading from a distance, or when the system value is too aggressive for the application.
 
 ### How to integrate the main menu in the window bar
+
 Option {{% badge style="red" %}}C{{% /badge %}} forces the main menu to be integrated into the window's title bar (disabled by default). It is shown only on **Linux**, where the wide variety of window managers makes integration unreliable without an explicit opt-in.
 
 {{% callout info %}}
@@ -35,6 +37,7 @@ On **Windows** and **macOS**, this option is not shown — menu integration is a
 {{% /callout %}}
 
 ### System File Chooser
+
 Option {{% badge style="red" %}}D{{% /badge %}} swaps the Java default file dialog for the **system-native file chooser**, providing a more familiar file-browsing experience on each platform.
 
 {{% callout tip %}}
@@ -43,4 +46,5 @@ Favorite or bookmarked folders configured in your system file explorer (Nautilus
 
 ### Changing the default theme or scale factor
 
-When deploying Weasis to several workstations, the default appearance settings can be set centrally instead of being chosen per user. See the [Weasis Preferences](../basics/customize/preferences) page for the lookup order Weasis uses when resolving a preference.
+When deploying Weasis to several workstations, the default appearance settings can be set centrally instead of being chosen per user.
+See the [Weasis Preferences](../basics/customize/preferences) page for the lookup order Weasis uses when resolving a preference.

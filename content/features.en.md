@@ -9,7 +9,9 @@ hidden: true
 
 ## <center>Weasis features</center>
 
-This page lists the features supported by Weasis. For a step-by-step walkthrough of each tool, see the [Tutorials](tutorials). For how Weasis differs from OsiriX, Horos, RadiAnt and MicroDicom — platforms, licensing and regulatory status — see the [comparison](dicom-viewer-comparison).
+This page lists the features supported by Weasis.
+For a step-by-step walkthrough of each tool, see the [Tutorials](tutorials).
+For how Weasis differs from OsiriX, Horos, RadiAnt and MicroDicom — platforms, licensing and regulatory status — see the [comparison](dicom-viewer-comparison).
 
 {{< image-gallery gallery_dir="gallery1" >}}
 
@@ -75,7 +77,8 @@ This page lists the features supported by Weasis. For a step-by-step walkthrough
 
 ### AI / quantitative imaging
 
-- Renders every common AI-produced DICOM object — **SEG**, **RTSTRUCT**, **PR / GSPS**, **SR**, **Parametric Maps** — with consistent overlays across 2D, MPR, and 3D. See the [AI DICOM Objects](tutorials/dicom-artificial-intelligence) page for the complete map of AI outputs to Weasis displays.
+- Renders every common AI-produced DICOM object — **SEG**, **RTSTRUCT**, **PR / GSPS**, **SR**, **Parametric Maps** — with consistent overlays across 2D, MPR, and 3D.
+  See the [AI DICOM Objects](tutorials/dicom-artificial-intelligence) page for the complete map of AI outputs to Weasis displays.
 - Float and double pixel data supported throughout the windowing / LUT pipeline.
 
 ### Security & quality

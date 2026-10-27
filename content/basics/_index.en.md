@@ -6,7 +6,8 @@ menuPre: "<b>2. </b>"
 keywords: [ "dicom viewer", "free dicom viewer", "open source dicom viewer", "weasis dicom viewer",  "multi-platform dicom viewer", "dicom", "pacs", "pacs viewer", "clinical viewer", "radiological viewer", "linux dicom viewer",  "mac dicom viewer" ]
 ---
 
-The **Basics** section is the reference layer of the Weasis documentation. It targets **administrators, integrators, and power users** who deploy Weasis into a clinical or research environment and need to understand its internals — beyond what an end user needs to know to read a study.
+The **Basics** section is the reference layer of the Weasis documentation.
+It targets **administrators, integrators, and power users** who deploy Weasis into a clinical or research environment and need to understand its internals — beyond what an end user needs to know to read a study.
 
 You will find:
 
@@ -18,4 +19,3 @@ You will find:
 - **[DICOM Conformance](dicom)** — the summary conformance statement: objects displayed and created, network services, transfer syntaxes, pixel formats and IHE profiles.
 
 If you are deploying Weasis behind a PACS / VNA, see also the [Customize → Integration](customize/integration) guide and the [ViewerHub](../viewer-hub) launcher.
-

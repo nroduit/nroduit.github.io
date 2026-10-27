@@ -5,7 +5,8 @@ keywords: [ "weasis commands", "command line", "dicom command", "launch paramete
 weight: 50
 ---
 
-The commands listed below can be applied at start-up or in a telnet session. All the commands starting with "dcmview2d:" allow you to drive Weasis and are not adapted to be used at start-up.
+The commands listed below can be applied at start-up or in a telnet session.
+All the commands starting with "dcmview2d:" allow you to drive Weasis and are not adapted to be used at start-up.
 
 {{% callout info %}}
 This page matches to Weasis 3.5.1 or higher. The syntax of usage comes from [POSIX](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap12.html).
@@ -233,7 +234,6 @@ arg is an XML text in UTF8 or an url with the option '--url'
 
 This command can be used only at launch, see [Modify the launch parameters](../getting-started/weasis-protocol/#modify-the-launch-parameters)
 
-
 {{% callout note %}}
 For identifying the commands at start-up, the symbol "$" must be added before the command (not required in the OSGI console). See examples below.
 {{% /callout %}}
@@ -246,4 +246,3 @@ dicom:get -w "http://localhost/weasis-pacs-connector/manifest?patientID=97026728
 {{< /highlight >}}
 Depending on the command line system, quotes or double quote needs to be escaped with a backslash. With IDE, a simple quote must be escaped in Eclipse but not in Intellij.
 {{% /callout %}}
-

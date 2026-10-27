@@ -5,12 +5,14 @@ keywords: [ "weasis plugin development", "plugin guidelines", "code style", "dev
 weight: 50
 ---
 
-
 ## <center>Weasis Plugin Development</center>
 
-This page describes the necessary configurations to be able to debug Weasis using an IDE. For developers who want to create new plugins, you can visit [How to build and install a plugin](../basics/customize/build-plugins).
+This page describes the necessary configurations to be able to debug Weasis using an IDE.
+For developers who want to create new plugins, you can visit [How to build and install a plugin](../basics/customize/build-plugins).
 
-We recommend the use of [IntelliJ IDEA](https://www.jetbrains.com/idea/) because the following instructions are based on it. Nevertheless, it is possible to use other IDEs by configuring weasis-launcher with similar instructions described in [Add a launcher](#add-a-launcher).
+We recommend the use of [IntelliJ IDEA](https://www.jetbrains.com/idea/) because the following instructions are based on it.
+Nevertheless, it is possible to use other IDEs by configuring weasis-launcher with similar instructions described in [Add a launcher](#add-a-launcher).
+
 ### Prerequisites
 
 1. Install [IntelliJ IDEA](https://www.jetbrains.com/idea/) (Community or Ultimate Edition 2024.3 or higher)
@@ -19,11 +21,13 @@ We recommend the use of [IntelliJ IDEA](https://www.jetbrains.com/idea/) because
 
 ### Code style and convention
 
-Weasis uses [google-java-format](https://github.com/google/google-java-format) as coding conventions. The format can be applied by Maven through the [Spotless plugin](https://github.com/diffplug/spotless/tree/main/plugin-maven) or from the [IDE](https://github.com/google/google-java-format#intellij-android-studio-and-other-jetbrains-ides) (by importing the IntelliJ Java Google Style file). Formatting code with an IDE is not 100% compatible with Spotless, so it is better to use the latter before submitting new commits. This guarantees identical code formatting regardless of the system or code editor used.
+Weasis uses [google-java-format](https://github.com/google/google-java-format) as coding conventions.
+The format can be applied by Maven through the [Spotless plugin](https://github.com/diffplug/spotless/tree/main/plugin-maven) or from the [IDE](https://github.com/google/google-java-format#intellij-android-studio-and-other-jetbrains-ides) (by importing the IntelliJ Java Google Style file).
+Formatting code with an IDE is not 100% compatible with Spotless, so it is better to use the latter before submitting new commits.
+This guarantees identical code formatting regardless of the system or code editor used.
 
 - From Maven command: `mvn spotless:apply`
-- From the Maven panel
-![Maven Spotless](/images/conf/mvn-spotless.webp)
+- From the Maven panel ![Maven Spotless](/images/conf/mvn-spotless.webp)
 
 ### Getting the source and building Weasis
 
@@ -51,8 +55,7 @@ For running or debugging Weasis, you need to create a launcher:
     - Select *Add dependencies with "Provided" scope to classpath*
     - Select *Do not build before run*
     - Select *Add VM Options* and enter `-Xms64m -Xmx768m -Dgosh.port=17179`
-  - Working Directory: remove the current value and add *%MODULE_WORKING_DIR%* from the Insert Macros button
-![Launcher Configuration](/images/conf/launcher.webp)
+  - Working Directory: remove the current value and add *%MODULE_WORKING_DIR%* from the Insert Macros button ![Launcher Configuration](/images/conf/launcher.webp)
 {{% callout note %}}
 As the default build task has been removed it is necessary to apply the Maven command *install* on modules with modified code before launching the *Run* or *Debug* mode.<br>
 Keeping the build task and delegating the build to Maven does not seem configurable for a multi-module project, see this [issue](https://youtrack.jetbrains.com/issue/IDEA-198358).

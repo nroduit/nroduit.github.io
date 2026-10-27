@@ -5,31 +5,32 @@ keywords: [ "dcm4chee", "dcm4chee web" , "dcm4chee integration", "dcm4chee viewe
 weight: 16
 ---
 
-This page explains how to integrate Weasis with dcm4chee-arc-light using weasis-pacs-connector. To launch Weasis without the connector, follow the alternative [instructions](../basics/customize/integration/#download-directly-with-dicomweb-restful-services).
-
+This page explains how to integrate Weasis with dcm4chee-arc-light using weasis-pacs-connector.
+To launch Weasis without the connector, follow the alternative [instructions](../basics/customize/integration/#download-directly-with-dicomweb-restful-services).
 
 ![dcm4chee-arc-light](/gallery-dcm4chee/1Weasis%20in%20dcm4chee-arc-light.webp?classes=border "dcm4chee-arc-light")
 
 Follow these steps for the integration with `weasis-pacs-connector`:
 
-
 1. [Install dcm4chee](https://github.com/dcm4che/dcm4chee-arc-light/wiki), if not already done (Installation with Docker is straightforward).
 
 2. Go [here](https://sourceforge.net/projects/dcm4che/files/Weasis/) and download `weasis-pacs-connector.war` — See [Configuration Matrix](#configuration-matrix) below for the recommended version according to your dcm4chee-arc-light version.
 
-3. Open the <a target="_blank" href="http://localhost:9990/">WildFly management console</a> (at `http://<your-host>:9990`). Note: with some Keycloak versions, the [management console may not be accessible](https://groups.google.com/g/dcm4che/c/UeNKzgijfqo).
+3. Open the <a target="_blank" href="http://localhost:9990/">WildFly management console</a> (at `http://<your-host>:9990`).
+   Note: with some Keycloak versions, the [management console may not be accessible](https://groups.google.com/g/dcm4che/c/UeNKzgijfqo).
     - Select the “Deployments” tab
     - Add `weasis-pacs-connector.war` using the “Add” button (Choose Upload a new deployment or select Replace when the file already exists)
 {{% callout note %}}
 Alternatively one may deploy the `.war` using JBoss Command Line Interface Console.
 {{% /callout %}}
 
-4. Configure weasis-pacs-connector (optional if default settings are sufficient).<br>
-The default configuration is stored in two files inside weasis-pacs-connector.war. To override the default configuration:
+4. Configure weasis-pacs-connector (optional if default settings are sufficient).<br> The default configuration is stored in two files inside weasis-pacs-connector.war.
+   To override the default configuration:
     - Download the current [download>weasis-pacs-connector.properties](https://raw.githubusercontent.com/nroduit/weasis-pacs-connector/master/src/main/resources/weasis-pacs-connector.properties) and [download>dicom-dcm4chee-arc.properties](https://raw.githubusercontent.com/nroduit/weasis-pacs-connector/master/src/main/resources/dicom-dcm4chee-arc.properties) (configuration of the dcm4chee archive)
-    - Edit the configuration as needed. For example, dcm4chee may be running on a different computer than Weasis, or the AE Title of dcm4chee may have been changed. If so, edit `weasis-pacs-connector.properties` or `dicom-dcm4chee-arc.properties` (Change pacs.host, pacs.port, and pacs.aet).
-    - Copy `weasis-pacs-connector.properties` and `dicom-dcm4chee-arc.properties` into $WILDFLY_HOME/standalone/configuration (where $WILDFLY_HOME is the path of the running Wildfly).<br>
-    With the docker installation use the docker copy command ($ docker cp ...)
+    - Edit the configuration as needed.
+      For example, dcm4chee may be running on a different computer than Weasis, or the AE Title of dcm4chee may have been changed.
+      If so, edit `weasis-pacs-connector.properties` or `dicom-dcm4chee-arc.properties` (Change pacs.host, pacs.port, and pacs.aet).
+    - Copy `weasis-pacs-connector.properties` and `dicom-dcm4chee-arc.properties` into $WILDFLY_HOME/standalone/configuration (where $WILDFLY_HOME is the path of the running Wildfly).<br> With the docker installation use the docker copy command ($ docker cp ...)
 {{% callout tip %}}
 Instead of copying the files into $WILDFLY_HOME/standalone/configuration, JBoss Command Line Interface Console can be used to override files in the war. Add the two configuration files with the deployment-overlay command:<br>
 {{% /callout %}}
@@ -38,8 +39,7 @@ deployment-overlay add --name=dcm4chee-arc --deployments=weasis-pacs-connector.w
 {{< /highlight >}}
     - To apply the new configuration, from the management console "Disable" `weasis-pacs-connector.war` then "Enable"
 
-5. To activate Weasis in the dcm4chee-arc-light user interface (See also [Invoke Image Display in dcm4chee](https://github.com/dcm4che/dcm4chee-arc-light/wiki/Invoke-Image-Display)):
- you need to add attributes by either editing `docker-compose.env` (from 5.22.0) or from the left menu Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE:
+5. To activate Weasis in the dcm4chee-arc-light user interface (See also [Invoke Image Display in dcm4chee](https://github.com/dcm4che/dcm4chee-arc-light/wiki/Invoke-Image-Display)): you need to add attributes by either editing `docker-compose.env` (from 5.22.0) or from the left menu Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE:
      - Configure the URL for a view button at patient or study level and then copy the properties from [Configuration Matrix](#configuration-matrix).
         - From dcm4chee-arc-light 5.10.2 to 5.19.0, the left menu: Configuration > Devices > dcm4chee-arc > Extensions > Archive Device
         - From dcm4chee-arc-light 5.19.1 the left menu: Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE
@@ -159,4 +159,3 @@ Older versions pass _self via query parameter (target=_self); newer versions (5.
 </div>
 
 ---
-

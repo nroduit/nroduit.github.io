@@ -8,19 +8,23 @@ weight: 12
 
 ## <center>Query and retrieve straight from the archive, without a connector</center>
 
-This integration requires a PACS/VNA with [DICOMweb](https://www.dicomstandard.org/using/dicomweb) services (QUERY/RETRIEVE) where the requests are managed directly by Weasis. Here are some of the advantages:
+This integration requires a PACS/VNA with [DICOMweb](https://www.dicomstandard.org/using/dicomweb) services (QUERY/RETRIEVE) where the requests are managed directly by Weasis.
+Here are some of the advantages:
 
 - Straightforward integration
 - Do not require to install weasis-pacs-connector
 - Allow passing token directly in headers (not in the URL)
 
-The following configurations allow images to be loaded by initiating the request from a WEB context. However, it is possible to access DICOMWeb services by initiating the request directly from the [Weasis import](../../tutorials/dicom-import).
+The following configurations allow images to be loaded by initiating the request from a WEB context.
+However, it is possible to access DICOMWeb services by initiating the request directly from the [Weasis import](../../tutorials/dicom-import).
 
-Use [$dicom:rs](../commands/#dicomrs) to load DICOM files. Here are some configuration examples of DICOMweb applications:
+Use [$dicom:rs](../commands/#dicomrs) to load DICOM files.
+Here are some configuration examples of DICOMweb applications:
 
 ### dcm4chee-arc-light
 
-This configuration requires at least dcm4chee-arc-light 5.22.2 and Weasis 3.6.0. To activate Weasis in dcm4chee-arc-light user interface, you need to add the four following properties in the web portal from the left menu *Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE*
+This configuration requires at least dcm4chee-arc-light 5.22.2 and Weasis 3.6.0.
+To activate Weasis in dcm4chee-arc-light user interface, you need to add the four following properties in the web portal from the left menu *Configuration > Devices > dcm4chee-arc > Extensions > Edit extension > Child Objects > Web Applications > DCM4CHEE*
 {{< highlight text >}}
 IID_PATIENT_URL=weasis://?$dicom:rs --url "{{qidoBaseURL}}{{qidoBasePath}}" -r "patientID={{patientID}}" --query-ext "&includedefaults=false" -H "Authorization: Bearer {{access_token}}"
 IID_STUDY_URL=weasis://?$dicom:rs --url "{{qidoBaseURL}}{{qidoBasePath}}" -r "studyUID={{studyUID}}" --query-ext "&includedefaults=false" -H "Authorization: Bearer {{access_token}}"
@@ -116,11 +120,10 @@ $dicom:rs --url "https://demo.kheops.online/api" -r "studyUID=1.3.6.1.4.1.14519.
 
 https://aws.amazon.com/health/health-imaging/
 
-Prefer to use dicomweb-proxy to manage the token and the URL of the DICOMWeb service. See Weasis configuration at the end of this [page](
-https://github.com/aws-samples/aws-healthimaging-samples/tree/main/dicomweb-proxy#usage).
+Prefer to use dicomweb-proxy to manage the token and the URL of the DICOMWeb service.
+See Weasis configuration at the end of this [page]( https://github.com/aws-samples/aws-healthimaging-samples/tree/main/dicomweb-proxy#usage).
 
 ## See also
 
 - [Integration](integration) — the launch contexts, weasis-pacs-connector and the manifest formats.
-- [DICOMweb Configuration](../../tutorials/dicomweb-config) — configuring a DICOMweb node from
-  inside Weasis, for a reader who is not building the launch URL themselves.
+- [DICOMweb Configuration](../../tutorials/dicomweb-config) — configuring a DICOMweb node from inside Weasis, for a reader who is not building the launch URL themselves.

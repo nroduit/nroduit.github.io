@@ -14,7 +14,8 @@ If Weasis must reach the outside world through a corporate proxy — for example
 
 1. Open **_File > Preferences (Alt + P)_** in the main menu.
 2. Select **Proxy Server** from the left panel.
-3. The default is **Direct connection (no proxy)**. Switch to **Manual proxy configuration** to define a custom proxy (the screenshot below shows a local **Squid** instance).
+3. The default is **Direct connection (no proxy)**.
+   Switch to **Manual proxy configuration** to define a custom proxy (the screenshot below shows a local **Squid** instance).
 
 For the meaning of each field, see the [Java networking properties reference](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/net/doc-files/net-properties.html) — the dialog mirrors the standard JVM proxy properties one-for-one.
 

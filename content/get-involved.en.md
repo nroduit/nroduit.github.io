@@ -7,11 +7,13 @@ hidden: true
 
 ## <center>Report, code, translate or write — where to start</center>
 
-Weasis is an **open-source** project and thrives because of its community of contributors. Whether you are a developer, a translator, a clinical user, or simply passionate about open-source healthcare tools, there are many ways to participate and make a difference.
+Weasis is an **open-source** project and thrives because of its community of contributors.
+Whether you are a developer, a translator, a clinical user, or simply passionate about open-source healthcare tools, there are many ways to participate and make a difference.
 
 ### 📋 Report Bugs and Request Enhancements
 
-Found a bug or have an idea to improve Weasis? Contribute by reporting it.
+Found a bug or have an idea to improve Weasis?
+Contribute by reporting it.
 
 Before creating an issue, check that it has not already been reported:
 
@@ -41,17 +43,21 @@ For larger changes, opening a [discussion](https://github.com/nroduit/Weasis/dis
 
 ### ✍️ Share Your Knowledge
 
-Not a developer? You can still make a real impact by sharing your expertise and helping other users.
+Not a developer?
+You can still make a real impact by sharing your expertise and helping other users.
 
-- **Improve the documentation** — this site is written in Markdown and built with [Hugo](https://gohugo.io). Follow the [README of the docs repository](https://github.com/nroduit/nroduit.github.io) for the setup, the local preview command, and the pull-request workflow.
+- **Improve the documentation** — this site is written in Markdown and built with [Hugo](https://gohugo.io).
+  Follow the [README of the docs repository](https://github.com/nroduit/nroduit.github.io) for the setup, the local preview command, and the pull-request workflow.
 
 - **Translate Weasis** — make Weasis accessible to users worldwide by contributing to the [localization effort](getting-started/translating).
 
 - **Help other users** — answer questions and share insights on the [dcm4che Forum](https://groups.google.com/group/dcm4che) and on [GitHub Discussions](https://github.com/nroduit/Weasis/discussions).
 
-- **Share your story** — using Weasis in a hospital, clinic, research project, or education program? Let us know so your case study can be featured in the [Stories](stories) section.
+- **Share your story** — using Weasis in a hospital, clinic, research project, or education program?
+  Let us know so your case study can be featured in the [Stories](stories) section.
 
-- **Cite Weasis** — if your work uses Weasis, citing the project in your publications helps make the impact of the project visible. See [How to cite Weasis](cite) for ready-made BibTeX, APA and Vancouver entries.
+- **Cite Weasis** — if your work uses Weasis, citing the project in your publications helps make the impact of the project visible.
+  See [How to cite Weasis](cite) for ready-made BibTeX, APA and Vancouver entries.
 
 ### 🤝 Why Contribute?
 

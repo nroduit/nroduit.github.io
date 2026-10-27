@@ -30,12 +30,16 @@ Whatever the import method, a popup may appear at the end of an import in any of
 ### From the system file explorer
 
 #### Drag and drop
-Files, folders, or DICOM ZIP archives selected in the system file explorer can be opened by dragging and dropping them into the central area of Weasis. The accepted drop target depends on the central panel state:
+
+Files, folders, or DICOM ZIP archives selected in the system file explorer can be opened by dragging and dropping them into the central area of Weasis.
+The accepted drop target depends on the central panel state:
 
 * **Empty central panel** — any file a Weasis viewer can open, including standard images such as TIFF, PNG, and JPEG.
-* **DICOM Explorer or any DICOM viewer** (2D, MPR, 3D, SR, AU…) — only DICOM files and DICOM ZIP archives. Weasis opens each series in the most appropriate viewer.
+* **DICOM Explorer or any DICOM viewer** (2D, MPR, 3D, SR, AU…) — only DICOM files and DICOM ZIP archives.
+  Weasis opens each series in the most appropriate viewer.
 
 #### File association
+
 DICOM files can be opened by double-clicking them from the system file explorer.
 
 {{% callout note %}}
@@ -52,13 +56,17 @@ Two import entry points sit next to each other in the toolbar (and under **_File
 - The **second** button is a shortcut for the DICOMDIR / CD-ROM workflow (**_File > Import > DICOM CD_**).
 
 #### Local Device
+
 DICOM ZIP is also accepted in the local-import workflow {{< since "4.7.0" >}}:
 
-* **Files** — browse and select one or more DICOM files or DICOM ZIP archives via the file chooser. If a ZIP archive is password-protected, a password prompt is shown.
-* **Folders** — browse and select one or more folders via the file chooser. Folders containing DICOM ZIP archives are also supported.
+* **Files** — browse and select one or more DICOM files or DICOM ZIP archives via the file chooser.
+  If a ZIP archive is password-protected, a password prompt is shown.
+* **Folders** — browse and select one or more folders via the file chooser.
+  Folders containing DICOM ZIP archives are also supported.
 * **Search recursively** — when enabled, the import also descends into subdirectories.
 
 #### DICOMDIR
+
 Loads a DICOMDIR-based study from a CD/DVD or any folder that already contains a `DICOMDIR` index file:
 
 * **Path** — browse to a folder containing a DICOMDIR.
@@ -75,9 +83,8 @@ images are read again from that medium each time they are displayed. Weasis now
 copies such files into its local cache while importing {{< since "4.8.0" >}}, so
 the slow medium is read once and everything afterwards comes from the local disk.
 
-You do not have to select anything: Weasis recognizes those locations from the
-mount table the operating system reports — SMB and NFS mounts, Windows UNC paths
-and mapped drives, and optical media. Files on a local disk are imported as before.
+You do not have to select anything: Weasis recognizes those locations from the mount table the operating system reports — SMB and NFS mounts, Windows UNC paths and mapped drives, and optical media.
+Files on a local disk are imported as before.
 
 {{% callout note %}}
 This is controlled by the `weasis.import.dicom.network.cache`
@@ -86,13 +93,15 @@ makes Weasis read images directly from the share every time they are displayed,
 which avoids the local copy at the cost of a round trip per image.
 {{% /callout %}}
 
-The [DICOMDIR](#dicomdir) dialog keeps its own **Copy images into the local
-temporary directory** checkbox, which does the same for a CD/DVD loaded by hand.
+The [DICOMDIR](#dicomdir) dialog keeps its own **Copy images into the local temporary directory** checkbox, which does the same for a CD/DVD loaded by hand.
 
 #### DICOM Query/Retrieve
-Queries a remote PACS and retrieves the selected studies or series into the DICOM Explorer. The dialog has two tabs — **DICOM Source** and **Search Criteria**.
+
+Queries a remote PACS and retrieves the selected studies or series into the DICOM Explorer.
+The dialog has two tabs — **DICOM Source** and **Search Criteria**.
 
 ##### DICOM Source tab
+
 ![DICOM import archive](/tuto/dicom-import-archive.webp?classes=shadow)
 <br>
 
@@ -100,7 +109,8 @@ Queries a remote PACS and retrieves the selected studies or series into the DICO
   * **DICOM nodes** — classic DIMSE (C-FIND for the query, plus C-MOVE, C-GET, or WADO-URI for retrieval).
   * **[DICOMweb nodes](dicomweb-config)** — QIDO for the query, WADO-RS for the retrieval (no additional options needed).
 * **Retrieve** (DICOM archives only) — the protocol used to transfer the images:
-  * **C-MOVE** — the classic DIMSE retrieve. Accepts all SOP Classes but is not recommended over the web.
+  * **C-MOVE** — the classic DIMSE retrieve.
+    Accepts all SOP Classes but is not recommended over the web.
   * **C-GET** — transfer syntaxes are negotiated per SOP Class through a configuration file.
   * **WADO-URI** — C-FIND for the query plus WADO-URI retrieve; requires a WADO server.
 
@@ -110,15 +120,21 @@ Queries a remote PACS and retrieves the selected studies or series into the DICO
 * **More options** — opens the preferences so you can add or edit DICOM nodes. Nodes shipped by your site in `config/dicomNodes.json` of the resources package are listed as *(site)* and cannot be edited {{< since "4.8.0" >}}; see [Configuration documents](../basics/customize/preferences/#configuration-documents).
 
 ##### Search Criteria tab
+
 ![DICOM Query/Retrieve search criteria and results](/tuto/dicom-import-search.webp?classes=shadow&width=700px)
 <br>
 
 1. Narrow the query by **study date** with the date drop-down: **All dates** (no date filter), a single day such as **Today**, **Yesterday** or **Day before yesterday**, a current period (**This week**, **This month**, **This year**), or a rolling window (**Last 24 hours**, **Last week**, **Last month**, **Last year**…). Choosing one fills in the start and end dates; either can then be adjusted on its own, and clicking a date field opens a calendar to pick an exact day {{< since "4.7.0" >}}.
-2. Pick the attribute to match (patient name, patient ID, accession number…) and type its value. `*` matches any sequence of characters and `?` a single character.
+2. Pick the attribute to match (patient name, patient ID, accession number…) and type its value.
+   `*` matches any sequence of characters and `?` a single character.
    * When the attribute is a person name (patient, referring, performing or reading physician), the **≈** button inside the search field turns on **fuzzy name matching** {{< since "4.8.0" >}}: the archive then also returns names that are spelled differently, such as a spelling variant or another transliteration. It is off by default, and it applies to both DICOMweb (`fuzzymatching=true`) and DICOM nodes (C-FIND extended negotiation).
-   * Fuzzy matching is optional for the archive. If the archive cannot do it, it matches the name exactly as typed, and **Literal match** appears next to the **Search** button; its tooltip gives the archive's explanation. Any other warning returned by a DICOMweb archive appears there as **Archive warning**, with the archive's text in the tooltip.
+   * Fuzzy matching is optional for the archive.
+     If the archive cannot do it, it matches the name exactly as typed, and **Literal match** appears next to the **Search** button; its tooltip gives the archive's explanation.
+     Any other warning returned by a DICOMweb archive appears there as **Archive warning**, with the archive's text in the tooltip.
 3. Pick a pre-registered search (combo box at the bottom-right of the **Search Criteria** panel) or fill in your own criteria. Saved criteria can be reused later; {{< since "4.1.0" >}} the item selected in the combo box is re-applied automatically the next time the window opens (the default is **Empty**).
-4. Adjust the **limit** — the maximum number of studies returned by the query. Set the limit to **0** to remove the cap. For DICOMweb, the limit is the page size; use the spinner buttons to move between pages.
+4. Adjust the **limit** — the maximum number of studies returned by the query.
+   Set the limit to **0** to remove the cap.
+   For DICOMweb, the limit is the page size; use the spinner buttons to move between pages.
 5. Click **Search**.
 6. Select what you want to import in the result tree (see below).
 7. Click **Import** and close the window.
@@ -128,7 +144,8 @@ Queries a remote PACS and retrieves the selected studies or series into the DICO
 The query result is a tree with a checkbox on every node. It has a **series** level below each study {{< since "4.7.3" >}}: expanding a study lists the series returned by the archive — modality, series number, description and number of images — so the retrieve no longer has to be an all-or-nothing study transfer. The series of a study are queried the first time it is expanded, and kept as long as the result is displayed.
 
 * Checking a **study** retrieves all of its series — this is the previous behavior and remains the default.
-* Expanding a study and checking only some **series** restricts the transfer to those series. The retrieve is then requested at the *SERIES* level instead of the *STUDY* level, so the archive sends only what was selected.
+* Expanding a study and checking only some **series** restricts the transfer to those series.
+  The retrieve is then requested at the *SERIES* level instead of the *STUDY* level, so the archive sends only what was selected.
 
 Selecting fewer series is the most effective way to shorten a retrieve from a large study, and it also keeps the local cache smaller.
 
@@ -138,12 +155,15 @@ A retrieve no longer inspects the whole selection before the first image arrives
 
 The content of a series is not listed up front either:
 
-* **C-MOVE**, **C-GET** and **DICOMweb** request each series as a whole and let the archive send what it holds. The number of images announced by the series query is enough to fill the progress bar.
-* **WADO-URI** transfers the images one by one, so it has to list them first. That query is made when the series is about to be downloaded, and for that series only.
+* **C-MOVE**, **C-GET** and **DICOMweb** request each series as a whole and let the archive send what it holds.
+  The number of images announced by the series query is enough to fill the progress bar.
+* **WADO-URI** transfers the images one by one, so it has to list them first.
+  That query is made when the series is about to be downloaded, and for that series only.
 
 A resumed series is the exception: whatever the protocol, Weasis then lists the images of that series so that it can ask only for the ones still missing.
 
-On a selection of several large studies this replaces a long silent preparation with a download that starts right away. In exchange, the thumbnail of a series appears with its first images instead of before the download — except with DICOMweb nodes, where the archive's series thumbnail service gives a preview straight away when it implements one.
+On a selection of several large studies this replaces a long silent preparation with a download that starts right away.
+In exchange, the thumbnail of a series appears with its first images instead of before the download — except with DICOMweb nodes, where the archive's series thumbnail service gives a preview straight away when it implements one.
 
 ##### Download progress, stop and resume
 
@@ -154,19 +174,23 @@ Every retrieve type — **C-MOVE**, **C-GET**, **WADO-URI** and [**DICOMweb**](d
 ![Download Manager](/images/DownloadManager.jpg?width=150px)
 
 * Every series carries its own progress bar, filled according to the number of instances already received.
-* **Stop Downloading** and **Resume Downloading** are available in the right-click menu of a series, and on the button in front of its progress bar. A stopped series is restarted with the green play button.
-* **Stop All** and **Resume All** are the two buttons at the bottom of the DICOM Explorer panel. They apply to the whole download queue at once.
+* **Stop Downloading** and **Resume Downloading** are available in the right-click menu of a series, and on the button in front of its progress bar.
+  A stopped series is restarted with the green play button.
+* **Stop All** and **Resume All** are the two buttons at the bottom of the DICOM Explorer panel.
+  They apply to the whole download queue at once.
 * Stopping loses nothing: the instances already received are kept, and resuming asks only for the missing ones instead of transferring the series again from the beginning.
 
 ##### Selecting a thumbnail downloads that series first
 
-Weasis transfers only a few series at a time and leaves the others waiting in a queue, in the order in which they were requested. Clicking the thumbnail of a series that is still waiting makes it the next one to arrive:
+Weasis transfers only a few series at a time and leaves the others waiting in a queue, in the order in which they were requested.
+Clicking the thumbnail of a series that is still waiting makes it the next one to arrive:
 
 1. the selected series is moved to the front of the queue;
 2. one of the series currently being transferred is stopped and put back in the queue, which frees a slot;
 3. the selected series starts downloading immediately in that slot.
 
-The interrupted series loses neither its place in the queue nor the images it had already received: it resumes from where it stopped as soon as a slot is free again. Selecting a series that is already being transferred, or one that is complete, changes nothing.
+The interrupted series loses neither its place in the queue nor the images it had already received: it resumes from where it stopped as soon as a slot is free again.
+Selecting a series that is already being transferred, or one that is complete, changes nothing.
 
 This is what makes a large retrieve usable: instead of waiting for the whole study, click the series you want to read and it is transferred first, while the rest keeps downloading in the background.
 
@@ -181,4 +205,6 @@ When using a DICOMweb node, an external login may be required (for instance sign
 {{% /callout %}}
 
 ### From commands
-Weasis can be started — or asked to load a specific study — through commands launched locally or remotely. See [Examples to load images](../getting-started/weasis-protocol/#examples-to-load-images) on the Weasis Protocol page.
+
+Weasis can be started — or asked to load a specific study — through commands launched locally or remotely.
+See [Examples to load images](../getting-started/weasis-protocol/#examples-to-load-images) on the Weasis Protocol page.

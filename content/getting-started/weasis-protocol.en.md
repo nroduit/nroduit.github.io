@@ -10,8 +10,9 @@ The **Weasis Protocol** enables the launch of Weasis in a web context using a sp
 ### How to Use the Weasis Protocol
 
 To launch Weasis from various contexts:
-1. **From a Web Page**: Create a link that begins with `weasis://?` (see below [How to build an URI](#how-to-build-a-uri)).<br>
-   If certain web frameworks (e.g., WIKI) or contexts only support HTTP protocols, you can use a URL redirection starting with `https://`. A tool such as [Weasis PACS Connector](https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector) can help with this.
+
+1. **From a Web Page**: Create a link that begins with `weasis://?` (see below [How to build an URI](#how-to-build-a-uri)).<br> If certain web frameworks (e.g., WIKI) or contexts only support HTTP protocols, you can use a URL redirection starting with `https://`.
+   A tool such as [Weasis PACS Connector](https://github.com/nroduit/weasis-pacs-connector">weasis-pacs-connector) can help with this.
 2. **From the Command Line**: Utilize the appropriate Weasis command from the terminal:
 {{< tabs groupid="launchWeasisProtocol">}}
 {{% tab title="Windows" %}}
@@ -32,16 +33,21 @@ open weasis://?%24dicom%3Aget+-w+%22https%3A%2F%2Fnroduit.github.io%2Fdemo-archi
 {{< /tabs >}}
 
 ### How to Build a URI
-The `weasis://?` URI scheme allows you to launch Weasis directly from the system's URI handler. By constructing the correct URI path, you can execute [Weasis commands](../basics/commands) to load images or perform other actions.
 
-[Weasis PACS Connector](https://github.com/nroduit/weasis-pacs-connector#launch-weasis) can dynamically generate manifests (listing references for images to load) and build the required URI through an API. This tool also manages user preferences and other launch parameters.
+The `weasis://?` URI scheme allows you to launch Weasis directly from the system's URI handler.
+By constructing the correct URI path, you can execute [Weasis commands](../basics/commands) to load images or perform other actions.
+
+[Weasis PACS Connector](https://github.com/nroduit/weasis-pacs-connector#launch-weasis) can dynamically generate manifests (listing references for images to load) and build the required URI through an API.
+This tool also manages user preferences and other launch parameters.
 
 If you're not using the Weasis PACS Connector, you can build a URI manually by following these steps:
+
 1. **Choose Commands**: Select one or more [commands](../basics/commands) to execute.
 2. **Encode the Commands**: Use a URL encoder to format the commands correctly for URI inclusion.
 3. **Prefix the Commands**: Add the `weasis://?` scheme at the beginning of the encoded command string to create the final URI.
 
 ##### Example: Loading a Remote Image
+
 1. Use [$dicom:get](../basics/commands/#dicomget) to load an image from URL
 {{< highlight text >}}
 $dicom:get -r "https://nroduit.github.io/demo-archive/us-palette.dcm"
@@ -88,9 +94,14 @@ $image:get -u "https://user-images.githubusercontent.com/993975/59107662-6c9ed30
 
 The command for modifying the configuration at launch is `$weasis:config` which can have different arguments:
 
-* **cdb** is the Weasis web context (The URL of weasis-native.zip package in [ViewerHub](../viewer-hub)). If the value is null, the weasis version installed from the [native installer](download-dicom-viewer) is used. In the weasis-pacs-connector [configuration](https://github.com/nroduit/weasis-pacs-connector/blob/master/src/main/resources/weasis-pacs-connector.properties), the default value is defined by `weasis.base.url`.
-* **arg** is an argument for the launcher. The value must start by $, like arg="$dicom:close --all" (Note: the value can also be directly in the base URI, outside $weasis:config). Single-valued argument but can be specified multiple times.
-* **pro** is a property for the launcher containing a key and a value separate by a space. Single-valued property but can be specified multiple times.
+* **cdb** is the Weasis web context (The URL of weasis-native.zip package in [ViewerHub](../viewer-hub)).
+  If the value is null, the weasis version installed from the [native installer](download-dicom-viewer) is used.
+  In the weasis-pacs-connector [configuration](https://github.com/nroduit/weasis-pacs-connector/blob/master/src/main/resources/weasis-pacs-connector.properties), the default value is defined by `weasis.base.url`.
+* **arg** is an argument for the launcher.
+  The value must start by $, like arg="$dicom:close --all" (Note: the value can also be directly in the base URI, outside $weasis:config).
+  Single-valued argument but can be specified multiple times.
+* **pro** is a property for the launcher containing a key and a value separate by a space.
+  Single-valued property but can be specified multiple times.
 * **auth** is the web authorization parameter
 * **wcfg** is the URL the remote Weasis configuration service.
 
@@ -107,9 +118,11 @@ $weasis:config pro="weasis.user user2"
 
 ### Enterprise Deployment: Browser Protocol Configuration
 
-By default, Weasis registers the `weasis://` protocol through standard OS mechanisms. To ensure a seamless user experience in institutional environments, administrators can suppress the browser's security confirmation dialog using central policies.
+By default, Weasis registers the `weasis://` protocol through standard OS mechanisms.
+To ensure a seamless user experience in institutional environments, administrators can suppress the browser's security confirmation dialog using central policies.
 
 **Official Documentation**:
+
 - [Chrome Enterprise Policy List](https://chromeenterprise.google/policies/#URLAllowlist)
 - [Microsoft Edge - URLAllowlist](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-browser-policies/urlallowlist)
 - [Mozilla Policy Templates](https://github.com/mozilla/policy-templates#websitefilter)
@@ -124,6 +137,7 @@ Recommended for AD environments.
 2. **Value**: Add `weasis://*`
 
 **Direct Registry Deployment**:
+
 ```reg
 Windows Registry Editor Version 5.00
 
@@ -153,6 +167,7 @@ Create a policy file in the managed directory.
 * Firefox: /etc/firefox/policies/policies.json
 
 Example JSON (Chrome/Chromium):
+
 ``` json
 {
   "URLAllowlist": ["weasis://*"]
@@ -160,6 +175,7 @@ Example JSON (Chrome/Chromium):
 ```
 
 Example JSON (Firefox):
+
 ``` json
 {
   "policies": {

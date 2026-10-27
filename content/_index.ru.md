@@ -127,6 +127,7 @@ aliases:
 ### Сообщество &amp; поддержка
 
 - **Вопросы** — [GitHub Discussions](https://github.com/nroduit/Weasis/discussions) · [Форум dcm4che](https://groups.google.com/group/dcm4che) · [FAQ](/en/faq)
-- **Сообщения об ошибках и пожелания** — [Issues на GitHub](https://github.com/nroduit/Weasis/issues) (см. [как составить полезный отчёт об ошибке](/en/faq#how-do-i-report-a-bug))
+- **Сообщения об ошибках и пожелания** — [Issues на GitHub](https://github.com/nroduit/Weasis/issues) (см.
+  [как составить полезный отчёт об ошибке](/en/faq#how-do-i-report-a-bug))
 - **Участвовать** — [вклад в код, переводы, документацию и рассказы](/en/get-involved)
 - **Цитировать Weasis в публикации** — [формат цитирования](/en/faq#how-to-cite-weasis-in-a-publication)

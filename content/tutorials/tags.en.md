@@ -8,7 +8,8 @@ keywords: [ "dicom attributes", "dicom tags", "dicom header viewer", "tag viewer
 
 ## <center>Metadata in the layout, or in a separate window {{< svg-inline "static/tuto/icon/metadata.svg" >}}</center>
 
-Every DICOM object carries a set of **attributes** (also called **tags** or metadata) that describe the patient, the study, the acquisition device, the imaging parameters, and so on. Weasis can display these attributes in two ways — a dynamic in-layout view that follows the current image, or a detached window snapshot of a single instance.
+Every DICOM object carries a set of **attributes** (also called **tags** or metadata) that describe the patient, the study, the acquisition device, the imaging parameters, and so on.
+Weasis can display these attributes in two ways — a dynamic in-layout view that follows the current image, or a detached window snapshot of a single instance.
 
 ### Opening the DICOM attributes
 
@@ -33,10 +34,12 @@ When Weasis opens certain DICOM payloads with an external application (e.g. enca
 <br>
 
 ## How to find a specific DICOM attribute or value
+
 The DICOM Information window has two tabs:
 
 * **Limited DICOM attributes** — the main attributes grouped by category (a curated subset for everyday use).
-* **All DICOM attributes** — every attribute present in the file. Each [data element](https://dicom.nema.org/medical/dicom/current/output/chtml/part05/chapter_7.html) is shown in four columns: **Tag ID**, **VR**, **Tag Name**, **Value**.
+* **All DICOM attributes** — every attribute present in the file.
+  Each [data element](https://dicom.nema.org/medical/dicom/current/output/chtml/part05/chapter_7.html) is shown in four columns: **Tag ID**, **VR**, **Tag Name**, **Value**.
 
 {{% callout note %}}
 When a data element holds multiple values, they are separated by a single backslash `\`.
@@ -47,11 +50,13 @@ Data elements whose [Value Representation (VR)](https://dicom.nema.org/medical/d
 ![Search DICOM tags](/tuto/dicom-attributes-search.jpg?classes=shadow)
 <br>
 
-The example above searches for the word **date**. The procedure is:
+The example above searches for the word **date**.
+The procedure is:
 
 1. Switch to the **All DICOM attributes** tab so every attribute is searchable.
 2. Type the search term in the search field.
-3. Use the navigation arrows to jump between highlighted matches. The rightmost button **filters the list to only the matching rows** (instead of just highlighting them inside the full list).
+3. Use the navigation arrows to jump between highlighted matches.
+   The rightmost button **filters the list to only the matching rows** (instead of just highlighting them inside the full list).
 
 Using {{% icon icon="filter" %}} in the toolbar applies a persistent filter on the attribute list — useful when you want to keep the focus on a specific set of attributes while scrolling through a stack of images (in-layout view {{% badge style="red" %}}A{{% /badge %}}) only).
 

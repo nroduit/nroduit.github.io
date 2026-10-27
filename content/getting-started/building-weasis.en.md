@@ -5,7 +5,8 @@ keywords: [ "build weasis", "compile from source", "maven build", "native instal
 weight: 30
 ---
 
-These instructions guide you through building Weasis directly from its GitHub repository. For IDE-based builds, refer to the [Weasis plugin development guidelines](guidelines).
+These instructions guide you through building Weasis directly from its GitHub repository.
+For IDE-based builds, refer to the [Weasis plugin development guidelines](guidelines).
 
 **Prerequisites**
 
@@ -23,6 +24,7 @@ git clone https://github.com/nroduit/Weasis.git
 {{< /highlight >}}
 
 ### Building All Plugins
+
 - Navigate to the root directory of the cloned `Weasis` repository, compile and install all plugins into the local Maven repository:
 {{< highlight shell >}}
 mvn clean install
@@ -49,15 +51,15 @@ mvn -Dchangelist=-mybuild-beta -P compressXZ -f weasis-distributions clean packa
 {{< /highlight >}}
 {{% /callout %}}
 
-
 ### Building native binaries and installers
 
 The native installer has fully replaced the portable and Java WebStart distributions {{< since "4.0.0" >}}.
 
 The [official build process](https://github.com/nroduit/Weasis/blob/master/.github/workflows/build-installer.yml) is executed via GitHub Actions using [GitHub-hosted runners](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners) across Linux, macOS, and Windows.
 
-However, you can also build the native binaries and installer locally using the `package-weasis.sh` script. This process is not guaranteed to work on all systems, as it requires proper configuration of multiple tools. Refer to the [jpackage prerequisites](https://docs.oracle.com/en/java/javase/20/jpackage/packaging-overview.html) for more details.
-
+However, you can also build the native binaries and installer locally using the `package-weasis.sh` script.
+This process is not guaranteed to work on all systems, as it requires proper configuration of multiple tools.
+Refer to the [jpackage prerequisites](https://docs.oracle.com/en/java/javase/20/jpackage/packaging-overview.html) for more details.
 
 - Obtain the `weasis-native.zip` file, extract the archive, and navigate to the root folder in a Bash prompt.
 - Run the following command to build the native binaries and installer:

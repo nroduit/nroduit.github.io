@@ -7,7 +7,8 @@ weight: 30
 
 ## <center>How to build and install a plugin</center>
 
-This page provides a guide on creating new Weasis plugins and explains how to integrate them into the distributions. For details on configuring the development environment, refer to this [guidelines page](../../getting-started/guidelines).
+This page provides a guide on creating new Weasis plugins and explains how to integrate them into the distributions.
+For details on configuring the development environment, refer to this [guidelines page](../../getting-started/guidelines).
 
 ### Types of Plugins in Weasis
 
@@ -59,11 +60,13 @@ For more information about the plugin hierarchy and their relationships, refer t
     ``` bash
        mvn archetype:generate -DarchetypeCatalog=local
     ```
-3. When prompted, enter the number of one of the archetypes. Currently, the following archetypes are available:
+3. When prompted, enter the number of one of the archetypes.
+   Currently, the following archetypes are available:
     - **`weasis-plugin-base-viewer-archetype`**: Example of a toolbar and tool for a non-DICOM viewer.
     - **`weasis-plugin-dicom-viewer-archetype`**: Example of a toolbar and tool for a DICOM viewer.
 4. Modify the generated project as needed.
-   - In the pom.xml file, ensure the `<relativePath>` tag corresponds to the location of your Weasis source folder. By default, the value is `<relativePath>../Weasis/weasis-parent/pom.xml</relativePath>` (In this scenario, the plugin resides in the same parent folder as the Weasis source code).
+   - In the pom.xml file, ensure the `<relativePath>` tag corresponds to the location of your Weasis source folder.
+     By default, the value is `<relativePath>../Weasis/weasis-parent/pom.xml</relativePath>` (In this scenario, the plugin resides in the same parent folder as the Weasis source code).
    - When the relative path is set correctly, `<version>${revision}${changelist}</version>` in the pom.xml file will automatically be updated to the latest version of the Weasis source.
    - For easier version management in the pom.xml, you can remove `<version>` at the project level to inherit it from the parent.
 5. Build the plugin by executing the following command in the plugin project directory:
@@ -82,7 +85,7 @@ If the versions do not match, the plugin may fail to start and produce an error 
 
 #### Testing the Plugin
 
-To test the plugin with an installed version of Weasis without making any changes to the installed directory, create a JSON file that extends the configuration specified in [base.json](https://github.com/nroduit/Weasis/blob/master/weasis-distributions/etc/config/base.json). 
+To test the plugin with an installed version of Weasis without making any changes to the installed directory, create a JSON file that extends the configuration specified in [base.json](https://github.com/nroduit/Weasis/blob/master/weasis-distributions/etc/config/base.json).
 
 1. Create a new json file (e.g., `myplugin.json`) with the following content:
     ``` json
@@ -101,8 +104,10 @@ To test the plugin with an installed version of Weasis without making any change
     }
     ```
 2. Update the content of `myplugin.json` as required:
-    - Ensure the plugin start level (above 500) is lower than the OSGi beginning level (above 550). Avoid using values below this range to prevent conflicts with other plugins.
-    - For easier testing, use an absolute JAR path that matches your local plugin directory. Use a URI format for the path like:
+    - Ensure the plugin start level (above 500) is lower than the OSGi beginning level (above 550).
+      Avoid using values below this range to prevent conflicts with other plugins.
+    - For easier testing, use an absolute JAR path that matches your local plugin directory.
+      Use a URI format for the path like:
     {{< tabs groupid="launchPlugin">}}
       {{% tab title="Windows" %}}
       file:///D:/git/myplugin/target/myplugin-4.5.2.jar
@@ -114,7 +119,7 @@ To test the plugin with an installed version of Weasis without making any change
       file:///git/myplugin/target/myplugin-4.5.2.jar
       {{% /tab %}}
       {{< /tabs >}}
-3. Launch Weasis with your configuration: 
+3. Launch Weasis with your configuration:
     - Use the following parameter to extend the configuration (adapt the path to your local file):
       {{< tabs groupid="launchPlugin">}}
       {{% tab title="Windows" %}}
@@ -140,32 +145,37 @@ To test the plugin with an installed version of Weasis without making any change
       {{% /tab %}}
       {{< /tabs >}}
 
-
 #### Using ViewerHub
-This feature will be available soon. It will allow you to manage the plugins and their configurations directly from the ViewerHub web portal.
+
+This feature will be available soon.
+It will allow you to manage the plugins and their configurations directly from the ViewerHub web portal.
 
 ### Build OSGi Services
 
-All the plugin type described in the list above are OSGi services that are registered and aggregated in the GUI. Building the plugin from the Maven archetype will configure the OSGi service automatically. For adding new OSGi services, here is the procedure:
-1. Create a class that implements the `Insertable` interface and represents a visual component. For example,
+All the plugin type described in the list above are OSGi services that are registered and aggregated in the GUI.
+Building the plugin from the Maven archetype will configure the OSGi service automatically.
+For adding new OSGi services, here is the procedure:
+
+1. Create a class that implements the `Insertable` interface and represents a visual component.
+   For example,
     {{< highlight java >}}
     public class MyPrefView extends AbstractItemDialogPage {
-    
+
        public MyPrefView() {
            super("My Preferences", 100); // Provide a name and the page position
            initGUI();
        }
-    
+
        private void initGUI() {
            // Add a basic JLabel to the preference panel for demonstration
            add(new JLabel("Welcome to My Preferences!"));
        }
-    
+
        @Override
        public void closeAdditionalWindow() {
            // Handle any cleanup or saving preferences when closing
        }
-    
+
        @Override
        public void resetToDefaultValues() {
            // Reset preferences to default values
@@ -173,7 +183,8 @@ All the plugin type described in the list above are OSGi services that are regis
     }
     {{< /highlight >}}
 
-2. Create a class that implements one of the plugin factories and include the annotations `@Component` and the `@Service` parameter. For example,
+2. Create a class that implements one of the plugin factories and include the annotations `@Component` and the `@Service` parameter.
+   For example,
 {{< highlight java >}}
 @org.osgi.service.component.annotations.Component(service = PreferencesPageFactory.class)
 public class MyViewerPrefFactory implements PreferencesPageFactory {
@@ -182,7 +193,7 @@ public class MyViewerPrefFactory implements PreferencesPageFactory {
     public AbstractItemDialogPage createInstance(Hashtable<String, Object> properties) {
     return new MyPrefView();
     }
-    
+
     @Override
     public boolean isComponentCreatedByThisFactory(Insertable component) {
     return component instanceof MyPrefView;
@@ -193,4 +204,3 @@ public class MyViewerPrefFactory implements PreferencesPageFactory {
 {{% callout tip %}} 
 For more details on annotations, refer to the [Apache Felix SCR Annotations documentation](https://felix.apache.org/documentation/subprojects/apache-felix-maven-scr-plugin/scr-annotations.html).
 {{% /callout %}}
-
