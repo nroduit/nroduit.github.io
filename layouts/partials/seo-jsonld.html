@@ -54,8 +54,8 @@
        it lives in assets/, so that moving it there for image processing does not
        leave this pointing at a file nobody publishes; the static path is the
        fallback. */ -}}
-{{- $screenshot := printf "%s/tuto/seg-mpr-vr.jpg" $base -}}
-{{- with resources.Get "tuto/seg-mpr-vr.jpg" }}{{ $screenshot = .Permalink }}{{ end -}}
+{{- $screenshot := printf "%s/tuto/seg-mpr-vr.webp" $base -}}
+{{- with resources.Get "tuto/seg-mpr-vr.webp" }}{{ $screenshot = .Permalink }}{{ end -}}
 
 {{- if .IsHome -}}
   {{- /* `sameAs` lists the profiles that are this same organization elsewhere: it is

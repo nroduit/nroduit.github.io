@@ -110,7 +110,7 @@ Queries a remote PACS and retrieves the selected studies or series into the DICO
 * **More options** — opens the preferences so you can add or edit DICOM nodes. Nodes shipped by your site in `config/dicomNodes.json` of the resources package are listed as *(site)* and cannot be edited {{< since "4.8.0" >}}; see [Configuration documents](../basics/customize/preferences/#configuration-documents).
 
 ##### Search Criteria tab
-![Thumbnails](/tuto/dicom-import-search.webp?classes=shadow&width=700px)
+![DICOM Query/Retrieve search criteria and results](/tuto/dicom-import-search.webp?classes=shadow&width=700px)
 <br>
 
 1. Narrow the query by **study date** with the date drop-down: **All dates** (no date filter), a single day such as **Today**, **Yesterday** or **Day before yesterday**, a current period (**This week**, **This month**, **This year**), or a rolling window (**Last 24 hours**, **Last week**, **Last month**, **Last year**…). Choosing one fills in the start and end dates; either can then be adjusted on its own, and clicking a date field opens a calendar to pick an exact day {{< since "4.7.0" >}}.

@@ -27,20 +27,27 @@ Extended again {{< since "4.7.2" >}} with:
 - A **_Loading segmentations…_** message painted in the views while a segmentation volume is built in the background.
 
 ### How to display DICOM SEG in the 2D viewer {#region-info}
-To display the SEG regions as an overlay on the image, follow these steps (see the image below):
+To display the SEG regions as an overlay on the image, follow these steps (the numbers match those on the image below):
 
 1. Open a DICOM series that has a linked SEG object. The link is indicated by the segmentation icon {{< svg-inline "static/tuto/icon/segmentation.svg" >}} in the lower-right corner of the thumbnail. A series **without** the icon may still display the segmentation — see [which series can display a segmentation](#related-series).
 2. Once the image is displayed, click {{< svg-inline "static/tuto/icon/normalize.svg" >}} on the vertical {{< svg-inline "static/tuto/icon/segmentation.svg" >}} button to open the _Segmentation_ panel on the right side of the viewer.
-3. Every SEG file that can be overlaid on the current series appears as a top-level node in the tree. Expand a SEG node to reveal its regions and tick the ones you want to display. Each node carries the **color** used to draw it. Regions that share a common name prefix are grouped under a parent node — the parent must be checked for any of its children to be visible.
+3. Each root node of the tree is a SEG file: every SEG file that can be overlaid on the current series is listed. Expand a SEG node to reveal its regions and tick the ones you want to display. Each region carries the **color** used to draw it. Regions that share a common name prefix are grouped under a parent node. A region is drawn only when its SEG node and its parent node are checked too: in the image below, only the *Anatomy Segmentation* file is checked, so the regions of *DGM Main Segmentation* are not drawn even though they are ticked.
 4. {{% badge style="info" %}}Optional{{% /badge %}} Adjust the global graphic opacity (border and interior fill) with the slider.
 5. {{% badge style="info" %}}Optional{{% /badge %}} Use **Show all** / **Hide all** at the bottom of the panel to tick or untick every segmentation in one click. **Alt + S** does the same directly from the view without opening the panel {{< since "4.7.2" >}}: it hides every segmentation when at least one is visible, and shows them all otherwise.
-6. {{% badge style="info" %}}Optional{{% /badge %}} Use tooltips to see the region description, voxel count and estimated volume for each region. For **FRACTIONAL** regions a color-gradient bar is also displayed to help interpret the probability ramp.
+6. {{% badge style="info" %}}Optional{{% /badge %}} Hover over a region, either its entry in the tree or its graphic on the image, to show a tooltip with the region description, voxel count and estimated volume. For **FRACTIONAL** regions a color-gradient bar is also displayed to help interpret the probability ramp.
 
 Try to open a SEG sample {{< launch >}}
 $dicom:get -w "https://nroduit.github.io/demo-archive/demo/seg.xml"
 {{< /launch >}}
 
-![DICOM SEG](/tuto/seg-2d.jpg?classes=shadow&width=100%)
+{{% annotate src="/tuto/seg-2d.webp" viewbox="0 0 1318 754" alt="Sagittal brain MR with two DICOM SEG files overlaid, the Segmentation panel listing their regions, and the tooltip of a region showing its algorithm, voxel count and volume" class="shadow" %}}
+1 | | 122,284 | 26
+2 | | 1128,20 | 26
+3 | | 1280,338 | 26
+4 | | 1272,657 | 26
+5 | | 1186,720 | 26
+6 | | 948,582 | 26
+{{% /annotate %}}
 <br>
 
 {{% callout note %}}
@@ -133,7 +140,7 @@ For MPR, Weasis additionally has to reslice the SEG along the new planes. This e
 The MPR overlay works even when the SEG has a different orientation, spacing or scanning direction than the source images — for example an AI model that segments at a coarser resolution. Weasis reprojects the mask into the image coordinate system, so contours stay aligned on every plane.
 {{% /callout %}}
 
-![DICOM SEG](/tuto/seg-mpr-vr.jpg?classes=shadow&width=100%)
+![Brain MR with DICOM SEG regions on the three MPR planes and in two 3D views, without and with the segmentation, beside the Volume Segmentation panel](/tuto/seg-mpr-vr.webp?classes=shadow&width=100%)
 <br>
 
 ---

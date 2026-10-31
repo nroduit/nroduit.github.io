@@ -21,7 +21,7 @@ A series can be fused onto the displayed base only when **all** of the following
 
 | Condition | Detail |
 |-----------|--------|
-| **Modality pairing** | A functional overlay (`PT`, `NM`) on an anatomical base (`CT`, `MR`). |
+| **Modality pairing** | A functional overlay (`PT`, `NM`) or an RT dose (`RTDOSE`) {{< since "4.8.0" >}} on an anatomical base (`CT`, `MR`). An RT dose is usually shown with the [Colorwash](dicom-rt#colorwash) option of the RT Tool. |
 | **Same study** | Both series share the same `StudyInstanceUID`. |
 | **Volume geometry** | Both are cross-sectional volumes (≥ 2 slices with Image Position / Orientation Patient and Pixel Spacing). |
 | **Same coordinate system** | Either the `FrameOfReferenceUID` matches, or — as is common for separately reconstructed PET/CT — the two volumes **overlap in patient space**. |
@@ -32,11 +32,22 @@ When no compatible overlay is found in the study, the fusion controls stay disab
 
 The fusion controls live in the **Fusion** section of the **Image tool** {{< svg-inline "static/tuto/icon/imageEdit.svg" >}} panel. The section is collapsed by default — click its header to expand it.
 
-- **Enable Fusion** — turns the overlay on or off. The other controls become active only while fusion is enabled.
-- **Series** — the functional series to overlay. The list contains every compatible overlay found in the current study (see [Requirements](#requirements)).
-- **LUT** — the color lookup table applied to the overlay. **PET** (a hot-metal palette tuned for functional data) is the default; {{< since "4.8.0" >}} a PET or SPECT overlay starts with **PET SUV**, the same ramp graduated in SUVbw, and an RT dose overlay with **Isodose**. The list gathers the maps meant for overlays and those tied to `PT`, `NM` and `RTDOSE`; see [Color Maps](color-maps/) for the whole library and for the editor that creates your own {{< since "4.8.0" >}}. The values are mapped to it through a series-wide [display window](#color-scale), not through the window/level of the functional series.
-- **Opacity** — two sliders control the blend at composite time: `result = baseOpacity·base·(1 − a) + overlay·a`, where `a` is the overlay's own transparency at that pixel — it grows with the value and reaches the **Opacity** setting within the lower tenth of the [display window](#color-scale), so background stays invisible while everything above it is blended at the chosen opacity. Each slider is labeled with the modality of the layer it controls (e.g. **CT** for the base, **PT** for the overlay). Defaults are **100 %** base and **50 %** overlay. Setting the base to **0 %** leaves the colorized overlay alone over a black background.
-- **Scale maximum** {{< since "4.8.0" >}} — the top of the overlay's [display window](#color-scale), in its display unit (`SUVbw` for a PET with SUV). It moves the top only, the bottom stays fixed; dragging the color bar on the view does the same. See [Adjust the scale maximum](#scale-max).
+{{% annotate src="/tuto/fusion-tools.webp" viewbox="0 0 1386 1216" alt="PET/CT fusion in the MPR viewer with the PET SUV color map and an SUVbw color bar on each plane, and the Fusion section of the Image Tools panel expanded" class="shadow" %}}
+A | | 1224,810 | 26
+B | | 1262,847 | 26
+C | | 1296,882 | 26
+D | | 1232,906 | 26
+D | | 1226,962 | 26
+E | | 1302,1028 | 26
+F | | 955,300 | 26
+{{% /annotate %}}
+<br>
+
+- **Enable Fusion** {{% badge style="red" %}}A{{% /badge %}} — turns the overlay on or off. The other controls become active only while fusion is enabled.
+- **Series** {{% badge style="red" %}}B{{% /badge %}} — the functional series to overlay. The list contains every compatible overlay found in the current study (see [Requirements](#requirements)).
+- **LUT** {{% badge style="red" %}}C{{% /badge %}} — the color lookup table applied to the overlay. **PET** (a hot-metal palette tuned for functional data) is the default; {{< since "4.8.0" >}} a PET or SPECT overlay starts with **PET SUV**, the same ramp graduated in SUVbw, and an RT dose overlay with **Isodose**. The list gathers the maps meant for overlays and those tied to `PT`, `NM` and `RTDOSE`; see [Color Maps](color-maps/) for the whole library and for the editor that creates your own {{< since "4.8.0" >}}. The values are mapped to it through a series-wide [display window](#color-scale), not through the window/level of the functional series.
+- **Opacity** {{% badge style="red" %}}D{{% /badge %}} — two sliders control the blend at composite time: `result = baseOpacity·base·(1 − a) + overlay·a`, where `a` is the overlay's own transparency at that pixel — it grows with the value and reaches the **Opacity** setting within the lower tenth of the [display window](#color-scale), so background stays invisible while everything above it is blended at the chosen opacity. Each slider is labeled with the modality of the layer it controls (e.g. **CT** for the base, **PT** for the overlay). Defaults are **100 %** base and **50 %** overlay. Setting the base to **0 %** leaves the colorized overlay alone over a black background.
+- **Scale maximum** {{% badge style="red" %}}E{{% /badge %}} {{< since "4.8.0" >}} — the top of the overlay's [display window](#color-scale), in its display unit (`SUVbw` for a PET with SUV). It moves the top only, the bottom stays fixed; dragging the color bar on the view does the same. See [Adjust the scale maximum](#scale-max).
 
 The overlay follows the base view as you scroll, zoom, window, or reslice it. Because the fusion is resampled from the functional **volume**, it stays correct on **oblique, coronal and sagittal** planes, not only the native acquisition plane.
 
@@ -62,7 +73,7 @@ A [color map](color-maps/) anchored to physical values carries its own scale, an
 
 The upper bound is a high percentile of the active voxels rather than the plain maximum: physiologic excretion (bladder) and the injection site are several times hotter than any diagnostic structure, so they saturate at the top of the palette instead of pushing the rest of the study into its first tenth. The lower bound is **0**: the scale is read from zero, with no background subtraction. The lowest activity is still kept off the anatomy, because the overlay only fades in over the first tenth of the window (see **Opacity** above).
 
-The resulting scale is drawn as a **color bar** on the fused view, beside the [LUT bar](lut) of the base image when both are shown:
+The resulting scale is drawn as a **color bar** {{% badge style="red" %}}F{{% /badge %}} on the fused view, beside the [LUT bar](lut) of the base image when both are shown:
 
 - The value at the top of the bar is the window maximum, the one at the bottom its minimum.
 - The unit written above it is **`SUVbw`** when SUV could be computed, the **DICOM pixel value unit** (`BQML`, `CNTS`, …) otherwise, or a **percentage** of the series maximum when the series carries no unit. Only `SUVbw` values can be compared with another acquisition: the others depend on the injected dose, the patient weight and the uptake time.
@@ -99,10 +110,7 @@ SUV is computed with the body-weight method (SUVbw), following the [vendor-neutr
 
 ### Fusion in the MPR viewer {#mpr}
 
-![Fusion on MPR](/tuto/fusion-mpr.webp?classes=shadow)
-<br>
-
-Opening the [MPR viewer](mpr) from a fused 2D view **carries the fusion over**: the three MPR planes start with the same overlay series, LUT, opacities and [scale](#color-scale) you set in the 2D view. The three planes are views of one volume, so they share **one** fusion setting: a change made from any plane — enabling or disabling fusion, another series or LUT, an opacity, the [scale maximum](#scale-max) — applies to all three at once, and the overlay reads the same on every plane. The MPR fusion is independent of the 2D view it came from: changing one does not affect the other.
+The [screenshot above](#enable) shows a fusion in the MPR viewer, with the color bar on each plane. Opening the [MPR viewer](mpr) from a fused 2D view **carries the fusion over**: the three MPR planes start with the same overlay series, LUT, opacities and [scale](#color-scale) you set in the 2D view. The three planes are views of one volume, so they share **one** fusion setting: a change made from any plane — enabling or disabling fusion, another series or LUT, an opacity, the [scale maximum](#scale-max) — applies to all three at once, and the overlay reads the same on every plane. The MPR fusion is independent of the 2D view it came from: changing one does not affect the other.
 
 {{% callout note %}}
 Inheritance only applies when the overlay is still compatible with the reconstructed MPR base. If you open MPR from a non-fused view, the planes start with fusion off, and you can enable it from the same **Fusion** section as in the 2D viewer.

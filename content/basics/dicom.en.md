@@ -100,9 +100,9 @@ Implicit VR Little Endian is not offered in the Export dialog. Weasis uses it in
 | 1.2.840.10008.1.2.4.110 | image/jxl  | JPEG XL Lossless {{< since "4.6.4" >}}                                                                          | yes  | yes   |
 | 1.2.840.10008.1.2.4.111 | image/jxl  | JPEG XL JPEG Recompression {{< since "4.6.4" >}}                                                                | yes  | yes   |
 | 1.2.840.10008.1.2.4.112 | image/jxl  | JPEG XL {{< since "4.6.4" >}}                                                                                   | yes  | yes   |
-| 1.2.840.10008.1.2.4.201 | image/jphc | High-Throughput JPEG 2000 Image Compression (Lossless Only)                                                     | yes  | No    |
-| 1.2.840.10008.1.2.4.202 | image/jphc | High-Throughput JPEG 2000 with RPCL Options Image Compression (Lossless Only)                                   | yes  | No    |
-| 1.2.840.10008.1.2.4.203 | image/jphc | High-Throughput JPEG 2000 Image Compression                                                                     | yes  | No    |
+| 1.2.840.10008.1.2.4.201 | image/jphc | High-Throughput JPEG 2000 Image Compression (Lossless Only) {{< since "4.4.0" >}}                               | yes  | No    |
+| 1.2.840.10008.1.2.4.202 | image/jphc | High-Throughput JPEG 2000 with RPCL Options Image Compression (Lossless Only) {{< since "4.4.0" >}}             | yes  | No    |
+| 1.2.840.10008.1.2.4.203 | image/jphc | High-Throughput JPEG 2000 Image Compression {{< since "4.4.0" >}}                                               | yes  | No    |
 
 <br>
 

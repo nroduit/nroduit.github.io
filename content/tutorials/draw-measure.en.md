@@ -13,7 +13,15 @@ The **Draw & Measure** panel lets you annotate and measure on DICOM and standard
 - Lengths and areas use the image's spatial [calibration](calibration) when available.
 - Closed shapes also report statistics of the pixels they enclose.
 
-![Draw & Measure](/tuto/measure.jpg?classes=shadow&width=100%)
+{{% annotate src="/tuto/measure.webp" viewbox="0 0 1218 947" alt="PA chest radiograph with several measurements and text labels, a selected polyline, and the Draw & Measure panel with its profile list, tool palettes, graphic options, intensity profile, whose cursor position is marked by a crosshair on the selected polyline, and selected measurement table" class="shadow" %}}
+F | | 1171,85 | 26
+A | | 1175,227 | 26
+B | | 1111,261 | 26
+C | | 1169,399 | 26
+G | | 1171,541 | 26
+D | | 1177,722 | 26
+E | | 777,421 | 26
+{{% /annotate %}}
 <br>
 
 Where the results are persisted depends on the image type:
@@ -23,11 +31,13 @@ Where the results are persisted depends on the image type:
 
 
 ### Draw & Measure Panel
-Click {{< svg-inline "static/tuto/icon/normalize.svg" >}} on the vertical button {{< svg-inline "static/tuto/icon/measure.svg" >}} to dock the panel on the right side of the viewer. The panel is divided into four parts:
+Click {{< svg-inline "static/tuto/icon/normalize.svg" >}} on the vertical button {{< svg-inline "static/tuto/icon/measure.svg" >}} to dock the panel on the right side of the viewer. From top to bottom, the panel shows:
 
+- [Profile list](#tool-profiles) {{% badge style="red" %}}F{{% /badge %}} {{< since "4.8.0" >}}
 - [Measurement tools](#measurement-tools) {{% badge style="red" %}}A{{% /badge %}}
 - [Drawings](#drawings) {{% badge style="red" %}}B{{% /badge %}}
 - [Graphic Options](#graphic-options) {{% badge style="red" %}}C{{% /badge %}}
+- [Tool panel](#tool-panel) {{% badge style="red" %}}G{{% /badge %}} {{< since "4.8.0" >}}
 - [Selected Measurement](#selected-measurement) {{% badge style="red" %}}D{{% /badge %}}
 
 #### Measurement tools {{% badge style="red" %}}A{{% /badge %}} {#measurement-tools}
@@ -161,7 +171,7 @@ New drawings {{< since "4.8.0" >}}:
 * **Ruler** — a graduated bar. On a calibrated image it has one tick per centimeter, every fifth tick longer; otherwise one tick per fifty pixels.
 * **Freehand** pencil.
 
-#### Tool profiles {#tool-profiles}
+#### Tool profiles {{% badge style="red" %}}F{{% /badge %}} {#tool-profiles}
 
 The **Profile** list at the top of the panel chooses which tools the two palettes show, with their defaults {{< since "4.8.0" >}}.
 
@@ -185,7 +195,7 @@ Where profiles come from:
 - Your own profiles are created in the [preferences](#preferences).
 - An administrator can ship profiles for a site in `config/measurementProfiles.json` of the resources package (see [Configuration documents](../basics/customize/preferences/#configuration-documents)). They are marked *(site)* in the list and are read-only.
 
-#### Tool panel {#tool-panel}
+#### Tool panel {{% badge style="red" %}}G{{% /badge %}} {#tool-panel}
 
 Some tools need more than an icon. A collapsible section opens between the tool buttons and the table {{< since "4.8.0" >}} when such a tool is selected in the palette, or when one of its graphics is selected on the image.
 

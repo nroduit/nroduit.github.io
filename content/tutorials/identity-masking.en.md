@@ -19,7 +19,7 @@ It is **not a de-identification**. The DICOM files themselves never change: what
 2. Read the warning dialog: it reminds you that this is not a de-identification, that burned-in text has to be redacted by hand, and that DICOM files exported or sent keep their original attributes.
 3. Pick the profile in the **Identity** list — **Display** is the default — and click **OK**.
 
-<!-- SCREENSHOT TO ADD: /tuto/masking-dialog.webp (the Anonymize displayed data warning dialog with the Identity list). Insert as: ![Anonymize displayed data dialog](/tuto/masking-dialog.webp?classes=shadow) -->
+![Anonymize displayed data dialog](/tuto/masking-dialog.webp?classes=shadow)
 
 While masking is on:
 
@@ -27,7 +27,7 @@ While masking is on:
 * the title of the main window carries the same text, so a screen recording shows at a glance that the identities are not real;
 * every selector of the output dialogs starts from the session profile (see [Mask the pictures you produce](#outputs)).
 
-<!-- SCREENSHOT TO ADD: /tuto/masking-window.webp (the main window with masking on: Anonymized display badge at the right of the menu bar and in the window title, pseudonyms in explorer and view annotations). Insert as: ![Weasis window with the anonymized display on](/tuto/masking-window.webp?classes=shadow) -->
+![Weasis window with the anonymized display on](/tuto/masking-window.webp?classes=shadow)
 
 To turn it off, uncheck **Anonymize displayed data**, or click the badge and choose **Turn off anonymization**. The real names come back at once.
 
@@ -43,7 +43,7 @@ The same information is masked wherever it is displayed:
 
 A name or an identifier becomes a **pseudonym**: a person name is shown as `ANONYMOUS^` followed by eight hexadecimal characters, an identifier as the eight characters alone. The same value always gives the same pseudonym during a session, so a patient opened in several tabs, or exported several times, keeps one pseudonym everywhere. Pseudonyms change from one run of Weasis to the next and are never written to disk.
 
-<!-- SCREENSHOT TO ADD: /tuto/masking-before-after.webp (the same explorer and 2D view side by side, without and with masking (public dataset)). Insert as: ![Explorer and viewer before and after masking](/tuto/masking-before-after.webp?classes=shadow) -->
+![Explorer and viewer before and after masking](/tuto/masking-before-after.webp?classes=shadow)
 
 Profiles that **shift dates** move every date of the session by one random offset between 30 and 329 days, so the interval between two studies of the same patient is preserved — a follow-up still reads as a follow-up.
 
@@ -67,7 +67,7 @@ You can clone a built-in profile and adjust it in the [preferences](#preferences
 
 The dialogs that produce a picture carry an **Identity** list with the same profiles plus **Keep identity**. The profile applies only while the picture is rendered: the screen keeps showing what it showed, masked or not.
 
-<!-- SCREENSHOT TO ADD: /tuto/masking-identity-selector.webp (Take a screenshot dialog with the Identity list open, and the notice Identity may be printed into the pixels of this image). Insert as: ![Identity list of the Take a screenshot dialog](/tuto/masking-identity-selector.webp?classes=shadow) -->
+![Identity list of the Take a screenshot dialog](/tuto/masking-identity-selector.webp?classes=shadow)
 
 | Dialog | Default when the screen is not masked |
 |---|---|
@@ -90,7 +90,7 @@ Ultrasound scanners, angiography systems and screen captures often print the pat
 2. Choose the scope: **Image** hides the areas on the current image only, **Series** on every image of the series. Printed text sits at the same place on every frame of a cine loop, so *Series* is usually the right choice.
 3. Click **Redact**. The shapes become redaction regions and the drawings disappear.
 
-<!-- SCREENSHOT TO ADD: /tuto/redaction-bar.webp (ultrasound image with the Redaction Bar visible and the burned-in header painted over). Insert as: ![Redaction Bar with a redacted region](/tuto/redaction-bar.webp?classes=shadow) -->
+![Redaction Bar with a redacted region](/tuto/redaction-bar.webp?classes=shadow)
 
 Redactions apply to every view of the series, to its thumbnails in the explorer and in the export dialog, and to every picture produced from it: screenshot, print, image export, animation. They live in memory for the session only, and a DICOM export still writes the original pixels.
 
@@ -104,7 +104,7 @@ A given scanner prints its text at the same place on every image. Instead of red
 2. Open the **Device masks and regions** menu of the Redaction Bar and choose **Save these regions for this device...**. The dialog **Save for this device** proposes a **Name**, lists under **Applies to** the attributes that identify the device — modality, station name, manufacturer, model, institution — and shows under **Drawn on** the size of the image the regions were drawn on. The station name and the modality are checked by default; check more attributes to narrow the match, fewer to widen it.
 3. Give each **Region** the kind of information it hides, and save.
 
-<!-- SCREENSHOT TO ADD: /tuto/device-mask-dialog.webp (Save for this device dialog: Name, Applies to attributes, Drawn on size, regions with their kind). Insert as: ![Save for this device dialog](/tuto/device-mask-dialog.webp?classes=shadow) -->
+![Save for this device dialog](/tuto/device-mask-dialog.webp?classes=shadow)
 
 From then on, every image whose attributes match the entry, and whose proportions are the same as the image the regions were drawn on, gets the regions automatically. The **Device masks and regions** button is then shown pressed, and its tooltip gives the name of the entry. A region is painted only when the profile in force hides that kind of information; with masking off and no picture being produced, nothing is painted. Regions are never stretched to a different image shape: an image with other proportions is left alone.
 

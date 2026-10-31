@@ -23,12 +23,14 @@ Open the export-view dialog from the toolbar icon {{< svg-inline "static/tuto/ic
 #### Current view
 Exports the view exactly as it appears on screen, at its current size and with every overlay (annotations, measurements, DICOM annotations, rulers…) visible.
 
+**Display** {{< since "4.8.0" >}} — what the picture shows: **As displayed**, **Image only** without annotations and graphics, or **Custom**, where the button next to the list lets you choose which annotations and layers appear.
+
 **Anonymize** {{< until "4.7.3" >}} — removes identifying information from the overlay. **Identity** {{< since "4.8.0" >}} — the [masking profile](identity-masking/#outputs) applied to the picture: *Display* by default, or *Keep identity*; the screen itself is not changed.
 
 #### Original Image
 Exports the underlying image — without on-screen overlays — with a few rendering options.
 
-![Export view](/tuto/dicom-export-view.webp?classes=shadow&width=350px)
+![Take a screenshot dialog: Capture, Current view with Display and Identity, Original image with its size and DICOM options](/tuto/dicom-export-view.webp?classes=shadow&width=350px)
 <br>
 
 * **Size** — scale the exported image (percentage of the original dimensions).
