@@ -57,10 +57,6 @@
 # backporting. Nothing else changes.
 
 [[version]]
-id = "4.4"
-state = "supported"
-
-[[version]]
 id = "4.5"
 state = "supported"
 
@@ -70,8 +66,11 @@ state = "supported"
 
 [[version]]
 id = "4.7"
-state = "current"
+state = "supported"
 
 [[version]]
 id = "4.8"
-state = "next"
+state = "current"
+
+# No `next` entry: the next release is the 5.0 major, documented as its own
+# line (new structure and screenshots), not filtered inside this 4.x tree.
