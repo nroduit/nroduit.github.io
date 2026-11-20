@@ -158,7 +158,7 @@
 {{- /* Ordinary pages and section listings only. The taxonomy listings, the 404
        page and the theme's own pages are all "a page with a title" as far as Hugo
        is concerned, and none of them describes anything. */ -}}
-{{- if and (in (slice "page" "section") .Kind) .Title (not (partial "_relearn/pageIsSpecial.gotmpl" .)) -}}
+{{- if and (in (slice "page" "section") .Kind) .Title (not (hasPrefix .Path "/_relearn")) -}}
   {{- $page := dict
       "@context"   "https://schema.org"
       "@type"      (cond (eq .Kind "section") "CollectionPage" "TechArticle")

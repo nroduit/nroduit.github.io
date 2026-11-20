@@ -14,7 +14,7 @@
 */ -}}
 {{- $out := slice }}
 {{- range .page.Pages.ByWeight }}
-  {{- if and .Title (not (partial "_relearn/pageIsSpecial.gotmpl" .)) }}
+  {{- if and .Title (not (hasPrefix .Path "/_relearn")) }}
     {{- $out = $out | append . }}
     {{- with partial "_weasis/pagetree.gotmpl" (dict "page" .) }}
       {{- $out = $out | append . }}

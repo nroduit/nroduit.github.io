@@ -30,7 +30,7 @@
 {{- $isHTML := eq (.Store.Get "relearnOutputFormat" | default "html") "html" -}}
 {{- $isContent := and $isHTML .Title
       (in (slice "page" "section") .Kind)
-      (not (partial "_relearn/pageIsSpecial.gotmpl" .)) -}}
+      (not (hasPrefix .Path "/_relearn")) -}}
 {{- $isRegular := and $isContent (eq .Kind "page") -}}
 {{- if $isContent -}}
   {{- $links := cond $isRegular slice slice -}}
