@@ -29,7 +29,7 @@ cd themes/hugo-theme-relearn && git pull origin main && cd ../..
 ```
 
 Hugo **extended** is required (Dart Sass).
-CI pins `HUGO_VERSION=0.168.0` in `.github/workflows/hugo.yaml` — prefer matching that locally when reproducing CI behavior.
+CI pins `HUGO_VERSION=0.170.1` in `.github/workflows/hugo.yaml` — prefer matching that locally when reproducing CI behavior.
 
 ### HUGO_GH_TOKEN
 
@@ -209,7 +209,7 @@ The current state was reached by measuring every candidate and verifying it pixe
   Be mindful when adding raw HTML to content.
 - The site uses the Relearn-theme front matter conventions (`title`, `weight`, `hidden`, `chapter`, etc.).
   Look at neighboring pages in the same section before adding new front matter keys.
-- `linkTitle` keeps navigation short when `title` is written for a search result: the sidebar, breadcrumb and `{{% children %}}` listings use `linkTitle`, while `title` becomes the `<h1>` and the `<title>`.
+- `linkTitle` keeps navigation short when `title` is written for a search result: the sidebar, breadcrumb and `{{% pages %}}` listings use `linkTitle`, while `title` becomes the `<h1>` and the `<title>`.
   That is why the download page is *Download Weasis: Free DICOM Viewer for Windows, macOS and Linux* in a search result and just *Download Weasis* in the sidebar.
 - **`updated: 2026-09-20`** is the only thing that puts a visible date on a page.
   Set it when the *content* changes in a way a returning reader should know about; leave it alone for a typo, a re-worded description or a metadata pass.
